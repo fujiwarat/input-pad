@@ -1,0 +1,10 @@
+# Files with translatable strings.
+# Please keep this file in alphabetical order.
+data/group01-base.xml.in
+data/group02-ja.xml.in
+data/group02-zh.xml.in
+data/group90-keyboard.xml.in
+data/input-pad.desktop.in
+[type: gettext/glade]data/input-pad.ui
+engine/main.c
+input-pad/window-gtk.c

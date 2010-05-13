@@ -1,0 +1,281 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: xml -*-->
+<interface domain="input-pad">
+  <object class="GtkUIManager" id="uimanager">
+    <child>
+      <object class="GtkActionGroup" id="DefaultActions">
+        <child>
+          <object class="GtkAction" id="FileMenu">
+            <property name="name">FileMenu</property>
+            <property name="label" translatable="yes">_File</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="Close">
+            <property name="name">Close</property>
+            <property name="tooltip" translatable="yes">Close the program</property>
+            <property name="label" translatable="yes">_Close</property>
+            <!-- Do not use short cut Ctrl+W -->
+            <!--property name="stock_id">gtk-close</property-->
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="HelpMenu">
+            <property name="name">HelpMenu</property>
+            <property name="label" translatable="yes">_Help</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="Contents">
+            <property name="name">Contents</property>
+            <property name="label" translatable="yes">_Troubleshoot</property>
+            <!-- Do not use short cut Ctrl+H -->
+            <!--property name="stock_id">gtk-help</property-->
+          </object>
+          <!--accelerator key="F1"/-->
+        </child>
+        <child>
+          <object class="GtkAction" id="About">
+            <property name="name">About</property>
+            <property name="stock_id">gtk-about</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <ui>
+      <menubar name="menubar1">
+        <menu action="FileMenu" name="FileMenu">
+          <menuitem action="Close" name="Close"/>
+        </menu>
+        <menu action="HelpMenu" name="HelpMenu">
+          <menuitem action="Contents" name="Contents"/>
+          <menuitem action="About" name="About"/>
+        </menu>
+      </menubar>
+    </ui>
+  </object>
+  <object class="GtkDialog" id="ContentsDialog">
+    <property name="title" translatable="yes">Input Pad</property>
+    <property name="transient-for">TopWindow</property>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="vbox1">
+        <property name="border-width">10</property>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="visible">True</property>
+            <property name="wrap_mode">word-char</property>
+            <property name="wrap">True</property>
+            <property name="label" translatable="yes">
+This application can be run either as a stand-alone program or under an input method application.
+If you wish to send multi-byte characters, this application needs to be run under an input method application.
+If you wish to send characters to X11 applications, those applications needs to allow send events. e.g.
+% xterm -xrm "XTerm*allowSendEvents: true"</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="hbuttonbox1">
+            <property name="border-width">20</property>
+            <child>
+              <object class="GtkButton" id="ContentsOKButton">
+                <property name="visible">True</property>
+                <property name="label">gtk-ok</property>
+                <property name="use-stock">TRUE</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkAboutDialog" id="AboutDialog">
+    <property name="program-name" translatable="yes">Input Pad</property>
+    <property name="copyright">Copyright (c) 2010 Takao Fujiwara
+Copyright (c) 2010 Red Hat, Inc.</property>
+    <property name="comments" translatable="yes">The input pad is a tool to send a character on button.</property>
+    <property name="license">GPL</property>
+    <property name="website">http://code.google.com/p/ibus</property>
+    <property name="authors">Takao Fujiwara &lt;takao.fujiwara1@gmail.com&gt;</property>
+    <property name="translator-credits" translatable="yes">translator_credits</property>
+    <property name="logo-icon-name">input-pad</property>
+    <property name="wrap-license">True</property>
+    <property name="transient-for">TopWindow</property>
+    <accessibility>
+      <relation target="TopWindow" type="subwindow-of"/>
+    </accessibility>
+  </object>
+  <object class="InputPadGtkWindow" id="TopWindow">
+    <property name="type">GTK_WINDOW_TOPLEVEL</property>
+    <property name="title" translatable="yes">Input Pad</property>
+    <property name="default_height">250</property>
+    <property name="default_width">440</property>
+    <property name="accept-focus">False</property>
+    <child>
+      <object class="GtkVBox" id="vbox100">
+        <property name="visible">True</property>
+        <child>
+          <object constructor="uimanager" class="GtkMenuBar" id="menubar1">
+            <property name="visible">True</property>
+            <child internal-child="accessible">
+              <object class="AtkObject" id="a11y-menubar">
+                <property name="AtkObject::accessible-name">The menubar</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkNotebook" id="TopNotebook">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="show_tabs">Yes</property>
+            <property name="show_border">False</property>
+            <property name="scrollable">True</property>
+            <property name="enable_popup">True</property>
+            <!-- comment start
+            <child>
+              <object class="GtkNotebook" id="notebook00">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="show_tabs">Yes</property>
+                <property name="show_border">False</property>
+                <property name="scrollable">True</property>
+                <property name="enable_popup">True</property>
+                <child>
+                  <object class="GtkVBox" id="vbox00">
+                    <property name="visible">True</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel" id="label00">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Basic Latin</property>
+                  </object>
+                  <packing>
+                    <property name="tab_fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkVBox" id="vbox01">
+                    <property name="visible">True</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel" id="label01">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Latin-1 Supplement</property>
+                  </object>
+                  <packing>
+                    <property name="tab_fill">False</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="label0">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Latin and Number</property>
+              </object>
+              <packing>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkNotebook" id="notebook10">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="show_tabs">Yes</property>
+                <property name="show_border">False</property>
+                <property name="scrollable">True</property>
+                <property name="enable_popup">True</property>
+                <child>
+                  <object class="GtkVBox" id="vbox10">
+                    <property name="visible">True</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel" id="label10">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Hiragana</property>
+                  </object>
+                  <packing>
+                    <property name="tab_fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkVBox" id="vbox11">
+                    <property name="visible">True</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel" id="label11">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Katakana</property>
+                  </object>
+                  <packing>
+                    <property name="tab_fill">False</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="label1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Japanese</property>
+              </object>
+              <packing>
+                <property name="tab_fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            end of comment -->
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStatusbar" id="statusbar1">
+            <property name="visible">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

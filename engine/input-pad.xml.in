@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- filename: input-pad.xml -->
+<component>
+	<name>org.freedesktop.IBus.InputPad</name>
+	<description>Input Pad Component</description>
+	<exec>@libexecdir@/ibus-engine-input-pad --ibus</exec>
+	<version>@VERSION@</version>
+	<author>Takao Fujiwara &lt;takao.fujiwara1@gmail.com&gt;</author>
+	<license>GPL</license>
+	<homepage>http://code.google.com/p/ibus</homepage>
+	<textdomain>@GETTEXT_PACKAGE@</textdomain>
+
+	<engines>
+		<engine>
+			<name>input-pad</name>
+			<language>other</language>
+			<license>GPL</license>
+			<author>Takao Fujiwara &lt;takao.fujiwara1@gmail.com&gt;</author>
+			<icon>@datarootdir@/pixmaps/input-pad.png</icon>
+			<layout>us</layout>
+			<longname>Input Pad</longname>
+			<description>Input Pad</description>
+			<rank>0</rank>
+		</engine>
+	</engines>
+
+</component>

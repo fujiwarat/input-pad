@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<input-pad>
+  <pad name="base">
+    <group>
+      <_name>Keyboard</_name>
+      <table>
+        <_name>Function Key</_name>
+        <column>4</column>
+        <keys>
+          <keysyms>
+Return BackSpace Tab Escape Delete
+Pause Scroll_Lock Sys_Req
+Linefeed Clear
+F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 F11 F12 F13 F14 F15 F16 F17 F18 F19 F20
+F21 F22 F23 F24 F25 F26 F27 F28 F29 F30 F31 F32 F33 F34 F35
+Caps_Lock Meta_L Meta_R Super_L Super_R
+Home Begin End Left Right Up Down Prior Next Page_Up Page_Down
+Select Print Execute Insert Undo Redo Menu Find Cancel Help Break
+Mode_switch script_switch Num_Lock
+Multi_key
+Kanji Muhenkan Henkan_Mode Henkan Romaji Hiragana Katakana
+Hiragana_Katakana Zenkaku Hankaku Zenkaku_Hankaku Kana_Lock Eisu_toggle
+Touroku Massyo
+          </keysyms>
+        </keys>
+      </table>
+      <table>
+        <_name>Key Pad</_name>
+        <column>4</column>
+        <keys>
+          <keysyms>
+KP_0 KP_1 KP_2 KP_3 KP_4 KP_5 KP_6 KP_7 KP_8 KP_9
+KP_Space KP_Tab KP_Enter
+KP_Home KP_Begin KP_End
+KP_Left KP_Right KP_Up KP_Down KP_Prior KP_Next KP_Page_Up KP_Page_Down
+KP_Insert KP_Delete KP_Equal KP_Multiply KP_Add
+KP_Separator KP_Subtract KP_Decimal KP_Divide
+KP_F1 KP_F2 KP_F3 KP_F3 KP_F4
+          </keysyms>
+        </keys>
+      </table>
+    </group>
+  </pad>
+</input-pad>

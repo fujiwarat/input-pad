@@ -1,0 +1,172 @@
+# vim:set et ts=4:
+#
+# input-pad - The input pad 
+#
+# Copyright (c) 2010 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010 Red Hat, Inc.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+dnl - if not 1, append datestamp to the version number.
+m4_define([ibus_released], [0])
+m4_define([ibus_major_version], [0])
+m4_define([ibus_minor_version], [1])
+m4_define([ibus_micro_version], [0])
+m4_define(ibus_maybe_datestamp,
+    m4_esyscmd([if test x]ibus_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
+
+m4_define([ibus_version],
+    ibus_major_version.ibus_minor_version.ibus_micro_version[]ibus_maybe_datestamp)
+
+AC_INIT([input-pad], [ibus_version], [http://code.google.com/p/ibus/issues/entry],[input-pad])
+AM_INIT_AUTOMAKE([1.10])
+AC_GNU_SOURCE
+
+AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_MACRO_DIR([m4])
+
+dnl - VERSION
+libinput_pad_VERSION="ibus_major_version.ibus_minor_version"
+AC_SUBST(libinput_pad_VERSION)
+AC_MSG_NOTICE([$PACKAGE sub version $libinput_pad_VERSION])
+
+dnl - define PACKAGE_VERSION_* variables
+AM_SANITY_CHECK
+AM_MAINTAINER_MODE
+AM_DISABLE_STATIC
+AC_PROG_CC
+AM_PROG_CC_C_O
+AC_PROG_CXX
+AC_ISC_POSIX
+AC_HEADER_STDC
+AM_PROG_LIBTOOL
+IT_PROG_INTLTOOL([0.35.0])
+
+dnl - For dislpay Date
+m4_define(ibus_datedisplay,
+    m4_esyscmd(date '+%a %b %d %Y' | tr -d '\n\r'))
+DATE_DISPLAY="ibus_datedisplay"
+AC_SUBST(DATE_DISPLAY)
+
+dnl - pkgconfig
+AM_PATH_GLIB_2_0
+PKG_CHECK_MODULES(GLIB2, [
+    glib-2.0 >= 2.8
+])
+
+PKG_CHECK_MODULES(GTK2, [
+    gtk+-2.0
+])
+
+PKG_CHECK_MODULES(LIBXML2, [
+    libxml-2.0 >= 2.0
+])
+
+PKG_CHECK_MODULES(IBUS, [
+    ibus-1.0
+])
+
+PKG_CHECK_MODULES(X11, [
+    x11
+])
+
+dnl - check file path of glib-genmarshal
+AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
+
+dnl - check python
+AC_MSG_CHECKING([where you enable python])
+AC_ARG_ENABLE(python,
+              AS_HELP_STRING([--enable-python=no/yes],
+                             [Enable Python wrapper default=yes]),,
+              enable_python=yes)
+AC_MSG_RESULT($enable_python)
+
+if test x"$enable_python" = xyes; then
+    AM_CONDITIONAL(HAVE_PYTHON, true)
+    AM_PATH_PYTHON([2.5], [], [])
+    AC_PATH_PROG(PYTHON_CONFIG, python$PYTHON_VERSION-config)
+    if test x"$PYTHON_CONFIG" != x""; then
+        PYTHON_CFLAGS=`$PYTHON_CONFIG --includes`
+        PYTHON_LIBS=`$PYTHON_CONFIG --libs`
+    fi
+    AC_MSG_NOTICE([PYTHON_CFLAGS=\"$PYTHON_CFLAGS\"])
+    AC_MSG_NOTICE([PYTHON_LIBS=\"$PYTHON_LIBS\"])
+    if test x"$PYTHON_CFLAGS" = x -o x"$PYTHON_LIBS" = x ; then
+        AC_MSG_ERROR([Could not find PYTHON_CFLAGS or PYTHON_LIBS])
+    fi
+
+    AC_PATH_PROG(SWIG, swig)
+    if test x"$SWIG" = x""; then
+        AC_MSG_ERROR([Could not find swig])
+    fi
+else
+    AM_CONDITIONAL(HAVE_PYTHON, false)
+fi
+AC_SUBST(PYTHON_CFLAGS)
+AC_SUBST(PYTHON_LIBS)
+AC_SUBST(SWIG)
+
+dnl - check XTest module
+backup_LIBS=$LIBS
+if test "x$XTEST_LIBS" = "x"  ; then
+    XTEST_LIBS="-lXtst"
+fi
+LIBS="$LIBS $XTEST_LIBS"
+AM_CONDITIONAL(HAVE_XTEST, false)
+AC_CHECK_LIB(Xtst, XTestFakeKeyEvent,
+             dnl - Do not put NULL string here so that LIBS is not overrided.
+            [AC_MSG_NOTICE([use $XTEST_LIBS for XTEST module])
+             AM_CONDITIONAL(HAVE_XTEST, true)],
+            [AC_MSG_NOTICE([if you want to enable X11 XTEST module, install libXtst-devel package])])
+LIBS=$backup_LIBS
+AC_SUBST(XTEST_LIBS)
+
+dnl - check file path of keysymdef.h
+AC_MSG_CHECKING([where you have keysymdef.h])
+AC_ARG_WITH(keysymdef,
+           [AC_HELP_STRING([--with-keysymdef=FILE],
+                           [file path of keysymdef.h])],
+           [KEYSYMDEF_H_FILE="$withval"],
+           [$PKG_CONFIG --exists xproto
+            if test $? -eq 0 ; then
+                f=`$PKG_CONFIG --variable includedir xproto`
+                KEYSYMDEF_H_FILE="$f/X11/keysymdef.h"
+            else
+                KEYSYMDEF_H_FILE="$includedir/X11/keysymdef.h"
+            fi])
+AC_SUBST(KEYSYMDEF_H_FILE)
+AC_MSG_RESULT($KEYSYMDEF_H_FILE)
+
+dnl - define GETTEXT_* variables
+GETTEXT_PACKAGE=input-pad
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
+
+AM_GLIB_GNU_GETTEXT
+AM_GLIB_DEFINE_LOCALEDIR(IBUS_LOCALEDIR)
+
+dnl - OUTPUT files
+AC_CONFIG_FILES([ po/Makefile.in
+Makefile
+input-pad.pc
+input-pad.spec
+data/Makefile
+engine/Makefile
+input-pad/Makefile
+pyinput-pad/Makefile
+pyinput-pad/pyinput_pad.pth
+])
+
+AC_OUTPUT

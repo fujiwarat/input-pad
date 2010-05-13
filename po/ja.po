@@ -1,0 +1,168 @@
+# Japanese translations for input-pad
+# Copyright (C) 1999-2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the input-pad package.
+# Takao Fujiwara <takao.fujiwara1@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: input-pad HEAD\n"
+"Report-Msgid-Bugs-To: http://code.google.com/p/ibus/issues/entry\n"
+"POT-Creation-Date: 2010-05-12 16:33+0900\n"
+"PO-Revision-Date: 2010-05-10 17:54+0900\n"
+"Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../data/group01-base.xml.in.h:1
+msgid "ASCII"
+msgstr "ASCII"
+
+#: ../data/group01-base.xml.in.h:2
+msgid "Latin Extended-A"
+msgstr "ラテン文字拡張-A"
+
+#: ../data/group01-base.xml.in.h:3 ../data/input-pad.ui.in.h:13
+msgid "Latin and Number"
+msgstr "ラテン文字と数字"
+
+#: ../data/group01-base.xml.in.h:4 ../data/input-pad.ui.in.h:14
+msgid "Latin-1 Supplement"
+msgstr "ラテン文字-1 補足"
+
+#: ../data/group02-ja.xml.in.h:1 ../data/input-pad.ui.in.h:9
+msgid "Hiragana"
+msgstr "ひらがな"
+
+#: ../data/group02-ja.xml.in.h:2 ../data/input-pad.ui.in.h:11
+msgid "Japanese"
+msgstr "日本語"
+
+#: ../data/group02-ja.xml.in.h:3 ../data/input-pad.ui.in.h:12
+msgid "Katakana"
+msgstr "カタカナ"
+
+#: ../data/group02-zh.xml.in.h:1
+msgid "Bopomofo"
+msgstr "Bopomofo"
+
+#: ../data/group02-zh.xml.in.h:2
+msgid "Chinese"
+msgstr "中国語"
+
+#: ../data/group02-zh.xml.in.h:3
+msgid "Numbers"
+msgstr "数字"
+
+#: ../data/group02-zh.xml.in.h:4
+msgid "Radicals"
+msgstr "部首"
+
+#: ../data/group90-keyboard.xml.in.h:1
+msgid "Function Key"
+msgstr "機能キー"
+
+#: ../data/group90-keyboard.xml.in.h:2
+msgid "Key Pad"
+msgstr "キーパッド"
+
+#: ../data/group90-keyboard.xml.in.h:3
+msgid "Keyboard"
+msgstr "キーボード"
+
+#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.in.h:10
+#: ../engine/main.c:55 ../engine/main.c:64 ../engine/main.c:65
+#: ../input-pad/window-gtk.c:887
+msgid "Input Pad"
+msgstr "インプットパッド"
+
+#: ../data/input-pad.ui.in.h:2
+#, no-c-format
+msgid ""
+"\n"
+"This application can be run either as a stand-alone program or under an "
+"input method application.\n"
+"If you wish to send multi-byte characters, this application needs to be run "
+"under an input method application.\n"
+"If you wish to send characters to X11 applications, those applications needs "
+"to allow send events. e.g.\n"
+"% xterm -xrm \"XTerm*allowSendEvents: true\""
+msgstr ""
+"\n"
+"このアプリケーションは、スタンドアロンプログラムとして、もしくは IM アプリ"
+"ケーションの元で実行可能です。\n"
+"マルチバイト文字を送る場合、このアプリケーションを IM アプリケーションの元で"
+"実行する必要があります。\n"
+"X11 アプリケーションに文字を送る場合、送信イベントを許可する必要があります。"
+"例:\n"
+"% xterm -xrm \"XTerm*allowSendEvents: true\""
+
+#: ../data/input-pad.ui.in.h:7
+msgid "Basic Latin"
+msgstr "基本ラテン文字"
+
+#: ../data/input-pad.ui.in.h:8
+msgid "Close the program"
+msgstr "プログラムを閉じる"
+
+#: ../data/input-pad.ui.in.h:15
+msgid "The input pad is a tool to send a character on button."
+msgstr "インプットパッドはボタン上の文字を送るツールです。"
+
+#: ../data/input-pad.ui.in.h:16
+msgid "_Close"
+msgstr "閉じる(_C)"
+
+#: ../data/input-pad.ui.in.h:17
+msgid "_File"
+msgstr "ファイル(_F)"
+
+#: ../data/input-pad.ui.in.h:18
+msgid "_Help"
+msgstr "ヘルプ(_H)"
+
+#: ../data/input-pad.ui.in.h:19
+msgid "_Troubleshoot"
+msgstr "トラブルシュート(_T)"
+
+#: ../data/input-pad.ui.in.h:20
+msgid "translator_credits"
+msgstr "translator_credits"
+
+#: ../input-pad/window-gtk.c:62
+msgid "Use XTEST module to send key events"
+msgstr "キーイベントを送るために XTEST モジュールを使用する"
+
+#: ../input-pad/window-gtk.c:434
+msgid ""
+"This program is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+"このプログラムはフリーソフトウェアです;フリーソフトウェア財団が提供する GNU  "
+"一般公衆利用許諾契約書の第二版、あるいはそれ以降の版が定める条項の下で本プロ"
+"グラムを再頒布または変更することができます。"
+
+#: ../input-pad/window-gtk.c:440
+msgid ""
+"This program is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+"このプログラムは有用とは思いますが、その頒布にあたっては市場性及び特定の目"
+"的、その適合性についての暗黙の保証を含めて、いかなる保証も行ないません。詳細"
+"については GNU  一般公衆利用許諾契約書をご覧下さい。"
+
+#: ../input-pad/window-gtk.c:446
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA."
+msgstr ""
+"あなたは、本プログラムと一緒に GNU 一般公衆利用許諾契約書の写しを受け取ってい"
+"るはずです。そうでない場合は、Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301 USA まで手紙を書いて下さい。"

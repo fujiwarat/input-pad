@@ -1,0 +1,143 @@
+%{!?have_python_devel: %define have_python_devel %(rpm -q --quiet python-devel && echo 1 || echo 0)}
+%{!?have_xtest_devel: %define have_xtest_devel %(rpm -q --quiet libXtst-devel && echo 1 || echo 0)}
+%if %have_python_devel
+%{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
+%endif
+%define sub_version             @libinput_pad_VERSION@
+%define glib2_version           2.8
+%define libxml2_version         2.0
+
+Name:       @PACKAGE_NAME@
+Version:    @PACKAGE_VERSION@
+Release:    1%{?dist}
+Summary:    Input Pad
+License:    GPLv2+
+Group:      System Environment/Libraries
+URL:        http://code.google.com/p/ibus/
+Source0:    http://ibus.googlecode.com/files/%{name}-%{version}.tar.gz
+
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+
+BuildRequires:  coreutils
+BuildRequires:  gcc
+BuildRequires:  gettext-devel
+BuildRequires:  glib2-devel     >= %glib2_version
+BuildRequires:  gtk2-devel
+BuildRequires:  libX11-devel
+BuildRequires:  libtool
+BuildRequires:  libxml2-devel   >= %libxml2_version
+BuildRequires:  ibus-devel
+BuildRequires:  intltool
+BuildRequires:  pkgconfig
+BuildRequires:  sed
+%if %have_xtest_devel
+BuildRequires:  libXtst-devel
+%endif
+%if %have_python_devel
+BuildRequires:  python-devel
+BuildRequires:  swig
+%endif
+Requires:   glib2     >= %glib2_version
+Requires:   gtk2
+Requires:   libX11
+Requires:   libxml2   >= %libxml2_version
+
+%description
+Input Pad.
+
+%package devel
+Summary:    Development tools for input-pad
+Group:      Development/Libraries
+Requires:   %{name} = %{version}-%{release}
+
+%description devel
+The input-pad-devel package contains the header files.
+
+%package ibus
+Summary:    The input pad engine for IBus
+Group:      System Environment/Libraries
+Requires:   %{name} = %{version}-%{release}
+Requires:   ibus
+
+%description ibus
+The input-pad-ibus package contains ibus engine.
+
+%if %have_python_devel
+%package python
+Summary:    input-pad for python
+Group:      System Environment/Libraries
+Requires:   %{name} = %{version}-%{release}
+Requires:   python
+
+%description python
+The input-pad-python package contains the python wrapper files.
+%endif
+
+%if %have_xtest_devel
+%package xtest
+Summary:    input-pad with XTEST extension
+Group:      System Environment/Libraries
+Requires:   %{name} = %{version}-%{release}
+Requires:   libXtst
+
+%description xtest
+The input-pad-python package contains XTEST extension module
+%endif
+
+%prep
+%setup -q
+
+%build
+%configure --disable-static
+make %{?_smp_mflags}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make DESTDIR=$RPM_BUILD_ROOT install
+
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/*.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/*.a
+%if %have_python_devel
+rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.la
+rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.a
+%endif
+
+%find_lang %{name}
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files -f %{name}.lang
+%defattr(-,root,root,-)
+%doc AUTHORS COPYING README
+%{_bindir}/input-pad
+%dir %{_libdir}/%{name}-%sub_version
+%{_libdir}/%{name}-%sub_version/libinput-pad.so
+%{_datadir}/%name
+%{_datadir}/pixmaps/input-pad.png
+
+%files devel
+%defattr(-,root,root,-)
+%{_includedir}/%{name}-%sub_version
+%{_libdir}/pkgconfig/*.pc
+
+%files ibus
+%defattr(-,root,root,-)
+%{_libexecdir}/ibus-engine-input-pad
+%{_datadir}/ibus/component/*
+
+%if %have_python_devel
+%files python
+%defattr(-,root,root,-)
+%python_sitearch/%{name}-%sub_version
+%python_sitearch/pyinput_pad.pth
+%endif
+
+%if %have_xtest_devel
+%files xtest
+%{_libdir}/%{name}-%sub_version/libinput-pad-xtest-gdk.so
+%endif
+
+%changelog
+* @DATE_DISPLAY@ Takao Fujiwara <takao.fujiwara1@gmail.com> - @PACKAGE_VERSION@-1
+- Current version.
