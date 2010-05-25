@@ -26,6 +26,7 @@ typedef enum
     INPUT_PAD_WINDOW_TYPE_GTK = 0,
 } InputPadWindowType;
 
+const char *        input_pad_get_version (void);
 void                input_pad_window_init (int *argc, char ***argv,
                                            InputPadWindowType type);
 void *              input_pad_window_new (unsigned int ibus);

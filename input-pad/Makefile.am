@@ -49,6 +49,8 @@ libinput_pad_la_SOURCES = \
 	$(libinput_pad_public_HEADERS)                          \
 	button-gtk.c                                            \
 	button-gtk.h                                            \
+	combobox-gtk.c                                          \
+	combobox-gtk.h                                          \
 	i18n.h                                                  \
 	input-pad-private.h                                     \
 	keysym-str2val.h					\

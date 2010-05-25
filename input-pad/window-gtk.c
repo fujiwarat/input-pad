@@ -27,9 +27,11 @@
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 #include <string.h> /* strlen */
+#include <stdlib.h> /* exit */
 
 #include "i18n.h"
 #include "button-gtk.h"
+#include "combobox-gtk.h"
 #include "input-pad.h"
 #include "input-pad-group.h"
 #include "input-pad-window-gtk.h"
@@ -41,9 +43,17 @@
 
 #define INPUT_PAD_GTK_WINDOW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_WINDOW, InputPadGtkWindowPrivate))
 
+typedef struct _CodePointData CodePointData;
+
 enum {
     BUTTON_PRESSED,
     LAST_SIGNAL
+};
+
+enum {
+    DIGIT_TEXT_COL = 0,
+    DIGIT_VISIBLE_COL,
+    DIGIT_N_COLS,
 };
 
 struct _InputPadGtkWindowPrivate {
@@ -52,8 +62,15 @@ struct _InputPadGtkWindowPrivate {
     GModule                    *module_gdk_xtest;
 };
 
+struct _CodePointData {
+    GtkWidget                  *signal_window;
+    GtkWidget                  *digit_hbox;
+    GtkWidget                  *char_label;
+};
+
 static guint                    signals[LAST_SIGNAL] = { 0 };
 static gboolean                 use_module_xtest = FALSE;
+static gboolean                 ask_version = FALSE;
 #if 0
 static GtkBuildableIface       *parent_buildable_iface;
 #endif
@@ -62,10 +79,15 @@ static GOptionEntry entries[] = {
 #ifdef MODULE_XTEST_GDK_BASE
   { "enable-module-xtest", 'x', 0, G_OPTION_ARG_NONE, &use_module_xtest,
     N_("Use XTEST module to send key events"), NULL},
+  { "version", 'v', 0, G_OPTION_ARG_NONE, &ask_version,
+    N_("Ask version"), NULL},
 #endif
   { NULL }
 };
 
+static guint digit_hbox_get_code_point (GtkWidget *digit_hbox);
+static void char_label_set_code_point (GtkWidget *char_label, guint code);
+static void set_code_point_base (CodePointData *cp_data, int n_encoding);
 static InputPadGroup *get_nth_pad_group (InputPadGroup *group, int nth);
 static InputPadTable *get_nth_pad_table (InputPadTable *table, int nth);
 static void create_char_table (GtkWidget *vbox, InputPadTable *table_data);
@@ -91,21 +113,55 @@ on_window_close (InputPadGtkWindow *window, gpointer data)
 }
 
 static void
-on_about_activate (GtkAction *action, gpointer data)
+on_item_dialog_activate (GtkAction *action, gpointer data)
 {
-    GtkWidget *about_dlg = GTK_WIDGET (data);
+    GtkWidget *dlg = GTK_WIDGET (data);
 
-    gtk_dialog_run (GTK_DIALOG (about_dlg));
-    gtk_widget_hide (about_dlg);
+    gtk_dialog_run (GTK_DIALOG (dlg));
+    gtk_widget_hide (dlg);
 }
 
 static void
-on_contents_activate (GtkAction *action, gpointer data)
+on_button_encoding_clicked (GtkButton *button, gpointer data)
 {
-    GtkWidget *contents_dlg = GTK_WIDGET (data);
+    gboolean active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (button));
+    const gchar *name;
 
-    gtk_dialog_run (GTK_DIALOG (contents_dlg));
-    gtk_widget_hide (contents_dlg);
+    if (!active)
+        return;
+
+    name = gtk_buildable_get_name (GTK_BUILDABLE (button));
+    if (name == NULL) {
+        name = (const gchar *) g_object_get_data (G_OBJECT (button),
+                                                  "gtk-builder-name");
+    }
+    g_return_if_fail (name != NULL);
+    g_return_if_fail (g_str_has_prefix (name, "Encoding"));
+    g_print ("test %s %d\n", name ? name : "(null)", active);
+}
+
+static void
+on_button_base_clicked (GtkButton *button, gpointer data)
+{
+    CodePointData *cp_data;
+    gboolean active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (button));
+    const gchar *name;
+    int base;
+
+    if (!active)
+        return;
+
+    cp_data = (CodePointData *) data;
+    name = gtk_buildable_get_name (GTK_BUILDABLE (button));
+    if (name == NULL) {
+        name = (const gchar *) g_object_get_data (G_OBJECT (button),
+                                                  "gtk-builder-name");
+    }
+    g_return_if_fail (name != NULL);
+    g_return_if_fail (g_str_has_prefix (name, "Base"));
+    base = (int) g_ascii_strtoll (name + strlen ("Base"), NULL, 10);
+
+    set_code_point_base (cp_data, base);
 }
 
 static void
@@ -252,6 +308,35 @@ get_state (const char *str, guint keysym)
 }
 
 static void
+on_button_send_clicked (GtkButton *button, gpointer data)
+{
+    CodePointData *cp_data;
+    const gchar *str;
+    guint code;
+    guint state = 0;
+    gboolean retval = FALSE;
+    InputPadTableType  type;
+
+    cp_data = (CodePointData *) data;
+    g_return_if_fail (GTK_IS_LABEL (cp_data->char_label));
+    g_return_if_fail (GTK_IS_CONTAINER (cp_data->digit_hbox));
+    g_return_if_fail (GTK_IS_WIDGET (cp_data->signal_window));
+
+    str = gtk_label_get_label (GTK_LABEL (cp_data->char_label));
+    code = digit_hbox_get_code_point (cp_data->digit_hbox);
+    state = get_state (str, code);
+    if (code < 0x7f) {
+        type = INPUT_PAD_TABLE_TYPE_KEYSYMS;
+    } else {
+        type = INPUT_PAD_TABLE_TYPE_CHARS;
+        code = 0;
+    }
+
+    g_signal_emit (cp_data->signal_window, signals[BUTTON_PRESSED], 0,
+                   str, type, code, 0, state, &retval);
+}
+
+static void
 on_button_pressed (GtkButton *button, gpointer data)
 {
     InputPadGtkWindow *window;
@@ -274,6 +359,23 @@ on_button_pressed (GtkButton *button, gpointer data)
                    str, type, keysym, 0, state, &retval);
 }
 
+static void
+on_combobox_changed (GtkComboBox *combobox, gpointer data)
+{
+    CodePointData *cp_data;
+    guint code;
+
+    g_return_if_fail (GTK_IS_COMBO_BOX (combobox));
+    g_return_if_fail (data != NULL);
+
+    cp_data = (CodePointData *) data;
+    g_return_if_fail (GTK_IS_CONTAINER (cp_data->digit_hbox));
+    g_return_if_fail (GTK_IS_LABEL (cp_data->char_label));
+
+    code = digit_hbox_get_code_point (cp_data->digit_hbox);
+    char_label_set_code_point (cp_data->char_label, code);
+}
+
 static InputPadGroup *
 get_nth_pad_group (InputPadGroup *group, int nth)
 {
@@ -294,6 +396,255 @@ get_nth_pad_table (InputPadTable *table, int nth)
         retval = retval->next;
     }
     return retval;
+}
+
+static guint
+digit_hbox_get_code_point (GtkWidget *digit_hbox)
+{
+    GList *list;
+    GtkComboBox *combobox;
+    GtkTreeModel *model;
+    GtkTreeIter iter;
+    GString *string = NULL;
+    gchar *line = NULL;
+    guint base = 0;
+    guint code;
+
+    list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
+    string = g_string_new (NULL);
+
+    while (list) {
+        g_return_val_if_fail (GTK_IS_COMBO_BOX (list->data), 0);
+        combobox = GTK_COMBO_BOX (list->data);
+
+        if (!gtk_widget_get_visible (GTK_WIDGET (combobox))) {
+            break;
+        }
+        base = input_pad_gtk_combo_box_get_base (INPUT_PAD_GTK_COMBO_BOX (combobox));
+        model = gtk_combo_box_get_model (combobox);
+        if (!gtk_combo_box_get_active_iter (combobox, &iter)) {
+            g_warning ("Could not find active iter");
+            line = "0";
+        } else {
+            gtk_tree_model_get (model, &iter, DIGIT_TEXT_COL, &line, -1);
+        }
+        g_string_append (string, line);
+        list = list->next;
+    }
+    line = g_string_free (string, FALSE);
+    g_return_val_if_fail (line != NULL && base > 0, 0);
+
+    code = (guint) g_ascii_strtoll (line, NULL, base);
+    g_free (line);
+    return code;
+}
+
+static void
+digit_hbox_set_code_point (GtkWidget *digit_hbox, guint code)
+{
+    GList *list, *orig_list;
+    GtkComboBox *combobox;
+    GtkTreeModel *model;
+    GtkTreeIter iter;
+    int i, j, line_digit, n_digit = 0;
+    guint base = 0;
+    gchar *line = NULL;
+    gchar buff[2];
+
+    orig_list = list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
+
+    while (list) {
+        g_return_if_fail (GTK_IS_COMBO_BOX (list->data));
+        combobox = GTK_COMBO_BOX (list->data);
+
+        if (!gtk_widget_get_visible (GTK_WIDGET (combobox))) {
+            break;
+        }
+        base = input_pad_gtk_combo_box_get_base (INPUT_PAD_GTK_COMBO_BOX (combobox));
+        n_digit++;
+        list = list->next;
+    }
+
+    switch (base) {
+    case 16:
+        line = g_strdup_printf ("%0*x", n_digit, code);
+        break;
+    case 10:
+        line = g_strdup_printf ("%0*u", n_digit, code);
+        break;
+    case 8:
+        line = g_strdup_printf ("%0*o", n_digit, code);
+        break;
+    case 2:
+        line = g_strdup_printf ("%0*x", n_digit, 0);
+        for (i = 0; i < n_digit / 4; i++) {
+            for (j = 0; j < 4; j++) {
+                line[n_digit - 1 - (i * 4) - j] = ((code >> ((i * 4) + j)) & 0x1) + '0';
+            }
+        }
+        break;
+    default:
+        g_warning ("Base %d is not supported", base);
+        return;
+    }
+
+    list = orig_list;
+    for (i = 0; i < n_digit && list; i++) {
+        combobox = GTK_COMBO_BOX (list->data);
+
+        if (!gtk_widget_get_visible (GTK_WIDGET (combobox))) {
+            break;
+        }
+        model = gtk_combo_box_get_model (combobox);
+        if (!gtk_tree_model_get_iter_first (model, &iter)) {
+            g_warning ("Could not find first iter");
+            goto end_set_code_point;
+        }
+        buff[0] = *(line + i);
+        buff[1] = '\0';
+        line_digit = (int) g_ascii_strtoll (buff, NULL, 16);
+        for (j = 0; j < line_digit; j++) {
+            if (!gtk_tree_model_iter_next (model, &iter)) {
+                g_warning ("Could not find %dth iter", j);
+                goto end_set_code_point;
+            }
+        }
+        gtk_combo_box_set_active_iter (combobox, &iter);
+        list = list->next;
+    }
+end_set_code_point:
+    g_free (line);
+}
+
+static void
+char_label_set_code_point (GtkWidget *char_label, guint code)
+{
+    gunichar ch = (gunichar) code;
+    gchar buff[7];
+    if (!g_unichar_validate (ch)) {
+        g_warning ("Invalid code point %x\n", code);
+        return;
+    }
+    buff[g_unichar_to_utf8 (ch, buff)] = '\0';
+    gtk_label_set_text (GTK_LABEL (char_label), buff);
+}
+
+static GtkTreeModel *
+digit_model_new ()
+{
+    GtkTreeStore *store;
+    GtkTreeIter   iter;
+    int i = 0;
+    gchar *str = NULL;
+
+    store = gtk_tree_store_new (DIGIT_N_COLS, G_TYPE_STRING, G_TYPE_BOOLEAN);
+    for (i = 0; i < 16; i ++) {
+        str = g_strdup_printf ("%x", i);
+        gtk_tree_store_append (store, &iter, NULL);
+        gtk_tree_store_set (store, &iter, DIGIT_TEXT_COL, str,
+                            DIGIT_VISIBLE_COL, TRUE, -1);
+    }
+    return GTK_TREE_MODEL (store);
+}
+
+static void
+set_code_point_base (CodePointData *cp_data, int n_encoding)
+{
+    int i, n_digit, created_num;
+    char *formatted = NULL;
+    const guint max_ucode = 0x10ffff;
+    guint code = 0;
+    GList *list;
+    GtkWidget *digit_hbox;
+    GtkWidget *char_label;
+    GtkWidget *combobox;
+    GtkTreeModel *model;
+    GtkTreeIter iter;
+    GtkCellRenderer *renderer;
+
+    g_return_if_fail (cp_data != NULL);
+    g_return_if_fail (GTK_IS_CONTAINER (cp_data->digit_hbox));
+    digit_hbox = GTK_WIDGET (cp_data->digit_hbox);
+    g_return_if_fail (GTK_IS_LABEL (cp_data->char_label));
+    char_label = GTK_WIDGET (cp_data->char_label);
+
+    switch (n_encoding) {
+    case 16:
+        formatted = g_strdup_printf ("%x", max_ucode);
+        n_digit = strlen (formatted);
+        break;
+    case 10:
+        formatted = g_strdup_printf ("%u", max_ucode);
+        n_digit = strlen (formatted);
+        break;
+    case 8:
+        formatted = g_strdup_printf ("%o", max_ucode);
+        n_digit = strlen (formatted);
+        break;
+    case 2:
+        formatted = g_strdup_printf ("%x", max_ucode);
+        n_digit = strlen (formatted) * 4;
+        break;
+    default:
+        g_warning ("Base %d is not supported", n_encoding);
+        return;
+    }
+
+    list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
+    created_num = g_list_length (list);
+    if (created_num > 0) {
+        code = digit_hbox_get_code_point (digit_hbox);
+    }
+    if (created_num >= n_digit) {
+        for (i = 0; i < n_digit; i++) {
+            g_return_if_fail (INPUT_PAD_IS_GTK_COMBO_BOX (list->data));
+            input_pad_gtk_combo_box_set_base (INPUT_PAD_GTK_COMBO_BOX (list->data),
+                                              n_encoding);
+            gtk_widget_show (GTK_WIDGET (list->data));
+            list = list->next;
+        }
+        while (list) {
+            gtk_widget_hide (GTK_WIDGET (list->data));
+            list = list->next;
+        }
+        digit_hbox_set_code_point (digit_hbox, code);
+        char_label_set_code_point (char_label, code);
+        return;
+    }
+
+    for (i = 0; i < created_num; i++) {
+        g_return_if_fail (INPUT_PAD_IS_GTK_COMBO_BOX (list->data));
+        input_pad_gtk_combo_box_set_base (INPUT_PAD_GTK_COMBO_BOX (list->data),
+                                          n_encoding);
+        gtk_widget_show (GTK_WIDGET (list->data));
+        list = list->next;
+    }
+
+    for (i = created_num; i < n_digit; i++) {
+        combobox = input_pad_gtk_combo_box_new ();
+        input_pad_gtk_combo_box_set_base (INPUT_PAD_GTK_COMBO_BOX (combobox),
+                                          n_encoding);
+        gtk_box_pack_start (GTK_BOX (digit_hbox), combobox, FALSE, FALSE, 0);
+        model = digit_model_new ();
+        gtk_combo_box_set_model (GTK_COMBO_BOX (combobox), model);
+        g_object_unref (G_OBJECT (model));
+        if (gtk_tree_model_get_iter_first (model, &iter)) {
+            gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
+        }
+
+        renderer = gtk_cell_renderer_text_new ();
+        gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (combobox), renderer, FALSE);
+        gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), renderer,
+                                        "text", DIGIT_TEXT_COL,
+                                        "visible", DIGIT_VISIBLE_COL,
+                                        NULL);
+
+        gtk_widget_show (combobox);
+        g_signal_connect (G_OBJECT (combobox), "changed",
+                          G_CALLBACK (on_combobox_changed), cp_data);
+    }
+    digit_hbox_set_code_point (digit_hbox, code);
+    char_label_set_code_point (char_label, code);
 }
 
 static guint
@@ -501,15 +852,25 @@ create_ui (void)
     GtkWidget *window = NULL;
     GtkWidget *contents_dlg;
     GtkWidget *contents_ok;
+    GtkWidget *cp_dlg;
     GtkWidget *about_dlg;
     GtkWidget *main_notebook;
     GtkWidget *sub_notebook;
+    GtkWidget *digit_hbox;
+    GtkWidget *char_label;
+    GtkWidget *encoding_hbox;
+    GtkWidget *base_hbox;
+    GtkWidget *send_button;
+    GtkWidget *close_button;
+    GList *list;
     GtkAction *close_item;
     GtkAction *contents_item;
+    GtkAction *cp_item;
     GtkAction *about_item;
     GtkBuilder *builder = gtk_builder_new ();
     int i, n;
     InputPadGroup *group;
+    static CodePointData cp_data = {NULL, NULL};
 
     if (!filename ||
         !g_file_test (filename, G_FILE_TEST_EXISTS)) {
@@ -544,17 +905,61 @@ create_ui (void)
     g_signal_connect (G_OBJECT (close_item), "activate",
                       G_CALLBACK (on_close_activate), (gpointer) window);
 
+    cp_dlg = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointDialog"));
+    cp_item = GTK_ACTION (gtk_builder_get_object (builder, "CodePoint"));
+    g_signal_connect (G_OBJECT (cp_item), "activate",
+                      G_CALLBACK (on_item_dialog_activate),
+                      (gpointer) cp_dlg);
+
+    digit_hbox = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointDigitHBox"));
+    char_label = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointCharLabel"));
+    cp_data.signal_window = window;
+    cp_data.digit_hbox = digit_hbox;
+    cp_data.char_label = char_label;
+    encoding_hbox = GTK_WIDGET (gtk_builder_get_object (builder, "EncodingHBox"));
+    list = gtk_container_get_children (GTK_CONTAINER (encoding_hbox));
+    while (list) {
+        if (GTK_IS_RADIO_BUTTON (list->data)) {
+            g_signal_connect (G_OBJECT (list->data), "clicked",
+                                        G_CALLBACK (on_button_encoding_clicked),
+                                        (gpointer) &cp_data);
+        }
+        list = list->next;
+    }
+
+    base_hbox = GTK_WIDGET (gtk_builder_get_object (builder, "BaseHBox"));
+    list = gtk_container_get_children (GTK_CONTAINER (base_hbox));
+    while (list) {
+        if (GTK_IS_RADIO_BUTTON (list->data)) {
+            g_signal_connect (G_OBJECT (list->data), "clicked",
+                                        G_CALLBACK (on_button_base_clicked),
+                                        (gpointer) &cp_data);
+        }
+        list = list->next;
+    }
+
+    send_button = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointSendButton"));
+    close_button = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointCloseButton"));
+    g_signal_connect (G_OBJECT (send_button), "clicked",
+                      G_CALLBACK (on_button_send_clicked), (gpointer) &cp_data);
+    g_signal_connect (G_OBJECT (close_button), "clicked",
+                      G_CALLBACK (on_button_ok_clicked), (gpointer) cp_dlg);
+
+    set_code_point_base (&cp_data, 16);
+
     about_dlg = GTK_WIDGET (gtk_builder_get_object (builder, "AboutDialog"));
     set_about (about_dlg);
     about_item = GTK_ACTION (gtk_builder_get_object (builder, "About"));
     g_signal_connect (G_OBJECT (about_item), "activate",
-                      G_CALLBACK (on_about_activate), (gpointer) about_dlg);
+                      G_CALLBACK (on_item_dialog_activate),
+                      (gpointer) about_dlg);
 
     contents_dlg = GTK_WIDGET (gtk_builder_get_object (builder, "ContentsDialog"));
     contents_item = GTK_ACTION (gtk_builder_get_object (builder, "Contents"));
     contents_ok = GTK_WIDGET (gtk_builder_get_object (builder, "ContentsOKButton"));
     g_signal_connect (G_OBJECT (contents_item), "activate",
-                      G_CALLBACK (on_contents_activate), (gpointer) contents_dlg);
+                      G_CALLBACK (on_item_dialog_activate),
+                      (gpointer) contents_dlg);
     g_signal_connect (G_OBJECT (contents_ok), "clicked",
                       G_CALLBACK (on_button_ok_clicked), (gpointer) contents_dlg);
 
@@ -859,6 +1264,12 @@ input_pad_gtk_window_new (GtkWindowType type, unsigned int child)
     return _input_pad_gtk_window_new_with_gtype (type, child, FALSE);
 }
 
+const char*
+input_pad_get_version (void)
+{
+    return VERSION;
+}
+
 void
 input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
 {
@@ -876,12 +1287,20 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
         g_warning ("Currently GTK type only is supported. Ignoring...");
     }
 
+    g_set_application_name (_("Input Pad"));
     context = g_option_context_new (N_("Input Pad"));
     g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
     g_option_context_add_main_entries (context, entries, GETTEXT_PACKAGE);
     g_option_context_add_group (context, gtk_get_option_group (TRUE));
     g_option_context_parse (context, argc, argv, &error);
     g_option_context_free (context);
+
+    if (ask_version) {
+        g_print ("%s %s version %s\n", g_get_prgname (),
+                                       g_get_application_name (),
+                                       input_pad_get_version ());
+        exit (0);
+    }
 
     gtk_init (argc, argv);
 }

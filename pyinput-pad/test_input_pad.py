@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from input_pad import InputPadWindow
+from input_pad import InputPadWindow, get_version
 import gtk
 
 def button_pressed_cb(window, str, type, keysym, keycode, state, data):
@@ -11,6 +11,7 @@ def button_pressed_cb(window, str, type, keysym, keycode, state, data):
     print "state =", state
     print "data =", data
 
+print "input-pad version", get_version()
 window = InputPadWindow()
 window.new()
 window.show()
