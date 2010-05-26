@@ -51,6 +51,8 @@ libinput_pad_la_SOURCES = \
 	button-gtk.h                                            \
 	combobox-gtk.c                                          \
 	combobox-gtk.h                                          \
+	geometry-gdk.c                                          \
+	geometry-gdk.h                                          \
 	i18n.h                                                  \
 	input-pad-private.h                                     \
 	keysym-str2val.h					\
@@ -62,12 +64,14 @@ libinput_pad_la_CFLAGS = \
 	$(GTK2_CFLAGS)                                          \
 	$(LIBXML2_CFLAGS)                                       \
 	$(X11_CFLAGS)                                           \
+	$(XKB_CFLAGS)                                           \
 	$(NULL)
 
 libinput_pad_la_LIBADD = \
 	$(GTK2_LIBS)                                            \
 	$(LIBXML2_LIBS)                                         \
 	$(X11_LIBS)                                             \
+	$(XKB_LIBS)                                             \
 	$(NULL)
 
 libinput_pad_la_LDFLAGS = \

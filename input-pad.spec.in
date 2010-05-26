@@ -25,6 +25,7 @@ BuildRequires:  glib2-devel     >= %glib2_version
 BuildRequires:  gtk2-devel
 BuildRequires:  libX11-devel
 BuildRequires:  libtool
+BuildRequires:  libxkbfile-devel
 BuildRequires:  libxml2-devel   >= %libxml2_version
 BuildRequires:  ibus-devel
 BuildRequires:  intltool
@@ -40,6 +41,7 @@ BuildRequires:  swig
 Requires:   glib2     >= %glib2_version
 Requires:   gtk2
 Requires:   libX11
+Requires:   libxkbfile
 Requires:   libxml2   >= %libxml2_version
 
 %description

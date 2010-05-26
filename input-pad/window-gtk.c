@@ -32,6 +32,7 @@
 #include "i18n.h"
 #include "button-gtk.h"
 #include "combobox-gtk.h"
+#include "geometry-gdk.h"
 #include "input-pad.h"
 #include "input-pad-group.h"
 #include "input-pad-window-gtk.h"
@@ -60,6 +61,7 @@ struct _InputPadGtkWindowPrivate {
     InputPadGroup              *group;
     guint                       show_all : 1;
     GModule                    *module_gdk_xtest;
+    InputPadXKBKeyList         *xkb_key_list;
 };
 
 struct _CodePointData {
@@ -91,6 +93,7 @@ static void set_code_point_base (CodePointData *cp_data, int n_encoding);
 static InputPadGroup *get_nth_pad_group (InputPadGroup *group, int nth);
 static InputPadTable *get_nth_pad_table (InputPadTable *table, int nth);
 static void create_char_table (GtkWidget *vbox, InputPadTable *table_data);
+static void create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window);
 static void input_pad_gtk_window_real_destroy (GtkObject *object);
 static void input_pad_gtk_window_buildable_interface_init (GtkBuildableIface *iface);
 
@@ -137,7 +140,7 @@ on_button_encoding_clicked (GtkButton *button, gpointer data)
     }
     g_return_if_fail (name != NULL);
     g_return_if_fail (g_str_has_prefix (name, "Encoding"));
-    g_print ("test %s %d\n", name ? name : "(null)", active);
+    g_debug ("test %s %d\n", name ? name : "(null)", active);
 }
 
 static void
@@ -374,6 +377,23 @@ on_combobox_changed (GtkComboBox *combobox, gpointer data)
 
     code = digit_hbox_get_code_point (cp_data->digit_hbox);
     char_label_set_code_point (cp_data->char_label, code);
+}
+
+static void
+on_window_realize (GtkWidget *window, gpointer data)
+{
+    GtkWidget *keyboard_vbox;
+    InputPadGtkWindow *input_pad;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+    g_return_if_fail (GTK_IS_WIDGET (data));
+
+    input_pad = INPUT_PAD_GTK_WINDOW (window);
+    keyboard_vbox = GTK_WIDGET (data);
+
+    input_pad->priv->xkb_key_list = 
+        input_pad_xkb_parse_keyboard_layouts (input_pad);
+    create_keyboard_layout_ui_real (keyboard_vbox, input_pad);
 }
 
 static InputPadGroup *
@@ -764,6 +784,107 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
 }
 
 static void
+create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
+{
+    InputPadXKBKeyList         *xkb_key_list = window->priv->xkb_key_list;
+    InputPadXKBKeyList         *list;
+    InputPadXKBKeyRow          *key_row;
+#define N_COL_IDS 3
+    const int col_ids[N_COL_IDS] = {0, 6, 10};
+    int i, j, col, max_col, total_col, row, max_row, pad;
+    GtkWidget *table;
+    GtkWidget *button;
+    char *keysym_name;
+    char *display_name;
+
+    g_return_if_fail (xkb_key_list != NULL);
+
+    total_col = max_col = max_row = row = 0;
+    list = xkb_key_list;
+    for (i = 0; list; i++) {
+        for (j = 0; j < N_COL_IDS ; j++) {
+            if (col_ids[j] == i) {
+                total_col += max_col;
+                if (row > max_row) {
+                    max_row = row;
+                }
+                max_col = 0;
+                row = 0;
+                break;
+            }
+        }
+        col = 0;
+        key_row = list->row;
+        while (key_row) {
+            col++;
+            key_row = key_row->next;
+        }
+        if (col > max_col) {
+            max_col = col;
+        }
+        row++;
+        list = list->next;
+    }
+    total_col += max_col;
+    if (row > max_row) {
+        max_row = row;
+    }
+    table = gtk_table_new (max_row, total_col + N_COL_IDS - 1, TRUE);
+    gtk_box_pack_start (GTK_BOX (vbox), table, TRUE, TRUE, 0);
+    gtk_widget_show (table);
+
+    list = xkb_key_list;
+    row = 0;
+    col = max_col = row = pad = 0;
+    for (i = 0; list; i++) {
+        for (j = 0; j < N_COL_IDS ; j++) {
+            if (col_ids[j] == i) {
+                row = 0;
+                pad += max_col;
+                if (pad != 0) {
+                    pad++;
+                }
+                max_col = 0;
+                break;
+            }
+        }
+        col = 0;
+        key_row = list->row;
+        while (key_row) {
+            keysym_name = XKeysymToString (key_row->keysym[0][0]);
+            if (g_str_has_prefix (keysym_name, "KP_")) {
+                keysym_name += 3;
+            }
+            if (strlen (keysym_name) > 3) {
+                display_name = g_strndup (keysym_name, 3);
+            } else {
+                display_name = g_strdup (keysym_name);
+            }
+            button = input_pad_gtk_button_new_with_label (display_name);
+            g_free (display_name);
+            input_pad_gtk_button_set_keysym (INPUT_PAD_GTK_BUTTON (button),
+                                             key_row->keysym[0][0]);
+            input_pad_gtk_button_set_table_type (INPUT_PAD_GTK_BUTTON (button),
+                                                 INPUT_PAD_TABLE_TYPE_KEYSYMS);
+            gtk_table_attach_defaults (GTK_TABLE (table), button,
+                                       col + pad , col + pad + 1, row, row + 1);
+            gtk_widget_show (button);
+            g_signal_connect (G_OBJECT (button), "pressed",
+                              G_CALLBACK (on_button_pressed),
+                              window);
+            col++;
+            key_row = key_row->next;
+        }
+        if (col > max_col) {
+            max_col = col;
+        }
+        row++;
+        list = list->next;
+    }
+#undef N_COL_IDS
+}
+
+static void
 set_about (GtkWidget *widget)
 {
     GtkAboutDialog *about_dlg = GTK_ABOUT_DIALOG (widget);
@@ -844,18 +965,24 @@ load_notebook_data (GtkWidget *main_notebook,
     }
 }
 
-static GtkWidget *
-create_ui (void)
+static void
+create_about_dialog_ui (GtkBuilder *builder, GtkWidget *window)
 {
-    const gchar *filename = INPUT_PAD_UI_FILE;
-    GError *error = NULL;
-    GtkWidget *window = NULL;
-    GtkWidget *contents_dlg;
-    GtkWidget *contents_ok;
-    GtkWidget *cp_dlg;
     GtkWidget *about_dlg;
-    GtkWidget *main_notebook;
-    GtkWidget *sub_notebook;
+    GtkAction *about_item;
+
+    about_dlg = GTK_WIDGET (gtk_builder_get_object (builder, "AboutDialog"));
+    set_about (about_dlg);
+    about_item = GTK_ACTION (gtk_builder_get_object (builder, "About"));
+    g_signal_connect (G_OBJECT (about_item), "activate",
+                      G_CALLBACK (on_item_dialog_activate),
+                      (gpointer) about_dlg);
+}
+
+static void
+create_code_point_dialog_ui (GtkBuilder *builder, GtkWidget *window)
+{
+    GtkWidget *cp_dlg;
     GtkWidget *digit_hbox;
     GtkWidget *char_label;
     GtkWidget *encoding_hbox;
@@ -863,47 +990,8 @@ create_ui (void)
     GtkWidget *send_button;
     GtkWidget *close_button;
     GList *list;
-    GtkAction *close_item;
-    GtkAction *contents_item;
     GtkAction *cp_item;
-    GtkAction *about_item;
-    GtkBuilder *builder = gtk_builder_new ();
-    int i, n;
-    InputPadGroup *group;
     static CodePointData cp_data = {NULL, NULL};
-
-    if (!filename ||
-        !g_file_test (filename, G_FILE_TEST_EXISTS)) {
-        g_error ("File Not Found: %s\n", filename ? filename : "(null)");
-        return NULL;
-    }
-
-    gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
-    gtk_builder_add_from_file (builder, filename, &error);
-    if (error) {
-        g_error ("ERROR: %s\n",
-                 error ? error->message ? error->message : "" : "");
-        g_error_free (error);
-        return NULL;
-    }
-
-    window = GTK_WIDGET (gtk_builder_get_object (builder, "TopWindow"));
-    gtk_window_set_icon_from_file (GTK_WINDOW (window),
-                                   DATAROOTDIR "/pixmaps/input-pad.png",
-                                   &error);
-    error = NULL;
-    gtk_window_set_default_icon_from_file (DATAROOTDIR "/pixmaps/input-pad.png",
-                                           &error);
-    g_signal_connect (G_OBJECT (window), "delete_event",
-                      G_CALLBACK (on_window_close), NULL);
-    g_signal_connect (G_OBJECT (window), "destroy",
-                      G_CALLBACK (on_window_close), NULL);
-
-    group = INPUT_PAD_GTK_WINDOW (window)->priv->group;
-
-    close_item = GTK_ACTION (gtk_builder_get_object (builder, "Close"));
-    g_signal_connect (G_OBJECT (close_item), "activate",
-                      G_CALLBACK (on_close_activate), (gpointer) window);
 
     cp_dlg = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointDialog"));
     cp_item = GTK_ACTION (gtk_builder_get_object (builder, "CodePoint"));
@@ -946,13 +1034,14 @@ create_ui (void)
                       G_CALLBACK (on_button_ok_clicked), (gpointer) cp_dlg);
 
     set_code_point_base (&cp_data, 16);
+}
 
-    about_dlg = GTK_WIDGET (gtk_builder_get_object (builder, "AboutDialog"));
-    set_about (about_dlg);
-    about_item = GTK_ACTION (gtk_builder_get_object (builder, "About"));
-    g_signal_connect (G_OBJECT (about_item), "activate",
-                      G_CALLBACK (on_item_dialog_activate),
-                      (gpointer) about_dlg);
+static void
+create_contents_dialog_ui (GtkBuilder *builder, GtkWidget *window)
+{
+    GtkWidget *contents_dlg;
+    GtkAction *contents_item;
+    GtkWidget *contents_ok;
 
     contents_dlg = GTK_WIDGET (gtk_builder_get_object (builder, "ContentsDialog"));
     contents_item = GTK_ACTION (gtk_builder_get_object (builder, "Contents"));
@@ -962,6 +1051,17 @@ create_ui (void)
                       (gpointer) contents_dlg);
     g_signal_connect (G_OBJECT (contents_ok), "clicked",
                       G_CALLBACK (on_button_ok_clicked), (gpointer) contents_dlg);
+}
+
+static void
+create_char_notebook_ui (GtkBuilder *builder, GtkWidget *window)
+{
+    InputPadGroup *group;
+    GtkWidget *main_notebook;
+    GtkWidget *sub_notebook;
+    int i, n;
+
+    group = INPUT_PAD_GTK_WINDOW (window)->priv->group;
 
     main_notebook = GTK_WIDGET (gtk_builder_get_object (builder, "TopNotebook"));
     load_notebook_data (main_notebook, group, window);
@@ -978,6 +1078,64 @@ create_ui (void)
         }
         group = group->next;
     }
+}
+
+static void
+create_keyboard_layout_ui (GtkBuilder *builder, GtkWidget *window)
+{
+    GtkWidget *keyboard_vbox;
+
+    keyboard_vbox = GTK_WIDGET (gtk_builder_get_object (builder, "TopKeyboardLayoutVBox"));
+    g_signal_connect_after (G_OBJECT (window), "realize",
+                            G_CALLBACK (on_window_realize),
+                            (gpointer)keyboard_vbox);
+}
+
+static GtkWidget *
+create_ui (void)
+{
+    const gchar *filename = INPUT_PAD_UI_FILE;
+    GError *error = NULL;
+    GtkWidget *window = NULL;
+    GtkAction *close_item;
+    GtkBuilder *builder = gtk_builder_new ();
+
+    if (!filename ||
+        !g_file_test (filename, G_FILE_TEST_EXISTS)) {
+        g_error ("File Not Found: %s\n", filename ? filename : "(null)");
+        return NULL;
+    }
+
+    gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
+    gtk_builder_add_from_file (builder, filename, &error);
+    if (error) {
+        g_error ("ERROR: %s\n",
+                 error ? error->message ? error->message : "" : "");
+        g_error_free (error);
+        return NULL;
+    }
+
+    window = GTK_WIDGET (gtk_builder_get_object (builder, "TopWindow"));
+    gtk_window_set_icon_from_file (GTK_WINDOW (window),
+                                   DATAROOTDIR "/pixmaps/input-pad.png",
+                                   &error);
+    error = NULL;
+    gtk_window_set_default_icon_from_file (DATAROOTDIR "/pixmaps/input-pad.png",
+                                           &error);
+    g_signal_connect (G_OBJECT (window), "delete_event",
+                      G_CALLBACK (on_window_close), NULL);
+    g_signal_connect (G_OBJECT (window), "destroy",
+                      G_CALLBACK (on_window_close), NULL);
+
+    close_item = GTK_ACTION (gtk_builder_get_object (builder, "Close"));
+    g_signal_connect (G_OBJECT (close_item), "activate",
+                      G_CALLBACK (on_close_activate), (gpointer) window);
+
+    create_code_point_dialog_ui (builder, window);
+    create_about_dialog_ui (builder, window);
+    create_contents_dialog_ui (builder, window);
+    create_char_notebook_ui (builder, window);
+    create_keyboard_layout_ui (builder, window);
 
     gtk_builder_connect_signals (builder, NULL);
     g_object_unref (G_OBJECT (builder));
@@ -1176,9 +1334,11 @@ input_pad_gtk_window_real_destroy (GtkObject *object)
 static void
 input_pad_gtk_window_real_realize (GtkWidget *window)
 {
+    InputPadGtkWindow *input_pad = INPUT_PAD_GTK_WINDOW (window);
+
 #ifdef MODULE_XTEST_GDK_BASE
     if (use_module_xtest) {
-        input_pad_gtk_window_xtest_gdk_setup (INPUT_PAD_GTK_WINDOW (window));
+        input_pad_gtk_window_xtest_gdk_setup (input_pad);
     }
 #endif
     GTK_WIDGET_CLASS (input_pad_gtk_window_parent_class)->realize (window);

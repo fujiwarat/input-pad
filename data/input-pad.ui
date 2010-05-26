@@ -368,12 +368,23 @@ Copyright (c) 2010 Red Hat, Inc.</property>
           </packing>
         </child>
         <child>
+          <object class="GtkVBox" id="TopKeyboardLayoutVBox">
+            <property name="visible">True</property>
+            <property name="border-width">10</property>
+          </object>
+          <packing>
+            <property name="position">2</property>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+          </packing>
+        </child>
+        <child>
           <object class="GtkStatusbar" id="statusbar1">
             <property name="visible">True</property>
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="position">2</property>
+            <property name="position">3</property>
           </packing>
         </child>
       </object>

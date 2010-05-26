@@ -82,6 +82,10 @@ PKG_CHECK_MODULES(X11, [
     x11
 ])
 
+PKG_CHECK_MODULES(XKB, [
+    xkbfile
+])
+
 dnl - check file path of glib-genmarshal
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
