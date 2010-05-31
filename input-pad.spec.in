@@ -26,6 +26,7 @@ BuildRequires:  gtk2-devel
 BuildRequires:  libX11-devel
 BuildRequires:  libtool
 BuildRequires:  libxkbfile-devel
+BuildRequires:  libxklavier-devel
 BuildRequires:  libxml2-devel   >= %libxml2_version
 BuildRequires:  ibus-devel
 BuildRequires:  intltool
@@ -42,6 +43,7 @@ Requires:   glib2     >= %glib2_version
 Requires:   gtk2
 Requires:   libX11
 Requires:   libxkbfile
+Requires:   libxklavier
 Requires:   libxml2   >= %libxml2_version
 
 %description

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/ibus/issues/entry\n"
-"POT-Creation-Date: 2010-05-13 03:17+0900\n"
+"POT-Creation-Date: 2010-05-31 16:59+0900\n"
 "PO-Revision-Date: 2010-05-13 03:08+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: French\n"
@@ -24,23 +24,23 @@ msgstr ""
 msgid "Latin Extended-A"
 msgstr ""
 
-#: ../data/group01-base.xml.in.h:3 ../data/input-pad.ui.h:13
+#: ../data/group01-base.xml.in.h:3
 msgid "Latin and Number"
 msgstr ""
 
-#: ../data/group01-base.xml.in.h:4 ../data/input-pad.ui.h:14
+#: ../data/group01-base.xml.in.h:4
 msgid "Latin-1 Supplement"
 msgstr ""
 
-#: ../data/group02-ja.xml.in.h:1 ../data/input-pad.ui.h:9
+#: ../data/group02-ja.xml.in.h:1
 msgid "Hiragana"
 msgstr ""
 
-#: ../data/group02-ja.xml.in.h:2 ../data/input-pad.ui.h:11
+#: ../data/group02-ja.xml.in.h:2
 msgid "Japanese"
 msgstr ""
 
-#: ../data/group02-ja.xml.in.h:3 ../data/input-pad.ui.h:12
+#: ../data/group02-ja.xml.in.h:3
 msgid "Katakana"
 msgstr ""
 
@@ -72,9 +72,9 @@ msgstr ""
 msgid "Keyboard"
 msgstr ""
 
-#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:10
+#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:21
 #: ../engine/main.c:55 ../engine/main.c:64 ../engine/main.c:65
-#: ../input-pad/window-gtk.c:879
+#: ../input-pad/window-gtk.c:1857 ../input-pad/window-gtk.c:1858
 msgid "Input Pad"
 msgstr ""
 
@@ -92,42 +92,134 @@ msgid ""
 msgstr ""
 
 #: ../data/input-pad.ui.h:7
-msgid "Basic Latin"
+msgid ""
+"Base 10\n"
+"Dec"
 msgstr ""
 
-#: ../data/input-pad.ui.h:8
-msgid "Close the program"
+#: ../data/input-pad.ui.h:9
+msgid ""
+"Base 16\n"
+"Hex"
+msgstr ""
+
+#: ../data/input-pad.ui.h:11
+msgid ""
+"Base 2\n"
+"Bin"
+msgstr ""
+
+#: ../data/input-pad.ui.h:13
+msgid ""
+"Base 8\n"
+"Oct"
 msgstr ""
 
 #: ../data/input-pad.ui.h:15
-msgid "The input pad is a tool to send a character on button."
+msgid "Character:"
 msgstr ""
 
 #: ../data/input-pad.ui.h:16
-msgid "_Close"
+msgid "Close the program"
 msgstr ""
 
 #: ../data/input-pad.ui.h:17
-msgid "_File"
+msgid "Code Point Dialog"
 msgstr ""
 
 #: ../data/input-pad.ui.h:18
-msgid "_Help"
+msgid "Code Point:"
 msgstr ""
 
 #: ../data/input-pad.ui.h:19
-msgid "_Troubleshoot"
+msgid "Copy Buffer"
 msgstr ""
 
 #: ../data/input-pad.ui.h:20
+msgid "Current Encoding"
+msgstr ""
+
+#: ../data/input-pad.ui.h:22
+msgid "Input Pad Troubleshoot"
+msgstr ""
+
+#: ../data/input-pad.ui.h:23
+msgid "Set number case to binary"
+msgstr ""
+
+#: ../data/input-pad.ui.h:24
+msgid "Set number case to decimal"
+msgstr ""
+
+#: ../data/input-pad.ui.h:25
+msgid "Set number case to hexadecimal"
+msgstr ""
+
+#: ../data/input-pad.ui.h:26
+msgid "Set number case to octal"
+msgstr ""
+
+#: ../data/input-pad.ui.h:27
+msgid "The input pad is a tool to send a character on button."
+msgstr ""
+
+#: ../data/input-pad.ui.h:28
+msgid "Unicode"
+msgstr ""
+
+#: ../data/input-pad.ui.h:29
+msgid "You can choose encoding type"
+msgstr ""
+
+#: ../data/input-pad.ui.h:30
+msgid "_Close"
+msgstr ""
+
+#: ../data/input-pad.ui.h:31
+msgid "_Code Point"
+msgstr ""
+
+#: ../data/input-pad.ui.h:32
+msgid "_File"
+msgstr ""
+
+#: ../data/input-pad.ui.h:33
+msgid "_Help"
+msgstr ""
+
+#: ../data/input-pad.ui.h:34
+msgid "_Pad"
+msgstr ""
+
+#: ../data/input-pad.ui.h:35
+msgid "_Send"
+msgstr ""
+
+#: ../data/input-pad.ui.h:36
+msgid "_Troubleshoot"
+msgstr ""
+
+#: ../data/input-pad.ui.h:37
 msgid "translator_credits"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:64
+#: ../input-pad/window-gtk.c:94
 msgid "Use XTEST module to send key events"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:420
+#: ../input-pad/window-gtk.c:96
+msgid "Display version"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:541
+msgid "Fold layout"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:546 ../input-pad/window-gtk.c:1274
+msgid "Extend layout"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:1289
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -139,7 +231,7 @@ msgstr ""
 "publiée par la Free Software Foundation ; soit la version 2 de la licence, "
 "ou (à votre discrétion) toute version ultérieure."
 
-#: ../input-pad/window-gtk.c:426
+#: ../input-pad/window-gtk.c:1295
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -151,7 +243,7 @@ msgstr ""
 "D'ADÉQUATION A UN BESOIN PARTICULIER. Consultez la Licence Publique Générale "
 "GNU pour plus de détails."
 
-#: ../input-pad/window-gtk.c:432
+#: ../input-pad/window-gtk.c:1301
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "

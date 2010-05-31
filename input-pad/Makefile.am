@@ -55,7 +55,6 @@ libinput_pad_la_SOURCES = \
 	geometry-gdk.h                                          \
 	i18n.h                                                  \
 	input-pad-private.h                                     \
-	keysym-str2val.h					\
 	parse-pad.c                                             \
 	window-gtk.c                                            \
 	$(NULL)
@@ -65,6 +64,7 @@ libinput_pad_la_CFLAGS = \
 	$(LIBXML2_CFLAGS)                                       \
 	$(X11_CFLAGS)                                           \
 	$(XKB_CFLAGS)                                           \
+	$(LIBXKLAVIER_CFLAGS)                                   \
 	$(NULL)
 
 libinput_pad_la_LIBADD = \
@@ -72,6 +72,7 @@ libinput_pad_la_LIBADD = \
 	$(LIBXML2_LIBS)                                         \
 	$(X11_LIBS)                                             \
 	$(XKB_LIBS)                                             \
+	$(LIBXKLAVIER_LIBS)                                     \
 	$(NULL)
 
 libinput_pad_la_LDFLAGS = \
@@ -87,25 +88,6 @@ input-pad-marshal.h: input-pad-marshal.list
 input-pad-marshal.c: input-pad-marshal.list
 	@echo "#include \"input-pad-marshal.h\"" > $@ &&        \
 	$(GLIB_GENMARSHAL) $< --prefix=INPUT_PAD --body >> $@   \
-	$(NULL)
-
-noinst_PROGRAMS = \
-	keysym-str2val                                          \
-	$(NULL)
-
-keysym-str2val.h: keysym-str2val $(KEYSYMDEF_H_FILE)
-	(cd $(builddir); ./$< $(KEYSYMDEF_H_FILE))
-
-keysym_str2val_SOURCES = \
-	keysym-str2val.c                                        \
-	$(NULL)
-
-keysym_str2val_CFLAGS = \
-	$(GLIB2_CFLAGS)                                         \
-	$(NULL)
-
-keysym_str2val_LDADD = \
-	$(GLIB2_LIBS)                                           \
 	$(NULL)
 
 if HAVE_XTEST
@@ -157,7 +139,6 @@ input_pad_LDADD = \
 	$(NULL)
 
 CLEANFILES = \
-	keysym-str2val.h                                        \
 	$(BUILT_SOURCES)                                        \
 	$(NULL)
 

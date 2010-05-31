@@ -69,7 +69,7 @@
     </ui>
   </object>
   <object class="GtkDialog" id="CodePointDialog">
-    <property name="title" translatable="yes">Code Point Box</property>
+    <property name="title" translatable="yes">Code Point Dialog</property>
     <property name="transient-for">TopWindow</property>
     <property name="accept-focus">False</property>
     <child internal-child="vbox">
@@ -259,7 +259,7 @@ Bin</property>
             <child>
               <object class="GtkButton" id="CodePointCloseButton">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">gtk-close</property>
+                <property name="label">gtk-close</property>
                 <property name="use-stock">TRUE</property>
                 <property name="use-underline">TRUE</property>
               </object>
@@ -335,7 +335,7 @@ Copyright (c) 2010 Red Hat, Inc.</property>
   <object class="InputPadGtkWindow" id="TopWindow">
     <property name="type">GTK_WINDOW_TOPLEVEL</property>
     <property name="title" translatable="yes">Input Pad</property>
-    <property name="default_height">250</property>
+    <property name="default_height">400</property>
     <property name="default_width">440</property>
     <property name="accept-focus">False</property>
     <child>
@@ -368,9 +368,10 @@ Copyright (c) 2010 Red Hat, Inc.</property>
           </packing>
         </child>
         <child>
-          <object class="GtkVBox" id="TopKeyboardLayoutVBox">
+          <object class="GtkHBox" id="TopKeyboardLayoutHBox">
             <property name="visible">True</property>
             <property name="border-width">10</property>
+            <property name="spacing">10</property>
           </object>
           <packing>
             <property name="position">2</property>

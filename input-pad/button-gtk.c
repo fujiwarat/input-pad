@@ -30,7 +30,11 @@
 #define INPUT_PAD_GTK_BUTTON_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_BUTTON, InputPadGtkButtonPrivate))
 
 struct _InputPadGtkButtonPrivate {
+    guint                       keycode;
     guint                       keysym;
+    guint                     **keysyms;
+    int                         keysym_group;
+    guint                       state;
     InputPadTableType           type;
 };
 
@@ -59,9 +63,11 @@ input_pad_gtk_button_buildable_interface_init (GtkBuildableIface *iface)
 static void
 input_pad_gtk_button_class_init (InputPadGtkButtonClass *klass)
 {
+#if 0
     GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
     GtkObjectClass *object_class = (GtkObjectClass *) klass;
     GtkWidgetClass *widget_class = (GtkWidgetClass *) klass;
+#endif
 
     g_type_class_add_private (klass, sizeof (InputPadGtkButtonPrivate));
 }
@@ -70,6 +76,25 @@ GtkWidget *
 input_pad_gtk_button_new_with_label (const gchar *label)
 {
     return g_object_new (INPUT_PAD_TYPE_GTK_BUTTON, "label", label, NULL); 
+}
+
+guint
+input_pad_gtk_button_get_keycode (InputPadGtkButton *button)
+{
+    g_return_val_if_fail (button != NULL &&
+                          INPUT_PAD_IS_GTK_BUTTON (button), 0x0);
+
+    return button->priv->keycode;
+}
+
+void
+input_pad_gtk_button_set_keycode (InputPadGtkButton *button,
+                                  guint              keycode)
+{
+    g_return_if_fail (button != NULL &&
+                      INPUT_PAD_IS_GTK_BUTTON (button));
+
+    button->priv->keycode = keycode;
 }
 
 guint
@@ -89,6 +114,63 @@ input_pad_gtk_button_set_keysym (InputPadGtkButton *button,
                       INPUT_PAD_IS_GTK_BUTTON (button));
 
     button->priv->keysym = keysym;
+}
+
+guint **
+input_pad_gtk_button_get_all_keysyms (InputPadGtkButton *button)
+{
+    g_return_val_if_fail (button != NULL &&
+                          INPUT_PAD_IS_GTK_BUTTON (button), NULL);
+
+    return button->priv->keysyms;
+}
+
+void
+input_pad_gtk_button_set_all_keysyms (InputPadGtkButton         *button,
+                                      guint                    **keysyms)
+{
+    g_return_if_fail (button != NULL &&
+                      INPUT_PAD_IS_GTK_BUTTON (button));
+
+    button->priv->keysyms = keysyms;
+}
+
+int
+input_pad_gtk_button_get_keysym_group (InputPadGtkButton *button)
+{
+    g_return_val_if_fail (button != NULL &&
+                          INPUT_PAD_IS_GTK_BUTTON (button), 0);
+
+    return button->priv->keysym_group;
+}
+
+void
+input_pad_gtk_button_set_keysym_group (InputPadGtkButton         *button,
+                                       int                        group)
+{
+    g_return_if_fail (button != NULL &&
+                      INPUT_PAD_IS_GTK_BUTTON (button));
+
+    button->priv->keysym_group = group;
+}
+
+guint
+input_pad_gtk_button_get_state (InputPadGtkButton *button)
+{
+    g_return_val_if_fail (button != NULL &&
+                          INPUT_PAD_IS_GTK_BUTTON (button), 0x0);
+
+    return button->priv->state;
+}
+
+void
+input_pad_gtk_button_set_state (InputPadGtkButton *button,
+                                guint              state)
+{
+    g_return_if_fail (button != NULL &&
+                      INPUT_PAD_IS_GTK_BUTTON (button));
+
+    button->priv->state = state;
 }
 
 InputPadTableType

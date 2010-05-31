@@ -23,6 +23,7 @@
 #endif
 
 #include <gtk/gtk.h>
+#include <gdk/gdkkeys.h>
 #include <gdk/gdkx.h>
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
@@ -38,16 +39,18 @@
 #include "input-pad-window-gtk.h"
 #include "input-pad-private.h"
 #include "input-pad-marshal.h"
-#include "keysym-str2val.h"
 
+#define N_KEYBOARD_LAYOUT_PART 3
 #define INPUT_PAD_UI_FILE INPUT_PAD_UI_GTK_DIR "/input-pad.ui"
 
 #define INPUT_PAD_GTK_WINDOW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_WINDOW, InputPadGtkWindowPrivate))
 
 typedef struct _CodePointData CodePointData;
+typedef struct _KeyboardLayoutPart KeyboardLayoutPart;
 
 enum {
     BUTTON_PRESSED,
+    KBD_CHANGED,
     LAST_SIGNAL
 };
 
@@ -62,12 +65,20 @@ struct _InputPadGtkWindowPrivate {
     guint                       show_all : 1;
     GModule                    *module_gdk_xtest;
     InputPadXKBKeyList         *xkb_key_list;
+    guint                       keyboard_state;
 };
 
 struct _CodePointData {
     GtkWidget                  *signal_window;
     GtkWidget                  *digit_hbox;
     GtkWidget                  *char_label;
+};
+
+struct _KeyboardLayoutPart {
+    int                         key_row_id;
+    int                         row;
+    int                         col;
+    GtkWidget                  *table;
 };
 
 static guint                    signals[LAST_SIGNAL] = { 0 };
@@ -82,17 +93,19 @@ static GOptionEntry entries[] = {
   { "enable-module-xtest", 'x', 0, G_OPTION_ARG_NONE, &use_module_xtest,
     N_("Use XTEST module to send key events"), NULL},
   { "version", 'v', 0, G_OPTION_ARG_NONE, &ask_version,
-    N_("Ask version"), NULL},
+    N_("Display version"), NULL},
 #endif
   { NULL }
 };
 
+static void xor_modifiers (InputPadGtkWindow *window, guint modifiers);
 static guint digit_hbox_get_code_point (GtkWidget *digit_hbox);
 static void char_label_set_code_point (GtkWidget *char_label, guint code);
 static void set_code_point_base (CodePointData *cp_data, int n_encoding);
 static InputPadGroup *get_nth_pad_group (InputPadGroup *group, int nth);
 static InputPadTable *get_nth_pad_table (InputPadTable *table, int nth);
 static void create_char_table (GtkWidget *vbox, InputPadTable *table_data);
+static char *get_keysym_display_name (guint keysym, GtkWidget *widget, gchar **tooltipp);
 static void create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window);
 static void input_pad_gtk_window_real_destroy (GtkObject *object);
 static void input_pad_gtk_window_buildable_interface_init (GtkBuildableIface *iface);
@@ -113,6 +126,38 @@ on_window_close (InputPadGtkWindow *window, gpointer data)
     } else {
         gtk_main_quit ();
     }
+}
+
+static void
+on_window_keyboard_changed (InputPadGtkWindow *window,
+                            gint               group,
+                            gpointer           data)
+{
+    InputPadGtkButton *button;
+    guint **keysyms;
+    int i = 0;
+    gchar *tooltip, *display_name;
+
+    g_return_if_fail (window != NULL &&
+                      INPUT_PAD_IS_GTK_WINDOW (window));
+    g_return_if_fail (data != NULL &&
+                      INPUT_PAD_IS_GTK_BUTTON (data));
+
+    button = INPUT_PAD_GTK_BUTTON (data);
+    keysyms = input_pad_gtk_button_get_all_keysyms (button);
+    g_return_if_fail (keysyms != NULL);
+    while (keysyms[i]) i++;
+    if (group >= i) {
+        return;
+    }
+
+    input_pad_gtk_button_set_keysym_group (button, group);
+    input_pad_gtk_button_set_keysym (button, keysyms[group][0]);
+    display_name = get_keysym_display_name (keysyms[group][0],
+                                            GTK_WIDGET (window), &tooltip);
+    gtk_button_set_label (GTK_BUTTON (button), display_name);
+    gtk_widget_set_tooltip_text (GTK_WIDGET (button), tooltip);
+    g_free (display_name);
 }
 
 static void
@@ -165,6 +210,70 @@ on_button_base_clicked (GtkButton *button, gpointer data)
     base = (int) g_ascii_strtoll (name + strlen ("Base"), NULL, 10);
 
     set_code_point_base (cp_data, base);
+}
+
+static void
+on_button_shift_clicked (GtkButton *button, gpointer data)
+{
+    InputPadGtkButton *gen_button;
+    guint current_keysym;
+    guint new_keysym = 0;
+    int i, group;
+    guint **keysyms;
+    gchar *tooltip;
+    gchar *display_name;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_BUTTON (data));
+    gen_button = INPUT_PAD_GTK_BUTTON (data);
+    current_keysym = input_pad_gtk_button_get_keysym (gen_button);
+    group = input_pad_gtk_button_get_keysym_group (gen_button);
+    keysyms = input_pad_gtk_button_get_all_keysyms (gen_button);
+    if (keysyms == NULL || keysyms[group] == NULL) {
+        return;
+    }
+    if (current_keysym == 0 ||
+        current_keysym == XK_Shift_L || current_keysym == XK_Shift_R) {
+        return;
+    }
+    for (i = 0; keysyms[group][i] && (i < 20); i++) {
+        if (keysyms[group][i] == current_keysym) {
+            break;
+        }
+    }
+    if (i == 0 && keysyms[group][i] && keysyms[group][i + 1]) {
+        new_keysym = keysyms[group][i + 1];
+    } else {
+        new_keysym = keysyms[group][0];
+    }
+    if (new_keysym) {
+        display_name = get_keysym_display_name (new_keysym,
+                                                GTK_WIDGET (button),
+                                                &tooltip);
+        input_pad_gtk_button_set_keysym (gen_button, new_keysym);
+        gtk_button_set_label (GTK_BUTTON (gen_button), display_name);
+        g_free (display_name);
+        gtk_widget_set_tooltip_text (GTK_WIDGET (gen_button), tooltip);
+    }
+}
+
+static void
+on_button_ctrl_clicked (GtkButton *button, gpointer data)
+{
+    InputPadGtkWindow *window;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (data));
+    window = INPUT_PAD_GTK_WINDOW (data);
+    xor_modifiers (window, ControlMask);
+}
+
+static void
+on_button_alt_clicked (GtkButton *button, gpointer data)
+{
+    InputPadGtkWindow *window;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (data));
+    window = INPUT_PAD_GTK_WINDOW (data);
+    xor_modifiers (window, Mod1Mask);
 }
 
 static void
@@ -222,6 +331,19 @@ on_sub_switch_page (GtkNotebook        *notebook,
     create_char_table (vbox, table);
 }
 
+static void
+xor_modifiers (InputPadGtkWindow *window, guint modifiers)
+{
+    guint state = window->priv->keyboard_state;
+
+    if (state & modifiers) {
+        state ^= modifiers;
+    } else {
+        state |= modifiers;
+    }
+    window->priv->keyboard_state = state;
+}
+
 /*
  * % xterm -xrm "XTerm*allowSendEvents: true"
  */
@@ -271,7 +393,8 @@ send_key_event (GdkWindow      *gdkwindow,
     return TRUE;
 }
 
-/* TODO: use Xklavior */
+#if 0
+/* deprecated */
 static guint
 get_state (const char *str, guint keysym)
 {
@@ -309,6 +432,7 @@ get_state (const char *str, guint keysym)
     }
     return state;
 }
+#endif
 
 static void
 on_button_send_clicked (GtkButton *button, gpointer data)
@@ -326,6 +450,9 @@ on_button_send_clicked (GtkButton *button, gpointer data)
     g_return_if_fail (GTK_IS_WIDGET (cp_data->signal_window));
 
     str = gtk_label_get_label (GTK_LABEL (cp_data->char_label));
+    /* Decided input-pad always sends char but not keysym.
+     * Now keyboard layout can be used instead. */
+#if 0
     code = digit_hbox_get_code_point (cp_data->digit_hbox);
     state = get_state (str, code);
     if (code < 0x7f) {
@@ -334,6 +461,11 @@ on_button_send_clicked (GtkButton *button, gpointer data)
         type = INPUT_PAD_TABLE_TYPE_CHARS;
         code = 0;
     }
+#else
+    type = INPUT_PAD_TABLE_TYPE_CHARS;
+    code = 0;
+    state = 0;
+#endif
 
     g_signal_emit (cp_data->signal_window, signals[BUTTON_PRESSED], 0,
                    str, type, code, 0, state, &retval);
@@ -343,9 +475,13 @@ static void
 on_button_pressed (GtkButton *button, gpointer data)
 {
     InputPadGtkWindow *window;
+    InputPadGtkButton *ibutton;
     InputPadTableType  type;
     const char *str = gtk_button_get_label (button);
+    guint keycode;
     guint keysym;
+    guint **keysyms;
+    guint group;
     guint state = 0;
     gboolean retval = FALSE;
 
@@ -354,12 +490,62 @@ on_button_pressed (GtkButton *button, gpointer data)
                       INPUT_PAD_IS_GTK_WINDOW (data));
 
     window = INPUT_PAD_GTK_WINDOW (data);
-    type = input_pad_gtk_button_get_table_type (INPUT_PAD_GTK_BUTTON (button));
-    keysym = input_pad_gtk_button_get_keysym (INPUT_PAD_GTK_BUTTON (button));
-    state = get_state (str, keysym);
+    ibutton = INPUT_PAD_GTK_BUTTON (button);
+    type = input_pad_gtk_button_get_table_type (ibutton);
+    keycode  = input_pad_gtk_button_get_keycode (ibutton);
+    keysym = input_pad_gtk_button_get_keysym (ibutton);
+    keysyms = input_pad_gtk_button_get_all_keysyms (ibutton);
+    group = input_pad_gtk_button_get_keysym_group (ibutton);
+    state = window->priv->keyboard_state;
+    if (keysyms && (keysym != keysyms[group][0])) {
+        state |= ShiftMask;
+    }
+    state = input_pad_xkb_build_core_state (state, group);
 
     g_signal_emit (window, signals[BUTTON_PRESSED], 0,
-                   str, type, keysym, 0, state, &retval);
+                   str, type, keysym, keycode, state, &retval);
+
+    if (state & ShiftMask) {
+        state ^= ShiftMask;
+    }
+    if ((state & ControlMask) && 
+        (keysym != XK_Control_L) && (keysym != XK_Control_R)) {
+        state ^= ControlMask;
+    }
+    if ((state & Mod1Mask) && 
+        (keysym != XK_Alt_L) && (keysym != XK_Alt_R)) {
+        state ^= Mod1Mask;
+    }
+    window->priv->keyboard_state = state;
+}
+
+static void
+on_button_layout_arrow_pressed (GtkButton *button, gpointer data)
+{
+    KeyboardLayoutPart *table_data = (KeyboardLayoutPart *) data;
+    int i;
+    const gchar *prev_label;
+    gboolean extend = FALSE;
+
+    prev_label = gtk_button_get_label (button);
+    if (!g_strcmp0 (prev_label, "->")) {
+        extend = TRUE;
+    } else {
+        extend = FALSE;
+    }
+    for (i = 1; i < N_KEYBOARD_LAYOUT_PART; i++) {
+        if (extend) {
+            gtk_widget_show (table_data[i].table);
+            gtk_button_set_label (button, "<-");
+            gtk_widget_set_tooltip_text (GTK_WIDGET (button),
+                                         _("Fold layout"));
+        } else {
+            gtk_widget_hide (table_data[i].table);
+            gtk_button_set_label (button, "->");
+            gtk_widget_set_tooltip_text (GTK_WIDGET (button),
+                                         _("Extend layout"));
+        }
+    }
 }
 
 static void
@@ -382,18 +568,21 @@ on_combobox_changed (GtkComboBox *combobox, gpointer data)
 static void
 on_window_realize (GtkWidget *window, gpointer data)
 {
-    GtkWidget *keyboard_vbox;
+    GtkWidget *keyboard_hbox;
     InputPadGtkWindow *input_pad;
 
     g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
     g_return_if_fail (GTK_IS_WIDGET (data));
 
     input_pad = INPUT_PAD_GTK_WINDOW (window);
-    keyboard_vbox = GTK_WIDGET (data);
+    keyboard_hbox = GTK_WIDGET (data);
 
     input_pad->priv->xkb_key_list = 
         input_pad_xkb_parse_keyboard_layouts (input_pad);
-    create_keyboard_layout_ui_real (keyboard_vbox, input_pad);
+    if (input_pad->priv->xkb_key_list) {
+        create_keyboard_layout_ui_real (keyboard_hbox, input_pad);
+        input_pad_xkb_signal_emit (input_pad, signals[KBD_CHANGED]);
+    }
 }
 
 static InputPadGroup *
@@ -609,6 +798,7 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
         g_warning ("Base %d is not supported", n_encoding);
         return;
     }
+    g_free (formatted);
 
     list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
     created_num = g_list_length (list);
@@ -667,6 +857,7 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
     char_label_set_code_point (char_label, code);
 }
 
+#if 0
 static guint
 keysym_get_value_from_string (const gchar *str)
 {
@@ -684,6 +875,45 @@ keysym_get_value_from_string (const gchar *str)
     }
     return retval;
 }
+#endif
+
+#if 0
+guint **
+xkb_key_list_get_all_keysyms_from_keysym (InputPadXKBKeyList *xkb_key_list,
+                                          guint               keysym)
+{
+    InputPadXKBKeyList *list = xkb_key_list;
+    InputPadXKBKeyRow  *key_row;
+    int i, j;
+    gboolean found = FALSE;
+
+    g_return_val_if_fail (xkb_key_list != NULL, NULL);
+
+    for (i = 0; i < 20; i++) {
+        while (list) {
+            key_row = list->row;
+            while (key_row) {
+                if (!key_row->keysym[i]) {
+                    goto out_all_keysyms_check;
+                }
+                for (j = 0; key_row->keysym[i][j]; j++) {
+                    if (keysym == key_row->keysym[i][j]) {
+                        found = TRUE;
+                        goto out_all_keysyms_check;
+                    }
+                }
+                key_row = key_row->next;
+            }
+            list = list->next;
+        }
+    }
+out_all_keysyms_check:
+    if (found) {
+        return key_row->keysym;
+    }
+    return NULL;
+}
+#endif
 
 static void
 create_char_table (GtkWidget *vbox, InputPadTable *table_data)
@@ -698,6 +928,10 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
     const int TABLE_COLUMN = table_data->column;
     int i, num, raw, col, len, code;
     guint keysym;
+#if 0
+    guint **keysyms;
+    InputPadXKBKeyList *xkb_key_list = NULL;
+#endif
 
     if (table_data->priv->inited) {
         return;
@@ -736,6 +970,13 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
         raw++;
     }
 
+#if 0
+    if (INPUT_PAD_IS_GTK_WINDOW (table_data->priv->signal_window)) {
+        xkb_key_list =
+            INPUT_PAD_GTK_WINDOW (table_data->priv->signal_window)->priv->xkb_key_list;
+    }
+#endif
+
     table = gtk_table_new (raw, col, TRUE);
     gtk_table_set_row_spacings (GTK_TABLE (table), 0);
     gtk_table_set_col_spacings (GTK_TABLE (table), 0);
@@ -755,13 +996,29 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
                 code = (int) g_ascii_strtoll (str, NULL, 16);
                 buff[g_unichar_to_utf8 ((gunichar) code, buff)] = '\0';
                 button = input_pad_gtk_button_new_with_label (buff);
+                /* Decided input-pad always sends char but not keysym.
+                 * Now keyboard layout can be used instead. */
+#if 0
                 if (code <= 0x7f) {
                     input_pad_gtk_button_set_keysym (INPUT_PAD_GTK_BUTTON (button),
                                                      code);
+                    keysyms = NULL;
+                    if (xkb_key_list) {
+                        keysyms = xkb_key_list_get_all_keysyms_from_keysym (xkb_key_list,
+                                                                           code);
+                    }
+                    if (keysyms) {
+                        input_pad_gtk_button_set_all_keysyms (INPUT_PAD_GTK_BUTTON (button),
+                                                              keysyms);
+                    }
                 }
+#endif
             } else if (table_data->type == INPUT_PAD_TABLE_TYPE_KEYSYMS) {
                 button = input_pad_gtk_button_new_with_label (str);
-                keysym = keysym_get_value_from_string (str);
+                keysym = XStringToKeysym (str);
+                if (keysym == NoSymbol) {
+                    g_warning ("keysym str %s does not have the value.", str);
+                }
                 input_pad_gtk_button_set_keysym (INPUT_PAD_GTK_BUTTON (button),
                                                  keysym);
             }
@@ -783,18 +1040,84 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
     table_data->priv->inited = 1;
 }
 
+gchar *
+get_keysym_display_name (guint keysym, GtkWidget *widget, gchar **tooltipp)
+{
+    char *tooltip;
+    char *keysym_name;
+    char *display_name;
+    char buff[7];
+    gunichar ch;
+
+    if ((tooltip = XKeysymToString (keysym)) == NULL) {
+        keysym_name = tooltip = "";
+    } else if (g_str_has_prefix (tooltip, "KP_")) {
+        keysym_name = tooltip + 3;
+    } else {
+        keysym_name = tooltip;
+    }
+    // or KeySymToUcs4 (keysym);
+    if ((ch = gdk_keyval_to_unicode (keysym)) != 0 &&
+        g_unichar_validate (ch)) {
+        buff[g_unichar_to_utf8 (ch, buff)] = '\0';
+        display_name = g_strdup (buff);
+    } else if (g_str_has_prefix (keysym_name, "XF86_Switch_VT_")) {
+        display_name = g_strdup_printf ("V%s",
+                                        keysym_name + strlen ("XF86_Switch_VT_"));
+    } else if (!g_strncasecmp (keysym_name, "Control_", strlen ("Control_"))) {
+        display_name = g_strdup ("Ctl");
+    } else if (!g_strcmp0 (keysym_name, "Zenkaku_Hankaku") ||
+               !g_strcmp0 (keysym_name, "Henkan_Mode")) {
+        display_name = g_strdup ("\xe5\x8d\x8a");
+    } else if (!g_strcmp0 (keysym_name, "Return") ||
+               !g_strcmp0 (keysym_name, "Enter")) {
+        display_name = g_strdup ("\xe2\x86\xb5");
+    } else if (!g_strcmp0 (keysym_name, "BackSpace")) {
+        display_name = g_strdup ("BS");
+    } else if (!g_strcmp0 (keysym_name, "Left")) {
+        display_name = g_strdup ("\xe2\x86\x90");
+    } else if (!g_strcmp0 (keysym_name, "Up")) {
+        display_name = g_strdup ("\xe2\x86\x91");
+    } else if (!g_strcmp0 (keysym_name, "Right")) {
+        display_name = g_strdup ("\xe2\x86\x92");
+    } else if (!g_strcmp0 (keysym_name, "Down")) {
+        display_name = g_strdup ("\xe2\x86\x93");
+    } else if (!g_strcmp0 (keysym_name, "Prior")) {
+        display_name = g_strdup ("PU");
+    } else if (!g_strcmp0 (keysym_name, "Next")) {
+        display_name = g_strdup ("PD");
+    } else if (!g_strcmp0 (keysym_name, "Begin")) {
+        display_name = g_strdup ("\xc2\xb7");
+    } else if (strlen (keysym_name) > 3) {
+        display_name = g_strndup (keysym_name, 3);
+    } else {
+        display_name = g_strdup (keysym_name);
+    }
+    if (tooltipp) {
+        *tooltipp = tooltip;
+    }
+    return display_name;
+}
+
 static void
-create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
+create_keyboard_layout_ui_real (GtkWidget *hbox, InputPadGtkWindow *window)
 {
     InputPadXKBKeyList         *xkb_key_list = window->priv->xkb_key_list;
     InputPadXKBKeyList         *list;
     InputPadXKBKeyRow          *key_row;
-#define N_COL_IDS 3
-    const int col_ids[N_COL_IDS] = {0, 6, 10};
-    int i, j, col, max_col, total_col, row, max_row, pad;
+    static KeyboardLayoutPart table_data[N_KEYBOARD_LAYOUT_PART] = {
+        {0, 0, 0, NULL},
+        {6, 0, 0, NULL},
+        {10, 0, 0, NULL},
+    };
+    int i, j, n, col, max_col, total_col, row, max_row;
     GtkWidget *table;
     GtkWidget *button;
-    char *keysym_name;
+    GtkWidget *button_shift_l = NULL;
+    GtkWidget *button_shift_r = NULL;
+    GtkWidget *button_num_lock = NULL;
+    GList *children;
+    char *tooltip;
     char *display_name;
 
     g_return_if_fail (xkb_key_list != NULL);
@@ -802,8 +1125,12 @@ create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
     total_col = max_col = max_row = row = 0;
     list = xkb_key_list;
     for (i = 0; list; i++) {
-        for (j = 0; j < N_COL_IDS ; j++) {
-            if (col_ids[j] == i) {
+        for (j = 0; j < N_KEYBOARD_LAYOUT_PART; j++) {
+            if (table_data[j].key_row_id == i) {
+                if (j > 0) {
+                    table_data[j - 1].row = row;
+                    table_data[j - 1].col = max_col;
+                }
                 total_col += max_col;
                 if (row > max_row) {
                     max_row = row;
@@ -825,53 +1152,82 @@ create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
         row++;
         list = list->next;
     }
+    table_data[N_KEYBOARD_LAYOUT_PART - 1].row = row;
+    table_data[N_KEYBOARD_LAYOUT_PART - 1].col = max_col;
     total_col += max_col;
     if (row > max_row) {
         max_row = row;
     }
-    table = gtk_table_new (max_row, total_col + N_COL_IDS - 1, TRUE);
-    gtk_box_pack_start (GTK_BOX (vbox), table, TRUE, TRUE, 0);
-    gtk_widget_show (table);
+    for (i = 0; i < N_KEYBOARD_LAYOUT_PART; i++) {
+        if (i == 0) {
+            /* for arrow label */
+            table = gtk_table_new (max_row, table_data[i].col + 1, TRUE);
+            gtk_widget_show (table);
+        } else {
+            table = gtk_table_new (max_row, table_data[i].col, TRUE);
+        }
+        gtk_box_pack_start (GTK_BOX (hbox), table, TRUE, TRUE, 0);
+        table_data[i].table = table;
+    }
 
     list = xkb_key_list;
     row = 0;
-    col = max_col = row = pad = 0;
+    col = max_col = row = 0;
+    n = 0;
     for (i = 0; list; i++) {
-        for (j = 0; j < N_COL_IDS ; j++) {
-            if (col_ids[j] == i) {
+        for (j = 0; j < N_KEYBOARD_LAYOUT_PART; j++) {
+            if (table_data[j].key_row_id == i) {
                 row = 0;
-                pad += max_col;
-                if (pad != 0) {
-                    pad++;
-                }
                 max_col = 0;
+                if (j > 0) {
+                    n++;
+                }
                 break;
             }
         }
         col = 0;
         key_row = list->row;
         while (key_row) {
-            keysym_name = XKeysymToString (key_row->keysym[0][0]);
-            if (g_str_has_prefix (keysym_name, "KP_")) {
-                keysym_name += 3;
-            }
-            if (strlen (keysym_name) > 3) {
-                display_name = g_strndup (keysym_name, 3);
-            } else {
-                display_name = g_strdup (keysym_name);
-            }
+            display_name = get_keysym_display_name (key_row->keysym[0][0],
+                                                    GTK_WIDGET (window),
+                                                    &tooltip);
             button = input_pad_gtk_button_new_with_label (display_name);
+            gtk_widget_set_tooltip_text (button, tooltip);
             g_free (display_name);
+            input_pad_gtk_button_set_keycode (INPUT_PAD_GTK_BUTTON (button),
+                                              (guint) key_row->keycode);
             input_pad_gtk_button_set_keysym (INPUT_PAD_GTK_BUTTON (button),
                                              key_row->keysym[0][0]);
+            input_pad_gtk_button_set_all_keysyms (INPUT_PAD_GTK_BUTTON (button),
+                                                  key_row->keysym);
             input_pad_gtk_button_set_table_type (INPUT_PAD_GTK_BUTTON (button),
                                                  INPUT_PAD_TABLE_TYPE_KEYSYMS);
-            gtk_table_attach_defaults (GTK_TABLE (table), button,
-                                       col + pad , col + pad + 1, row, row + 1);
+            gtk_table_attach_defaults (GTK_TABLE (table_data[n].table), button,
+                                       col, col + 1, row, row + 1);
             gtk_widget_show (button);
             g_signal_connect (G_OBJECT (button), "pressed",
                               G_CALLBACK (on_button_pressed),
-                              window);
+                              (gpointer) window);
+            g_signal_connect (G_OBJECT (window), "keyboard-changed",
+                              G_CALLBACK (on_window_keyboard_changed),
+                              (gpointer) button);
+            if (key_row->keysym[0][0] == XK_Shift_L) {
+                button_shift_l = button;
+            } else if (key_row->keysym[0][0] == XK_Shift_R) {
+                button_shift_r = button;
+            } else if (key_row->keysym[0][0] == XK_Control_L ||
+                       key_row->keysym[0][0] == XK_Control_R) {
+                g_signal_connect (G_OBJECT (button), "clicked",
+                                  G_CALLBACK (on_button_ctrl_clicked),
+                                  (gpointer) window);
+            } else if (key_row->keysym[0][0] == XK_Alt_L ||
+                       key_row->keysym[0][0] == XK_Alt_R) {
+                g_signal_connect (G_OBJECT (button), "clicked",
+                                  G_CALLBACK (on_button_alt_clicked),
+                                  (gpointer) window);
+            } else if (key_row->keysym[0][0] == XK_Num_Lock) {
+                button_num_lock = button;
+            }
             col++;
             key_row = key_row->next;
         }
@@ -881,7 +1237,48 @@ create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
         row++;
         list = list->next;
     }
-#undef N_COL_IDS
+
+    children = gtk_container_get_children (GTK_CONTAINER (table_data[0].table));
+    while (children) {
+        if (!GTK_IS_BUTTON (children->data)) {
+            children = children->next;
+            continue;
+        }
+        if (button_shift_l) {
+            g_signal_connect (G_OBJECT (button_shift_l), "clicked",
+                              G_CALLBACK (on_button_shift_clicked),
+                              (gpointer) children->data);
+        }
+        if (button_shift_r) {
+            g_signal_connect (G_OBJECT (button_shift_r), "clicked",
+                              G_CALLBACK (on_button_shift_clicked),
+                              (gpointer) children->data);
+        }
+        children = children->next;
+    }
+    children = gtk_container_get_children (GTK_CONTAINER (table_data[2].table));
+    while (children) {
+        if (!GTK_IS_BUTTON (children->data)) {
+            children = children->next;
+            continue;
+        }
+        if (button_num_lock) {
+            g_signal_connect (G_OBJECT (button_num_lock), "clicked",
+                              G_CALLBACK (on_button_shift_clicked),
+                              (gpointer) children->data);
+        }
+        children = children->next;
+    }
+
+    button = gtk_button_new_with_label ("->");
+    gtk_widget_set_tooltip_text (button, _("Extend layout"));
+    gtk_table_attach_defaults (GTK_TABLE (table_data[0].table), button,
+                               table_data[0].col, table_data[0].col + 1,
+                               max_row - 1, max_row);
+    gtk_widget_show (button);
+    g_signal_connect (G_OBJECT (button), "pressed",
+                      G_CALLBACK (on_button_layout_arrow_pressed),
+                      table_data);
 }
 
 static void
@@ -1083,12 +1480,12 @@ create_char_notebook_ui (GtkBuilder *builder, GtkWidget *window)
 static void
 create_keyboard_layout_ui (GtkBuilder *builder, GtkWidget *window)
 {
-    GtkWidget *keyboard_vbox;
+    GtkWidget *keyboard_hbox;
 
-    keyboard_vbox = GTK_WIDGET (gtk_builder_get_object (builder, "TopKeyboardLayoutVBox"));
+    keyboard_hbox = GTK_WIDGET (gtk_builder_get_object (builder, "TopKeyboardLayoutHBox"));
     g_signal_connect_after (G_OBJECT (window), "realize",
                             G_CALLBACK (on_window_realize),
-                            (gpointer)keyboard_vbox);
+                            (gpointer)keyboard_hbox);
 }
 
 static GtkWidget *
@@ -1391,6 +1788,16 @@ input_pad_gtk_window_class_init (InputPadGtkWindowClass *klass)
                       5, G_TYPE_STRING | G_SIGNAL_TYPE_STATIC_SCOPE,
                       G_TYPE_UINT, G_TYPE_UINT,
                       G_TYPE_UINT, G_TYPE_UINT);
+
+    signals[KBD_CHANGED] =
+        g_signal_new (I_("keyboard-changed"),
+                      G_TYPE_FROM_CLASS (gobject_class),
+                      G_SIGNAL_RUN_LAST,
+                      G_STRUCT_OFFSET (InputPadGtkWindowClass, keyboard_changed),
+                      NULL, NULL,
+                      g_cclosure_marshal_VOID__INT,
+                      G_TYPE_NONE,
+                      1, G_TYPE_INT);
 }
 
 GtkWidget *

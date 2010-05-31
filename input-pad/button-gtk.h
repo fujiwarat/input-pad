@@ -56,16 +56,36 @@ struct _InputPadGtkButtonClass {
 
 GType               input_pad_gtk_button_get_type (void);
 GtkWidget *         input_pad_gtk_button_new_with_label (const gchar *label);
+guint               input_pad_gtk_button_get_keycode
+                                       (InputPadGtkButton      *button);
+void                input_pad_gtk_button_set_keycode
+                                       (InputPadGtkButton      *button,
+                                        guint                   keycode);
 guint               input_pad_gtk_button_get_keysym
-                                       (InputPadGtkButton *button);
+                                       (InputPadGtkButton      *button);
 void                input_pad_gtk_button_set_keysym
-                                       (InputPadGtkButton *button,
-                                        guint keysym);
+                                       (InputPadGtkButton      *button,
+                                        guint                   keysym);
+guint **            input_pad_gtk_button_get_all_keysyms
+                                       (InputPadGtkButton      *button);
+void                input_pad_gtk_button_set_all_keysyms
+                                       (InputPadGtkButton      *button,
+                                        guint                 **keysyms);
+int                 input_pad_gtk_button_get_keysym_group
+                                       (InputPadGtkButton      *button);
+void                input_pad_gtk_button_set_keysym_group
+                                       (InputPadGtkButton      *button,
+                                        int                     group);
+guint               input_pad_gtk_button_get_state
+                                       (InputPadGtkButton      *button);
+void                input_pad_gtk_button_set_state
+                                       (InputPadGtkButton      *button,
+                                        guint                   state);
 InputPadTableType   input_pad_gtk_button_get_table_type
-                                       (InputPadGtkButton *button);
+                                       (InputPadGtkButton      *button);
 void                input_pad_gtk_button_set_table_type
-                                       (InputPadGtkButton *button,
-                                        InputPadTableType type);
+                                       (InputPadGtkButton      *button,
+                                        InputPadTableType       type);
 
 G_END_DECLS
 

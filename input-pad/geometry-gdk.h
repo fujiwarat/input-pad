@@ -22,7 +22,10 @@
 #define __INPUT_PAD_GEOMETRY_GDK_H__
 
 #include <X11/Xproto.h>
+#include <X11/extensions/XKB.h>
 #include "input-pad-window-gtk.h"
+
+#define input_pad_xkb_build_core_state XkbBuildCoreState
 
 typedef struct _InputPadXKBKeyRow  InputPadXKBKeyRow;
 typedef struct _InputPadXKBKeyRowPrivate  InputPadXKBKeyRowPrivate;
@@ -32,7 +35,7 @@ typedef struct _InputPadXKBKeyListPrivate InputPadXKBKeyListPrivate;
 struct _InputPadXKBKeyRow {
     KeyCode                     keycode;
     char                       *name;
-    KeySym                    **keysym;
+    unsigned int              **keysym;
     InputPadXKBKeyRow          *next;
     InputPadXKBKeyRowPrivate   *priv;
 };
@@ -43,7 +46,10 @@ struct _InputPadXKBKeyList {
     InputPadXKBKeyListPrivate  *priv;
 };
 
-InputPadXKBKeyList *input_pad_xkb_parse_keyboard_layouts
+InputPadXKBKeyList     *input_pad_xkb_parse_keyboard_layouts
                                         (InputPadGtkWindow *window);
+void                    input_pad_xkb_signal_emit
+                                        (InputPadGtkWindow *window,
+                                         guint              signal_id);
 
 #endif

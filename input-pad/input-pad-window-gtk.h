@@ -53,6 +53,9 @@ struct _InputPadGtkWindowClass {
                                         guint                   keycode,
                                         guint                   state);
 
+    void     (* keyboard_changed)      (InputPadGtkWindow      *window,
+                                        int                     group);
+
     /* Padding for future expansion */
     void (*_window_reserved1) (void);
     void (*_window_reserved2) (void);

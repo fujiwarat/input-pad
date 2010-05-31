@@ -30,7 +30,6 @@ pad_in_files = \
 	group01-base.xml.in                                     \
 	group02-ja.xml.in                                       \
 	group02-zh.xml.in                                       \
-	group90-keyboard.xml.in                                 \
 	$(NULL)
 
 pad_DATA = $(pad_in_files:.xml.in=.xml)

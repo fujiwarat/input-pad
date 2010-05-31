@@ -22,6 +22,7 @@
 #include <config.h>
 #endif
 
+#include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 #include <glib.h>
 #include <X11/Xlib.h>
@@ -32,23 +33,63 @@
 #include <X11/extensions/XKBfile.h>
 #include <X11/extensions/XKM.h>
 #include <X11/XKBlib.h>
+
+#ifdef HAVE_LIBXKLAVIER
+#include <libxklavier/xklavier.h>
+#endif
+
 #include <string.h> /* strlen */
 
 #include "geometry-gdk.h"
 #include "input-pad-window-gtk.h"
 
+#ifdef HAVE_LIBXKLAVIER
+#if 0
+extern gboolean xkl_engine_find_toplevel_window(XklEngine * engine,
+                                                Window win,
+                                                Window * toplevel_win_out);
+extern void xkl_engine_save_toplevel_window_state(XklEngine * engine,
+                                                  Window toplevel_win,
+                                                  XklState * state);
+#endif
+#endif
+
+#ifdef HAVE_LIBXKLAVIER
+typedef struct _XklSignalData XklSignalData;
+
+static XklEngine *xklengine;
+
+struct _XklSignalData {
+    GObject   *object;
+    guint      signal_id;
+};
+#endif
+
 static gboolean
-input_pad_xkb_init ()
+input_pad_xkb_init (InputPadGtkWindow *window)
 {
+    static gboolean retval = FALSE;
+    Display *xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+
+    if (retval) {
+        return retval;
+    }
+
+    if (!XkbQueryExtension (xdisplay, NULL, NULL, NULL, NULL, NULL)) {
+        g_warning ("Could not init XKB");
+        return FALSE;
+    }
+
     XkbInitAtoms (NULL);
+    retval = TRUE;
     return TRUE;
 }
 
 static XkbFileInfo *
 input_pad_xkb_get_file_info (InputPadGtkWindow *window)
 {
-    XkbFileInfo *xkb_info;
     Display *xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    XkbFileInfo *xkb_info;
 
     xkb_info = g_new0 (XkbFileInfo, 1);
     xkb_info->type = XkmKeymapFile;
@@ -123,6 +164,41 @@ xkb_key_list_append (InputPadXKBKeyList *head,
     return head;
 }
 
+static gboolean
+xkb_key_list_insert_row_with_name (InputPadXKBKeyList *head,
+                                   InputPadXKBKeyRow  *new_row,
+                                   const gchar        *find_name)
+{
+    InputPadXKBKeyList *list = head;
+    InputPadXKBKeyRow *row, *row_backup;
+    gboolean found = FALSE;
+
+    g_return_val_if_fail (head != NULL && new_row != NULL, FALSE);
+    g_return_val_if_fail (find_name != NULL, FALSE);
+
+    while (list != NULL) {
+        row = list->row;
+        while (row) {
+            if (!g_strcmp0 (row->name, find_name)) {
+                row_backup = row->next;
+                row->next = new_row;
+                new_row->next = row_backup;
+                found = TRUE;
+
+                goto end_insert_row;
+            }
+            row = row->next;
+        }
+        list = list->next;
+    }
+
+end_insert_row:
+    if (found) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
 static void
 get_xkb_section (InputPadXKBKeyList   **xkb_key_listp,
                  XkbDescPtr             xkb,
@@ -175,13 +251,13 @@ get_xkb_section (InputPadXKBKeyList   **xkb_key_listp,
                                                    xkb_key_row);
             xkb_key_row_set_keycode (xkb_key_row, keycode, key->name.name);
             groups = XkbKeyNumGroups (xkb, keycode);
-            xkb_key_row->keysym = g_new0 (KeySym*, groups + 1);
+            xkb_key_row->keysym = g_new0 (unsigned int *, groups + 1);
             bulk = 0;
             for (k = 0; k < groups; k++) {
                 n_group = XkbKeyGroupWidth (xkb, keycode, k);
-                xkb_key_row->keysym[k] = g_new0 (KeySym, n_group + 1);
+                xkb_key_row->keysym[k] = g_new0 (unsigned int, n_group + 1);
                 for (l = 0; (l < n_group) && (bulk + l < n_keysyms); l++) {
-                    xkb_key_row->keysym[k][l] = keysyms[bulk + l];
+                    xkb_key_row->keysym[k][l] = (unsigned int) keysyms[bulk + l];
                 }
                 bulk += n_group;
                 while (groups > 1 && keysyms[bulk] == 0) {
@@ -199,6 +275,219 @@ next_key:
         }
         row++;
     }
+}
+
+static void
+add_xkb_key (InputPadXKBKeyList        *xkb_key_list,
+             XkbDescPtr                 xkb,
+             const gchar               *new_key_name,
+             const gchar               *prev_key_name)
+{
+    XkbKeyRec key_buff;
+    XkbKeyPtr key;
+    int k, l, n_keysyms, groups, n_group, bulk;
+    unsigned int keycode;
+    KeySym *keysyms;
+    InputPadXKBKeyRow *xkb_key_row;
+
+    g_return_if_fail (new_key_name != NULL && prev_key_name != NULL);
+
+    memset (&key_buff, 0, sizeof (XkbKeyRec));
+    strcpy (key_buff.name.name, new_key_name);
+    key_buff.gap = 0;
+    key_buff.shape_ndx = 0;
+    key_buff.color_ndx = 1;
+    key = &key_buff;
+
+    keycode = XkbFindKeycodeByName (xkb, key->name.name, True);
+    if (keycode == 0) {
+        g_debug ("%s is not defined in XKB.",
+                 XkbKeyNameText (key->name.name, XkbMessage));
+        return;
+    }
+
+    keysyms = XkbKeySymsPtr (xkb, keycode);
+    n_keysyms = XkbKeyNumSyms (xkb, keycode);
+    if (n_keysyms == 0) {
+        g_debug ("%s is not included in your keyboard.",
+                 XkbKeyNameText (key->name.name, XkbMessage));
+        return;
+    }
+    xkb_key_row = g_new0 (InputPadXKBKeyRow, 1);
+    xkb_key_list_insert_row_with_name (xkb_key_list,
+                                       xkb_key_row,
+                                       prev_key_name);
+    xkb_key_row_set_keycode (xkb_key_row, keycode, key->name.name);
+    groups = XkbKeyNumGroups (xkb, keycode);
+    xkb_key_row->keysym = g_new0 (unsigned int *, groups + 1);
+    bulk = 0;
+    for (k = 0; k < groups; k++) {
+        n_group = XkbKeyGroupWidth (xkb, keycode, k);
+        xkb_key_row->keysym[k] = g_new0 (unsigned int, n_group + 1);
+        for (l = 0; (l < n_group) && (bulk + l < n_keysyms); l++) {
+            xkb_key_row->keysym[k][l] = (unsigned int) keysyms[bulk + l];
+        }
+        bulk += n_group;
+        while (groups > 1 && keysyms[bulk] == 0) {
+            bulk++;
+        }
+    }
+}
+
+#ifdef HAVE_LIBXKLAVIER
+static XklEngine *
+input_pad_xkl_init (InputPadGtkWindow *window)
+{
+    Display *xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    XklConfigRec *xklrec;
+
+    if (xklengine) {
+        return xklengine;
+    }
+
+    xklrec = xkl_config_rec_new ();
+    xklengine = xkl_engine_get_instance (xdisplay);
+
+    if (!xkl_config_rec_get_from_server (xklrec, xklengine)) {
+        xkl_debug (150, "Could not load keyboard config from server: [%s]\n",
+                   xkl_get_last_error ());
+    }
+    return xklengine;
+}
+#endif
+
+#if 0
+static void
+update_keysym_mapping (Display *xdisplay,
+                       InputPadXKBKeyList   *xkb_key_list,
+                       int group)
+{
+    int n;
+    InputPadXKBKeyList *list = xkb_key_list;
+    InputPadXKBKeyRow *row;
+    KeySym keysyms[20];
+    int i, j, min_keycode, max_keycode;
+
+    XDisplayKeycodes (xdisplay, &min_keycode, &max_keycode);
+    for (i = min_keycode; i < max_keycode; i++) {
+        KeySym *sym = XGetKeyboardMapping (xdisplay, i, 1, &n);
+    }
+    while (list) {
+        row = list->row;
+        while (row) {
+            n = 0;
+            while (row->keysym[n]) n++;
+            if (n <= group) {
+                row = row->next;
+                continue;
+            }
+            for (n = 0; row->keysym[group][n] && (n < 20); n++) {
+                keysyms[n] = (KeySym) row->keysym[group][n];
+            }
+            XChangeKeyboardMapping (xdisplay, row->keycode, n,
+                                    keysyms, 1);
+            row = row->next;
+        }
+        list = list->next;
+    }
+}
+#endif
+
+#ifdef HAVE_LIBXKLAVIER
+static GdkFilterReturn
+on_filter_x_evt (GdkXEvent * xev, GdkEvent * event, gpointer data)
+{
+    XEvent *xevent = (XEvent *) xev;
+
+    xkl_engine_filter_events (xklengine, xevent);
+    return GDK_FILTER_CONTINUE;
+}
+
+static void
+on_state_changed (XklEngine * engine,
+                  XklEngineStateChange changeType,
+                  gint group, gboolean restore,
+                  gpointer data)
+{
+    XklState *state;
+    XklSignalData *signal_data = (XklSignalData *) data;
+#if 0
+    Window toplevel_win;
+#endif
+
+    if (changeType != GROUP_CHANGED) {
+        return;
+    }
+
+    state = xkl_engine_get_current_state (xklengine);
+    g_return_if_fail (data != NULL);
+
+#if 0
+    if (!xkl_engine_find_toplevel_window (xklengine, 
+                                          GDK_WINDOW_XWINDOW (GTK_WIDGET(signal_data->object)->window),
+                                          &toplevel_win)) {
+        g_warning ("Could not find toplevel window");
+    }
+    xkl_engine_save_toplevel_window_state (xklengine, toplevel_win, state);
+#endif
+
+    g_signal_emit (signal_data->object, signal_data->signal_id, 0,
+                   state->group);
+}
+
+static void
+xkl_setup_events (XklEngine            *xklengine,
+                  InputPadGtkWindow    *window,
+                  guint                 signal_id)
+{
+    static XklSignalData signal_data;
+
+    signal_data.object = G_OBJECT (window);
+    signal_data.signal_id = signal_id;
+
+    g_signal_connect (xklengine, "X-state-changed",
+                      G_CALLBACK (on_state_changed),
+                      (gpointer) &signal_data);
+
+    gdk_window_add_filter (NULL, (GdkFilterFunc)
+                           on_filter_x_evt, NULL);
+    gdk_window_add_filter (gdk_get_default_root_window (), (GdkFilterFunc)
+                           on_filter_x_evt, NULL);
+    xkl_engine_start_listen (xklengine,
+                             XKLL_TRACK_KEYBOARD_STATE);
+}
+#endif
+
+guint
+xkb_get_current_group (InputPadGtkWindow *window)
+{
+    Display *xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    XkbStateRec state;
+
+    if (XkbGetState (xdisplay, XkbUseCoreKbd, &state) != Success) {
+        g_warning ("Could not get state");
+        return 0;
+    }
+
+    return state.group;
+}
+
+static void
+xkb_setup_events (InputPadGtkWindow    *window,
+                  guint                 signal_id)
+{
+    guint group = 0;
+
+    if (!input_pad_xkb_init (window)) {
+        return;
+    }
+
+    group = xkb_get_current_group (window);
+    g_signal_emit (G_OBJECT (window), signal_id, 0, group);
+
+#ifdef HAVE_LIBXKLAVIER
+    xkl_setup_events (xklengine, window, signal_id);
+#endif
 }
 
 static void
@@ -225,7 +514,7 @@ debug_print_layout (InputPadXKBKeyList *xkb_key_list)
             for (j = 0; row->keysym && row->keysym[j]; j++) {
                 for (k = 0; row->keysym[j][k]; k++) {
                     g_string_append_printf (string, "keysym%d(%s) ",
-                                            j, XKeysymToString (row->keysym[j][k]));
+                                            j, XKeysymToString ((KeySym) row->keysym[j][k]));
                 }
             }
             g_string_append_printf (string, "\n");
@@ -254,7 +543,9 @@ input_pad_xkb_parse_keyboard_layouts (InputPadGtkWindow   *window)
     g_return_val_if_fail (window != NULL &&
                           INPUT_PAD_IS_GTK_WINDOW (window), NULL);
 
-    input_pad_xkb_init ();
+    if (!input_pad_xkb_init (window)) {
+        return NULL;
+    }
     if ((xkb_info = input_pad_xkb_get_file_info (window)) == NULL) {
         return NULL;
     }
@@ -265,6 +556,22 @@ input_pad_xkb_parse_keyboard_layouts (InputPadGtkWindow   *window)
         }
     }
     XkbFreeOrderedDrawables (draw_head);
+    /* Japanese extension */
+    add_xkb_key (xkb_key_list, xkb_info->xkb, "AE13", "AE12");
+    add_xkb_key (xkb_key_list, xkb_info->xkb, "AB11", "AB10");
     debug_print_layout (xkb_key_list);
+
+#ifdef HAVE_LIBXKLAVIER
+    xklengine = input_pad_xkl_init (window);
+#endif
+
     return xkb_key_list;
+}
+
+void
+input_pad_xkb_signal_emit (InputPadGtkWindow   *window, guint signal_id)
+{
+    g_return_if_fail (window != NULL && INPUT_PAD_IS_GTK_WINDOW (window));
+
+    xkb_setup_events (window, signal_id);
 }

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/ibus/issues/entry\n"
-"POT-Creation-Date: 2010-05-12 16:33+0900\n"
+"POT-Creation-Date: 2010-05-31 16:59+0900\n"
 "PO-Revision-Date: 2010-05-10 17:54+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -24,23 +24,23 @@ msgstr "ASCII"
 msgid "Latin Extended-A"
 msgstr "ラテン文字拡張-A"
 
-#: ../data/group01-base.xml.in.h:3 ../data/input-pad.ui.in.h:13
+#: ../data/group01-base.xml.in.h:3
 msgid "Latin and Number"
 msgstr "ラテン文字と数字"
 
-#: ../data/group01-base.xml.in.h:4 ../data/input-pad.ui.in.h:14
+#: ../data/group01-base.xml.in.h:4
 msgid "Latin-1 Supplement"
 msgstr "ラテン文字-1 補足"
 
-#: ../data/group02-ja.xml.in.h:1 ../data/input-pad.ui.in.h:9
+#: ../data/group02-ja.xml.in.h:1
 msgid "Hiragana"
 msgstr "ひらがな"
 
-#: ../data/group02-ja.xml.in.h:2 ../data/input-pad.ui.in.h:11
+#: ../data/group02-ja.xml.in.h:2
 msgid "Japanese"
 msgstr "日本語"
 
-#: ../data/group02-ja.xml.in.h:3 ../data/input-pad.ui.in.h:12
+#: ../data/group02-ja.xml.in.h:3
 msgid "Katakana"
 msgstr "カタカナ"
 
@@ -72,13 +72,13 @@ msgstr "キーパッド"
 msgid "Keyboard"
 msgstr "キーボード"
 
-#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.in.h:10
+#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:21
 #: ../engine/main.c:55 ../engine/main.c:64 ../engine/main.c:65
-#: ../input-pad/window-gtk.c:887
+#: ../input-pad/window-gtk.c:1857 ../input-pad/window-gtk.c:1858
 msgid "Input Pad"
 msgstr "インプットパッド"
 
-#: ../data/input-pad.ui.in.h:2
+#: ../data/input-pad.ui.h:2
 #, no-c-format
 msgid ""
 "\n"
@@ -99,43 +99,143 @@ msgstr ""
 "例:\n"
 "% xterm -xrm \"XTerm*allowSendEvents: true\""
 
-#: ../data/input-pad.ui.in.h:7
-msgid "Basic Latin"
-msgstr "基本ラテン文字"
+#: ../data/input-pad.ui.h:7
+msgid ""
+"Base 10\n"
+"Dec"
+msgstr ""
+"10 進数\n"
+"Dec"
 
-#: ../data/input-pad.ui.in.h:8
+#: ../data/input-pad.ui.h:9
+msgid ""
+"Base 16\n"
+"Hex"
+msgstr ""
+"16 進数\n"
+"Hex"
+
+#: ../data/input-pad.ui.h:11
+msgid ""
+"Base 2\n"
+"Bin"
+msgstr ""
+"2 進数\n"
+"Bin"
+
+#: ../data/input-pad.ui.h:13
+msgid ""
+"Base 8\n"
+"Oct"
+msgstr ""
+"8 進数\n"
+"Oct"
+
+#: ../data/input-pad.ui.h:15
+msgid "Character:"
+msgstr "文字:"
+
+#: ../data/input-pad.ui.h:16
 msgid "Close the program"
 msgstr "プログラムを閉じる"
 
-#: ../data/input-pad.ui.in.h:15
+#: ../data/input-pad.ui.h:17
+msgid "Code Point Dialog"
+msgstr "コードポイントダイアログ"
+
+#: ../data/input-pad.ui.h:18
+msgid "Code Point:"
+msgstr "コードポイント:"
+
+#: ../data/input-pad.ui.h:19
+msgid "Copy Buffer"
+msgstr "バッファをコピー"
+
+#: ../data/input-pad.ui.h:20
+msgid "Current Encoding"
+msgstr "現在のエンコーディング"
+
+#: ../data/input-pad.ui.h:22
+msgid "Input Pad Troubleshoot"
+msgstr "インプットパッドトラブルシュート"
+
+#: ../data/input-pad.ui.h:23
+msgid "Set number case to binary"
+msgstr "2 進数に設定します"
+
+#: ../data/input-pad.ui.h:24
+msgid "Set number case to decimal"
+msgstr "10 進数に設定します"
+
+#: ../data/input-pad.ui.h:25
+msgid "Set number case to hexadecimal"
+msgstr "16 進数に設定します"
+
+#: ../data/input-pad.ui.h:26
+msgid "Set number case to octal"
+msgstr "8 進数に設定します"
+
+#: ../data/input-pad.ui.h:27
 msgid "The input pad is a tool to send a character on button."
 msgstr "インプットパッドはボタン上の文字を送るツールです。"
 
-#: ../data/input-pad.ui.in.h:16
+#: ../data/input-pad.ui.h:28
+msgid "Unicode"
+msgstr "Unicode"
+
+#: ../data/input-pad.ui.h:29
+msgid "You can choose encoding type"
+msgstr "エンコーディングタイプを選択可能です"
+
+#: ../data/input-pad.ui.h:30
 msgid "_Close"
 msgstr "閉じる(_C)"
 
-#: ../data/input-pad.ui.in.h:17
+#: ../data/input-pad.ui.h:31
+msgid "_Code Point"
+msgstr "コードポイント(_C)"
+
+#: ../data/input-pad.ui.h:32
 msgid "_File"
 msgstr "ファイル(_F)"
 
-#: ../data/input-pad.ui.in.h:18
+#: ../data/input-pad.ui.h:33
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ../data/input-pad.ui.in.h:19
+#: ../data/input-pad.ui.h:34
+msgid "_Pad"
+msgstr "パッド(_P)"
+
+#: ../data/input-pad.ui.h:35
+msgid "_Send"
+msgstr "送信する(_S)"
+
+#: ../data/input-pad.ui.h:36
 msgid "_Troubleshoot"
 msgstr "トラブルシュート(_T)"
 
-#: ../data/input-pad.ui.in.h:20
+#: ../data/input-pad.ui.h:37
 msgid "translator_credits"
 msgstr "translator_credits"
 
-#: ../input-pad/window-gtk.c:62
+#: ../input-pad/window-gtk.c:94
 msgid "Use XTEST module to send key events"
 msgstr "キーイベントを送るために XTEST モジュールを使用する"
 
-#: ../input-pad/window-gtk.c:434
+#: ../input-pad/window-gtk.c:96
+msgid "Display version"
+msgstr "バージョンを表示する"
+
+#: ../input-pad/window-gtk.c:541
+msgid "Fold layout"
+msgstr "レイアウトを折りたたむ"
+
+#: ../input-pad/window-gtk.c:546 ../input-pad/window-gtk.c:1274
+msgid "Extend layout"
+msgstr "レイアウトを広げる"
+
+#: ../input-pad/window-gtk.c:1289
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -146,7 +246,7 @@ msgstr ""
 "一般公衆利用許諾契約書の第二版、あるいはそれ以降の版が定める条項の下で本プロ"
 "グラムを再頒布または変更することができます。"
 
-#: ../input-pad/window-gtk.c:440
+#: ../input-pad/window-gtk.c:1295
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -157,7 +257,7 @@ msgstr ""
 "的、その適合性についての暗黙の保証を含めて、いかなる保証も行ないません。詳細"
 "については GNU  一般公衆利用許諾契約書をご覧下さい。"
 
-#: ../input-pad/window-gtk.c:446
+#: ../input-pad/window-gtk.c:1301
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
@@ -166,3 +266,4 @@ msgstr ""
 "あなたは、本プログラムと一緒に GNU 一般公衆利用許諾契約書の写しを受け取ってい"
 "るはずです。そうでない場合は、Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA まで手紙を書いて下さい。"
+

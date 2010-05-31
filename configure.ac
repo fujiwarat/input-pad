@@ -86,6 +86,15 @@ PKG_CHECK_MODULES(XKB, [
     xkbfile
 ])
 
+PKG_CHECK_MODULES(LIBXKLAVIER,
+    libxklavier,
+    have_libxklavier=yes,
+    have_libxklavier=no
+)
+if test "x$have_libxklavier" = "xyes" ; then
+    AC_DEFINE(HAVE_LIBXKLAVIER, [1], [Define if we have libxklavier])
+fi
+
 dnl - check file path of glib-genmarshal
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
@@ -136,22 +145,6 @@ AC_CHECK_LIB(Xtst, XTestFakeKeyEvent,
             [AC_MSG_NOTICE([if you want to enable X11 XTEST module, install libXtst-devel package])])
 LIBS=$backup_LIBS
 AC_SUBST(XTEST_LIBS)
-
-dnl - check file path of keysymdef.h
-AC_MSG_CHECKING([where you have keysymdef.h])
-AC_ARG_WITH(keysymdef,
-           [AC_HELP_STRING([--with-keysymdef=FILE],
-                           [file path of keysymdef.h])],
-           [KEYSYMDEF_H_FILE="$withval"],
-           [$PKG_CONFIG --exists xproto
-            if test $? -eq 0 ; then
-                f=`$PKG_CONFIG --variable includedir xproto`
-                KEYSYMDEF_H_FILE="$f/X11/keysymdef.h"
-            else
-                KEYSYMDEF_H_FILE="$includedir/X11/keysymdef.h"
-            fi])
-AC_SUBST(KEYSYMDEF_H_FILE)
-AC_MSG_RESULT($KEYSYMDEF_H_FILE)
 
 dnl - define GETTEXT_* variables
 GETTEXT_PACKAGE=input-pad
