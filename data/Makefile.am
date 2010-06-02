@@ -52,5 +52,6 @@ EXTRA_DIST = \
 	$(pad_in_files)                                         \
 	$(ui_gtk_DATA)                                          \
 	char2hexstr.py                                          \
+	group90-keyboard.xml.in                                 \
 	$(NULL)
 

@@ -5,6 +5,7 @@
 %endif
 %define sub_version             @libinput_pad_VERSION@
 %define glib2_version           2.8
+%define libxklavier_version     4.0
 %define libxml2_version         2.0
 
 Name:       @PACKAGE_NAME@
@@ -21,13 +22,13 @@ BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  coreutils
 BuildRequires:  gcc
 BuildRequires:  gettext-devel
-BuildRequires:  glib2-devel     >= %glib2_version
+BuildRequires:  glib2-devel             >= %glib2_version
 BuildRequires:  gtk2-devel
 BuildRequires:  libX11-devel
 BuildRequires:  libtool
 BuildRequires:  libxkbfile-devel
-BuildRequires:  libxklavier-devel
-BuildRequires:  libxml2-devel   >= %libxml2_version
+BuildRequires:  libxklavier-devel       >= %libxklavier_version
+BuildRequires:  libxml2-devel           >= %libxml2_version
 BuildRequires:  ibus-devel
 BuildRequires:  intltool
 BuildRequires:  pkgconfig
@@ -39,12 +40,12 @@ BuildRequires:  libXtst-devel
 BuildRequires:  python-devel
 BuildRequires:  swig
 %endif
-Requires:   glib2     >= %glib2_version
-Requires:   gtk2
-Requires:   libX11
-Requires:   libxkbfile
-Requires:   libxklavier
-Requires:   libxml2   >= %libxml2_version
+Requires:  glib2        >= %glib2_version
+Requires:  gtk2
+Requires:  libX11
+Requires:  libxkbfile
+Requires:  libxklavier  >= %libxklavier_version
+Requires:  libxml2      >= %libxml2_version
 
 %description
 Input Pad.

@@ -57,9 +57,11 @@ input_pad_gtk_combo_box_buildable_interface_init (GtkBuildableIface *iface)
 static void
 input_pad_gtk_combo_box_class_init (InputPadGtkComboBoxClass *klass)
 {
+#if 0
     GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
     GtkObjectClass *object_class = (GtkObjectClass *) klass;
     GtkWidgetClass *widget_class = (GtkWidgetClass *) klass;
+#endif
 
     g_type_class_add_private (klass, sizeof (InputPadGtkComboBoxPrivate));
 }

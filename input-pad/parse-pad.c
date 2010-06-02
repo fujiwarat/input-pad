@@ -101,7 +101,8 @@ get_int (xmlNodePtr node, int *retval, int base)
     for (current = node; current; current = current->next) {
         if (current->type == XML_TEXT_NODE) {
             if (current->content) {
-                *retval = (int) g_ascii_strtoll (current->content, NULL, base);
+                *retval = (int) g_ascii_strtoll ((const gchar *) current->content,
+                                                 NULL, base);
                 has_content = TRUE;
                 break;
             } else {
@@ -227,7 +228,7 @@ parse_group (xmlNodePtr node, InputPadGroup **pgroup)
                 if (current->children) {
                     *ptable = g_new0 (InputPadTable, 1);
                     (*ptable)->priv = g_new0 (InputPadTablePrivate, 1);
-                    (*ptable)->column = 5;
+                    (*ptable)->column = 15;
                     parse_table (current->children, ptable);
                     ptable = &((*ptable)->next);
                     has_table = TRUE;
@@ -371,7 +372,7 @@ input_pad_group_parse_all_files (void)
         return NULL;
     }
 
-    while (filename = g_dir_read_name (dir)) {
+    while ((filename = g_dir_read_name (dir)) != NULL) {
         if (!g_str_has_suffix (filename, ".xml")) {
             g_warning ("File extension is not xml: %s", filename);
             continue;

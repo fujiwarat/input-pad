@@ -21,35 +21,27 @@
 #ifndef __INPUT_PAD_GEOMETRY_GDK_H__
 #define __INPUT_PAD_GEOMETRY_GDK_H__
 
-#include <X11/Xproto.h>
-#include <X11/extensions/XKB.h>
 #include "input-pad-window-gtk.h"
+#include "geometry-xkb.h"
 
-#define input_pad_xkb_build_core_state XkbBuildCoreState
-
-typedef struct _InputPadXKBKeyRow  InputPadXKBKeyRow;
-typedef struct _InputPadXKBKeyRowPrivate  InputPadXKBKeyRowPrivate;
-typedef struct _InputPadXKBKeyList InputPadXKBKeyList;
-typedef struct _InputPadXKBKeyListPrivate InputPadXKBKeyListPrivate;
-
-struct _InputPadXKBKeyRow {
-    KeyCode                     keycode;
-    char                       *name;
-    unsigned int              **keysym;
-    InputPadXKBKeyRow          *next;
-    InputPadXKBKeyRowPrivate   *priv;
-};
-
-struct _InputPadXKBKeyList {
-    InputPadXKBKeyRow          *row;
-    InputPadXKBKeyList         *next;
-    InputPadXKBKeyListPrivate  *priv;
-};
-
-InputPadXKBKeyList     *input_pad_xkb_parse_keyboard_layouts
-                                        (InputPadGtkWindow *window);
-void                    input_pad_xkb_signal_emit
-                                        (InputPadGtkWindow *window,
-                                         guint              signal_id);
-
+void                    input_pad_gdk_xkb_destroy_keyboard_layouts
+                                        (InputPadGtkWindow     *window,
+                                         InputPadXKBKeyList    *xkb_key_list);
+InputPadXKBKeyList *    input_pad_gdk_xkb_parse_keyboard_layouts
+                                        (InputPadGtkWindow     *window);
+void                    input_pad_gdk_xkb_signal_emit
+                                        (InputPadGtkWindow     *window,
+                                         guint                  signal_id);
+char **                 input_pad_gdk_xkb_get_group_layouts
+                                        (InputPadGtkWindow     *window,
+                                         InputPadXKBKeyList    *xkb_key_list);
+InputPadXKBConfigReg *  input_pad_gdk_xkb_parse_config_registry
+                                        (InputPadGtkWindow     *window,
+                                         InputPadXKBKeyList    *xkb_key_list);
+Bool                    input_pad_gdk_xkb_set_layout
+                                        (InputPadGtkWindow     *window,
+                                         InputPadXKBKeyList    *xkb_key_list,
+                                         const char            *layouts,
+                                         const char            *variants,
+                                         const char            *options);
 #endif

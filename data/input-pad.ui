@@ -368,7 +368,7 @@ Copyright (c) 2010 Red Hat, Inc.</property>
           </packing>
         </child>
         <child>
-          <object class="GtkHBox" id="TopKeyboardLayoutHBox">
+          <object class="GtkVBox" id="TopKeyboardLayoutVBox">
             <property name="visible">True</property>
             <property name="border-width">10</property>
             <property name="spacing">10</property>

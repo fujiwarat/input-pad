@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/ibus/issues/entry\n"
-"POT-Creation-Date: 2010-05-31 16:59+0900\n"
+"POT-Creation-Date: 2010-06-02 11:43+0900\n"
 "PO-Revision-Date: 2010-05-13 03:08+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: French\n"
@@ -74,7 +74,7 @@ msgstr ""
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:21
 #: ../engine/main.c:55 ../engine/main.c:64 ../engine/main.c:65
-#: ../input-pad/window-gtk.c:1857 ../input-pad/window-gtk.c:1858
+#: ../input-pad/window-gtk.c:2129 ../input-pad/window-gtk.c:2130
 msgid "Input Pad"
 msgstr ""
 
@@ -203,23 +203,27 @@ msgstr ""
 msgid "translator_credits"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:94
+#: ../input-pad/window-gtk.c:105
 msgid "Use XTEST module to send key events"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:96
+#: ../input-pad/window-gtk.c:107
 msgid "Display version"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:541
+#: ../input-pad/window-gtk.c:651
 msgid "Fold layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:546 ../input-pad/window-gtk.c:1274
+#: ../input-pad/window-gtk.c:656 ../input-pad/window-gtk.c:1437
 msgid "Extend layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1289
+#: ../input-pad/window-gtk.c:1527
+msgid "_Layout:"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:1561
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -231,7 +235,7 @@ msgstr ""
 "publiée par la Free Software Foundation ; soit la version 2 de la licence, "
 "ou (à votre discrétion) toute version ultérieure."
 
-#: ../input-pad/window-gtk.c:1295
+#: ../input-pad/window-gtk.c:1567
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -243,7 +247,7 @@ msgstr ""
 "D'ADÉQUATION A UN BESOIN PARTICULIER. Consultez la Licence Publique Générale "
 "GNU pour plus de détails."
 
-#: ../input-pad/window-gtk.c:1301
+#: ../input-pad/window-gtk.c:1573
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "

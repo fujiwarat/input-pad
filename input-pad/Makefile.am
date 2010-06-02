@@ -53,6 +53,7 @@ libinput_pad_la_SOURCES = \
 	combobox-gtk.h                                          \
 	geometry-gdk.c                                          \
 	geometry-gdk.h                                          \
+	geometry-xkb.h                                          \
 	i18n.h                                                  \
 	input-pad-private.h                                     \
 	parse-pad.c                                             \

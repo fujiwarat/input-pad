@@ -87,7 +87,7 @@ PKG_CHECK_MODULES(XKB, [
 ])
 
 PKG_CHECK_MODULES(LIBXKLAVIER,
-    libxklavier,
+    libxklavier >= 4.0,
     have_libxklavier=yes,
     have_libxklavier=no
 )

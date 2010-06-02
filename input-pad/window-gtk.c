@@ -60,12 +60,23 @@ enum {
     DIGIT_N_COLS,
 };
 
+enum {
+    LAYOUT_LAYOUT_NAME_COL = 0,
+    LAYOUT_LAYOUT_DESC_COL,
+    LAYOUT_VARIANT_NAME_COL,
+    LAYOUT_VARIANT_DESC_COL,
+    LAYOUT_VISIBLE_COL,
+    LAYOUT_N_COLS,
+};
+
 struct _InputPadGtkWindowPrivate {
     InputPadGroup              *group;
     guint                       show_all : 1;
     GModule                    *module_gdk_xtest;
     InputPadXKBKeyList         *xkb_key_list;
     guint                       keyboard_state;
+    InputPadXKBConfigReg       *xkb_config_reg;
+    gchar                     **group_layouts;
 };
 
 struct _CodePointData {
@@ -107,6 +118,8 @@ static InputPadTable *get_nth_pad_table (InputPadTable *table, int nth);
 static void create_char_table (GtkWidget *vbox, InputPadTable *table_data);
 static char *get_keysym_display_name (guint keysym, GtkWidget *widget, gchar **tooltipp);
 static void create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window);
+static void destroy_prev_keyboard_layout (GtkWidget *vbox, InputPadGtkWindow *window);
+static void create_keyboard_layout_list_ui_real (GtkWidget *vbox, InputPadGtkWindow *window);
 static void input_pad_gtk_window_real_destroy (GtkObject *object);
 static void input_pad_gtk_window_buildable_interface_init (GtkBuildableIface *iface);
 
@@ -158,6 +171,54 @@ on_window_keyboard_changed (InputPadGtkWindow *window,
     gtk_button_set_label (GTK_BUTTON (button), display_name);
     gtk_widget_set_tooltip_text (GTK_WIDGET (button), tooltip);
     g_free (display_name);
+}
+
+static void
+on_window_keyboard_changed_combobox (InputPadGtkWindow *window,
+                                     gint               group,
+                                     gpointer           data)
+{
+    GtkTreeModel *model;
+    GtkTreeIter   active_iter;
+    GtkTreeIter   iter;
+    gchar **group_layouts;
+    gchar *active_layout = NULL;
+    gchar *layout;
+    gchar *desc;
+
+    g_return_if_fail (window != NULL &&
+                      INPUT_PAD_IS_GTK_WINDOW (window));
+
+    if ((group_layouts = window->priv->group_layouts) == NULL) {
+        return;
+    }
+
+    g_return_if_fail (data != NULL &&
+                      GTK_IS_COMBO_BOX (data));
+
+    model = gtk_combo_box_get_model (GTK_COMBO_BOX (data));
+    if (gtk_combo_box_get_active_iter (GTK_COMBO_BOX (data), &active_iter)) {
+        gtk_tree_model_get (model, &active_iter,
+                            LAYOUT_LAYOUT_NAME_COL, &active_layout, -1);
+    }
+    if (!gtk_tree_model_get_iter_first (model, &iter)) {
+        g_warning ("Could not get the first iter in layout combo box");
+        g_free (active_layout);
+        return;
+    }
+    do {
+        gtk_tree_model_get (model, &iter,
+                            LAYOUT_LAYOUT_NAME_COL, &layout,
+                            LAYOUT_LAYOUT_DESC_COL, &desc, -1);
+        if (!g_strcmp0 (group_layouts[group], layout) &&
+            (g_strcmp0 (active_layout, layout) != 0)) {
+            gtk_combo_box_set_active_iter (GTK_COMBO_BOX (data), &iter);
+            g_free (layout);
+            break;
+        }
+        g_free (layout);
+    } while (gtk_tree_model_iter_next (model, &iter));
+    g_free (active_layout);
 }
 
 static void
@@ -291,6 +352,55 @@ on_close_activate (GtkAction *quit, gpointer data)
                       INPUT_PAD_IS_GTK_WINDOW (data));
 
     on_window_close (INPUT_PAD_GTK_WINDOW (data), NULL);
+}
+
+static void
+on_combobox_layout_changed (GtkComboBox *combobox,
+                            gpointer     data)
+{
+    InputPadGtkWindow *window;
+    GtkTreeIter iter;
+    GtkTreeModel *model;
+    gchar *layout;
+    GtkWidget *keyboard_vbox;
+
+    g_return_if_fail (data != NULL &&
+                      INPUT_PAD_IS_GTK_WINDOW (data));
+
+    window = INPUT_PAD_GTK_WINDOW (data);
+    if (!gtk_combo_box_get_active_iter (combobox, &iter)) {
+        return;
+    }
+    model = gtk_combo_box_get_model (combobox);
+    gtk_tree_model_get (model, &iter,
+                        LAYOUT_LAYOUT_NAME_COL, &layout, -1);
+    input_pad_gdk_xkb_set_layout (window, window->priv->xkb_key_list,
+                                  layout, NULL, NULL);
+    g_free (layout);
+
+    if (window->priv->xkb_key_list) {
+        input_pad_gdk_xkb_destroy_keyboard_layouts (window,
+                                                    window->priv->xkb_key_list);
+        window->priv->xkb_key_list = NULL;
+    }
+    window->priv->xkb_key_list =
+        input_pad_gdk_xkb_parse_keyboard_layouts (window);
+    if (window->priv->xkb_key_list == NULL) {
+        return;
+    }
+
+    keyboard_vbox = gtk_widget_get_parent (gtk_widget_get_parent (GTK_WIDGET (combobox)));
+    destroy_prev_keyboard_layout (keyboard_vbox, window);
+    create_keyboard_layout_ui_real (keyboard_vbox, window);
+
+    if (window->priv->group_layouts) {
+        g_strfreev (window->priv->group_layouts);
+        window->priv->group_layouts = NULL;
+    }
+    window->priv->group_layouts =
+        input_pad_gdk_xkb_get_group_layouts (window,
+                                             window->priv->xkb_key_list);
+    input_pad_gdk_xkb_signal_emit (window, signals[KBD_CHANGED]);
 }
 
 static void
@@ -568,21 +678,35 @@ on_combobox_changed (GtkComboBox *combobox, gpointer data)
 static void
 on_window_realize (GtkWidget *window, gpointer data)
 {
-    GtkWidget *keyboard_hbox;
+    GtkWidget *keyboard_vbox;
     InputPadGtkWindow *input_pad;
 
     g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
     g_return_if_fail (GTK_IS_WIDGET (data));
 
     input_pad = INPUT_PAD_GTK_WINDOW (window);
-    keyboard_hbox = GTK_WIDGET (data);
+    keyboard_vbox = GTK_WIDGET (data);
 
     input_pad->priv->xkb_key_list = 
-        input_pad_xkb_parse_keyboard_layouts (input_pad);
-    if (input_pad->priv->xkb_key_list) {
-        create_keyboard_layout_ui_real (keyboard_hbox, input_pad);
-        input_pad_xkb_signal_emit (input_pad, signals[KBD_CHANGED]);
+        input_pad_gdk_xkb_parse_keyboard_layouts (input_pad);
+    if (input_pad->priv->xkb_key_list == NULL) {
+        return;
     }
+
+    create_keyboard_layout_ui_real (keyboard_vbox, input_pad);
+    input_pad->priv->group_layouts =
+        input_pad_gdk_xkb_get_group_layouts (input_pad,
+                                             input_pad->priv->xkb_key_list);
+    input_pad->priv->xkb_config_reg =
+        input_pad_gdk_xkb_parse_config_registry (input_pad,
+                                                 input_pad->priv->xkb_key_list);
+    if (input_pad->priv->xkb_config_reg == NULL) {
+        input_pad_gdk_xkb_signal_emit (input_pad, signals[KBD_CHANGED]);
+        return;
+    }
+
+    create_keyboard_layout_list_ui_real (keyboard_vbox, input_pad);
+    input_pad_gdk_xkb_signal_emit (input_pad, signals[KBD_CHANGED]);
 }
 
 static InputPadGroup *
@@ -633,11 +757,12 @@ digit_hbox_get_code_point (GtkWidget *digit_hbox)
         model = gtk_combo_box_get_model (combobox);
         if (!gtk_combo_box_get_active_iter (combobox, &iter)) {
             g_warning ("Could not find active iter");
-            line = "0";
+            line = g_strdup ("0");
         } else {
             gtk_tree_model_get (model, &iter, DIGIT_TEXT_COL, &line, -1);
         }
         g_string_append (string, line);
+        g_free (line);
         list = list->next;
     }
     line = g_string_free (string, FALSE);
@@ -938,10 +1063,11 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
     }
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_widget_set_size_request (scrolled, 300, 200);
     gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
                                     GTK_POLICY_NEVER,
                                     GTK_POLICY_ALWAYS);
-    gtk_box_pack_start (GTK_BOX (vbox), scrolled, TRUE, TRUE, 0);
+    gtk_box_pack_start (GTK_BOX (vbox), scrolled, FALSE, FALSE, 0);
     gtk_widget_show (scrolled);
 
     viewport = gtk_viewport_new (NULL, NULL);
@@ -1100,7 +1226,38 @@ get_keysym_display_name (guint keysym, GtkWidget *widget, gchar **tooltipp)
 }
 
 static void
-create_keyboard_layout_ui_real (GtkWidget *hbox, InputPadGtkWindow *window)
+destroy_prev_keyboard_layout (GtkWidget *vbox, InputPadGtkWindow *window)
+{
+    GList *children, *buttons;
+    GtkWidget *hbox;
+    GtkWidget *table;
+    GtkWidget *button;
+
+    children = gtk_container_get_children (GTK_CONTAINER (vbox));
+    hbox = GTK_WIDGET (children->data);
+    children = gtk_container_get_children (GTK_CONTAINER (hbox));
+    while (children) {
+        table = GTK_WIDGET (children->data);
+        buttons = gtk_container_get_children (GTK_CONTAINER (table));
+        while (buttons) {
+            button = GTK_WIDGET (buttons->data);
+            buttons = buttons->next;
+            g_signal_handlers_disconnect_by_func (G_OBJECT (window),
+                                                  G_CALLBACK (on_window_keyboard_changed),
+                                                  (gpointer) button);
+            gtk_widget_hide (button);
+            gtk_widget_destroy (button);
+        }
+        children = children->next;
+        gtk_widget_hide (table);
+        gtk_widget_destroy (table);
+    }
+    gtk_widget_hide (hbox);
+    gtk_widget_destroy (hbox);
+}
+
+static void
+create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
 {
     InputPadXKBKeyList         *xkb_key_list = window->priv->xkb_key_list;
     InputPadXKBKeyList         *list;
@@ -1111,6 +1268,7 @@ create_keyboard_layout_ui_real (GtkWidget *hbox, InputPadGtkWindow *window)
         {10, 0, 0, NULL},
     };
     int i, j, n, col, max_col, total_col, row, max_row;
+    GtkWidget *hbox;
     GtkWidget *table;
     GtkWidget *button;
     GtkWidget *button_shift_l = NULL;
@@ -1121,6 +1279,11 @@ create_keyboard_layout_ui_real (GtkWidget *hbox, InputPadGtkWindow *window)
     char *display_name;
 
     g_return_if_fail (xkb_key_list != NULL);
+
+    hbox = gtk_hbox_new (FALSE, 5);
+    gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+    gtk_box_reorder_child (GTK_BOX (vbox), hbox, 0);
+    gtk_widget_show (hbox);
 
     total_col = max_col = max_row = row = 0;
     list = xkb_key_list;
@@ -1166,7 +1329,7 @@ create_keyboard_layout_ui_real (GtkWidget *hbox, InputPadGtkWindow *window)
         } else {
             table = gtk_table_new (max_row, table_data[i].col, TRUE);
         }
-        gtk_box_pack_start (GTK_BOX (hbox), table, TRUE, TRUE, 0);
+        gtk_box_pack_start (GTK_BOX (hbox), table, FALSE, FALSE, 0);
         table_data[i].table = table;
     }
 
@@ -1279,6 +1442,115 @@ create_keyboard_layout_ui_real (GtkWidget *hbox, InputPadGtkWindow *window)
     g_signal_connect (G_OBJECT (button), "pressed",
                       G_CALLBACK (on_button_layout_arrow_pressed),
                       table_data);
+}
+
+static int
+sort_layout_name (GtkTreeModel *model,
+                  GtkTreeIter  *a,
+                  GtkTreeIter  *b,
+                  gpointer      data)
+{
+    gchar *layout_a = NULL;
+    gchar *layout_b = NULL;
+    const gchar *en_layout = "USA";
+    int retval;
+
+    gtk_tree_model_get (model, a,
+                        LAYOUT_LAYOUT_DESC_COL, &layout_a, -1);
+    gtk_tree_model_get (model, b,
+                        LAYOUT_LAYOUT_DESC_COL, &layout_b, -1);
+    if (layout_a && !g_strcmp0 (layout_a, en_layout)) {
+        g_free (layout_a);
+        g_free (layout_b);
+        return -1;
+    } else if (layout_b && !g_strcmp0 (layout_b, en_layout)) {
+        g_free (layout_a);
+        g_free (layout_b);
+        return 1;
+    }
+    retval = g_strcmp0 (layout_a, layout_b);
+    g_free (layout_a);
+    g_free (layout_b);
+
+    return retval;
+}
+
+static GtkTreeModel *
+layout_model_new (InputPadXKBLayoutList *xkb_layout_list)
+{
+    InputPadXKBLayoutList *layouts = xkb_layout_list;
+    GtkTreeStore *store;
+    GtkTreeIter   iter;
+
+    store = gtk_tree_store_new (LAYOUT_N_COLS, G_TYPE_STRING, G_TYPE_STRING,
+                                G_TYPE_STRING, G_TYPE_STRING, G_TYPE_BOOLEAN);
+    while (layouts) {
+        gtk_tree_store_append (store, &iter, NULL);
+        gtk_tree_store_set (store, &iter,
+                            LAYOUT_LAYOUT_NAME_COL, layouts->layout,
+                            LAYOUT_LAYOUT_DESC_COL, layouts->desc ? layouts->desc : layouts->layout,
+                            LAYOUT_VARIANT_NAME_COL, "",
+                            LAYOUT_VARIANT_DESC_COL, "",
+                            LAYOUT_VISIBLE_COL, TRUE, -1);
+        layouts = layouts->next;
+    }
+    gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (store),
+                                     LAYOUT_LAYOUT_DESC_COL,
+                                     sort_layout_name,
+                                     NULL, NULL);
+    gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (store),
+                                          LAYOUT_LAYOUT_DESC_COL,
+                                          GTK_SORT_ASCENDING);
+    return GTK_TREE_MODEL (store);
+}
+
+static void
+create_keyboard_layout_list_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
+{
+    InputPadXKBConfigReg *xkb_config_reg = window->priv->xkb_config_reg;
+    InputPadXKBLayoutList *layouts;
+    GtkWidget *hbox;
+    GtkWidget *label;
+    GtkWidget *combobox;
+    GtkTreeModel *model;
+    GtkTreeIter iter;
+    GtkCellRenderer *renderer;
+
+    g_return_if_fail (xkb_config_reg != NULL);
+    layouts = xkb_config_reg->layouts;
+    g_return_if_fail (layouts != NULL);
+
+    hbox = gtk_hbox_new (FALSE, 5);
+    gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+    gtk_widget_show (hbox);
+
+    label = gtk_label_new_with_mnemonic (_("_Layout:"));
+    gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
+    gtk_widget_show (label);
+
+    combobox = gtk_combo_box_new ();
+    gtk_box_pack_start (GTK_BOX (hbox), combobox, FALSE, FALSE, 0);
+    model = layout_model_new (layouts);
+    gtk_combo_box_set_model (GTK_COMBO_BOX (combobox), model);
+    g_object_unref (G_OBJECT (model));
+    if (gtk_tree_model_get_iter_first (model, &iter)) {
+        gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
+    }
+
+    renderer = gtk_cell_renderer_text_new ();
+    gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (combobox), renderer, FALSE);
+    gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (combobox), renderer,
+                                    "text", LAYOUT_LAYOUT_DESC_COL,
+                                    "visible", LAYOUT_VISIBLE_COL,
+                                    NULL);
+    gtk_widget_show (combobox);
+
+    g_signal_connect (G_OBJECT (window), "keyboard-changed",
+                      G_CALLBACK (on_window_keyboard_changed_combobox),
+                      (gpointer) combobox);
+    g_signal_connect (G_OBJECT (combobox), "changed",
+                      G_CALLBACK (on_combobox_layout_changed),
+                      (gpointer) window);
 }
 
 static void
@@ -1480,12 +1752,12 @@ create_char_notebook_ui (GtkBuilder *builder, GtkWidget *window)
 static void
 create_keyboard_layout_ui (GtkBuilder *builder, GtkWidget *window)
 {
-    GtkWidget *keyboard_hbox;
+    GtkWidget *keyboard_vbox;
 
-    keyboard_hbox = GTK_WIDGET (gtk_builder_get_object (builder, "TopKeyboardLayoutHBox"));
+    keyboard_vbox = GTK_WIDGET (gtk_builder_get_object (builder, "TopKeyboardLayoutVBox"));
     g_signal_connect_after (G_OBJECT (window), "realize",
                             G_CALLBACK (on_window_realize),
-                            (gpointer)keyboard_hbox);
+                            (gpointer)keyboard_vbox);
 }
 
 static GtkWidget *
