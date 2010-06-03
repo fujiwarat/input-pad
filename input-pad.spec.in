@@ -19,8 +19,6 @@ Source0:    http://input-pad.googlecode.com/files/%{name}-%{version}.tar.gz
 
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires:  coreutils
-BuildRequires:  gcc
 BuildRequires:  gettext-devel
 BuildRequires:  glib2-devel             >= %glib2_version
 BuildRequires:  gtk2-devel
@@ -31,12 +29,11 @@ BuildRequires:  libxklavier-devel       >= %libxklavier_version
 BuildRequires:  libxml2-devel           >= %libxml2_version
 BuildRequires:  intltool
 BuildRequires:  pkgconfig
-BuildRequires:  sed
 %if %have_xtest_devel
 BuildRequires:  libXtst-devel
 %endif
 %if %have_python_devel
-BuildRequires:  python-devel
+BuildRequires:  python2-devel
 BuildRequires:  swig
 %endif
 Requires:  glib2        >= %glib2_version
@@ -62,7 +59,6 @@ The input-pad-devel package contains the header files.
 Summary:    input-pad for python
 Group:      System Environment/Libraries
 Requires:   %{name} = %{version}-%{release}
-Requires:   python
 
 %description python
 The input-pad-python package contains the python wrapper files.
@@ -125,6 +121,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %if %have_xtest_devel
 %files xtest
+%defattr(-,root,root,-)
 %{_libdir}/%{name}-%sub_version/libinput-pad-xtest-gdk.so
 %endif
 
