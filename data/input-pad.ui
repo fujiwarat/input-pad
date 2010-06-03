@@ -363,7 +363,7 @@ You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad t
     <property name="copyright">Copyright (c) 2010 Takao Fujiwara
 Copyright (c) 2010 Red Hat, Inc.</property>
     <property name="comments" translatable="yes">The input pad is a tool to send a character on button.</property>
-    <property name="license">GPL</property>
+    <property name="license">LGPL</property>
     <property name="website">http://code.google.com/p/ibus</property>
     <property name="authors">Takao Fujiwara &lt;takao.fujiwara1@gmail.com&gt;</property>
     <property name="translator-credits" translatable="yes">translator_credits</property>
