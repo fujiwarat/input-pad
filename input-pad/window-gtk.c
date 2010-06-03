@@ -39,6 +39,7 @@
 #include "input-pad-window-gtk.h"
 #include "input-pad-private.h"
 #include "input-pad-marshal.h"
+#include "unicode_block.h"
 
 #define N_KEYBOARD_LAYOUT_PART 3
 #define INPUT_PAD_UI_FILE INPUT_PAD_UI_GTK_DIR "/input-pad.ui"
@@ -47,6 +48,7 @@
 
 typedef struct _CodePointData CodePointData;
 typedef struct _KeyboardLayoutPart KeyboardLayoutPart;
+typedef struct _CharTreeViewData CharTreeViewData;
 
 enum {
     BUTTON_PRESSED,
@@ -67,6 +69,16 @@ enum {
     LAYOUT_VARIANT_DESC_COL,
     LAYOUT_VISIBLE_COL,
     LAYOUT_N_COLS,
+};
+
+enum {
+    CHAR_BLOCK_LABEL_COL = 0,
+    CHAR_BLOCK_UNICODE_COL,
+    CHAR_BLOCK_UTF8_COL,
+    CHAR_BLOCK_START_COL,
+    CHAR_BLOCK_END_COL,
+    CHAR_BLOCK_VISIBLE_COL,
+    CHAR_BLOCK_N_COLS,
 };
 
 struct _InputPadGtkWindowPrivate {
@@ -90,6 +102,11 @@ struct _KeyboardLayoutPart {
     int                         row;
     int                         col;
     GtkWidget                  *table;
+};
+
+struct _CharTreeViewData {
+    GtkWidget                  *viewport;
+    GtkWidget                  *window;
 };
 
 static guint                    signals[LAST_SIGNAL] = { 0 };
@@ -120,6 +137,8 @@ static char *get_keysym_display_name (guint keysym, GtkWidget *widget, gchar **t
 static void create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window);
 static void destroy_prev_keyboard_layout (GtkWidget *vbox, InputPadGtkWindow *window);
 static void create_keyboard_layout_list_ui_real (GtkWidget *vbox, InputPadGtkWindow *window);
+static void destroy_char_view_table (GtkWidget *viewport);
+static void append_char_view_table (GtkWidget *viewport, unsigned int start, unsigned int end, GtkWidget *window);
 static void input_pad_gtk_window_real_destroy (GtkObject *object);
 static void input_pad_gtk_window_buildable_interface_init (GtkBuildableIface *iface);
 
@@ -442,6 +461,20 @@ on_sub_switch_page (GtkNotebook        *notebook,
 }
 
 static void
+on_toggle_action (GtkToggleAction *action, gpointer data)
+{
+    GtkWidget *widget;
+
+    g_return_if_fail (data != NULL && GTK_IS_WIDGET (data));
+    widget = GTK_WIDGET (data);
+    if (gtk_toggle_action_get_active (action)) {
+        gtk_widget_show (widget);
+    } else {
+        gtk_widget_hide (widget);
+    }
+}
+
+static void
 xor_modifiers (InputPadGtkWindow *window, guint modifiers)
 {
     guint state = window->priv->keyboard_state;
@@ -674,6 +707,32 @@ on_combobox_changed (GtkComboBox *combobox, gpointer data)
     code = digit_hbox_get_code_point (cp_data->digit_hbox);
     char_label_set_code_point (cp_data->char_label, code);
 }
+
+static void
+on_tree_view_select_char_block (GtkTreeSelection     *selection,
+                                gpointer              data)
+{
+    CharTreeViewData *tv_data = (CharTreeViewData*) data;
+    GtkWidget *viewport;
+    GtkWidget *window;
+    GtkTreeModel *model;
+    GtkTreeIter iter;
+    unsigned int start, end;
+
+    g_return_if_fail (data != NULL);
+
+    viewport = GTK_WIDGET (tv_data->viewport);
+    window = GTK_WIDGET (tv_data->window);
+    if (!gtk_tree_selection_get_selected (selection, &model, &iter)) {
+        return;
+    }
+    gtk_tree_model_get (model, &iter,
+                        CHAR_BLOCK_START_COL, &start,
+                        CHAR_BLOCK_END_COL, &end, -1);
+    destroy_char_view_table (viewport);
+    append_char_view_table (viewport, start, end, window);
+}
+
 
 static void
 on_window_realize (GtkWidget *window, gpointer data)
@@ -1529,6 +1588,7 @@ create_keyboard_layout_list_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
     gtk_widget_show (label);
 
     combobox = gtk_combo_box_new ();
+    gtk_label_set_mnemonic_widget (GTK_LABEL (label), combobox);
     gtk_box_pack_start (GTK_BOX (hbox), combobox, FALSE, FALSE, 0);
     model = layout_model_new (layouts);
     gtk_combo_box_set_model (GTK_COMBO_BOX (combobox), model);
@@ -1634,6 +1694,83 @@ load_notebook_data (GtkWidget *main_notebook,
     }
 }
 
+static int
+sort_char_block_start (GtkTreeModel *model,
+                       GtkTreeIter  *a,
+                       GtkTreeIter  *b,
+                       gpointer      data)
+{
+    unsigned int start_a = 0;
+    unsigned int start_b = 0;
+
+    gtk_tree_model_get (model, a,
+                        CHAR_BLOCK_START_COL, &start_a, -1);
+    gtk_tree_model_get (model, b,
+                        CHAR_BLOCK_START_COL, &start_b, -1);
+    return (start_a - start_b);
+}
+
+static GtkTreeModel *
+char_block_model_new (void)
+{
+    GtkTreeStore *store;
+    GtkTreeIter   iter;
+    int i, j;
+    unsigned int start, end;
+    gchar *range;
+    gchar *range2;
+    gchar buff[7];
+    gchar buff2[35]; /* 7 x 5 e.g. 'a' -> '0x61 ' */
+    gchar buff3[35];
+
+    store = gtk_tree_store_new (CHAR_BLOCK_N_COLS,
+                                G_TYPE_STRING, G_TYPE_STRING,
+                                G_TYPE_STRING,
+                                G_TYPE_UINT, G_TYPE_UINT,
+                                G_TYPE_BOOLEAN);
+    for (i = 0; input_pad_unicode_block_table[i].label; i++) {
+        gtk_tree_store_append (store, &iter, NULL);
+        start = input_pad_unicode_block_table[i].start;
+        end = input_pad_unicode_block_table[i].end;
+        range = g_strdup_printf ("U+%06X - U+%06X", start, end);
+
+        buff[g_unichar_to_utf8 ((gunichar) start, buff)] = '\0';
+        buff2[0] = '\0';
+        for (j = 0; buff[j] && j < 7; j++) {
+            sprintf (buff2 + j * 5, "0x%02X ", (unsigned char) buff[j]);
+        }
+        if (buff[0] == '\0') {
+            buff2[0] = '0'; buff2[0] = 'x'; buff2[1] = '0'; buff2[2] = '0';
+            buff2[3] = '\0';
+        }
+        buff[g_unichar_to_utf8 ((gunichar) end, buff)] = '\0';
+        buff3[0] = '\0';
+        for (j = 0; buff[j] && j < 7; j++) {
+            sprintf (buff3 + j * 5, "0x%02X ", (unsigned char) buff[j]);
+        }
+        range2 = g_strdup_printf ("%s - %s", buff2, buff3);
+
+        gtk_tree_store_set (store, &iter,
+                            CHAR_BLOCK_LABEL_COL,
+                            _(input_pad_unicode_block_table[i].label),
+                            CHAR_BLOCK_UNICODE_COL, range,
+                            CHAR_BLOCK_UTF8_COL, range2,
+                            CHAR_BLOCK_START_COL, start,
+                            CHAR_BLOCK_END_COL, end,
+                            CHAR_BLOCK_VISIBLE_COL, TRUE, -1);
+        g_free (range);
+        g_free (range2);
+    }
+    gtk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (store),
+                                     CHAR_BLOCK_START_COL,
+                                     sort_char_block_start,
+                                     NULL, NULL);
+    gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (store),
+                                          CHAR_BLOCK_START_COL,
+                                          GTK_SORT_ASCENDING);
+    return GTK_TREE_MODEL (store);
+}
+
 static void
 create_about_dialog_ui (GtkBuilder *builder, GtkWidget *window)
 {
@@ -1728,6 +1865,7 @@ create_char_notebook_ui (GtkBuilder *builder, GtkWidget *window)
     InputPadGroup *group;
     GtkWidget *main_notebook;
     GtkWidget *sub_notebook;
+    GtkToggleAction *show_item;
     int i, n;
 
     group = INPUT_PAD_GTK_WINDOW (window)->priv->group;
@@ -1747,17 +1885,212 @@ create_char_notebook_ui (GtkBuilder *builder, GtkWidget *window)
         }
         group = group->next;
     }
+
+    show_item = GTK_TOGGLE_ACTION (gtk_builder_get_object (builder, "ShowCustomChars"));
+    if (gtk_toggle_action_get_active (show_item)) {
+        gtk_widget_show (main_notebook);
+    } else {
+        gtk_widget_hide (main_notebook);
+    }
+    g_signal_connect (G_OBJECT (show_item), "activate",
+                      G_CALLBACK (on_toggle_action),
+                      (gpointer) main_notebook);
+}
+
+static void
+destroy_char_view_table (GtkWidget *viewport)
+{
+    GList *list, *buttons;
+    GtkWidget *table;
+    GtkWidget *button;
+
+    list = gtk_container_get_children (GTK_CONTAINER (viewport));
+    if (list == NULL) {
+        return;
+    }
+    table = list->data;
+    g_return_if_fail (GTK_IS_TABLE (table));
+    buttons = gtk_container_get_children (GTK_CONTAINER (table));
+    while (buttons) {
+        button = GTK_WIDGET (buttons->data);
+        gtk_widget_hide (button);
+        gtk_widget_destroy (button);
+        buttons = buttons->next;
+    }
+    gtk_container_remove (GTK_CONTAINER (viewport), table);
+}
+
+static void
+append_char_view_table (GtkWidget      *viewport,
+                        unsigned int    start,
+                        unsigned int    end,
+                        GtkWidget      *window)
+{
+    unsigned int num;
+    int col, row, i;
+    const int TABLE_COLUMN = 15;
+    gchar buff[7];
+    gchar buff2[35]; /* 7 x 5 e.g. 'a' -> '0x61 ' */
+    gchar *tooltip;
+    GtkWidget *table;
+    GtkWidget *button;
+
+    if ((end - start) > 1000) {
+        g_warning ("Too many chars");
+        end = start + 1000;
+    }
+    col = TABLE_COLUMN;
+    row = (end - start + 1) / col;
+    if ((end - start + 1) % col) {
+        row++;
+    }
+
+    table = gtk_table_new (row, col, TRUE);
+    gtk_container_add (GTK_CONTAINER (viewport), table);
+    gtk_widget_show (table);
+
+    for (num = start; num <= end; num++) {
+        if (num == '\t') {
+            buff[0] = ' ';
+            buff[1] = '\0';
+            sprintf (buff2, "0x%02X ", (unsigned char) num);
+        } else {
+            buff[g_unichar_to_utf8 ((gunichar) num, buff)] = '\0';
+            for (i = 0; buff[i] && i < 7; i++) {
+                sprintf (buff2 + i * 5, "0x%02X ", (unsigned char) buff[i]);
+            }
+            if (buff[0] == '\0') {
+                buff2[0] = '0'; buff2[0] = 'x'; buff2[1] = '0'; buff2[2] = '0';
+                buff2[3] = '\0';
+            }
+        }
+        button = input_pad_gtk_button_new_with_label (buff);
+        tooltip = g_strdup_printf ("U+%04X\nUTF-8 %s", num, buff2);
+        gtk_widget_set_tooltip_text (GTK_WIDGET (button), tooltip);
+        g_free (tooltip);
+        input_pad_gtk_button_set_table_type (INPUT_PAD_GTK_BUTTON (button),
+                                             INPUT_PAD_TABLE_TYPE_CHARS);
+        row = (num - start) / TABLE_COLUMN;
+        col = (num - start) % TABLE_COLUMN;
+#if 0
+        gtk_table_attach (GTK_TABLE (table), button,
+                          col, col + 1, row, row + 1,
+                          0, 0, 0, 0);
+#else
+        gtk_table_attach_defaults (GTK_TABLE (table), button,
+                                   col, col + 1, row, row + 1);
+#endif
+        gtk_widget_show (button);
+        g_signal_connect (G_OBJECT (button), "pressed",
+                          G_CALLBACK (on_button_pressed),
+                          window);
+    }
+}
+
+static void
+create_char_view_ui (GtkBuilder *builder, GtkWidget *window)
+{
+    GtkWidget *hbox;
+    GtkWidget *scrolled;
+    GtkWidget *viewport;
+    GtkWidget *tv;
+    GtkTreeModel *model;
+    GtkCellRenderer *renderer;
+    GtkTreeViewColumn *column;
+    GtkTreeSelection *selection;
+    static CharTreeViewData tv_data;
+    GtkToggleAction *show_item;
+
+    hbox = GTK_WIDGET (gtk_builder_get_object (builder, "TopCharViewVBox"));
+
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_widget_set_size_request (scrolled, 200, 200);
+    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
+                                    GTK_POLICY_AUTOMATIC,
+                                    GTK_POLICY_ALWAYS);
+    gtk_box_pack_start (GTK_BOX (hbox), scrolled, FALSE, FALSE, 0);
+    gtk_widget_show (scrolled);
+
+    viewport = gtk_viewport_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), viewport);
+    gtk_widget_show (viewport);
+
+    tv = gtk_tree_view_new ();
+    gtk_container_add (GTK_CONTAINER (viewport), tv);
+    model = char_block_model_new ();
+    gtk_tree_view_set_model (GTK_TREE_VIEW (tv), model);
+    g_object_unref (G_OBJECT (model));
+    gtk_widget_show (tv);
+
+    renderer = gtk_cell_renderer_text_new ();
+    column = gtk_tree_view_column_new_with_attributes (_("Block"), renderer,
+                                                       "text", CHAR_BLOCK_LABEL_COL,
+                                                       "visible", CHAR_BLOCK_VISIBLE_COL,
+                                                       NULL);
+    gtk_tree_view_append_column (GTK_TREE_VIEW (tv), column);
+
+    renderer = gtk_cell_renderer_text_new ();
+    column = gtk_tree_view_column_new_with_attributes ("Unicode", renderer,
+                                                       "text", CHAR_BLOCK_UNICODE_COL,
+                                                       "visible", CHAR_BLOCK_VISIBLE_COL,
+                                                       NULL);
+    gtk_tree_view_append_column (GTK_TREE_VIEW (tv), column);
+
+    renderer = gtk_cell_renderer_text_new ();
+    column = gtk_tree_view_column_new_with_attributes ("UTF-8", renderer,
+                                                       "text", CHAR_BLOCK_UTF8_COL,
+                                                       "visible", CHAR_BLOCK_VISIBLE_COL,
+                                                       NULL);
+    gtk_tree_view_append_column (GTK_TREE_VIEW (tv), column);
+
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_widget_set_size_request (scrolled, 470, 200);
+    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
+                                    GTK_POLICY_AUTOMATIC,
+                                    GTK_POLICY_ALWAYS);
+    gtk_box_pack_start (GTK_BOX (hbox), scrolled, FALSE, FALSE, 0);
+    gtk_widget_show (scrolled);
+
+    viewport = gtk_viewport_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), viewport);
+    gtk_widget_show (viewport);
+    selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tv));
+    tv_data.viewport = viewport;
+    tv_data.window = window;
+    g_signal_connect (G_OBJECT (selection), "changed",
+                      G_CALLBACK (on_tree_view_select_char_block), &tv_data);
+
+    show_item = GTK_TOGGLE_ACTION (gtk_builder_get_object (builder, "ShowAllChars"));
+    if (gtk_toggle_action_get_active (show_item)) {
+        gtk_widget_show (hbox);
+    } else {
+        gtk_widget_hide (hbox);
+    }
+    g_signal_connect (G_OBJECT (show_item), "activate",
+                      G_CALLBACK (on_toggle_action),
+                      (gpointer) hbox);
 }
 
 static void
 create_keyboard_layout_ui (GtkBuilder *builder, GtkWidget *window)
 {
     GtkWidget *keyboard_vbox;
+    GtkToggleAction *show_item;
 
     keyboard_vbox = GTK_WIDGET (gtk_builder_get_object (builder, "TopKeyboardLayoutVBox"));
     g_signal_connect_after (G_OBJECT (window), "realize",
                             G_CALLBACK (on_window_realize),
                             (gpointer)keyboard_vbox);
+
+    show_item = GTK_TOGGLE_ACTION (gtk_builder_get_object (builder, "ShowLayout"));
+    if (gtk_toggle_action_get_active (show_item)) {
+        gtk_widget_show (keyboard_vbox);
+    } else {
+        gtk_widget_hide (keyboard_vbox);
+    }
+    g_signal_connect (G_OBJECT (show_item), "activate",
+                      G_CALLBACK (on_toggle_action),
+                      (gpointer) keyboard_vbox);
 }
 
 static GtkWidget *
@@ -1804,6 +2137,7 @@ create_ui (void)
     create_about_dialog_ui (builder, window);
     create_contents_dialog_ui (builder, window);
     create_char_notebook_ui (builder, window);
+    create_char_view_ui (builder, window);
     create_keyboard_layout_ui (builder, window);
 
     gtk_builder_connect_signals (builder, NULL);

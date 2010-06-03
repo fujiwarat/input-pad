@@ -25,6 +25,8 @@
 #include <glib.h>
 #include <libxml/tree.h>
 #include <libxml/parser.h>
+#include <unistd.h> /* getuid */
+#include <pwd.h> /* getpwuid */
 
 #include "i18n.h"
 #include "input-pad-group.h"
@@ -305,6 +307,26 @@ parse_input_pad (xmlNodePtr node, InputPadGroup **pgroup)
     }
 }
 
+static gchar *
+get_user_pad_dir (void)
+{
+    gchar *home_dir = NULL;
+    gchar *config_dir;
+    struct passwd *pw;
+
+    if (g_getenv ("HOME")) {
+        home_dir = (gchar *) g_getenv ("HOME");
+    } else {
+        pw = getpwuid (getuid ());
+        home_dir = pw->pw_dir;
+    }
+    if (home_dir == NULL) {
+        home_dir = "/";
+    }
+    config_dir = g_strdup_printf ("%s/.config/input-pad/pad", home_dir);
+    return config_dir;
+}
+
 InputPadGroup *
 input_pad_group_append_from_file (InputPadGroup        *group,
                                   const gchar          *file)
@@ -353,6 +375,7 @@ input_pad_group_parse_all_files (void)
     const gchar *dirname = INPUT_PAD_PAD_SYSTEM_DIR;
     const gchar *filename;
     gchar *filepath;
+    gchar *config_dir;
     GDir *dir;
     GError *error = NULL;
     InputPadGroup *group = NULL;
@@ -381,6 +404,25 @@ input_pad_group_parse_all_files (void)
         file_list = g_slist_append (file_list, (gpointer) filepath);
     }
     g_dir_close (dir);
+
+    dir = NULL;
+    config_dir = get_user_pad_dir ();
+    if (config_dir &&
+        g_file_test (config_dir, G_FILE_TEST_IS_DIR)) {
+        dir  = g_dir_open (config_dir, 0, NULL);
+    }
+    while (dir && (filename = g_dir_read_name (dir)) != NULL) {
+        if (!g_str_has_suffix (filename, ".xml")) {
+            g_warning ("File extension is not xml: %s", filename);
+            continue;
+        }
+        filepath = g_build_filename (config_dir, filename, NULL);
+        file_list = g_slist_append (file_list, (gpointer) filepath);
+    }
+    g_free (config_dir);
+    if (dir) {
+        g_dir_close (dir);
+    }
 
     if (!file_list) {
         return NULL;

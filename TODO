@@ -1,3 +1,6 @@
-design input-pad UI
 slider button on code point dialog
-load $HOME
+printscrn
+qt
+show_pad api
+config to languagebar
+mode_switch

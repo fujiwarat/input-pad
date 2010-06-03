@@ -57,6 +57,7 @@ libinput_pad_la_SOURCES = \
 	i18n.h                                                  \
 	input-pad-private.h                                     \
 	parse-pad.c                                             \
+	unicode_block.h                                         \
 	window-gtk.c                                            \
 	$(NULL)
 
@@ -145,4 +146,5 @@ CLEANFILES = \
 
 EXTRA_DIST = \
 	input-pad-marshal.list                                  \
+	unicode_block.sh                                        \
 	$(NULL)

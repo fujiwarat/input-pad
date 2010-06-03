@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/ibus/issues/entry\n"
-"POT-Creation-Date: 2010-06-02 11:43+0900\n"
+"POT-Creation-Date: 2010-06-03 11:48+0900\n"
 "PO-Revision-Date: 2010-05-10 17:54+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Japanese\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "ASCII"
 msgstr "ASCII"
 
-#: ../data/group01-base.xml.in.h:2
+#: ../data/group01-base.xml.in.h:2 ../input-pad/unicode_block.h:38
 msgid "Latin Extended-A"
 msgstr "ラテン文字拡張-A"
 
@@ -28,11 +28,15 @@ msgstr "ラテン文字拡張-A"
 msgid "Latin and Number"
 msgstr "ラテン文字と数字"
 
-#: ../data/group01-base.xml.in.h:4
+#: ../data/group01-base.xml.in.h:4 ../input-pad/unicode_block.h:37
 msgid "Latin-1 Supplement"
 msgstr "ラテン文字-1 補足"
 
-#: ../data/group02-ja.xml.in.h:1
+#: ../data/group01-base.xml.in.h:5
+msgid "Sign"
+msgstr "記号"
+
+#: ../data/group02-ja.xml.in.h:1 ../input-pad/unicode_block.h:135
 msgid "Hiragana"
 msgstr "ひらがな"
 
@@ -40,11 +44,11 @@ msgstr "ひらがな"
 msgid "Japanese"
 msgstr "日本語"
 
-#: ../data/group02-ja.xml.in.h:3
+#: ../data/group02-ja.xml.in.h:3 ../input-pad/unicode_block.h:136
 msgid "Katakana"
 msgstr "カタカナ"
 
-#: ../data/group02-zh.xml.in.h:1
+#: ../data/group02-zh.xml.in.h:1 ../input-pad/unicode_block.h:137
 msgid "Bopomofo"
 msgstr "Bopomofo"
 
@@ -72,9 +76,9 @@ msgstr "キーパッド"
 msgid "Keyboard"
 msgstr "キーボード"
 
-#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:21
+#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:23
 #: ../engine/main.c:55 ../engine/main.c:64 ../engine/main.c:65
-#: ../input-pad/window-gtk.c:2129 ../input-pad/window-gtk.c:2130
+#: ../input-pad/window-gtk.c:2463 ../input-pad/window-gtk.c:2464
 msgid "Input Pad"
 msgstr "インプットパッド"
 
@@ -88,7 +92,10 @@ msgid ""
 "under an input method application.\n"
 "If you wish to send characters to X11 applications, those applications needs "
 "to allow send events. e.g.\n"
-"% xterm -xrm \"XTerm*allowSendEvents: true\""
+"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
+"\n"
+"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/"
+"pad to customize those in \"Custom Character\" pain."
 msgstr ""
 "\n"
 "このアプリケーションは、スタンドアロンプログラムとして、もしくは IM アプリ"
@@ -97,9 +104,13 @@ msgstr ""
 "実行する必要があります。\n"
 "X11 アプリケーションに文字を送る場合、送信イベントを許可する必要があります。"
 "例:\n"
-"% xterm -xrm \"XTerm*allowSendEvents: true\""
+"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
+"\n"
+"\"カスタム文字\" ペインにおけるパッドファイルをカスタマイズするために /usr/"
+"share/input-pad/pad から $HOME/.config/pad にパッドファイルをコピーすることが"
+"可能です。"
 
-#: ../data/input-pad.ui.h:7
+#: ../data/input-pad.ui.h:9
 msgid ""
 "Base 10\n"
 "Dec"
@@ -107,7 +118,7 @@ msgstr ""
 "10 進数\n"
 "Dec"
 
-#: ../data/input-pad.ui.h:9
+#: ../data/input-pad.ui.h:11
 msgid ""
 "Base 16\n"
 "Hex"
@@ -115,7 +126,7 @@ msgstr ""
 "16 進数\n"
 "Hex"
 
-#: ../data/input-pad.ui.h:11
+#: ../data/input-pad.ui.h:13
 msgid ""
 "Base 2\n"
 "Bin"
@@ -123,7 +134,7 @@ msgstr ""
 "2 進数\n"
 "Bin"
 
-#: ../data/input-pad.ui.h:13
+#: ../data/input-pad.ui.h:15
 msgid ""
 "Base 8\n"
 "Oct"
@@ -131,115 +142,927 @@ msgstr ""
 "8 進数\n"
 "Oct"
 
-#: ../data/input-pad.ui.h:15
+#: ../data/input-pad.ui.h:17
 msgid "Character:"
 msgstr "文字:"
 
-#: ../data/input-pad.ui.h:16
+#: ../data/input-pad.ui.h:18
 msgid "Close the program"
 msgstr "プログラムを閉じる"
 
-#: ../data/input-pad.ui.h:17
+#: ../data/input-pad.ui.h:19
 msgid "Code Point Dialog"
 msgstr "コードポイントダイアログ"
 
-#: ../data/input-pad.ui.h:18
+#: ../data/input-pad.ui.h:20
 msgid "Code Point:"
 msgstr "コードポイント:"
 
-#: ../data/input-pad.ui.h:19
+#: ../data/input-pad.ui.h:21
 msgid "Copy Buffer"
 msgstr "バッファをコピー"
 
-#: ../data/input-pad.ui.h:20
+#: ../data/input-pad.ui.h:22
 msgid "Current Encoding"
 msgstr "現在のエンコーディング"
 
-#: ../data/input-pad.ui.h:22
+#: ../data/input-pad.ui.h:24
 msgid "Input Pad Troubleshoot"
 msgstr "インプットパッドトラブルシュート"
 
-#: ../data/input-pad.ui.h:23
+#: ../data/input-pad.ui.h:25
 msgid "Set number case to binary"
 msgstr "2 進数に設定します"
 
-#: ../data/input-pad.ui.h:24
+#: ../data/input-pad.ui.h:26
 msgid "Set number case to decimal"
 msgstr "10 進数に設定します"
 
-#: ../data/input-pad.ui.h:25
+#: ../data/input-pad.ui.h:27
 msgid "Set number case to hexadecimal"
 msgstr "16 進数に設定します"
 
-#: ../data/input-pad.ui.h:26
+#: ../data/input-pad.ui.h:28
 msgid "Set number case to octal"
 msgstr "8 進数に設定します"
 
-#: ../data/input-pad.ui.h:27
+#: ../data/input-pad.ui.h:29
+msgid "Show _All Characters"
+msgstr "すべての文字を表示する(_A)"
+
+#: ../data/input-pad.ui.h:30
+msgid "Show _Custom Characters"
+msgstr "カスタム文字を表示する(_C)"
+
+#: ../data/input-pad.ui.h:31
+msgid "Show _Keyboard Layout"
+msgstr "キーボードレイアウトを表示する(_K)"
+
+#: ../data/input-pad.ui.h:32
+msgid "Show _Nothing"
+msgstr "なにも表示しない(_N)"
+
+#: ../data/input-pad.ui.h:33
 msgid "The input pad is a tool to send a character on button."
 msgstr "インプットパッドはボタン上の文字を送るツールです。"
 
-#: ../data/input-pad.ui.h:28
+#: ../data/input-pad.ui.h:34
 msgid "Unicode"
 msgstr "Unicode"
 
-#: ../data/input-pad.ui.h:29
+#: ../data/input-pad.ui.h:35
 msgid "You can choose encoding type"
 msgstr "エンコーディングタイプを選択可能です"
 
-#: ../data/input-pad.ui.h:30
+#: ../data/input-pad.ui.h:36
 msgid "_Close"
 msgstr "閉じる(_C)"
 
-#: ../data/input-pad.ui.h:31
+#: ../data/input-pad.ui.h:37
 msgid "_Code Point"
 msgstr "コードポイント(_C)"
 
-#: ../data/input-pad.ui.h:32
+#: ../data/input-pad.ui.h:38
 msgid "_File"
 msgstr "ファイル(_F)"
 
-#: ../data/input-pad.ui.h:33
+#: ../data/input-pad.ui.h:39
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ../data/input-pad.ui.h:34
+#: ../data/input-pad.ui.h:40
 msgid "_Pad"
 msgstr "パッド(_P)"
 
-#: ../data/input-pad.ui.h:35
+#: ../data/input-pad.ui.h:41
 msgid "_Send"
 msgstr "送信する(_S)"
 
-#: ../data/input-pad.ui.h:36
+#: ../data/input-pad.ui.h:42
+msgid "_Show Pad"
+msgstr "パッドを表示する(_S)"
+
+#: ../data/input-pad.ui.h:43
 msgid "_Troubleshoot"
 msgstr "トラブルシュート(_T)"
 
-#: ../data/input-pad.ui.h:37
+#: ../data/input-pad.ui.h:44
 msgid "translator_credits"
 msgstr "translator_credits"
 
-#: ../input-pad/window-gtk.c:105
+#: ../input-pad/unicode_block.h:36
+msgid "Basic Latin"
+msgstr "基本ラテン文字"
+
+#: ../input-pad/unicode_block.h:39
+msgid "Latin Extended-B"
+msgstr "ラテン文字拡張-B"
+
+#: ../input-pad/unicode_block.h:40
+msgid "IPA Extensions"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:41
+msgid "Spacing Modifier Letters"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:42
+msgid "Combining Diacritical Marks"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:43
+msgid "Greek and Coptic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:44
+msgid "Cyrillic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:45
+#, fuzzy
+msgid "Cyrillic Supplement"
+msgstr "ラテン文字-1 補足"
+
+#: ../input-pad/unicode_block.h:46
+msgid "Armenian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:47
+msgid "Hebrew"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:48
+msgid "Arabic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:49
+msgid "Syriac"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:50
+#, fuzzy
+msgid "Arabic Supplement"
+msgstr "ラテン文字-1 補足"
+
+#: ../input-pad/unicode_block.h:51
+msgid "Thaana"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:52
+msgid "NKo"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:53
+msgid "Samaritan"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:54
+msgid "Devanagari"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:55
+msgid "Bengali"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:56
+msgid "Gurmukhi"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:57
+msgid "Gujarati"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:58
+msgid "Oriya"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:59
+msgid "Tamil"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:60
+msgid "Telugu"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:61
+msgid "Kannada"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:62
+msgid "Malayalam"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:63
+msgid "Sinhala"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:64
+msgid "Thai"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:65
+msgid "Lao"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:66
+msgid "Tibetan"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:67
+msgid "Myanmar"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:68
+msgid "Georgian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:69
+msgid "Hangul Jamo"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:70
+msgid "Ethiopic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:71
+#, fuzzy
+msgid "Ethiopic Supplement"
+msgstr "ラテン文字-1 補足"
+
+#: ../input-pad/unicode_block.h:72
+msgid "Cherokee"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:73
+msgid "Unified Canadian Aboriginal Syllabics"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:74
+msgid "Ogham"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:75
+msgid "Runic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:76
+msgid "Tagalog"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:77
+msgid "Hanunoo"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:78
+msgid "Buhid"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:79
+#, fuzzy
+msgid "Tagbanwa"
+msgstr "ひらがな"
+
+#: ../input-pad/unicode_block.h:80
+msgid "Khmer"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:81
+msgid "Mongolian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:82
+msgid "Unified Canadian Aboriginal Syllabics Extended"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:83
+msgid "Limbu"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:84
+msgid "Tai Le"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:85
+msgid "New Tai Lue"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:86
+msgid "Khmer Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:87
+#, fuzzy
+msgid "Buginese"
+msgstr "中国語"
+
+#: ../input-pad/unicode_block.h:88
+msgid "Tai Tham"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:89
+#, fuzzy
+msgid "Balinese"
+msgstr "中国語"
+
+#: ../input-pad/unicode_block.h:90
+msgid "Sundanese"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:91
+msgid "Lepcha"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:92
+msgid "Ol Chiki"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:93
+msgid "Vedic Extensions"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:94
+msgid "Phonetic Extensions"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:95
+msgid "Phonetic Extensions Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:96
+msgid "Combining Diacritical Marks Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:97
+#, fuzzy
+msgid "Latin Extended Additional"
+msgstr "ラテン文字拡張-A"
+
+#: ../input-pad/unicode_block.h:98
+#, fuzzy
+msgid "Greek Extended"
+msgstr "ラテン文字拡張-A"
+
+#: ../input-pad/unicode_block.h:99
+msgid "General Punctuation"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:100
+msgid "Superscripts and Subscripts"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:101
+msgid "Currency Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:102
+msgid "Combining Diacritical Marks for Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:103
+msgid "Letterlike Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:104
+#, fuzzy
+msgid "Number Forms"
+msgstr "数字"
+
+#: ../input-pad/unicode_block.h:105
+msgid "Arrows"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:106
+msgid "Mathematical Operators"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:107
+msgid "Miscellaneous Technical"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:108
+msgid "Control Pictures"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:109
+msgid "Optical Character Recognition"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:110
+msgid "Enclosed Alphanumerics"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:111
+msgid "Box Drawing"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:112
+msgid "Block Elements"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:113
+msgid "Geometric Shapes"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:114
+msgid "Miscellaneous Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:115
+msgid "Dingbats"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:116
+msgid "Miscellaneous Mathematical Symbols-A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:117
+msgid "Supplemental Arrows-A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:118
+msgid "Braille Patterns"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:119
+msgid "Supplemental Arrows-B"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:120
+msgid "Miscellaneous Mathematical Symbols-B"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:121
+msgid "Supplemental Mathematical Operators"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:122
+msgid "Miscellaneous Symbols and Arrows"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:123
+msgid "Glagolitic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:124
+msgid "Latin Extended-C"
+msgstr "ラテン文字拡張-C"
+
+#: ../input-pad/unicode_block.h:125
+msgid "Coptic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:126
+#, fuzzy
+msgid "Georgian Supplement"
+msgstr "ラテン文字-1 補足"
+
+#: ../input-pad/unicode_block.h:127
+msgid "Tifinagh"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:128
+#, fuzzy
+msgid "Ethiopic Extended"
+msgstr "ラテン文字拡張-A"
+
+#: ../input-pad/unicode_block.h:129
+#, fuzzy
+msgid "Cyrillic Extended-A"
+msgstr "ラテン文字拡張-A"
+
+#: ../input-pad/unicode_block.h:130
+msgid "Supplemental Punctuation"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:131
+#, fuzzy
+msgid "CJK Radicals Supplement"
+msgstr "ラテン文字-1 補足"
+
+#: ../input-pad/unicode_block.h:132
+#, fuzzy
+msgid "Kangxi Radicals"
+msgstr "部首"
+
+#: ../input-pad/unicode_block.h:133
+msgid "Ideographic Description Characters"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:134
+msgid "CJK Symbols and Punctuation"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:138
+msgid "Hangul Compatibility Jamo"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:139
+msgid "Kanbun"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:140
+#, fuzzy
+msgid "Bopomofo Extended"
+msgstr "Bopomofo"
+
+#: ../input-pad/unicode_block.h:141
+msgid "CJK Strokes"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:142
+msgid "Katakana Phonetic Extensions"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:143
+msgid "Enclosed CJK Letters and Months"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:144
+msgid "CJK Compatibility"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:145
+msgid "CJK Unified Ideographs Extension A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:146
+msgid "Yijing Hexagram Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:147
+msgid "CJK Unified Ideographs"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:148
+msgid "Yi Syllables"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:149
+#, fuzzy
+msgid "Yi Radicals"
+msgstr "部首"
+
+#: ../input-pad/unicode_block.h:150
+msgid "Lisu"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:151
+msgid "Vai"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:152
+#, fuzzy
+msgid "Cyrillic Extended-B"
+msgstr "ラテン文字拡張-A"
+
+#: ../input-pad/unicode_block.h:153
+msgid "Bamum"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:154
+msgid "Modifier Tone Letters"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:155
+msgid "Latin Extended-D"
+msgstr "ラテン文字拡張-D"
+
+#: ../input-pad/unicode_block.h:156
+msgid "Syloti Nagri"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:157
+msgid "Common Indic Number Forms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:158
+msgid "Phags-pa"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:159
+msgid "Saurashtra"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:160
+#, fuzzy
+msgid "Devanagari Extended"
+msgstr "ラテン文字拡張-A"
+
+#: ../input-pad/unicode_block.h:161
+msgid "Kayah Li"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:162
+msgid "Rejang"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:163
+#, fuzzy
+msgid "Hangul Jamo Extended-A"
+msgstr "ラテン文字拡張-A"
+
+#: ../input-pad/unicode_block.h:164
+#, fuzzy
+msgid "Javanese"
+msgstr "日本語"
+
+#: ../input-pad/unicode_block.h:165
+msgid "Cham"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:166
+#, fuzzy
+msgid "Myanmar Extended-A"
+msgstr "ラテン文字拡張-A"
+
+#: ../input-pad/unicode_block.h:167
+msgid "Tai Viet"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:168
+msgid "Meetei Mayek"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:169
+msgid "Hangul Syllables"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:170
+#, fuzzy
+msgid "Hangul Jamo Extended-B"
+msgstr "ラテン文字拡張-A"
+
+#: ../input-pad/unicode_block.h:171
+msgid "High Surrogates"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:172
+msgid "High Private Use Surrogates"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:173
+msgid "Low Surrogates"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:174
+msgid "Private Use Area"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:175
+msgid "CJK Compatibility Ideographs"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:176
+msgid "Alphabetic Presentation Forms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:177
+msgid "Arabic Presentation Forms-A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:178
+msgid "Variation Selectors"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:179
+msgid "Vertical Forms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:180
+msgid "Combining Half Marks"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:181
+msgid "CJK Compatibility Forms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:182
+msgid "Small Form Variants"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:183
+msgid "Arabic Presentation Forms-B"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:184
+msgid "Halfwidth and Fullwidth Forms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:185
+msgid "Specials"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:186
+msgid "Linear B Syllabary"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:187
+msgid "Linear B Ideograms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:188
+#, fuzzy
+msgid "Aegean Numbers"
+msgstr "数字"
+
+#: ../input-pad/unicode_block.h:189
+msgid "Ancient Greek Numbers"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:190
+msgid "Ancient Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:191
+msgid "Phaistos Disc"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:192
+msgid "Lycian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:193
+msgid "Carian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:194
+msgid "Old Italic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:195
+msgid "Gothic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:196
+msgid "Ugaritic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:197
+msgid "Old Persian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:198
+msgid "Deseret"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:199
+msgid "Shavian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:200
+msgid "Osmanya"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:201
+msgid "Cypriot Syllabary"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:202
+msgid "Imperial Aramaic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:203
+msgid "Phoenician"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:204
+msgid "Lydian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:205
+msgid "Kharoshthi"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:206
+msgid "Old South Arabian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:207
+msgid "Avestan"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:208
+msgid "Inscriptional Parthian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:209
+msgid "Inscriptional Pahlavi"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:210
+msgid "Old Turkic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:211
+msgid "Rumi Numeral Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:212
+msgid "Kaithi"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:213
+msgid "Cuneiform"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:214
+msgid "Cuneiform Numbers and Punctuation"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:215
+msgid "Egyptian Hieroglyphs"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:216
+msgid "Byzantine Musical Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:217
+msgid "Musical Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:218
+msgid "Ancient Greek Musical Notation"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:219
+msgid "Tai Xuan Jing Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:220
+msgid "Counting Rod Numerals"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:221
+msgid "Mathematical Alphanumeric Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:222
+msgid "Mahjong Tiles"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:223
+msgid "Domino Tiles"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:224
+msgid "Enclosed Alphanumeric Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:225
+msgid "Enclosed Ideographic Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:226
+msgid "CJK Unified Ideographs Extension B"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:227
+msgid "CJK Unified Ideographs Extension C"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:228
+msgid "CJK Compatibility Ideographs Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:229
+msgid "Tags"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:230
+#, fuzzy
+msgid "Variation Selectors Supplement"
+msgstr "ラテン文字-1 補足"
+
+#: ../input-pad/unicode_block.h:231
+msgid "Supplementary Private Use Area-A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:232
+msgid "Supplementary Private Use Area-B"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:122
 msgid "Use XTEST module to send key events"
 msgstr "キーイベントを送るために XTEST モジュールを使用する"
 
-#: ../input-pad/window-gtk.c:107
+#: ../input-pad/window-gtk.c:124
 msgid "Display version"
 msgstr "バージョンを表示する"
 
-#: ../input-pad/window-gtk.c:651
+#: ../input-pad/window-gtk.c:684
 msgid "Fold layout"
 msgstr "レイアウトを折りたたむ"
 
-#: ../input-pad/window-gtk.c:656 ../input-pad/window-gtk.c:1437
+#: ../input-pad/window-gtk.c:689 ../input-pad/window-gtk.c:1496
 msgid "Extend layout"
 msgstr "レイアウトを広げる"
 
-#: ../input-pad/window-gtk.c:1527
+#: ../input-pad/window-gtk.c:1586
 msgid "_Layout:"
 msgstr "レイアウト(_L):"
 
-#: ../input-pad/window-gtk.c:1561
+#: ../input-pad/window-gtk.c:1621
 msgid ""
 "This program is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -250,7 +1073,7 @@ msgstr ""
 "一般公衆利用許諾契約書の第二版、あるいはそれ以降の版が定める条項の下で本プロ"
 "グラムを再頒布または変更することができます。"
 
-#: ../input-pad/window-gtk.c:1567
+#: ../input-pad/window-gtk.c:1627
 msgid ""
 "This program is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -261,7 +1084,7 @@ msgstr ""
 "的、その適合性についての暗黙の保証を含めて、いかなる保証も行ないません。詳細"
 "については GNU  一般公衆利用許諾契約書をご覧下さい。"
 
-#: ../input-pad/window-gtk.c:1573
+#: ../input-pad/window-gtk.c:1633
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
@@ -270,3 +1093,7 @@ msgstr ""
 "あなたは、本プログラムと一緒に GNU 一般公衆利用許諾契約書の写しを受け取ってい"
 "るはずです。そうでない場合は、Free Software Foundation, Inc., 51 Franklin "
 "Street, Fifth Floor, Boston, MA 02110-1301 USA まで手紙を書いて下さい。"
+
+#: ../input-pad/window-gtk.c:2026
+msgid "Block"
+msgstr "ブロック"

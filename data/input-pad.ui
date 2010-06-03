@@ -31,6 +31,40 @@
           </object>
         </child>
         <child>
+          <object class="GtkAction" id="ShowPad">
+            <property name="name">ShowPad</property>
+            <property name="label" translatable="yes">_Show Pad</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkRadioAction" id="ShowAllChars">
+            <property name="name">ShowAllChars</property>
+            <property name="label" translatable="yes">Show _All Characters</property>
+            <property name="active">True</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkRadioAction" id="ShowCustomChars">
+            <property name="name">ShowCustomChars</property>
+            <property name="label" translatable="yes">Show _Custom Characters</property>
+            <property name="group">ShowAllChars</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkRadioAction" id="ShowNothing">
+            <property name="name">ShowNothing</property>
+            <property name="label" translatable="yes">Show _Nothing</property>
+            <property name="group">ShowAllChars</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkToggleAction" id="ShowLayout">
+            <property name="name">ShowLayout</property>
+            <property name="label" translatable="yes">Show _Keyboard Layout</property>
+            <property name="active">True</property>
+          </object>
+        </child>
+        <child>
           <object class="GtkAction" id="HelpMenu">
             <property name="name">HelpMenu</property>
             <property name="label" translatable="yes">_Help</property>
@@ -60,6 +94,12 @@
         </menu>
         <menu action="PadMenu" name="PadMenu">
           <menuitem action="CodePoint" name="CodePoint"/>
+          <menu action="ShowPad" name="ShowPad">
+            <menuitem action="ShowAllChars" name="ShowAllChars"/>
+            <menuitem action="ShowCustomChars" name="ShowCustomChars"/>
+            <menuitem action="ShowNothing" name="ShowNothing"/>
+          </menu>
+          <menuitem action="ShowLayout" name="ShowLayout"/>
         </menu>
         <menu action="HelpMenu" name="HelpMenu">
           <menuitem action="Contents" name="Contents"/>
@@ -289,7 +329,9 @@ Bin</property>
 This application can be run either as a stand-alone program or under an input method application.
 If you wish to send multi-byte characters, this application needs to be run under an input method application.
 If you wish to send characters to X11 applications, those applications needs to allow send events. e.g.
-% xterm -xrm "XTerm*allowSendEvents: true"</property>
+% xterm -xrm "XTerm*allowSendEvents: true"
+
+You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad to customize those in "Custom Character" pain.</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -341,6 +383,7 @@ Copyright (c) 2010 Red Hat, Inc.</property>
     <child>
       <object class="GtkVBox" id="vbox100">
         <property name="visible">True</property>
+        <property name="no_show_all">True</property>
         <child>
           <object constructor="uimanager" class="GtkMenuBar" id="menubar1">
             <property name="visible">True</property>
@@ -368,7 +411,7 @@ Copyright (c) 2010 Red Hat, Inc.</property>
           </packing>
         </child>
         <child>
-          <object class="GtkVBox" id="TopKeyboardLayoutVBox">
+          <object class="GtkHBox" id="TopCharViewVBox">
             <property name="visible">True</property>
             <property name="border-width">10</property>
             <property name="spacing">10</property>
@@ -380,12 +423,24 @@ Copyright (c) 2010 Red Hat, Inc.</property>
           </packing>
         </child>
         <child>
+          <object class="GtkVBox" id="TopKeyboardLayoutVBox">
+            <property name="visible">True</property>
+            <property name="border-width">10</property>
+            <property name="spacing">10</property>
+          </object>
+          <packing>
+            <property name="position">3</property>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+          </packing>
+        </child>
+        <child>
           <object class="GtkStatusbar" id="statusbar1">
             <property name="visible">True</property>
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="position">3</property>
+            <property name="position">4</property>
           </packing>
         </child>
       </object>
