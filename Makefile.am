@@ -24,7 +24,6 @@ SUBDIRS = \
 	data \
 	input-pad \
 	pyinput-pad \
-	engine \
 	$(NULL)
 
 if HAVE_PYTHON

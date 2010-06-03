@@ -6,6 +6,5 @@ data/group02-zh.xml.in
 data/group90-keyboard.xml.in
 data/input-pad.desktop.in
 [type: gettext/glade]data/input-pad.ui
-engine/main.c
 input-pad/unicode_block.h
 input-pad/window-gtk.c

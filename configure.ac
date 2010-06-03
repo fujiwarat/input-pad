@@ -20,17 +20,17 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 dnl - if not 1, append datestamp to the version number.
-m4_define([ibus_released], [0])
-m4_define([ibus_major_version], [0])
-m4_define([ibus_minor_version], [1])
-m4_define([ibus_micro_version], [0])
-m4_define(ibus_maybe_datestamp,
-    m4_esyscmd([if test x]ibus_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
+m4_define([pad_released], [0])
+m4_define([pad_major_version], [0])
+m4_define([pad_minor_version], [1])
+m4_define([pad_micro_version], [0])
+m4_define(pad_maybe_datestamp,
+    m4_esyscmd([if test x]pad_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
 
-m4_define([ibus_version],
-    ibus_major_version.ibus_minor_version.ibus_micro_version[]ibus_maybe_datestamp)
+m4_define([pad_version],
+    pad_major_version.pad_minor_version.pad_micro_version[]pad_maybe_datestamp)
 
-AC_INIT([input-pad], [ibus_version], [http://code.google.com/p/ibus/issues/entry],[input-pad])
+AC_INIT([input-pad], [pad_version], [http://code.google.com/p/input-pad/issues/entry],[input-pad])
 AM_INIT_AUTOMAKE([1.10])
 AC_GNU_SOURCE
 
@@ -38,7 +38,7 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
 dnl - VERSION
-libinput_pad_VERSION="ibus_major_version.ibus_minor_version"
+libinput_pad_VERSION="pad_major_version.pad_minor_version"
 AC_SUBST(libinput_pad_VERSION)
 AC_MSG_NOTICE([$PACKAGE sub version $libinput_pad_VERSION])
 
@@ -55,9 +55,9 @@ AM_PROG_LIBTOOL
 IT_PROG_INTLTOOL([0.35.0])
 
 dnl - For dislpay Date
-m4_define(ibus_datedisplay,
+m4_define(pad_datedisplay,
     m4_esyscmd(date '+%a %b %d %Y' | tr -d '\n\r'))
-DATE_DISPLAY="ibus_datedisplay"
+DATE_DISPLAY="pad_datedisplay"
 AC_SUBST(DATE_DISPLAY)
 
 dnl - pkgconfig
@@ -72,10 +72,6 @@ PKG_CHECK_MODULES(GTK2, [
 
 PKG_CHECK_MODULES(LIBXML2, [
     libxml-2.0 >= 2.0
-])
-
-PKG_CHECK_MODULES(IBUS, [
-    ibus-1.0
 ])
 
 PKG_CHECK_MODULES(X11, [
@@ -160,7 +156,6 @@ Makefile
 input-pad.pc
 input-pad.spec
 data/Makefile
-engine/Makefile
 input-pad/Makefile
 pyinput-pad/Makefile
 pyinput-pad/pyinput_pad.pth

@@ -14,8 +14,8 @@ Release:    1%{?dist}
 Summary:    Input Pad
 License:    GPLv2+
 Group:      System Environment/Libraries
-URL:        http://code.google.com/p/ibus/
-Source0:    http://ibus.googlecode.com/files/%{name}-%{version}.tar.gz
+URL:        http://code.google.com/p/input-pad/
+Source0:    http://input-pad.googlecode.com/files/%{name}-%{version}.tar.gz
 
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -29,7 +29,6 @@ BuildRequires:  libtool
 BuildRequires:  libxkbfile-devel
 BuildRequires:  libxklavier-devel       >= %libxklavier_version
 BuildRequires:  libxml2-devel           >= %libxml2_version
-BuildRequires:  ibus-devel
 BuildRequires:  intltool
 BuildRequires:  pkgconfig
 BuildRequires:  sed
@@ -57,15 +56,6 @@ Requires:   %{name} = %{version}-%{release}
 
 %description devel
 The input-pad-devel package contains the header files.
-
-%package ibus
-Summary:    The input pad engine for IBus
-Group:      System Environment/Libraries
-Requires:   %{name} = %{version}-%{release}
-Requires:   ibus
-
-%description ibus
-The input-pad-ibus package contains ibus engine.
 
 %if %have_python_devel
 %package python
@@ -125,11 +115,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %{_includedir}/%{name}-%sub_version
 %{_libdir}/pkgconfig/*.pc
-
-%files ibus
-%defattr(-,root,root,-)
-%{_libexecdir}/ibus-engine-input-pad
-%{_datadir}/ibus/component/*
 
 %if %have_python_devel
 %files python
