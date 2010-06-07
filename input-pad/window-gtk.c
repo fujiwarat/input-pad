@@ -30,6 +30,12 @@
 #include <X11/keysym.h>
 #include <string.h> /* strlen */
 #include <stdlib.h> /* exit */
+#ifdef HAVE_EEK
+#include <clutter/clutter.h>
+#include <clutter-gtk/clutter-gtk.h>
+#include <eek/eek-clutter.h>
+#include <eek/eek-xkb.h>
+#endif  /* HAVE_EEK */
 
 #include "i18n.h"
 #include "button-gtk.h"
@@ -98,6 +104,10 @@ struct _InputPadGtkWindowPrivate {
     gchar                     **group_layouts;
     guint                       char_button_sensitive : 1;
     GdkColor                   *color_gray;
+    XkbComponentNamesRec        xkb_component_names;
+#ifdef HAVE_EEK
+    EekKeyboard                *eek_keyboard;
+#endif
 };
 
 struct _CodePointData {
@@ -178,6 +188,12 @@ static void             create_keyboard_layout_ui_real
                                                 (GtkWidget         *vbox,
                                                  InputPadGtkWindow *window);
 static void             destroy_prev_keyboard_layout
+                                                (GtkWidget         *vbox,
+                                                 InputPadGtkWindow *window);
+static void             create_keyboard_layout_ui_real_eek
+                                                (GtkWidget         *vbox,
+                                                 InputPadGtkWindow *window);
+static void             destroy_prev_keyboard_layout_eek
                                                 (GtkWidget         *vbox,
                                                  InputPadGtkWindow *window);
 static void             create_keyboard_layout_list_ui_real
@@ -614,6 +630,7 @@ on_combobox_layout_changed (GtkComboBox *combobox,
     GtkTreeModel *model;
     gchar *layout;
     GtkWidget *keyboard_vbox;
+    gboolean use_eek;
 
     g_return_if_fail (data != NULL &&
                       INPUT_PAD_IS_GTK_WINDOW (data));
@@ -627,6 +644,8 @@ on_combobox_layout_changed (GtkComboBox *combobox,
                         LAYOUT_LAYOUT_NAME_COL, &layout, -1);
     input_pad_gdk_xkb_set_layout (window, window->priv->xkb_key_list,
                                   layout, NULL, NULL);
+    use_eek =
+        input_pad_gdk_xkb_get_components (&window->priv->xkb_component_names);
     g_free (layout);
 
     if (window->priv->xkb_key_list) {
@@ -641,8 +660,14 @@ on_combobox_layout_changed (GtkComboBox *combobox,
     }
 
     keyboard_vbox = gtk_widget_get_parent (gtk_widget_get_parent (GTK_WIDGET (combobox)));
-    destroy_prev_keyboard_layout (keyboard_vbox, window);
-    create_keyboard_layout_ui_real (keyboard_vbox, window);
+    if (use_eek)
+        destroy_prev_keyboard_layout_eek (keyboard_vbox, window);
+    else
+        destroy_prev_keyboard_layout (keyboard_vbox, window);
+    if (use_eek)
+        create_keyboard_layout_ui_real_eek (keyboard_vbox, window);
+    else
+        create_keyboard_layout_ui_real (keyboard_vbox, window);
 
     if (window->priv->group_layouts) {
         g_strfreev (window->priv->group_layouts);
@@ -1139,7 +1164,12 @@ on_window_realize (GtkWidget *window, gpointer data)
         return;
     }
 
-    create_keyboard_layout_ui_real (keyboard_vbox, input_pad);
+    memset (&input_pad->priv->xkb_component_names, 0,
+            sizeof input_pad->priv->xkb_component_names);
+    if (input_pad_gdk_xkb_get_components (&input_pad->priv->xkb_component_names))
+        create_keyboard_layout_ui_real_eek (keyboard_vbox, input_pad);
+    else
+        create_keyboard_layout_ui_real (keyboard_vbox, input_pad);
     input_pad->priv->group_layouts =
         input_pad_gdk_xkb_get_group_layouts (input_pad,
                                              input_pad->priv->xkb_key_list);
@@ -2352,6 +2382,128 @@ destroy_prev_keyboard_layout (GtkWidget *vbox, InputPadGtkWindow *window)
     }
     gtk_widget_hide (hbox);
     gtk_widget_destroy (hbox);
+}
+
+#ifdef HAVE_EEK
+static void
+on_eek_window_keyboard_changed (InputPadGtkWindow *window,
+                                gint               group,
+                                gpointer           data)
+{
+    gint prev_group, prev_level;
+
+    eek_keyboard_get_keysym_index (window->priv->eek_keyboard,
+                                   &prev_group, &prev_level);
+    eek_keyboard_set_keysym_index (window->priv->eek_keyboard,
+                                   group, prev_level);
+}
+
+static void
+on_eek_key_pressed (EekKeyboard *keyboard,
+                    EekKey      *key,
+                    gpointer     user_data)
+{
+    InputPadGtkWindow *window;
+    const char *str;
+    guint keycode;
+    guint keysym;
+    guint *keysyms;
+    gint num_groups, num_levels;
+    gint group, level;
+    guint state = 0;
+    gboolean retval = FALSE;
+
+    g_return_if_fail (user_data != NULL &&
+                      INPUT_PAD_IS_GTK_WINDOW (user_data));
+
+    window = INPUT_PAD_GTK_WINDOW (user_data);
+    keycode = eek_key_get_keycode (key);
+    keysym = eek_key_get_keysym (key);
+    str = eek_keysym_to_string (keysym);
+    if (str == NULL)
+        str = "";
+    eek_key_get_keysyms (key, &keysyms, &num_groups, &num_levels);
+    eek_key_get_keysym_index (key, &group, &level);
+    state = window->priv->keyboard_state;
+    if (keysyms && (keysym != keysyms[group * num_levels])) {
+        state |= ShiftMask;
+    }
+    state = input_pad_xkb_build_core_state (state, group);
+
+    g_signal_emit (window, signals[BUTTON_PRESSED], 0,
+                   str, INPUT_PAD_TABLE_TYPE_KEYSYMS, keysym, keycode, state,
+                   &retval);
+
+    if (state & ShiftMask) {
+        state ^= ShiftMask;
+    }
+    if ((state & ControlMask) && 
+        (keysym != XK_Control_L) && (keysym != XK_Control_R)) {
+        state ^= ControlMask;
+    }
+    if ((state & Mod1Mask) && 
+        (keysym != XK_Alt_L) && (keysym != XK_Alt_R)) {
+        state ^= Mod1Mask;
+    }
+    window->priv->keyboard_state = state;
+}
+#endif
+
+static void
+create_keyboard_layout_ui_real_eek (GtkWidget *vbox, InputPadGtkWindow *window)
+{
+#ifdef HAVE_EEK
+    GtkWidget *embed;
+    ClutterActor *stage, *actor;
+    EekKeyboard *keyboard;
+    EekLayout *layout;
+    gfloat width, height;
+    ClutterColor color = {0xff, 0xff, 0xff, 0x00};
+
+    keyboard = window->priv->eek_keyboard = eek_clutter_keyboard_new (670, 480);
+    g_object_ref_sink (keyboard);
+    layout = eek_xkb_layout_new (window->priv->xkb_component_names.keycodes,
+                                 window->priv->xkb_component_names.geometry,
+                                 window->priv->xkb_component_names.symbols);
+    g_object_ref_sink (layout);
+    eek_keyboard_set_layout (keyboard, layout);
+    actor = eek_clutter_keyboard_get_actor (EEK_CLUTTER_KEYBOARD(keyboard));
+    clutter_actor_get_size (actor, &width, &height);
+
+    embed = gtk_clutter_embed_new ();
+    gtk_box_pack_start (GTK_BOX (vbox), embed, FALSE, FALSE, 0);
+    gtk_box_reorder_child (GTK_BOX (vbox), embed, 0);
+    gtk_widget_show (embed);
+    gtk_widget_set_size_request (embed, (gint)width, (gint)height);
+
+    stage = gtk_clutter_embed_get_stage (GTK_CLUTTER_EMBED(embed));
+    clutter_stage_set_color (CLUTTER_STAGE(stage), &color);
+    clutter_actor_set_size (stage, width, height);
+    clutter_group_add (CLUTTER_GROUP(stage), actor);
+    clutter_actor_show_all (stage);
+    g_object_unref (layout);
+
+    g_signal_connect (G_OBJECT (window), "keyboard-changed",
+                      G_CALLBACK (on_eek_window_keyboard_changed),
+                      NULL);
+    g_signal_connect (G_OBJECT (keyboard), "key-pressed",
+		      G_CALLBACK (on_eek_key_pressed),
+		      window);
+#endif
+}
+
+static void
+destroy_prev_keyboard_layout_eek (GtkWidget *vbox, InputPadGtkWindow *window)
+{
+#ifdef HAVE_EEK
+    GList *children;
+    GtkWidget *embed;
+
+    children = gtk_container_get_children (GTK_CONTAINER (vbox));
+    embed = GTK_WIDGET (children->data);
+    gtk_widget_hide (embed);
+    gtk_widget_destroy (embed);
+#endif
 }
 
 static int
@@ -3733,6 +3885,9 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
     }
 
     gtk_init (argc, argv);
+#ifdef HAVE_EEK
+    clutter_init (argc, argv);
+#endif
 }
 
 void *

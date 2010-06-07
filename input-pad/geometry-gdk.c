@@ -56,6 +56,18 @@ extern void xkl_engine_save_toplevel_window_state(XklEngine * engine,
                                                   Window toplevel_win,
                                                   XklState * state);
 #endif
+/* from gnome-keyboard-properties-xkbpv.c:
+ * BAD STYLE: Taken from xklavier_private_xkb.h
+ * Any ideas on architectural improvements are WELCOME
+ */
+extern gboolean xkl_xkb_config_native_prepare (XklEngine * engine,
+					       const XklConfigRec * data,
+					       XkbComponentNamesPtr
+					       component_names);
+
+extern void xkl_xkb_config_native_cleanup (XklEngine * engine,
+					   XkbComponentNamesPtr
+					   component_names);
 #endif
 
 #ifdef HAVE_LIBXKLAVIER
@@ -1135,4 +1147,32 @@ input_pad_gdk_xkb_set_layout (InputPadGtkWindow        *window,
 #endif
 
     return TRUE;
+}
+
+Bool
+input_pad_gdk_xkb_get_components (XkbComponentNamesRec *component_names)
+{
+#ifdef HAVE_LIBXKLAVIER
+    XkbComponentNamesRec names;
+    XklConfigRec *xkl_rec;
+
+    xkl_rec = xkl_config_rec_new ();
+    xkl_config_rec_get_from_server (xkl_rec, xklengine);
+    if (xkl_xkb_config_native_prepare (xklengine, xkl_rec, &names)) {
+        g_free (component_names->keycodes);
+        g_free (component_names->geometry);
+        g_free (component_names->symbols);
+        component_names->keycodes = g_strdup (names.keycodes);
+        component_names->geometry = g_strdup (names.geometry);
+        component_names->symbols = g_strdup (names.symbols);
+        g_debug ("keycodes = \"%s\", geometry = \"%s\", symbols = \"%s\"",
+                 component_names->keycodes,
+                 component_names->geometry,
+                 component_names->symbols);
+        xkl_xkb_config_native_cleanup (xklengine, &names);
+    }
+    return TRUE;
+#else
+    return FALSE;
+#endif
 }

@@ -103,6 +103,22 @@ if test "x$have_libxklavier" = "xyes" ; then
     AC_DEFINE(HAVE_LIBXKLAVIER, [1], [Define if we have libxklavier])
 fi
 
+AC_MSG_CHECKING([whether you enable EEK])
+AC_ARG_ENABLE(eek,
+              AS_HELP_STRING([--enable-eek=no/yes],
+                             [Draw keyboard using EEK default=no]),
+              enable_eek=yes,
+              enable_eek=no)
+AC_MSG_RESULT($enable_eek)
+
+if test x"$enable_eek" = xyes; then
+    dnl - check eek is available
+    PKG_CHECK_MODULES(EEK, [
+        eek, eek-clutter, eek-xkb, clutter-gtk-0.10
+	],, AC_MSG_ERROR([EEK not found]))
+    AC_DEFINE(HAVE_EEK, [1], [Define if we have eek])
+fi
+
 dnl - check file path of glib-genmarshal
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 

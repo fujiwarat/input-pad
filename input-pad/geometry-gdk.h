@@ -24,6 +24,7 @@
 
 #include "input-pad-window-gtk.h"
 #include "geometry-xkb.h"
+#include <X11/XKBlib.h>
 
 void                    input_pad_gdk_xkb_destroy_keyboard_layouts
                                         (InputPadGtkWindow     *window,
@@ -45,4 +46,7 @@ Bool                    input_pad_gdk_xkb_set_layout
                                          const char            *layouts,
                                          const char            *variants,
                                          const char            *options);
+Bool                    input_pad_gdk_xkb_get_components
+                                        (XkbComponentNamesRec *component_names);
+
 #endif
