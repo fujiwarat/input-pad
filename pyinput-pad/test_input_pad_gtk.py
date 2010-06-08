@@ -15,4 +15,5 @@ def button_pressed_cb(window, str, type, keysym, keycode, state, data):
 window = _InputPadGtkWindow (gtk.WINDOW_TOPLEVEL, 0)
 window.show()
 window.connect("button-pressed", button_pressed_cb)
+print "input-pad visible?", window.get_visible()
 gtk.main()

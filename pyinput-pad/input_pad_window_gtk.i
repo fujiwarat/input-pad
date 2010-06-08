@@ -23,6 +23,9 @@ _input_pad_gtk_window_connect_wrapper (struct _InputPadGtkWindow *self,
     void show () {
         gtk_widget_show (GTK_WIDGET (self));
     }
+    int get_visible () {
+        return gtk_widget_get_visible (GTK_WIDGET (self));
+    }
     void show_all () {
         gtk_widget_show_all (GTK_WIDGET (self));
     }

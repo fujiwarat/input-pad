@@ -86,8 +86,12 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 make DESTDIR=$RPM_BUILD_ROOT install
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/*.la
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/*.a
+rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
+%if %have_xtest_devel
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/*.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/*.a
+%endif
 %if %have_python_devel
 rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.la
 rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.a
@@ -103,13 +107,15 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING README
 %{_bindir}/input-pad
 %dir %{_libdir}/%{name}-%sub_version
-%{_libdir}/%{name}-%sub_version/libinput-pad.so
+%dir %{_libdir}/%{name}-%sub_version/modules
+%{_libdir}/libinput-pad.so.*
 %{_datadir}/%name
 %{_datadir}/pixmaps/input-pad.png
 
 %files devel
 %defattr(-,root,root,-)
 %{_includedir}/%{name}-%sub_version
+%{_libdir}/libinput-pad.so
 %{_libdir}/pkgconfig/*.pc
 
 %if %have_python_devel
@@ -122,7 +128,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %have_xtest_devel
 %files xtest
 %defattr(-,root,root,-)
-%{_libdir}/%{name}-%sub_version/libinput-pad-xtest-gdk.so
+%{_libdir}/%{name}-%sub_version/modules/libinput-pad-xtest-gdk.so
 %endif
 
 %changelog

@@ -10,6 +10,8 @@
 
 %pythoncode
 {
+get_version = input_pad_get_version
+
 class InputPadWindow:
     def __init__(self, argv=None, type=INPUT_PAD_WINDOW_TYPE_GTK):
         self.window = None
@@ -29,6 +31,8 @@ class InputPadWindow:
         input_pad_window_show(self.window)
     def hide(self):
         input_pad_window_hide(self.window)
+    def get_visible(self):
+        return input_pad_window_get_visible(self.window)
     def connect(self, signal_id, signal_cb, data=None):
         _input_pad_window_connect_wrapper(self.window, signal_id, signal_cb,
                                           data)
