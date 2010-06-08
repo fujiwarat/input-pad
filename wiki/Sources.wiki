@@ -1,0 +1,6 @@
+#summary Input Pad Source Repository for Developers
+#labels Featured
+
+{{{
+git clone git://github.com/fujiwarat/ibus-input-pad.git
+}}}
