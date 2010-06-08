@@ -135,6 +135,9 @@ CLEANFILES = \
 	$(pyinput_pad_PYTHON)                                   \
 	$(pyinput_pad_pth_DATA)                                 \
 	input-pad-window-gtk-swig.h                             \
+	input_pad_wrap.c                                        \
+	input_pad_group_wrap.c                                  \
+	input_pad_window_gtk_wrap.c                             \
 	$(NULL)
 
 EXTRA_DIST = \
