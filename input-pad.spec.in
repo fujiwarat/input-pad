@@ -56,7 +56,7 @@ The input-pad-devel package contains the header files.
 
 %if %have_python_devel
 %package python
-Summary:    input-pad for python
+Summary:    Input Pad for python
 Group:      System Environment/Libraries
 Requires:   %{name} = %{version}-%{release}
 
@@ -66,7 +66,7 @@ The input-pad-python package contains the python wrapper files.
 
 %if %have_xtest_devel
 %package xtest
-Summary:    input-pad with XTEST extension
+Summary:    Input Pad with XTEST extension
 Group:      System Environment/Libraries
 Requires:   %{name} = %{version}-%{release}
 Requires:   libXtst
@@ -101,6 +101,10 @@ rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.a
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
