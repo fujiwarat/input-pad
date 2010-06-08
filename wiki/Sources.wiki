@@ -2,5 +2,15 @@
 #labels Featured
 
 {{{
+git clone git://github.com/fujiwarat/input-pad.git
+}}}
+
+
+Currently IBus can work with Input Pad. <br/>
+http://code.google.com/p/ibus
+
+{{{
+git clone git://github.com/phuang/ibus.git
 git clone git://github.com/fujiwarat/ibus-input-pad.git
+git clone git://github.com/phuang/ibus-anthy.git
 }}}
