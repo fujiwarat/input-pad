@@ -2482,6 +2482,7 @@ create_keyboard_layout_ui_real_eek (GtkWidget *vbox, InputPadGtkWindow *window)
     g_object_ref_sink (layout);
     eek_keyboard_set_layout (keyboard, layout);
     actor = eek_clutter_keyboard_get_actor (EEK_CLUTTER_KEYBOARD(keyboard));
+    g_object_ref_sink (actor);
     clutter_actor_get_size (actor, &width, &height);
 
     embed = gtk_clutter_embed_new ();
@@ -2495,7 +2496,6 @@ create_keyboard_layout_ui_real_eek (GtkWidget *vbox, InputPadGtkWindow *window)
     clutter_actor_set_size (stage, width, height);
     clutter_group_add (CLUTTER_GROUP(stage), actor);
     clutter_actor_show_all (stage);
-    g_object_unref (layout);
 
     g_signal_connect (G_OBJECT (window), "keyboard-changed",
                       G_CALLBACK (on_eek_window_keyboard_changed),
@@ -2517,6 +2517,8 @@ destroy_prev_keyboard_layout_eek (GtkWidget *vbox, InputPadGtkWindow *window)
     embed = GTK_WIDGET (children->data);
     gtk_widget_hide (embed);
     gtk_widget_destroy (embed);
+
+    g_object_unref (window->priv->eek_keyboard);
 #endif
 }
 
