@@ -2522,6 +2522,15 @@ input_pad_window_hide (void *window_data)
     gtk_widget_hide (GTK_WIDGET (window_data));
 }
 
+unsigned int
+input_pad_window_get_visible (void *window_data)
+{
+    g_return_val_if_fail (window_data != NULL &&
+                          GTK_IS_WIDGET (window_data), 0);
+
+    return gtk_widget_get_visible (GTK_WIDGET (window_data));
+}
+
 void
 input_pad_window_main (void *window_data)
 {

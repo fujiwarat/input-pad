@@ -1053,10 +1053,12 @@ input_pad_gdk_xkb_set_layout (InputPadGtkWindow        *window,
 {
 #ifdef HAVE_LIBXKLAVIER
     XklConfigRec *xkl_rec;
+    XklState *state;
     int layout_index = -1;
 
     g_return_val_if_fail (layouts != NULL, FALSE);
     g_return_val_if_fail (initial_xkl_rec != NULL, FALSE);
+    g_return_val_if_fail (xklengine != NULL, FALSE);
 
     xkl_rec = xkl_config_rec_new ();
     xkl_rec->model =  initial_xkl_rec->model ?
@@ -1067,6 +1069,13 @@ input_pad_gdk_xkb_set_layout (InputPadGtkWindow        *window,
     } else {
         layout_index = find_layouts_index (initial_xkl_rec->layouts, layouts);
         if (layout_index >= 0) {
+            state = xkl_engine_get_current_state (xklengine);
+            if (state->group == layout_index) {
+                g_free (xkl_rec->model);
+                xkl_rec->model = NULL;
+                g_object_unref (xkl_rec);
+                return TRUE;
+            }
             xkl_rec->layouts = g_strdupv (initial_xkl_rec->layouts);
         } else {
             xkl_rec->layouts = concat_layouts (initial_xkl_rec->layouts,
@@ -1103,7 +1112,25 @@ input_pad_gdk_xkb_set_layout (InputPadGtkWindow        *window,
         xkl_engine_lock_group (xklengine, 0);
     }
 #else
-    Display *xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    Display *xdisplay;
+    guint group;
+    gchar **group_layouts;
+
+    g_return_val_if_fail (window != NULL &&
+                          INPUT_PAD_IS_GTK_WINDOW (window), NULL);
+    g_return_val_if_fail (layouts != NULL, FALSE);
+
+    xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    group = xkb_get_current_group (window);
+    group_layouts = input_pad_gdk_xkb_get_group_layouts (window, 
+                                                         xkb_key_list);
+    if (group_layouts != NULL) {
+        if (!g_strcmp0 (group_layouts[group], layouts)) {
+            g_strfreev (group_layouts);
+            return TRUE;
+        }
+        g_strfreev (group_layouts);
+    }
     set_xkb_rules (xdisplay, "evdev", "evdev", layouts, variants, options);
 #endif
 

@@ -43,6 +43,17 @@ libinput_pad_VERSION="pad_major_version.pad_minor_version"
 AC_SUBST(libinput_pad_VERSION)
 AC_MSG_NOTICE([$PACKAGE sub version $libinput_pad_VERSION])
 
+dnl If only source code changed, lt_revision + 1
+dnl If any interface added, lt_age + 1
+dnl If any interfaces changed or removed, lt_current + 1, lt_revision = 0, lt_age = 0
+dnl libtool versionstring == [lt_current - lt_age].[lt_age].[lt_revision]
+m4_define([lt_current], [pad_major_version])
+m4_define([lt_revision], [pad_minor_version])
+m4_define([lt_age], [0])
+LT_VERSION_INFO="lt_current:lt_revision:lt_age"
+AC_SUBST(LT_VERSION_INFO)
+AC_MSG_NOTICE([library version $LT_VERSION_INFO])
+
 dnl - define PACKAGE_VERSION_* variables
 AM_SANITY_CHECK
 AM_MAINTAINER_MODE

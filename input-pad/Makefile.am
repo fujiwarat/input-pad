@@ -43,7 +43,8 @@ libinput_pad_public_HEADERS = \
 	$(NULL)
 
 libinput_pad_LTLIBRARIES = libinput-pad.la
-libinput_paddir = $(libdir)/$(PACKAGE)-$(libinput_pad_VERSION)
+libinput_paddir = $(libdir)
+MODULE_DIR= $(libdir)/$(PACKAGE)-$(libinput_pad_VERSION)/modules
 
 libinput_pad_la_SOURCES = \
 	$(BUILT_SOURCES)                                        \
@@ -80,7 +81,7 @@ libinput_pad_la_LIBADD = \
 
 libinput_pad_la_LDFLAGS = \
 	-export-dynamic                                         \
-	-avoid-version                                          \
+	-version-info $(LT_VERSION_INFO)                        \
 	$(no_undefined)                                         \
 	$(NULL)
 
@@ -98,10 +99,11 @@ MODULE_XTEST_GDK_BASE = input-pad-xtest-gdk
 
 INCLUDES += \
 	-DMODULE_XTEST_GDK_BASE=\""$(MODULE_XTEST_GDK_BASE)"\"  \
-	-DMODULE_XTEST_GDK_DIR=\""$(libinput_paddir)"\"         \
+	-DMODULE_XTEST_GDK_DIR=\""$(MODULE_DIR)"\"              \
 	$(NULL)
 
-libinput_pad_LTLIBRARIES += libinput-pad-xtest-gdk.la
+libinput_pad_xtest_gdk_LTLIBRARIES = libinput-pad-xtest-gdk.la
+libinput_pad_xtest_gdkdir = $(MODULE_DIR)
 
 libinput_pad_xtest_gdk_la_SOURCES = \
 	xtest-gdk.c                                             \
