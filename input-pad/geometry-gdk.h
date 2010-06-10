@@ -46,7 +46,11 @@ Bool                    input_pad_gdk_xkb_set_layout
                                          const char            *layouts,
                                          const char            *variants,
                                          const char            *options);
+char *                  input_pad_gdk_xkb_get_symbols
+                                        (InputPadGtkWindow     *window,
+                                         InputPadXKBKeyList    *xkb_key_list);
 Bool                    input_pad_gdk_xkb_get_components
-                                        (XkbComponentNamesRec *component_names);
+                                        (InputPadGtkWindow     *window,
+                                         XkbComponentNamesRec *component_names);
 
 #endif

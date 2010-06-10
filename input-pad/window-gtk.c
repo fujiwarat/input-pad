@@ -645,7 +645,8 @@ on_combobox_layout_changed (GtkComboBox *combobox,
     input_pad_gdk_xkb_set_layout (window, window->priv->xkb_key_list,
                                   layout, NULL, NULL);
     use_eek =
-        input_pad_gdk_xkb_get_components (&window->priv->xkb_component_names);
+        input_pad_gdk_xkb_get_components (window,
+                                          &window->priv->xkb_component_names);
     g_free (layout);
 
     if (window->priv->xkb_key_list) {
@@ -655,9 +656,11 @@ on_combobox_layout_changed (GtkComboBox *combobox,
     }
     window->priv->xkb_key_list =
         input_pad_gdk_xkb_parse_keyboard_layouts (window);
+#ifndef HAVE_EEK
     if (window->priv->xkb_key_list == NULL) {
         return;
     }
+#endif
 
     keyboard_vbox = gtk_widget_get_parent (gtk_widget_get_parent (GTK_WIDGET (combobox)));
     if (use_eek)
@@ -1160,13 +1163,16 @@ on_window_realize (GtkWidget *window, gpointer data)
 
     input_pad->priv->xkb_key_list = 
         input_pad_gdk_xkb_parse_keyboard_layouts (input_pad);
+#ifndef HAVE_EEK
     if (input_pad->priv->xkb_key_list == NULL) {
         return;
     }
+#endif
 
     memset (&input_pad->priv->xkb_component_names, 0,
             sizeof input_pad->priv->xkb_component_names);
-    if (input_pad_gdk_xkb_get_components (&input_pad->priv->xkb_component_names))
+    if (input_pad_gdk_xkb_get_components (input_pad,
+                                          &input_pad->priv->xkb_component_names))
         create_keyboard_layout_ui_real_eek (keyboard_vbox, input_pad);
     else
         create_keyboard_layout_ui_real (keyboard_vbox, input_pad);
@@ -2457,14 +2463,22 @@ create_keyboard_layout_ui_real_eek (GtkWidget *vbox, InputPadGtkWindow *window)
     ClutterActor *stage, *actor;
     EekKeyboard *keyboard;
     EekLayout *layout;
+    gchar *symbols = NULL;
     gfloat width, height;
     ClutterColor color = {0xff, 0xff, 0xff, 0x00};
 
     keyboard = window->priv->eek_keyboard = eek_clutter_keyboard_new (670, 480);
     g_object_ref_sink (keyboard);
+    if ((symbols = window->priv->xkb_component_names.symbols) == NULL) {
+        symbols = input_pad_gdk_xkb_get_symbols (window,
+                                                 window->priv->xkb_key_list);
+    } else {
+        symbols = g_strdup (window->priv->xkb_component_names.symbols);
+    }
     layout = eek_xkb_layout_new (window->priv->xkb_component_names.keycodes,
                                  window->priv->xkb_component_names.geometry,
-                                 window->priv->xkb_component_names.symbols);
+                                 symbols ? symbols : "");
+    g_free (symbols);
     g_object_ref_sink (layout);
     eek_keyboard_set_layout (keyboard, layout);
     actor = eek_clutter_keyboard_get_actor (EEK_CLUTTER_KEYBOARD(keyboard));
@@ -3884,9 +3898,10 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
         exit (0);
     }
 
-    gtk_init (argc, argv);
 #ifdef HAVE_EEK
-    clutter_init (argc, argv);
+    gtk_clutter_init (argc, argv);
+#else
+    gtk_init (argc, argv);
 #endif
 }
 

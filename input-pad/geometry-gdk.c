@@ -42,10 +42,22 @@
 #include <X11/extensions/XKBrules.h>
 #endif
 
+#ifdef HAVE_EEK
+#include <X11/extensions/XKBrules.h>
+#endif
+
 #include <string.h> /* strlen */
 
 #include "input-pad-window-gtk.h"
 #include "geometry-gdk.h"
+
+#ifndef DFLT_XKB_CONFIG_ROOT
+#define DFLT_XKB_CONFIG_ROOT "/usr/share/X11/xkb"
+#endif
+
+#define DFLT_XKB_RULES_FILE "xorg"
+#define DFLT_XKB_MODEL "pc105"
+#define DFLT_XKB_LAYOUT "us"
 
 #ifdef HAVE_LIBXKLAVIER
 #if 0
@@ -56,18 +68,6 @@ extern void xkl_engine_save_toplevel_window_state(XklEngine * engine,
                                                   Window toplevel_win,
                                                   XklState * state);
 #endif
-/* from gnome-keyboard-properties-xkbpv.c:
- * BAD STYLE: Taken from xklavier_private_xkb.h
- * Any ideas on architectural improvements are WELCOME
- */
-extern gboolean xkl_xkb_config_native_prepare (XklEngine * engine,
-					       const XklConfigRec * data,
-					       XkbComponentNamesPtr
-					       component_names);
-
-extern void xkl_xkb_config_native_cleanup (XklEngine * engine,
-					   XkbComponentNamesPtr
-					   component_names);
 #endif
 
 #ifdef HAVE_LIBXKLAVIER
@@ -112,6 +112,7 @@ input_pad_xkb_init (InputPadGtkWindow *window)
     return TRUE;
 }
 
+#ifndef HAVE_EEK
 static XkbFileInfo *
 input_pad_xkb_get_file_info (InputPadGtkWindow *window)
 {
@@ -360,6 +361,7 @@ add_xkb_key (InputPadXKBKeyList        *xkb_key_list,
         }
     }
 }
+#endif
 
 #ifdef HAVE_LIBXKLAVIER
 static XklEngine *
@@ -535,6 +537,7 @@ xkb_setup_events (InputPadGtkWindow    *window,
 #endif
 }
 
+#ifndef HAVE_EEK
 static void
 debug_print_key_list (InputPadXKBKeyList *xkb_key_list)
 {
@@ -573,6 +576,7 @@ debug_print_key_list (InputPadXKBKeyList *xkb_key_list)
         list = list->next;
     }
 }
+#endif
 
 static void
 debug_print_layout_list (InputPadXKBLayoutList *xkb_layout_list)
@@ -940,8 +944,10 @@ input_pad_gdk_xkb_destroy_keyboard_layouts (InputPadGtkWindow   *window,
 InputPadXKBKeyList *
 input_pad_gdk_xkb_parse_keyboard_layouts (InputPadGtkWindow   *window)
 {
+#ifndef HAVE_EEK
     XkbFileInfo *xkb_info;
     XkbDrawablePtr draw, draw_head;
+#endif
     InputPadXKBKeyList *xkb_key_list = NULL;
     
     g_return_val_if_fail (window != NULL &&
@@ -950,6 +956,7 @@ input_pad_gdk_xkb_parse_keyboard_layouts (InputPadGtkWindow   *window)
     if (!input_pad_xkb_init (window)) {
         return NULL;
     }
+#ifndef HAVE_EEK
     if ((xkb_info = input_pad_xkb_get_file_info (window)) == NULL) {
         return NULL;
     }
@@ -969,6 +976,7 @@ input_pad_gdk_xkb_parse_keyboard_layouts (InputPadGtkWindow   *window)
         xkb_key_list->priv = g_new0 (InputPadXKBKeyListPrivate, 1);
         xkb_key_list->priv->xkb_info = xkb_info;
     }
+#endif
 
 #ifdef HAVE_LIBXKLAVIER
     if (xklengine == NULL) {
@@ -1075,7 +1083,7 @@ input_pad_gdk_xkb_set_layout (InputPadGtkWindow        *window,
     xkl_rec = xkl_config_rec_new ();
     xkl_rec->model =  initial_xkl_rec->model ?
                       g_strdup (initial_xkl_rec->model) :
-                      g_strdup ("pc105");
+                      g_strdup (DFLT_XKB_MODEL);
     if (initial_xkl_rec->layouts == NULL) {
         xkl_rec->layouts = g_strsplit (layouts, ",", -1);
     } else {
@@ -1149,28 +1157,118 @@ input_pad_gdk_xkb_set_layout (InputPadGtkWindow        *window,
     return TRUE;
 }
 
-Bool
-input_pad_gdk_xkb_get_components (XkbComponentNamesRec *component_names)
+char *
+input_pad_gdk_xkb_get_symbols (InputPadGtkWindow        *window,
+                               InputPadXKBKeyList       *xkb_key_list)
 {
-#ifdef HAVE_LIBXKLAVIER
-    XkbComponentNamesRec names;
-    XklConfigRec *xkl_rec;
+    guint group;
+    gchar **group_layouts;
+    gchar *p, *main_layout, *sub_layout, *layout, *symbols, *sub_option;
+    gchar *options = NULL;
+    int i;
 
-    xkl_rec = xkl_config_rec_new ();
-    xkl_config_rec_get_from_server (xkl_rec, xklengine);
-    if (xkl_xkb_config_native_prepare (xklengine, xkl_rec, &names)) {
-        g_free (component_names->keycodes);
-        g_free (component_names->geometry);
-        g_free (component_names->symbols);
-        component_names->keycodes = g_strdup (names.keycodes);
-        component_names->geometry = g_strdup (names.geometry);
-        component_names->symbols = g_strdup (names.symbols);
-        g_debug ("keycodes = \"%s\", geometry = \"%s\", symbols = \"%s\"",
-                 component_names->keycodes,
-                 component_names->geometry,
-                 component_names->symbols);
-        xkl_xkb_config_native_cleanup (xklengine, &names);
+    g_return_val_if_fail (window != NULL &&
+                          INPUT_PAD_IS_GTK_WINDOW (window), NULL);
+
+    group = xkb_get_current_group (window);
+    group_layouts = input_pad_gdk_xkb_get_group_layouts (window, 
+                                                         xkb_key_list);
+    if (group_layouts == NULL) {
+        return NULL;
     }
+    if ((p = g_strstr_len (group_layouts[group], -1, " ")) != NULL) {
+        main_layout = g_strndup (group_layouts[group], p - group_layouts[group]);
+        p = g_strrstr (group_layouts[group], " ");
+        p++;
+        if (p != NULL) {
+            sub_layout = g_strdup (group_layouts[group]);
+        } else {
+            sub_layout = g_strdup ("");
+        }
+        layout = g_strdup_printf ("%s(%s)", main_layout, sub_layout);
+        g_free (main_layout);
+        g_free (sub_layout);
+    } else {
+        layout = g_strdup (group_layouts[group]);
+    }
+    if (initial_xkl_rec->options) {
+        p = options;
+        for (i = 0; initial_xkl_rec->options[i]; i++) {
+            if (g_strstr_len (initial_xkl_rec->options[i], -1, ":")) {
+                sub_option = g_strdup (g_strstr_len (initial_xkl_rec->options[i], -1, ":") + 1);
+            } else {
+                sub_option = g_strdup (initial_xkl_rec->options[i]);
+            }
+            options = g_strdup_printf ("%s+group(%s)",
+                                       p ? p : "",
+                                       sub_option);
+            g_free (p);
+            g_free (sub_option);
+            p = options;
+        }
+    }
+    symbols = g_strdup_printf ("pc+%s+inet(evdev)%s", layout,
+                               options ? options : "");
+    g_free (layout);
+    g_free (options);
+    return symbols;
+}
+
+Bool
+input_pad_gdk_xkb_get_components (InputPadGtkWindow        *window,
+                                  XkbComponentNamesRec     *component_names)
+{
+#ifdef HAVE_EEK
+    Display *xdisplay;
+    char buf[PATH_MAX];
+    gchar *include_path[] = {
+      ".",
+      DFLT_XKB_CONFIG_ROOT,
+      NULL
+    };
+    char *rules_file = NULL;
+    int i;
+    XkbRF_RulesPtr rules = NULL;
+    XkbRF_VarDefsRec defs;
+    XkbComponentNamesRec names;
+
+    g_return_val_if_fail (window != NULL &&
+                          INPUT_PAD_IS_GTK_WINDOW (window), FALSE);
+
+    xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    memset (&defs, 0, sizeof (XkbRF_VarDefsRec));
+    if (!XkbRF_GetNamesProp (xdisplay, &rules_file, &defs) || !rules_file) {
+        rules_file = DFLT_XKB_RULES_FILE;
+        defs.model = DFLT_XKB_MODEL;
+        defs.layout = DFLT_XKB_LAYOUT;
+    }
+
+    for (i = 0; include_path[i]; i++) {
+        sprintf (buf, "%s/rules/%s", include_path[i], rules_file);
+        rules = XkbRF_Load (buf, "C", True, True);
+        if (rules) {
+            XkbRF_GetComponents (rules, &defs, &names);
+            break;
+        }
+    }
+    if (rules == NULL) {
+        return FALSE;
+    }
+
+
+    g_free (component_names->keycodes);
+    g_free (component_names->geometry);
+    g_free (component_names->symbols);
+    component_names->keycodes = g_strdup (names.keycodes);
+    component_names->geometry = g_strdup (names.geometry);
+    /* Probably group layout does not work. */
+    /* component_names->symbols = g_strdup (names.symbols); */
+    component_names->symbols = NULL;
+    g_debug ("keycodes = \"%s\", geometry = \"%s\", symbols = \"%s\"",
+             component_names->keycodes,
+             component_names->geometry,
+             component_names->symbols ? component_names->symbols : "(null)");
+
     return TRUE;
 #else
     return FALSE;
