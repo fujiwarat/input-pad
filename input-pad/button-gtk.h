@@ -57,6 +57,7 @@ struct _InputPadGtkButtonClass {
 
 GType               input_pad_gtk_button_get_type (void);
 GtkWidget *         input_pad_gtk_button_new_with_label (const gchar *label);
+GtkWidget *         input_pad_gtk_button_new_with_unicode (guint code);
 guint               input_pad_gtk_button_get_keycode
                                        (InputPadGtkButton      *button);
 void                input_pad_gtk_button_set_keycode

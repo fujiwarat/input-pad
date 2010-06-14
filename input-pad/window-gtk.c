@@ -678,6 +678,11 @@ on_button_pressed (GtkButton *button, gpointer data)
     keysyms = input_pad_gtk_button_get_all_keysyms (ibutton);
     group = input_pad_gtk_button_get_keysym_group (ibutton);
     state = window->priv->keyboard_state;
+    if (!g_strcmp0 (str, " ") &&
+        keysym == (guint) '\t' && keycode == 0 && keysyms == NULL) {
+        str = "\t";
+        keysym = 0;
+    }
     if (keysyms && (keysym != keysyms[group][0])) {
         state |= ShiftMask;
     }
@@ -1293,7 +1298,6 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
     GtkWidget *button = NULL;
     gchar **char_table;
     gchar *str;
-    gchar buff[6];
     const int TABLE_COLUMN = table_data->column;
     int i, num, raw, col, len, code;
     guint keysym;
@@ -1364,8 +1368,7 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
                     len -= 2;
                 }
                 code = (int) g_ascii_strtoll (str, NULL, 16);
-                buff[g_unichar_to_utf8 ((gunichar) code, buff)] = '\0';
-                button = input_pad_gtk_button_new_with_label (buff);
+                button = input_pad_gtk_button_new_with_unicode (code);
                 /* Decided input-pad always sends char but not keysym.
                  * Now keyboard layout can be used instead. */
 #if 0
@@ -2118,11 +2121,8 @@ append_char_view_table (GtkWidget      *viewport,
                         GtkWidget      *window)
 {
     unsigned int num;
-    int col, row, i;
+    int col, row;
     const int TABLE_COLUMN = 15;
-    gchar buff[7];
-    gchar buff2[35]; /* 7 x 5 e.g. 'a' -> '0x61 ' */
-    gchar *tooltip;
     GtkWidget *table;
     GtkWidget *button;
 
@@ -2141,26 +2141,7 @@ append_char_view_table (GtkWidget      *viewport,
     gtk_widget_show (table);
 
     for (num = start; num <= end; num++) {
-        if (num == '\t') {
-            buff[0] = ' ';
-            buff[1] = '\0';
-            sprintf (buff2, "0x%02X ", (unsigned char) num);
-        } else {
-            buff[g_unichar_to_utf8 ((gunichar) num, buff)] = '\0';
-            for (i = 0; buff[i] && i < 7; i++) {
-                sprintf (buff2 + i * 5, "0x%02X ", (unsigned char) buff[i]);
-            }
-            if (buff[0] == '\0') {
-                buff2[0] = '0'; buff2[0] = 'x'; buff2[1] = '0'; buff2[2] = '0';
-                buff2[3] = '\0';
-            }
-        }
-        button = input_pad_gtk_button_new_with_label (buff);
-        tooltip = g_strdup_printf ("U+%04X\nUTF-8 %s", num, buff2);
-        gtk_widget_set_tooltip_text (GTK_WIDGET (button), tooltip);
-        g_free (tooltip);
-        input_pad_gtk_button_set_table_type (INPUT_PAD_GTK_BUTTON (button),
-                                             INPUT_PAD_TABLE_TYPE_CHARS);
+        button = input_pad_gtk_button_new_with_unicode (num);
         row = (num - start) / TABLE_COLUMN;
         col = (num - start) % TABLE_COLUMN;
 #if 0
@@ -2285,11 +2266,12 @@ create_keyboard_layout_ui (GtkBuilder *builder, GtkWidget *window)
 }
 
 static GtkWidget *
-create_ui (void)
+create_ui (InputPadGroup *custom_group)
 {
     const gchar *filename = INPUT_PAD_UI_FILE;
     GError *error = NULL;
     GtkWidget *window = NULL;
+    InputPadGtkWindow *input_pad;
     GtkAction *close_item;
     GtkBuilder *builder = gtk_builder_new ();
 
@@ -2309,6 +2291,14 @@ create_ui (void)
     }
 
     window = GTK_WIDGET (gtk_builder_get_object (builder, "TopWindow"));
+    if (custom_group != NULL) {
+        g_return_val_if_fail (INPUT_PAD_IS_GTK_WINDOW (window), NULL);
+        input_pad = INPUT_PAD_GTK_WINDOW (window);
+        g_return_val_if_fail (input_pad->priv != NULL, NULL);
+        g_return_val_if_fail (input_pad->priv->group != NULL, NULL);
+        input_pad_group_destroy (input_pad->priv->group);
+        input_pad->priv->group = custom_group;
+    }
     gtk_window_set_icon_from_file (GTK_WINDOW (window),
                                    DATAROOTDIR "/pixmaps/input-pad.png",
                                    &error);
@@ -2465,7 +2455,7 @@ input_pad_gtk_window_set_group (InputPadGtkWindow *window)
 {
     InputPadGtkWindowPrivate *priv = INPUT_PAD_GTK_WINDOW_GET_PRIVATE (window);
     if (priv->group == NULL) {
-        priv->group = input_pad_group_parse_all_files ();
+        priv->group = input_pad_group_parse_all_files (NULL);
     }
     window->priv = priv;
 }
@@ -2600,9 +2590,11 @@ input_pad_gtk_window_class_init (InputPadGtkWindowClass *klass)
 GtkWidget *
 _input_pad_gtk_window_new_with_gtype (GtkWindowType type,
                                       unsigned int child,
+                                      const char  *custom_dirname,
                                       gboolean     gtype)
 {
     GtkWidget *window;
+    InputPadGroup *custom_group = NULL;
 
     g_return_val_if_fail (type >= GTK_WINDOW_TOPLEVEL && type <= GTK_WINDOW_POPUP, NULL);
 
@@ -2615,7 +2607,10 @@ _input_pad_gtk_window_new_with_gtype (GtkWindowType type,
         INPUT_PAD_TYPE_GTK_WINDOW;
     }
 
-    window = create_ui ();
+    if (custom_dirname != NULL) {
+        custom_group = input_pad_group_parse_all_files (custom_dirname);
+    }
+    window = create_ui (custom_group);
     INPUT_PAD_GTK_WINDOW (window)->parent.type = type;
     INPUT_PAD_GTK_WINDOW (window)->child = child;
 
@@ -2625,7 +2620,18 @@ _input_pad_gtk_window_new_with_gtype (GtkWindowType type,
 GtkWidget *
 input_pad_gtk_window_new (GtkWindowType type, unsigned int child)
 {
-    return _input_pad_gtk_window_new_with_gtype (type, child, FALSE);
+    return input_pad_gtk_window_new_with_paddir (type, child, NULL);
+}
+
+GtkWidget *
+input_pad_gtk_window_new_with_paddir (GtkWindowType     type,
+                                      unsigned int      child,
+                                      const gchar      *paddir)
+{
+    return _input_pad_gtk_window_new_with_gtype (type,
+                                                 child,
+                                                 (const char *) paddir,
+                                                 FALSE);
 }
 
 const char*
@@ -2676,10 +2682,22 @@ input_pad_window_new (unsigned int ibus)
 }
 
 void *
-_input_pad_window_new_with_gtype (unsigned int ibus, gboolean gtype)
+input_pad_window_new_with_paddir (unsigned int ibus, const char *paddir)
+{
+    return input_pad_gtk_window_new_with_paddir (GTK_WINDOW_TOPLEVEL,
+                                                 ibus,
+                                                 (const gchar *) paddir);
+}
+
+void *
+_input_pad_window_new_with_gtype (unsigned int ibus,
+                                  const char  *paddir,
+                                  gboolean     gtype)
 {
     return _input_pad_gtk_window_new_with_gtype (GTK_WINDOW_TOPLEVEL,
-                                                 ibus, gtype);
+                                                 ibus,
+                                                 paddir,
+                                                 gtype);
 }
 
 void

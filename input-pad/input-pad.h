@@ -31,6 +31,8 @@ const char *        input_pad_get_version (void);
 void                input_pad_window_init (int *argc, char ***argv,
                                            InputPadWindowType type);
 void *              input_pad_window_new (unsigned int ibus);
+void *              input_pad_window_new_with_paddir (unsigned int ibus,
+                                                      const char  *paddir);
 void                input_pad_window_show (void *window_data);
 void                input_pad_window_hide (void *window_data);
 unsigned int        input_pad_window_get_visible (void *window_data);

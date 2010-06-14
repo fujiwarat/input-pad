@@ -66,8 +66,12 @@ struct _InputPadGtkWindowClass {
 
 G_MODULE_EXPORT
 GType               input_pad_gtk_window_get_type (void);
-GtkWidget *         input_pad_gtk_window_new (GtkWindowType	type,
+GtkWidget *         input_pad_gtk_window_new (GtkWindowType     type,
                                               unsigned int      ibus);
+GtkWidget *         input_pad_gtk_window_new_with_paddir
+                                             (GtkWindowType     type,
+                                              unsigned int      ibus,
+                                              const gchar      *paddir);
 
 G_END_DECLS
 

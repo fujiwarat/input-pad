@@ -25,8 +25,8 @@ class InputPadWindow:
             import gtk
 
         _input_pad_window_init_wrapper (argv, type)
-    def new (self, ibus=0):
-        self.window = _input_pad_window_new_with_gtype (ibus, True)
+    def new (self, ibus=0, paddir=None):
+        self.window = _input_pad_window_new_with_gtype (ibus, paddir, True)
     def show(self):
         input_pad_window_show(self.window)
     def hide(self):
@@ -45,7 +45,9 @@ class InputPadWindow:
 %inline %{
 /* workaround */
 extern void*
-_input_pad_window_new_with_gtype (unsigned int ibus, unsigned int gtype);
+_input_pad_window_new_with_gtype (unsigned int  ibus,
+                                  const char   *paddir,
+                                  unsigned int  gtype);
 
 void
 _input_pad_window_init_wrapper (PyObject *pyargv, InputPadWindowType type)

@@ -40,7 +40,6 @@
           <object class="GtkRadioAction" id="ShowAllChars">
             <property name="name">ShowAllChars</property>
             <property name="label" translatable="yes">Show _All Characters</property>
-            <property name="active">True</property>
           </object>
         </child>
         <child>
@@ -48,6 +47,7 @@
             <property name="name">ShowCustomChars</property>
             <property name="label" translatable="yes">Show _Custom Characters</property>
             <property name="group">ShowAllChars</property>
+            <property name="active">True</property>
           </object>
         </child>
         <child>
@@ -253,7 +253,6 @@ Bin</property>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <!--property name="position">0</property-->
               </packing>
             </child>
             <child>

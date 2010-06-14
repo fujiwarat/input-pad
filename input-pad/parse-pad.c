@@ -371,7 +371,7 @@ input_pad_group_append_from_file (InputPadGroup        *group,
 }
 
 InputPadGroup *
-input_pad_group_parse_all_files (void)
+input_pad_group_parse_all_files (const char *custom_dirname)
 {
     const gchar *dirname = INPUT_PAD_PAD_SYSTEM_DIR;
     const gchar *filename;
@@ -382,6 +382,10 @@ input_pad_group_parse_all_files (void)
     InputPadGroup *group = NULL;
     GSList *file_list = NULL;
     GSList *list;
+
+    if (custom_dirname != NULL) {
+        dirname = (const gchar *) custom_dirname;
+    }
 
     if (!dirname ||
         !g_file_test (dirname, G_FILE_TEST_IS_DIR)) {
