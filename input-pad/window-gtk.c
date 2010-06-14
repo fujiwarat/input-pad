@@ -44,6 +44,7 @@
 
 #define N_KEYBOARD_LAYOUT_PART 3
 #define INPUT_PAD_UI_FILE INPUT_PAD_UI_GTK_DIR "/input-pad.ui"
+#define MAX_UCODE 0x10ffff
 
 #define INPUT_PAD_GTK_WINDOW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_WINDOW, InputPadGtkWindowPrivate))
 
@@ -96,6 +97,7 @@ struct _CodePointData {
     GtkWidget                  *signal_window;
     GtkWidget                  *digit_hbox;
     GtkWidget                  *char_label;
+    GtkWidget                  *spin_button;
 };
 
 struct _KeyboardLayoutPart {
@@ -129,6 +131,7 @@ static GOptionEntry entries[] = {
 
 static void xor_modifiers (InputPadGtkWindow *window, guint modifiers);
 static guint digit_hbox_get_code_point (GtkWidget *digit_hbox);
+static void digit_hbox_set_code_point (GtkWidget *digit_hbox, guint code);
 static void char_label_set_code_point (GtkWidget *char_label, guint code);
 static void set_code_point_base (CodePointData *cp_data, int n_encoding);
 static InputPadGroup *get_nth_pad_group (InputPadGroup *group, int nth);
@@ -363,6 +366,40 @@ on_button_ok_clicked (GtkButton *button, gpointer data)
     GtkWidget *contents_dlg = GTK_WIDGET (data);
 
     gtk_widget_hide (contents_dlg);
+}
+
+static gboolean
+on_spin_button_base_output (GtkSpinButton *spin_button, gpointer data)
+{
+    CodePointData *cp_data = (CodePointData*) data;
+    guint digits = gtk_spin_button_get_digits (spin_button);
+    GtkAdjustment *adjustment = gtk_spin_button_get_adjustment (spin_button);
+    guint code = (guint) gtk_adjustment_get_value (adjustment);
+    gchar *buff = g_strdup_printf ("%0*x", digits, code);
+
+    if (strcmp (buff, gtk_entry_get_text (GTK_ENTRY (spin_button)))) {
+      gtk_entry_set_text (GTK_ENTRY (spin_button), buff);
+    }
+    g_free (buff);
+
+    g_return_val_if_fail (GTK_IS_WIDGET (cp_data->digit_hbox), TRUE);
+    digit_hbox_set_code_point (cp_data->digit_hbox, code);
+    char_label_set_code_point (cp_data->char_label, code);
+
+    return TRUE;
+}
+
+static gint
+on_spin_button_base_input (GtkSpinButton *spin_button,
+                           gdouble *new_val,
+                           gpointer data)
+{
+    *new_val = g_ascii_strtoll (gtk_entry_get_text (GTK_ENTRY (spin_button)),
+                                NULL, 16);
+    if (0) {
+        return GTK_INPUT_ERROR;
+    }
+    return TRUE;
 }
 
 static void
@@ -697,6 +734,8 @@ on_combobox_changed (GtkComboBox *combobox, gpointer data)
 {
     CodePointData *cp_data;
     guint code;
+    GtkSpinButton *spin_button;
+    GtkAdjustment *adjustment;
 
     g_return_if_fail (GTK_IS_COMBO_BOX (combobox));
     g_return_if_fail (data != NULL);
@@ -704,8 +743,13 @@ on_combobox_changed (GtkComboBox *combobox, gpointer data)
     cp_data = (CodePointData *) data;
     g_return_if_fail (GTK_IS_CONTAINER (cp_data->digit_hbox));
     g_return_if_fail (GTK_IS_LABEL (cp_data->char_label));
+    g_return_if_fail (GTK_IS_SPIN_BUTTON (cp_data->spin_button));
 
     code = digit_hbox_get_code_point (cp_data->digit_hbox);
+    spin_button = GTK_SPIN_BUTTON (cp_data->spin_button);
+    adjustment = gtk_spin_button_get_adjustment (spin_button);
+    gtk_adjustment_set_value (adjustment, (gdouble) code);
+    gtk_spin_button_set_adjustment (spin_button, adjustment);
     char_label_set_code_point (cp_data->char_label, code);
 }
 
@@ -924,7 +968,7 @@ char_label_set_code_point (GtkWidget *char_label, guint code)
 }
 
 static GtkTreeModel *
-digit_model_new ()
+digit_model_new (int base)
 {
     GtkTreeStore *store;
     GtkTreeIter   iter;
@@ -932,7 +976,7 @@ digit_model_new ()
     gchar *str = NULL;
 
     store = gtk_tree_store_new (DIGIT_N_COLS, G_TYPE_STRING, G_TYPE_BOOLEAN);
-    for (i = 0; i < 16; i ++) {
+    for (i = 0; i < base; i ++) {
         str = g_strdup_printf ("%x", i);
         gtk_tree_store_append (store, &iter, NULL);
         gtk_tree_store_set (store, &iter, DIGIT_TEXT_COL, str,
@@ -941,12 +985,137 @@ digit_model_new ()
     return GTK_TREE_MODEL (store);
 }
 
+static GtkTreeModel *
+digit_model_renew (GtkTreeModel *model, int prev_base, int new_base)
+{
+    GtkTreeStore *store;
+    GtkTreeIter   iter;
+    int i = 0;
+    gchar *str = NULL;
+
+    g_return_val_if_fail (GTK_IS_TREE_MODEL (model), model);
+
+    if (!gtk_tree_model_get_iter_first (model, &iter)) {
+        g_warning ("Could not get the first iter");
+        return model;
+    }
+    if (prev_base > new_base) {
+        for (i = 0; i < new_base; i++) {
+            if (!gtk_tree_model_iter_next (model, &iter)) {
+                g_warning ("Could not get the %dth iter", i);
+                return model;
+            }
+        }
+        for (i = new_base; i < prev_base; i++) {
+            store = GTK_TREE_STORE (model);
+            gtk_tree_store_remove (store, &iter);
+        }
+    }
+    if (new_base >= prev_base) {
+        for (i = prev_base; i < new_base; i++) {
+            store = GTK_TREE_STORE (model);
+            str = g_strdup_printf ("%x", i);
+            gtk_tree_store_append (store, &iter, NULL);
+            gtk_tree_store_set (store, &iter, DIGIT_TEXT_COL, str,
+                                DIGIT_VISIBLE_COL, TRUE, -1);
+        }
+    }
+    return model;
+}
+
+/* Copied the GtkSpinButton function to get arrow button width */
+static gint
+_spin_button_get_arrow_size (GtkSpinButton *spin_button)
+{
+    gint size = pango_font_description_get_size (GTK_WIDGET (spin_button)->style->font_desc);
+    gint arrow_size;
+    const gint MIN_ARROW_WIDTH = 6;
+
+    arrow_size = MAX (PANGO_PIXELS (size), MIN_ARROW_WIDTH);
+
+    return arrow_size - arrow_size % 2; /* force even */
+}
+
+/* Modified GtkSpinButton->size_allocate() not to show text */
+static void
+_gtk_spin_button_size_allocate (GtkWidget     *widget,
+                                GtkAllocation *allocation)
+{
+    GtkSpinButton *spin = GTK_SPIN_BUTTON (widget);
+    GtkAllocation panel_allocation;
+    gint arrow_size;
+    gint panel_width;
+    static gpointer parent_class = NULL;
+
+    arrow_size = _spin_button_get_arrow_size (spin);
+    panel_width = arrow_size + 2 * widget->style->xthickness;
+ 
+    widget->allocation = *allocation;
+
+    /* resize to show arrow only. */
+    allocation->width = panel_width;
+
+    if (gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL) {
+      panel_allocation.x = 0;
+    } else {
+      panel_allocation.x = allocation->width - panel_width;
+    }
+    panel_allocation.width = panel_width;
+    panel_allocation.height = MIN (widget->requisition.height, allocation->height);
+
+    panel_allocation.y = 0;
+
+    if (parent_class == NULL) {
+        parent_class = g_type_class_peek_parent (GTK_SPIN_BUTTON_GET_CLASS (widget));
+    }
+
+    if (parent_class != NULL) {
+        GTK_WIDGET_CLASS (parent_class)->size_allocate (widget, allocation);
+    }
+
+    if (GTK_WIDGET_REALIZED (widget)) {
+        gdk_window_move_resize (GTK_SPIN_BUTTON (widget)->panel,
+                                panel_allocation.x,
+                                panel_allocation.y,
+                                panel_allocation.width,
+                                panel_allocation.height);
+    }
+
+    gtk_widget_queue_draw (GTK_WIDGET (spin));
+}
+
+static void
+init_spin_button (GtkWidget *spin_button, CodePointData *cp_data)
+{
+    int arrow_size;
+    GtkAdjustment *adjustment;
+
+    g_signal_connect (G_OBJECT (spin_button), "output",
+                      G_CALLBACK (on_spin_button_base_output),
+                      (gpointer) cp_data);
+    g_signal_connect (G_OBJECT (spin_button), "input",
+                      G_CALLBACK (on_spin_button_base_input),
+                      (gpointer) cp_data);
+
+    gtk_entry_set_max_length (GTK_ENTRY (spin_button), 0);
+    gtk_entry_set_width_chars (GTK_ENTRY (spin_button), 0);
+
+    arrow_size = _spin_button_get_arrow_size (GTK_SPIN_BUTTON (spin_button));
+    gtk_widget_set_size_request (spin_button,
+                                 arrow_size + 2 * spin_button->style->xthickness,
+                                 -1);
+    GTK_WIDGET_GET_CLASS (spin_button)->size_allocate = _gtk_spin_button_size_allocate;
+    adjustment = gtk_spin_button_get_adjustment (GTK_SPIN_BUTTON (spin_button));
+    gtk_adjustment_set_upper (adjustment, (gdouble) MAX_UCODE);
+    gtk_spin_button_set_adjustment (GTK_SPIN_BUTTON (spin_button),
+                                    adjustment);
+}
+
 static void
 set_code_point_base (CodePointData *cp_data, int n_encoding)
 {
-    int i, n_digit, created_num;
+    int i, n_digit, created_num, prev_base;
     char *formatted = NULL;
-    const guint max_ucode = 0x10ffff;
     guint code = 0;
     GList *list;
     GtkWidget *digit_hbox;
@@ -964,19 +1133,19 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
 
     switch (n_encoding) {
     case 16:
-        formatted = g_strdup_printf ("%x", max_ucode);
+        formatted = g_strdup_printf ("%x", MAX_UCODE);
         n_digit = strlen (formatted);
         break;
     case 10:
-        formatted = g_strdup_printf ("%u", max_ucode);
+        formatted = g_strdup_printf ("%u", MAX_UCODE);
         n_digit = strlen (formatted);
         break;
     case 8:
-        formatted = g_strdup_printf ("%o", max_ucode);
+        formatted = g_strdup_printf ("%o", MAX_UCODE);
         n_digit = strlen (formatted);
         break;
     case 2:
-        formatted = g_strdup_printf ("%x", max_ucode);
+        formatted = g_strdup_printf ("%x", MAX_UCODE);
         n_digit = strlen (formatted) * 4;
         break;
     default:
@@ -993,25 +1162,39 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
     if (created_num >= n_digit) {
         for (i = 0; i < n_digit; i++) {
             g_return_if_fail (INPUT_PAD_IS_GTK_COMBO_BOX (list->data));
-            input_pad_gtk_combo_box_set_base (INPUT_PAD_GTK_COMBO_BOX (list->data),
+            combobox = GTK_WIDGET (list->data);
+            prev_base = input_pad_gtk_combo_box_get_base (INPUT_PAD_GTK_COMBO_BOX (combobox));
+            model = gtk_combo_box_get_model (GTK_COMBO_BOX (combobox));
+            if (gtk_tree_model_get_iter_first (model, &iter)) {
+                gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
+            }
+            model = digit_model_renew (model, prev_base, n_encoding);
+            gtk_combo_box_set_model (GTK_COMBO_BOX (combobox), model);
+            input_pad_gtk_combo_box_set_base (INPUT_PAD_GTK_COMBO_BOX (combobox),
                                               n_encoding);
-            gtk_widget_show (GTK_WIDGET (list->data));
+            gtk_widget_show (GTK_WIDGET (combobox));
             list = list->next;
         }
         while (list) {
             gtk_widget_hide (GTK_WIDGET (list->data));
             list = list->next;
         }
-        digit_hbox_set_code_point (digit_hbox, code);
-        char_label_set_code_point (char_label, code);
-        return;
+        goto end_configure_combobox;
     }
 
     for (i = 0; i < created_num; i++) {
         g_return_if_fail (INPUT_PAD_IS_GTK_COMBO_BOX (list->data));
-        input_pad_gtk_combo_box_set_base (INPUT_PAD_GTK_COMBO_BOX (list->data),
+        combobox = GTK_WIDGET (list->data);
+        prev_base = input_pad_gtk_combo_box_get_base (INPUT_PAD_GTK_COMBO_BOX (combobox));
+        model = gtk_combo_box_get_model (GTK_COMBO_BOX (combobox));
+        if (gtk_tree_model_get_iter_first (model, &iter)) {
+            gtk_combo_box_set_active_iter (GTK_COMBO_BOX (combobox), &iter);
+        }
+        model = digit_model_renew (model, prev_base, n_encoding);
+        gtk_combo_box_set_model (GTK_COMBO_BOX (combobox), model);
+        input_pad_gtk_combo_box_set_base (INPUT_PAD_GTK_COMBO_BOX (combobox),
                                           n_encoding);
-        gtk_widget_show (GTK_WIDGET (list->data));
+        gtk_widget_show (GTK_WIDGET (combobox));
         list = list->next;
     }
 
@@ -1020,7 +1203,7 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
         input_pad_gtk_combo_box_set_base (INPUT_PAD_GTK_COMBO_BOX (combobox),
                                           n_encoding);
         gtk_box_pack_start (GTK_BOX (digit_hbox), combobox, FALSE, FALSE, 0);
-        model = digit_model_new ();
+        model = digit_model_new (n_encoding);
         gtk_combo_box_set_model (GTK_COMBO_BOX (combobox), model);
         g_object_unref (G_OBJECT (model));
         if (gtk_tree_model_get_iter_first (model, &iter)) {
@@ -1038,6 +1221,7 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
         g_signal_connect (G_OBJECT (combobox), "changed",
                           G_CALLBACK (on_combobox_changed), cp_data);
     }
+end_configure_combobox:
     digit_hbox_set_code_point (digit_hbox, code);
     char_label_set_code_point (char_label, code);
 }
@@ -1795,6 +1979,7 @@ create_code_point_dialog_ui (GtkBuilder *builder, GtkWidget *window)
     GtkWidget *char_label;
     GtkWidget *encoding_hbox;
     GtkWidget *base_hbox;
+    GtkWidget *spin_button;
     GtkWidget *send_button;
     GtkWidget *close_button;
     GList *list;
@@ -1809,9 +1994,11 @@ create_code_point_dialog_ui (GtkBuilder *builder, GtkWidget *window)
 
     digit_hbox = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointDigitHBox"));
     char_label = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointCharLabel"));
+    spin_button = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointDigitSpinButton"));
     cp_data.signal_window = window;
     cp_data.digit_hbox = digit_hbox;
     cp_data.char_label = char_label;
+    cp_data.spin_button = spin_button;
     encoding_hbox = GTK_WIDGET (gtk_builder_get_object (builder, "EncodingHBox"));
     list = gtk_container_get_children (GTK_CONTAINER (encoding_hbox));
     while (list) {
@@ -1833,6 +2020,8 @@ create_code_point_dialog_ui (GtkBuilder *builder, GtkWidget *window)
         }
         list = list->next;
     }
+
+    init_spin_button (spin_button, &cp_data);
 
     send_button = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointSendButton"));
     close_button = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointCloseButton"));

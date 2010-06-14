@@ -242,9 +242,38 @@ Bin</property>
           </packing>
         </child>
         <child>
-          <object class="GtkHBox" id="CodePointDigitHBox">
+          <object class="GtkHBox" id="CodePointDigitHBoxWithSpin">
             <property name="visible">True</property>
             <property name="border-width">10</property>
+            <child>
+              <object class="GtkHBox" id="CodePointDigitHBox">
+                <property name="visible">True</property>
+                <property name="border-width">10</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <!--property name="position">0</property-->
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="CodePointDigitSpinButton">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="climb_rate">1</property>
+                <property name="digits">0</property>
+                <property name="numeric">False</property>
+                <property name="update_policy">GTK_UPDATE_ALWAYS</property>
+                <property name="snap_to_ticks">False</property>
+                <property name="wrap">False</property>
+                <property name="adjustment">adjustment1</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -373,6 +402,12 @@ Copyright (c) 2010 Red Hat, Inc.</property>
     <accessibility>
       <relation target="TopWindow" type="subwindow-of"/>
     </accessibility>
+  </object>
+  <object class="GtkAdjustment" id="adjustment1">
+    <property name="lower">0</property>
+    <property name="upper">1114111</property>
+    <property name="value">0</property>
+    <property name="step_increment">1</property>
   </object>
   <object class="InputPadGtkWindow" id="TopWindow">
     <property name="type">GTK_WINDOW_TOPLEVEL</property>
