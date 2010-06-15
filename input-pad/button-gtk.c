@@ -79,6 +79,45 @@ input_pad_gtk_button_new_with_label (const gchar *label)
     return g_object_new (INPUT_PAD_TYPE_GTK_BUTTON, "label", label, NULL); 
 }
 
+GtkWidget *
+input_pad_gtk_button_new_with_unicode (guint code)
+{
+    gchar buff[7];
+    gchar buff2[35]; /* 7 x 5 e.g. 'a' -> '0x61 ' */
+    gchar *tooltip;
+    int i;
+    GtkWidget *button;
+
+    /* The displaying button is too long with '\t'. */
+    if (code == '\t') {
+        buff[0] = ' ';
+        buff[1] = '\0';
+        sprintf (buff2, "0x%02X ", (unsigned char) code);
+    } else {
+        buff[g_unichar_to_utf8 ((gunichar) code, buff)] = '\0';
+        for (i = 0; buff[i] && i < 7; i++) {
+            sprintf (buff2 + i * 5, "0x%02X ", (unsigned char) buff[i]);
+        }
+        if (buff[0] == '\0') {
+            buff2[0] = '0'; buff2[0] = 'x'; buff2[1] = '0'; buff2[2] = '0';
+            buff2[3] = '\0';
+        }
+    }
+
+    button = input_pad_gtk_button_new_with_label (buff);
+    if (code == '\t') {
+        input_pad_gtk_button_set_keysym (INPUT_PAD_GTK_BUTTON (button),
+                                         code);
+    }
+    tooltip = g_strdup_printf ("U+%04X\nUTF-8 %s", code, buff2);
+    gtk_widget_set_tooltip_text (GTK_WIDGET (button), tooltip);
+    g_free (tooltip);
+    input_pad_gtk_button_set_table_type (INPUT_PAD_GTK_BUTTON (button),
+                                         INPUT_PAD_TABLE_TYPE_CHARS);
+
+    return button;
+}
+
 guint
 input_pad_gtk_button_get_keycode (InputPadGtkButton *button)
 {

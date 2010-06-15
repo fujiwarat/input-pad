@@ -3,7 +3,8 @@
 %{
 #include <input-pad-window-gtk-swig.h>
 InputPadGtkWindow *
-_input_pad_gtk_window_new_wrapper (int pytype, unsigned int ibus);
+_input_pad_gtk_window_new_wrapper (int                  pytype,
+                                   unsigned int         ibus);
 unsigned long
 _input_pad_gtk_window_connect_wrapper (struct _InputPadGtkWindow *self,
                                        char *signal_id,
@@ -12,9 +13,19 @@ _input_pad_gtk_window_connect_wrapper (struct _InputPadGtkWindow *self,
 %}
 
 %include input-pad-window-gtk-swig.h
+
+%pythoncode
+{
+class InputPadGtkWindow(_InputPadGtkWindow):
+    def __init__(self, pytype, ibus=0):
+        _InputPadGtkWindow.__init__(self, pytype, ibus)
+    def set_paddir(self, paddir, domain=None):
+        _InputPadGtkWindow.set_paddir(self, paddir, domain)
+}
+
 %extend _InputPadGtkWindow {
-    _InputPadGtkWindow (int pytype,
-                        unsigned int ibus) {
+    _InputPadGtkWindow (int             pytype,
+                        unsigned int    ibus) {
         return _input_pad_gtk_window_new_wrapper (pytype, ibus);
     }
     void hide () {
@@ -25,6 +36,10 @@ _input_pad_gtk_window_connect_wrapper (struct _InputPadGtkWindow *self,
     }
     int get_visible () {
         return gtk_widget_get_visible (GTK_WIDGET (self));
+    }
+    void set_paddir (const char *paddir, const char *domain) {
+        input_pad_gtk_window_set_paddir (INPUT_PAD_GTK_WINDOW (self),
+                                         paddir, domain);
     }
     void show_all () {
         gtk_widget_show_all (GTK_WIDGET (self));
@@ -42,12 +57,13 @@ _input_pad_gtk_window_connect_wrapper (struct _InputPadGtkWindow *self,
 %inline %{
 /* workaround */
 extern GtkWidget *
-_input_pad_gtk_window_new_with_gtype (GtkWindowType type,
-                                      unsigned int child,
-                                      gboolean     gtype);
+_input_pad_gtk_window_new_with_gtype (GtkWindowType     type,
+                                      unsigned int      child,
+                                      gboolean          gtype);
 
 InputPadGtkWindow *
-_input_pad_gtk_window_new_wrapper (int pytype, unsigned int ibus)
+_input_pad_gtk_window_new_wrapper (int                  pytype,
+                                   unsigned int         ibus)
 {
     GtkWindowType type;
     type = pytype;

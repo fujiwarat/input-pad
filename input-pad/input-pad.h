@@ -34,6 +34,10 @@ void *              input_pad_window_new (unsigned int ibus);
 void                input_pad_window_show (void *window_data);
 void                input_pad_window_hide (void *window_data);
 unsigned int        input_pad_window_get_visible (void *window_data);
+void                input_pad_window_set_paddir
+                                        (void          *window_data,
+                                         const char    *paddir,
+                                         const char    *domain);
 void                input_pad_window_main (void *window_data);
 void                input_pad_window_destroy (void *window_data);
 

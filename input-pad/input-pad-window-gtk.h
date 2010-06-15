@@ -57,6 +57,10 @@ struct _InputPadGtkWindowClass {
     void     (* keyboard_changed)      (InputPadGtkWindow      *window,
                                         int                     group);
 
+    void     (* group_changed)         (InputPadGtkWindow      *window,
+                                        const gchar            *paddir,
+                                        const gchar            *domain);
+
     /* Padding for future expansion */
     void (*_window_reserved1) (void);
     void (*_window_reserved2) (void);
@@ -66,8 +70,12 @@ struct _InputPadGtkWindowClass {
 
 G_MODULE_EXPORT
 GType               input_pad_gtk_window_get_type (void);
-GtkWidget *         input_pad_gtk_window_new (GtkWindowType	type,
+GtkWidget *         input_pad_gtk_window_new (GtkWindowType     type,
                                               unsigned int      ibus);
+void                input_pad_gtk_window_set_paddir
+                                       (InputPadGtkWindow      *window,
+                                        const gchar            *paddir,
+                                        const gchar            *domain);
 
 G_END_DECLS
 

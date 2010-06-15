@@ -34,6 +34,7 @@
 #include "input-pad-private.h"
 
 static const gchar *xml_file;
+static const gchar *translation_domain;
 
 static int
 cmp_filepath (gconstpointer a, gconstpointer b)
@@ -74,7 +75,12 @@ get_content (xmlNodePtr node, char **content, gboolean i18n)
         if (current->type == XML_TEXT_NODE) {
             if (current->content) {
                 if (i18n) {
-                    *content = g_strdup (_((char *) current->content));
+                    if (translation_domain) {
+                        *content = g_strdup (D_(translation_domain,
+                                                (char *) current->content));
+                    } else {
+                        *content = g_strdup (_((char *) current->content));
+                    }
                 } else {
                     *content = g_strdup ((char *) current->content);
                 }
@@ -330,7 +336,8 @@ get_user_pad_dir (void)
 
 InputPadGroup *
 input_pad_group_append_from_file (InputPadGroup        *group,
-                                  const gchar          *file)
+                                  const gchar          *file,
+                                  const gchar          *domain)
 {
     InputPadGroup **pgroup = &group;
     xmlDocPtr doc;
@@ -341,6 +348,7 @@ input_pad_group_append_from_file (InputPadGroup        *group,
     xmlSubstituteEntitiesDefault (1);
 
     xml_file = file;
+    translation_domain = domain;
     doc = xmlParseFile (xml_file);
     if (doc == NULL || xmlDocGetRootElement (doc) == NULL) {
         g_error ("Unable to parse file: %s", xml_file);
@@ -367,11 +375,14 @@ input_pad_group_append_from_file (InputPadGroup        *group,
     xmlFreeDoc (doc);
     xmlCleanupParser ();
 
+    xml_file = NULL;
+    translation_domain = NULL;
+
     return group;
 }
 
 InputPadGroup *
-input_pad_group_parse_all_files (void)
+input_pad_group_parse_all_files (const char *custom_dirname, const char *domain)
 {
     const gchar *dirname = INPUT_PAD_PAD_SYSTEM_DIR;
     const gchar *filename;
@@ -382,6 +393,10 @@ input_pad_group_parse_all_files (void)
     InputPadGroup *group = NULL;
     GSList *file_list = NULL;
     GSList *list;
+
+    if (custom_dirname != NULL) {
+        dirname = (const gchar *) custom_dirname;
+    }
 
     if (!dirname ||
         !g_file_test (dirname, G_FILE_TEST_IS_DIR)) {
@@ -432,7 +447,7 @@ input_pad_group_parse_all_files (void)
     list = file_list = g_slist_sort (file_list, cmp_filepath);
     while (list) {
         filepath = (gchar *) list->data;
-        group = input_pad_group_append_from_file (group, filepath);
+        group = input_pad_group_append_from_file (group, filepath, domain);
         g_free (filepath);
         list = g_slist_next (list);
     }

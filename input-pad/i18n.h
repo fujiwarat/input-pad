@@ -30,13 +30,15 @@
 #error Need to inlcude config.h
 #endif
 
-#define _(str)      ((char *) g_dgettext (GETTEXT_PACKAGE, (str)))
-#define N_(str)     (str)
+#define _(str)          ((char *) g_dgettext (GETTEXT_PACKAGE, (str)))
+#define D_(domain, str)	((char *) g_dgettext ((domain), (str)))
+#define N_(str)         (str)
 
 #else
 
-#define _(str)  (str)
-#define N_(str) (str)
+#define _(str)          (str)
+#define D_(domain, str)	(str)
+#define N_(str)         (str)
 
 #endif
 

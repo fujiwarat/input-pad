@@ -33,6 +33,8 @@ class InputPadWindow:
         input_pad_window_hide(self.window)
     def get_visible(self):
         return input_pad_window_get_visible(self.window)
+    def set_paddir(self, paddir, domain=None):
+        return input_pad_window_set_paddir(self.window, paddir, domain)
     def connect(self, signal_id, signal_cb, data=None):
         _input_pad_window_connect_wrapper(self.window, signal_id, signal_cb,
                                           data)
@@ -45,7 +47,8 @@ class InputPadWindow:
 %inline %{
 /* workaround */
 extern void*
-_input_pad_window_new_with_gtype (unsigned int ibus, unsigned int gtype);
+_input_pad_window_new_with_gtype (unsigned int  ibus,
+                                  unsigned int  gtype);
 
 void
 _input_pad_window_init_wrapper (PyObject *pyargv, InputPadWindowType type)

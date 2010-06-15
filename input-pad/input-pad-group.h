@@ -59,8 +59,11 @@ struct _InputPadTable {
 
 InputPadGroup * input_pad_group_append_from_file
                                (InputPadGroup        *group_data,
-                                const char           *file);
-InputPadGroup * input_pad_group_parse_all_files  (void);
+                                const char           *file,
+                                const char           *domain);
+InputPadGroup * input_pad_group_parse_all_files
+                               (const char           *custom_dirname,
+                                const char           *domain);
 void            input_pad_group_destroy
                                (InputPadGroup        *group_data);
 

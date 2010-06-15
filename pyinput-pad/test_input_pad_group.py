@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
-from input_pad_group import input_pad_group_parse_all_files
+import input_pad_group
+import sys
 
 def dump_group(group):
     while group != None:
@@ -18,7 +19,11 @@ def dump_group(group):
         group = group.next
 
 def test():
-    group = input_pad_group_parse_all_files()
+    if len(sys.argv) > 1:
+        print "paddir", sys.argv[1]
+        group = input_pad_group.parse_all_files(sys.argv[1])
+    else:
+        group = input_pad_group.parse_all_files()
     dump_group(group)
 
 def main():
