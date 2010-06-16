@@ -4,7 +4,7 @@
 #include <input-pad-window-gtk-swig.h>
 InputPadGtkWindow *
 _input_pad_gtk_window_new_wrapper (int                  pytype,
-                                   unsigned int         ibus);
+                                   unsigned int         child);
 unsigned long
 _input_pad_gtk_window_connect_wrapper (struct _InputPadGtkWindow *self,
                                        char *signal_id,
@@ -17,16 +17,16 @@ _input_pad_gtk_window_connect_wrapper (struct _InputPadGtkWindow *self,
 %pythoncode
 {
 class InputPadGtkWindow(_InputPadGtkWindow):
-    def __init__(self, pytype, ibus=0):
-        _InputPadGtkWindow.__init__(self, pytype, ibus)
+    def __init__(self, pytype, child=0):
+        _InputPadGtkWindow.__init__(self, pytype, child)
     def set_paddir(self, paddir, domain=None):
         _InputPadGtkWindow.set_paddir(self, paddir, domain)
 }
 
 %extend _InputPadGtkWindow {
     _InputPadGtkWindow (int             pytype,
-                        unsigned int    ibus) {
-        return _input_pad_gtk_window_new_wrapper (pytype, ibus);
+                        unsigned int    child) {
+        return _input_pad_gtk_window_new_wrapper (pytype, child);
     }
     void hide () {
         gtk_widget_hide (GTK_WIDGET (self));
@@ -40,6 +40,10 @@ class InputPadGtkWindow(_InputPadGtkWindow):
     void set_paddir (const char *paddir, const char *domain) {
         input_pad_gtk_window_set_paddir (INPUT_PAD_GTK_WINDOW (self),
                                          paddir, domain);
+    }
+    void set_char_button_sensitive (unsigned int sensitive) {
+        input_pad_gtk_window_set_char_button_sensitive (INPUT_PAD_GTK_WINDOW (self),
+                                                        sensitive ? TRUE : FALSE);
     }
     void show_all () {
         gtk_widget_show_all (GTK_WIDGET (self));
@@ -63,12 +67,12 @@ _input_pad_gtk_window_new_with_gtype (GtkWindowType     type,
 
 InputPadGtkWindow *
 _input_pad_gtk_window_new_wrapper (int                  pytype,
-                                   unsigned int         ibus)
+                                   unsigned int         child)
 {
     GtkWindowType type;
     type = pytype;
     return (InputPadGtkWindow *)
-        _input_pad_gtk_window_new_with_gtype (type, ibus, TRUE);
+        _input_pad_gtk_window_new_with_gtype (type, child, TRUE);
 }
 
 typedef struct _python_callback_data

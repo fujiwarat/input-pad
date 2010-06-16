@@ -56,6 +56,7 @@ enum {
     BUTTON_PRESSED,
     KBD_CHANGED,
     GROUP_CHANGED,
+    CHAR_BUTTON_SENSITIVE,
     LAST_SIGNAL
 };
 
@@ -92,6 +93,8 @@ struct _InputPadGtkWindowPrivate {
     guint                       keyboard_state;
     InputPadXKBConfigReg       *xkb_config_reg;
     gchar                     **group_layouts;
+    guint                       char_button_sensitive : 1;
+    GdkColor                   *color_gray;
 };
 
 struct _CodePointData {
@@ -144,7 +147,7 @@ static void destroy_prev_keyboard_layout (GtkWidget *vbox, InputPadGtkWindow *wi
 static void create_keyboard_layout_list_ui_real (GtkWidget *vbox, InputPadGtkWindow *window);
 static void destroy_char_sub_notebooks (GtkWidget *main_notebook, InputPadGtkWindow *window);
 static void append_char_sub_notebooks (GtkWidget *main_notebook, InputPadGtkWindow *window);
-static void destroy_char_view_table (GtkWidget *viewport);
+static void destroy_char_view_table (GtkWidget *viewport, InputPadGtkWindow *window);
 static void append_char_view_table (GtkWidget *viewport, unsigned int start, unsigned int end, GtkWidget *window);
 static void input_pad_gtk_window_real_destroy (GtkObject *object);
 static void input_pad_gtk_window_buildable_interface_init (GtkBuildableIface *iface);
@@ -271,6 +274,20 @@ on_window_group_changed (InputPadGtkWindow *window,
         window->priv->group = custom_group;
     }
     append_char_sub_notebooks (main_notebook, window);
+}
+
+static void
+on_window_char_button_sensitive (InputPadGtkWindow *window,
+                                 gboolean           sensitive,
+                                 gpointer           data)
+{
+    GtkWidget *button;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+    g_return_if_fail (GTK_IS_BUTTON (data));
+
+    button = GTK_WIDGET (data);
+    gtk_widget_set_sensitive (button, sensitive);
 }
 
 static void
@@ -808,7 +825,7 @@ on_tree_view_select_char_block (GtkTreeSelection     *selection,
     gtk_tree_model_get (model, &iter,
                         CHAR_BLOCK_START_COL, &start,
                         CHAR_BLOCK_END_COL, &end, -1);
-    destroy_char_view_table (viewport);
+    destroy_char_view_table (viewport, window);
     append_char_view_table (viewport, start, end, window);
 }
 
@@ -1321,6 +1338,7 @@ out_all_keysyms_check:
 static void
 create_char_table (GtkWidget *vbox, InputPadTable *table_data)
 {
+    InputPadGtkWindow *input_pad;
     GtkWidget *scrolled;
     GtkWidget *viewport;
     GtkWidget *table;
@@ -1335,10 +1353,13 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
     InputPadXKBKeyList *xkb_key_list = NULL;
 #endif
 
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (table_data->priv->signal_window));
+
     if (table_data->priv->inited) {
         return;
     }
 
+    input_pad = INPUT_PAD_GTK_WINDOW (table_data->priv->signal_window);
     scrolled = gtk_scrolled_window_new (NULL, NULL);
     gtk_widget_set_size_request (scrolled, 300, 200);
     gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
@@ -1431,9 +1452,21 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
             gtk_table_attach_defaults (GTK_TABLE (table), button,
                                        col, col + 1, raw, raw + 1);
             gtk_widget_show (button);
+            if (input_pad->child) {
+                gtk_widget_set_sensitive (button,
+                                          input_pad->priv->char_button_sensitive);
+            } else if (input_pad->priv->color_gray) {
+                /* char button is stdout only */
+                gtk_widget_modify_bg (button, GTK_STATE_NORMAL,
+                                      input_pad->priv->color_gray);
+            }
             g_signal_connect (G_OBJECT (button), "pressed",
                               G_CALLBACK (on_button_pressed),
-                              table_data->priv->signal_window);
+                              (gpointer) table_data->priv->signal_window);
+            g_signal_connect (G_OBJECT (table_data->priv->signal_window),
+                              "char-button-sensitive",
+                              G_CALLBACK (on_window_char_button_sensitive),
+                              (gpointer) button);
             num++;
         }
     }
@@ -1644,6 +1677,7 @@ create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
             gtk_table_attach_defaults (GTK_TABLE (table_data[n].table), button,
                                        col, col + 1, row, row + 1);
             gtk_widget_show (button);
+            gtk_button_set_focus_on_click (GTK_BUTTON (button), FALSE);
             g_signal_connect (G_OBJECT (button), "pressed",
                               G_CALLBACK (on_button_pressed),
                               (gpointer) window);
@@ -2083,6 +2117,33 @@ create_contents_dialog_ui (GtkBuilder *builder, GtkWidget *window)
 }
 
 static void
+destroy_char_notebook_table (GtkWidget         *viewport,
+                             InputPadGtkWindow *window)
+{
+    GList *list, *buttons;
+    GtkWidget *table;
+    GtkWidget *button;
+
+    list = gtk_container_get_children (GTK_CONTAINER (viewport));
+    if (list == NULL) {
+        return;
+    }
+    table = list->data;
+    g_return_if_fail (GTK_IS_TABLE (table));
+    buttons = gtk_container_get_children (GTK_CONTAINER (table));
+    while (buttons) {
+        button = GTK_WIDGET (buttons->data);
+        gtk_widget_hide (button);
+        g_signal_handlers_disconnect_by_func (G_OBJECT (window),
+                                              G_CALLBACK (on_window_char_button_sensitive),
+                                              (gpointer) button);
+        gtk_widget_destroy (button);
+        buttons = buttons->next;
+    }
+    gtk_container_remove (GTK_CONTAINER (viewport), table);
+}
+
+static void
 destroy_char_sub_notebooks (GtkWidget *main_notebook, InputPadGtkWindow *window)
 {
     GtkWidget *sub_notebook;
@@ -2116,7 +2177,7 @@ destroy_char_sub_notebooks (GtkWidget *main_notebook, InputPadGtkWindow *window)
             scrolled_list = gtk_container_get_children (GTK_CONTAINER (scrolled));
             g_return_if_fail (GTK_IS_VIEWPORT (scrolled_list->data));
             viewport = GTK_WIDGET (scrolled_list->data);
-            destroy_char_view_table (viewport);
+            destroy_char_notebook_table (viewport, window);
             gtk_widget_hide (viewport);
             gtk_container_remove (GTK_CONTAINER (scrolled), viewport);
             gtk_widget_hide (scrolled);
@@ -2188,26 +2249,10 @@ create_char_notebook_ui (GtkBuilder *builder, GtkWidget *window)
 }
 
 static void
-destroy_char_view_table (GtkWidget *viewport)
+destroy_char_view_table (GtkWidget *viewport, InputPadGtkWindow *window)
 {
-    GList *list, *buttons;
-    GtkWidget *table;
-    GtkWidget *button;
-
-    list = gtk_container_get_children (GTK_CONTAINER (viewport));
-    if (list == NULL) {
-        return;
-    }
-    table = list->data;
-    g_return_if_fail (GTK_IS_TABLE (table));
-    buttons = gtk_container_get_children (GTK_CONTAINER (table));
-    while (buttons) {
-        button = GTK_WIDGET (buttons->data);
-        gtk_widget_hide (button);
-        gtk_widget_destroy (button);
-        buttons = buttons->next;
-    }
-    gtk_container_remove (GTK_CONTAINER (viewport), table);
+    /* Currently same contents. */
+    destroy_char_notebook_table (viewport, window);
 }
 
 static void
@@ -2216,11 +2261,14 @@ append_char_view_table (GtkWidget      *viewport,
                         unsigned int    end,
                         GtkWidget      *window)
 {
+    InputPadGtkWindow *input_pad;
     unsigned int num;
     int col, row;
     const int TABLE_COLUMN = 15;
     GtkWidget *table;
     GtkWidget *button;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
 
     if ((end - start) > 1000) {
         g_warning ("Too many chars");
@@ -2232,6 +2280,7 @@ append_char_view_table (GtkWidget      *viewport,
         row++;
     }
 
+    input_pad = INPUT_PAD_GTK_WINDOW (window);
     table = gtk_table_new (row, col, TRUE);
     gtk_container_add (GTK_CONTAINER (viewport), table);
     gtk_widget_show (table);
@@ -2249,9 +2298,21 @@ append_char_view_table (GtkWidget      *viewport,
                                    col, col + 1, row, row + 1);
 #endif
         gtk_widget_show (button);
+        if (input_pad->child) {
+            gtk_widget_set_sensitive (button,
+                                      input_pad->priv->char_button_sensitive);
+        } else if (input_pad->priv->color_gray) {
+            /* char button is stdout only */
+            gtk_widget_modify_bg (button, GTK_STATE_NORMAL,
+                                  input_pad->priv->color_gray);
+        }
         g_signal_connect (G_OBJECT (button), "pressed",
                           G_CALLBACK (on_button_pressed),
                           window);
+        g_signal_connect (G_OBJECT (window),
+                          "char-button-sensitive",
+                          G_CALLBACK (on_window_char_button_sensitive),
+                          (gpointer) button);
     }
 }
 
@@ -2362,12 +2423,11 @@ create_keyboard_layout_ui (GtkBuilder *builder, GtkWidget *window)
 }
 
 static GtkWidget *
-create_ui (InputPadGroup *custom_group)
+create_ui (unsigned int child)
 {
     const gchar *filename = INPUT_PAD_UI_FILE;
     GError *error = NULL;
     GtkWidget *window = NULL;
-    InputPadGtkWindow *input_pad;
     GtkAction *close_item;
     GtkBuilder *builder = gtk_builder_new ();
 
@@ -2387,14 +2447,7 @@ create_ui (InputPadGroup *custom_group)
     }
 
     window = GTK_WIDGET (gtk_builder_get_object (builder, "TopWindow"));
-    if (custom_group != NULL) {
-        g_return_val_if_fail (INPUT_PAD_IS_GTK_WINDOW (window), NULL);
-        input_pad = INPUT_PAD_GTK_WINDOW (window);
-        g_return_val_if_fail (input_pad->priv != NULL, NULL);
-        g_return_val_if_fail (input_pad->priv->group != NULL, NULL);
-        input_pad_group_destroy (input_pad->priv->group);
-        input_pad->priv->group = custom_group;
-    }
+    INPUT_PAD_GTK_WINDOW (window)->child = child;
     gtk_window_set_icon_from_file (GTK_WINDOW (window),
                                    DATAROOTDIR "/pixmaps/input-pad.png",
                                    &error);
@@ -2550,9 +2603,19 @@ static void
 input_pad_gtk_window_set_priv (InputPadGtkWindow *window)
 {
     InputPadGtkWindowPrivate *priv = INPUT_PAD_GTK_WINDOW_GET_PRIVATE (window);
+    GdkColor color;
+
     if (priv->group == NULL) {
         priv->group = input_pad_group_parse_all_files (NULL, NULL);
     }
+    priv->char_button_sensitive = TRUE;
+
+    if (!gdk_color_parse ("gray", &color)) {
+        color.red = color.green = color.blue = 0xffff;
+    }
+    gdk_colormap_alloc_color (gdk_colormap_get_system(), &color, FALSE, TRUE);
+    priv->color_gray = gdk_color_copy (&color);
+
     window->priv = priv;
 }
 
@@ -2600,6 +2663,10 @@ input_pad_gtk_window_real_destroy (GtkObject *object)
         if (window->priv->group) {
             input_pad_group_destroy (window->priv->group);
             window->priv->group = NULL;
+        }
+        if (window->priv->color_gray) {
+            gdk_color_free (window->priv->color_gray);
+            window->priv->color_gray = NULL;
         }
 #ifdef MODULE_XTEST_GDK_BASE
         if (use_module_xtest) {
@@ -2691,6 +2758,16 @@ input_pad_gtk_window_class_init (InputPadGtkWindowClass *klass)
                       INPUT_PAD_VOID__STRING_STRING,
                       G_TYPE_NONE,
                       2, G_TYPE_STRING, G_TYPE_STRING);
+
+    signals[CHAR_BUTTON_SENSITIVE] =
+        g_signal_new (I_("char-button-sensitive"),
+                      G_TYPE_FROM_CLASS (gobject_class),
+                      G_SIGNAL_RUN_LAST,
+                      G_STRUCT_OFFSET (InputPadGtkWindowClass, char_button_sensitive),
+                      NULL, NULL,
+                      g_cclosure_marshal_VOID__BOOLEAN,
+                      G_TYPE_NONE,
+                      1, G_TYPE_BOOLEAN);
 }
 
 GtkWidget *
@@ -2699,7 +2776,6 @@ _input_pad_gtk_window_new_with_gtype (GtkWindowType type,
                                       gboolean     gtype)
 {
     GtkWidget *window;
-    InputPadGroup *custom_group = NULL;
 
     g_return_val_if_fail (type >= GTK_WINDOW_TOPLEVEL && type <= GTK_WINDOW_POPUP, NULL);
 
@@ -2712,14 +2788,8 @@ _input_pad_gtk_window_new_with_gtype (GtkWindowType type,
         INPUT_PAD_TYPE_GTK_WINDOW;
     }
 
-#if 0
-    if (custom_dirname != NULL) {
-        custom_group = input_pad_group_parse_all_files (custom_dirname, NULL);
-    }
-#endif
-    window = create_ui (custom_group);
+    window = create_ui (child);
     INPUT_PAD_GTK_WINDOW (window)->parent.type = type;
-    INPUT_PAD_GTK_WINDOW (window)->child = child;
 
     return window; 
 }
@@ -2747,6 +2817,20 @@ input_pad_gtk_window_set_paddir (InputPadGtkWindow *window,
 
     g_signal_emit (window, signals[GROUP_CHANGED], 0,
                    paddir, domain);
+}
+
+void
+input_pad_gtk_window_set_char_button_sensitive (InputPadGtkWindow *window,
+                                                gboolean           sensitive)
+{
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+
+    if (window->priv->char_button_sensitive == sensitive) {
+        return;
+    }
+    g_signal_emit (window, signals[CHAR_BUTTON_SENSITIVE], 0,
+                   sensitive);
+    window->priv->char_button_sensitive = sensitive;
 }
 
 void
@@ -2785,17 +2869,17 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
 }
 
 void *
-input_pad_window_new (unsigned int ibus)
+input_pad_window_new (unsigned int child)
 {
-    return input_pad_gtk_window_new (GTK_WINDOW_TOPLEVEL, ibus);
+    return input_pad_gtk_window_new (GTK_WINDOW_TOPLEVEL, child);
 }
 
 void *
-_input_pad_window_new_with_gtype (unsigned int ibus,
+_input_pad_window_new_with_gtype (unsigned int child,
                                   gboolean     gtype)
 {
     return _input_pad_gtk_window_new_with_gtype (GTK_WINDOW_TOPLEVEL,
-                                                 ibus,
+                                                 child,
                                                  gtype);
 }
 
@@ -2845,6 +2929,14 @@ input_pad_window_set_paddir (void       *window_data,
     input_pad_gtk_window_set_paddir (window_data,
                                      (const gchar *) paddir,
                                      (const gchar *) domain);
+}
+
+void
+input_pad_window_set_char_button_sensitive (void        *window_data,
+                                            unsigned int sensitive)
+{
+    input_pad_gtk_window_set_char_button_sensitive (window_data,
+                                                    sensitive);
 }
 
 void

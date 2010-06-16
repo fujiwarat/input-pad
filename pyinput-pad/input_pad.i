@@ -25,8 +25,8 @@ class InputPadWindow:
             import gtk
 
         _input_pad_window_init_wrapper (argv, type)
-    def new (self, ibus=0):
-        self.window = _input_pad_window_new_with_gtype (ibus, True)
+    def new (self, child=0):
+        self.window = _input_pad_window_new_with_gtype (child, True)
     def show(self):
         input_pad_window_show(self.window)
     def hide(self):
@@ -35,6 +35,8 @@ class InputPadWindow:
         return input_pad_window_get_visible(self.window)
     def set_paddir(self, paddir, domain=None):
         return input_pad_window_set_paddir(self.window, paddir, domain)
+    def set_char_button_sensitive(self, sensitive):
+        return input_pad_window_set_char_button_sensitive(self.window, sensitive)
     def connect(self, signal_id, signal_cb, data=None):
         _input_pad_window_connect_wrapper(self.window, signal_id, signal_cb,
                                           data)
@@ -47,7 +49,7 @@ class InputPadWindow:
 %inline %{
 /* workaround */
 extern void*
-_input_pad_window_new_with_gtype (unsigned int  ibus,
+_input_pad_window_new_with_gtype (unsigned int  child,
                                   unsigned int  gtype);
 
 void
