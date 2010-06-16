@@ -45,6 +45,9 @@ class InputPadGtkWindow(_InputPadGtkWindow):
         input_pad_gtk_window_set_char_button_sensitive (INPUT_PAD_GTK_WINDOW (self),
                                                         sensitive ? TRUE : FALSE);
     }
+    void reorder_button_pressed () {
+        input_pad_gtk_window_reorder_button_pressed (INPUT_PAD_GTK_WINDOW (self));
+    }
     void show_all () {
         gtk_widget_show_all (GTK_WIDGET (self));
     }

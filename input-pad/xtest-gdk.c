@@ -111,6 +111,18 @@ on_window_button_pressed (InputPadGtkWindow    *window,
     return FALSE;
 }
 
+static void
+on_window_reorder_button_pressed (InputPadGtkWindow    *window,
+                                  gpointer              data)
+{
+    g_signal_handlers_disconnect_by_func (G_OBJECT (window),
+                                          G_CALLBACK (on_window_button_pressed),
+                                          NULL);
+    g_signal_connect (G_OBJECT (window),
+                      "button-pressed",
+                      G_CALLBACK (on_window_button_pressed), NULL);
+}
+
 gboolean
 input_pad_module_init (InputPadGtkWindow *window)
 {
@@ -126,6 +138,9 @@ input_pad_module_setup (InputPadGtkWindow *window)
     g_signal_connect (G_OBJECT (window),
                       "button-pressed",
                       G_CALLBACK (on_window_button_pressed), NULL);
+    g_signal_connect (G_OBJECT (window),
+                      "reorder-button-pressed",
+                      G_CALLBACK (on_window_reorder_button_pressed), NULL);
     return TRUE;
 }
 

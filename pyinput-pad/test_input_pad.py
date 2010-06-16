@@ -20,5 +20,6 @@ if len(sys.argv) > 1:
 window.show()
 window.set_char_button_sensitive(True)
 window.connect("button-pressed", button_pressed_cb)
+window.reorder_button_pressed()
 print "input-pad visible?", window.get_visible()
 window.main()

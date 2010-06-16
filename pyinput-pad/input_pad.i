@@ -37,6 +37,8 @@ class InputPadWindow:
         return input_pad_window_set_paddir(self.window, paddir, domain)
     def set_char_button_sensitive(self, sensitive):
         return input_pad_window_set_char_button_sensitive(self.window, sensitive)
+    def reorder_button_pressed(self):
+        return input_pad_window_reorder_button_pressed(self.window)
     def connect(self, signal_id, signal_cb, data=None):
         _input_pad_window_connect_wrapper(self.window, signal_id, signal_cb,
                                           data)

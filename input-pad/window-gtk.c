@@ -57,6 +57,7 @@ enum {
     KBD_CHANGED,
     GROUP_CHANGED,
     CHAR_BUTTON_SENSITIVE,
+    REORDER_BUTTON_PRESSED,
     LAST_SIGNAL
 };
 
@@ -825,7 +826,7 @@ on_tree_view_select_char_block (GtkTreeSelection     *selection,
     gtk_tree_model_get (model, &iter,
                         CHAR_BLOCK_START_COL, &start,
                         CHAR_BLOCK_END_COL, &end, -1);
-    destroy_char_view_table (viewport, window);
+    destroy_char_view_table (viewport, INPUT_PAD_GTK_WINDOW (window));
     append_char_view_table (viewport, start, end, window);
 }
 
@@ -2768,6 +2769,16 @@ input_pad_gtk_window_class_init (InputPadGtkWindowClass *klass)
                       g_cclosure_marshal_VOID__BOOLEAN,
                       G_TYPE_NONE,
                       1, G_TYPE_BOOLEAN);
+
+    signals[REORDER_BUTTON_PRESSED] =
+        g_signal_new (I_("reorder-button-pressed"),
+                      G_TYPE_FROM_CLASS (gobject_class),
+                      G_SIGNAL_RUN_LAST,
+                      G_STRUCT_OFFSET (InputPadGtkWindowClass, reorder_button_pressed),
+                      NULL, NULL,
+                      g_cclosure_marshal_VOID__VOID,
+                      G_TYPE_NONE,
+                      0);
 }
 
 GtkWidget *
@@ -2831,6 +2842,12 @@ input_pad_gtk_window_set_char_button_sensitive (InputPadGtkWindow *window,
     g_signal_emit (window, signals[CHAR_BUTTON_SENSITIVE], 0,
                    sensitive);
     window->priv->char_button_sensitive = sensitive;
+}
+
+void
+input_pad_gtk_window_reorder_button_pressed (InputPadGtkWindow *window)
+{
+    g_signal_emit (window, signals[REORDER_BUTTON_PRESSED], 0);
 }
 
 void
@@ -2937,6 +2954,12 @@ input_pad_window_set_char_button_sensitive (void        *window_data,
 {
     input_pad_gtk_window_set_char_button_sensitive (window_data,
                                                     sensitive);
+}
+
+void
+input_pad_window_reorder_button_pressed (void *window)
+{
+    input_pad_gtk_window_reorder_button_pressed (window);
 }
 
 void

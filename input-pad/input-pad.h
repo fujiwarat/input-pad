@@ -41,6 +41,8 @@ void                input_pad_window_set_paddir
 void                input_pad_window_set_char_button_sensitive
                                         (void          *window_data,
                                          unsigned int   sensitive);
+void                input_pad_window_reorder_button_pressed
+                                        (void          *window_data);
 void                input_pad_window_main (void *window_data);
 void                input_pad_window_destroy (void *window_data);
 

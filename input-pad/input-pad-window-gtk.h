@@ -64,6 +64,8 @@ struct _InputPadGtkWindowClass {
     void     (* char_button_sensitive) (InputPadGtkWindow      *window,
                                         gboolean                sensitive);
 
+    void     (* reorder_button_pressed) (InputPadGtkWindow      *window);
+
     /* Padding for future expansion */
     void (*_window_reserved1) (void);
     void (*_window_reserved2) (void);
@@ -82,6 +84,8 @@ void                input_pad_gtk_window_set_paddir
 void                input_pad_gtk_window_set_char_button_sensitive
                                        (InputPadGtkWindow      *window,
                                         gboolean                sensitive);
+void                input_pad_gtk_window_reorder_button_pressed
+                                       (InputPadGtkWindow      *window);
 
 G_END_DECLS
 
