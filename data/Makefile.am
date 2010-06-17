@@ -28,18 +28,31 @@ icondir = $(datarootdir)/pixmaps
 
 paddir = $(pkgdatadir)/pad
 pad_in_files = \
-	group01-base.xml.in                                     \
-	group02-ja.xml.in                                       \
-	group02-zh.xml.in                                       \
+	base.xml.in                                             \
+	ja.xml.in                                               \
+	zh.xml.in                                               \
 	$(NULL)
 
-pad_DATA = $(pad_in_files:.xml.in=.xml)
+pad_no_sorted = $(pad_in_files:.xml.in=.xml)
+pad_DATA = \
+	group01-base.xml                                        \
+	group02-ja.xml                                          \
+	group02-zh.xml                                          \
+	$(NULL)
+
+group01-base.xml: base.xml
+	@cp $< $@
+group02-ja.xml: ja.xml
+	@cp $< $@
+group02-zh.xml: zh.xml
+	@cp $< $@
 
 %.xml : %.xml.in
 	@sed -e "s/_name/name/g" $< > $@
 
 CLEANFILES= \
 	$(pad_DATA)                                             \
+	$(pad_no_sorted)                                        \
 	$(NULL)
 
 #desktopdir = $(datarootdir)/applications
@@ -53,6 +66,6 @@ EXTRA_DIST = \
 	$(pad_in_files)                                         \
 	$(ui_gtk_DATA)                                          \
 	char2hexstr.py                                          \
-	group90-keyboard.xml.in                                 \
+	keyboard.xml.in                                         \
 	$(NULL)
 

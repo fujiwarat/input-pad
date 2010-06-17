@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2010-06-03 13:47+0900\n"
+"POT-Creation-Date: 2010-06-17 15:08+0900\n"
 "PO-Revision-Date: 2010-05-13 03:08+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: French\n"
@@ -16,68 +16,168 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../data/group01-base.xml.in.h:1
+#: ../data/base.xml.in.h:1
 msgid "ASCII"
 msgstr ""
 
-#: ../data/group01-base.xml.in.h:2 ../input-pad/unicode_block.h:39
+#: ../data/base.xml.in.h:2
+msgid "All"
+msgstr ""
+
+#: ../data/base.xml.in.h:3
+msgid "Arrow"
+msgstr ""
+
+#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:2383
+msgid "Block"
+msgstr ""
+
+#: ../data/base.xml.in.h:5
+msgid "Box drawing"
+msgstr ""
+
+#: ../data/base.xml.in.h:6
+msgid "Braille"
+msgstr ""
+
+#: ../data/base.xml.in.h:7
+msgid "CJK"
+msgstr ""
+
+#: ../data/base.xml.in.h:8 ../input-pad/unicode_block.h:145
+msgid "CJK Compatibility"
+msgstr ""
+
+#: ../data/base.xml.in.h:9
+msgid "Controls"
+msgstr ""
+
+#: ../data/base.xml.in.h:10
+msgid "Currency"
+msgstr ""
+
+#: ../data/base.xml.in.h:11 ../input-pad/unicode_block.h:116
+msgid "Dingbats"
+msgstr ""
+
+#: ../data/base.xml.in.h:12
+msgid "Enclosed"
+msgstr ""
+
+#: ../data/base.xml.in.h:13
+msgid "Fraction"
+msgstr ""
+
+#: ../data/base.xml.in.h:14
+msgid "General"
+msgstr ""
+
+#: ../data/base.xml.in.h:15
+msgid "Geometric"
+msgstr ""
+
+#: ../data/base.xml.in.h:16
+msgid "Graphics"
+msgstr ""
+
+#: ../data/base.xml.in.h:17
+msgid "Latin"
+msgstr ""
+
+#: ../data/base.xml.in.h:18 ../input-pad/unicode_block.h:39
 msgid "Latin Extended-A"
 msgstr ""
 
-#: ../data/group01-base.xml.in.h:3
-msgid "Latin and Number"
-msgstr ""
-
-#: ../data/group01-base.xml.in.h:4 ../input-pad/unicode_block.h:38
+#: ../data/base.xml.in.h:19 ../input-pad/unicode_block.h:38
 msgid "Latin-1 Supplement"
 msgstr ""
 
-#: ../data/group01-base.xml.in.h:5
-msgid "Sign"
+#: ../data/base.xml.in.h:20
+msgid "Letterlike"
 msgstr ""
 
-#: ../data/group02-ja.xml.in.h:1 ../input-pad/unicode_block.h:136
-msgid "Hiragana"
+#: ../data/base.xml.in.h:21
+msgid "Mathematical"
 msgstr ""
 
-#: ../data/group02-ja.xml.in.h:2
-msgid "Japanese"
+#: ../data/base.xml.in.h:22
+msgid "Miscellaneous"
 msgstr ""
 
-#: ../data/group02-ja.xml.in.h:3 ../input-pad/unicode_block.h:137
-msgid "Katakana"
-msgstr ""
-
-#: ../data/group02-zh.xml.in.h:1 ../input-pad/unicode_block.h:138
-msgid "Bopomofo"
-msgstr ""
-
-#: ../data/group02-zh.xml.in.h:2
-msgid "Chinese"
-msgstr ""
-
-#: ../data/group02-zh.xml.in.h:3
+#: ../data/base.xml.in.h:23 ../data/zh.xml.in.h:3
 msgid "Numbers"
 msgstr ""
 
-#: ../data/group02-zh.xml.in.h:4
+#: ../data/base.xml.in.h:24
+msgid "OCR"
+msgstr ""
+
+#: ../data/base.xml.in.h:25
+msgid "Punctuations"
+msgstr ""
+
+#: ../data/base.xml.in.h:26
+msgid "Roman"
+msgstr ""
+
+#: ../data/base.xml.in.h:27
+msgid "Small Form"
+msgstr ""
+
+#: ../data/base.xml.in.h:28
+msgid "Subscripts"
+msgstr ""
+
+#: ../data/base.xml.in.h:29
+msgid "Superscripts"
+msgstr ""
+
+#: ../data/base.xml.in.h:30
+msgid "Symbols"
+msgstr ""
+
+#: ../data/base.xml.in.h:31
+msgid "Technicals"
+msgstr ""
+
+#: ../data/base.xml.in.h:32
+msgid "Unit"
+msgstr ""
+
+#: ../data/ja.xml.in.h:1 ../input-pad/unicode_block.h:136
+msgid "Hiragana"
+msgstr ""
+
+#: ../data/ja.xml.in.h:2
+msgid "Japanese"
+msgstr ""
+
+#: ../data/ja.xml.in.h:3 ../input-pad/unicode_block.h:137
+msgid "Katakana"
+msgstr ""
+
+#: ../data/ja.xml.in.h:4 ../data/zh.xml.in.h:4
 msgid "Radicals"
 msgstr ""
 
-#: ../data/group90-keyboard.xml.in.h:1
+#: ../data/ja.xml.in.h:5
+msgid "Radicals Extensions"
+msgstr ""
+
+#: ../data/keyboard.xml.in.h:1
 msgid "Function Key"
 msgstr ""
 
-#: ../data/group90-keyboard.xml.in.h:2
+#: ../data/keyboard.xml.in.h:2
 msgid "Key Pad"
 msgstr ""
 
-#: ../data/group90-keyboard.xml.in.h:3
+#: ../data/keyboard.xml.in.h:3
 msgid "Keyboard"
 msgstr ""
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:23
-#: ../input-pad/window-gtk.c:2465 ../input-pad/window-gtk.c:2466
+#: ../input-pad/window-gtk.c:2897 ../input-pad/window-gtk.c:2898
 msgid "Input Pad"
 msgstr ""
 
@@ -227,6 +327,14 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:44
 msgid "translator_credits"
+msgstr ""
+
+#: ../data/zh.xml.in.h:1 ../input-pad/unicode_block.h:138
+msgid "Bopomofo"
+msgstr ""
+
+#: ../data/zh.xml.in.h:2
+msgid "Chinese"
 msgstr ""
 
 #: ../input-pad/unicode_block.h:37
@@ -537,10 +645,6 @@ msgstr ""
 msgid "Miscellaneous Symbols"
 msgstr ""
 
-#: ../input-pad/unicode_block.h:116
-msgid "Dingbats"
-msgstr ""
-
 #: ../input-pad/unicode_block.h:117
 msgid "Miscellaneous Mathematical Symbols-A"
 msgstr ""
@@ -639,10 +743,6 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:144
 msgid "Enclosed CJK Letters and Months"
-msgstr ""
-
-#: ../input-pad/unicode_block.h:145
-msgid "CJK Compatibility"
 msgstr ""
 
 #: ../input-pad/unicode_block.h:146
@@ -997,27 +1097,27 @@ msgstr ""
 msgid "Supplementary Private Use Area-B"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:123
+#: ../input-pad/window-gtk.c:130
 msgid "Use XTEST module to send key events"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:125
+#: ../input-pad/window-gtk.c:132
 msgid "Display version"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:685
+#: ../input-pad/window-gtk.c:792
 msgid "Fold layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:690 ../input-pad/window-gtk.c:1497
+#: ../input-pad/window-gtk.c:797 ../input-pad/window-gtk.c:1772
 msgid "Extend layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1587
+#: ../input-pad/window-gtk.c:1862
 msgid "_Layout:"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1622
+#: ../input-pad/window-gtk.c:1897
 msgid ""
 "This library is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -1025,7 +1125,7 @@ msgid ""
 "option) any later version."
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1628
+#: ../input-pad/window-gtk.c:1903
 msgid ""
 "This library is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1033,13 +1133,9 @@ msgid ""
 "for more details."
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1634
+#: ../input-pad/window-gtk.c:1909
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this library; if not, write to the Free Software Foundation, "
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-
-#: ../input-pad/window-gtk.c:2028
-msgid "Block"
 msgstr ""
