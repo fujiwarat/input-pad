@@ -753,6 +753,24 @@ on_button_pressed (GtkButton *button, gpointer data)
 }
 
 static void
+on_button_pressed_repeat (InputPadGtkButton *button, gpointer data)
+{
+    guint keysym;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_BUTTON (button));
+
+    keysym = input_pad_gtk_button_get_keysym (button);
+    if ((keysym == XK_Control_L) || (keysym == XK_Control_R) ||
+        (keysym == XK_Alt_L) || (keysym == XK_Alt_L) ||
+        (keysym == XK_Shift_L) || (keysym == XK_Shift_R) ||
+        (keysym == XK_Num_Lock) ||
+        FALSE) {
+        return;
+    }
+    on_button_pressed (GTK_BUTTON (button), data);
+}
+
+static void
 on_button_layout_arrow_pressed (GtkButton *button, gpointer data)
 {
     KeyboardLayoutPart *table_data = (KeyboardLayoutPart *) data;
@@ -1464,6 +1482,9 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
             g_signal_connect (G_OBJECT (button), "pressed",
                               G_CALLBACK (on_button_pressed),
                               (gpointer) table_data->priv->signal_window);
+            g_signal_connect (G_OBJECT (button), "pressed-repeat",
+                              G_CALLBACK (on_button_pressed_repeat),
+                              (gpointer) table_data->priv->signal_window);
             g_signal_connect (G_OBJECT (table_data->priv->signal_window),
                               "char-button-sensitive",
                               G_CALLBACK (on_window_char_button_sensitive),
@@ -1681,6 +1702,9 @@ create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
             gtk_button_set_focus_on_click (GTK_BUTTON (button), FALSE);
             g_signal_connect (G_OBJECT (button), "pressed",
                               G_CALLBACK (on_button_pressed),
+                              (gpointer) window);
+            g_signal_connect (G_OBJECT (button), "pressed-repeat",
+                              G_CALLBACK (on_button_pressed_repeat),
                               (gpointer) window);
             g_signal_connect (G_OBJECT (window), "keyboard-changed",
                               G_CALLBACK (on_window_keyboard_changed),
@@ -2309,6 +2333,9 @@ append_char_view_table (GtkWidget      *viewport,
         }
         g_signal_connect (G_OBJECT (button), "pressed",
                           G_CALLBACK (on_button_pressed),
+                          window);
+        g_signal_connect (G_OBJECT (button), "pressed-repeat",
+                          G_CALLBACK (on_button_pressed_repeat),
                           window);
         g_signal_connect (G_OBJECT (window),
                           "char-button-sensitive",

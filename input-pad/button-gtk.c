@@ -27,8 +27,15 @@
 
 #include "input-pad-group.h"
 #include "button-gtk.h"
+#include "i18n.h"
 
+#define TIMEOUT_REPEAT 300
 #define INPUT_PAD_GTK_BUTTON_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_BUTTON, InputPadGtkButtonPrivate))
+
+static enum {
+    PRESSED_REPEAT,
+    LAST_SIGNAL,
+};
 
 struct _InputPadGtkButtonPrivate {
     guint                       keycode;
@@ -37,11 +44,17 @@ struct _InputPadGtkButtonPrivate {
     int                         keysym_group;
     guint                       state;
     InputPadTableType           type;
+    guint32                     timer;
+    guint                       timeout_repeat;
 };
 
+static guint                    signals[LAST_SIGNAL] = { 0 };
 static GtkBuildableIface       *parent_buildable_iface;
 
 static void input_pad_gtk_button_buildable_interface_init (GtkBuildableIface *iface);
+static void input_pad_gtk_button_destroy_real (GtkObject *object);
+static gint input_pad_gtk_button_press_real (GtkWidget *widget, GdkEventButton *event);
+static gint input_pad_gtk_button_release_real (GtkWidget *widget, GdkEventButton *event);
 
 G_DEFINE_TYPE_WITH_CODE (InputPadGtkButton, input_pad_gtk_button,
                          GTK_TYPE_BUTTON,
@@ -52,6 +65,7 @@ static void
 input_pad_gtk_button_init (InputPadGtkButton *button)
 {
     InputPadGtkButtonPrivate *priv = INPUT_PAD_GTK_BUTTON_GET_PRIVATE (button);
+    priv->timeout_repeat = TIMEOUT_REPEAT;
     button->priv = priv;
 }
 
@@ -64,13 +78,115 @@ input_pad_gtk_button_buildable_interface_init (GtkBuildableIface *iface)
 static void
 input_pad_gtk_button_class_init (InputPadGtkButtonClass *klass)
 {
-#if 0
     GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
     GtkObjectClass *object_class = (GtkObjectClass *) klass;
     GtkWidgetClass *widget_class = (GtkWidgetClass *) klass;
-#endif
+
+    object_class->destroy = input_pad_gtk_button_destroy_real;
+    widget_class->button_press_event = input_pad_gtk_button_press_real;
+    widget_class->button_release_event = input_pad_gtk_button_release_real;
 
     g_type_class_add_private (klass, sizeof (InputPadGtkButtonPrivate));
+
+    signals[PRESSED_REPEAT] =
+        g_signal_new (I_("pressed-repeat"),
+                      G_TYPE_FROM_CLASS (gobject_class),
+                      G_SIGNAL_RUN_LAST,
+                      G_STRUCT_OFFSET (InputPadGtkButtonClass, pressed_repeat),
+                      NULL, NULL,
+                      g_cclosure_marshal_VOID__VOID,
+                      G_TYPE_NONE,
+                      0);
+}
+
+static gint
+button_timer_cb (InputPadGtkButton *button)
+{
+#if 0
+    GtkSettings *settings;
+#endif
+    guint timeout;
+
+    g_return_val_if_fail (button->priv != NULL, FALSE);
+
+    if (button->priv->timer == 0) {
+        return FALSE;
+    }
+
+    timeout = button->priv->timeout_repeat;
+
+    /* "gtk-timeout-repeat" is too fast? */
+#if 0
+    settings = gtk_widget_get_settings (GTK_WIDGET (button));
+    g_object_get (settings, "gtk-timeout-repeat", &timeout, NULL);
+    //g_object_get (settings, "gtk-timeout-expand", &timeout, NULL);
+#endif
+
+    button->priv->timer = gdk_threads_add_timeout (timeout,
+                                                   (GSourceFunc) button_timer_cb,
+                                                   (gpointer) button);
+
+    g_signal_emit ((gpointer) button, signals[PRESSED_REPEAT], 0);
+    return TRUE;
+}
+
+static void
+start_timer (InputPadGtkButton *button)
+{
+    GtkSettings *settings;
+    guint timeout;
+
+    g_return_if_fail (button->priv != NULL);
+
+    if (button->priv->timer != 0) {
+        return;
+    }
+    settings = gtk_widget_get_settings (GTK_WIDGET (button));
+    g_object_get (settings, "gtk-timeout-initial", &timeout, NULL);
+    button->priv->timer = gdk_threads_add_timeout (timeout,
+                                                   (GSourceFunc) button_timer_cb,
+                                                   (gpointer) button);
+}
+
+static void
+end_timer (InputPadGtkButton *button)
+{
+    g_return_if_fail (button->priv != NULL);
+
+    if (button->priv->timer == 0) {
+        return;
+    }
+    g_source_remove (button->priv->timer);
+    button->priv->timer = 0;
+}
+
+static void
+input_pad_gtk_button_destroy_real (GtkObject *object)
+{
+    if (INPUT_PAD_IS_GTK_BUTTON (object)) {
+        end_timer (INPUT_PAD_GTK_BUTTON (object));
+    }
+    GTK_OBJECT_CLASS (input_pad_gtk_button_parent_class)->destroy (object);
+}
+
+static gint
+input_pad_gtk_button_press_real (GtkWidget      *widget,
+                                 GdkEventButton *event)
+{
+    if (INPUT_PAD_IS_GTK_BUTTON (widget)) {
+        start_timer (INPUT_PAD_GTK_BUTTON (widget));
+    }
+    return GTK_WIDGET_CLASS (input_pad_gtk_button_parent_class)->button_press_event (widget, event);
+}
+
+static gint
+input_pad_gtk_button_release_real (GtkWidget      *widget,
+                                   GdkEventButton *event)
+{
+    if (INPUT_PAD_IS_GTK_BUTTON (widget)) {
+        end_timer (INPUT_PAD_GTK_BUTTON (widget));
+    }
+    return GTK_WIDGET_CLASS (input_pad_gtk_button_parent_class)->button_release_event (widget, event);
 }
 
 GtkWidget *

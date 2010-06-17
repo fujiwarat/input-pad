@@ -48,6 +48,8 @@ struct _InputPadGtkButton {
 struct _InputPadGtkButtonClass {
     GtkButtonClass              parent_class;
 
+    void     (* pressed_repeat)        (InputPadGtkButton      *window);
+
     /* Padding for future expansion */
     void (*_button_reserved1) (void);
     void (*_button_reserved2) (void);
