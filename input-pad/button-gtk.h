@@ -90,6 +90,11 @@ InputPadTableType   input_pad_gtk_button_get_table_type
 void                input_pad_gtk_button_set_table_type
                                        (InputPadGtkButton      *button,
                                         InputPadTableType       type);
+const gchar *       input_pad_gtk_button_get_rawtext
+                                       (InputPadGtkButton      *button);
+void                input_pad_gtk_button_set_rawtext
+                                       (InputPadGtkButton      *button,
+                                        const gchar            *rawtext);
 
 G_END_DECLS
 

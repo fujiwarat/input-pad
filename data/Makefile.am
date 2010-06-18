@@ -31,6 +31,7 @@ pad_in_files = \
 	base.xml.in                                             \
 	ja.xml.in                                               \
 	zh.xml.in                                               \
+	str.xml.in                                              \
 	$(NULL)
 
 pad_no_sorted = $(pad_in_files:.xml.in=.xml)
@@ -38,6 +39,7 @@ pad_DATA = \
 	group01-base.xml                                        \
 	group02-ja.xml                                          \
 	group02-zh.xml                                          \
+	group50-str.xml                                         \
 	$(NULL)
 
 group01-base.xml: base.xml
@@ -46,9 +48,14 @@ group02-ja.xml: ja.xml
 	@cp $< $@
 group02-zh.xml: zh.xml
 	@cp $< $@
+group50-str.xml: str.xml
+	@cp $< $@
+
 
 %.xml : %.xml.in
-	@sed -e "s/_name/name/g" $< > $@
+	@sed -e "s/_name/name/g"                                \
+	     -e "s/_comment/comment/g"                          \
+	$< > $@
 
 CLEANFILES= \
 	$(pad_DATA)                                             \
@@ -67,5 +74,6 @@ EXTRA_DIST = \
 	$(ui_gtk_DATA)                                          \
 	char2hexstr.py                                          \
 	keyboard.xml.in                                         \
+	w3ctostr.py                                             \
 	$(NULL)
 

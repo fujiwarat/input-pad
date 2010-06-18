@@ -709,6 +709,7 @@ on_button_pressed (GtkButton *button, gpointer data)
     InputPadGtkButton *ibutton;
     InputPadTableType  type;
     const char *str = gtk_button_get_label (button);
+    const char *rawtext;
     guint keycode;
     guint keysym;
     guint **keysyms;
@@ -722,6 +723,10 @@ on_button_pressed (GtkButton *button, gpointer data)
 
     window = INPUT_PAD_GTK_WINDOW (data);
     ibutton = INPUT_PAD_GTK_BUTTON (button);
+    rawtext = input_pad_gtk_button_get_rawtext (ibutton);
+    if (rawtext) {
+        str = rawtext;
+    }
     type = input_pad_gtk_button_get_table_type (ibutton);
     keycode  = input_pad_gtk_button_get_keycode (ibutton);
     keysym = input_pad_gtk_button_get_keysym (ibutton);
@@ -1459,6 +1464,27 @@ out_all_keysyms_check:
 }
 #endif
 
+char **
+string_table_get_label_array (InputPadTableStr *strs)
+{
+    int i = 0, len;
+    char **retval = NULL;
+
+    if (strs == NULL) {
+        return NULL;
+    }
+    while (strs[i].label) {
+        i++;
+    }
+    len = i;
+    retval = g_new0 (char *, len + 1);
+    for (i = 0; strs[i].label; i++) {
+        retval[i] = g_strdup (strs[i].label);
+    }
+
+    return retval;
+}
+
 static void
 create_char_table (GtkWidget *vbox, InputPadTable *table_data)
 {
@@ -1500,6 +1526,8 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
         char_table = g_strsplit_set (table_data->data.chars, " \t\n", -1);
     } else if (table_data->type == INPUT_PAD_TABLE_TYPE_KEYSYMS) {
         char_table = g_strsplit_set (table_data->data.keysyms, " \t\n", -1);
+    } else if (table_data->type == INPUT_PAD_TABLE_TYPE_STRINGS) {
+        char_table = string_table_get_label_array (table_data->data.strs);
     } else {
         g_warning ("Currently your table type is not supported.");
         table_data->priv->inited = 1;
@@ -1568,6 +1596,18 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
                 }
                 input_pad_gtk_button_set_keysym (INPUT_PAD_GTK_BUTTON (button),
                                                  keysym);
+            } else if (table_data->type == INPUT_PAD_TABLE_TYPE_STRINGS) {
+                button = input_pad_gtk_button_new_with_label (char_table[i]);
+                if (table_data->data.strs[i].rawtext) {
+                    gtk_widget_set_tooltip_text (button,
+                                                 table_data->data.strs[i].rawtext);
+                    input_pad_gtk_button_set_rawtext (INPUT_PAD_GTK_BUTTON (button),
+                                                      table_data->data.strs[i].rawtext);
+                }
+                if (table_data->data.strs[i].comment) {
+                    gtk_widget_set_tooltip_text (button,
+                                                 table_data->data.strs[i].comment);
+                }
             }
             input_pad_gtk_button_set_table_type (INPUT_PAD_GTK_BUTTON (button),
                                                  table_data->type);
@@ -2848,6 +2888,8 @@ input_pad_gtk_window_real_button_pressed (InputPadGtkWindow *window,
         }
     } else if (type == INPUT_PAD_TABLE_TYPE_KEYSYMS) {
         send_key_event (GTK_WIDGET(window)->window, keysym, keycode, state);
+    } else if (type == INPUT_PAD_TABLE_TYPE_STRINGS) {
+            g_print ("%s", str ? str : "");
     } else {
         g_warning ("Currently your table type is not supported.");
     }

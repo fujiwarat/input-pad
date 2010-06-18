@@ -26,13 +26,15 @@ typedef struct _InputPadGroupPrivate InputPadGroupPrivate;
 typedef struct _InputPadGroup InputPadGroup;
 typedef struct _InputPadTablePrivate InputPadTablePrivate;
 typedef struct _InputPadTable InputPadTable;
-typedef struct _InputPadKey InputPadKey;
+typedef struct _InputPadTableStr InputPadTableStr;
+typedef struct _InputPadTableKey InputPadTableKey;
 
 typedef enum
 {
     INPUT_PAD_TABLE_TYPE_NONE = 0,
     INPUT_PAD_TABLE_TYPE_CHARS,
     INPUT_PAD_TABLE_TYPE_KEYSYMS,
+    INPUT_PAD_TABLE_TYPE_STRINGS,
 } InputPadTableType;
 
 struct _InputPadGroup {
@@ -50,11 +52,18 @@ struct _InputPadTable {
     union data {
         char                   *chars;
         char                   *keysyms;
-        InputPadKey            *key;
+        InputPadTableStr       *strs;
+        InputPadTableKey       *keys;
     } data;
     InputPadTable              *next;
 
     InputPadTablePrivate       *priv;
+};
+
+struct _InputPadTableStr {
+    char                       *label;
+    char                       *comment;
+    char                       *rawtext;
 };
 
 InputPadGroup * input_pad_group_append_from_file

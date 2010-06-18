@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2010-06-18 10:31+0900\n"
+"POT-Creation-Date: 2010-06-18 17:42+0900\n"
 "PO-Revision-Date: 2010-05-13 03:08+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: French\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Arrow"
 msgstr ""
 
-#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:2496
+#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:2536
 msgid "Block"
 msgstr ""
 
@@ -174,7 +174,7 @@ msgid "Keyboard"
 msgstr ""
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:23
-#: ../input-pad/window-gtk.c:3010 ../input-pad/window-gtk.c:3011
+#: ../input-pad/window-gtk.c:3052 ../input-pad/window-gtk.c:3053
 msgid "Input Pad"
 msgstr ""
 
@@ -324,6 +324,249 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:44
 msgid "translator_credits"
+msgstr ""
+
+#: ../data/str.xml.in.h:1
+msgid "Angel"
+msgstr ""
+
+#: ../data/str.xml.in.h:2
+msgid "Angry"
+msgstr ""
+
+#: ../data/str.xml.in.h:3
+msgid "Bad"
+msgstr ""
+
+#: ../data/str.xml.in.h:4
+msgid "Bear"
+msgstr ""
+
+#: ../data/str.xml.in.h:5
+msgid "Beer"
+msgstr ""
+
+#: ../data/str.xml.in.h:6
+msgid "Boy"
+msgstr ""
+
+#: ../data/str.xml.in.h:7
+msgid "Bunny"
+msgstr ""
+
+#: ../data/str.xml.in.h:8
+msgid "Cake"
+msgstr ""
+
+#: ../data/str.xml.in.h:9
+msgid "Cat"
+msgstr ""
+
+#: ../data/str.xml.in.h:10
+msgid "Chat"
+msgstr ""
+
+#: ../data/str.xml.in.h:11
+msgid "Clock"
+msgstr ""
+
+#: ../data/str.xml.in.h:12
+msgid "Coffee"
+msgstr ""
+
+#: ../data/str.xml.in.h:13
+msgid "Confused"
+msgstr ""
+
+#: ../data/str.xml.in.h:14
+msgid "Crow"
+msgstr ""
+
+#: ../data/str.xml.in.h:15
+msgid "Crying"
+msgstr ""
+
+#: ../data/str.xml.in.h:16
+msgid "Devil"
+msgstr ""
+
+#: ../data/str.xml.in.h:17
+msgid "Dog"
+msgstr ""
+
+#: ../data/str.xml.in.h:18
+msgid "Don't Know"
+msgstr ""
+
+#: ../data/str.xml.in.h:19
+msgid "Drink"
+msgstr ""
+
+#: ../data/str.xml.in.h:20
+msgid "Embarrassed"
+msgstr ""
+
+#: ../data/str.xml.in.h:21
+msgid "Film"
+msgstr ""
+
+#: ../data/str.xml.in.h:22
+msgid "Foot in Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:23
+msgid "Girl"
+msgstr ""
+
+#: ../data/str.xml.in.h:24
+msgid "Glasses Cool"
+msgstr ""
+
+#: ../data/str.xml.in.h:25
+msgid "Glasses Cool | Eyeroll"
+msgstr ""
+
+#: ../data/str.xml.in.h:26
+msgid "Good"
+msgstr ""
+
+#: ../data/str.xml.in.h:27
+msgid "Hug"
+msgstr ""
+
+#: ../data/str.xml.in.h:28
+msgid "Hug Left"
+msgstr ""
+
+#: ../data/str.xml.in.h:29
+msgid "Hug Right"
+msgstr ""
+
+#: ../data/str.xml.in.h:30
+msgid "Kiss"
+msgstr ""
+
+#: ../data/str.xml.in.h:31
+msgid "Kiss | Secret"
+msgstr ""
+
+#: ../data/str.xml.in.h:32
+msgid "Love"
+msgstr ""
+
+#: ../data/str.xml.in.h:33
+msgid "Love Over"
+msgstr ""
+
+#: ../data/str.xml.in.h:34
+msgid "Mail"
+msgstr ""
+
+#: ../data/str.xml.in.h:35
+msgid "Money Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:36
+msgid "Monkey"
+msgstr ""
+
+#: ../data/str.xml.in.h:37
+msgid "Moon"
+msgstr ""
+
+#: ../data/str.xml.in.h:38
+msgid "Musical Note"
+msgstr ""
+
+#: ../data/str.xml.in.h:39
+msgid "Neutral"
+msgstr ""
+
+#: ../data/str.xml.in.h:40
+msgid "Party"
+msgstr ""
+
+#: ../data/str.xml.in.h:41
+msgid "Phone"
+msgstr ""
+
+#: ../data/str.xml.in.h:42
+msgid "Present"
+msgstr ""
+
+#: ../data/str.xml.in.h:43
+msgid "Sad"
+msgstr ""
+
+#: ../data/str.xml.in.h:44
+msgid "Shock"
+msgstr ""
+
+#: ../data/str.xml.in.h:45
+msgid "Shout"
+msgstr ""
+
+#: ../data/str.xml.in.h:46
+msgid "Shut Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:47
+msgid "Sick"
+msgstr ""
+
+#: ../data/str.xml.in.h:48
+msgid "Smile"
+msgstr ""
+
+#: ../data/str.xml.in.h:49
+msgid "Smile Big"
+msgstr ""
+
+#: ../data/str.xml.in.h:50
+msgid "Smileys"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:52
+msgid "Smileys (Chinese)"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:54
+msgid "Smileys (Japanese 2ch)"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:56
+msgid "Smileys (Japanese)"
+msgstr ""
+
+#: ../data/str.xml.in.h:57
+msgid "Smoking"
+msgstr ""
+
+#: ../data/str.xml.in.h:58
+msgid "Sorry"
+msgstr ""
+
+#: ../data/str.xml.in.h:59
+msgid "Star"
+msgstr ""
+
+#: ../data/str.xml.in.h:60
+msgid "Thinking"
+msgstr ""
+
+#: ../data/str.xml.in.h:61
+msgid "Tongue"
+msgstr ""
+
+#: ../data/str.xml.in.h:62
+msgid "Wink"
+msgstr ""
+
+#: ../data/str.xml.in.h:63
+msgid "Yawn"
 msgstr ""
 
 #: ../data/zh.xml.in.h:1 ../input-pad/unicode_block.h:138
@@ -1094,19 +1337,19 @@ msgstr ""
 msgid "Display version"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:798
+#: ../input-pad/window-gtk.c:803
 msgid "Fold layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:803 ../input-pad/window-gtk.c:1885
+#: ../input-pad/window-gtk.c:808 ../input-pad/window-gtk.c:1925
 msgid "Extend layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1975
+#: ../input-pad/window-gtk.c:2015
 msgid "_Layout:"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2010
+#: ../input-pad/window-gtk.c:2050
 msgid ""
 "This library is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -1114,7 +1357,7 @@ msgid ""
 "option) any later version."
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2016
+#: ../input-pad/window-gtk.c:2056
 msgid ""
 "This library is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1122,7 +1365,7 @@ msgid ""
 "for more details."
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2022
+#: ../input-pad/window-gtk.c:2062
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this library; if not, write to the Free Software Foundation, "

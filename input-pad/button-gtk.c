@@ -43,6 +43,7 @@ struct _InputPadGtkButtonPrivate {
     guint                     **keysyms;
     int                         keysym_group;
     guint                       state;
+    gchar *                     rawtext;
     InputPadTableType           type;
     guint32                     timer;
     guint                       timeout_repeat;
@@ -163,8 +164,15 @@ end_timer (InputPadGtkButton *button)
 static void
 input_pad_gtk_button_destroy_real (GtkObject *object)
 {
+    InputPadGtkButton *ibutton;
     if (INPUT_PAD_IS_GTK_BUTTON (object)) {
-        end_timer (INPUT_PAD_GTK_BUTTON (object));
+        ibutton = INPUT_PAD_GTK_BUTTON (object);
+        if (ibutton->priv) {
+            end_timer (ibutton);
+            g_free (ibutton->priv->rawtext);
+            ibutton->priv->rawtext = NULL;
+            ibutton->priv = NULL;
+        }
     }
     GTK_OBJECT_CLASS (input_pad_gtk_button_parent_class)->destroy (object);
 }
@@ -346,4 +354,29 @@ input_pad_gtk_button_set_table_type (InputPadGtkButton *button,
                       INPUT_PAD_IS_GTK_BUTTON (button));
 
     button->priv->type = type;
+}
+
+const gchar *
+input_pad_gtk_button_get_rawtext (InputPadGtkButton *button)
+{
+    g_return_val_if_fail (button != NULL &&
+                          INPUT_PAD_IS_GTK_BUTTON (button), NULL);
+
+    return button->priv->rawtext;
+}
+
+void
+input_pad_gtk_button_set_rawtext (InputPadGtkButton *button,
+                                  const gchar       *rawtext)
+{
+    g_return_if_fail (button != NULL &&
+                      INPUT_PAD_IS_GTK_BUTTON (button));
+
+    g_free (button->priv->rawtext);
+    button->priv->rawtext = NULL;
+    if (rawtext == NULL) {
+        return;
+    }
+
+    button->priv->rawtext = g_strdup (rawtext);
 }

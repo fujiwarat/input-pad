@@ -148,10 +148,87 @@ parse_keys (xmlNodePtr node, InputPadTable **ptable)
         }
     }
     if (!has_keys) {
-        g_error ("tag %s does not find \"product\" tag in file %s",
+        g_error ("tag %s does not find \"keysyms\" tag in file %s",
                  node->parent ? node->parent->name ? (char *) node->parent->name : "(null)" : "(null)",
                  xml_file);
     }
+}
+
+static void
+parse_string (xmlNodePtr node, InputPadTableStr *str)
+{
+    xmlNodePtr current;
+    gboolean has_label = FALSE;
+
+    for (current = node; current; current = current->next) {
+        if (current->type == XML_ELEMENT_NODE) {
+            if (!g_strcmp0 ((char *) current->name, "label")) {
+                if (current->children) {
+                    get_content (current->children, &str->label, FALSE);
+                    has_label = TRUE;
+                } else {
+                    g_error ("tag %s does not have child tags in the file %s",
+                             (char *) current->name,
+                             xml_file);
+                }
+            }
+            if (!g_strcmp0 ((char *) current->name, "comment")) {
+                if (current->children) {
+                    get_content (current->children, &str->comment, TRUE);
+                } else {
+                    g_error ("tag %s does not have child tags in the file %s",
+                             (char *) current->name,
+                             xml_file);
+                }
+            }
+            if (!g_strcmp0 ((char *) current->name, "rawtext")) {
+                if (current->children) {
+                    get_content (current->children, &str->rawtext, TRUE);
+                } else {
+                    g_error ("tag %s does not have child tags in the file %s",
+                             (char *) current->name,
+                             xml_file);
+                }
+            }
+        }
+    }
+    if (!has_label) {
+        g_error ("tag %s does not find \"label\" tag in file %s",
+                 node->parent ? node->parent->name ? (char *) node->parent->name : "(null)" : "(null)",
+                 xml_file);
+    }
+}
+
+static int
+get_string_array_len (InputPadTableStr *strs)
+{
+    int i = 0;
+
+    if (strs == NULL) {
+        return 0;
+    }
+    while (strs[i].label) {
+        i++;
+    }
+    return i;
+}
+
+static void
+free_string_array (InputPadTableStr *strs)
+{
+    int i = 0;
+    if (strs == NULL) {
+        return;
+    }
+    for (i = 0; strs[i].label; i++) {
+        g_free (strs[i].label);
+        g_free (strs[i].comment);
+        g_free (strs[i].rawtext);
+        strs[i].label = NULL;
+        strs[i].comment = NULL;
+        strs[i].rawtext = NULL;
+    }
+    g_free (strs);
 }
 
 static void
@@ -160,6 +237,7 @@ parse_table (xmlNodePtr node, InputPadTable **ptable)
     xmlNodePtr current;
     gboolean has_name = FALSE;
     gboolean has_chars = FALSE;
+    int len;
 
     for (current = node; current; current = current->next) {
         if (current->type == XML_ELEMENT_NODE) {
@@ -204,10 +282,32 @@ parse_table (xmlNodePtr node, InputPadTable **ptable)
                              xml_file);
                 }
             }
+            if (!g_strcmp0 ((char *) current->name, "string")) {
+                (*ptable)->type = INPUT_PAD_TABLE_TYPE_STRINGS;
+                if (current->children) {
+                    len = get_string_array_len ((*ptable)->data.strs);
+                    if (len == 0) {
+                        (*ptable)->data.strs = g_new0 (InputPadTableStr, 2);
+                    } else {
+                        (*ptable)->data.strs = g_renew (InputPadTableStr,
+                                                        (*ptable)->data.strs,
+                                                        len + 2);
+                        (*ptable)->data.strs[len + 1].label= NULL;
+                        (*ptable)->data.strs[len + 1].comment = NULL;
+                        (*ptable)->data.strs[len + 1].rawtext = NULL;
+                    }
+                    parse_string (current->children, &(*ptable)->data.strs[len]);
+                    has_chars = TRUE;
+                } else {
+                    g_error ("tag %s does not have child tags in the file %s",
+                             (char *) current->name,
+                             xml_file);
+                }
+            }
         }
     }
     if (!has_name || !has_chars) {
-        g_error ("tag %s does not find \"product\" tag in file %s",
+        g_error ("tag %s does not find \"name\" or \"chars\" tag in file %s",
                  node->parent ? node->parent->name ? (char *) node->parent->name : "(null)" : "(null)",
                  xml_file);
     }
@@ -250,7 +350,7 @@ parse_group (xmlNodePtr node, InputPadGroup **pgroup)
         }
     }
     if (!has_name || !has_table ) {
-        g_error ("tag %s does not find \"product\" tag in file %s",
+        g_error ("tag %s does not find \"name\" or \"table\" tag in file %s",
                  node->parent ? node->parent->name ? (char *) node->parent->name : "(null)" : "(null)",
                  xml_file);
     }
@@ -474,6 +574,9 @@ input_pad_group_destroy (InputPadGroup *group_data)
             } else if (table->type == INPUT_PAD_TABLE_TYPE_KEYSYMS) {
                 g_free (table->data.keysyms);
                 table->data.keysyms = NULL;
+            } else if (table->type == INPUT_PAD_TABLE_TYPE_STRINGS) {
+                free_string_array (table->data.strs);
+                table->data.strs = NULL;
             }
             prev_table = table;
             table = table->next;
