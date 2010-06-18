@@ -134,6 +134,7 @@ static GOptionEntry entries[] = {
   { NULL }
 };
 
+static void check_window_size_with_hide_widget (GtkWidget *hide_widget, GtkToggleAction *hide_action);
 static void xor_modifiers (InputPadGtkWindow *window, guint modifiers);
 static guint digit_hbox_get_code_point (GtkWidget *digit_hbox);
 static void digit_hbox_set_code_point (GtkWidget *digit_hbox, guint code);
@@ -551,11 +552,13 @@ on_toggle_action (GtkToggleAction *action, gpointer data)
     GtkWidget *widget;
 
     g_return_if_fail (data != NULL && GTK_IS_WIDGET (data));
+
     widget = GTK_WIDGET (data);
     if (gtk_toggle_action_get_active (action)) {
         gtk_widget_show (widget);
     } else {
         gtk_widget_hide (widget);
+        check_window_size_with_hide_widget (widget, action);
     }
 }
 
@@ -775,8 +778,11 @@ on_button_layout_arrow_pressed (GtkButton *button, gpointer data)
 {
     KeyboardLayoutPart *table_data = (KeyboardLayoutPart *) data;
     int i;
+    int reduced_width = 0;
+    int width, height;
     const gchar *prev_label;
     gboolean extend = FALSE;
+    GtkWidget *toplevel;
 
     prev_label = gtk_button_get_label (button);
     if (!g_strcmp0 (prev_label, "->")) {
@@ -795,6 +801,18 @@ on_button_layout_arrow_pressed (GtkButton *button, gpointer data)
             gtk_button_set_label (button, "->");
             gtk_widget_set_tooltip_text (GTK_WIDGET (button),
                                          _("Extend layout"));
+            reduced_width += table_data[i].table->allocation.width;
+        }
+    }
+
+    if (!extend && reduced_width > 0) {
+        toplevel = gtk_widget_get_toplevel (table_data[0].table);
+        g_return_if_fail (GTK_IS_WINDOW (toplevel));
+        gtk_window_get_size (GTK_WINDOW (toplevel), &width, &height);
+        if (width > reduced_width) {
+            width -= reduced_width;
+            gtk_window_resize (GTK_WINDOW (toplevel), width, height);
+            gtk_widget_queue_resize (toplevel);
         }
     }
 }
@@ -881,6 +899,67 @@ on_window_realize (GtkWidget *window, gpointer data)
 
     create_keyboard_layout_list_ui_real (keyboard_vbox, input_pad);
     input_pad_gdk_xkb_signal_emit (input_pad, signals[KBD_CHANGED]);
+}
+
+static void
+resize_toplevel_window_with_hide_widget (GtkWidget *widget)
+{
+    GtkWidget *toplevel;
+    int width, height;
+
+    toplevel = gtk_widget_get_toplevel (widget);
+    g_return_if_fail (GTK_IS_WINDOW (toplevel));
+    gtk_window_get_size (GTK_WINDOW (toplevel), &width, &height);
+    if (height > widget->allocation.height &&
+        widget->allocation.x >= 0) {
+        height -= widget->allocation.height;
+        gtk_window_resize (GTK_WINDOW (toplevel), width, height);
+        gtk_widget_queue_resize (toplevel);
+    }
+}
+
+static void
+check_window_size_with_hide_widget (GtkWidget       *hide_widget,
+                                    GtkToggleAction *hide_action)
+{
+    const gchar *hide_name;
+    const gchar *active_name;
+    GSList *list;
+    GtkToggleAction *action;
+
+    hide_name = gtk_buildable_get_name (GTK_BUILDABLE (hide_action));
+    if (hide_name == NULL) {
+        hide_name = (const gchar *) g_object_get_data (G_OBJECT (hide_action),
+                                                       "gtk-builder-name");
+    }
+
+    if (!g_strcmp0 (hide_name, "ShowLayout")) {
+        resize_toplevel_window_with_hide_widget (hide_widget);
+        return;
+    } else if (g_strcmp0 (hide_name, "ShowNothing") != 0 &&
+               GTK_IS_RADIO_ACTION (hide_action)) {
+        list = gtk_radio_action_get_group (GTK_RADIO_ACTION (hide_action));
+        while (list) {
+            g_return_if_fail (GTK_IS_TOGGLE_ACTION (list->data));
+            action = GTK_TOGGLE_ACTION (list->data);
+            if (gtk_toggle_action_get_active (action)) {
+                break;
+            }
+            list = list->next;
+        }
+        if (list == NULL) {
+            return;
+        }
+        active_name = gtk_buildable_get_name (GTK_BUILDABLE (action));
+        if (active_name == NULL) {
+            active_name = (const gchar *) g_object_get_data (G_OBJECT (action),
+                                                            "gtk-builder-name");
+        }
+        if (!g_strcmp0 (active_name, "ShowNothing")) {
+            resize_toplevel_window_with_hide_widget (hide_widget);
+            return;
+        }
+    }
 }
 
 static InputPadGroup *
@@ -1181,27 +1260,13 @@ init_spin_button (GtkWidget *spin_button, CodePointData *cp_data)
                                     adjustment);
 }
 
-static void
-set_code_point_base (CodePointData *cp_data, int n_encoding)
+static int
+get_max_digits_from_base (int base)
 {
-    int i, n_digit, created_num, prev_base;
     char *formatted = NULL;
-    guint code = 0;
-    GList *list;
-    GtkWidget *digit_hbox;
-    GtkWidget *char_label;
-    GtkWidget *combobox;
-    GtkTreeModel *model;
-    GtkTreeIter iter;
-    GtkCellRenderer *renderer;
+    int n_digit;
 
-    g_return_if_fail (cp_data != NULL);
-    g_return_if_fail (GTK_IS_CONTAINER (cp_data->digit_hbox));
-    digit_hbox = GTK_WIDGET (cp_data->digit_hbox);
-    g_return_if_fail (GTK_IS_LABEL (cp_data->char_label));
-    char_label = GTK_WIDGET (cp_data->char_label);
-
-    switch (n_encoding) {
+    switch (base) {
     case 16:
         formatted = g_strdup_printf ("%x", MAX_UCODE);
         n_digit = strlen (formatted);
@@ -1219,15 +1284,46 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
         n_digit = strlen (formatted) * 4;
         break;
     default:
-        g_warning ("Base %d is not supported", n_encoding);
-        return;
+        g_warning ("Base %d is not supported", base);
+        return 0;
     }
     g_free (formatted);
+    return n_digit;
+}
 
+static void
+set_code_point_base (CodePointData *cp_data, int n_encoding)
+{
+    int i, n_digit, created_num, prev_base;
+    guint code = 0;
+    gboolean do_resize = FALSE;
+    GList *list;
+    GtkWidget *digit_hbox;
+    GtkWidget *char_label;
+    GtkWidget *combobox;
+    GtkWidget *toplevel;
+    GtkTreeModel *model;
+    GtkTreeIter iter;
+    GtkCellRenderer *renderer;
+
+    g_return_if_fail (cp_data != NULL);
+    g_return_if_fail (GTK_IS_CONTAINER (cp_data->digit_hbox));
+    digit_hbox = GTK_WIDGET (cp_data->digit_hbox);
+    g_return_if_fail (GTK_IS_LABEL (cp_data->char_label));
+    char_label = GTK_WIDGET (cp_data->char_label);
+
+    if ((n_digit = get_max_digits_from_base (n_encoding)) == 0) {
+        return;
+    }
     list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
     created_num = g_list_length (list);
     if (created_num > 0) {
         code = digit_hbox_get_code_point (digit_hbox);
+        combobox = GTK_WIDGET (list->data);
+        prev_base = input_pad_gtk_combo_box_get_base (INPUT_PAD_GTK_COMBO_BOX (combobox));
+        if (n_digit < get_max_digits_from_base (prev_base)) {
+            do_resize = TRUE;
+        }
     }
     if (created_num >= n_digit) {
         for (i = 0; i < n_digit; i++) {
@@ -1292,6 +1388,15 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
                           G_CALLBACK (on_combobox_changed), cp_data);
     }
 end_configure_combobox:
+    list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
+    combobox = GTK_WIDGET (g_list_nth (list, n_digit - 1)->data);
+    toplevel = gtk_widget_get_toplevel (digit_hbox);
+    if (do_resize &&
+        combobox->allocation.x >= 0 && combobox->allocation.width > 10) {
+        toplevel->allocation.width = combobox->allocation.x +
+                                     combobox->allocation.width + 10;
+        gtk_widget_queue_resize (toplevel);
+    }
     digit_hbox_set_code_point (digit_hbox, code);
     char_label_set_code_point (char_label, code);
 }
@@ -1365,7 +1470,7 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
     gchar **char_table;
     gchar *str;
     const int TABLE_COLUMN = table_data->column;
-    int i, num, raw, col, len, code;
+    int i, num, row, col, len, code;
     guint keysym;
 #if 0
     guint **keysyms;
@@ -1380,7 +1485,7 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
 
     input_pad = INPUT_PAD_GTK_WINDOW (table_data->priv->signal_window);
     scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_widget_set_size_request (scrolled, 300, 200);
+    gtk_widget_set_size_request (scrolled, 300, 150);
     gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
                                     GTK_POLICY_NEVER,
                                     GTK_POLICY_ALWAYS);
@@ -1408,9 +1513,9 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
         }
     }
     col = TABLE_COLUMN;
-    raw = num / col;
+    row = num / col;
     if (num % col) {
-        raw++;
+        row++;
     }
 
 #if 0
@@ -1420,7 +1525,7 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
     }
 #endif
 
-    table = gtk_table_new (raw, col, TRUE);
+    table = gtk_table_new (row, col, TRUE);
     gtk_table_set_row_spacings (GTK_TABLE (table), 0);
     gtk_table_set_col_spacings (GTK_TABLE (table), 0);
     gtk_container_add (GTK_CONTAINER (viewport), table);
@@ -1466,10 +1571,18 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
             }
             input_pad_gtk_button_set_table_type (INPUT_PAD_GTK_BUTTON (button),
                                                  table_data->type);
-            raw = num / TABLE_COLUMN;
+            row = num / TABLE_COLUMN;
             col = num % TABLE_COLUMN;
+#if 0
             gtk_table_attach_defaults (GTK_TABLE (table), button,
-                                       col, col + 1, raw, raw + 1);
+                                       col, col + 1, row, row + 1);
+#else
+            /* gtk_table_attach_defaults assigns GTK_EXPAND and
+             * the button is too big when max row is 1 . */
+            gtk_table_attach (GTK_TABLE (table), button,
+                              col, col + 1, row, row + 1,
+                              GTK_FILL, GTK_FILL, 0, 0);
+#endif
             gtk_widget_show (button);
             if (input_pad->child) {
                 gtk_widget_set_sensitive (button,
@@ -2314,13 +2427,13 @@ append_char_view_table (GtkWidget      *viewport,
         button = input_pad_gtk_button_new_with_unicode (num);
         row = (num - start) / TABLE_COLUMN;
         col = (num - start) % TABLE_COLUMN;
-#if 0
+#if 1
+        gtk_table_attach_defaults (GTK_TABLE (table), button,
+                                   col, col + 1, row, row + 1);
+#else
         gtk_table_attach (GTK_TABLE (table), button,
                           col, col + 1, row, row + 1,
                           0, 0, 0, 0);
-#else
-        gtk_table_attach_defaults (GTK_TABLE (table), button,
-                                   col, col + 1, row, row + 1);
 #endif
         gtk_widget_show (button);
         if (input_pad->child) {

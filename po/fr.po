@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2010-06-17 15:08+0900\n"
+"POT-Creation-Date: 2010-06-18 10:31+0900\n"
 "PO-Revision-Date: 2010-05-13 03:08+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: French\n"
@@ -28,12 +28,12 @@ msgstr ""
 msgid "Arrow"
 msgstr ""
 
-#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:2383
+#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:2496
 msgid "Block"
 msgstr ""
 
-#: ../data/base.xml.in.h:5
-msgid "Box drawing"
+#: ../data/base.xml.in.h:5 ../input-pad/unicode_block.h:112
+msgid "Box Drawing"
 msgstr ""
 
 #: ../data/base.xml.in.h:6
@@ -124,12 +124,9 @@ msgstr ""
 msgid "Small Form"
 msgstr ""
 
-#: ../data/base.xml.in.h:28
-msgid "Subscripts"
-msgstr ""
-
+#. Translators: Superscripts and Subscripts
 #: ../data/base.xml.in.h:29
-msgid "Superscripts"
+msgid "Super and Sub"
 msgstr ""
 
 #: ../data/base.xml.in.h:30
@@ -144,24 +141,24 @@ msgstr ""
 msgid "Unit"
 msgstr ""
 
-#: ../data/ja.xml.in.h:1 ../input-pad/unicode_block.h:136
+#: ../data/ja.xml.in.h:1 ../input-pad/unicode_block.h:132
+msgid "CJK Radicals Supplement"
+msgstr ""
+
+#: ../data/ja.xml.in.h:2 ../input-pad/unicode_block.h:136
 msgid "Hiragana"
 msgstr ""
 
-#: ../data/ja.xml.in.h:2
+#: ../data/ja.xml.in.h:3
 msgid "Japanese"
 msgstr ""
 
-#: ../data/ja.xml.in.h:3 ../input-pad/unicode_block.h:137
+#: ../data/ja.xml.in.h:4 ../input-pad/unicode_block.h:137
 msgid "Katakana"
 msgstr ""
 
-#: ../data/ja.xml.in.h:4 ../data/zh.xml.in.h:4
+#: ../data/ja.xml.in.h:5 ../data/zh.xml.in.h:4
 msgid "Radicals"
-msgstr ""
-
-#: ../data/ja.xml.in.h:5
-msgid "Radicals Extensions"
 msgstr ""
 
 #: ../data/keyboard.xml.in.h:1
@@ -177,7 +174,7 @@ msgid "Keyboard"
 msgstr ""
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:23
-#: ../input-pad/window-gtk.c:2897 ../input-pad/window-gtk.c:2898
+#: ../input-pad/window-gtk.c:3010 ../input-pad/window-gtk.c:3011
 msgid "Input Pad"
 msgstr ""
 
@@ -629,10 +626,6 @@ msgstr ""
 msgid "Enclosed Alphanumerics"
 msgstr ""
 
-#: ../input-pad/unicode_block.h:112
-msgid "Box Drawing"
-msgstr ""
-
 #: ../input-pad/unicode_block.h:113
 msgid "Block Elements"
 msgstr ""
@@ -703,10 +696,6 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:131
 msgid "Supplemental Punctuation"
-msgstr ""
-
-#: ../input-pad/unicode_block.h:132
-msgid "CJK Radicals Supplement"
 msgstr ""
 
 #: ../input-pad/unicode_block.h:133
@@ -1105,19 +1094,19 @@ msgstr ""
 msgid "Display version"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:792
+#: ../input-pad/window-gtk.c:798
 msgid "Fold layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:797 ../input-pad/window-gtk.c:1772
+#: ../input-pad/window-gtk.c:803 ../input-pad/window-gtk.c:1885
 msgid "Extend layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1862
+#: ../input-pad/window-gtk.c:1975
 msgid "_Layout:"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1897
+#: ../input-pad/window-gtk.c:2010
 msgid ""
 "This library is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -1125,7 +1114,7 @@ msgid ""
 "option) any later version."
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1903
+#: ../input-pad/window-gtk.c:2016
 msgid ""
 "This library is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1133,7 +1122,7 @@ msgid ""
 "for more details."
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1909
+#: ../input-pad/window-gtk.c:2022
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this library; if not, write to the Free Software Foundation, "

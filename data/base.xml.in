@@ -97,16 +97,12 @@
         </chars>
       </table>
       <table>
-        <_name>Superscripts</_name>
+        <!-- Translators: Superscripts and Subscripts -->
+        <_name>Super and Sub</_name>
         <chars>
 0x2070 0x2071 0x2074 0x2075 0x2076 0x2077
 0x2078 0x2079 0x207A 0x207B 0x207C 0x207D
 0x207E 0x207F
-        </chars>
-      </table>
-      <table>
-        <_name>Subscripts</_name>
-        <chars>
 0x2080 0x2081 0x2082 0x2083 0x2084 0x2085
 0x2086 0x2087 0x2088 0x2089 0x208A 0x208B
 0x208C 0x208D 0x208E
@@ -408,7 +404,7 @@
         </chars>
       </table>
       <table>
-        <_name>Box drawing</_name>
+        <_name>Box Drawing</_name>
         <chars>
 0x2500 0x2501
 0x2502 0x2503 0x2504 0x2505 0x2506 0x2507
