@@ -142,6 +142,7 @@ static void char_label_set_code_point (GtkWidget *char_label, guint code);
 static void set_code_point_base (CodePointData *cp_data, int n_encoding);
 static InputPadGroup *get_nth_pad_group (InputPadGroup *group, int nth);
 static InputPadTable *get_nth_pad_table (InputPadTable *table, int nth);
+static void run_command (const gchar *command, gchar **command_output);
 static void create_char_table (GtkWidget *vbox, InputPadTable *table_data);
 static char *get_keysym_display_name (guint keysym, GtkWidget *widget, gchar **tooltipp);
 static void create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window);
@@ -710,6 +711,7 @@ on_button_pressed (GtkButton *button, gpointer data)
     InputPadTableType  type;
     const char *str = gtk_button_get_label (button);
     const char *rawtext;
+    char *command_output = NULL;
     guint keycode;
     guint keysym;
     guint **keysyms;
@@ -724,9 +726,6 @@ on_button_pressed (GtkButton *button, gpointer data)
     window = INPUT_PAD_GTK_WINDOW (data);
     ibutton = INPUT_PAD_GTK_BUTTON (button);
     rawtext = input_pad_gtk_button_get_rawtext (ibutton);
-    if (rawtext) {
-        str = rawtext;
-    }
     type = input_pad_gtk_button_get_table_type (ibutton);
     keycode  = input_pad_gtk_button_get_keycode (ibutton);
     keysym = input_pad_gtk_button_get_keysym (ibutton);
@@ -737,6 +736,14 @@ on_button_pressed (GtkButton *button, gpointer data)
         keysym == (guint) '\t' && keycode == 0 && keysyms == NULL) {
         str = "\t";
         keysym = 0;
+    } else if (type == INPUT_PAD_TABLE_TYPE_COMMANDS) {
+        run_command (rawtext, &command_output);
+        if (command_output == NULL) {
+            return;
+        }
+        str = command_output;
+    } else if (rawtext) {
+        str = rawtext;
     }
     if (keysyms && (keysym != keysyms[group][0])) {
         state |= ShiftMask;
@@ -746,6 +753,9 @@ on_button_pressed (GtkButton *button, gpointer data)
     g_signal_emit (window, signals[BUTTON_PRESSED], 0,
                    str, type, keysym, keycode, state, &retval);
 
+    if (type == INPUT_PAD_TABLE_TYPE_COMMANDS) {
+        g_free (command_output);
+    }
     if (state & ShiftMask) {
         state ^= ShiftMask;
     }
@@ -1485,6 +1495,124 @@ string_table_get_label_array (InputPadTableStr *strs)
     return retval;
 }
 
+char **
+command_table_get_label_array (InputPadTableCmd *cmds)
+{
+    int i = 0, len;
+    char **retval = NULL;
+
+    if (cmds == NULL) {
+        return NULL;
+    }
+    while (cmds[i].execl) {
+        i++;
+    }
+    len = i;
+    retval = g_new0 (char *, len + 1);
+    for (i = 0; cmds[i].execl; i++) {
+        if (cmds[i].label) {
+            retval[i] = g_strdup (cmds[i].label);
+        } else {
+            retval[i] = g_strdup (cmds[i].execl);
+        }
+    }
+
+    return retval;
+}
+
+static void
+run_command (const gchar *command, gchar **command_output)
+{
+    GError  *error;
+    char   **argv;
+    char   **envp = NULL;
+    char    *p;
+    char    *end;
+    char    *name;
+    const char *value;
+    char    *extracted;
+    char    *new_arg;
+    char    *std_output = NULL;
+    char    *std_error = NULL;
+    int      i, n, exit_status;
+
+    error = NULL;
+    if (!g_shell_parse_argv (command, NULL, &argv, &error)) {
+        g_warning ("Could not parse command: %s", error->message);
+        g_error_free (error);
+        return;
+    }
+    n = 0;
+    for (i = 0; argv[i]; i++) {
+        if (g_strstr_len (argv[i], -1, "=") != NULL) {
+            n++;
+        } else {
+            break;
+        }
+    }
+    if (n > 0) {
+        envp = g_new0 (char *, n + 1);
+    }
+    for (i = 0; i < n; i++) {
+        envp[i] = g_strdup (argv[i]);
+    }
+    for (i = n; argv[i]; i++) {
+        if ((p = g_strstr_len (argv[i], -1, "$")) != NULL &&
+            *(p + 1) != '\0') {
+            end = g_strstr_len (p + 1, -1, " ");
+            if (end) {
+                name = g_strndup (p, end - p);
+            } else {
+                name = g_strdup (p);
+            }
+            value = g_getenv (name + 1);
+            g_free (name);
+            if (value != NULL) {
+                extracted = g_strdup (value);
+            } else {
+                extracted = g_strdup ("");
+            }
+            *p = '\0';
+            if (end) {
+                new_arg = g_strconcat (argv[i], extracted, end, NULL);
+            } else {
+                new_arg = g_strconcat (argv[i], extracted, NULL);
+            }
+            g_free (argv[i]);
+            argv[i] = new_arg;
+        }
+    }
+    error = NULL;
+    if (!g_spawn_sync (NULL,
+                       &argv[n],
+                       envp,
+                       G_SPAWN_SEARCH_PATH,
+                       NULL, NULL,
+                       &std_output, &std_error,
+                       &exit_status, &error)) {
+        g_warning ("Could not run the script %s: %s: %s",
+                   command,
+                   error->message,
+                   std_error ? std_error : "");
+        g_error_free (error);
+        g_strfreev (argv);
+        return;
+    }
+    g_strfreev (argv);
+    g_strfreev (envp);
+    if (exit_status != 0) {
+        g_warning ("Failed to run the script %s: %s", command,
+                   std_error ? std_error : "");
+    }
+    if (std_output && strlen (std_output) > 2) {
+        if (command_output) {
+            *command_output = g_strdup (g_strchomp (std_output));
+        }
+    }
+    g_free (std_output);
+    g_free (std_error);
+}
+
 static void
 create_char_table (GtkWidget *vbox, InputPadTable *table_data)
 {
@@ -1528,6 +1656,8 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
         char_table = g_strsplit_set (table_data->data.keysyms, " \t\n", -1);
     } else if (table_data->type == INPUT_PAD_TABLE_TYPE_STRINGS) {
         char_table = string_table_get_label_array (table_data->data.strs);
+    } else if (table_data->type == INPUT_PAD_TABLE_TYPE_COMMANDS) {
+        char_table = command_table_get_label_array (table_data->data.cmds);
     } else {
         g_warning ("Currently your table type is not supported.");
         table_data->priv->inited = 1;
@@ -1608,6 +1738,12 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
                     gtk_widget_set_tooltip_text (button,
                                                  table_data->data.strs[i].comment);
                 }
+            } else if (table_data->type == INPUT_PAD_TABLE_TYPE_COMMANDS) {
+                button = input_pad_gtk_button_new_with_label (char_table[i]);
+                gtk_widget_set_tooltip_text (button,
+                                             table_data->data.cmds[i].execl);
+                input_pad_gtk_button_set_rawtext (INPUT_PAD_GTK_BUTTON (button),
+                                                  table_data->data.cmds[i].execl);
             }
             input_pad_gtk_button_set_table_type (INPUT_PAD_GTK_BUTTON (button),
                                                  table_data->type);
@@ -2889,6 +3025,8 @@ input_pad_gtk_window_real_button_pressed (InputPadGtkWindow *window,
     } else if (type == INPUT_PAD_TABLE_TYPE_KEYSYMS) {
         send_key_event (GTK_WIDGET(window)->window, keysym, keycode, state);
     } else if (type == INPUT_PAD_TABLE_TYPE_STRINGS) {
+            g_print ("%s", str ? str : "");
+    } else if (type == INPUT_PAD_TABLE_TYPE_COMMANDS) {
             g_print ("%s", str ? str : "");
     } else {
         g_warning ("Currently your table type is not supported.");

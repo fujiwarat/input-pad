@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <input-pad>
-  <pad name="japanese">
+  <pad name="string">
     <group>
       <_name>Chat</_name>
       <table>

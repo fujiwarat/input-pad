@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<input-pad>
+  <pad name="command">
+    <group>
+      <_name>Command</_name>
+      <table>
+        <column>3</column>
+        <_name>Date</_name>
+        <command>
+          <_label>Normal Date</_label>
+          <execl>date "+%x"</execl>
+        </command>
+        <command>
+          <_label>Date and Time</_label>
+          <execl>date</execl>
+        </command>
+        <command>
+          <_label>ChangeLog date</_label>
+          <execl>LANG=C date "+%a %b %e %Y  $EMAIL_ADDRESS"</execl>
+        </command>
+        <command>
+          <_label>USA English date</_label>
+          <execl>LANG=C date "+%D"</execl>
+        </command>
+        <command>
+          <_label>UK English date</_label>
+          <execl>LANG=C date "+%d/%m/%y"</execl>
+        </command>
+        <command>
+          <_label>ISO 8601 date</_label>
+          <execl>date "+%F"</execl>
+        </command>
+        <command>
+          <_label>Era</_label>
+          <execl>date "+%EC%Ey"</execl>
+        </command>
+        <command>
+          <_label>Century Year</_label>
+          <execl>LANG=C date "+%Y"</execl>
+        </command>
+        <command>
+          <_label>Normal Time</_label>
+          <execl>date "+%X"</execl>
+        </command>
+        <command>
+          <_label>English Time</_label>
+          <execl>date "+%T"</execl>
+        </command>
+        <command>
+          <_label>Month</_label>
+          <execl>date "+%B"</execl>
+        </command>
+        <command>
+          <_label>English Month</_label>
+          <execl>LANG=C date "+%B"</execl>
+        </command>
+        <command>
+          <_label>Short Month</_label>
+          <execl>date "+%b"</execl>
+        </command>
+        <command>
+          <_label>English Short Month</_label>
+          <execl>LANG=C date "+%b"</execl>
+        </command>
+        <command>
+          <_label>Weekday</_label>
+          <execl>date "+%A"</execl>
+        </command>
+        <command>
+          <_label>English Weekday</_label>
+          <execl>LANG=C date "+%A"</execl>
+        </command>
+        <command>
+          <_label>Short Weekday</_label>
+          <execl>date "+%a"</execl>
+        </command>
+        <command>
+          <_label>English Short Weekday</_label>
+          <execl>LANG=C date "+%a"</execl>
+        </command>
+      </table>
+    </group>
+  </pad>
+</input-pad>

@@ -32,6 +32,7 @@ pad_in_files = \
 	ja.xml.in                                               \
 	zh.xml.in                                               \
 	str.xml.in                                              \
+	cmd.xml.in                                              \
 	$(NULL)
 
 pad_no_sorted = $(pad_in_files:.xml.in=.xml)
@@ -40,6 +41,7 @@ pad_DATA = \
 	group02-ja.xml                                          \
 	group02-zh.xml                                          \
 	group50-str.xml                                         \
+	group60-cmd.xml                                         \
 	$(NULL)
 
 group01-base.xml: base.xml
@@ -50,11 +52,14 @@ group02-zh.xml: zh.xml
 	@cp $< $@
 group50-str.xml: str.xml
 	@cp $< $@
+group60-cmd.xml: cmd.xml
+	@cp $< $@
 
 
 %.xml : %.xml.in
 	@sed -e "s/_name/name/g"                                \
 	     -e "s/_comment/comment/g"                          \
+	     -e "s/_label/label/g"                              \
 	$< > $@
 
 CLEANFILES= \

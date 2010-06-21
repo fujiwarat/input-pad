@@ -32,7 +32,7 @@
 #define TIMEOUT_REPEAT 300
 #define INPUT_PAD_GTK_BUTTON_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_BUTTON, InputPadGtkButtonPrivate))
 
-static enum {
+enum {
     PRESSED_REPEAT,
     LAST_SIGNAL,
 };

@@ -199,19 +199,60 @@ parse_string (xmlNodePtr node, InputPadTableStr *str)
     }
 }
 
-static int
-get_string_array_len (InputPadTableStr *strs)
+static void
+parse_command (xmlNodePtr node, InputPadTableCmd *cmd)
 {
-    int i = 0;
+    xmlNodePtr current;
+    gboolean has_execl = FALSE;
 
-    if (strs == NULL) {
-        return 0;
+    for (current = node; current; current = current->next) {
+        if (current->type == XML_ELEMENT_NODE) {
+            if (!g_strcmp0 ((char *) current->name, "label")) {
+                if (current->children) {
+                    get_content (current->children, &cmd->label, TRUE);
+                } else {
+                    g_error ("tag %s does not have child tags in the file %s",
+                             (char *) current->name,
+                             xml_file);
+                }
+            }
+            if (!g_strcmp0 ((char *) current->name, "execl")) {
+                if (current->children) {
+                    get_content (current->children, &cmd->execl, FALSE);
+                    has_execl = TRUE;
+                } else {
+                    g_error ("tag %s does not have child tags in the file %s",
+                             (char *) current->name,
+                             xml_file);
+                }
+            }
+        }
     }
-    while (strs[i].label) {
-        i++;
+    if (!has_execl) {
+        g_error ("tag %s does not find \"execl\" tag in file %s",
+                 node->parent ? node->parent->name ? (char *) node->parent->name : "(null)" : "(null)",
+                 xml_file);
     }
-    return i;
 }
+
+#define GET_TABLE_SUB_ARRAY_LEN(type_name, TypeName, label)             \
+static int                                                              \
+get_##type_name##_array_len (InputPadTable##TypeName *instance)         \
+{                                                                       \
+    int i = 0;                                                          \
+                                                                        \
+    if (instance == NULL) {                                             \
+        return 0;                                                       \
+    }                                                                   \
+    while (instance[i].label) {                                         \
+        i++;                                                            \
+    }                                                                   \
+    return i;                                                           \
+}
+
+GET_TABLE_SUB_ARRAY_LEN (string, Str, label)
+GET_TABLE_SUB_ARRAY_LEN (command, Cmd, execl)
+#undef GET_TABLE_SUB_ARRAY_LEN
 
 static void
 free_string_array (InputPadTableStr *strs)
@@ -232,12 +273,64 @@ free_string_array (InputPadTableStr *strs)
 }
 
 static void
+free_command_array (InputPadTableCmd *cmds)
+{
+    int i = 0;
+    if (cmds == NULL) {
+        return;
+    }
+    for (i = 0; cmds[i].execl; i++) {
+        g_free (cmds[i].execl);
+        g_free (cmds[i].label);
+        cmds[i].label = NULL;
+        cmds[i].execl = NULL;
+    }
+    g_free (cmds);
+}
+
+static void
+parse_table_sub_string (xmlNodePtr node, InputPadTable **ptable)
+{
+    int len;
+
+    len = get_string_array_len ((*ptable)->data.strs);
+    if (len == 0) {
+        (*ptable)->data.strs = g_new0 (InputPadTableStr, 2);
+    } else {
+        (*ptable)->data.strs = g_renew (InputPadTableStr,
+                                        (*ptable)->data.strs,
+                                        len + 2);
+        (*ptable)->data.strs[len + 1].label= NULL;
+        (*ptable)->data.strs[len + 1].comment = NULL;
+        (*ptable)->data.strs[len + 1].rawtext = NULL;
+    }
+    parse_string (node, &(*ptable)->data.strs[len]);
+}
+
+static void
+parse_table_sub_command (xmlNodePtr node, InputPadTable **ptable)
+{
+    int len;
+
+    len = get_command_array_len ((*ptable)->data.cmds);
+    if (len == 0) {
+        (*ptable)->data.cmds = g_new0 (InputPadTableCmd, 2);
+    } else {
+        (*ptable)->data.cmds = g_renew (InputPadTableCmd,
+                                       (*ptable)->data.cmds,
+                                       len + 2);
+        (*ptable)->data.cmds[len + 1].label= NULL;
+        (*ptable)->data.cmds[len + 1].execl = NULL;
+    }
+    parse_command (node, &(*ptable)->data.cmds[len]);
+}
+
+static void
 parse_table (xmlNodePtr node, InputPadTable **ptable)
 {
     xmlNodePtr current;
     gboolean has_name = FALSE;
     gboolean has_chars = FALSE;
-    int len;
 
     for (current = node; current; current = current->next) {
         if (current->type == XML_ELEMENT_NODE) {
@@ -285,18 +378,18 @@ parse_table (xmlNodePtr node, InputPadTable **ptable)
             if (!g_strcmp0 ((char *) current->name, "string")) {
                 (*ptable)->type = INPUT_PAD_TABLE_TYPE_STRINGS;
                 if (current->children) {
-                    len = get_string_array_len ((*ptable)->data.strs);
-                    if (len == 0) {
-                        (*ptable)->data.strs = g_new0 (InputPadTableStr, 2);
-                    } else {
-                        (*ptable)->data.strs = g_renew (InputPadTableStr,
-                                                        (*ptable)->data.strs,
-                                                        len + 2);
-                        (*ptable)->data.strs[len + 1].label= NULL;
-                        (*ptable)->data.strs[len + 1].comment = NULL;
-                        (*ptable)->data.strs[len + 1].rawtext = NULL;
-                    }
-                    parse_string (current->children, &(*ptable)->data.strs[len]);
+                    parse_table_sub_string (current->children, ptable);
+                    has_chars = TRUE;
+                } else {
+                    g_error ("tag %s does not have child tags in the file %s",
+                             (char *) current->name,
+                             xml_file);
+                }
+            }
+            if (!g_strcmp0 ((char *) current->name, "command")) {
+                (*ptable)->type = INPUT_PAD_TABLE_TYPE_COMMANDS;
+                if (current->children) {
+                    parse_table_sub_command(current->children, ptable);
                     has_chars = TRUE;
                 } else {
                     g_error ("tag %s does not have child tags in the file %s",
@@ -577,6 +670,11 @@ input_pad_group_destroy (InputPadGroup *group_data)
             } else if (table->type == INPUT_PAD_TABLE_TYPE_STRINGS) {
                 free_string_array (table->data.strs);
                 table->data.strs = NULL;
+            } else if (table->type == INPUT_PAD_TABLE_TYPE_COMMANDS) {
+                free_command_array (table->data.cmds);
+                table->data.cmds = NULL;
+            } else {
+                g_warning ("Free is not defined in type %d", table->type);
             }
             prev_table = table;
             table = table->next;
