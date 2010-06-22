@@ -45,6 +45,7 @@
 #define N_KEYBOARD_LAYOUT_PART 3
 #define INPUT_PAD_UI_FILE INPUT_PAD_UI_GTK_DIR "/input-pad.ui"
 #define MAX_UCODE 0x10ffff
+#define NEW_CUSTOM_CHAR_TABLE 1
 
 #define INPUT_PAD_GTK_WINDOW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_WINDOW, InputPadGtkWindowPrivate))
 
@@ -115,6 +116,8 @@ struct _KeyboardLayoutPart {
 struct _CharTreeViewData {
     GtkWidget                  *viewport;
     GtkWidget                  *window;
+    GtkWidget                  *main_tv;
+    GtkWidget                  *sub_tv;
 };
 
 static guint                    signals[LAST_SIGNAL] = { 0 };
@@ -134,26 +137,83 @@ static GOptionEntry entries[] = {
   { NULL }
 };
 
-static void check_window_size_with_hide_widget (GtkWidget *hide_widget, GtkToggleAction *hide_action);
-static void xor_modifiers (InputPadGtkWindow *window, guint modifiers);
-static guint digit_hbox_get_code_point (GtkWidget *digit_hbox);
-static void digit_hbox_set_code_point (GtkWidget *digit_hbox, guint code);
-static void char_label_set_code_point (GtkWidget *char_label, guint code);
-static void set_code_point_base (CodePointData *cp_data, int n_encoding);
-static InputPadGroup *get_nth_pad_group (InputPadGroup *group, int nth);
-static InputPadTable *get_nth_pad_table (InputPadTable *table, int nth);
-static void run_command (const gchar *command, gchar **command_output);
-static void create_char_table (GtkWidget *vbox, InputPadTable *table_data);
-static char *get_keysym_display_name (guint keysym, GtkWidget *widget, gchar **tooltipp);
-static void create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window);
-static void destroy_prev_keyboard_layout (GtkWidget *vbox, InputPadGtkWindow *window);
-static void create_keyboard_layout_list_ui_real (GtkWidget *vbox, InputPadGtkWindow *window);
-static void destroy_char_sub_notebooks (GtkWidget *main_notebook, InputPadGtkWindow *window);
-static void append_char_sub_notebooks (GtkWidget *main_notebook, InputPadGtkWindow *window);
-static void destroy_char_view_table (GtkWidget *viewport, InputPadGtkWindow *window);
-static void append_char_view_table (GtkWidget *viewport, unsigned int start, unsigned int end, GtkWidget *window);
-static void input_pad_gtk_window_real_destroy (GtkObject *object);
-static void input_pad_gtk_window_buildable_interface_init (GtkBuildableIface *iface);
+static void             check_window_size_with_hide_widget
+                                                (GtkWidget         *hide_widget,
+                                                 GtkToggleAction   *hide_action);
+static void             xor_modifiers           (InputPadGtkWindow *window,
+                                                 guint              modifiers);
+static guint            digit_hbox_get_code_point
+                                                (GtkWidget         *digit_hbox);
+static void             digit_hbox_set_code_point
+                                                (GtkWidget         *digit_hbox,
+                                                 guint              code);
+static void             char_label_set_code_point
+                                                (GtkWidget         *char_label,
+                                                 guint              code);
+static void             set_code_point_base     (CodePointData     *cp_data,
+                                                 int                n_encoding);
+static InputPadGroup *  get_nth_pad_group       (InputPadGroup     *group,
+                                                 int                nth);
+static InputPadTable *  get_nth_pad_table       (InputPadTable     *table,
+                                                 int                nth);
+static void             run_command             (const gchar       *command,
+                                                 gchar            **command_output);
+#ifdef NEW_CUSTOM_CHAR_TABLE
+static void             append_custom_char_view_table
+                                                (GtkWidget         *viewport,
+                                                 InputPadTable     *table_data);
+static void             destroy_custom_char_view_table
+                                                (GtkWidget         *viewport,
+                                                 InputPadGtkWindow *window);
+#else // NEW_CUSTOM_CHAR_TABLE
+static void             create_custom_char_table_in_notebook
+                                                (GtkWidget         *vbox,
+                                                 InputPadTable     *table_data);
+#endif // NEW_CUSTOM_CHAR_TABLE
+static char *           get_keysym_display_name (guint              keysym,
+                                                 GtkWidget         *widget,
+                                                 gchar            **tooltipp);
+static void             create_keyboard_layout_ui_real
+                                                (GtkWidget         *vbox,
+                                                 InputPadGtkWindow *window);
+static void             destroy_prev_keyboard_layout
+                                                (GtkWidget         *vbox,
+                                                 InputPadGtkWindow *window);
+static void             create_keyboard_layout_list_ui_real
+                                                (GtkWidget         *vbox,
+                                                 InputPadGtkWindow *window);
+#ifdef NEW_CUSTOM_CHAR_TABLE
+static GtkTreeModel *   custom_char_table_model_new
+                                                (InputPadGtkWindow *window,
+                                                 InputPadTable     *table);
+#endif
+#ifndef NEW_CUSTOM_CHAR_TABLE
+static void             append_char_sub_notebooks
+                                                (GtkWidget         *main_notebook,
+                                                 InputPadGtkWindow *window);
+static void             destroy_char_sub_notebooks
+                                                (GtkWidget         *main_notebook,
+                                                 InputPadGtkWindow *window);
+#else // NEW_CUSTOM_CHAR_TABLE
+static void             create_custom_char_views
+                                                (GtkWidget         *hbox,
+                                                 InputPadGtkWindow *window);
+static void             destroy_custom_char_views
+                                                (GtkWidget         *hbox,
+                                                 InputPadGtkWindow *window);
+#endif // NEW_CUSTOM_CHAR_TABLE
+static void             append_all_char_view_table 
+                                                (GtkWidget         *viewport,
+                                                 unsigned int       start,
+                                                 unsigned int       end,
+                                                 GtkWidget         *window);
+static void             destroy_all_char_view_table
+                                                (GtkWidget         *viewport,
+                                                 InputPadGtkWindow *window);
+static void             input_pad_gtk_window_real_destroy
+                                                (GtkObject         *object);
+static void             input_pad_gtk_window_buildable_interface_init
+                                                (GtkBuildableIface *iface);
 
 G_DEFINE_TYPE_WITH_CODE (InputPadGtkWindow, input_pad_gtk_window,
                          GTK_TYPE_WINDOW,
@@ -253,11 +313,12 @@ on_window_keyboard_changed_combobox (InputPadGtkWindow *window,
     g_free (active_layout);
 }
 
+#ifndef NEW_CUSTOM_CHAR_TABLE
 static void
-on_window_group_changed (InputPadGtkWindow *window,
-                         gchar             *paddir,
-                         gchar             *domain,
-                         gpointer           data)
+on_window_group_changed_all_char_views (InputPadGtkWindow *window,
+                                        gchar             *paddir,
+                                        gchar             *domain,
+                                        gpointer           data)
 {
     GtkWidget *main_notebook;
     InputPadGroup *custom_group;
@@ -278,6 +339,35 @@ on_window_group_changed (InputPadGtkWindow *window,
     }
     append_char_sub_notebooks (main_notebook, window);
 }
+
+#else //NEW_CUSTOM_CHAR_TABLE
+
+static void
+on_window_group_changed_custom_char_views (InputPadGtkWindow *window,
+                                           gchar             *paddir,
+                                           gchar             *domain,
+                                           gpointer           data)
+{
+    GtkWidget *hbox;
+    InputPadGroup *custom_group;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+    g_return_if_fail (GTK_IS_HBOX (data));
+    g_return_if_fail (window->priv != NULL);
+    g_return_if_fail (window->priv->group != NULL);
+
+    hbox = GTK_WIDGET (data);
+    destroy_custom_char_views (hbox, window);
+    if (paddir != NULL) {
+        custom_group = input_pad_group_parse_all_files (paddir, domain);
+    }
+    if (custom_group != NULL) {
+        input_pad_group_destroy (window->priv->group);
+        window->priv->group = custom_group;
+    }
+    create_custom_char_views (hbox, window);
+}
+#endif //NEW_CUSTOM_CHAR_TABLE
 
 static void
 on_window_char_button_sensitive (InputPadGtkWindow *window,
@@ -509,6 +599,7 @@ on_combobox_layout_changed (GtkComboBox *combobox,
     input_pad_gdk_xkb_signal_emit (window, signals[KBD_CHANGED]);
 }
 
+#ifndef NEW_CUSTOM_CHAR_TABLE
 static void
 on_main_switch_page (GtkNotebook       *notebook,
                      GtkNotebookPage   *page,
@@ -528,7 +619,7 @@ on_main_switch_page (GtkNotebook       *notebook,
     table = get_nth_pad_table (group->table, sub_page);
 
     g_return_if_fail (table != NULL);
-    create_char_table (vbox, table);
+    create_custom_char_table_in_notebook (vbox, table);
 }
 
 static void
@@ -544,8 +635,9 @@ on_sub_switch_page (GtkNotebook        *notebook,
     table = get_nth_pad_table (table, (int) page_num);
 
     g_return_if_fail (table != NULL);
-    create_char_table (vbox, table);
+    create_custom_char_table_in_notebook (vbox, table);
 }
+#endif // NEW_CUSTOM_CHAR_TABLE
 
 static void
 on_toggle_action (GtkToggleAction *action, gpointer data)
@@ -856,9 +948,102 @@ on_combobox_changed (GtkComboBox *combobox, gpointer data)
     char_label_set_code_point (cp_data->char_label, code);
 }
 
+#ifdef NEW_CUSTOM_CHAR_TABLE
 static void
-on_tree_view_select_char_block (GtkTreeSelection     *selection,
-                                gpointer              data)
+on_tree_view_select_custom_char_group (GtkTreeSelection     *selection,
+                                       gpointer              data)
+{
+    CharTreeViewData *tv_data = (CharTreeViewData *) data;
+    InputPadGtkWindow *window;
+    InputPadGroup *group;
+    GtkWidget *sub_tv;
+    GtkTreeModel *model;
+    GtkTreeModel *sub_model;
+    GtkTreeIter iter;
+    GtkTreeSelection *sub_selection;
+    int n;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (tv_data->window));
+    window = INPUT_PAD_GTK_WINDOW (tv_data->window);
+    g_return_if_fail (window->priv != NULL && window->priv->group != NULL);
+    g_return_if_fail (GTK_IS_TREE_VIEW (tv_data->sub_tv));
+
+    group = window->priv->group;
+    sub_tv = GTK_WIDGET (tv_data->sub_tv);
+
+    if (!gtk_tree_selection_get_selected (selection, &model, &iter)) {
+        g_warning ("Main treeview is not selected.");
+        return;
+    }
+    gtk_tree_model_get (model, &iter,
+                        CHAR_BLOCK_START_COL, &n, -1);
+    group = get_nth_pad_group (group, n);
+    g_return_if_fail (group != NULL);
+    sub_model = custom_char_table_model_new (window, group->table);
+    g_return_if_fail (sub_model != NULL);
+    gtk_widget_hide (sub_tv);
+    gtk_tree_view_set_model (GTK_TREE_VIEW (sub_tv), sub_model);
+    //g_object_unref (G_OBJECT (sub_tv));
+    if (gtk_tree_model_get_iter_first (sub_model, &iter)) {
+        sub_selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (sub_tv));
+        gtk_tree_selection_select_iter (sub_selection, &iter);
+    }
+    gtk_widget_show (sub_tv);
+}
+
+static void
+on_tree_view_select_custom_char_table (GtkTreeSelection     *selection,
+                                       gpointer              data)
+{
+    CharTreeViewData *tv_data = (CharTreeViewData *) data;
+    InputPadGtkWindow *window;
+    InputPadGroup *group;
+    InputPadTable *table;
+    GtkWidget *main_tv;
+    GtkWidget *viewport;
+    GtkTreeSelection *main_selection;
+    GtkTreeModel *main_model;
+    GtkTreeModel *sub_model;
+    GtkTreeIter main_iter;
+    GtkTreeIter sub_iter;
+    int n;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (tv_data->window));
+    window = INPUT_PAD_GTK_WINDOW (tv_data->window);
+    g_return_if_fail (window->priv != NULL && window->priv->group != NULL);
+    g_return_if_fail (GTK_IS_TREE_VIEW (tv_data->main_tv));
+    g_return_if_fail (GTK_IS_VIEWPORT (tv_data->viewport));
+
+    group = window->priv->group;
+    main_tv = GTK_WIDGET (tv_data->main_tv);
+    viewport = GTK_WIDGET (tv_data->viewport);
+    main_selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (main_tv));
+
+    if (!gtk_tree_selection_get_selected (main_selection, &main_model, &main_iter)) {
+        g_warning ("Main treeview is not selected.");
+        return;
+    }
+    if (!gtk_tree_selection_get_selected (selection, &sub_model, &sub_iter)) {
+        /* gtk_tree_view_set_model() in main model causes this. */
+        return;
+    }
+    gtk_tree_model_get (main_model, &main_iter,
+                        CHAR_BLOCK_START_COL, &n, -1);
+    group = get_nth_pad_group (group, n);
+    g_return_if_fail (group != NULL);
+    gtk_tree_model_get (sub_model, &sub_iter,
+                        CHAR_BLOCK_START_COL, &n, -1);
+    table = get_nth_pad_table (group->table, n);
+    g_return_if_fail (table != NULL && table->priv != NULL);
+    table->priv->signal_window = window;
+    destroy_custom_char_view_table (viewport, window);
+    append_custom_char_view_table (viewport, table);
+}
+#endif // NEW_CUSTOM_CHAR_TABLE
+
+static void
+on_tree_view_select_all_char (GtkTreeSelection     *selection,
+                              gpointer              data)
 {
     CharTreeViewData *tv_data = (CharTreeViewData*) data;
     GtkWidget *viewport;
@@ -877,8 +1062,8 @@ on_tree_view_select_char_block (GtkTreeSelection     *selection,
     gtk_tree_model_get (model, &iter,
                         CHAR_BLOCK_START_COL, &start,
                         CHAR_BLOCK_END_COL, &end, -1);
-    destroy_char_view_table (viewport, INPUT_PAD_GTK_WINDOW (window));
-    append_char_view_table (viewport, start, end, window);
+    destroy_all_char_view_table (viewport, INPUT_PAD_GTK_WINDOW (window));
+    append_all_char_view_table (viewport, start, end, window);
 }
 
 
@@ -1614,11 +1799,35 @@ run_command (const gchar *command, gchar **command_output)
 }
 
 static void
-create_char_table (GtkWidget *vbox, InputPadTable *table_data)
+destroy_char_view_table_common (GtkWidget *viewport, InputPadGtkWindow *window)
+{
+    GList *list, *buttons;
+    GtkWidget *table;
+    GtkWidget *button;
+
+    list = gtk_container_get_children (GTK_CONTAINER (viewport));
+    if (list == NULL) {
+        return;
+    }
+    table = list->data;
+    g_return_if_fail (GTK_IS_TABLE (table));
+    buttons = gtk_container_get_children (GTK_CONTAINER (table));
+    while (buttons) {
+        button = GTK_WIDGET (buttons->data);
+        gtk_widget_hide (button);
+        g_signal_handlers_disconnect_by_func (G_OBJECT (window),
+                                              G_CALLBACK (on_window_char_button_sensitive),
+                                              (gpointer) button);
+        gtk_widget_destroy (button);
+        buttons = buttons->next;
+    }
+    gtk_container_remove (GTK_CONTAINER (viewport), table);
+}
+
+static void
+append_custom_char_view_table (GtkWidget *viewport, InputPadTable *table_data)
 {
     InputPadGtkWindow *input_pad;
-    GtkWidget *scrolled;
-    GtkWidget *viewport;
     GtkWidget *table;
     GtkWidget *button = NULL;
     gchar **char_table;
@@ -1633,22 +1842,7 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
 
     g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (table_data->priv->signal_window));
 
-    if (table_data->priv->inited) {
-        return;
-    }
-
     input_pad = INPUT_PAD_GTK_WINDOW (table_data->priv->signal_window);
-    scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_widget_set_size_request (scrolled, 300, 150);
-    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
-                                    GTK_POLICY_NEVER,
-                                    GTK_POLICY_ALWAYS);
-    gtk_box_pack_start (GTK_BOX (vbox), scrolled, FALSE, FALSE, 0);
-    gtk_widget_show (scrolled);
-
-    viewport = gtk_viewport_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), viewport);
-    gtk_widget_show (viewport);
 
     if (table_data->type == INPUT_PAD_TABLE_TYPE_CHARS) {
         char_table = g_strsplit_set (table_data->data.chars, " \t\n", -1);
@@ -1786,6 +1980,44 @@ create_char_table (GtkWidget *vbox, InputPadTable *table_data)
     table_data->priv->inited = 1;
 }
 
+#ifdef NEW_CUSTOM_CHAR_TABLE
+
+static void
+destroy_custom_char_view_table (GtkWidget *viewport, InputPadGtkWindow *window)
+{
+    /* Currently same contents. */
+    destroy_char_view_table_common (viewport, window);
+}
+
+#else // NEW_CUSTOM_CHAR_TABLE
+
+static void
+create_custom_char_table_in_notebook (GtkWidget     *vbox,
+                                      InputPadTable *table_data)
+{
+    GtkWidget *scrolled;
+    GtkWidget *viewport;
+
+    if (table_data->priv->inited) {
+        return;
+    }
+
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_widget_set_size_request (scrolled, 300, 150);
+    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
+                                    GTK_POLICY_NEVER,
+                                    GTK_POLICY_ALWAYS);
+    gtk_box_pack_start (GTK_BOX (vbox), scrolled, FALSE, FALSE, 0);
+    gtk_widget_show (scrolled);
+
+    viewport = gtk_viewport_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), viewport);
+    gtk_widget_show (viewport);
+    append_custom_char_view_table (viewport, table_data);
+}
+
+#endif // NEW_CUSTOM_CHAR_TABLE
+
 gchar *
 get_keysym_display_name (guint keysym, GtkWidget *widget, gchar **tooltipp)
 {
@@ -1843,37 +2075,6 @@ get_keysym_display_name (guint keysym, GtkWidget *widget, gchar **tooltipp)
         *tooltipp = tooltip;
     }
     return display_name;
-}
-
-static void
-destroy_prev_keyboard_layout (GtkWidget *vbox, InputPadGtkWindow *window)
-{
-    GList *children, *buttons;
-    GtkWidget *hbox;
-    GtkWidget *table;
-    GtkWidget *button;
-
-    children = gtk_container_get_children (GTK_CONTAINER (vbox));
-    hbox = GTK_WIDGET (children->data);
-    children = gtk_container_get_children (GTK_CONTAINER (hbox));
-    while (children) {
-        table = GTK_WIDGET (children->data);
-        buttons = gtk_container_get_children (GTK_CONTAINER (table));
-        while (buttons) {
-            button = GTK_WIDGET (buttons->data);
-            buttons = buttons->next;
-            g_signal_handlers_disconnect_by_func (G_OBJECT (window),
-                                                  G_CALLBACK (on_window_keyboard_changed),
-                                                  (gpointer) button);
-            gtk_widget_hide (button);
-            gtk_widget_destroy (button);
-        }
-        children = children->next;
-        gtk_widget_hide (table);
-        gtk_widget_destroy (table);
-    }
-    gtk_widget_hide (hbox);
-    gtk_widget_destroy (hbox);
 }
 
 static void
@@ -2068,6 +2269,37 @@ create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
                       table_data);
 }
 
+static void
+destroy_prev_keyboard_layout (GtkWidget *vbox, InputPadGtkWindow *window)
+{
+    GList *children, *buttons;
+    GtkWidget *hbox;
+    GtkWidget *table;
+    GtkWidget *button;
+
+    children = gtk_container_get_children (GTK_CONTAINER (vbox));
+    hbox = GTK_WIDGET (children->data);
+    children = gtk_container_get_children (GTK_CONTAINER (hbox));
+    while (children) {
+        table = GTK_WIDGET (children->data);
+        buttons = gtk_container_get_children (GTK_CONTAINER (table));
+        while (buttons) {
+            button = GTK_WIDGET (buttons->data);
+            buttons = buttons->next;
+            g_signal_handlers_disconnect_by_func (G_OBJECT (window),
+                                                  G_CALLBACK (on_window_keyboard_changed),
+                                                  (gpointer) button);
+            gtk_widget_hide (button);
+            gtk_widget_destroy (button);
+        }
+        children = children->next;
+        gtk_widget_hide (table);
+        gtk_widget_destroy (table);
+    }
+    gtk_widget_hide (hbox);
+    gtk_widget_destroy (hbox);
+}
+
 static int
 sort_layout_name (GtkTreeModel *model,
                   GtkTreeIter  *a,
@@ -2208,6 +2440,7 @@ set_about (GtkWidget *widget)
     g_free (license);
 }
 
+#ifndef NEW_CUSTOM_CHAR_TABLE
 static GtkWidget *
 sub_notebook_new_with_data (InputPadTable *table_data,
                             GtkWidget         *signal_window)
@@ -2260,6 +2493,74 @@ load_notebook_data (GtkWidget *main_notebook,
     }
 }
 
+#else // NEW_CUSTOM_CHAR_TABLE
+
+static GtkTreeModel *
+custom_char_group_model_new (InputPadGtkWindow *window)
+{
+    InputPadGroup *group;
+    GtkTreeStore *store;
+    GtkTreeIter   iter;
+    int i;
+
+    g_return_val_if_fail (INPUT_PAD_IS_GTK_WINDOW (window), NULL);
+    g_return_val_if_fail (window->priv != NULL && window->priv->group != NULL, NULL);
+
+    group = window->priv->group;
+
+    store = gtk_tree_store_new (CHAR_BLOCK_N_COLS,
+                                G_TYPE_STRING, G_TYPE_STRING,
+                                G_TYPE_STRING,
+                                G_TYPE_UINT, G_TYPE_UINT,
+                                G_TYPE_BOOLEAN);
+    for (i = 0; group; i++) {
+        gtk_tree_store_append (store, &iter, NULL);
+        gtk_tree_store_set (store, &iter,
+                            CHAR_BLOCK_LABEL_COL,
+                            group->name,
+                            CHAR_BLOCK_UNICODE_COL, NULL,
+                            CHAR_BLOCK_UTF8_COL, NULL,
+                            CHAR_BLOCK_START_COL, i,
+                            CHAR_BLOCK_END_COL, 0,
+                            CHAR_BLOCK_VISIBLE_COL, TRUE,
+                            -1);
+        group = group->next;
+    }
+    return GTK_TREE_MODEL (store);
+}
+
+static GtkTreeModel *
+custom_char_table_model_new (InputPadGtkWindow *window, InputPadTable *table)
+{
+    GtkTreeStore *store;
+    GtkTreeIter   iter;
+    int i;
+
+    g_return_val_if_fail (INPUT_PAD_IS_GTK_WINDOW (window), NULL);
+    g_return_val_if_fail (table != NULL, NULL);
+
+    store = gtk_tree_store_new (CHAR_BLOCK_N_COLS,
+                                G_TYPE_STRING, G_TYPE_STRING,
+                                G_TYPE_STRING,
+                                G_TYPE_UINT, G_TYPE_UINT,
+                                G_TYPE_BOOLEAN);
+    for (i = 0; table; i++) {
+        gtk_tree_store_append (store, &iter, NULL);
+        gtk_tree_store_set (store, &iter,
+                            CHAR_BLOCK_LABEL_COL,
+                            table->name,
+                            CHAR_BLOCK_UNICODE_COL, NULL,
+                            CHAR_BLOCK_UTF8_COL, NULL,
+                            CHAR_BLOCK_START_COL, i,
+                            CHAR_BLOCK_END_COL, 0,
+                            CHAR_BLOCK_VISIBLE_COL, TRUE,
+                            -1);
+        table = table->next;
+    }
+    return GTK_TREE_MODEL (store);
+}
+#endif
+
 static int
 sort_char_block_start (GtkTreeModel *model,
                        GtkTreeIter  *a,
@@ -2277,7 +2578,7 @@ sort_char_block_start (GtkTreeModel *model,
 }
 
 static GtkTreeModel *
-char_block_model_new (void)
+all_char_table_model_new (void)
 {
     GtkTreeStore *store;
     GtkTreeIter   iter;
@@ -2430,31 +2731,42 @@ create_contents_dialog_ui (GtkBuilder *builder, GtkWidget *window)
                       G_CALLBACK (on_button_ok_clicked), (gpointer) contents_dlg);
 }
 
+#ifndef NEW_CUSTOM_CHAR_TABLE
+static void
+append_char_sub_notebooks (GtkWidget *main_notebook, InputPadGtkWindow *window)
+{
+    InputPadGroup *group;
+    GtkWidget *sub_notebook;
+    int i, n;
+
+    g_return_if_fail (GTK_IS_NOTEBOOK (main_notebook));
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+    g_return_if_fail (window->priv != NULL && window->priv->group != NULL);
+
+    group = window->priv->group;
+
+    load_notebook_data (main_notebook, group, GTK_WIDGET (window));
+    g_signal_connect (G_OBJECT (main_notebook), "switch-page",
+                      G_CALLBACK (on_main_switch_page), group);
+    n = gtk_notebook_get_n_pages (GTK_NOTEBOOK (main_notebook));
+    for (i = 0; i < n; i++) {
+        sub_notebook = gtk_notebook_get_nth_page (GTK_NOTEBOOK (main_notebook),
+                                                  i);
+         g_signal_connect (G_OBJECT (sub_notebook), "switch-page",
+                           G_CALLBACK (on_sub_switch_page), group->table);
+        if (i == 0) {
+            on_sub_switch_page (GTK_NOTEBOOK (sub_notebook), NULL, i, group->table);
+        }
+        group = group->next;
+    }
+}
+
 static void
 destroy_char_notebook_table (GtkWidget         *viewport,
                              InputPadGtkWindow *window)
 {
-    GList *list, *buttons;
-    GtkWidget *table;
-    GtkWidget *button;
-
-    list = gtk_container_get_children (GTK_CONTAINER (viewport));
-    if (list == NULL) {
-        return;
-    }
-    table = list->data;
-    g_return_if_fail (GTK_IS_TABLE (table));
-    buttons = gtk_container_get_children (GTK_CONTAINER (table));
-    while (buttons) {
-        button = GTK_WIDGET (buttons->data);
-        gtk_widget_hide (button);
-        g_signal_handlers_disconnect_by_func (G_OBJECT (window),
-                                              G_CALLBACK (on_window_char_button_sensitive),
-                                              (gpointer) button);
-        gtk_widget_destroy (button);
-        buttons = buttons->next;
-    }
-    gtk_container_remove (GTK_CONTAINER (viewport), table);
+    /* Currently same contents. */
+    destroy_char_view_table_common (viewport, window);
 }
 
 static void
@@ -2511,35 +2823,6 @@ destroy_char_sub_notebooks (GtkWidget *main_notebook, InputPadGtkWindow *window)
 }
 
 static void
-append_char_sub_notebooks (GtkWidget *main_notebook, InputPadGtkWindow *window)
-{
-    InputPadGroup *group;
-    GtkWidget *sub_notebook;
-    int i, n;
-
-    g_return_if_fail (GTK_IS_NOTEBOOK (main_notebook));
-    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
-    g_return_if_fail (window->priv != NULL && window->priv->group != NULL);
-
-    group = window->priv->group;
-
-    load_notebook_data (main_notebook, group, GTK_WIDGET (window));
-    g_signal_connect (G_OBJECT (main_notebook), "switch-page",
-                      G_CALLBACK (on_main_switch_page), group);
-    n = gtk_notebook_get_n_pages (GTK_NOTEBOOK (main_notebook));
-    for (i = 0; i < n; i++) {
-        sub_notebook = gtk_notebook_get_nth_page (GTK_NOTEBOOK (main_notebook),
-                                                  i);
-         g_signal_connect (G_OBJECT (sub_notebook), "switch-page",
-                           G_CALLBACK (on_sub_switch_page), group->table);
-        if (i == 0) {
-            on_sub_switch_page (GTK_NOTEBOOK (sub_notebook), NULL, i, group->table);
-        }
-        group = group->next;
-    }
-}
-
-static void
 create_char_notebook_ui (GtkBuilder *builder, GtkWidget *window)
 {
     GtkWidget *main_notebook;
@@ -2558,22 +2841,180 @@ create_char_notebook_ui (GtkBuilder *builder, GtkWidget *window)
                       G_CALLBACK (on_toggle_action),
                       (gpointer) main_notebook);
     g_signal_connect (G_OBJECT (window), "group-changed",
-                      G_CALLBACK (on_window_group_changed),
+                      G_CALLBACK (on_window_group_changed_all_char_views),
                       (gpointer) main_notebook);
 }
 
+#else // NEW_CUSTOM_CHAR_TABLE
+
 static void
-destroy_char_view_table (GtkWidget *viewport, InputPadGtkWindow *window)
+create_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
 {
-    /* Currently same contents. */
-    destroy_char_notebook_table (viewport, window);
+    GtkWidget *scrolled;
+    GtkWidget *viewport;
+    GtkWidget *main_tv;
+    GtkWidget *sub_tv;
+    GtkTreeModel *model;
+    GtkCellRenderer *renderer;
+    GtkTreeViewColumn *column;
+    GtkTreeSelection *selection;
+    static CharTreeViewData tv_data;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_widget_set_size_request (scrolled, 100, 200);
+    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
+                                    GTK_POLICY_AUTOMATIC,
+                                    GTK_POLICY_ALWAYS);
+    gtk_box_pack_start (GTK_BOX (hbox), scrolled, FALSE, FALSE, 0);
+    gtk_widget_show (scrolled);
+
+    viewport = gtk_viewport_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), viewport);
+    gtk_widget_show (viewport);
+
+    main_tv = gtk_tree_view_new ();
+    gtk_container_add (GTK_CONTAINER (viewport), main_tv);
+    model = custom_char_group_model_new (INPUT_PAD_GTK_WINDOW (window));
+    gtk_tree_view_set_model (GTK_TREE_VIEW (main_tv), model);
+    g_object_unref (G_OBJECT (model));
+    gtk_widget_show (main_tv);
+
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_widget_set_size_request (scrolled, 100, 200);
+    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
+                                    GTK_POLICY_AUTOMATIC,
+                                    GTK_POLICY_ALWAYS);
+    gtk_box_pack_start (GTK_BOX (hbox), scrolled, FALSE, FALSE, 0);
+    gtk_widget_show (scrolled);
+
+    viewport = gtk_viewport_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), viewport);
+    gtk_widget_show (viewport);
+
+    sub_tv = gtk_tree_view_new ();
+    gtk_container_add (GTK_CONTAINER (viewport), sub_tv);
+    gtk_widget_show (sub_tv);
+
+    renderer = gtk_cell_renderer_text_new ();
+    column = gtk_tree_view_column_new_with_attributes (_("Group"), renderer,
+                                                       "text", CHAR_BLOCK_LABEL_COL,
+                                                       "visible", CHAR_BLOCK_VISIBLE_COL,
+                                                       NULL);
+    gtk_tree_view_append_column (GTK_TREE_VIEW (main_tv), column);
+    gtk_tree_view_set_show_expanders (GTK_TREE_VIEW (main_tv), FALSE);
+
+    renderer = gtk_cell_renderer_text_new ();
+    column = gtk_tree_view_column_new_with_attributes (_("Sub Group"), renderer,
+                                                       "text", CHAR_BLOCK_LABEL_COL,
+                                                       "visible", CHAR_BLOCK_VISIBLE_COL,
+                                                       NULL);
+    gtk_tree_view_append_column (GTK_TREE_VIEW (sub_tv), column);
+    gtk_tree_view_set_show_expanders (GTK_TREE_VIEW (sub_tv), FALSE);
+
+    scrolled = gtk_scrolled_window_new (NULL, NULL);
+    gtk_widget_set_size_request (scrolled, 470, 200);
+    gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
+                                    GTK_POLICY_AUTOMATIC,
+                                    GTK_POLICY_ALWAYS);
+    gtk_box_pack_start (GTK_BOX (hbox), scrolled, FALSE, FALSE, 0);
+    gtk_widget_show (scrolled);
+
+    viewport = gtk_viewport_new (NULL, NULL);
+    gtk_container_add (GTK_CONTAINER (scrolled), viewport);
+    gtk_widget_show (viewport);
+    selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (main_tv));
+    tv_data.window = GTK_WIDGET (window);
+    tv_data.sub_tv = sub_tv;
+    g_signal_connect (G_OBJECT (selection), "changed",
+                      G_CALLBACK (on_tree_view_select_custom_char_group),
+                      &tv_data);
+
+    selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (sub_tv));
+    tv_data.viewport = viewport;
+    tv_data.window = GTK_WIDGET (window);
+    tv_data.main_tv = main_tv;
+    g_signal_connect (G_OBJECT (selection), "changed",
+                      G_CALLBACK (on_tree_view_select_custom_char_table),
+                      &tv_data);
 }
 
 static void
-append_char_view_table (GtkWidget      *viewport,
-                        unsigned int    start,
-                        unsigned int    end,
-                        GtkWidget      *window)
+destroy_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
+{
+    GList *hbox_list;
+    GList *scrolled_list;
+    GList *viewport_list;
+    GtkWidget *scrolled;
+    GtkWidget *viewport;
+    GtkWidget *tv;
+    GtkTreeViewColumn *column;
+    int i;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+
+    for (i = 0; i < 2; i++) {
+        hbox_list = gtk_container_get_children (GTK_CONTAINER (hbox));
+        g_return_if_fail (GTK_IS_SCROLLED_WINDOW (hbox_list->data));
+        scrolled = GTK_WIDGET (hbox_list->data);
+        scrolled_list = gtk_container_get_children (GTK_CONTAINER (scrolled));
+        g_return_if_fail (GTK_IS_VIEWPORT (scrolled_list->data));
+        viewport = GTK_WIDGET (scrolled_list->data);
+        viewport_list = gtk_container_get_children (GTK_CONTAINER (viewport));
+        g_return_if_fail (GTK_IS_TREE_VIEW (viewport_list->data));
+        tv = GTK_WIDGET (viewport_list->data);
+        column = gtk_tree_view_get_column (GTK_TREE_VIEW (tv), 0);
+        gtk_tree_view_remove_column (GTK_TREE_VIEW (tv), column);
+        gtk_container_remove (GTK_CONTAINER (viewport), tv);
+        gtk_container_remove (GTK_CONTAINER (scrolled), viewport);
+        gtk_container_remove (GTK_CONTAINER (hbox), scrolled);
+    }
+
+    hbox_list = gtk_container_get_children (GTK_CONTAINER (hbox));
+    g_return_if_fail (GTK_IS_SCROLLED_WINDOW (hbox_list->data));
+    scrolled = GTK_WIDGET (hbox_list->data);
+    scrolled_list = gtk_container_get_children (GTK_CONTAINER (scrolled));
+    g_return_if_fail (GTK_IS_VIEWPORT (scrolled_list->data));
+    viewport = GTK_WIDGET (scrolled_list->data);
+    destroy_custom_char_view_table (viewport, window);
+    gtk_container_remove (GTK_CONTAINER (scrolled), viewport);
+    gtk_container_remove (GTK_CONTAINER (hbox), scrolled);
+}
+
+static void
+create_custom_char_view_ui (GtkBuilder *builder, GtkWidget *window)
+{
+    GtkWidget *hbox;
+    GtkToggleAction *show_item;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+
+    hbox = GTK_WIDGET (gtk_builder_get_object (builder, "TopCustomCharViewVBox"));
+
+    create_custom_char_views (hbox, INPUT_PAD_GTK_WINDOW (window));
+
+    show_item = GTK_TOGGLE_ACTION (gtk_builder_get_object (builder, "ShowCustomChars"));
+    if (gtk_toggle_action_get_active (show_item)) {
+        gtk_widget_show (hbox);
+    } else {
+        gtk_widget_hide (hbox);
+    }
+    g_signal_connect (G_OBJECT (show_item), "activate",
+                      G_CALLBACK (on_toggle_action),
+                      (gpointer) hbox);
+    g_signal_connect (G_OBJECT (window), "group-changed",
+                      G_CALLBACK (on_window_group_changed_custom_char_views),
+                      (gpointer) hbox);
+}
+
+#endif // NEW_CUSTOM_CHAR_TABLE
+
+static void
+append_all_char_view_table (GtkWidget      *viewport,
+                            unsigned int    start,
+                            unsigned int    end,
+                            GtkWidget      *window)
 {
     InputPadGtkWindow *input_pad;
     unsigned int num;
@@ -2634,7 +3075,14 @@ append_char_view_table (GtkWidget      *viewport,
 }
 
 static void
-create_char_view_ui (GtkBuilder *builder, GtkWidget *window)
+destroy_all_char_view_table (GtkWidget *viewport, InputPadGtkWindow *window)
+{
+    /* Currently same contents. */
+    destroy_char_view_table_common (viewport, window);
+}
+
+static void
+create_all_char_view_ui (GtkBuilder *builder, GtkWidget *window)
 {
     GtkWidget *hbox;
     GtkWidget *scrolled;
@@ -2663,7 +3111,7 @@ create_char_view_ui (GtkBuilder *builder, GtkWidget *window)
 
     tv = gtk_tree_view_new ();
     gtk_container_add (GTK_CONTAINER (viewport), tv);
-    model = char_block_model_new ();
+    model = all_char_table_model_new ();
     gtk_tree_view_set_model (GTK_TREE_VIEW (tv), model);
     g_object_unref (G_OBJECT (model));
     gtk_widget_show (tv);
@@ -2704,7 +3152,7 @@ create_char_view_ui (GtkBuilder *builder, GtkWidget *window)
     tv_data.viewport = viewport;
     tv_data.window = window;
     g_signal_connect (G_OBJECT (selection), "changed",
-                      G_CALLBACK (on_tree_view_select_char_block), &tv_data);
+                      G_CALLBACK (on_tree_view_select_all_char), &tv_data);
 
     show_item = GTK_TOGGLE_ACTION (gtk_builder_get_object (builder, "ShowAllChars"));
     if (gtk_toggle_action_get_active (show_item)) {
@@ -2783,8 +3231,12 @@ create_ui (unsigned int child)
     create_code_point_dialog_ui (builder, window);
     create_about_dialog_ui (builder, window);
     create_contents_dialog_ui (builder, window);
+#ifdef NEW_CUSTOM_CHAR_TABLE
+    create_custom_char_view_ui (builder, window);
+#else
     create_char_notebook_ui (builder, window);
-    create_char_view_ui (builder, window);
+#endif
+    create_all_char_view_ui (builder, window);
     create_keyboard_layout_ui (builder, window);
 
     gtk_builder_connect_signals (builder, NULL);

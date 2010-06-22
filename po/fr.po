@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2010-06-18 17:42+0900\n"
+"POT-Creation-Date: 2010-06-22 11:49+0900\n"
 "PO-Revision-Date: 2010-05-13 03:08+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: French\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Arrow"
 msgstr ""
 
-#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:2536
+#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3076
 msgid "Block"
 msgstr ""
 
@@ -141,6 +141,86 @@ msgstr ""
 msgid "Unit"
 msgstr ""
 
+#: ../data/cmd.xml.in.h:1
+msgid "Century Year"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:2
+msgid "ChangeLog date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:3
+msgid "Command"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:4
+msgid "Date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:5
+msgid "Date and Time"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:6
+msgid "English Month"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:7
+msgid "English Short Month"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:8
+msgid "English Short Weekday"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:9
+msgid "English Time"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:10
+msgid "English Weekday"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:11
+msgid "Era"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:12
+msgid "ISO 8601 date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:13
+msgid "Month"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:14
+msgid "Normal Date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:15
+msgid "Normal Time"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:16
+msgid "Short Month"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:17
+msgid "Short Weekday"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:18
+msgid "UK English date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:19
+msgid "USA English date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:20
+msgid "Weekday"
+msgstr ""
+
 #: ../data/ja.xml.in.h:1 ../input-pad/unicode_block.h:132
 msgid "CJK Radicals Supplement"
 msgstr ""
@@ -174,7 +254,7 @@ msgid "Keyboard"
 msgstr ""
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:23
-#: ../input-pad/window-gtk.c:3052 ../input-pad/window-gtk.c:3053
+#: ../input-pad/window-gtk.c:3598 ../input-pad/window-gtk.c:3599
 msgid "Input Pad"
 msgstr ""
 
@@ -567,6 +647,10 @@ msgstr ""
 
 #: ../data/str.xml.in.h:63
 msgid "Yawn"
+msgstr ""
+
+#: ../data/w3c.xml.in.h:1
+msgid "Char References"
 msgstr ""
 
 #: ../data/zh.xml.in.h:1 ../input-pad/unicode_block.h:138
@@ -1329,27 +1413,27 @@ msgstr ""
 msgid "Supplementary Private Use Area-B"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:130
+#: ../input-pad/window-gtk.c:133
 msgid "Use XTEST module to send key events"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:132
+#: ../input-pad/window-gtk.c:135
 msgid "Display version"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:803
+#: ../input-pad/window-gtk.c:861
 msgid "Fold layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:808 ../input-pad/window-gtk.c:1925
+#: ../input-pad/window-gtk.c:866 ../input-pad/window-gtk.c:2218
 msgid "Extend layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2015
+#: ../input-pad/window-gtk.c:2339
 msgid "_Layout:"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2050
+#: ../input-pad/window-gtk.c:2374
 msgid ""
 "This library is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -1357,7 +1441,7 @@ msgid ""
 "option) any later version."
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2056
+#: ../input-pad/window-gtk.c:2380
 msgid ""
 "This library is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1365,9 +1449,17 @@ msgid ""
 "for more details."
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2062
+#: ../input-pad/window-gtk.c:2386
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this library; if not, write to the Free Software Foundation, "
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:2857
+msgid "Group"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:2865
+msgid "Sub Group"
 msgstr ""

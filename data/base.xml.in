@@ -4,6 +4,7 @@
     <group>
       <_name>Symbols</_name>
       <table>
+        <column>10</column>
         <_name>Currency</_name>
         <chars>
 0x00A2 0x00A3 0x00A5 0x20A0 0x20A1 0x20A2
@@ -109,6 +110,7 @@
         </chars>
       </table>
       <table>
+        <column>10</column>
         <_name>All</_name>
         <chars>
 0xa1 0xa2 0xa3 0xa4 0xa5 0xa6 0xa7 0xa8 0xa9 0xaa 0xab 0xac 0xad 0xae 0xaf
@@ -267,6 +269,7 @@
         </chars>
       </table>
       <table>
+        <column>10</column>
         <_name>Mathematical</_name>
         <chars>
 0x2200 0x2201
@@ -313,6 +316,7 @@
         </chars>
       </table>
       <table>
+        <column>10</column>
         <_name>Miscellaneous</_name>
         <chars>
 0x2300 0x2301 0x2302 0x2303
@@ -376,6 +380,7 @@
     <group>
       <_name>Graphics</_name>
       <table>
+        <column>10</column>
         <_name>Arrow</_name>
         <chars>
 0x2190 0x2191 0x2192 0x2193 0x2194 0x2195
@@ -513,6 +518,7 @@
     <group>
       <_name>Punctuations</_name>
       <table>
+        <column>10</column>
         <_name>General</_name>
         <chars>
 0x2010 0x2011 0x2012 0x0213 0x2014 0x2015
@@ -528,6 +534,7 @@
         </chars>
       </table>
       <table>
+        <column>10</column>
         <_name>CJK</_name>
         <chars>
 0x3001 0x3002 0x3003 0x3005 0x3006

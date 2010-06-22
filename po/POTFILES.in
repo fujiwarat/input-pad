@@ -1,11 +1,13 @@
 # Files with translatable strings.
 # Please keep this file in alphabetical order.
 data/base.xml.in
+data/cmd.xml.in
 data/ja.xml.in
 data/keyboard.xml.in
 data/input-pad.desktop.in
 [type: gettext/glade]data/input-pad.ui
 data/str.xml.in
+data/w3c.xml.in
 data/zh.xml.in
 input-pad/button-gtk.c
 input-pad/unicode_block.h

@@ -431,6 +431,7 @@ Copyright (c) 2010 Red Hat, Inc.</property>
             <property name="expand">False</property>
           </packing>
         </child>
+        <!--
         <child>
           <object class="GtkNotebook" id="TopNotebook">
             <property name="visible">True</property>
@@ -442,6 +443,19 @@ Copyright (c) 2010 Red Hat, Inc.</property>
           </object>
           <packing>
             <property name="position">1</property>
+          </packing>
+        </child>
+        -->
+        <child>
+          <object class="GtkHBox" id="TopCustomCharViewVBox">
+            <property name="visible">True</property>
+            <property name="border-width">10</property>
+            <property name="spacing">10</property>
+          </object>
+          <packing>
+            <property name="position">1</property>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
           </packing>
         </child>
         <child>
