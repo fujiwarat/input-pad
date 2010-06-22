@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import sys
+import os, sys
 import gtk
 from input_pad_window_gtk import InputPadGtkWindow
 
@@ -14,8 +14,12 @@ def button_pressed_cb(window, str, type, keysym, keycode, state, data):
 
 window = InputPadGtkWindow (gtk.WINDOW_TOPLEVEL)
 if len(sys.argv) > 1:
-    print "paddir", sys.argv[1]
-    window.set_paddir(sys.argv[1])
+    if os.path.isdir(sys.argv[1]):
+        print "paddir", sys.argv[1]
+        window.set_paddir(sys.argv[1])
+    else:
+        print "padfile", sys.argv[1]
+        window.append_padfile(sys.argv[1])
 window.show()
 window.set_char_button_sensitive(True)
 window.connect("button-pressed", button_pressed_cb)

@@ -35,6 +35,8 @@ class InputPadWindow:
         return input_pad_window_get_visible(self.window)
     def set_paddir(self, paddir, domain=None):
         return input_pad_window_set_paddir(self.window, paddir, domain)
+    def append_padfile(self, padfile, domain=None):
+        return input_pad_window_append_padfile(self.window, padfile, domain)
     def set_char_button_sensitive(self, sensitive):
         return input_pad_window_set_char_button_sensitive(self.window, sensitive)
     def reorder_button_pressed(self):

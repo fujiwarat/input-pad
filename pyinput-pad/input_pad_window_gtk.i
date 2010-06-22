@@ -21,6 +21,8 @@ class InputPadGtkWindow(_InputPadGtkWindow):
         _InputPadGtkWindow.__init__(self, pytype, child)
     def set_paddir(self, paddir, domain=None):
         _InputPadGtkWindow.set_paddir(self, paddir, domain)
+    def append_padfile(self, padfile, domain=None):
+        _InputPadGtkWindow.append_padfile(self, padfile, domain)
 }
 
 %extend _InputPadGtkWindow {
@@ -40,6 +42,10 @@ class InputPadGtkWindow(_InputPadGtkWindow):
     void set_paddir (const char *paddir, const char *domain) {
         input_pad_gtk_window_set_paddir (INPUT_PAD_GTK_WINDOW (self),
                                          paddir, domain);
+    }
+    void append_padfile (const char *padfile, const char *domain) {
+        input_pad_gtk_window_append_padfile (INPUT_PAD_GTK_WINDOW (self),
+                                             padfile, domain);
     }
     void set_char_button_sensitive (unsigned int sensitive) {
         input_pad_gtk_window_set_char_button_sensitive (INPUT_PAD_GTK_WINDOW (self),

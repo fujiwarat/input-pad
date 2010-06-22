@@ -57,6 +57,7 @@ enum {
     BUTTON_PRESSED,
     KBD_CHANGED,
     GROUP_CHANGED,
+    GROUP_APPENDED,
     CHAR_BUTTON_SENSITIVE,
     REORDER_BUTTON_PRESSED,
     LAST_SIGNAL
@@ -315,7 +316,7 @@ on_window_keyboard_changed_combobox (InputPadGtkWindow *window,
 
 #ifndef NEW_CUSTOM_CHAR_TABLE
 static void
-on_window_group_changed_all_char_views (InputPadGtkWindow *window,
+on_window_group_changed_notebook_views (InputPadGtkWindow *window,
                                         gchar             *paddir,
                                         gchar             *domain,
                                         gpointer           data)
@@ -335,6 +336,33 @@ on_window_group_changed_all_char_views (InputPadGtkWindow *window,
     }
     if (custom_group != NULL) {
         input_pad_group_destroy (window->priv->group);
+        window->priv->group = custom_group;
+    }
+    append_char_sub_notebooks (main_notebook, window);
+}
+
+static void
+on_window_group_appended_notebook_views (InputPadGtkWindow *window,
+                                         gchar             *padfile,
+                                         gchar             *domain,
+                                         gpointer           data)
+{
+    GtkWidget *main_notebook;
+    InputPadGroup *custom_group;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+    g_return_if_fail (GTK_IS_NOTEBOOK (data));
+    g_return_if_fail (window->priv != NULL);
+    g_return_if_fail (window->priv->group != NULL);
+
+    main_notebook = GTK_WIDGET (data);
+    destroy_char_sub_notebooks (main_notebook, window);
+    if (padfile != NULL) {
+        custom_group = input_pad_group_append_from_file (window->priv->group,
+                                                         padfile,
+                                                         domain);
+    }
+    if (custom_group != NULL) {
         window->priv->group = custom_group;
     }
     append_char_sub_notebooks (main_notebook, window);
@@ -363,6 +391,33 @@ on_window_group_changed_custom_char_views (InputPadGtkWindow *window,
     }
     if (custom_group != NULL) {
         input_pad_group_destroy (window->priv->group);
+        window->priv->group = custom_group;
+    }
+    create_custom_char_views (hbox, window);
+}
+
+static void
+on_window_group_appended_custom_char_views (InputPadGtkWindow *window,
+                                            gchar             *padfile,
+                                            gchar             *domain,
+                                            gpointer           data)
+{
+    GtkWidget *hbox;
+    InputPadGroup *custom_group;
+
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+    g_return_if_fail (GTK_IS_HBOX (data));
+    g_return_if_fail (window->priv != NULL);
+    g_return_if_fail (window->priv->group != NULL);
+
+    hbox = GTK_WIDGET (data);
+    destroy_custom_char_views (hbox, window);
+    if (padfile != NULL) {
+        custom_group = input_pad_group_append_from_file (window->priv->group,
+                                                         padfile,
+                                                         domain);
+    }
+    if (custom_group != NULL) {
         window->priv->group = custom_group;
     }
     create_custom_char_views (hbox, window);
@@ -2841,7 +2896,10 @@ create_char_notebook_ui (GtkBuilder *builder, GtkWidget *window)
                       G_CALLBACK (on_toggle_action),
                       (gpointer) main_notebook);
     g_signal_connect (G_OBJECT (window), "group-changed",
-                      G_CALLBACK (on_window_group_changed_all_char_views),
+                      G_CALLBACK (on_window_group_changed_notebook_views),
+                      (gpointer) main_notebook);
+    g_signal_connect (G_OBJECT (window), "group-appended",
+                      G_CALLBACK (on_window_group_appended_notebook_views),
                       (gpointer) main_notebook);
 }
 
@@ -3005,6 +3063,9 @@ create_custom_char_view_ui (GtkBuilder *builder, GtkWidget *window)
                       (gpointer) hbox);
     g_signal_connect (G_OBJECT (window), "group-changed",
                       G_CALLBACK (on_window_group_changed_custom_char_views),
+                      (gpointer) hbox);
+    g_signal_connect (G_OBJECT (window), "group-appended",
+                      G_CALLBACK (on_window_group_appended_custom_char_views),
                       (gpointer) hbox);
 }
 
@@ -3532,6 +3593,16 @@ input_pad_gtk_window_class_init (InputPadGtkWindowClass *klass)
                       G_TYPE_NONE,
                       2, G_TYPE_STRING, G_TYPE_STRING);
 
+    signals[GROUP_APPENDED] =
+        g_signal_new (I_("group-appended"),
+                      G_TYPE_FROM_CLASS (gobject_class),
+                      G_SIGNAL_RUN_LAST,
+                      G_STRUCT_OFFSET (InputPadGtkWindowClass, group_appended),
+                      NULL, NULL,
+                      INPUT_PAD_VOID__STRING_STRING,
+                      G_TYPE_NONE,
+                      2, G_TYPE_STRING, G_TYPE_STRING);
+
     signals[CHAR_BUTTON_SENSITIVE] =
         g_signal_new (I_("char-button-sensitive"),
                       G_TYPE_FROM_CLASS (gobject_class),
@@ -3600,6 +3671,17 @@ input_pad_gtk_window_set_paddir (InputPadGtkWindow *window,
 
     g_signal_emit (window, signals[GROUP_CHANGED], 0,
                    paddir, domain);
+}
+
+void
+input_pad_gtk_window_append_padfile (InputPadGtkWindow *window,
+                                     const gchar       *padfile,
+                                     const gchar       *domain)
+{
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+
+    g_signal_emit (window, signals[GROUP_APPENDED], 0,
+                   padfile, domain);
 }
 
 void
@@ -3718,6 +3800,16 @@ input_pad_window_set_paddir (void       *window_data,
     input_pad_gtk_window_set_paddir (window_data,
                                      (const gchar *) paddir,
                                      (const gchar *) domain);
+}
+
+void
+input_pad_window_append_padfile (void       *window_data,
+                                 const char *padfile,
+                                 const char *domain)
+{
+    input_pad_gtk_window_append_padfile (window_data,
+                                        (const gchar *) padfile,
+                                        (const gchar *) domain);
 }
 
 void

@@ -38,6 +38,10 @@ void                input_pad_window_set_paddir
                                         (void          *window_data,
                                          const char    *paddir,
                                          const char    *domain);
+void                input_pad_window_append_padfile
+                                        (void          *window_data,
+                                         const char    *padfile,
+                                         const char    *domain);
 void                input_pad_window_set_char_button_sensitive
                                         (void          *window_data,
                                          unsigned int   sensitive);
