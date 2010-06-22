@@ -227,11 +227,7 @@ on_window_close (InputPadGtkWindow *window, gpointer data)
     g_return_if_fail (window != NULL &&
                       INPUT_PAD_IS_GTK_WINDOW (window));
 
-    if (window->child) {
-        gtk_widget_hide (GTK_WIDGET (window));
-    } else {
-        gtk_main_quit ();
-    }
+    gtk_main_quit ();
 }
 
 static void
@@ -1038,7 +1034,6 @@ on_tree_view_select_custom_char_group (GtkTreeSelection     *selection,
     g_return_if_fail (sub_model != NULL);
     gtk_widget_hide (sub_tv);
     gtk_tree_view_set_model (GTK_TREE_VIEW (sub_tv), sub_model);
-    //g_object_unref (G_OBJECT (sub_tv));
     if (gtk_tree_model_get_iter_first (sub_model, &iter)) {
         sub_selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (sub_tv));
         gtk_tree_selection_select_iter (sub_selection, &iter);
@@ -3452,7 +3447,6 @@ input_pad_gtk_window_set_priv (InputPadGtkWindow *window)
 static void
 input_pad_gtk_window_init (InputPadGtkWindow *window)
 {
-    window->child = TRUE;
     input_pad_gtk_window_set_priv (window);
 #ifdef MODULE_XTEST_GDK_BASE
     if (use_module_xtest) {
