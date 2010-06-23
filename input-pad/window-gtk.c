@@ -30,6 +30,10 @@
 #include <X11/keysym.h>
 #include <string.h> /* strlen */
 #include <stdlib.h> /* exit */
+#ifdef HAVE_EEK
+#include <eek/eek-gtk.h>
+#include <eek/eek-xkl.h>
+#endif  /* HAVE_EEK */
 
 #include "i18n.h"
 #include "button-gtk.h"
@@ -56,7 +60,9 @@ typedef struct _CharTreeViewData CharTreeViewData;
 enum {
     BUTTON_PRESSED,
     KBD_CHANGED,
-    GROUP_CHANGED,
+    /* GROUP_CHANGED is already defined in libxklavier/xkl_engine.h,
+       included through eek-xkl.h. */
+    _GROUP_CHANGED,
     GROUP_APPENDED,
     CHAR_BUTTON_SENSITIVE,
     REORDER_BUTTON_PRESSED,
@@ -98,6 +104,10 @@ struct _InputPadGtkWindowPrivate {
     gchar                     **group_layouts;
     guint                       char_button_sensitive : 1;
     GdkColor                   *color_gray;
+#ifdef HAVE_EEK
+    EekKeyboard                *eek_keyboard;
+    EekLayout                  *eek_layout;
+#endif
 };
 
 struct _CodePointData {
@@ -123,6 +133,9 @@ struct _CharTreeViewData {
 
 static guint                    signals[LAST_SIGNAL] = { 0 };
 static gboolean                 use_module_xtest = FALSE;
+#ifdef HAVE_EEK
+static gboolean                 use_eek = FALSE;
+#endif
 static gboolean                 ask_version = FALSE;
 #if 0
 static GtkBuildableIface       *parent_buildable_iface;
@@ -132,6 +145,10 @@ static GOptionEntry entries[] = {
 #ifdef MODULE_XTEST_GDK_BASE
   { "enable-module-xtest", 'x', 0, G_OPTION_ARG_NONE, &use_module_xtest,
     N_("Use XTEST module to send key events"), NULL},
+#ifdef HAVE_EEK
+  { "enable-eek", 'e', 0, G_OPTION_ARG_NONE, &use_eek,
+    N_("Use libeek to draw keyboard"), NULL},
+#endif
   { "version", 'v', 0, G_OPTION_ARG_NONE, &ask_version,
     N_("Display version"), NULL},
 #endif
@@ -174,12 +191,20 @@ static void             create_custom_char_table_in_notebook
 static char *           get_keysym_display_name (guint              keysym,
                                                  GtkWidget         *widget,
                                                  gchar            **tooltipp);
-static void             create_keyboard_layout_ui_real
+static void             create_keyboard_layout_ui_real_default
                                                 (GtkWidget         *vbox,
                                                  InputPadGtkWindow *window);
-static void             destroy_prev_keyboard_layout
+static void             destroy_prev_keyboard_layout_default
                                                 (GtkWidget         *vbox,
                                                  InputPadGtkWindow *window);
+#ifdef HAVE_EEK
+static void             create_keyboard_layout_ui_real_eek
+                                                (GtkWidget         *vbox,
+                                                 InputPadGtkWindow *window);
+static void             destroy_prev_keyboard_layout_eek
+                                                (GtkWidget         *vbox,
+                                                 InputPadGtkWindow *window);
+#endif
 static void             create_keyboard_layout_list_ui_real
                                                 (GtkWidget         *vbox,
                                                  InputPadGtkWindow *window);
@@ -220,6 +245,30 @@ G_DEFINE_TYPE_WITH_CODE (InputPadGtkWindow, input_pad_gtk_window,
                          GTK_TYPE_WINDOW,
                          G_IMPLEMENT_INTERFACE (GTK_TYPE_BUILDABLE,
                                                 input_pad_gtk_window_buildable_interface_init))
+
+G_INLINE_FUNC void
+create_keyboard_layout_ui_real (GtkWidget         *vbox,
+                                InputPadGtkWindow *window)
+{
+#ifdef HAVE_EEK
+    if (use_eek)
+        create_keyboard_layout_ui_real_eek (vbox, window);
+    else
+#endif
+        create_keyboard_layout_ui_real_default (vbox, window);
+}
+
+G_INLINE_FUNC void
+destroy_prev_keyboard_layout (GtkWidget         *vbox,
+                              InputPadGtkWindow *window)
+{
+#ifdef HAVE_EEK
+    if (use_eek)
+        destroy_prev_keyboard_layout_eek (vbox, window);
+    else
+#endif
+        destroy_prev_keyboard_layout_default (vbox, window);
+}
 
 static void
 on_window_close (InputPadGtkWindow *window, gpointer data)
@@ -636,7 +685,7 @@ on_combobox_layout_changed (GtkComboBox *combobox,
     }
     window->priv->xkb_key_list =
         input_pad_gdk_xkb_parse_keyboard_layouts (window);
-    if (window->priv->xkb_key_list == NULL) {
+    if (use_eek && window->priv->xkb_key_list == NULL) {
         return;
     }
 
@@ -1135,7 +1184,7 @@ on_window_realize (GtkWidget *window, gpointer data)
 
     input_pad->priv->xkb_key_list = 
         input_pad_gdk_xkb_parse_keyboard_layouts (input_pad);
-    if (input_pad->priv->xkb_key_list == NULL) {
+    if (use_eek && input_pad->priv->xkb_key_list == NULL) {
         return;
     }
 
@@ -2132,7 +2181,7 @@ get_keysym_display_name (guint keysym, GtkWidget *widget, gchar **tooltipp)
 }
 
 static void
-create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
+create_keyboard_layout_ui_real_default (GtkWidget *vbox, InputPadGtkWindow *window)
 {
     InputPadXKBKeyList         *xkb_key_list = window->priv->xkb_key_list;
     InputPadXKBKeyList         *list;
@@ -2324,7 +2373,7 @@ create_keyboard_layout_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
 }
 
 static void
-destroy_prev_keyboard_layout (GtkWidget *vbox, InputPadGtkWindow *window)
+destroy_prev_keyboard_layout_default (GtkWidget *vbox, InputPadGtkWindow *window)
 {
     GList *children, *buttons;
     GtkWidget *hbox;
@@ -2353,6 +2402,119 @@ destroy_prev_keyboard_layout (GtkWidget *vbox, InputPadGtkWindow *window)
     gtk_widget_hide (hbox);
     gtk_widget_destroy (hbox);
 }
+
+#ifdef HAVE_EEK
+static void
+on_window_keyboard_changed_eek (InputPadGtkWindow *window,
+                                gint               group,
+                                gpointer           data)
+{
+    gint prev_group, prev_level;
+    eek_keyboard_get_keysym_index (window->priv->eek_keyboard,
+                                   &prev_group, &prev_level);
+    eek_keyboard_set_keysym_index (window->priv->eek_keyboard,
+                                   group, prev_level);
+}
+
+static void
+on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
+                             EekKey      *key,
+                             gpointer     user_data)
+{
+    InputPadGtkWindow *window;
+    char *str, *empty = "";
+    guint keycode;
+    guint keysym;
+    guint *keysyms;
+    gint num_groups, num_levels;
+    gint group, level;
+    guint state = 0;
+    gboolean retval = FALSE;
+
+    g_return_if_fail (user_data != NULL &&
+                      INPUT_PAD_IS_GTK_WINDOW (user_data));
+
+    window = INPUT_PAD_GTK_WINDOW (user_data);
+    keycode = eek_key_get_keycode (key);
+    keysym = eek_key_get_keysym (key);
+    str = eek_keysym_to_string (keysym);
+    if (str == NULL)
+        str = empty;
+    eek_key_get_keysyms (key, &keysyms, &num_groups, &num_levels);
+    eek_key_get_keysym_index (key, &group, &level);
+    state = window->priv->keyboard_state;
+    if (keysyms && (keysym != keysyms[group * num_levels])) {
+        state |= ShiftMask;
+    }
+    state = input_pad_xkb_build_core_state (state, group);
+
+    g_signal_emit (window, signals[BUTTON_PRESSED], 0,
+                   str, INPUT_PAD_TABLE_TYPE_KEYSYMS, keysym, keycode, state,
+                   &retval);
+    if (str != empty)
+        g_free (str);
+
+    if (state & ShiftMask) {
+        state ^= ShiftMask;
+    }
+    if ((state & ControlMask) && 
+        (keysym != XK_Control_L) && (keysym != XK_Control_R)) {
+        state ^= ControlMask;
+    }
+    if ((state & Mod1Mask) && 
+        (keysym != XK_Alt_L) && (keysym != XK_Alt_R)) {
+        state ^= Mod1Mask;
+    }
+    window->priv->keyboard_state = state;
+}
+
+static void
+create_keyboard_layout_ui_real_eek (GtkWidget *vbox, InputPadGtkWindow *window)
+{
+    EekKeyboard *keyboard;
+    EekLayout *layout;
+    EekBounds bounds;
+    GtkWidget *widget;
+
+    keyboard = window->priv->eek_keyboard = eek_gtk_keyboard_new ();
+    g_object_ref_sink (keyboard);
+    layout = window->priv->eek_layout = eek_xkl_layout_new ();
+    g_object_ref_sink (layout);
+    eek_keyboard_set_layout (keyboard, layout);
+    bounds.width = 640;
+    bounds.height = 480;
+    eek_element_set_bounds (EEK_ELEMENT(keyboard), &bounds);
+    widget = eek_gtk_keyboard_get_widget (EEK_GTK_KEYBOARD(keyboard));
+    eek_element_get_bounds (EEK_ELEMENT(keyboard), &bounds);
+
+    gtk_box_pack_start (GTK_BOX (vbox), widget, FALSE, FALSE, 0);
+    gtk_box_reorder_child (GTK_BOX (vbox), widget, 0);
+    gtk_widget_show (widget);
+    gtk_widget_set_size_request (widget, bounds.width, bounds.height);
+
+    g_signal_connect (G_OBJECT (window), "keyboard-changed",
+                      G_CALLBACK (on_window_keyboard_changed_eek),
+                      NULL);
+    g_signal_connect (G_OBJECT (keyboard), "key-pressed",
+		      G_CALLBACK (on_eek_keyboard_key_pressed),
+		      window);
+}
+
+static void
+destroy_prev_keyboard_layout_eek (GtkWidget *vbox, InputPadGtkWindow *window)
+{
+    GList *children;
+    GtkWidget *widget;
+
+    children = gtk_container_get_children (GTK_CONTAINER (vbox));
+    widget = GTK_WIDGET (children->data);
+    gtk_widget_hide (widget);
+    gtk_widget_destroy (widget);
+
+    g_object_unref (window->priv->eek_keyboard);
+    g_object_unref (window->priv->eek_layout);
+}
+#endif
 
 static int
 sort_layout_name (GtkTreeModel *model,
@@ -3579,7 +3741,7 @@ input_pad_gtk_window_class_init (InputPadGtkWindowClass *klass)
                       G_TYPE_NONE,
                       1, G_TYPE_INT);
 
-    signals[GROUP_CHANGED] =
+    signals[_GROUP_CHANGED] =
         g_signal_new (I_("group-changed"),
                       G_TYPE_FROM_CLASS (gobject_class),
                       G_SIGNAL_RUN_LAST,
@@ -3665,7 +3827,7 @@ input_pad_gtk_window_set_paddir (InputPadGtkWindow *window,
 {
     g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
 
-    g_signal_emit (window, signals[GROUP_CHANGED], 0,
+    g_signal_emit (window, signals[_GROUP_CHANGED], 0,
                    paddir, domain);
 }
 

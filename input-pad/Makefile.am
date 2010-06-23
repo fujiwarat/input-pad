@@ -69,6 +69,7 @@ libinput_pad_la_CFLAGS = \
 	$(X11_CFLAGS)                                           \
 	$(XKB_CFLAGS)                                           \
 	$(LIBXKLAVIER_CFLAGS)                                   \
+	$(EEK_CFLAGS)                                           \
 	$(NULL)
 
 libinput_pad_la_LIBADD = \
@@ -77,6 +78,7 @@ libinput_pad_la_LIBADD = \
 	$(X11_LIBS)                                             \
 	$(XKB_LIBS)                                             \
 	$(LIBXKLAVIER_LIBS)                                     \
+	$(EEK_LIBS)                                             \
 	$(NULL)
 
 libinput_pad_la_LDFLAGS = \
