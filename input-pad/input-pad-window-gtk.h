@@ -39,7 +39,7 @@ typedef struct _InputPadGtkWindowClass InputPadGtkWindowClass;
 
 struct _InputPadGtkWindow {
     GtkWindow                           parent;
-    guint                               child : 1;
+    guint                               child;
 
     InputPadGtkWindowPrivate           *priv;
 };

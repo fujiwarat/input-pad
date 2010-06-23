@@ -227,7 +227,11 @@ on_window_close (InputPadGtkWindow *window, gpointer data)
     g_return_if_fail (window != NULL &&
                       INPUT_PAD_IS_GTK_WINDOW (window));
 
-    gtk_main_quit ();
+    if (window->child == 1) {
+        gtk_widget_destroy (GTK_WIDGET (window));
+    } else {
+        gtk_main_quit ();
+    }
 }
 
 static void
@@ -3276,8 +3280,6 @@ create_ui (unsigned int child)
     gtk_window_set_default_icon_from_file (DATAROOTDIR "/pixmaps/input-pad.png",
                                            &error);
     g_signal_connect (G_OBJECT (window), "delete_event",
-                      G_CALLBACK (on_window_close), NULL);
-    g_signal_connect (G_OBJECT (window), "destroy",
                       G_CALLBACK (on_window_close), NULL);
 
     close_item = GTK_ACTION (gtk_builder_get_object (builder, "Close"));
