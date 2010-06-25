@@ -54,6 +54,13 @@ class InputPadGtkWindow(_InputPadGtkWindow):
     void reorder_button_pressed () {
         input_pad_gtk_window_reorder_button_pressed (INPUT_PAD_GTK_WINDOW (self));
     }
+    unsigned int get_keyboard_state () {
+        return input_pad_gtk_window_get_keyboard_state (INPUT_PAD_GTK_WINDOW (self));
+    }
+    void set_keyboard_state (unsigned int keyboard_state) {
+        input_pad_gtk_window_set_keyboard_state (INPUT_PAD_GTK_WINDOW (self),
+                                                 keyboard_state);
+    }
     void show_all () {
         gtk_widget_show_all (GTK_WIDGET (self));
     }

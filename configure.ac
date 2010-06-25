@@ -116,7 +116,9 @@ if test x"$enable_eek" = xyes; then
     PKG_CHECK_MODULES(EEK, [
         eek-gtk-0.1 eek-xkl-0.1
 	],, AC_MSG_ERROR([libeek not found]))
-    AC_DEFINE(HAVE_EEK, [1], [Define if we have libeek])
+    AM_CONDITIONAL(HAVE_EEK, true)
+else
+    AM_CONDITIONAL(HAVE_EEK, false)
 fi
 
 dnl - check file path of glib-genmarshal

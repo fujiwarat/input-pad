@@ -1,5 +1,6 @@
 %{!?have_python_devel: %define have_python_devel %(rpm -q --quiet python-devel && echo 1 || echo 0)}
-%{!?have_xtest_devel: %define have_xtest_devel %(rpm -q --quiet libXtst-devel && echo 1 || echo 0)}
+%{!?have_xtest_devel:  %define have_xtest_devel  %(rpm -q --quiet libXtst-devel && echo 1 || echo 0)}
+%{!?have_eek_devel:    %define have_eek_devel    %(rpm -q --quiet eekboard-devel && echo 1 || echo 0)}
 
 %if %have_python_devel
   %if ! (0%{?fedora} > 12 || 0%{?rhel} > 5)
@@ -37,6 +38,9 @@ BuildRequires:  libXtst-devel
 BuildRequires:  python2-devel
 BuildRequires:  swig
 %endif
+%if %have_eek_devel
+BuildRequires:  eekboard-devel
+%endif
 
 %description
 The input pad is a tool to send a character on button to text applications.
@@ -66,14 +70,28 @@ Group:      System Environment/Libraries
 Requires:   %{name} = %{version}-%{release}
 
 %description xtest
-The input-pad-python package contains XTEST extension module
+The input-pad-xtest package contains XTEST extension module
+%endif
+
+%if %have_eek_devel
+%package eek
+Summary:    Input Pad with eekboard extension
+Group:      System Environment/Libraries
+Requires:   %{name} = %{version}-%{release}
+
+%description eek
+The input-pad-eek package contains eekboard extension module
 %endif
 
 %prep
 %setup -q
 
 %build
-%configure --disable-static
+%configure \
+%if %have_eek_devel
+    --enable-eek \
+%endif
+    --disable-static
 make %{?_smp_mflags}
 
 %install
@@ -83,12 +101,16 @@ make install DESTDIR=$RPM_BUILD_ROOT INSTALL='install -p'
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
 %if %have_xtest_devel
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/*.la
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/*.a
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/xkeysend/*.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/xkeysend/*.a
 %endif
 %if %have_python_devel
 rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.la
 rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.a
+%endif
+%if %have_eek_devel
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/kbdui/*.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/kbdui/*.a
 %endif
 
 %find_lang %{name}
@@ -106,6 +128,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/input-pad
 %dir %{_libdir}/%{name}-%sub_version
 %dir %{_libdir}/%{name}-%sub_version/modules
+%dir %{_libdir}/%{name}-%sub_version/modules/xkeysend
+%dir %{_libdir}/%{name}-%sub_version/modules/kbdui
 %{_libdir}/libinput-pad.so.*
 %{_datadir}/%name
 %{_datadir}/pixmaps/input-pad.png
@@ -126,7 +150,13 @@ rm -rf $RPM_BUILD_ROOT
 %if %have_xtest_devel
 %files xtest
 %defattr(-,root,root,-)
-%{_libdir}/%{name}-%sub_version/modules/libinput-pad-xtest-gdk.so
+%{_libdir}/%{name}-%sub_version/modules/xkeysend/libinput-pad-xtest-gdk.so
+%endif
+
+%if %have_eek_devel
+%files eek
+%defattr(-,root,root,-)
+%{_libdir}/%{name}-%sub_version/modules/kbdui/libinput-pad-eek-gtk.so
 %endif
 
 %changelog

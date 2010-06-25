@@ -17,14 +17,7 @@ class InputPadWindow:
         self.window = None
         self.type = type
 
-        if argv == None:
-            import sys
-            argv = sys.argv
-        if type == INPUT_PAD_WINDOW_TYPE_GTK:
-            import pygtk
-            import gtk
-
-        _input_pad_window_init_wrapper (argv, type)
+        _init_internal(argv, type)
     def new (self, child=0):
         self.window = _input_pad_window_new_with_gtype (child, True)
     def show(self):
@@ -48,6 +41,19 @@ class InputPadWindow:
         input_pad_window_main(self.window)
     def destroy(self):
         input_pad_window_destroy(self.window)
+
+def _init_internal(argv, type):
+        if argv == None:
+            import sys
+            argv = sys.argv
+        if type == INPUT_PAD_WINDOW_TYPE_GTK:
+            import pygtk
+            import gtk
+
+        _input_pad_window_init_wrapper (argv, type)
+
+def init(argv=None, type=INPUT_PAD_WINDOW_TYPE_GTK):
+    _init_internal(argv, type)
 }
 
 %inline %{

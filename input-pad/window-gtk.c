@@ -30,10 +30,6 @@
 #include <X11/keysym.h>
 #include <string.h> /* strlen */
 #include <stdlib.h> /* exit */
-#ifdef HAVE_EEK
-#include <eek/eek-gtk.h>
-#include <eek/eek-xkl.h>
-#endif  /* HAVE_EEK */
 
 #include "i18n.h"
 #include "button-gtk.h"
@@ -41,15 +37,17 @@
 #include "geometry-gdk.h"
 #include "input-pad.h"
 #include "input-pad-group.h"
-#include "input-pad-window-gtk.h"
-#include "input-pad-private.h"
+#include "input-pad-kbdui-gtk.h"
 #include "input-pad-marshal.h"
+#include "input-pad-private.h"
+#include "input-pad-window-gtk.h"
 #include "unicode_block.h"
 
 #define N_KEYBOARD_LAYOUT_PART 3
 #define INPUT_PAD_UI_FILE INPUT_PAD_UI_GTK_DIR "/input-pad.ui"
 #define MAX_UCODE 0x10ffff
 #define NEW_CUSTOM_CHAR_TABLE 1
+#define MODULE_NAME_PREFIX "input-pad-"
 
 #define INPUT_PAD_GTK_WINDOW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_WINDOW, InputPadGtkWindowPrivate))
 
@@ -60,9 +58,7 @@ typedef struct _CharTreeViewData CharTreeViewData;
 enum {
     BUTTON_PRESSED,
     KBD_CHANGED,
-    /* GROUP_CHANGED is already defined in libxklavier/xkl_engine.h,
-       included through eek-xkl.h. */
-    _GROUP_CHANGED,
+    GROUP_CHANGED,
     GROUP_APPENDED,
     CHAR_BUTTON_SENSITIVE,
     REORDER_BUTTON_PRESSED,
@@ -104,10 +100,7 @@ struct _InputPadGtkWindowPrivate {
     gchar                     **group_layouts;
     guint                       char_button_sensitive : 1;
     GdkColor                   *color_gray;
-#ifdef HAVE_EEK
-    EekKeyboard                *eek_keyboard;
-    EekLayout                  *eek_layout;
-#endif
+    InputPadGtkKbdui           *kbdui;
 };
 
 struct _CodePointData {
@@ -133,9 +126,8 @@ struct _CharTreeViewData {
 
 static guint                    signals[LAST_SIGNAL] = { 0 };
 static gboolean                 use_module_xtest = FALSE;
-#ifdef HAVE_EEK
 static gboolean                 use_eek = FALSE;
-#endif
+static gchar                   *kbdui_name = NULL;
 static gboolean                 ask_version = FALSE;
 #if 0
 static GtkBuildableIface       *parent_buildable_iface;
@@ -145,13 +137,16 @@ static GOptionEntry entries[] = {
 #ifdef MODULE_XTEST_GDK_BASE
   { "enable-module-xtest", 'x', 0, G_OPTION_ARG_NONE, &use_module_xtest,
     N_("Use XTEST module to send key events"), NULL},
-#ifdef HAVE_EEK
+#endif
+#ifdef MODULE_EEK_GTK_BASE
   { "enable-eek", 'e', 0, G_OPTION_ARG_NONE, &use_eek,
     N_("Use libeek to draw keyboard"), NULL},
 #endif
+  { "with-kbdui", 'k', 0, G_OPTION_ARG_STRING, &kbdui_name,
+    /* Translators: the word 'KBDUI' is not translated. */
+    N_("Use KBDUI to draw keyboard"), "KBDUI"},
   { "version", 'v', 0, G_OPTION_ARG_NONE, &ask_version,
     N_("Display version"), NULL},
-#endif
   { NULL }
 };
 
@@ -197,14 +192,6 @@ static void             create_keyboard_layout_ui_real_default
 static void             destroy_prev_keyboard_layout_default
                                                 (GtkWidget         *vbox,
                                                  InputPadGtkWindow *window);
-#ifdef HAVE_EEK
-static void             create_keyboard_layout_ui_real_eek
-                                                (GtkWidget         *vbox,
-                                                 InputPadGtkWindow *window);
-static void             destroy_prev_keyboard_layout_eek
-                                                (GtkWidget         *vbox,
-                                                 InputPadGtkWindow *window);
-#endif
 static void             create_keyboard_layout_list_ui_real
                                                 (GtkWidget         *vbox,
                                                  InputPadGtkWindow *window);
@@ -250,24 +237,26 @@ G_INLINE_FUNC void
 create_keyboard_layout_ui_real (GtkWidget         *vbox,
                                 InputPadGtkWindow *window)
 {
-#ifdef HAVE_EEK
-    if (use_eek)
-        create_keyboard_layout_ui_real_eek (vbox, window);
-    else
-#endif
-        create_keyboard_layout_ui_real_default (vbox, window);
+    if (kbdui_name && window->priv->kbdui) {
+        g_signal_emit_by_name (window->priv->kbdui,
+                               "create-keyboard-layout",
+                               vbox, window);
+        return;
+    }
+    create_keyboard_layout_ui_real_default (vbox, window);
 }
 
 G_INLINE_FUNC void
 destroy_prev_keyboard_layout (GtkWidget         *vbox,
                               InputPadGtkWindow *window)
 {
-#ifdef HAVE_EEK
-    if (use_eek)
-        destroy_prev_keyboard_layout_eek (vbox, window);
-    else
-#endif
-        destroy_prev_keyboard_layout_default (vbox, window);
+    if (kbdui_name && window->priv->kbdui) {
+        g_signal_emit_by_name (window->priv->kbdui,
+                               "destroy-keyboard-layout",
+                               vbox, window);
+        return;
+    }
+    destroy_prev_keyboard_layout_default (vbox, window);
 }
 
 static void
@@ -685,7 +674,7 @@ on_combobox_layout_changed (GtkComboBox *combobox,
     }
     window->priv->xkb_key_list =
         input_pad_gdk_xkb_parse_keyboard_layouts (window);
-    if (use_eek && window->priv->xkb_key_list == NULL) {
+    if (kbdui_name && window->priv->xkb_key_list == NULL) {
         return;
     }
 
@@ -1184,7 +1173,7 @@ on_window_realize (GtkWidget *window, gpointer data)
 
     input_pad->priv->xkb_key_list = 
         input_pad_gdk_xkb_parse_keyboard_layouts (input_pad);
-    if (use_eek && input_pad->priv->xkb_key_list == NULL) {
+    if (kbdui_name && input_pad->priv->xkb_key_list == NULL) {
         return;
     }
 
@@ -2403,119 +2392,6 @@ destroy_prev_keyboard_layout_default (GtkWidget *vbox, InputPadGtkWindow *window
     gtk_widget_destroy (hbox);
 }
 
-#ifdef HAVE_EEK
-static void
-on_window_keyboard_changed_eek (InputPadGtkWindow *window,
-                                gint               group,
-                                gpointer           data)
-{
-    gint prev_group, prev_level;
-    eek_keyboard_get_keysym_index (window->priv->eek_keyboard,
-                                   &prev_group, &prev_level);
-    eek_keyboard_set_keysym_index (window->priv->eek_keyboard,
-                                   group, prev_level);
-}
-
-static void
-on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
-                             EekKey      *key,
-                             gpointer     user_data)
-{
-    InputPadGtkWindow *window;
-    char *str, *empty = "";
-    guint keycode;
-    guint keysym;
-    guint *keysyms;
-    gint num_groups, num_levels;
-    gint group, level;
-    guint state = 0;
-    gboolean retval = FALSE;
-
-    g_return_if_fail (user_data != NULL &&
-                      INPUT_PAD_IS_GTK_WINDOW (user_data));
-
-    window = INPUT_PAD_GTK_WINDOW (user_data);
-    keycode = eek_key_get_keycode (key);
-    keysym = eek_key_get_keysym (key);
-    str = eek_keysym_to_string (keysym);
-    if (str == NULL)
-        str = empty;
-    eek_key_get_keysyms (key, &keysyms, &num_groups, &num_levels);
-    eek_key_get_keysym_index (key, &group, &level);
-    state = window->priv->keyboard_state;
-    if (keysyms && (keysym != keysyms[group * num_levels])) {
-        state |= ShiftMask;
-    }
-    state = input_pad_xkb_build_core_state (state, group);
-
-    g_signal_emit (window, signals[BUTTON_PRESSED], 0,
-                   str, INPUT_PAD_TABLE_TYPE_KEYSYMS, keysym, keycode, state,
-                   &retval);
-    if (str != empty)
-        g_free (str);
-
-    if (state & ShiftMask) {
-        state ^= ShiftMask;
-    }
-    if ((state & ControlMask) && 
-        (keysym != XK_Control_L) && (keysym != XK_Control_R)) {
-        state ^= ControlMask;
-    }
-    if ((state & Mod1Mask) && 
-        (keysym != XK_Alt_L) && (keysym != XK_Alt_R)) {
-        state ^= Mod1Mask;
-    }
-    window->priv->keyboard_state = state;
-}
-
-static void
-create_keyboard_layout_ui_real_eek (GtkWidget *vbox, InputPadGtkWindow *window)
-{
-    EekKeyboard *keyboard;
-    EekLayout *layout;
-    EekBounds bounds;
-    GtkWidget *widget;
-
-    keyboard = window->priv->eek_keyboard = eek_gtk_keyboard_new ();
-    g_object_ref_sink (keyboard);
-    layout = window->priv->eek_layout = eek_xkl_layout_new ();
-    g_object_ref_sink (layout);
-    eek_keyboard_set_layout (keyboard, layout);
-    bounds.width = 640;
-    bounds.height = 480;
-    eek_element_set_bounds (EEK_ELEMENT(keyboard), &bounds);
-    widget = eek_gtk_keyboard_get_widget (EEK_GTK_KEYBOARD(keyboard));
-    eek_element_get_bounds (EEK_ELEMENT(keyboard), &bounds);
-
-    gtk_box_pack_start (GTK_BOX (vbox), widget, FALSE, FALSE, 0);
-    gtk_box_reorder_child (GTK_BOX (vbox), widget, 0);
-    gtk_widget_show (widget);
-    gtk_widget_set_size_request (widget, bounds.width, bounds.height);
-
-    g_signal_connect (G_OBJECT (window), "keyboard-changed",
-                      G_CALLBACK (on_window_keyboard_changed_eek),
-                      NULL);
-    g_signal_connect (G_OBJECT (keyboard), "key-pressed",
-		      G_CALLBACK (on_eek_keyboard_key_pressed),
-		      window);
-}
-
-static void
-destroy_prev_keyboard_layout_eek (GtkWidget *vbox, InputPadGtkWindow *window)
-{
-    GList *children;
-    GtkWidget *widget;
-
-    children = gtk_container_get_children (GTK_CONTAINER (vbox));
-    widget = GTK_WIDGET (children->data);
-    gtk_widget_hide (widget);
-    gtk_widget_destroy (widget);
-
-    g_object_unref (window->priv->eek_keyboard);
-    g_object_unref (window->priv->eek_layout);
-}
-#endif
-
 static int
 sort_layout_name (GtkTreeModel *model,
                   GtkTreeIter  *a,
@@ -3586,7 +3462,193 @@ input_pad_gtk_window_xtest_gdk_setup (InputPadGtkWindow *window)
     }
 }
 
-#endif
+#endif /* MODULE_XTEST_GDK_BASE */
+
+static void
+kbdui_module_close (GModule *module)
+{
+    const gchar *error = NULL;
+    const gchar *module_name;
+
+    if (!g_module_close (module)) {
+        error = g_module_error ();
+        module_name = g_module_name (module);
+        g_warning ("Cannot close %s: %s",
+                   module_name ? module_name : "",
+                   error ? error : "");
+    }
+}
+
+static void
+input_pad_gtk_window_kbdui_destroy (InputPadGtkWindow *window)
+{
+    g_return_if_fail (window != NULL &&
+                      INPUT_PAD_IS_GTK_WINDOW (window));
+    g_return_if_fail (window->priv != NULL);
+    g_return_if_fail (window->priv->kbdui != NULL);
+
+    if (window->priv->kbdui->module) {
+        kbdui_module_close (window->priv->kbdui->module);
+        window->priv->kbdui->module = NULL;
+    }
+    g_object_unref (window->priv->kbdui);
+    window->priv->kbdui = NULL;
+}
+
+static void
+input_pad_gtk_window_kbdui_arg_init (int *argc, char ***argv)
+{
+    gchar *name;
+    gchar *filename;
+    const gchar *error = NULL;
+    const gchar *symbol_name;
+    const gchar *module_name;
+    GModule *module = NULL;
+    gboolean (* arg_init) (int *argc, char ***argv);
+
+    g_return_if_fail (MODULE_KBDUI_DIR != NULL);
+    g_return_if_fail (kbdui_name != NULL);
+
+    if (!g_module_supported ()) {
+        error = g_module_error ();
+        g_warning ("Module (%s) is not supported on your platform: %s",
+                   kbdui_name, error ? error : "");
+        return;
+    }
+
+    name = g_strdup_printf ("%s%s", MODULE_NAME_PREFIX, kbdui_name);
+    filename = g_module_build_path (MODULE_KBDUI_DIR, name);
+    g_free (name);
+    g_return_if_fail (filename != NULL);
+
+    module = g_module_open (filename, G_MODULE_BIND_LAZY);
+    if (module == NULL) {
+        error = g_module_error ();
+        g_warning ("Could not open %s: %s", filename, error ? error : "");
+        g_free (filename);
+        return;
+    }
+    g_free (filename);
+
+    symbol_name = "input_pad_module_arg_init";
+    module_name = g_module_name (module);
+    if (!g_module_symbol (module, symbol_name, (gpointer *) &arg_init)) {
+        error = g_module_error ();
+        g_warning ("Could not find '%s' in %s: %s", symbol_name,
+                   module_name ? module_name : "",
+                   error ? error : "");
+        kbdui_module_close (module);
+        return;
+    }
+    if (arg_init == NULL) {
+        g_warning ("Function '%s' is NULL in %s", symbol_name,
+                   module_name ? module_name : "");
+        kbdui_module_close (module);
+        return;
+    }
+    if (!arg_init (argc, argv)) {
+        g_warning ("Function '%s' failed to be run in %s", symbol_name,
+                   module_name ? module_name : "");
+        kbdui_module_close (module);
+        return;
+    }
+
+    kbdui_module_close (module);
+}
+
+static void
+input_pad_gtk_window_kbdui_init (InputPadGtkWindow *window)
+{
+    gchar *name;
+    gchar *filename;
+    const gchar *error = NULL;
+    const gchar *symbol_name;
+    const gchar *module_name;
+    GModule *module = NULL;
+    gboolean (* init) (InputPadGtkWindow *window);
+    InputPadGtkKbdui * (* kbdui_new) (InputPadGtkWindow *window);
+    InputPadGtkKbdui *kbdui;
+
+    g_return_if_fail (window != NULL &&
+                      INPUT_PAD_IS_GTK_WINDOW (window));
+    g_return_if_fail (window->priv != NULL);
+    g_return_if_fail (MODULE_KBDUI_DIR != NULL);
+
+    if (window->priv->kbdui) {
+        return;
+    }
+
+    g_return_if_fail (kbdui_name != NULL);
+
+    if (!g_module_supported ()) {
+        error = g_module_error ();
+        g_warning ("Module (%s) is not supported on your platform: %s",
+                   kbdui_name, error ? error : "");
+        return;
+    }
+
+    name = g_strdup_printf ("%s%s", MODULE_NAME_PREFIX, kbdui_name);
+    filename = g_module_build_path (MODULE_KBDUI_DIR, name);
+    g_free (name);
+    g_return_if_fail (filename != NULL);
+
+    module = g_module_open (filename, G_MODULE_BIND_LAZY);
+    if (module == NULL) {
+        error = g_module_error ();
+        g_warning ("Could not open %s: %s", filename, error ? error : "");
+        g_free (filename);
+        return;
+    }
+    g_free (filename);
+
+    symbol_name = "input_pad_module_init";
+    module_name = g_module_name (module);
+    if (!g_module_symbol (module, symbol_name, (gpointer *)&init)) {
+        error = g_module_error ();
+        g_warning ("Could not find '%s' in %s: %s", symbol_name,
+                   module_name ? module_name : "",
+                   error ? error : "");
+        kbdui_module_close (module);
+        return;
+    }
+    if (init == NULL) {
+        g_warning ("Function '%s' is NULL in %s", symbol_name,
+                   module_name ? module_name : "");
+        kbdui_module_close (module);
+        return;
+    }
+    if (!init (window)) {
+        g_warning ("Function '%s' failed to be run in %s", symbol_name,
+                   module_name ? module_name : "");
+        kbdui_module_close (module);
+        return;
+    }
+
+    symbol_name = "input_pad_module_kbdui_new";
+    module_name = g_module_name (module);
+    if (!g_module_symbol (module, symbol_name, (gpointer *)&kbdui_new)) {
+        error = g_module_error ();
+        g_warning ("Could not find '%s' in %s: %s", symbol_name,
+                   module_name ? module_name : "",
+                   error ? error : "");
+        kbdui_module_close (module);
+        return;
+    }
+    if (kbdui_new == NULL) {
+        g_warning ("Function '%s' is NULL in %s", symbol_name,
+                   module_name ? module_name : "");
+        kbdui_module_close (module);
+        return;
+    }
+    if ((kbdui = kbdui_new (window)) == NULL) {
+        g_warning ("Function '%s' failed to be run in %s", symbol_name,
+                   module_name ? module_name : "");
+        kbdui_module_close (module);
+        return;
+    }
+    kbdui->module = module;
+    window->priv->kbdui = kbdui;
+}
 
 static void
 input_pad_gtk_window_set_priv (InputPadGtkWindow *window)
@@ -3617,6 +3679,9 @@ input_pad_gtk_window_init (InputPadGtkWindow *window)
         input_pad_gtk_window_xtest_gdk_init (window);
     }
 #endif
+    if (kbdui_name) {
+        input_pad_gtk_window_kbdui_init (window);
+    }
 }
 
 #if 0
@@ -3661,6 +3726,9 @@ input_pad_gtk_window_real_destroy (GtkObject *object)
             input_pad_gtk_window_xtest_gdk_destroy (window);
         }
 #endif
+        if (kbdui_name && window->priv->kbdui) {
+            input_pad_gtk_window_kbdui_destroy (window);
+        }
         window->priv = NULL;
     }
     GTK_OBJECT_CLASS (input_pad_gtk_window_parent_class)->destroy (object);
@@ -3741,7 +3809,7 @@ input_pad_gtk_window_class_init (InputPadGtkWindowClass *klass)
                       G_TYPE_NONE,
                       1, G_TYPE_INT);
 
-    signals[_GROUP_CHANGED] =
+    signals[GROUP_CHANGED] =
         g_signal_new (I_("group-changed"),
                       G_TYPE_FROM_CLASS (gobject_class),
                       G_SIGNAL_RUN_LAST,
@@ -3827,7 +3895,7 @@ input_pad_gtk_window_set_paddir (InputPadGtkWindow *window,
 {
     g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
 
-    g_signal_emit (window, signals[_GROUP_CHANGED], 0,
+    g_signal_emit (window, signals[GROUP_CHANGED], 0,
                    paddir, domain);
 }
 
@@ -3859,7 +3927,26 @@ input_pad_gtk_window_set_char_button_sensitive (InputPadGtkWindow *window,
 void
 input_pad_gtk_window_reorder_button_pressed (InputPadGtkWindow *window)
 {
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+
     g_signal_emit (window, signals[REORDER_BUTTON_PRESSED], 0);
+}
+
+guint
+input_pad_gtk_window_get_keyboard_state (InputPadGtkWindow *window)
+{
+    g_return_val_if_fail (INPUT_PAD_IS_GTK_WINDOW (window), 0);
+
+    return window->priv->keyboard_state;
+}
+
+void
+input_pad_gtk_window_set_keyboard_state (InputPadGtkWindow *window,
+                                         guint              keyboard_state)
+{
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+
+    window->priv->keyboard_state = keyboard_state;
 }
 
 void
@@ -3893,8 +3980,15 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
                                        input_pad_get_version ());
         exit (0);
     }
+    if (use_eek) {
+        kbdui_name = g_strdup ("eek-gtk");
+    }
 
     gtk_init (argc, argv);
+
+    if (kbdui_name) {
+        input_pad_gtk_window_kbdui_arg_init (argc, argv);
+    }
 }
 
 void *

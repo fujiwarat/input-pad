@@ -94,6 +94,11 @@ void                input_pad_gtk_window_set_char_button_sensitive
                                         gboolean                sensitive);
 void                input_pad_gtk_window_reorder_button_pressed
                                        (InputPadGtkWindow      *window);
+guint               input_pad_gtk_window_get_keyboard_state
+                                       (InputPadGtkWindow      *window);
+void                input_pad_gtk_window_set_keyboard_state
+                                       (InputPadGtkWindow      *window,
+                                        guint                   keyboard_state);
 
 G_END_DECLS
 

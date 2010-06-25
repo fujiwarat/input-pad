@@ -23,10 +23,15 @@
 noinst_DIST = \
 	$(NULL)
 
+MODULE_DIR = $(libdir)/$(PACKAGE)-$(libinput_pad_VERSION)/modules
+MODULE_KBDUI_DIR = $(MODULE_DIR)/kbdui
+MODULE_XKEYSEND_DIR = $(MODULE_DIR)/xkeysend
+
 INCLUDES = \
 	-I$(top_srcdir)                                                    \
 	-DINPUT_PAD_PAD_SYSTEM_DIR=\""$(pkgdatadir)/pad"\"                 \
 	-DINPUT_PAD_UI_GTK_DIR=\""$(pkgdatadir)/ui/gtk"\"                  \
+	-DMODULE_KBDUI_DIR=\""$(MODULE_KBDUI_DIR)"\"                       \
 	-DDATAROOTDIR=\""$(datarootdir)"\"                                 \
 	$(NULL)
 
@@ -38,13 +43,13 @@ BUILT_SOURCES = \
 libinput_pad_publicdir = $(includedir)/$(PACKAGE)-$(libinput_pad_VERSION)
 libinput_pad_public_HEADERS = \
 	input-pad-group.h                                       \
+	input-pad-kbdui-gtk.h                                   \
 	input-pad-window-gtk.h                                  \
 	input-pad.h                                             \
 	$(NULL)
 
 libinput_pad_LTLIBRARIES = libinput-pad.la
 libinput_paddir = $(libdir)
-MODULE_DIR= $(libdir)/$(PACKAGE)-$(libinput_pad_VERSION)/modules
 
 libinput_pad_la_SOURCES = \
 	$(BUILT_SOURCES)                                        \
@@ -58,6 +63,7 @@ libinput_pad_la_SOURCES = \
 	geometry-xkb.h                                          \
 	i18n.h                                                  \
 	input-pad-private.h                                     \
+	kbdui-gtk.c                                             \
 	parse-pad.c                                             \
 	unicode_block.h                                         \
 	window-gtk.c                                            \
@@ -69,7 +75,6 @@ libinput_pad_la_CFLAGS = \
 	$(X11_CFLAGS)                                           \
 	$(XKB_CFLAGS)                                           \
 	$(LIBXKLAVIER_CFLAGS)                                   \
-	$(EEK_CFLAGS)                                           \
 	$(NULL)
 
 libinput_pad_la_LIBADD = \
@@ -78,7 +83,6 @@ libinput_pad_la_LIBADD = \
 	$(X11_LIBS)                                             \
 	$(XKB_LIBS)                                             \
 	$(LIBXKLAVIER_LIBS)                                     \
-	$(EEK_LIBS)                                             \
 	$(NULL)
 
 libinput_pad_la_LDFLAGS = \
@@ -101,11 +105,11 @@ MODULE_XTEST_GDK_BASE = input-pad-xtest-gdk
 
 INCLUDES += \
 	-DMODULE_XTEST_GDK_BASE=\""$(MODULE_XTEST_GDK_BASE)"\"  \
-	-DMODULE_XTEST_GDK_DIR=\""$(MODULE_DIR)"\"              \
+	-DMODULE_XTEST_GDK_DIR=\""$(MODULE_XKEYSEND_DIR)"\"     \
 	$(NULL)
 
 libinput_pad_xtest_gdk_LTLIBRARIES = libinput-pad-xtest-gdk.la
-libinput_pad_xtest_gdkdir = $(MODULE_DIR)
+libinput_pad_xtest_gdkdir = $(MODULE_XKEYSEND_DIR)
 
 libinput_pad_xtest_gdk_la_SOURCES = \
 	xtest-gdk.c                                             \
@@ -124,6 +128,37 @@ libinput_pad_xtest_gdk_la_LIBADD = \
 	$(NULL)
 
 libinput_pad_xtest_gdk_la_LDFLAGS = \
+	-export-dynamic                                         \
+	-avoid-version                                          \
+	$(no_undefined)                                         \
+	$(NULL)
+endif
+
+if HAVE_EEK
+MODULE_EEK_GTK_BASE = eek-gtk
+
+INCLUDES += \
+	-DMODULE_EEK_GTK_BASE=\""$(MODULE_EEK_GTK_BASE)"\"      \
+	$(NULL)
+
+libinput_pad_eek_gtk_LTLIBRARIES = libinput-pad-eek-gtk.la
+libinput_pad_eek_gtkdir = $(MODULE_KBDUI_DIR)
+
+libinput_pad_eek_gtk_la_SOURCES = \
+	eek-gtk.c                                               \
+	eek-gtk.h                                               \
+	$(NULL)
+
+libinput_pad_eek_gtk_la_CFLAGS = \
+	$(EEK_CFLAGS)                                           \
+	$(NULL)
+
+libinput_pad_eek_gtk_la_LIBADD = \
+	$(builddir)/libinput-pad.la                             \
+	$(EEK_LIBS)                                             \
+	$(NULL)
+
+libinput_pad_eek_gtk_la_LDFLAGS = \
 	-export-dynamic                                         \
 	-avoid-version                                          \
 	$(no_undefined)                                         \

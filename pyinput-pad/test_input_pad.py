@@ -18,7 +18,7 @@ if len(sys.argv) > 1:
     if os.path.isdir(sys.argv[1]):
         print "paddir", sys.argv[1]
         window.set_paddir(sys.argv[1])
-    else:
+    elif os.path.isfile(sys.argv[1]):
         print "padfile", sys.argv[1]
         window.append_padfile(sys.argv[1])
 window.show()
