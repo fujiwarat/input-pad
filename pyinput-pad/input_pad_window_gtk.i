@@ -61,6 +61,10 @@ class InputPadGtkWindow(_InputPadGtkWindow):
         input_pad_gtk_window_set_keyboard_state (INPUT_PAD_GTK_WINDOW (self),
                                                  keyboard_state);
     }
+    void set_keyboard_state_with_keysym (unsigned int keysym) {
+        input_pad_gtk_window_set_keyboard_state_with_keysym (INPUT_PAD_GTK_WINDOW (self),
+                                                             keysym);
+    }
     void show_all () {
         gtk_widget_show_all (GTK_WIDGET (self));
     }

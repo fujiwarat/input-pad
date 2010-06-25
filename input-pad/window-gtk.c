@@ -3950,6 +3950,35 @@ input_pad_gtk_window_set_keyboard_state (InputPadGtkWindow *window,
 }
 
 void
+input_pad_gtk_window_set_keyboard_state_with_keysym (InputPadGtkWindow *window,
+                                                     guint              keysym)
+{
+    g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
+
+    switch (keysym) {
+    case XK_Shift_L:
+    case XK_Shift_R:
+        xor_modifiers (window, ShiftMask);
+        break;
+    case XK_Control_L:
+    case XK_Control_R:
+        xor_modifiers (window, ControlMask);
+        break;
+    case XK_Alt_L:
+    case XK_Alt_R:
+        xor_modifiers (window, Mod1Mask);
+        break;
+    default:
+        if (window->priv->keyboard_state & ControlMask) {
+            window->priv->keyboard_state ^= ControlMask;
+        }
+        if (window->priv->keyboard_state & Mod1Mask) {
+            window->priv->keyboard_state ^= Mod1Mask;
+        }
+    }
+}
+
+void
 input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
 {
     GOptionContext *context;

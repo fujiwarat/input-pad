@@ -99,6 +99,9 @@ guint               input_pad_gtk_window_get_keyboard_state
 void                input_pad_gtk_window_set_keyboard_state
                                        (InputPadGtkWindow      *window,
                                         guint                   keyboard_state);
+void                input_pad_gtk_window_set_keyboard_state_with_keysym
+                                       (InputPadGtkWindow      *window,
+                                        guint                   keysym);
 
 G_END_DECLS
 

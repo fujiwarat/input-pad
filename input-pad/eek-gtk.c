@@ -80,6 +80,7 @@ on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
     guint keycode;
     guint keysym;
     guint *keysyms;
+    guint keysym0;
     gint num_groups, num_levels;
     gint group, level;
     guint state = 0;
@@ -108,18 +109,20 @@ on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
     if (str != empty)
         g_free (str);
 
-    if (state & ShiftMask) {
-        state ^= ShiftMask;
+    if (keysyms) {
+        keysym0 = keysyms[0];
+    } else {
+        keysym0 = keysym;
     }
-    if ((state & ControlMask) && 
-        (keysym != XK_Control_L) && (keysym != XK_Control_R)) {
-        state ^= ControlMask;
+    if (keysym0 == XK_Num_Lock) {
+        keysym0 = XK_Shift_L;
     }
-    if ((state & Mod1Mask) && 
-        (keysym != XK_Alt_L) && (keysym != XK_Alt_R)) {
-        state ^= Mod1Mask;
+    input_pad_gtk_window_set_keyboard_state_with_keysym (window, keysym0);
+    if (keysym0 == XK_Shift_L || keysym0 == XK_Shift_R) {
+        state = input_pad_gtk_window_get_keyboard_state (window);
+        eek_keyboard_set_keysym_index (keyboard, group,
+                                       state & ShiftMask ? 1 : 0);
     }
-    input_pad_gtk_window_set_keyboard_state (window, state);
 }
 
 static void

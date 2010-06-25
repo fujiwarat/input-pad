@@ -27,5 +27,7 @@ window.set_char_button_sensitive(True)
 window.connect("button-pressed", button_pressed_cb)
 window.reorder_button_pressed()
 print "input-pad visible?", window.get_visible()
+## XK_Shift_L from X11/keysymdef.h
+#window.set_keyboard_state_with_keysym(0xffe1)
 print "keyboard_state?", window.get_keyboard_state()
 gtk.main()
