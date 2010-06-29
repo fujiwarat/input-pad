@@ -28,11 +28,13 @@
 #include <eek/eek-gtk.h>
 #include <eek/eek-xkl.h>
 
+#include "eek-gtk.h"
+#include "geometry-xkb.h"
+#include "i18n.h"
 #include "input-pad-group.h"
 #include "input-pad-kbdui-gtk.h"
 #include "input-pad-window-gtk.h"
-#include "geometry-xkb.h"
-#include "eek-gtk.h"
+#include "input-pad.h"
 
 #define INPUT_PAD_GTK_KBDUI_EEK_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_KBDUI_EEK, InputPadGtkKbduiEekPrivate))
 
@@ -52,6 +54,14 @@ static void             destroy_prev_keyboard_layout_eek
 
 G_DEFINE_TYPE (InputPadGtkKbduiEek, input_pad_gtk_kbdui_eek,
                INPUT_PAD_TYPE_GTK_KBDUI)
+
+static gboolean                 use_eek = FALSE;
+
+static GOptionEntry entries[] = {
+  { "enable-eek", 'e', 0, G_OPTION_ARG_NONE, &use_eek,
+    N_("Use libeek to draw keyboard"), NULL},
+  { NULL }
+};
 
 static void
 on_window_keyboard_changed_eek (InputPadGtkWindow *window,
@@ -213,9 +223,42 @@ input_pad_gtk_kbdui_eek_new (void)
     return g_object_new (INPUT_PAD_TYPE_GTK_KBDUI_EEK, NULL);
 }
 
-gboolean
-input_pad_module_arg_init (int *argc, char ***argv)
+InputPadWindowType
+input_pad_module_get_type (void)
 {
+    return INPUT_PAD_WINDOW_TYPE_GTK;
+}
+
+const gchar *
+input_pad_module_get_description (void)
+{
+    return _("eekboard layout");
+}
+
+gboolean
+input_pad_module_arg_init (int                         *argc,
+                           char                      ***argv,
+                           InputPadGtkKbduiContext     *context)
+{
+    GOptionGroup *group;
+    if (context == NULL || context->context == NULL) {
+        return TRUE;
+    }
+    group = g_option_group_new ("eek", N_("eekboard Options"), N_("Show eekboard Options"), NULL, NULL);
+    g_option_group_add_entries (group, entries);
+    g_option_group_set_translation_domain (group, GETTEXT_PACKAGE);
+    g_option_context_add_group (context->context, group);
+    return TRUE;
+}
+
+gboolean
+input_pad_module_arg_init_post (int                            *argc,
+                                char                         ***argv,
+                                InputPadGtkKbduiContext        *context)
+{
+    if (use_eek) {
+        input_pad_gtk_kbdui_context_set_kbdui_name (context, "eek-gtk");
+    }
     return TRUE;
 }
 

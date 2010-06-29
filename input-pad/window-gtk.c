@@ -101,6 +101,10 @@ struct _InputPadGtkWindowPrivate {
     guint                       char_button_sensitive : 1;
     GdkColor                   *color_gray;
     InputPadGtkKbdui           *kbdui;
+    GtkToggleAction            *show_all_chars_action;
+    GtkToggleAction            *show_custom_chars_action;
+    GtkToggleAction            *show_nothing_action;
+    GtkToggleAction            *show_layout_action;
 };
 
 struct _CodePointData {
@@ -126,9 +130,10 @@ struct _CharTreeViewData {
 
 static guint                    signals[LAST_SIGNAL] = { 0 };
 static gboolean                 use_module_xtest = FALSE;
-static gboolean                 use_eek = FALSE;
 static gchar                   *kbdui_name = NULL;
 static gboolean                 ask_version = FALSE;
+static guint                    set_show_table_type = 1;
+static guint                    set_show_layout_type = 1;
 #if 0
 static GtkBuildableIface       *parent_buildable_iface;
 #endif
@@ -138,15 +143,17 @@ static GOptionEntry entries[] = {
   { "enable-module-xtest", 'x', 0, G_OPTION_ARG_NONE, &use_module_xtest,
     N_("Use XTEST module to send key events"), NULL},
 #endif
-#ifdef MODULE_EEK_GTK_BASE
-  { "enable-eek", 'e', 0, G_OPTION_ARG_NONE, &use_eek,
-    N_("Use libeek to draw keyboard"), NULL},
-#endif
+  { "version", 'v', 0, G_OPTION_ARG_NONE, &ask_version,
+    N_("Display version"), NULL},
   { "with-kbdui", 'k', 0, G_OPTION_ARG_STRING, &kbdui_name,
     /* Translators: the word 'KBDUI' is not translated. */
     N_("Use KBDUI to draw keyboard"), "KBDUI"},
-  { "version", 'v', 0, G_OPTION_ARG_NONE, &ask_version,
-    N_("Display version"), NULL},
+  { "with-table-type", 't', 0, G_OPTION_ARG_INT, &set_show_table_type,
+    /* Translators: the word 'TYPE' is not translated. */
+    N_("Use TYPE of char table. The available TYPE=0, 1, 2"), "TYPE"},
+  { "with-layout-type", 'l', 0, G_OPTION_ARG_INT, &set_show_layout_type,
+    /* Translators: the word 'TYPE' is not translated. */
+    N_("Use TYPE of keyboard layout. The available TYPE=0, 1"), "TYPE"},
   { NULL }
 };
 
@@ -2924,11 +2931,14 @@ create_char_notebook_ui (GtkBuilder *builder, GtkWidget *window)
     append_char_sub_notebooks (main_notebook, INPUT_PAD_GTK_WINDOW (window));
 
     show_item = GTK_TOGGLE_ACTION (gtk_builder_get_object (builder, "ShowCustomChars"));
+    gtk_toggle_action_set_active (show_item,
+                                  (set_show_table_type == 1) ? TRUE : FALSE);
     if (gtk_toggle_action_get_active (show_item)) {
         gtk_widget_show (main_notebook);
     } else {
         gtk_widget_hide (main_notebook);
     }
+    INPUT_PAD_GTK_WINDOW (window)->priv->show_custom_chars_action = show_item;
     g_signal_connect (G_OBJECT (show_item), "activate",
                       G_CALLBACK (on_toggle_action),
                       (gpointer) main_notebook);
@@ -3090,11 +3100,14 @@ create_custom_char_view_ui (GtkBuilder *builder, GtkWidget *window)
     create_custom_char_views (hbox, INPUT_PAD_GTK_WINDOW (window));
 
     show_item = GTK_TOGGLE_ACTION (gtk_builder_get_object (builder, "ShowCustomChars"));
+    gtk_toggle_action_set_active (show_item,
+                                  (set_show_table_type == 1) ? TRUE : FALSE);
     if (gtk_toggle_action_get_active (show_item)) {
         gtk_widget_show (hbox);
     } else {
         gtk_widget_hide (hbox);
     }
+    INPUT_PAD_GTK_WINDOW (window)->priv->show_custom_chars_action = show_item;
     g_signal_connect (G_OBJECT (show_item), "activate",
                       G_CALLBACK (on_toggle_action),
                       (gpointer) hbox);
@@ -3253,14 +3266,21 @@ create_all_char_view_ui (GtkBuilder *builder, GtkWidget *window)
                       G_CALLBACK (on_tree_view_select_all_char), &tv_data);
 
     show_item = GTK_TOGGLE_ACTION (gtk_builder_get_object (builder, "ShowAllChars"));
+    gtk_toggle_action_set_active (show_item,
+                                  (set_show_table_type == 2) ? TRUE : FALSE);
     if (gtk_toggle_action_get_active (show_item)) {
         gtk_widget_show (hbox);
     } else {
         gtk_widget_hide (hbox);
     }
+    INPUT_PAD_GTK_WINDOW (window)->priv->show_all_chars_action = show_item;
     g_signal_connect (G_OBJECT (show_item), "activate",
                       G_CALLBACK (on_toggle_action),
                       (gpointer) hbox);
+    show_item = GTK_TOGGLE_ACTION (gtk_builder_get_object (builder, "ShowNothing"));
+    gtk_toggle_action_set_active (show_item,
+                                  (set_show_table_type == 0) ? TRUE : FALSE);
+    INPUT_PAD_GTK_WINDOW (window)->priv->show_nothing_action = show_item;
 }
 
 static void
@@ -3275,11 +3295,14 @@ create_keyboard_layout_ui (GtkBuilder *builder, GtkWidget *window)
                             (gpointer)keyboard_vbox);
 
     show_item = GTK_TOGGLE_ACTION (gtk_builder_get_object (builder, "ShowLayout"));
+    gtk_toggle_action_set_active (show_item,
+                                  (set_show_layout_type == 1) ? TRUE : FALSE);
     if (gtk_toggle_action_get_active (show_item)) {
         gtk_widget_show (keyboard_vbox);
     } else {
         gtk_widget_hide (keyboard_vbox);
     }
+    INPUT_PAD_GTK_WINDOW (window)->priv->show_layout_action = show_item;
     g_signal_connect (G_OBJECT (show_item), "activate",
                       G_CALLBACK (on_toggle_action),
                       (gpointer) keyboard_vbox);
@@ -3495,40 +3518,69 @@ input_pad_gtk_window_kbdui_destroy (InputPadGtkWindow *window)
     window->priv->kbdui = NULL;
 }
 
-static void
-input_pad_gtk_window_kbdui_arg_init (int *argc, char ***argv)
+static gboolean
+input_pad_gtk_window_kbdui_module_get_desc (InputPadWindowKbduiName  *list,
+                                            GModule                  *module)
 {
-    gchar *name;
-    gchar *filename;
     const gchar *error = NULL;
     const gchar *symbol_name;
     const gchar *module_name;
-    GModule *module = NULL;
-    gboolean (* arg_init) (int *argc, char ***argv);
+    const gchar *desc;
+    const gchar * (* get_description) (void);
+    InputPadWindowType  (* get_type) (void);
 
-    g_return_if_fail (MODULE_KBDUI_DIR != NULL);
-    g_return_if_fail (kbdui_name != NULL);
+    g_return_val_if_fail (module != NULL, FALSE);
 
-    if (!g_module_supported ()) {
+    symbol_name = "input_pad_module_get_description";
+    module_name = g_module_name (module);
+    if (!g_module_symbol (module, symbol_name, (gpointer *) &get_description)) {
         error = g_module_error ();
-        g_warning ("Module (%s) is not supported on your platform: %s",
-                   kbdui_name, error ? error : "");
-        return;
+        g_warning ("Could not find '%s' in %s: %s", symbol_name,
+                   module_name ? module_name : "",
+                   error ? error : "");
+        return FALSE;
+    }
+    if (get_description == NULL) {
+        g_warning ("Function '%s' is NULL in %s", symbol_name,
+                   module_name ? module_name : "");
+        return FALSE;
+    }
+    if ((desc = get_description ()) != NULL) {
+        list->description = g_strdup (desc);
     }
 
-    name = g_strdup_printf ("%s%s", MODULE_NAME_PREFIX, kbdui_name);
-    filename = g_module_build_path (MODULE_KBDUI_DIR, name);
-    g_free (name);
-    g_return_if_fail (filename != NULL);
-
-    module = g_module_open (filename, G_MODULE_BIND_LAZY);
-    if (module == NULL) {
+    symbol_name = "input_pad_module_get_type";
+    module_name = g_module_name (module);
+    if (!g_module_symbol (module, symbol_name, (gpointer *) &get_type)) {
         error = g_module_error ();
-        g_warning ("Could not open %s: %s", filename, error ? error : "");
-        g_free (filename);
-        return;
+        g_warning ("Could not find '%s' in %s: %s", symbol_name,
+                   module_name ? module_name : "",
+                   error ? error : "");
+        return FALSE;
     }
-    g_free (filename);
+    if (get_type == NULL) {
+        g_warning ("Function '%s' is NULL in %s", symbol_name,
+                   module_name ? module_name : "");
+        return FALSE;
+    }
+    list->type = get_type ();
+
+    return TRUE;
+}
+
+static gboolean
+input_pad_gtk_window_kbdui_module_arg_init (int                     *argc,
+                                            char                  ***argv,
+                                            GModule                 *module,
+                                            InputPadGtkKbduiContext *kbdui_context)
+{
+    const gchar *error = NULL;
+    const gchar *symbol_name;
+    const gchar *module_name;
+    gboolean (* arg_init) (int *argc, char ***argv, InputPadGtkKbduiContext *kbdui_context);
+
+    g_return_val_if_fail (kbdui_context != NULL, FALSE);
+    g_return_val_if_fail (module != NULL, FALSE);
 
     symbol_name = "input_pad_module_arg_init";
     module_name = g_module_name (module);
@@ -3537,23 +3589,193 @@ input_pad_gtk_window_kbdui_arg_init (int *argc, char ***argv)
         g_warning ("Could not find '%s' in %s: %s", symbol_name,
                    module_name ? module_name : "",
                    error ? error : "");
-        kbdui_module_close (module);
-        return;
+        return FALSE;
     }
     if (arg_init == NULL) {
         g_warning ("Function '%s' is NULL in %s", symbol_name,
                    module_name ? module_name : "");
-        kbdui_module_close (module);
-        return;
+        return FALSE;
     }
-    if (!arg_init (argc, argv)) {
+    if (!arg_init (argc, argv, kbdui_context)) {
         g_warning ("Function '%s' failed to be run in %s", symbol_name,
                    module_name ? module_name : "");
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
+static gboolean
+input_pad_gtk_window_kbdui_module_arg_init_post (int                     *argc,
+                                                 char                  ***argv,
+                                                 GModule                 *module,
+                                                 InputPadGtkKbduiContext *kbdui_context)
+{
+    const gchar *error = NULL;
+    const gchar *symbol_name;
+    const gchar *module_name;
+    gboolean (* arg_init_post) (int *argc, char ***argv, InputPadGtkKbduiContext *kbdui_context);
+
+    g_return_val_if_fail (kbdui_context != NULL, FALSE);
+    g_return_val_if_fail (module != NULL, FALSE);
+
+    symbol_name = "input_pad_module_arg_init_post";
+    module_name = g_module_name (module);
+    if (!g_module_symbol (module, symbol_name, (gpointer *) &arg_init_post)) {
+        error = g_module_error ();
+        g_warning ("Could not find '%s' in %s: %s", symbol_name,
+                   module_name ? module_name : "",
+                   error ? error : "");
+        return FALSE;
+    }
+    if (arg_init_post == NULL) {
+        g_warning ("Function '%s' is NULL in %s", symbol_name,
+                   module_name ? module_name : "");
+        return FALSE;
+    }
+    if (!arg_init_post (argc, argv, kbdui_context)) {
+        g_warning ("Function '%s' failed to be run in %s", symbol_name,
+                   module_name ? module_name : "");
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
+static GModule *
+input_pad_gtk_window_parse_kbdui_module_arg_init (int                          *argc,
+                                                  char                       ***argv,
+                                                  const gchar                  *kbdui_name,
+                                                  InputPadGtkKbduiContext      *kbdui_context)
+{
+    gchar *name;
+    gchar *filepath;
+    const gchar *error = NULL;
+    GModule *module;
+
+    g_return_val_if_fail (MODULE_KBDUI_DIR != NULL, NULL);
+    g_return_val_if_fail (kbdui_name != NULL, NULL);
+
+    if (!g_module_supported ()) {
+        error = g_module_error ();
+        g_warning ("Module is not supported on your platform: %s",
+                   error ? error : "");
+        return NULL;
+    }
+
+    name = g_strdup_printf ("%s%s", MODULE_NAME_PREFIX, kbdui_name);
+    filepath = g_module_build_path (MODULE_KBDUI_DIR, name);
+    g_free (name);
+    g_return_val_if_fail (filepath != NULL, NULL);
+
+    module = g_module_open (filepath, G_MODULE_BIND_LAZY);
+    if (module == NULL) {
+        error = g_module_error ();
+        g_warning ("Could not open %s: %s", filepath, error ? error : "");
+        g_free (filepath);
+        return NULL;
+    }
+    g_free (filepath);
+
+    if (!input_pad_gtk_window_kbdui_module_arg_init (argc, argv,
+                                                     module, kbdui_context)) {
         kbdui_module_close (module);
+        return NULL;
+    }
+
+    return module;
+}
+
+static GList *
+input_pad_gtk_window_parse_kbdui_modules (int                          *argc,
+                                          char                       ***argv,
+                                          InputPadGtkKbduiContext      *kbdui_context)
+{
+    GList *list = NULL;
+    GError *error = NULL;
+    const gchar *err_message;
+    const gchar *dirname = MODULE_KBDUI_DIR;
+    const gchar *filename;
+    gchar *filepath;
+    GModule *module = NULL;
+    GDir *dir;
+
+    g_return_val_if_fail (MODULE_KBDUI_DIR != NULL, NULL);
+
+    if (!g_module_supported ()) {
+        err_message = g_module_error ();
+        g_warning ("Module is not supported on your platform: %s",
+                   err_message ? err_message : "");
+        return NULL;
+    }
+
+    if (!g_file_test (dirname, G_FILE_TEST_IS_DIR)) {
+        g_warning ("Directory Not Found: %s", dirname);
+        return NULL;
+    }
+
+    if ((dir  = g_dir_open (dirname, 0, &error)) == NULL) {
+        g_warning ("Cannot Open Directory: %s: %s", dirname,
+                   error ? error->message ? error->message : "" : "");
+        g_error_free (error);
+        return NULL;
+    }
+
+    while ((filename = g_dir_read_name (dir)) != NULL) {
+        if (!g_str_has_prefix (filename, "lib") ||
+            !g_str_has_prefix (filename + 3, MODULE_NAME_PREFIX)) {
+            g_warning ("File prefix is not input-pad library: %s", filename);
+            continue;
+        }
+        filepath = g_build_filename (dirname, filename, NULL);
+        module = g_module_open (filepath, G_MODULE_BIND_LAZY);
+        if (module == NULL) {
+            err_message = g_module_error ();
+            g_warning ("Could not open %s: %s", filename, err_message ? err_message : "");
+            g_free (filepath);
+            continue;
+        }
+        g_free (filepath);
+
+        if (input_pad_gtk_window_kbdui_module_arg_init (argc, argv,
+                                                        module,
+                                                        kbdui_context)) {
+            list = g_list_append (list, module);
+        } else {
+            kbdui_module_close (module);
+        }
+    }
+    g_dir_close (dir);
+    return list;
+}
+
+static void
+input_pad_gtk_window_kbdui_arg_init_post_list (int                          *argc,
+                                               char                       ***argv,
+                                               InputPadGtkKbduiContext      *kbdui_context,
+                                               GList                        *list)
+{
+    const gchar *error = NULL;
+    GList *p = list;
+    GModule *module;
+
+    if (!g_module_supported ()) {
+        error = g_module_error ();
+        g_warning ("Module is not supported on your platform: %s",
+                   error ? error : "");
         return;
     }
 
-    kbdui_module_close (module);
+    while (p) {
+        module = (GModule *) p->data;
+        input_pad_gtk_window_kbdui_module_arg_init_post (argc, argv,
+                                                         module,
+                                                         kbdui_context);
+        kbdui_module_close (module);
+        p->data = NULL;
+        p = p->next;
+    }
+    g_list_free (list);
 }
 
 static void
@@ -3978,11 +4200,180 @@ input_pad_gtk_window_set_keyboard_state_with_keysym (InputPadGtkWindow *window,
     }
 }
 
+InputPadWindowKbduiName *
+input_pad_gtk_window_get_kbdui_name_list (void)
+{
+    InputPadWindowKbduiName *list = NULL;
+    GError *error = NULL;
+    const gchar *err_message;
+    const gchar *dirname = MODULE_KBDUI_DIR;
+    const gchar *filename;
+    gchar *filepath;
+    GModule *module = NULL;
+    GDir *dir;
+    int len;
+
+    g_return_val_if_fail (MODULE_KBDUI_DIR != NULL, NULL);
+
+    if (!g_module_supported ()) {
+        err_message = g_module_error ();
+        g_warning ("Module is not supported on your platform: %s",
+                   err_message ? err_message : "");
+        return NULL;
+    }
+
+    if (!g_file_test (dirname, G_FILE_TEST_IS_DIR)) {
+        g_warning ("Directory Not Found: %s", dirname);
+        return NULL;
+    }
+
+    if ((dir  = g_dir_open (dirname, 0, &error)) == NULL) {
+        g_warning ("Cannot Open Directory: %s: %s", dirname,
+                   error ? error->message ? error->message : "" : "");
+        g_error_free (error);
+        return NULL;
+    }
+
+    while ((filename = g_dir_read_name (dir)) != NULL) {
+        const gchar *subname = NULL;
+        gchar *name = NULL;
+
+        if (!g_str_has_prefix (filename, "lib") ||
+            !g_str_has_prefix (filename + 3, MODULE_NAME_PREFIX)) {
+            g_warning ("File prefix is not input-pad library: %s", filename);
+            continue;
+        }
+        filepath = g_build_filename (dirname, filename, NULL);
+        module = g_module_open (filepath, G_MODULE_BIND_LAZY);
+        if (module == NULL) {
+            err_message = g_module_error ();
+            g_warning ("Could not open %s: %s", filename, err_message ? err_message : "");
+            g_free (filepath);
+            continue;
+        }
+        g_free (filepath);
+
+        subname = filename + 3 + strlen (MODULE_NAME_PREFIX);
+        if (subname == NULL || *subname == '\0') {
+            g_warning ("Filename is invalid %s", filename);
+            continue;
+        }
+        if (g_str_has_suffix (subname, ".so")) {
+            name = g_strndup (subname, strlen (subname) - 3);
+        } else {
+            name = g_strdup (subname);
+        }
+        if (name == NULL || *name == '\0') {
+            g_warning ("Filename is invalid %s", filename);
+            g_free (name);
+            continue;
+        }
+        if (list == NULL) {
+            len = 2;
+            list = g_new0 (InputPadWindowKbduiName, len);
+        } else {
+            len++;
+            list = g_renew (InputPadWindowKbduiName, list, len);
+        }
+        list[len - 1].name = list[len - 1].description = NULL;
+        list[len - 1].type = INPUT_PAD_WINDOW_TYPE_GTK;
+        list[len - 2].name = g_strdup (name);
+        g_free (name);
+        input_pad_gtk_window_kbdui_module_get_desc (&list[len -2], module);
+        kbdui_module_close (module);
+    }
+    g_dir_close (dir);
+    return list;
+}
+
+void
+input_pad_gtk_window_set_kbdui_name (InputPadGtkWindow *window,
+                                     const gchar       *name)
+{
+    GModule *module;
+    InputPadGtkKbduiContext *context;
+
+    if (kbdui_name && window->priv->kbdui) {
+        input_pad_gtk_window_kbdui_destroy (window);
+    }
+    g_free (kbdui_name);
+
+    if (name == NULL) {
+        kbdui_name = NULL;
+        return;
+    }
+    if (g_strcmp0 (name, "default") == 0) {
+        kbdui_name = NULL;
+        return;
+    }
+    kbdui_name = g_strdup (name);
+    if (kbdui_name) {
+        context = input_pad_gtk_kbdui_context_new ();
+        module = input_pad_gtk_window_parse_kbdui_module_arg_init (NULL, NULL,
+                                                                   kbdui_name,
+                                                                   context);
+        if (!module) {
+            input_pad_gtk_kbdui_context_destroy (context);
+            return;
+        }
+        input_pad_gtk_window_kbdui_module_arg_init_post (NULL, NULL,
+                                                         module,
+                                                         context);
+        kbdui_module_close (module);
+        input_pad_gtk_kbdui_context_destroy (context);
+        input_pad_gtk_window_kbdui_init (window);
+    }
+}
+
+void
+input_pad_gtk_window_set_show_table (InputPadGtkWindow *window,
+                                     InputPadWindowShowTableType type)
+{
+    g_return_if_fail (window && INPUT_PAD_IS_GTK_WINDOW (window));
+    g_return_if_fail (window->priv != NULL);
+
+    switch (type) {
+    case INPUT_PAD_WINDOW_SHOW_TABLE_TYPE_NOTHING:
+        gtk_action_activate (GTK_ACTION (window->priv->show_nothing_action));
+        break;
+    case INPUT_PAD_WINDOW_SHOW_TABLE_TYPE_CUSTOM:
+        gtk_action_activate (GTK_ACTION (window->priv->show_custom_chars_action));
+        break;
+    case INPUT_PAD_WINDOW_SHOW_TABLE_TYPE_ALL:
+        gtk_action_activate (GTK_ACTION (window->priv->show_all_chars_action));
+        break;
+    default:;
+    }
+}
+
+void
+input_pad_gtk_window_set_show_layout (InputPadGtkWindow *window,
+                                      InputPadWindowShowLayoutType type)
+{
+    g_return_if_fail (window && INPUT_PAD_IS_GTK_WINDOW (window));
+    g_return_if_fail (window->priv != NULL);
+
+    switch (type) {
+    case INPUT_PAD_WINDOW_SHOW_LAYOUT_TYPE_NOTHING:
+        gtk_toggle_action_set_active (window->priv->show_layout_action,
+                                      FALSE);
+        break;
+    case INPUT_PAD_WINDOW_SHOW_LAYOUT_TYPE_DEFAULT:
+        gtk_toggle_action_set_active (window->priv->show_layout_action,
+                                      TRUE);
+        break;
+    default:;
+    }
+}
+
 void
 input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
 {
     GOptionContext *context;
+    InputPadGtkKbduiContext *kbdui_context;
     GError *error = NULL;
+    GList *list = NULL;
+    const gchar *name;
 
 #ifdef ENABLE_NLS
     bindtextdomain (GETTEXT_PACKAGE, IBUS_LOCALEDIR);
@@ -4000,8 +4391,14 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
     g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
     g_option_context_add_main_entries (context, entries, GETTEXT_PACKAGE);
     g_option_context_add_group (context, gtk_get_option_group (TRUE));
+
+    kbdui_context = input_pad_gtk_kbdui_context_new ();
+    kbdui_context->context = context;
+    list = input_pad_gtk_window_parse_kbdui_modules (argc, argv, kbdui_context);
+
     g_option_context_parse (context, argc, argv, &error);
     g_option_context_free (context);
+    kbdui_context->context = NULL;
 
     if (ask_version) {
         g_print ("%s %s version %s\n", g_get_prgname (),
@@ -4009,15 +4406,19 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
                                        input_pad_get_version ());
         exit (0);
     }
-    if (use_eek) {
-        kbdui_name = g_strdup ("eek-gtk");
-    }
 
     gtk_init (argc, argv);
-
-    if (kbdui_name) {
-        input_pad_gtk_window_kbdui_arg_init (argc, argv);
+    input_pad_gtk_window_kbdui_arg_init_post_list (argc, argv, kbdui_context, list);
+    name = input_pad_gtk_kbdui_context_get_kbdui_name (kbdui_context);
+    if (name) {
+        g_free (kbdui_name);
+        if (g_strcmp0 (name, "default") == 0) {
+            kbdui_name = NULL;
+        } else {
+            kbdui_name = g_strdup (name);
+        }
     }
+    input_pad_gtk_kbdui_context_destroy (kbdui_context);
 }
 
 void *
@@ -4102,9 +4503,36 @@ input_pad_window_set_char_button_sensitive (void        *window_data,
 }
 
 void
-input_pad_window_reorder_button_pressed (void *window)
+input_pad_window_reorder_button_pressed (void *window_data)
 {
-    input_pad_gtk_window_reorder_button_pressed (window);
+    input_pad_gtk_window_reorder_button_pressed (window_data);
+}
+
+InputPadWindowKbduiName *
+input_pad_window_get_kbdui_name_list (void)
+{
+    return input_pad_gtk_window_get_kbdui_name_list ();
+}
+
+void
+input_pad_window_set_kbdui_name (void *window_data, const char *name)
+{
+    input_pad_gtk_window_set_kbdui_name (window_data,
+                                         (const gchar *) name);
+}
+
+void
+input_pad_window_set_show_table (void                          *window_data,
+                                 InputPadWindowShowTableType    type)
+{
+    input_pad_gtk_window_set_show_table (window_data, type);
+}
+
+void
+input_pad_window_set_show_layout (void                          *window_data,
+                                  InputPadWindowShowLayoutType   type)
+{
+    input_pad_gtk_window_set_show_layout (window_data, type);
 }
 
 void

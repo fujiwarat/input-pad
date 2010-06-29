@@ -27,6 +27,27 @@ typedef enum
     INPUT_PAD_WINDOW_TYPE_GTK = 0,
 } InputPadWindowType;
 
+typedef enum
+{
+    INPUT_PAD_WINDOW_SHOW_TABLE_TYPE_NOTHING = 0,
+    INPUT_PAD_WINDOW_SHOW_TABLE_TYPE_CUSTOM,
+    INPUT_PAD_WINDOW_SHOW_TABLE_TYPE_ALL,
+} InputPadWindowShowTableType;
+
+typedef enum
+{
+    INPUT_PAD_WINDOW_SHOW_LAYOUT_TYPE_NOTHING = 0,
+    INPUT_PAD_WINDOW_SHOW_LAYOUT_TYPE_DEFAULT,
+} InputPadWindowShowLayoutType;
+
+typedef struct _InputPadWindowKbduiName InputPadWindowKbduiName;
+
+struct _InputPadWindowKbduiName {
+    char               *name;
+    char               *description;
+    InputPadWindowType  type;
+};
+
 const char *        input_pad_get_version (void);
 void                input_pad_window_init (int *argc, char ***argv,
                                            InputPadWindowType type);
@@ -47,6 +68,17 @@ void                input_pad_window_set_char_button_sensitive
                                          unsigned int   sensitive);
 void                input_pad_window_reorder_button_pressed
                                         (void          *window_data);
+InputPadWindowKbduiName *
+                    input_pad_window_get_kbdui_name_list (void);
+void                input_pad_window_set_kbdui_name
+                                        (void          *window_data,
+                                         const char    *name);
+void                input_pad_window_set_show_table
+                                        (void           *window_data,
+                                         InputPadWindowShowTableType type);
+void                input_pad_window_set_show_layout
+                                        (void           *window_data,
+                                         InputPadWindowShowLayoutType type);
 void                input_pad_window_main (void *window_data);
 void                input_pad_window_destroy (void *window_data);
 

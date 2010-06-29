@@ -1,6 +1,8 @@
 prefix=@prefix@
 libdir=@libdir@
 includedir=@includedir@/input-pad-@libinput_pad_VERSION@
+kbduidir=@libdir@/input-pad-@libinput_pad_VERSION@/modules/kbdui
+xkeysenddir=@libdir@/input-pad-@libinput_pad_VERSION@/modules/xkeysend
 
 Name: input-pad
 Description: Input Pad

@@ -23,7 +23,9 @@
 #define __INPUT_PAD_KBDUI_H__
 
 #include <gtk/gtk.h>
+#include <glib.h>
 #include "input-pad-window-gtk.h"
+#include "input-pad.h"
 
 G_BEGIN_DECLS
 
@@ -34,9 +36,11 @@ G_BEGIN_DECLS
 #define INPUT_PAD_IS_GTK_KBDUI_CLASS(k)         (G_TYPE_CHECK_CLASS_TYPE ((k), INPUT_PAD_TYPE_GTK_KBDUI))
 #define INPUT_PAD_GTK_KBDUI_GET_CLASS(o)        (G_TYPE_INSTANCE_GET_CLASS ((o), INPUT_PAD_TYPE_GTK_KBDUI, InputPadGtkKbduiClass))
 
-typedef struct _InputPadGtkKbduiPrivate InputPadGtkKbduiPrivate;
 typedef struct _InputPadGtkKbdui InputPadGtkKbdui;
+typedef struct _InputPadGtkKbduiPrivate InputPadGtkKbduiPrivate;
 typedef struct _InputPadGtkKbduiClass InputPadGtkKbduiClass;
+typedef struct _InputPadGtkKbduiContext InputPadGtkKbduiContext;
+typedef struct _InputPadGtkKbduiContextPrivate InputPadGtkKbduiContextPrivate;
 
 struct _InputPadGtkKbdui {
     GObject                             parent;
@@ -65,12 +69,42 @@ struct _InputPadGtkKbduiClass {
     void (*_kbdui_reserved4) (void);
 };
 
+struct _InputPadGtkKbduiContext {
+    InputPadGtkKbdui                   *kbdui;
+    GOptionContext                     *context;
+
+    InputPadGtkKbduiContextPrivate     *priv;
+};
+
 G_MODULE_EXPORT
 GType               input_pad_gtk_kbdui_get_type (void);
 G_MODULE_EXPORT
+InputPadGtkKbduiContext *
+                    input_pad_gtk_kbdui_context_new (void);
+G_MODULE_EXPORT
+const gchar *       input_pad_gtk_kbdui_context_get_kbdui_name
+                                        (InputPadGtkKbduiContext *context);
+G_MODULE_EXPORT
+void                input_pad_gtk_kbdui_context_set_kbdui_name
+                                        (InputPadGtkKbduiContext *context,
+                                         const gchar             *name);
+G_MODULE_EXPORT
+void                input_pad_gtk_kbdui_context_destroy
+                                        (InputPadGtkKbduiContext *context);
+G_MODULE_EXPORT
+const gchar *       input_pad_module_get_description (void);
+G_MODULE_EXPORT
+InputPadWindowType  input_pad_module_get_type (void);
+G_MODULE_EXPORT
 gboolean            input_pad_module_arg_init
-                                        (int                *argc,
-                                         char             ***argv);
+                                        (int                     *argc,
+                                         char                  ***argv,
+                                         InputPadGtkKbduiContext *context);
+G_MODULE_EXPORT
+gboolean            input_pad_module_arg_init_post
+                                        (int                     *argc,
+                                         char                  ***argv,
+                                         InputPadGtkKbduiContext *context);
 G_MODULE_EXPORT
 gboolean            input_pad_module_init (InputPadGtkWindow *window);
 G_MODULE_EXPORT

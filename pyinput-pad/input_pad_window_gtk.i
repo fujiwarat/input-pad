@@ -23,6 +23,9 @@ class InputPadGtkWindow(_InputPadGtkWindow):
         _InputPadGtkWindow.set_paddir(self, paddir, domain)
     def append_padfile(self, padfile, domain=None):
         _InputPadGtkWindow.append_padfile(self, padfile, domain)
+
+def get_kbdui_name_list():
+    return _input_pad_gtk_window_get_kbdui_name_list_wrapper()
 }
 
 %extend _InputPadGtkWindow {
@@ -65,6 +68,18 @@ class InputPadGtkWindow(_InputPadGtkWindow):
         input_pad_gtk_window_set_keyboard_state_with_keysym (INPUT_PAD_GTK_WINDOW (self),
                                                              keysym);
     }
+    void set_kbdui_name (const char *kbdui_name) {
+        input_pad_gtk_window_set_kbdui_name (INPUT_PAD_GTK_WINDOW (self),
+                                             kbdui_name);
+    }
+    void set_show_table (unsigned int type) {
+        input_pad_gtk_window_set_show_table (INPUT_PAD_GTK_WINDOW (self),
+                                             type);
+    }
+    void set_show_layout (unsigned int type) {
+        input_pad_gtk_window_set_show_layout (INPUT_PAD_GTK_WINDOW (self),
+                                              type);
+    }
     void show_all () {
         gtk_widget_show_all (GTK_WIDGET (self));
     }
@@ -84,6 +99,37 @@ extern GtkWidget *
 _input_pad_gtk_window_new_with_gtype (GtkWindowType     type,
                                       unsigned int      child,
                                       gboolean          gtype);
+
+PyObject *
+_input_pad_gtk_window_get_kbdui_name_list_wrapper (void)
+{
+    InputPadWindowKbduiName *list;
+    Py_ssize_t i, size = 0;
+    PyObject *retval = NULL;
+    PyObject *tuple = NULL;
+
+    list = input_pad_gtk_window_get_kbdui_name_list ();
+    if (list == NULL) {
+        return Py_None;
+    }
+    while (list[size].name != NULL) {
+        size++;
+    }
+    retval = PyList_New (0);
+    for (i = 0; i < size; i++) {
+        tuple = PyTuple_Pack (3,
+                              PyString_FromString (list[i].name),
+                              PyString_FromString (list[i].description),
+                              PyInt_FromLong (list[i].type));
+        PyList_Append (retval, tuple);
+        g_free (list[i].name);
+        list[i].name = NULL;
+        g_free (list[i].description);
+        list[i].description = NULL;
+    }
+    g_free (list);
+    return retval;
+}
 
 InputPadGtkWindow *
 _input_pad_gtk_window_new_wrapper (int                  pytype,

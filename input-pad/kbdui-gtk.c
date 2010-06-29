@@ -38,8 +38,11 @@ enum {
 
 static guint            signals[LAST_SIGNAL] = { 0 };
 
-G_DEFINE_ABSTRACT_TYPE (InputPadGtkKbdui, input_pad_gtk_kbdui, G_TYPE_OBJECT);
+struct _InputPadGtkKbduiContextPrivate {
+    gchar *kbdui_name;
+};
 
+G_DEFINE_ABSTRACT_TYPE (InputPadGtkKbdui, input_pad_gtk_kbdui, G_TYPE_OBJECT);
 
 static void
 input_pad_gtk_kbdui_init (InputPadGtkKbdui *kbdui)
@@ -72,4 +75,49 @@ input_pad_gtk_kbdui_class_init (InputPadGtkKbduiClass *klass)
                       INPUT_PAD_VOID__OBJECT_OBJECT,
                       G_TYPE_NONE,
                       2, GTK_TYPE_WIDGET, INPUT_PAD_TYPE_GTK_WINDOW);
+}
+
+G_MODULE_EXPORT
+InputPadGtkKbduiContext *
+input_pad_gtk_kbdui_context_new (void)
+{
+    InputPadGtkKbduiContext *context;
+
+    context = g_new0 (InputPadGtkKbduiContext, 1);
+    context->priv = g_new0 (InputPadGtkKbduiContextPrivate, 1);
+    return context;
+}
+
+G_MODULE_EXPORT
+const gchar *
+input_pad_gtk_kbdui_context_get_kbdui_name (InputPadGtkKbduiContext *context)
+{
+    return context->priv->kbdui_name;
+}
+
+G_MODULE_EXPORT
+void
+input_pad_gtk_kbdui_context_set_kbdui_name (InputPadGtkKbduiContext *context,
+                                            const gchar             *name)
+{
+    g_free (context->priv->kbdui_name);
+    if (name) {
+        context->priv->kbdui_name = g_strdup (name);
+    } else {
+        context->priv->kbdui_name = NULL;
+    }
+}
+
+void
+input_pad_gtk_kbdui_context_destroy (InputPadGtkKbduiContext *context)
+{
+    if (context) {
+        if (context->priv) {
+            g_free (context->priv->kbdui_name);
+            context->priv->kbdui_name = NULL;
+            g_free (context->priv);
+            context->priv = NULL;
+        }
+        g_free (context);
+    }
 }

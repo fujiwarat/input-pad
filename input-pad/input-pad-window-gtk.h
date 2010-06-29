@@ -23,6 +23,7 @@
 #define __INPUT_PAD_WINDOW_GTK_H__
 
 #include <gtk/gtk.h>
+#include "input-pad.h"
 
 G_BEGIN_DECLS
 
@@ -102,6 +103,17 @@ void                input_pad_gtk_window_set_keyboard_state
 void                input_pad_gtk_window_set_keyboard_state_with_keysym
                                        (InputPadGtkWindow      *window,
                                         guint                   keysym);
+InputPadWindowKbduiName *
+                    input_pad_gtk_window_get_kbdui_name_list (void);
+void                input_pad_gtk_window_set_kbdui_name
+                                       (InputPadGtkWindow      *window,
+                                        const gchar            *name);
+void                input_pad_gtk_window_set_show_table
+                                       (InputPadGtkWindow      *window,
+                                        InputPadWindowShowTableType type);
+void                input_pad_gtk_window_set_show_layout
+                                       (InputPadGtkWindow      *window,
+                                        InputPadWindowShowLayoutType type);
 
 G_END_DECLS
 

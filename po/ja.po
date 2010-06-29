@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2010-06-25 13:04+0900\n"
-"PO-Revision-Date: 2010-05-10 17:54+0900\n"
+"POT-Creation-Date: 2010-06-29 15:16+0900\n"
+"PO-Revision-Date: 2010-06-29 15:16+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "すべて"
 msgid "Arrow"
 msgstr "矢印"
 
-#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3214
+#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3231
 msgid "Block"
 msgstr "ブロック"
 
@@ -254,7 +254,7 @@ msgid "Keyboard"
 msgstr "キーボード"
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:23
-#: ../input-pad/window-gtk.c:3967 ../input-pad/window-gtk.c:3968
+#: ../input-pad/window-gtk.c:4389 ../input-pad/window-gtk.c:4390
 msgid "Input Pad"
 msgstr "インプットパッド"
 
@@ -680,6 +680,22 @@ msgstr "Bopomofo"
 #: ../data/zh.xml.in.h:2
 msgid "Chinese"
 msgstr "中国語"
+
+#: ../input-pad/eek-gtk.c:62
+msgid "Use libeek to draw keyboard"
+msgstr "キーボードを描画するために libeek を使用する"
+
+#: ../input-pad/eek-gtk.c:235
+msgid "eekboard layout"
+msgstr "eekboard レイアウト"
+
+#: ../input-pad/eek-gtk.c:247
+msgid "eekboard Options"
+msgstr "eekboard オプション"
+
+#: ../input-pad/eek-gtk.c:247
+msgid "Show eekboard Options"
+msgstr "eekboard オプションを表示する"
 
 #: ../input-pad/unicode_block.h:37
 msgid "Basic Latin"
@@ -1433,36 +1449,42 @@ msgstr "補足私用領域-A"
 msgid "Supplementary Private Use Area-B"
 msgstr "補足私用領域-B"
 
-#: ../input-pad/window-gtk.c:139
+#: ../input-pad/window-gtk.c:144
 msgid "Use XTEST module to send key events"
 msgstr "キーイベントを送るために XTEST モジュールを使用する"
 
-#: ../input-pad/window-gtk.c:143
-msgid "Use libeek to draw keyboard"
-msgstr "キーボードを描画するために libeek を使用する"
-
-#. Translators: the word 'KBDUI' is not translated.
 #: ../input-pad/window-gtk.c:147
-msgid "Use KBDUI to draw keyboard"
-msgstr "キーボードを描画するために KBDUI を使用する"
-
-#: ../input-pad/window-gtk.c:149
 msgid "Display version"
 msgstr "バージョンを表示する"
 
-#: ../input-pad/window-gtk.c:994
+#. Translators: the word 'KBDUI' is not translated.
+#: ../input-pad/window-gtk.c:150
+msgid "Use KBDUI to draw keyboard"
+msgstr "キーボードを描画するために KBDUI を使用する"
+
+#. Translators: the word 'TYPE' is not translated.
+#: ../input-pad/window-gtk.c:153
+msgid "Use TYPE of char table. The available TYPE=0, 1, 2"
+msgstr "文字テーブルの TYPE を使用する。利用可能な TYPE=0, 1, 2"
+
+#. Translators: the word 'TYPE' is not translated.
+#: ../input-pad/window-gtk.c:156
+msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
+msgstr "キーボードレイアウトの TYPE を使用する。利用可能な TYPE=0, 1"
+
+#: ../input-pad/window-gtk.c:1005
 msgid "Fold layout"
 msgstr "レイアウトを折りたたむ"
 
-#: ../input-pad/window-gtk.c:999 ../input-pad/window-gtk.c:2350
+#: ../input-pad/window-gtk.c:1010 ../input-pad/window-gtk.c:2361
 msgid "Extend layout"
 msgstr "レイアウトを広げる"
 
-#: ../input-pad/window-gtk.c:2471
+#: ../input-pad/window-gtk.c:2482
 msgid "_Layout:"
 msgstr "レイアウト(_L):"
 
-#: ../input-pad/window-gtk.c:2506
+#: ../input-pad/window-gtk.c:2517
 msgid ""
 "This library is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU Lesser General Public License as published by the "
@@ -1470,7 +1492,7 @@ msgid ""
 "option) any later version."
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2512
+#: ../input-pad/window-gtk.c:2523
 msgid ""
 "This library is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -1478,17 +1500,17 @@ msgid ""
 "for more details."
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2518
+#: ../input-pad/window-gtk.c:2529
 msgid ""
 "You should have received a copy of the GNU Lesser General Public License "
 "along with this library; if not, write to the Free Software Foundation, "
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2992
+#: ../input-pad/window-gtk.c:3006
 msgid "Group"
 msgstr "グループ"
 
-#: ../input-pad/window-gtk.c:3000
+#: ../input-pad/window-gtk.c:3014
 msgid "Sub Group"
 msgstr "サブグループ"
