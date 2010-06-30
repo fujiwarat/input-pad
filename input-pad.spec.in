@@ -12,6 +12,12 @@
 %define libxklavier_version     4.0
 %define libxml2_version         2.0
 
+%define libinput_paddir %{_libdir}/%{name}-%sub_version
+%define moduledir       %{_libdir}/%{name}-%sub_version/modules
+%define kbduidir        %{_libdir}/%{name}-%sub_version/modules/kbdui
+%define xkeysenddir     %{_libdir}/%{name}-%sub_version/modules/xkeysend
+
+
 Name:       @PACKAGE_NAME@
 Version:    @PACKAGE_VERSION@
 Release:    1%{?dist}
@@ -88,8 +94,14 @@ The input-pad-eek package contains eekboard extension module
 
 %build
 %configure \
+%if ! %have_python_devel
+    --disable-python            \
+%endif
 %if %have_eek_devel
-    --enable-eek \
+    --enable-eek                \
+%endif
+%if %have_xtest_devel
+    --enable-xtest              \
 %endif
     --disable-static
 make %{?_smp_mflags}
@@ -98,19 +110,26 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT INSTALL='install -p'
 
+if [ ! -d $RPM_BUILD_ROOT%kbduidir ] ; then
+    mkdir -p $RPM_BUILD_ROOT%kbduidir
+fi
+if [ ! -d $RPM_BUILD_ROOT%xkeysenddir ] ; then
+    mkdir -p $RPM_BUILD_ROOT%xkeysenddir
+fi
+
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
 %if %have_xtest_devel
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/xkeysend/*.la
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/xkeysend/*.a
+rm -f $RPM_BUILD_ROOT%xkeysenddir/*.la
+rm -f $RPM_BUILD_ROOT%xkeysenddir/*.a
+%endif
+%if %have_eek_devel
+rm -f $RPM_BUILD_ROOT%kbduidir/*.la
+rm -f $RPM_BUILD_ROOT%kbduidir/*.a
 %endif
 %if %have_python_devel
 rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.la
 rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.a
-%endif
-%if %have_eek_devel
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/kbdui/*.la
-rm -f $RPM_BUILD_ROOT%{_libdir}/%{name}-%sub_version/modules/kbdui/*.a
 %endif
 
 %find_lang %{name}
@@ -126,10 +145,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING README
 %{_bindir}/input-pad
-%dir %{_libdir}/%{name}-%sub_version
-%dir %{_libdir}/%{name}-%sub_version/modules
-%dir %{_libdir}/%{name}-%sub_version/modules/xkeysend
-%dir %{_libdir}/%{name}-%sub_version/modules/kbdui
+%dir %libinput_paddir
+%dir %moduledir
+%dir %xkeysenddir
+%dir %kbduidir
 %{_libdir}/libinput-pad.so.*
 %{_datadir}/%name
 %{_datadir}/pixmaps/input-pad.png
@@ -150,13 +169,13 @@ rm -rf $RPM_BUILD_ROOT
 %if %have_xtest_devel
 %files xtest
 %defattr(-,root,root,-)
-%{_libdir}/%{name}-%sub_version/modules/xkeysend/libinput-pad-xtest-gdk.so
+%xkeysenddir/libinput-pad-xtest-gdk.so
 %endif
 
 %if %have_eek_devel
 %files eek
 %defattr(-,root,root,-)
-%{_libdir}/%{name}-%sub_version/modules/kbdui/libinput-pad-eek-gtk.so
+%kbduidir/libinput-pad-eek-gtk.so
 %endif
 
 %changelog

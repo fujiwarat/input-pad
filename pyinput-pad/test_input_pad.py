@@ -12,8 +12,9 @@ def button_pressed_cb(window, str, type, keysym, keycode, state, data):
     print "data =", data
 
 print "input-pad version:", get_version()
-print "available kbdui modules:", get_kbdui_name_list()
 window = InputPadWindow()
+# InputPadWindow() calls setlocale()
+print "available kbdui modules:", get_kbdui_name_list()
 window.new()
 if len(sys.argv) > 1:
     if os.path.isdir(sys.argv[1]):

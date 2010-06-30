@@ -103,6 +103,7 @@ if test "x$have_libxklavier" = "xyes" ; then
     AC_DEFINE(HAVE_LIBXKLAVIER, [1], [Define if we have libxklavier])
 fi
 
+dnl - check eek
 AC_MSG_CHECKING([whether you enable libeek])
 AC_ARG_ENABLE(eek,
               AS_HELP_STRING([--enable-eek=no/yes],
@@ -158,18 +159,28 @@ AC_SUBST(PYTHON_LIBS)
 AC_SUBST(SWIG)
 
 dnl - check XTest module
-backup_LIBS=$LIBS
-if test "x$XTEST_LIBS" = "x"  ; then
-    XTEST_LIBS="-lXtst"
-fi
-LIBS="$LIBS $XTEST_LIBS"
+AC_MSG_CHECKING([whether you enable xtest module])
+AC_ARG_ENABLE(xtest,
+              AS_HELP_STRING([--enable-xtest=no/yes],
+                             [Send keyboard event with xtest. default=no]),
+              enable_xtest=yes,
+              enable_xtest=no)
+AC_MSG_RESULT($enable_xtest)
 AM_CONDITIONAL(HAVE_XTEST, false)
-AC_CHECK_LIB(Xtst, XTestFakeKeyEvent,
-             dnl - Do not put NULL string here so that LIBS is not overrided.
-            [AC_MSG_NOTICE([use $XTEST_LIBS for XTEST module])
-             AM_CONDITIONAL(HAVE_XTEST, true)],
-            [AC_MSG_NOTICE([if you want to enable X11 XTEST module, install libXtst-devel package])])
-LIBS=$backup_LIBS
+
+if test x"$enable_xtest" = xyes; then
+    backup_LIBS=$LIBS
+    if test "x$XTEST_LIBS" = "x"  ; then
+        XTEST_LIBS="-lXtst"
+    fi
+    LIBS="$LIBS $XTEST_LIBS"
+    AC_CHECK_LIB(Xtst, XTestFakeKeyEvent,
+                 dnl - Do not put NULL string here so that LIBS is not overrided.
+                [AC_MSG_NOTICE([use $XTEST_LIBS for XTEST module])
+                 AM_CONDITIONAL(HAVE_XTEST, true)],
+                [AC_MSG_NOTICE([if you want to enable X11 XTEST module, install libXtst-devel package])])
+    LIBS=$backup_LIBS
+fi
 AC_SUBST(XTEST_LIBS)
 
 dnl - define GETTEXT_* variables
