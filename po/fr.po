@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2010-06-29 15:16+0900\n"
+"POT-Creation-Date: 2010-07-02 00:43+0900\n"
 "PO-Revision-Date: 2010-05-13 03:08+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: French\n"
@@ -406,246 +406,284 @@ msgstr ""
 msgid "translator_credits"
 msgstr ""
 
-#: ../data/str.xml.in.h:1
-msgid "Angel"
-msgstr ""
-
+#. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
 #: ../data/str.xml.in.h:2
-msgid "Angry"
+msgid "Acronym"
 msgstr ""
 
 #: ../data/str.xml.in.h:3
-msgid "Bad"
+msgid "Acronym (Computer)"
 msgstr ""
 
-#: ../data/str.xml.in.h:4
-msgid "Bear"
-msgstr ""
-
+#. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
 #: ../data/str.xml.in.h:5
-msgid "Beer"
+msgid "Acronym (Japanese)"
 msgstr ""
 
 #: ../data/str.xml.in.h:6
-msgid "Boy"
+msgid "Angel"
 msgstr ""
 
 #: ../data/str.xml.in.h:7
-msgid "Bunny"
+msgid "Angry"
 msgstr ""
 
 #: ../data/str.xml.in.h:8
-msgid "Cake"
+msgid "Bad"
 msgstr ""
 
 #: ../data/str.xml.in.h:9
-msgid "Cat"
+msgid "Bear"
 msgstr ""
 
 #: ../data/str.xml.in.h:10
-msgid "Chat"
+msgid "Beer"
 msgstr ""
 
 #: ../data/str.xml.in.h:11
-msgid "Clock"
+msgid "Boy"
 msgstr ""
 
 #: ../data/str.xml.in.h:12
-msgid "Coffee"
+msgid "Bunny"
 msgstr ""
 
 #: ../data/str.xml.in.h:13
-msgid "Confused"
+msgid "Bye"
 msgstr ""
 
 #: ../data/str.xml.in.h:14
-msgid "Crow"
+msgid "Cake"
 msgstr ""
 
 #: ../data/str.xml.in.h:15
-msgid "Crying"
+msgid "Cannot read between lines (Kuuki Ga Yomenai)"
 msgstr ""
 
 #: ../data/str.xml.in.h:16
-msgid "Devil"
+msgid "Cat"
 msgstr ""
 
 #: ../data/str.xml.in.h:17
-msgid "Dog"
+msgid "Chat"
 msgstr ""
 
 #: ../data/str.xml.in.h:18
-msgid "Don't Know"
+msgid "Clock"
 msgstr ""
 
 #: ../data/str.xml.in.h:19
-msgid "Drink"
+msgid "Coffee"
 msgstr ""
 
 #: ../data/str.xml.in.h:20
-msgid "Embarrassed"
+msgid "Confused"
 msgstr ""
 
 #: ../data/str.xml.in.h:21
-msgid "Film"
+msgid "Crow"
 msgstr ""
 
 #: ../data/str.xml.in.h:22
-msgid "Foot in Mouth"
+msgid "Crying"
 msgstr ""
 
 #: ../data/str.xml.in.h:23
-msgid "Girl"
+msgid "Detail (Kuwashiku)"
 msgstr ""
 
 #: ../data/str.xml.in.h:24
-msgid "Glasses Cool"
+msgid "Devil"
 msgstr ""
 
 #: ../data/str.xml.in.h:25
-msgid "Glasses Cool | Eyeroll"
+msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
 msgstr ""
 
 #: ../data/str.xml.in.h:26
-msgid "Good"
+msgid "Dog"
 msgstr ""
 
 #: ../data/str.xml.in.h:27
-msgid "Hug"
+msgid "Don't Know"
 msgstr ""
 
 #: ../data/str.xml.in.h:28
-msgid "Hug Left"
+msgid "Drink"
 msgstr ""
 
 #: ../data/str.xml.in.h:29
-msgid "Hug Right"
+msgid "Embarrassed"
 msgstr ""
 
 #: ../data/str.xml.in.h:30
-msgid "Kiss"
+msgid "Excited (Waku Waku Teka Teka)"
 msgstr ""
 
 #: ../data/str.xml.in.h:31
-msgid "Kiss | Secret"
+msgid "Film"
 msgstr ""
 
 #: ../data/str.xml.in.h:32
-msgid "Love"
+msgid "Foot in Mouth"
 msgstr ""
 
 #: ../data/str.xml.in.h:33
-msgid "Love Over"
+msgid "Girl"
 msgstr ""
 
 #: ../data/str.xml.in.h:34
-msgid "Mail"
+msgid "Glasses Cool"
 msgstr ""
 
 #: ../data/str.xml.in.h:35
-msgid "Money Mouth"
+msgid "Glasses Cool | Eyeroll"
 msgstr ""
 
 #: ../data/str.xml.in.h:36
-msgid "Monkey"
+msgid "Good"
 msgstr ""
 
 #: ../data/str.xml.in.h:37
-msgid "Moon"
+msgid "Hug"
 msgstr ""
 
 #: ../data/str.xml.in.h:38
-msgid "Musical Note"
+msgid "Hug Left"
 msgstr ""
 
 #: ../data/str.xml.in.h:39
-msgid "Neutral"
+msgid "Hug Right"
 msgstr ""
 
 #: ../data/str.xml.in.h:40
-msgid "Party"
+msgid "Kiss"
 msgstr ""
 
 #: ../data/str.xml.in.h:41
-msgid "Phone"
+msgid "Kiss | Secret"
 msgstr ""
 
 #: ../data/str.xml.in.h:42
-msgid "Present"
+msgid "Laugh"
 msgstr ""
 
 #: ../data/str.xml.in.h:43
-msgid "Sad"
+msgid "Love"
 msgstr ""
 
 #: ../data/str.xml.in.h:44
-msgid "Shock"
+msgid "Love Over"
 msgstr ""
 
 #: ../data/str.xml.in.h:45
-msgid "Shout"
+msgid "Mail"
 msgstr ""
 
 #: ../data/str.xml.in.h:46
-msgid "Shut Mouth"
+msgid "Money Mouth"
 msgstr ""
 
 #: ../data/str.xml.in.h:47
-msgid "Sick"
+msgid "Monkey"
 msgstr ""
 
 #: ../data/str.xml.in.h:48
-msgid "Smile"
+msgid "Moon"
 msgstr ""
 
 #: ../data/str.xml.in.h:49
-msgid "Smile Big"
+msgid "Musical Note"
 msgstr ""
 
 #: ../data/str.xml.in.h:50
+msgid "Neutral"
+msgstr ""
+
+#: ../data/str.xml.in.h:51
+msgid "Party"
+msgstr ""
+
+#: ../data/str.xml.in.h:52
+msgid "Phone"
+msgstr ""
+
+#: ../data/str.xml.in.h:53
+msgid "Present"
+msgstr ""
+
+#: ../data/str.xml.in.h:54
+msgid "Sad"
+msgstr ""
+
+#: ../data/str.xml.in.h:55
+msgid "Shock"
+msgstr ""
+
+#: ../data/str.xml.in.h:56
+msgid "Shout"
+msgstr ""
+
+#: ../data/str.xml.in.h:57
+msgid "Shut Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:58
+msgid "Sick"
+msgstr ""
+
+#: ../data/str.xml.in.h:59
+msgid "Smile"
+msgstr ""
+
+#: ../data/str.xml.in.h:60
+msgid "Smile Big"
+msgstr ""
+
+#: ../data/str.xml.in.h:61
 msgid "Smileys"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:52
+#: ../data/str.xml.in.h:63
 msgid "Smileys (Chinese)"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:54
+#: ../data/str.xml.in.h:65
 msgid "Smileys (Japanese 2ch)"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:56
+#: ../data/str.xml.in.h:67
 msgid "Smileys (Japanese)"
 msgstr ""
 
-#: ../data/str.xml.in.h:57
+#: ../data/str.xml.in.h:68
 msgid "Smoking"
 msgstr ""
 
-#: ../data/str.xml.in.h:58
+#: ../data/str.xml.in.h:69
 msgid "Sorry"
 msgstr ""
 
-#: ../data/str.xml.in.h:59
+#: ../data/str.xml.in.h:70
 msgid "Star"
 msgstr ""
 
-#: ../data/str.xml.in.h:60
+#: ../data/str.xml.in.h:71
 msgid "Thinking"
 msgstr ""
 
-#: ../data/str.xml.in.h:61
+#: ../data/str.xml.in.h:72
 msgid "Tongue"
 msgstr ""
 
-#: ../data/str.xml.in.h:62
+#: ../data/str.xml.in.h:73
 msgid "Wink"
 msgstr ""
 
-#: ../data/str.xml.in.h:63
+#: ../data/str.xml.in.h:74
 msgid "Yawn"
 msgstr ""
 

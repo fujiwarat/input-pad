@@ -682,6 +682,240 @@
           <_comment>Bear</_comment>
         </string>
       </table>
+      <table>
+        <column>8</column>
+        <!-- http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0 -->
+        <_name>Acronym</_name>
+        <string>
+          <label>afk</label>
+          <comment>Away From Keyboard</comment>
+        </string>
+        <string>
+          <label>AI</label>
+          <comment>Action Item</comment>
+        </string>
+        <string>
+          <label>AKA</label>
+          <comment>as known as</comment>
+        </string>
+        <string>
+          <label>APAC</label>
+          <comment>Asia Pacific</comment>
+        </string>
+        <string>
+          <label>ASAP</label>
+          <comment>As Soon As Possible</comment>
+        </string>
+        <string>
+          <label>BFN</label>
+          <comment>Bye For Now</comment>
+        </string>
+        <string>
+          <label>BRB</label>
+          <comment>Be Right Back</comment>
+        </string>
+        <string>
+          <label>BTW</label>
+          <comment>By The Way</comment>
+        </string>
+        <string>
+          <label>COB</label>
+          <comment>Close Of Business</comment>
+        </string>
+        <string>
+          <label>CUL</label>
+          <comment>See You Later</comment>
+        </string>
+        <string>
+          <label>cya</label>
+          <comment>See You Again</comment>
+        </string>
+        <string>
+          <label>DND</label>
+          <comment>Drag-aNd-Drop</comment>
+        </string>
+        <string>
+          <label>FYA</label>
+          <comment>For Your Amusement</comment>
+        </string>
+        <string>
+          <label>FYI</label>
+          <comment>For Your Information</comment>
+        </string>
+        <string>
+          <label>HTH</label>
+          <comment>Hope This Helps</comment>
+        </string>
+        <string>
+          <label>IMHO</label>
+          <comment>In My Humble Opinion</comment>
+        </string>
+        <string>
+          <label>IMO</label>
+          <comment>In My Opinion</comment>
+        </string>
+        <string>
+          <label>lol</label>
+          <comment>Laugh Out Loud</comment>
+        </string>
+        <string>
+          <label>N/A</label>
+          <comment>Not Applicable</comment>
+        </string>
+        <string>
+          <label>thx</label>
+          <comment>Thanks</comment>
+        </string>
+        <string>
+          <label>TIA</label>
+          <comment>Thanks In Advance</comment>
+        </string>
+        <string>
+          <label>TTYL</label>
+          <comment>Talk To You Later</comment>
+        </string>
+        <string>
+          <label>ty</label>
+          <comment>Thank You</comment>
+        </string>
+        <string>
+          <label>WT</label>
+          <comment>Without Thinking</comment>
+        </string>
+      </table>
+      <table>
+        <column>8</column>
+        <_name>Acronym (Computer)</_name>
+        <string>
+          <label>ABI</label>
+          <comment>Application Binary Interface</comment>
+        </string>
+        <string>
+          <label>ANSI</label>
+          <comment>American National Standards Institute</comment>
+        </string>
+        <string>
+          <label>BCC</label>
+          <comment>Blind Carbon Copy</comment>
+        </string>
+        <string>
+          <label>CC</label>
+          <comment>Carbon Copy</comment>
+        </string>
+        <string>
+          <label>E$</label>
+          <comment>Extended Cache</comment>
+        </string>
+        <string>
+          <label>GBIC</label>
+          <comment>Giga Git Interface Converter</comment>
+        </string>
+        <string>
+          <label>GPL</label>
+          <comment>GNU General Public License</comment>
+        </string>
+        <string>
+          <label>GRUB</label>
+          <comment>GRand Unified Bootloader</comment>
+        </string>
+        <string>
+          <label>GUI</label>
+          <comment>Graphical User Interface</comment>
+        </string>
+        <string>
+          <label>HBA</label>
+          <comment>Host Bus Adapter</comment>
+        </string>
+        <string>
+          <label>HIG</label>
+          <comment>Human Inteface Guide</comment>
+        </string>
+        <string>
+          <label>HTML</label>
+          <comment>HyperText Markup Language</comment>
+        </string>
+        <string>
+          <label>HTTP</label>
+          <comment>HyperText Transport Protocol</comment>
+        </string>
+        <string>
+          <label>LAN</label>
+          <comment>Local Area Network</comment>
+        </string>
+        <string>
+          <label>LED</label>
+          <comment>Light-Emitting Diode</comment>
+        </string>
+        <string>
+          <label>LGPL</label>
+          <comment>GNU Lesser General Public License</comment>
+        </string>
+        <string>
+          <label>LU</label>
+          <comment>Logical Unit</comment>
+        </string>
+        <string>
+          <label>LUN</label>
+          <comment>Logical UNit</comment>
+        </string>
+        <string>
+          <label>POST</label>
+          <comment>Power-On Self-Test</comment>
+        </string>
+        <string>
+          <label>PXE</label>
+          <comment>Preboot eXecution Environment</comment>
+        </string>
+        <string>
+          <label>RAID</label>
+          <comment>Redundant Array of Independent Disks</comment>
+        </string>
+        <string>
+          <label>RAM</label>
+          <comment>Random-Access Memory</comment>
+        </string>
+        <string>
+          <label>ROM</label>
+          <comment>Read Only Memory</comment>
+        </string>
+        <string>
+          <label>SCM</label>
+          <comment>Source Codes Management</comment>
+        </string>
+      </table>
+      <table>
+        <column>8</column>
+        <!-- http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0 -->
+        <_name>Acronym (Japanese)</_name>
+        <string>
+          <label>AKY</label>
+          <_comment>Do not want to read between lines (Aete Kuuki Wo Yomanai)</_comment>
+        </string>
+        <string>
+          <label>GHQ</label>
+          <comment>Go Home Quickly</comment>
+        </string>
+        <string>
+          <label>kwsk</label>
+          <_comment>Detail (Kuwashiku)</_comment>
+        </string>
+        <string>
+          <label>KY</label>
+          <_comment>Cannot read between lines (Kuuki Ga Yomenai)</_comment>
+        </string>
+        <string>
+          <label>wktk</label>
+          <_comment>Excited (Waku Waku Teka Teka)</_comment>
+        </string>
+        <string>
+          <label>www</label>
+          <_comment>Laugh</_comment>
+        </string>
+        <string>
+          <label>ノシ</label>
+          <_comment>Bye</_comment>
+        </string>
+      </table>
     </group>
   </pad>
 </input-pad>

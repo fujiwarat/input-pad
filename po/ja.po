@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2010-06-29 15:16+0900\n"
-"PO-Revision-Date: 2010-06-29 15:16+0900\n"
+"POT-Creation-Date: 2010-07-02 00:43+0900\n"
+"PO-Revision-Date: 2010-07-02 00:43+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -426,246 +426,284 @@ msgstr "トラブルシュート(_T)"
 msgid "translator_credits"
 msgstr "translator_credits"
 
-#: ../data/str.xml.in.h:1
+#. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
+#: ../data/str.xml.in.h:2
+msgid "Acronym"
+msgstr "略語"
+
+#: ../data/str.xml.in.h:3
+msgid "Acronym (Computer)"
+msgstr "略語 (コンピューター)"
+
+#. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
+#: ../data/str.xml.in.h:5
+msgid "Acronym (Japanese)"
+msgstr "略語 (日本語)"
+
+#: ../data/str.xml.in.h:6
 msgid "Angel"
 msgstr ""
 
-#: ../data/str.xml.in.h:2
+#: ../data/str.xml.in.h:7
 msgid "Angry"
 msgstr ""
 
-#: ../data/str.xml.in.h:3
+#: ../data/str.xml.in.h:8
 msgid "Bad"
 msgstr ""
 
-#: ../data/str.xml.in.h:4
+#: ../data/str.xml.in.h:9
 msgid "Bear"
 msgstr ""
 
-#: ../data/str.xml.in.h:5
+#: ../data/str.xml.in.h:10
 msgid "Beer"
 msgstr ""
 
-#: ../data/str.xml.in.h:6
+#: ../data/str.xml.in.h:11
 msgid "Boy"
 msgstr ""
 
-#: ../data/str.xml.in.h:7
+#: ../data/str.xml.in.h:12
 msgid "Bunny"
 msgstr ""
 
-#: ../data/str.xml.in.h:8
+#: ../data/str.xml.in.h:13
+msgid "Bye"
+msgstr "さよなら"
+
+#: ../data/str.xml.in.h:14
 msgid "Cake"
 msgstr ""
 
-#: ../data/str.xml.in.h:9
+#: ../data/str.xml.in.h:15
+msgid "Cannot read between lines (Kuuki Ga Yomenai)"
+msgstr "空気が読めない"
+
+#: ../data/str.xml.in.h:16
 msgid "Cat"
 msgstr ""
 
-#: ../data/str.xml.in.h:10
+#: ../data/str.xml.in.h:17
 msgid "Chat"
 msgstr "チャット"
 
-#: ../data/str.xml.in.h:11
+#: ../data/str.xml.in.h:18
 msgid "Clock"
 msgstr "時計"
 
-#: ../data/str.xml.in.h:12
+#: ../data/str.xml.in.h:19
 msgid "Coffee"
 msgstr ""
 
-#: ../data/str.xml.in.h:13
+#: ../data/str.xml.in.h:20
 msgid "Confused"
 msgstr ""
 
-#: ../data/str.xml.in.h:14
+#: ../data/str.xml.in.h:21
 msgid "Crow"
 msgstr "カラス"
 
-#: ../data/str.xml.in.h:15
+#: ../data/str.xml.in.h:22
 msgid "Crying"
 msgstr "泣き顔"
 
-#: ../data/str.xml.in.h:16
+#: ../data/str.xml.in.h:23
+msgid "Detail (Kuwashiku)"
+msgstr "詳しく"
+
+#: ../data/str.xml.in.h:24
 msgid "Devil"
 msgstr ""
 
-#: ../data/str.xml.in.h:17
+#: ../data/str.xml.in.h:25
+msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
+msgstr "敢えて空気を読まない"
+
+#: ../data/str.xml.in.h:26
 msgid "Dog"
 msgstr ""
 
-#: ../data/str.xml.in.h:18
+#: ../data/str.xml.in.h:27
 msgid "Don't Know"
 msgstr ""
 
-#: ../data/str.xml.in.h:19
+#: ../data/str.xml.in.h:28
 msgid "Drink"
 msgstr ""
 
-#: ../data/str.xml.in.h:20
+#: ../data/str.xml.in.h:29
 msgid "Embarrassed"
 msgstr ""
 
-#: ../data/str.xml.in.h:21
+#: ../data/str.xml.in.h:30
+msgid "Excited (Waku Waku Teka Teka)"
+msgstr "わくわくてかてか"
+
+#: ../data/str.xml.in.h:31
 msgid "Film"
 msgstr "フィルム"
 
-#: ../data/str.xml.in.h:22
+#: ../data/str.xml.in.h:32
 msgid "Foot in Mouth"
 msgstr ""
 
-#: ../data/str.xml.in.h:23
+#: ../data/str.xml.in.h:33
 msgid "Girl"
 msgstr ""
 
-#: ../data/str.xml.in.h:24
+#: ../data/str.xml.in.h:34
 msgid "Glasses Cool"
 msgstr ""
 
-#: ../data/str.xml.in.h:25
+#: ../data/str.xml.in.h:35
 msgid "Glasses Cool | Eyeroll"
 msgstr ""
 
-#: ../data/str.xml.in.h:26
+#: ../data/str.xml.in.h:36
 msgid "Good"
 msgstr ""
 
-#: ../data/str.xml.in.h:27
+#: ../data/str.xml.in.h:37
 msgid "Hug"
 msgstr ""
 
-#: ../data/str.xml.in.h:28
+#: ../data/str.xml.in.h:38
 msgid "Hug Left"
 msgstr ""
 
-#: ../data/str.xml.in.h:29
+#: ../data/str.xml.in.h:39
 msgid "Hug Right"
 msgstr ""
 
-#: ../data/str.xml.in.h:30
+#: ../data/str.xml.in.h:40
 msgid "Kiss"
 msgstr ""
 
-#: ../data/str.xml.in.h:31
+#: ../data/str.xml.in.h:41
 msgid "Kiss | Secret"
 msgstr ""
 
-#: ../data/str.xml.in.h:32
+#: ../data/str.xml.in.h:42
+msgid "Laugh"
+msgstr "笑う"
+
+#: ../data/str.xml.in.h:43
 msgid "Love"
 msgstr ""
 
-#: ../data/str.xml.in.h:33
+#: ../data/str.xml.in.h:44
 msgid "Love Over"
 msgstr ""
 
-#: ../data/str.xml.in.h:34
+#: ../data/str.xml.in.h:45
 msgid "Mail"
 msgstr "メール"
 
-#: ../data/str.xml.in.h:35
+#: ../data/str.xml.in.h:46
 msgid "Money Mouth"
 msgstr ""
 
-#: ../data/str.xml.in.h:36
+#: ../data/str.xml.in.h:47
 msgid "Monkey"
 msgstr ""
 
-#: ../data/str.xml.in.h:37
+#: ../data/str.xml.in.h:48
 msgid "Moon"
 msgstr "月"
 
-#: ../data/str.xml.in.h:38
+#: ../data/str.xml.in.h:49
 msgid "Musical Note"
 msgstr "音符"
 
-#: ../data/str.xml.in.h:39
+#: ../data/str.xml.in.h:50
 msgid "Neutral"
 msgstr ""
 
-#: ../data/str.xml.in.h:40
+#: ../data/str.xml.in.h:51
 msgid "Party"
 msgstr ""
 
-#: ../data/str.xml.in.h:41
+#: ../data/str.xml.in.h:52
 msgid "Phone"
 msgstr ""
 
-#: ../data/str.xml.in.h:42
+#: ../data/str.xml.in.h:53
 msgid "Present"
 msgstr ""
 
-#: ../data/str.xml.in.h:43
+#: ../data/str.xml.in.h:54
 msgid "Sad"
 msgstr ""
 
-#: ../data/str.xml.in.h:44
+#: ../data/str.xml.in.h:55
 msgid "Shock"
 msgstr "ショック"
 
-#: ../data/str.xml.in.h:45
+#: ../data/str.xml.in.h:56
 msgid "Shout"
 msgstr ""
 
-#: ../data/str.xml.in.h:46
+#: ../data/str.xml.in.h:57
 msgid "Shut Mouth"
 msgstr ""
 
-#: ../data/str.xml.in.h:47
+#: ../data/str.xml.in.h:58
 msgid "Sick"
 msgstr "病気"
 
-#: ../data/str.xml.in.h:48
+#: ../data/str.xml.in.h:59
 msgid "Smile"
 msgstr "スマイル"
 
-#: ../data/str.xml.in.h:49
+#: ../data/str.xml.in.h:60
 msgid "Smile Big"
 msgstr ""
 
-#: ../data/str.xml.in.h:50
+#: ../data/str.xml.in.h:61
 msgid "Smileys"
 msgstr "顔文字"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:52
+#: ../data/str.xml.in.h:63
 msgid "Smileys (Chinese)"
 msgstr "顔文字 (中国語)"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:54
+#: ../data/str.xml.in.h:65
 msgid "Smileys (Japanese 2ch)"
 msgstr "顔文字 (日本語 2ch)"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:56
+#: ../data/str.xml.in.h:67
 msgid "Smileys (Japanese)"
 msgstr "顔文字 (日本語)"
 
-#: ../data/str.xml.in.h:57
+#: ../data/str.xml.in.h:68
 msgid "Smoking"
 msgstr ""
 
-#: ../data/str.xml.in.h:58
+#: ../data/str.xml.in.h:69
 msgid "Sorry"
 msgstr ""
 
-#: ../data/str.xml.in.h:59
+#: ../data/str.xml.in.h:70
 msgid "Star"
 msgstr ""
 
-#: ../data/str.xml.in.h:60
+#: ../data/str.xml.in.h:71
 msgid "Thinking"
 msgstr "考え中"
 
-#: ../data/str.xml.in.h:61
+#: ../data/str.xml.in.h:72
 msgid "Tongue"
 msgstr ""
 
-#: ../data/str.xml.in.h:62
+#: ../data/str.xml.in.h:73
 msgid "Wink"
 msgstr ""
 
-#: ../data/str.xml.in.h:63
+#: ../data/str.xml.in.h:74
 msgid "Yawn"
 msgstr ""
 
