@@ -21,10 +21,10 @@
 # MA  02110-1301  USA
 
 dnl - if not 1, append datestamp to the version number.
-m4_define([pad_released], [0])
+m4_define([pad_released], [1])
 m4_define([pad_major_version], [0])
 m4_define([pad_minor_version], [1])
-m4_define([pad_micro_version], [0])
+m4_define([pad_micro_version], [1])
 m4_define(pad_maybe_datestamp,
     m4_esyscmd([if test x]pad_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
 

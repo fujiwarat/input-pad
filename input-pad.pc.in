@@ -1,4 +1,5 @@
 prefix=@prefix@
+exec_prefix=@exec_prefix@
 libdir=@libdir@
 includedir=@includedir@/input-pad-@libinput_pad_VERSION@
 kbduidir=@libdir@/input-pad-@libinput_pad_VERSION@/modules/kbdui
