@@ -48,6 +48,7 @@
 #define MAX_UCODE 0x10ffff
 #define NEW_CUSTOM_CHAR_TABLE 1
 #define MODULE_NAME_PREFIX "input-pad-"
+#define USE_GLOBAL_GMODULE 1
 
 #define INPUT_PAD_GTK_WINDOW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_WINDOW, InputPadGtkWindowPrivate))
 
@@ -100,6 +101,8 @@ struct _InputPadGtkWindowPrivate {
     gchar                     **group_layouts;
     guint                       char_button_sensitive : 1;
     GdkColor                   *color_gray;
+    /* The kbdui_name is used for each window instance. */
+    gchar                      *kbdui_name;
     InputPadGtkKbdui           *kbdui;
     GtkToggleAction            *show_all_chars_action;
     GtkToggleAction            *show_custom_chars_action;
@@ -130,10 +133,22 @@ struct _CharTreeViewData {
 
 static guint                    signals[LAST_SIGNAL] = { 0 };
 static gboolean                 use_module_xtest = FALSE;
+/* The kbdui_name is used for CLI only. */
 static gchar                   *kbdui_name = NULL;
 static gboolean                 ask_version = FALSE;
 static guint                    set_show_table_type = 1;
 static guint                    set_show_layout_type = 1;
+
+#ifdef USE_GLOBAL_GMODULE
+/* module_table: global GModule hash table
+ * G_DEFINE_TYPE() uses static volatile address in ##_get_type() so
+ * if we close GModule and reopen it, the address will be changed and
+ * g_type_register_static_simple() could not get the previous register.
+ * The workaround is to have the global GModule table not to be closed
+ * even thogh GtkWindow is destroyed. */
+static GHashTable              *module_table = NULL;
+#endif
+
 #if 0
 static GtkBuildableIface       *parent_buildable_iface;
 #endif
@@ -196,7 +211,13 @@ static char *           get_keysym_display_name (guint              keysym,
 static void             create_keyboard_layout_ui_real_default
                                                 (GtkWidget         *vbox,
                                                  InputPadGtkWindow *window);
+G_INLINE_FUNC void      create_keyboard_layout_ui_real
+                                                (GtkWidget         *vbox,
+                                                 InputPadGtkWindow *window);
 static void             destroy_prev_keyboard_layout_default
+                                                (GtkWidget         *vbox,
+                                                 InputPadGtkWindow *window);
+G_INLINE_FUNC void      destroy_prev_keyboard_layout
                                                 (GtkWidget         *vbox,
                                                  InputPadGtkWindow *window);
 static void             create_keyboard_layout_list_ui_real
@@ -239,32 +260,6 @@ G_DEFINE_TYPE_WITH_CODE (InputPadGtkWindow, input_pad_gtk_window,
                          GTK_TYPE_WINDOW,
                          G_IMPLEMENT_INTERFACE (GTK_TYPE_BUILDABLE,
                                                 input_pad_gtk_window_buildable_interface_init))
-
-G_INLINE_FUNC void
-create_keyboard_layout_ui_real (GtkWidget         *vbox,
-                                InputPadGtkWindow *window)
-{
-    if (kbdui_name && window->priv->kbdui) {
-        g_signal_emit_by_name (window->priv->kbdui,
-                               "create-keyboard-layout",
-                               vbox, window);
-        return;
-    }
-    create_keyboard_layout_ui_real_default (vbox, window);
-}
-
-G_INLINE_FUNC void
-destroy_prev_keyboard_layout (GtkWidget         *vbox,
-                              InputPadGtkWindow *window)
-{
-    if (kbdui_name && window->priv->kbdui) {
-        g_signal_emit_by_name (window->priv->kbdui,
-                               "destroy-keyboard-layout",
-                               vbox, window);
-        return;
-    }
-    destroy_prev_keyboard_layout_default (vbox, window);
-}
 
 static void
 on_window_close (InputPadGtkWindow *window, gpointer data)
@@ -422,7 +417,7 @@ on_window_group_changed_custom_char_views (InputPadGtkWindow *window,
                                            gpointer           data)
 {
     GtkWidget *hbox;
-    InputPadGroup *custom_group;
+    InputPadGroup *custom_group = NULL;
 
     g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
     g_return_if_fail (GTK_IS_HBOX (data));
@@ -448,7 +443,7 @@ on_window_group_appended_custom_char_views (InputPadGtkWindow *window,
                                             gpointer           data)
 {
     GtkWidget *hbox;
-    InputPadGroup *custom_group;
+    InputPadGroup *custom_group = NULL;
 
     g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
     g_return_if_fail (GTK_IS_HBOX (data));
@@ -681,7 +676,7 @@ on_combobox_layout_changed (GtkComboBox *combobox,
     }
     window->priv->xkb_key_list =
         input_pad_gdk_xkb_parse_keyboard_layouts (window);
-    if (kbdui_name && window->priv->xkb_key_list == NULL) {
+    if (window->priv->kbdui_name && window->priv->xkb_key_list == NULL) {
         return;
     }
 
@@ -1180,7 +1175,7 @@ on_window_realize (GtkWidget *window, gpointer data)
 
     input_pad->priv->xkb_key_list = 
         input_pad_gdk_xkb_parse_keyboard_layouts (input_pad);
-    if (kbdui_name && input_pad->priv->xkb_key_list == NULL) {
+    if (input_pad->priv->kbdui_name && input_pad->priv->xkb_key_list == NULL) {
         return;
     }
 
@@ -2368,6 +2363,19 @@ create_keyboard_layout_ui_real_default (GtkWidget *vbox, InputPadGtkWindow *wind
                       table_data);
 }
 
+G_INLINE_FUNC void
+create_keyboard_layout_ui_real (GtkWidget         *vbox,
+                                InputPadGtkWindow *window)
+{
+    if (window->priv->kbdui_name && window->priv->kbdui) {
+        g_signal_emit_by_name (window->priv->kbdui,
+                               "create-keyboard-layout",
+                               vbox, window);
+        return;
+    }
+    create_keyboard_layout_ui_real_default (vbox, window);
+}
+
 static void
 destroy_prev_keyboard_layout_default (GtkWidget *vbox, InputPadGtkWindow *window)
 {
@@ -2397,6 +2405,19 @@ destroy_prev_keyboard_layout_default (GtkWidget *vbox, InputPadGtkWindow *window
     }
     gtk_widget_hide (hbox);
     gtk_widget_destroy (hbox);
+}
+
+G_INLINE_FUNC void
+destroy_prev_keyboard_layout (GtkWidget         *vbox,
+                              InputPadGtkWindow *window)
+{
+    if (window->priv->kbdui_name && window->priv->kbdui) {
+        g_signal_emit_by_name (window->priv->kbdui,
+                               "destroy-keyboard-layout",
+                               vbox, window);
+        return;
+    }
+    destroy_prev_keyboard_layout_default (vbox, window);
 }
 
 static int
@@ -3487,9 +3508,39 @@ input_pad_gtk_window_xtest_gdk_setup (InputPadGtkWindow *window)
 
 #endif /* MODULE_XTEST_GDK_BASE */
 
+static GModule *
+kbdui_module_open (const gchar *filepath)
+{
+#ifndef USE_GLOBAL_GMODULE
+    return g_module_open (filepath, G_MODULE_BIND_LAZY);
+#else
+    GModule *module = NULL;
+
+    g_return_val_if_fail (filepath != NULL, NULL);
+
+    if (module_table == NULL) {
+        module_table = g_hash_table_new_full (g_str_hash, g_str_equal,
+                                              (GDestroyNotify) g_free,
+                                              NULL);
+        g_return_val_if_fail (module_table != NULL, NULL);
+    }
+    module = (GModule *) g_hash_table_lookup (module_table, filepath);
+    if (module == NULL) {
+        module = g_module_open (filepath, G_MODULE_BIND_LAZY);
+        if (module) {
+            g_hash_table_insert (module_table,
+                                 (gpointer) g_strdup (filepath),
+                                 (gpointer) module);
+        }
+    }
+    return module;
+#endif
+}
+
 static void
 kbdui_module_close (GModule *module)
 {
+#ifndef USE_GLOBAL_GMODULE
     const gchar *error = NULL;
     const gchar *module_name;
 
@@ -3500,6 +3551,7 @@ kbdui_module_close (GModule *module)
                    module_name ? module_name : "",
                    error ? error : "");
     }
+#endif
 }
 
 static void
@@ -3668,7 +3720,7 @@ input_pad_gtk_window_parse_kbdui_module_arg_init (int                          *
     g_free (name);
     g_return_val_if_fail (filepath != NULL, NULL);
 
-    module = g_module_open (filepath, G_MODULE_BIND_LAZY);
+    module = kbdui_module_open (filepath);
     if (module == NULL) {
         error = g_module_error ();
         g_warning ("Could not open %s: %s", filepath, error ? error : "");
@@ -3728,7 +3780,7 @@ input_pad_gtk_window_parse_kbdui_modules (int                          *argc,
             continue;
         }
         filepath = g_build_filename (dirname, filename, NULL);
-        module = g_module_open (filepath, G_MODULE_BIND_LAZY);
+        module = kbdui_module_open (filepath);
         if (module == NULL) {
             err_message = g_module_error ();
             g_warning ("Could not open %s: %s", filename, err_message ? err_message : "");
@@ -3800,21 +3852,21 @@ input_pad_gtk_window_kbdui_init (InputPadGtkWindow *window)
         return;
     }
 
-    g_return_if_fail (kbdui_name != NULL);
+    g_return_if_fail (window->priv->kbdui_name != NULL);
 
     if (!g_module_supported ()) {
         error = g_module_error ();
         g_warning ("Module (%s) is not supported on your platform: %s",
-                   kbdui_name, error ? error : "");
+                   window->priv->kbdui_name, error ? error : "");
         return;
     }
 
-    name = g_strdup_printf ("%s%s", MODULE_NAME_PREFIX, kbdui_name);
+    name = g_strdup_printf ("%s%s", MODULE_NAME_PREFIX, window->priv->kbdui_name);
     filename = g_module_build_path (MODULE_KBDUI_DIR, name);
     g_free (name);
     g_return_if_fail (filename != NULL);
 
-    module = g_module_open (filename, G_MODULE_BIND_LAZY);
+    module = kbdui_module_open (filename);
     if (module == NULL) {
         error = g_module_error ();
         g_warning ("Could not open %s: %s", filename, error ? error : "");
@@ -3888,6 +3940,9 @@ input_pad_gtk_window_set_priv (InputPadGtkWindow *window)
     }
     gdk_colormap_alloc_color (gdk_colormap_get_system(), &color, FALSE, TRUE);
     priv->color_gray = gdk_color_copy (&color);
+    if (kbdui_name) {
+        priv->kbdui_name = g_strdup (kbdui_name);
+    }
 
     window->priv = priv;
 }
@@ -3901,7 +3956,7 @@ input_pad_gtk_window_init (InputPadGtkWindow *window)
         input_pad_gtk_window_xtest_gdk_init (window);
     }
 #endif
-    if (kbdui_name) {
+    if (window->priv->kbdui_name) {
         input_pad_gtk_window_kbdui_init (window);
     }
 }
@@ -3948,9 +4003,11 @@ input_pad_gtk_window_real_destroy (GtkObject *object)
             input_pad_gtk_window_xtest_gdk_destroy (window);
         }
 #endif
-        if (kbdui_name && window->priv->kbdui) {
+        if (window->priv->kbdui) {
             input_pad_gtk_window_kbdui_destroy (window);
         }
+        g_free (window->priv->kbdui_name);
+        window->priv->kbdui_name = NULL;
         window->priv = NULL;
     }
     GTK_OBJECT_CLASS (input_pad_gtk_window_parent_class)->destroy (object);
@@ -4211,7 +4268,7 @@ input_pad_gtk_window_get_kbdui_name_list (void)
     gchar *filepath;
     GModule *module = NULL;
     GDir *dir;
-    int len;
+    int len = 0;
 
     g_return_val_if_fail (MODULE_KBDUI_DIR != NULL, NULL);
 
@@ -4293,24 +4350,28 @@ input_pad_gtk_window_set_kbdui_name (InputPadGtkWindow *window,
     GModule *module;
     InputPadGtkKbduiContext *context;
 
-    if (kbdui_name && window->priv->kbdui) {
+    if (!g_strcmp0 (name, window->priv->kbdui_name)) {
+        return;
+    }
+    if (window->priv->kbdui) {
         input_pad_gtk_window_kbdui_destroy (window);
     }
-    g_free (kbdui_name);
+    g_free (window->priv->kbdui_name);
+    window->priv->kbdui_name = NULL;
 
     if (name == NULL) {
-        kbdui_name = NULL;
+        window->priv->kbdui_name = NULL;
         return;
     }
     if (g_strcmp0 (name, "default") == 0) {
-        kbdui_name = NULL;
+        window->priv->kbdui_name = NULL;
         return;
     }
-    kbdui_name = g_strdup (name);
-    if (kbdui_name) {
+    window->priv->kbdui_name = g_strdup (name);
+    if (window->priv->kbdui_name) {
         context = input_pad_gtk_kbdui_context_new ();
         module = input_pad_gtk_window_parse_kbdui_module_arg_init (NULL, NULL,
-                                                                   kbdui_name,
+                                                                   window->priv->kbdui_name,
                                                                    context);
         if (!module) {
             input_pad_gtk_kbdui_context_destroy (context);
