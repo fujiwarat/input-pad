@@ -38,9 +38,10 @@ rawhide also provide eekboard GUI extension [1]
 {{{
 # yumdownloader --enablerepo=rawhide input-pad
 # yumdownloader --enablerepo=rawhide eekboard-libs
+# yumdownloader --enablerepo=rawhide eekboard
 # yumdownloader --enablerepo=rawhide input-pad-eek
 # yumdownloader --enablerepo=rawhide ibus-input-pad
-# rpm -ihv input-pad-*.rpm ibus-input-pad-*.rpm
+# rpm -ihv input-pad-*.rpm ibus-input-pad-*.rpm eekboard-libs-*.rpm
 % input-pad --help
 }}}
 
@@ -71,6 +72,8 @@ python package:
 
 libinput-pad-eek is the eekboard GUI extension [1]
 {{{
+% sudo apt-get install libeek0
+% sudo apt-get install eekboard
 % sudo apt-get install libinput-pad-eek
 % input-pad --help
 }}}
