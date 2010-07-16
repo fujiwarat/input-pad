@@ -1,0 +1,51 @@
+Source: input-pad-eek
+Section: libs
+Priority: extra
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders: Takao Fujiwara <takao.fujiwara1@gmail.com>
+Build-Depends:
+    autoconf,
+    automake,
+    autotools-dev,
+    intltool (>= 0.40.0),
+    libeek-dev,
+    libgtk2.0-dev,
+    libinput-pad-dev,
+    libxkbfile-dev, 
+    libxklavier-dev (>= 4.0),
+    libxml2-dev (>= 2.0),
+    libxtst-dev, 
+    libtool,
+    python-support (>= 0.6),          
+    python-dev,
+    swig,
+    debhelper (>= 7.0.50)
+Standards-Version: 3.8.4
+Homepage: http://code.google.com/p/input-pad/
+
+Package: libinput-pad-eek
+Architecture: any
+Depends:
+    ${misc:Depends},
+    ${shlibs:Depends},
+    libinput-pad0 (>= 0.1.1),
+    libeek0
+Description: On-screen Input Pad to Send Characters with Mouse - eek
+ The input pad is a tool to send a character on button to text applications.
+ It provides the GTK+ based GUI and can send characteres on the GTK+ buttons.
+ .
+ This package contains the eekboard module for input-pad.
+
+Package: libinput-pad-eek-dev
+Section: libdevel
+Architecture: any
+Depends:
+    ${misc:Depends},
+    libinput-pad0 (>= 0.1.1),
+    libglib2.0-dev,
+    libgtk2.0-dev
+Description: On-screen Input Pad to Send Characters with Mouse - eek-dev
+ The input pad is a tool to send a character on button to text applications.
+ It provides the GTK+ based GUI and can send characteres on the GTK+ buttons.
+ .
+ This package contains the header files for libinput-pad-eek.

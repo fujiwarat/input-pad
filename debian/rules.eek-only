@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+#
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+build:
+	dh $@ --before auto_configure
+	dh_auto_configure -- \
+	  --enable-xtest \
+	  --enable-eek \
+	  --enable-static
+	dh $@ --before auto_test
+	cd po; make input-pad.pot # https://bugs.launchpad.net/ubuntu/+source/ibus/+bug/188690
+	dh $@ --after auto_test
+
+override_dh_auto_install:
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
+
+override_dh_install:
+	(cd debian/tmp; \
+	 rm -rf usr/share; \
+	 rm -rf usr/include; \
+	 rm -rf usr/bin; \
+	 rm -f  usr/lib/libinput-pad.a ; \
+	 rm -f  usr/lib/libinput-pad.la ; \
+	 rm -f  usr/lib/libinput-pad.so* ; \
+	 rm -rf usr/lib/pkgconfig ; \
+	 rm -rf usr/lib/python2.6 ; \
+	 rm -rf usr/lib/input-pad-0.1/modules/xkeysend ; \
+	);
+	dh_install --list-missing --sourcedir=debian/tmp
+
+override_dh_makeshlibs:
+	dh_makeshlibs -Nlibinput-pad-eek -s
+
+%:
+	dh  $@

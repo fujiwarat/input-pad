@@ -1,0 +1,3 @@
+version=3
+http://code.google.com/p/input-pad/downloads/list \
+http://input-pad.googlecode.com/files/input-pad-([0-9].*)\.tar\.gz

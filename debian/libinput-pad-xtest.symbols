@@ -1,0 +1,4 @@
+libinput-pad-xtest-gdk.so libinput-pad-xtest #MINVER#
+ g_module_check_init@Base 0.1
+ input_pad_module_init@Base 0.1
+ input_pad_module_setup@Base 0.1

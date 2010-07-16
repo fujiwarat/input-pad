@@ -1,0 +1,20 @@
+input-pad-eek (0.1.1-1ppa3~lucid) lucid; urgency=low
+
+  * Fixed dependency failures.
+    - debian/control: Added libinput-pad-dev dependency
+
+ -- Takao Fujiwara <takao.fujiwara1@gmail.com>  Wed, 14 Jul 2010 10:45:24 +0900
+
+input-pad-eek (0.1.1-1ppa2~lucid) lucid; urgency=low
+
+  * Fixed dependency failures.
+    - debian/control: Added libeek-dev dependency
+
+ -- Takao Fujiwara <takao.fujiwara1@gmail.com>  Tue, 13 Jul 2010 23:15:01 +0900
+
+input-pad-eek (0.1.1-1ppa1~lucid) lucid; urgency=low
+
+  * Initial release
+
+ -- Takao Fujiwara <takao.fujiwara1@gmail.com>  Tue, 13 Jul 2010 12:30:08 +0900
+

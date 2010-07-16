@@ -1,0 +1,115 @@
+Source: input-pad
+Section: utils
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Uploaders: Takao Fujiwara <takao.fujiwara1@gmail.com>
+Build-Depends:
+    autoconf,
+    automake,
+    autotools-dev,
+    intltool (>= 0.40.0),
+    libeek-dev,
+    libgtk2.0-dev,
+    libxkbfile-dev,
+    libxklavier-dev (>= 4.0),
+    libxml2-dev (>= 2.0),
+    libxtst-dev,
+    libtool,
+    python-support (>= 0.6),
+    python-dev,
+    swig,
+    debhelper (>= 7.0.50)
+Standards-Version: 3.8.4
+Homepage: http://code.google.com/p/input-pad/
+
+Package: input-pad
+Architecture: any
+Depends:
+    ${misc:Depends},
+    ${shlibs:Depends},
+    libinput-pad0 (= ${binary:Version})
+Description: On-screen Input Pad to Send Characters with Mouse
+ The input pad is a tool to send a character on button to text applications.
+ It provides the GTK+ based GUI and can send characteres on the GTK+ buttons.
+ .
+ This package contains a standalone application.
+
+Package: libinput-pad0
+Section: libs
+Architecture: any
+Depends:
+    ${misc:Depends},
+    ${shlibs:Depends},
+    libgtk2.0-0,
+    libxkbfile1,
+    libxklavier16,
+    libxml2
+Enhances: libinput-pad-xtest
+Description: On-screen Input Pad to Send Characters with Mouse - libs
+ The input pad is a tool to send a character on button to text applications.
+ It provides the GTK+ based GUI and can send characteres on the GTK+ buttons.
+ .
+ This package contains libraries for other applications.
+
+Package: libinput-pad-dev
+Section: libdevel
+Priority: extra
+Architecture: any
+Depends:
+    ${misc:Depends},
+    libinput-pad0 (= ${binary:Version}),
+    libglib2.0-dev,
+    libgtk2.0-dev
+Description: On-screen Input Pad to Send Characters with Mouse - dev
+ The input pad is a tool to send a character on button to text applications.
+ It provides the GTK+ based GUI and can send characteres on the GTK+ buttons.
+ .
+ This package contains the header files.
+
+Package: python-input-pad
+Section: python
+Priority: extra
+Architecture: any
+Depends:
+    ${misc:Depends},
+    ${python:Depends},
+    ${shlibs:Depends},
+    libinput-pad0 (= ${binary:Version})
+Provides: ${python:Provides}
+XS-Python-Version: >= 2.6
+XB-Python-Version: ${python:Versions}
+Description: On-screen Input Pad to Send Characters with Mouse - python
+ The input pad is a tool to send a character on button to text applications.
+ It provides the GTK+ based GUI and can send characteres on the GTK+ buttons.
+ .
+ This package contains the Python binding of input-pad.
+
+Package: libinput-pad-xtest
+Section: libs
+Priority: extra
+Architecture: any
+Depends:
+    ${misc:Depends},
+    ${shlibs:Depends},
+    libinput-pad0 (= ${binary:Version}),
+    libxtst6
+Description: On-screen Input Pad to Send Characters with Mouse - xtest
+ The input pad is a tool to send a character on button to text applications.
+ It provides the GTK+ based GUI and can send characteres on the GTK+ buttons.
+ .
+ This package contains the XTEST module for input-pad.
+
+Package: libinput-pad-eek
+Section: libs
+Priority: extra
+Architecture: any
+Depends:
+    ${misc:Depends},
+    ${shlibs:Depends},
+    libinput-pad0 (= ${binary:Version}),
+    libeek0
+Description: On-screen Input Pad to Send Characters with Mouse - eek
+ The input pad is a tool to send a character on button to text applications.
+ It provides the GTK+ based GUI and can send characteres on the GTK+ buttons.
+ .
+ This package contains the eekboard module for input-pad.

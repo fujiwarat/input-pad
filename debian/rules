@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+#
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+build:
+	dh $@ --before auto_configure
+	dh_auto_configure -- \
+	  --enable-xtest \
+	  --enable-static
+	dh $@ --before auto_test
+	cd po; make input-pad.pot # https://bugs.launchpad.net/ubuntu/+source/ibus/+bug/188690
+	dh $@ --after auto_test
+
+override_dh_auto_install:
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
+
+override_dh_install:
+	dh_install --list-missing --sourcedir=debian/tmp
+
+override_dh_makeshlibs:
+	dh_makeshlibs -Nlibinput-pad-xtest -s
+
+%:
+	dh  $@
