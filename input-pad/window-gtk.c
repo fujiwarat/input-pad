@@ -132,7 +132,9 @@ struct _CharTreeViewData {
 };
 
 static guint                    signals[LAST_SIGNAL] = { 0 };
+#ifdef MODULE_XTEST_GDK_BASE
 static gboolean                 use_module_xtest = FALSE;
+#endif
 /* The kbdui_name is used for CLI only. */
 static gchar                   *kbdui_name = NULL;
 static gboolean                 ask_version = FALSE;
@@ -2534,7 +2536,9 @@ static void
 set_about (GtkWidget *widget)
 {
     GtkAboutDialog *about_dlg = GTK_ABOUT_DIALOG (widget);
-    gchar *license1, *license2, *license3, *license;
+    gchar *license = NULL;
+#if 0
+    gchar *license1, *license2, *license3;
     license1 = _(""
 "This library is free software; you can redistribute it and/or "
 "modify it under the terms of the GNU Lesser General Public "
@@ -2555,6 +2559,10 @@ set_about (GtkWidget *widget)
 
     license = g_strdup_printf ("%s\n\n%s\n\n%s",
                                license1, license2, license3);
+#else
+    license = g_strdup_printf (_("This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"),
+                               "http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html");
+#endif
     gtk_about_dialog_set_license (about_dlg, license);
     gtk_about_dialog_set_version (about_dlg, VERSION);
     g_free (license);
@@ -4016,9 +4024,9 @@ input_pad_gtk_window_real_destroy (GtkObject *object)
 static void
 input_pad_gtk_window_real_realize (GtkWidget *window)
 {
+#ifdef MODULE_XTEST_GDK_BASE
     InputPadGtkWindow *input_pad = INPUT_PAD_GTK_WINDOW (window);
 
-#ifdef MODULE_XTEST_GDK_BASE
     if (use_module_xtest) {
         input_pad_gtk_window_xtest_gdk_setup (input_pad);
     }
