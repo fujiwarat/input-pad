@@ -3756,7 +3756,7 @@ input_pad_gtk_window_parse_kbdui_modules (int                          *argc,
     const gchar *err_message;
     const gchar *dirname = MODULE_KBDUI_DIR;
     const gchar *filename;
-    gchar *filepath;
+    gchar *filepath, *p;
     GModule *module = NULL;
     GDir *dir;
 
@@ -3787,16 +3787,32 @@ input_pad_gtk_window_parse_kbdui_modules (int                          *argc,
             g_warning ("File prefix is not input-pad library: %s", filename);
             continue;
         }
-        filepath = g_build_filename (dirname, filename, NULL);
+
+        filename = g_strdup (filename);
+        p = strrchr (filename, '.');
+        if (!p ||
+            (g_strcmp0 ("." G_MODULE_SUFFIX, p) != 0 &&
+             g_strcmp0 (".la", p) != 0)) {
+            g_warning ("File suffix is not input-pad library: %s", filename);
+            continue;
+        }
+        *p = '\0';
+        filepath = g_module_build_path (dirname, filename);
+#if USE_GLOBAL_GMODULE
+        if (module_table && g_hash_table_lookup (module_table, filepath))
+            goto next;
+#endif
         module = kbdui_module_open (filepath);
         if (module == NULL) {
             err_message = g_module_error ();
             g_warning ("Could not open %s: %s", filename, err_message ? err_message : "");
-            g_free (filepath);
-            continue;
+            goto next;
         }
-        g_free (filepath);
 
+#if !USE_GLOBAL_GMODULE
+        if (g_list_find (list, module))
+            goto next;
+#endif
         if (input_pad_gtk_window_kbdui_module_arg_init (argc, argv,
                                                         module,
                                                         kbdui_context)) {
@@ -3804,6 +3820,9 @@ input_pad_gtk_window_parse_kbdui_modules (int                          *argc,
         } else {
             kbdui_module_close (module);
         }
+    next:
+        g_free (filename);
+        g_free (filepath);
     }
     g_dir_close (dir);
     return list;
