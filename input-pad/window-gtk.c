@@ -3759,6 +3759,7 @@ input_pad_gtk_window_parse_kbdui_modules (int                          *argc,
     gchar *filepath;
     GModule *module = NULL;
     GDir *dir;
+    GHashTable *module_hash_table;
 
     g_return_val_if_fail (MODULE_KBDUI_DIR != NULL, NULL);
 
@@ -3781,6 +3782,7 @@ input_pad_gtk_window_parse_kbdui_modules (int                          *argc,
         return NULL;
     }
 
+    module_hash_table = g_hash_table_new (g_str_hash, g_str_equal);
     while ((filename = g_dir_read_name (dir)) != NULL) {
         if (!g_str_has_prefix (filename, "lib") ||
             !g_str_has_prefix (filename + 3, MODULE_NAME_PREFIX)) {
@@ -3797,6 +3799,13 @@ input_pad_gtk_window_parse_kbdui_modules (int                          *argc,
         }
         g_free (filepath);
 
+        /* avoid loading foo.la in addition to foo.so */
+        if (g_hash_table_lookup (module_hash_table, g_module_name (module))) {
+            kbdui_module_close (module);
+            continue;
+        }
+        g_hash_table_insert (module_hash_table, g_module_name (module), module);
+
         if (input_pad_gtk_window_kbdui_module_arg_init (argc, argv,
                                                         module,
                                                         kbdui_context)) {
@@ -3805,6 +3814,7 @@ input_pad_gtk_window_parse_kbdui_modules (int                          *argc,
             kbdui_module_close (module);
         }
     }
+    g_hash_table_unref (module_hash_table);
     g_dir_close (dir);
     return list;
 }
