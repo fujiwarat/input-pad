@@ -2992,6 +2992,7 @@ create_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
     GtkCellRenderer *renderer;
     GtkTreeViewColumn *column;
     GtkTreeSelection *selection;
+    GtkTreeIter iter;
     static CharTreeViewData tv_data;
 
     g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
@@ -3072,6 +3073,12 @@ create_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
     g_signal_connect (G_OBJECT (selection), "changed",
                       G_CALLBACK (on_tree_view_select_custom_char_table),
                       &tv_data);
+
+    /* Ubuntu does not select the first iter when invoke input-pad */
+    if (gtk_tree_model_get_iter_first (model, &iter)) {
+        selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (main_tv));
+        gtk_tree_selection_select_iter (selection, &iter);
+    }
 }
 
 static void
@@ -3232,6 +3239,7 @@ create_all_char_view_ui (GtkBuilder *builder, GtkWidget *window)
     GtkCellRenderer *renderer;
     GtkTreeViewColumn *column;
     GtkTreeSelection *selection;
+    GtkTreeIter iter;
     static CharTreeViewData tv_data;
     GtkToggleAction *show_item;
 
@@ -3293,6 +3301,11 @@ create_all_char_view_ui (GtkBuilder *builder, GtkWidget *window)
     tv_data.window = window;
     g_signal_connect (G_OBJECT (selection), "changed",
                       G_CALLBACK (on_tree_view_select_all_char), &tv_data);
+
+    /* Ubuntu does not select the first iter when invoke input-pad */
+    if (gtk_tree_model_get_iter_first (model, &iter)) {
+        gtk_tree_selection_select_iter (selection, &iter);
+    }
 
     show_item = GTK_TOGGLE_ACTION (gtk_builder_get_object (builder, "ShowAllChars"));
     gtk_toggle_action_set_active (show_item,
