@@ -3516,6 +3516,27 @@ input_pad_gtk_window_xtest_gdk_setup (InputPadGtkWindow *window)
 
 #endif /* MODULE_XTEST_GDK_BASE */
 
+static gboolean
+check_module_filename (const gchar *filename)
+{
+    if (!g_str_has_prefix (filename, "lib") ||
+        !g_str_has_prefix (filename + 3, MODULE_NAME_PREFIX)) {
+        g_warning ("File prefix is not input-pad library: %s", filename);
+        return FALSE;
+    }
+#ifdef G_MODULE_SUFFIX
+    /* G_MODULE_SUFFIX is defined in glibconfig.h */
+    g_assert (G_MODULE_SUFFIX != NULL);
+    if (!g_str_has_suffix (filename, "." G_MODULE_SUFFIX)) {
+        /* filename is ignored due to no suffix G_MODULE_SUFFIX. */
+        return FALSE;
+    }
+#else
+    g_debug ("Recommend to have G_MODULE_SUFFIX to avoid '.la' file.\n");
+#endif
+    return TRUE;
+}
+
 static GModule *
 kbdui_module_open (const gchar *filepath)
 {
@@ -3782,9 +3803,7 @@ input_pad_gtk_window_parse_kbdui_modules (int                          *argc,
     }
 
     while ((filename = g_dir_read_name (dir)) != NULL) {
-        if (!g_str_has_prefix (filename, "lib") ||
-            !g_str_has_prefix (filename + 3, MODULE_NAME_PREFIX)) {
-            g_warning ("File prefix is not input-pad library: %s", filename);
+        if (!check_module_filename (filename)) {
             continue;
         }
         filepath = g_build_filename (dirname, filename, NULL);
@@ -4303,9 +4322,7 @@ input_pad_gtk_window_get_kbdui_name_list (void)
         const gchar *subname = NULL;
         gchar *name = NULL;
 
-        if (!g_str_has_prefix (filename, "lib") ||
-            !g_str_has_prefix (filename + 3, MODULE_NAME_PREFIX)) {
-            g_warning ("File prefix is not input-pad library: %s", filename);
+        if (!check_module_filename (filename)) {
             continue;
         }
         filepath = g_build_filename (dirname, filename, NULL);
@@ -4323,11 +4340,11 @@ input_pad_gtk_window_get_kbdui_name_list (void)
             g_warning ("Filename is invalid %s", filename);
             continue;
         }
-        if (g_str_has_suffix (subname, ".so")) {
-            name = g_strndup (subname, strlen (subname) - 3);
-        } else {
-            name = g_strdup (subname);
-        }
+#ifdef G_MODULE_SUFFIX
+        name = g_strndup (subname, strlen (subname) - strlen (G_MODULE_SUFFIX) - 1);
+#else
+        name = g_strdup (subname);
+#endif
         if (name == NULL || *name == '\0') {
             g_warning ("Filename is invalid %s", filename);
             g_free (name);
