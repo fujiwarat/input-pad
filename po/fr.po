@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2010-07-16 10:31+0900\n"
+"POT-Creation-Date: 2010-09-07 11:47+0900\n"
 "PO-Revision-Date: 2010-05-13 03:08+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: French\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,7 +29,7 @@ msgstr ""
 msgid "Arrow"
 msgstr ""
 
-#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3260
+#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3269
 msgid "Block"
 msgstr ""
 
@@ -254,7 +255,7 @@ msgid "Keyboard"
 msgstr ""
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:23
-#: ../input-pad/window-gtk.c:4458 ../input-pad/window-gtk.c:4459
+#: ../input-pad/window-gtk.c:4489 ../input-pad/window-gtk.c:4490
 msgid "Input Pad"
 msgstr ""
 
@@ -429,31 +430,31 @@ msgid "Angry"
 msgstr ""
 
 #: ../data/str.xml.in.h:8
-msgid "Bad"
-msgstr ""
-
-#: ../data/str.xml.in.h:9
 msgid "Bear"
 msgstr ""
 
-#: ../data/str.xml.in.h:10
+#: ../data/str.xml.in.h:9
 msgid "Beer"
 msgstr ""
 
-#: ../data/str.xml.in.h:11
+#: ../data/str.xml.in.h:10
 msgid "Boy"
 msgstr ""
 
-#: ../data/str.xml.in.h:12
+#: ../data/str.xml.in.h:11
 msgid "Bunny"
 msgstr ""
 
-#: ../data/str.xml.in.h:13
+#: ../data/str.xml.in.h:12
 msgid "Bye"
 msgstr ""
 
-#: ../data/str.xml.in.h:14
+#: ../data/str.xml.in.h:13
 msgid "Cake"
+msgstr ""
+
+#: ../data/str.xml.in.h:14
+msgid "Can't get together (Guda Guda)"
 msgstr ""
 
 #: ../data/str.xml.in.h:15
@@ -513,178 +514,218 @@ msgid "Drink"
 msgstr ""
 
 #: ../data/str.xml.in.h:29
-msgid "Embarrassed"
+msgid "Dude (Oi!)"
 msgstr ""
 
 #: ../data/str.xml.in.h:30
-msgid "Excited (Waku Waku Teka Teka)"
+msgid "Embarrassed"
 msgstr ""
 
 #: ../data/str.xml.in.h:31
-msgid "Film"
+msgid "Excited (Kitakore)"
 msgstr ""
 
 #: ../data/str.xml.in.h:32
-msgid "Foot in Mouth"
+msgid "Excited (Waku Waku Teka Teka)"
 msgstr ""
 
 #: ../data/str.xml.in.h:33
-msgid "Girl"
+msgid "Film"
 msgstr ""
 
 #: ../data/str.xml.in.h:34
-msgid "Glasses Cool"
+msgid "Foot in Mouth"
 msgstr ""
 
 #: ../data/str.xml.in.h:35
-msgid "Glasses Cool | Eyeroll"
+msgid "Fulfilling Life (Real life is Zyujitsu)"
 msgstr ""
 
 #: ../data/str.xml.in.h:36
-msgid "Good"
+msgid "Girl"
 msgstr ""
 
 #: ../data/str.xml.in.h:37
-msgid "Hug"
+msgid "Glasses Cool"
 msgstr ""
 
 #: ../data/str.xml.in.h:38
-msgid "Hug Left"
+msgid "Glasses Cool | Eyeroll"
 msgstr ""
 
 #: ../data/str.xml.in.h:39
-msgid "Hug Right"
+msgid "Good job (Otsukare)"
 msgstr ""
 
 #: ../data/str.xml.in.h:40
-msgid "Kiss"
+msgid "He (Yatsu &lt;- Yashi)"
 msgstr ""
 
 #: ../data/str.xml.in.h:41
-msgid "Kiss | Secret"
+msgid "Hey"
 msgstr ""
 
 #: ../data/str.xml.in.h:42
-msgid "Laugh"
+msgid "Hug"
 msgstr ""
 
 #: ../data/str.xml.in.h:43
-msgid "Love"
+msgid "Hug Left"
 msgstr ""
 
 #: ../data/str.xml.in.h:44
-msgid "Love Over"
+msgid "Hug Right"
 msgstr ""
 
 #: ../data/str.xml.in.h:45
-msgid "Mail"
+msgid "Kiss"
 msgstr ""
 
 #: ../data/str.xml.in.h:46
-msgid "Money Mouth"
+msgid "Kiss | Secret"
 msgstr ""
 
 #: ../data/str.xml.in.h:47
-msgid "Monkey"
+msgid "Laugh"
 msgstr ""
 
 #: ../data/str.xml.in.h:48
-msgid "Moon"
+msgid "Laugh (Warau)"
 msgstr ""
 
 #: ../data/str.xml.in.h:49
-msgid "Musical Note"
+msgid "Love"
 msgstr ""
 
 #: ../data/str.xml.in.h:50
-msgid "Neutral"
+msgid "Love Over"
 msgstr ""
 
 #: ../data/str.xml.in.h:51
-msgid "Party"
+msgid "Mail"
 msgstr ""
 
 #: ../data/str.xml.in.h:52
-msgid "Phone"
+msgid "Money Mouth"
 msgstr ""
 
 #: ../data/str.xml.in.h:53
-msgid "Present"
+msgid "Monkey"
 msgstr ""
 
 #: ../data/str.xml.in.h:54
-msgid "Sad"
+msgid "Moon"
 msgstr ""
 
 #: ../data/str.xml.in.h:55
-msgid "Shock"
+msgid "Musical Note"
 msgstr ""
 
 #: ../data/str.xml.in.h:56
-msgid "Shout"
+msgid "Neutral"
 msgstr ""
 
 #: ../data/str.xml.in.h:57
-msgid "Shut Mouth"
+msgid "No"
 msgstr ""
 
 #: ../data/str.xml.in.h:58
-msgid "Sick"
+msgid "Omission (Shouryaku)"
 msgstr ""
 
 #: ../data/str.xml.in.h:59
-msgid "Smile"
+msgid "Party"
 msgstr ""
 
 #: ../data/str.xml.in.h:60
-msgid "Smile Big"
+msgid "Phone"
 msgstr ""
 
 #: ../data/str.xml.in.h:61
+msgid "Present"
+msgstr ""
+
+#: ../data/str.xml.in.h:62
+msgid "Sad"
+msgstr ""
+
+#: ../data/str.xml.in.h:63
+msgid "Say whatever one feels (Iitaidake)"
+msgstr ""
+
+#: ../data/str.xml.in.h:64
+msgid "Shock"
+msgstr ""
+
+#: ../data/str.xml.in.h:65
+msgid "Shout"
+msgstr ""
+
+#: ../data/str.xml.in.h:66
+msgid "Shut Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:67
+msgid "Sick"
+msgstr ""
+
+#: ../data/str.xml.in.h:68
+msgid "Smile"
+msgstr ""
+
+#: ../data/str.xml.in.h:69
+msgid "Smile Big"
+msgstr ""
+
+#: ../data/str.xml.in.h:70
 msgid "Smileys"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:63
+#: ../data/str.xml.in.h:72
 msgid "Smileys (Chinese)"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:65
+#: ../data/str.xml.in.h:74
 msgid "Smileys (Japanese 2ch)"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:67
+#: ../data/str.xml.in.h:76
 msgid "Smileys (Japanese)"
 msgstr ""
 
-#: ../data/str.xml.in.h:68
+#: ../data/str.xml.in.h:77
 msgid "Smoking"
 msgstr ""
 
-#: ../data/str.xml.in.h:69
+#: ../data/str.xml.in.h:78
 msgid "Sorry"
 msgstr ""
 
-#: ../data/str.xml.in.h:70
+#: ../data/str.xml.in.h:79
 msgid "Star"
 msgstr ""
 
-#: ../data/str.xml.in.h:71
+#: ../data/str.xml.in.h:80
 msgid "Thinking"
 msgstr ""
 
-#: ../data/str.xml.in.h:72
+#: ../data/str.xml.in.h:81
 msgid "Tongue"
 msgstr ""
 
-#: ../data/str.xml.in.h:73
+#: ../data/str.xml.in.h:82
 msgid "Wink"
 msgstr ""
 
-#: ../data/str.xml.in.h:74
+#: ../data/str.xml.in.h:83
 msgid "Yawn"
+msgstr ""
+
+#: ../data/str.xml.in.h:84
+msgid "Yes"
 msgstr ""
 
 #: ../data/w3c.xml.in.h:1
@@ -1502,38 +1543,39 @@ msgstr ""
 msgid "_Layout:"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2542
-msgid ""
-"This library is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU Lesser General Public License as published by the "
-"Free Software Foundation; either version 2 of the License, or (at your "
-"option) any later version."
-msgstr ""
-
-#: ../input-pad/window-gtk.c:2548
-msgid ""
-"This library is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License "
-"for more details."
-msgstr ""
-
-#: ../input-pad/window-gtk.c:2554
-msgid ""
-"You should have received a copy of the GNU Lesser General Public License "
-"along with this library; if not, write to the Free Software Foundation, "
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA"
-msgstr ""
-
-#: ../input-pad/window-gtk.c:2563
+#. No longer used in gtk 2.20
+#. gchar *license1, *license2, *license3;
+#. license1 = _(""
+#. "This library is free software; you can redistribute it and/or "
+#. "modify it under the terms of the GNU Lesser General Public "
+#. "License as published by the Free Software Foundation; either "
+#. "version 2 of the License, or (at your option) any later version.");
+#.
+#. license2 = _(""
+#. "This library is distributed in the hope that it will be useful, "
+#. "but WITHOUT ANY WARRANTY; without even the implied warranty of "
+#. "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU "
+#. "Lesser General Public License for more details.");
+#.
+#. license3 = _(""
+#. "You should have received a copy of the GNU Lesser General Public "
+#. "License along with this library; if not, write to the Free Software "
+#. "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, "
+#. "MA  02110-1301  USA");
+#.
+#. license = g_strdup_printf ("%s\n\n%s\n\n%s",
+#. license1, license2, license3);
+#.
+#. This format has been used since gtk 2.20.
+#: ../input-pad/window-gtk.c:2565
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:3035
+#: ../input-pad/window-gtk.c:3037
 msgid "Group"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:3043
+#: ../input-pad/window-gtk.c:3045
 msgid "Sub Group"
 msgstr ""

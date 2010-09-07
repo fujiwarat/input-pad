@@ -2537,7 +2537,7 @@ set_about (GtkWidget *widget)
 {
     GtkAboutDialog *about_dlg = GTK_ABOUT_DIALOG (widget);
     gchar *license = NULL;
-#if 0
+/* No longer used in gtk 2.20
     gchar *license1, *license2, *license3;
     license1 = _(""
 "This library is free software; you can redistribute it and/or "
@@ -2559,10 +2559,11 @@ set_about (GtkWidget *widget)
 
     license = g_strdup_printf ("%s\n\n%s\n\n%s",
                                license1, license2, license3);
-#else
+*/
+
+    /* This format has been used since gtk 2.20. */
     license = g_strdup_printf (_("This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"),
                                "http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html");
-#endif
     gtk_about_dialog_set_license (about_dlg, license);
     gtk_about_dialog_set_version (about_dlg, VERSION);
     g_free (license);

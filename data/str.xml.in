@@ -332,19 +332,19 @@
         </string>
         <string>
           <label>(Y)</label>
-          <_comment>Good</_comment>
+          <_comment>Yes</_comment>
         </string>
         <string>
           <label>(y)</label>
-          <_comment>Good</_comment>
+          <_comment>Yes</_comment>
         </string>
         <string>
           <label>(N)</label>
-          <_comment>Bad</_comment>
+          <_comment>No</_comment>
         </string>
         <string>
           <label>(n)</label>
-          <_comment>Bad</_comment>
+          <_comment>No</_comment>
         </string>
         <string>
           <label>:-X</label>
@@ -521,6 +521,34 @@
           <_comment>Smile</_comment>
         </string>
         <string>
+          <label>(ﾟзﾟ)</label>
+          <_comment>Smile</_comment>
+        </string>
+        <string>
+          <label>(´∇｀)</label>
+          <_comment>Smile</_comment>
+        </string>
+        <string>
+          <label>(￣ー+￣)</label>
+          <_comment>Smile</_comment>
+        </string>
+        <string>
+          <label>(*´∀｀*)</label>
+          <_comment>Smile</_comment>
+        </string>
+        <string>
+          <label>(*´ω｀*)</label>
+          <_comment>Smile</_comment>
+        </string>
+        <string>
+          <label>(・A・)</label>
+          <_comment>No</_comment>
+        </string>
+        <string>
+          <label>(ノﾟДﾟ)</label>
+          <_comment>Hey</_comment>
+        </string>
+        <string>
           <label>Σ(ﾟДﾟ;)</label>
           <_comment>Shout</_comment>
         </string>
@@ -545,6 +573,14 @@
           <_comment>Crying</_comment>
         </string>
         <string>
+          <label>(TДT)</label>
+          <_comment>Crying</_comment>
+        </string>
+        <string>
+          <label>(TдT)</label>
+          <_comment>Crying</_comment>
+        </string>
+        <string>
           <label>( ﾟ∀。)</label>
           <_comment>Confused</_comment>
         </string>
@@ -565,7 +601,31 @@
           <_comment>Angry</_comment>
         </string>
         <string>
+          <label>(ﾒﾟ皿ﾟ)</label>
+          <_comment>Angry</_comment>
+        </string>
+        <string>
+          <label>ヽ(｀Д´#)ﾉ</label>
+          <_comment>Angry</_comment>
+        </string>
+        <string>
           <label>(；´Д｀)</label>
+          <_comment>Embarrassed</_comment>
+        </string>
+        <string>
+          <label>(；´∀｀)</label>
+          <_comment>Embarrassed</_comment>
+        </string>
+        <string>
+          <label>（；＾ω＾）</label>
+          <_comment>Embarrassed</_comment>
+        </string>
+        <string>
+          <label>(;ﾟдﾟ)</label>
+          <_comment>Embarrassed</_comment>
+        </string>
+        <string>
+          <label>Σ(ﾟДﾟ；)</label>
           <_comment>Embarrassed</_comment>
         </string>
         <string>
@@ -575,6 +635,18 @@
         <string>
           <label>m(＿＿)m</label>
           <_comment>Sorry</_comment>
+        </string>
+        <string>
+          <label>(m´・ω・｀)m</label>
+          <_comment>Sorry</_comment>
+        </string>
+        <string>
+          <label>(´・ω・)</label>
+          <_comment>Sorry</_comment>
+        </string>
+        <string>
+          <label>（´ω｀）</label>
+          <_comment>Shock</_comment>
         </string>
         <string>
           <label>( ´,_ゝ｀)プッ</label>
@@ -686,6 +758,10 @@
         <column>8</column>
         <!-- http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0 -->
         <_name>Acronym</_name>
+        <string>
+          <label>afd</label>
+          <comment>Away From Desk</comment>
+        </string>
         <string>
           <label>afk</label>
           <comment>Away From Keyboard</comment>
@@ -892,8 +968,24 @@
           <_comment>Do not want to read between lines (Aete Kuuki Wo Yomanai)</_comment>
         </string>
         <string>
+          <label>gdgd</label>
+          <_comment>Can't get together (Guda Guda)</_comment>
+        </string>
+        <string>
           <label>GHQ</label>
           <comment>Go Home Quickly</comment>
+        </string>
+        <string>
+          <label>GJ</label>
+          <comment>Good Job</comment>
+        </string>
+        <string>
+          <label>itdk</label>
+          <_comment>Say whatever one feels (Iitaidake)</_comment>
+        </string>
+        <string>
+          <label>ktkr</label>
+          <_comment>Excited (Kitakore)</_comment>
         </string>
         <string>
           <label>kwsk</label>
@@ -904,6 +996,14 @@
           <_comment>Cannot read between lines (Kuuki Ga Yomenai)</_comment>
         </string>
         <string>
+          <label>(ry</label>
+          <_comment>Omission (Shouryaku)</_comment>
+        </string>
+        <string>
+          <label>ty</label>
+          <comment>Thank You</comment>
+        </string>
+        <string>
           <label>wktk</label>
           <_comment>Excited (Waku Waku Teka Teka)</_comment>
         </string>
@@ -912,8 +1012,28 @@
           <_comment>Laugh</_comment>
         </string>
         <string>
+          <label>←</label>
+          <_comment>Dude (Oi!)</_comment>
+        </string>
+        <string>
           <label>ノシ</label>
           <_comment>Bye</_comment>
+        </string>
+        <string>
+          <label>リア充</label>
+          <_comment>Fulfilling Life (Real life is Zyujitsu)</_comment>
+        </string>
+        <string>
+          <label>ワラ</label>
+          <_comment>Laugh (Warau)</_comment>
+        </string>
+        <string>
+          <label>乙</label>
+          <_comment>Good job (Otsukare)</_comment>
+        </string>
+        <string>
+          <label>香具師</label>
+          <_comment>He (Yatsu &lt;- Yashi)</_comment>
         </string>
       </table>
     </group>
