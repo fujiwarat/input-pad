@@ -53,7 +53,13 @@ static guint                    signals[LAST_SIGNAL] = { 0 };
 static GtkBuildableIface       *parent_buildable_iface;
 
 static void input_pad_gtk_button_buildable_interface_init (GtkBuildableIface *iface);
-static void input_pad_gtk_button_destroy_real (GtkObject *object);
+
+#if GTK_CHECK_VERSION (2, 90, 0)
+static void input_pad_gtk_button_destroy_real (GtkWidget *widget);
+#else
+static void input_pad_gtk_button_destroy_real (GtkObject *widget);
+#endif
+
 static gint input_pad_gtk_button_press_real (GtkWidget *widget, GdkEventButton *event);
 static gint input_pad_gtk_button_release_real (GtkWidget *widget, GdkEventButton *event);
 
@@ -80,10 +86,16 @@ static void
 input_pad_gtk_button_class_init (InputPadGtkButtonClass *klass)
 {
     GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
-    GtkObjectClass *object_class = (GtkObjectClass *) klass;
+#if !GTK_CHECK_VERSION (2, 90, 0)
+    GtkObjectClass *object_class = GTK_OBJECT_CLASS (klass);
+#endif
     GtkWidgetClass *widget_class = (GtkWidgetClass *) klass;
 
+#if GTK_CHECK_VERSION (2, 90, 0)
+    widget_class->destroy = input_pad_gtk_button_destroy_real;
+#else
     object_class->destroy = input_pad_gtk_button_destroy_real;
+#endif
     widget_class->button_press_event = input_pad_gtk_button_press_real;
     widget_class->button_release_event = input_pad_gtk_button_release_real;
 
@@ -162,11 +174,15 @@ end_timer (InputPadGtkButton *button)
 }
 
 static void
-input_pad_gtk_button_destroy_real (GtkObject *object)
+#if GTK_CHECK_VERSION (2, 90, 0)
+input_pad_gtk_button_destroy_real (GtkWidget *widget)
+#else
+input_pad_gtk_button_destroy_real (GtkObject *widget)
+#endif
 {
     InputPadGtkButton *ibutton;
-    if (INPUT_PAD_IS_GTK_BUTTON (object)) {
-        ibutton = INPUT_PAD_GTK_BUTTON (object);
+    if (INPUT_PAD_IS_GTK_BUTTON (widget)) {
+        ibutton = INPUT_PAD_GTK_BUTTON (widget);
         if (ibutton->priv) {
             end_timer (ibutton);
             g_free (ibutton->priv->rawtext);
@@ -174,7 +190,11 @@ input_pad_gtk_button_destroy_real (GtkObject *object)
             ibutton->priv = NULL;
         }
     }
-    GTK_OBJECT_CLASS (input_pad_gtk_button_parent_class)->destroy (object);
+#if GTK_CHECK_VERSION (2, 90, 0)
+    GTK_WIDGET_CLASS (input_pad_gtk_button_parent_class)->destroy (widget);
+#else
+    GTK_OBJECT_CLASS (input_pad_gtk_button_parent_class)->destroy (widget);
+#endif
 }
 
 static gint

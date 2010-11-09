@@ -24,7 +24,7 @@
 #endif
 
 #include <gtk/gtk.h>
-#include <gdk/gdkkeys.h>
+#include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
@@ -253,8 +253,15 @@ static void             append_all_char_view_table
 static void             destroy_all_char_view_table
                                                 (GtkWidget         *viewport,
                                                  InputPadGtkWindow *window);
+
+#if GTK_CHECK_VERSION (2, 90, 0)
 static void             input_pad_gtk_window_real_destroy
-                                                (GtkObject         *object);
+                                                (GtkWidget         *widget);
+#else
+static void             input_pad_gtk_window_real_destroy
+                                                (GtkObject         *widget);
+#endif
+
 static void             input_pad_gtk_window_buildable_interface_init
                                                 (GtkBuildableIface *iface);
 
@@ -1005,7 +1012,11 @@ on_button_layout_arrow_pressed (GtkButton *button, gpointer data)
             gtk_button_set_label (button, "->");
             gtk_widget_set_tooltip_text (GTK_WIDGET (button),
                                          _("Extend layout"));
+#if GTK_CHECK_VERSION (2, 90, 0)
+            reduced_width += gtk_widget_get_allocated_width (table_data[i].table);
+#else
             reduced_width += table_data[i].table->allocation.width;
+#endif
         }
     }
 
@@ -1201,14 +1212,16 @@ static void
 resize_toplevel_window_with_hide_widget (GtkWidget *widget)
 {
     GtkWidget *toplevel;
+    GtkAllocation allocation;
     int width, height;
 
     toplevel = gtk_widget_get_toplevel (widget);
     g_return_if_fail (GTK_IS_WINDOW (toplevel));
     gtk_window_get_size (GTK_WINDOW (toplevel), &width, &height);
-    if (height > widget->allocation.height &&
-        widget->allocation.x >= 0) {
-        height -= widget->allocation.height;
+    gtk_widget_get_allocation (widget, &allocation);
+    if (height > allocation.height &&
+        allocation.x >= 0) {
+        height -= allocation.height;
         gtk_window_resize (GTK_WINDOW (toplevel), width, height);
         gtk_widget_queue_resize (toplevel);
     }
@@ -1472,7 +1485,7 @@ digit_model_renew (GtkTreeModel *model, int prev_base, int new_base)
 static gint
 _spin_button_get_arrow_size (GtkSpinButton *spin_button)
 {
-    gint size = pango_font_description_get_size (GTK_WIDGET (spin_button)->style->font_desc);
+    gint size = pango_font_description_get_size (gtk_widget_get_style (GTK_WIDGET (spin_button))->font_desc);
     gint arrow_size;
     const gint MIN_ARROW_WIDTH = 6;
 
@@ -1481,52 +1494,41 @@ _spin_button_get_arrow_size (GtkSpinButton *spin_button)
     return arrow_size - arrow_size % 2; /* force even */
 }
 
-/* Modified GtkSpinButton->size_allocate() not to show text */
+/* Modified GtkSpinButton->size_allocate() not to show text
+ * gtk_spin_button_size_allocate() calls _gtk_spin_button_get_panel()
+ * internally in GTK3 and _gtk_spin_button_get_panel() is a private API now
+ * so hack gtk_spin_button_size_allocate() in this way. */
 static void
 _gtk_spin_button_size_allocate (GtkWidget     *widget,
                                 GtkAllocation *allocation)
 {
-    GtkSpinButton *spin = GTK_SPIN_BUTTON (widget);
-    GtkAllocation panel_allocation;
+    void (* size_allocate)       (GtkWidget        *widget,
+                                  GtkAllocation    *allocation);
+    gint width;
     gint arrow_size;
     gint panel_width;
-    static gpointer parent_class = NULL;
 
-    arrow_size = _spin_button_get_arrow_size (spin);
-    panel_width = arrow_size + 2 * widget->style->xthickness;
- 
-    widget->allocation = *allocation;
+    size_allocate = g_object_get_data (G_OBJECT (widget), "size_allocate_orig");
 
-    /* resize to show arrow only. */
+    if (size_allocate == NULL) {
+        return;
+    }
+
+    width = allocation->width;
+    arrow_size = _spin_button_get_arrow_size (GTK_SPIN_BUTTON (widget));
+    panel_width = arrow_size + 2 * gtk_widget_get_style (widget)->xthickness;
     allocation->width = panel_width;
 
-    if (gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL) {
-      panel_allocation.x = 0;
-    } else {
-      panel_allocation.x = allocation->width - panel_width;
-    }
-    panel_allocation.width = panel_width;
-    panel_allocation.height = MIN (widget->requisition.height, allocation->height);
+    /* The original gtk_spin_button_size_allocate() moves the position of
+     * widget->priv->panel to the right edge of widget.
+     * I'd like to hide spin's text area since it's not used in this GUI.
+     * The hide technique is to set spin's width with panel's width and then
+     * panel's x and spin's x are same value and spin's text area is hidden
+     * because allocation->width - panel_width == 0. */
 
-    panel_allocation.y = 0;
+    size_allocate (widget, allocation);
 
-    if (parent_class == NULL) {
-        parent_class = g_type_class_peek_parent (GTK_SPIN_BUTTON_GET_CLASS (widget));
-    }
-
-    if (parent_class != NULL) {
-        GTK_WIDGET_CLASS (parent_class)->size_allocate (widget, allocation);
-    }
-
-    if (GTK_WIDGET_REALIZED (widget)) {
-        gdk_window_move_resize (GTK_SPIN_BUTTON (widget)->panel,
-                                panel_allocation.x,
-                                panel_allocation.y,
-                                panel_allocation.width,
-                                panel_allocation.height);
-    }
-
-    gtk_widget_queue_draw (GTK_WIDGET (spin));
+    allocation->width = width;
 }
 
 static void
@@ -1547,8 +1549,10 @@ init_spin_button (GtkWidget *spin_button, CodePointData *cp_data)
 
     arrow_size = _spin_button_get_arrow_size (GTK_SPIN_BUTTON (spin_button));
     gtk_widget_set_size_request (spin_button,
-                                 arrow_size + 2 * spin_button->style->xthickness,
+                                 arrow_size + 2 * gtk_widget_get_style (spin_button)->xthickness,
                                  -1);
+    g_object_set_data (G_OBJECT (spin_button), "size_allocate_orig",
+                       GTK_WIDGET_GET_CLASS (spin_button)->size_allocate);
     GTK_WIDGET_GET_CLASS (spin_button)->size_allocate = _gtk_spin_button_size_allocate;
     adjustment = gtk_spin_button_get_adjustment (GTK_SPIN_BUTTON (spin_button));
     gtk_adjustment_set_upper (adjustment, (gdouble) MAX_UCODE);
@@ -1601,6 +1605,8 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
     GtkTreeModel *model;
     GtkTreeIter iter;
     GtkCellRenderer *renderer;
+    GtkAllocation combobox_allocation;
+    GtkAllocation toplevel_allocation;
 
     g_return_if_fail (cp_data != NULL);
     g_return_if_fail (GTK_IS_CONTAINER (cp_data->digit_hbox));
@@ -1687,10 +1693,13 @@ end_configure_combobox:
     list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
     combobox = GTK_WIDGET (g_list_nth (list, n_digit - 1)->data);
     toplevel = gtk_widget_get_toplevel (digit_hbox);
+    gtk_widget_get_allocation (combobox, &combobox_allocation);
+    gtk_widget_get_allocation (toplevel, &toplevel_allocation);
     if (do_resize &&
-        combobox->allocation.x >= 0 && combobox->allocation.width > 10) {
-        toplevel->allocation.width = combobox->allocation.x +
-                                     combobox->allocation.width + 10;
+        combobox_allocation.x >= 0 && combobox_allocation.width > 10) {
+        toplevel_allocation.width = combobox_allocation.x +
+                                    combobox_allocation.width + 10;
+        gtk_widget_set_allocation (toplevel, &toplevel_allocation);
         gtk_widget_queue_resize (toplevel);
     }
     digit_hbox_set_code_point (digit_hbox, code);
@@ -3979,7 +3988,9 @@ input_pad_gtk_window_set_priv (InputPadGtkWindow *window)
     if (!gdk_color_parse ("gray", &color)) {
         color.red = color.green = color.blue = 0xffff;
     }
+#if !GTK_CHECK_VERSION(2, 90, 0)
     gdk_colormap_alloc_color (gdk_colormap_get_system(), &color, FALSE, TRUE);
+#endif
     priv->color_gray = gdk_color_copy (&color);
     if (kbdui_name) {
         priv->kbdui_name = g_strdup (kbdui_name);
@@ -4026,9 +4037,13 @@ input_pad_gtk_window_buildable_interface_init (GtkBuildableIface *iface)
 }
 
 static void
-input_pad_gtk_window_real_destroy (GtkObject *object)
+#if GTK_CHECK_VERSION (2, 90, 0)
+input_pad_gtk_window_real_destroy (GtkWidget *widget)
+#else
+input_pad_gtk_window_real_destroy (GtkObject *widget)
+#endif
 {
-    InputPadGtkWindow *window = INPUT_PAD_GTK_WINDOW (object);
+    InputPadGtkWindow *window = INPUT_PAD_GTK_WINDOW (widget);
 
     if (window->priv) {
         if (window->priv->group) {
@@ -4051,7 +4066,11 @@ input_pad_gtk_window_real_destroy (GtkObject *object)
         window->priv->kbdui_name = NULL;
         window->priv = NULL;
     }
-    GTK_OBJECT_CLASS (input_pad_gtk_window_parent_class)->destroy (object);
+#if GTK_CHECK_VERSION (2, 90, 0)
+    GTK_WIDGET_CLASS (input_pad_gtk_window_parent_class)->destroy (widget);
+#else
+    GTK_OBJECT_CLASS (input_pad_gtk_window_parent_class)->destroy (widget);
+#endif
 }
 
 static void
@@ -4077,12 +4096,14 @@ input_pad_gtk_window_real_button_pressed (InputPadGtkWindow *window,
 {
     if (type == INPUT_PAD_TABLE_TYPE_CHARS) {
         if (keysym > 0) {
-            send_key_event (GTK_WIDGET(window)->window, keysym, keycode, state);
+            send_key_event (gtk_widget_get_window (GTK_WIDGET (window)),
+                            keysym, keycode, state);
         } else {
             g_print ("%s", str ? str : "");
         }
     } else if (type == INPUT_PAD_TABLE_TYPE_KEYSYMS) {
-        send_key_event (GTK_WIDGET(window)->window, keysym, keycode, state);
+        send_key_event (gtk_widget_get_window (GTK_WIDGET (window)),
+                        keysym, keycode, state);
     } else if (type == INPUT_PAD_TABLE_TYPE_STRINGS) {
             g_print ("%s", str ? str : "");
     } else if (type == INPUT_PAD_TABLE_TYPE_COMMANDS) {
@@ -4097,10 +4118,16 @@ static void
 input_pad_gtk_window_class_init (InputPadGtkWindowClass *klass)
 {
     GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+#if !GTK_CHECK_VERSION (2, 90, 0)
     GtkObjectClass *object_class = (GtkObjectClass *) klass;
+#endif
     GtkWidgetClass *widget_class = (GtkWidgetClass *) klass;
 
+#if GTK_CHECK_VERSION (2, 90, 0)
+    widget_class->destroy = input_pad_gtk_window_real_destroy;
+#else
     object_class->destroy = input_pad_gtk_window_real_destroy;
+#endif
     widget_class->realize = input_pad_gtk_window_real_realize;
 
     klass->button_pressed = input_pad_gtk_window_real_button_pressed;
@@ -4189,7 +4216,9 @@ _input_pad_gtk_window_new_with_gtype (GtkWindowType type,
     }
 
     window = create_ui (child);
-    INPUT_PAD_GTK_WINDOW (window)->parent.type = type;
+
+    /* setting GtkWindowType is no longer supported with gtkbuilder because
+     * the constructor property is done here. */
 
     return window; 
 }

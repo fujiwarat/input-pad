@@ -78,9 +78,29 @@ PKG_CHECK_MODULES(GLIB2, [
     glib-2.0 >= 2.8
 ])
 
-PKG_CHECK_MODULES(GTK2, [
-    gtk+-2.0
-])
+dnl - check gtk
+AC_ARG_WITH(gtk-version,
+    AS_HELP_STRING([--with-gtk-version[=VERSION]],
+                   [Select GTK+ version. The default is 2]),,
+    with_gtk_version=2
+)
+
+if test "x$with_gtk_version" = x3 ; then
+    PKG_CHECK_MODULES(GTK3, [
+        gtk+-3.0
+    ])
+    AM_CONDITIONAL(HAVE_GTK3, true)
+    AM_CONDITIONAL(HAVE_GTK2, false)
+    WITH_GTK_VERSION=3.0
+else
+    PKG_CHECK_MODULES(GTK2, [
+        gtk+-2.0
+    ])
+    AM_CONDITIONAL(HAVE_GTK3, false)
+    AM_CONDITIONAL(HAVE_GTK2, true)
+    WITH_GTK_VERSION=2.0
+fi
+AC_SUBST(WITH_GTK_VERSION)
 
 PKG_CHECK_MODULES(LIBXML2, [
     libxml-2.0 >= 2.0
@@ -203,3 +223,15 @@ pyinput-pad/pyinput_pad.pth
 ])
 
 AC_OUTPUT
+echo "
+                input-pad version pad_version
+
+
+libinput_pad version:    $libinput_pad_VERSION
+GTK+ version:            $WITH_GTK_VERSION
+Have libxklavier:        $have_libxklavier
+Enable EEK               $enable_eek
+Enable Python            $enable_python
+Enable XTEST             $enable_xtest
+lt version info          $LT_VERSION_INFO
+"

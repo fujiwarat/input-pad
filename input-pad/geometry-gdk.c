@@ -84,7 +84,7 @@ static gboolean
 input_pad_xkb_init (InputPadGtkWindow *window)
 {
     static gboolean retval = FALSE;
-    Display *xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    Display *xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET (window)));
 
     if (retval) {
         return retval;
@@ -103,7 +103,7 @@ input_pad_xkb_init (InputPadGtkWindow *window)
 static XkbFileInfo *
 input_pad_xkb_get_file_info (InputPadGtkWindow *window)
 {
-    Display *xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    Display *xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET (window)));
     XkbFileInfo *xkb_info;
 
     xkb_info = g_new0 (XkbFileInfo, 1);
@@ -353,7 +353,7 @@ add_xkb_key (InputPadXKBKeyList        *xkb_key_list,
 static XklEngine *
 init_xkl_engine (InputPadGtkWindow *window, XklConfigRec **initial_xkl_recp)
 {
-    Display *xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    Display *xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET (window)));
     XklConfigRec *xklrec;
 
     if (xklengine) {
@@ -494,7 +494,7 @@ xkl_setup_events (XklEngine            *xklengine,
 static guint
 xkb_get_current_group (InputPadGtkWindow *window)
 {
-    Display *xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    Display *xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET (window)));
     XkbStateRec state;
 
     if (XkbGetState (xdisplay, XkbUseCoreKbd, &state) != Success) {
@@ -989,7 +989,7 @@ input_pad_gdk_xkb_get_group_layouts (InputPadGtkWindow   *window,
     g_return_val_if_fail (window != NULL && INPUT_PAD_IS_GTK_WINDOW (window),
                           NULL);
 
-    xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET (window)));
     xkb_rules_name = XInternAtom (xdisplay, "_XKB_RULES_NAMES", TRUE);
     if (xkb_rules_name == None) {
         g_warning ("Could not get XKB rules atom");
