@@ -1016,8 +1016,16 @@
           <_comment>Dude (Oi!)</_comment>
         </string>
         <string>
+          <label>とりま</label>
+          <_comment>In The Meantime (Toriaezu, Ma)</_comment>
+        </string>
+        <string>
           <label>ノシ</label>
           <_comment>Bye</_comment>
+        </string>
+        <string>
+          <label>フラゲ</label>
+          <_comment>False Start (Flying Get)</_comment>
         </string>
         <string>
           <label>リア充</label>

@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2010-09-07 11:47+0900\n"
-"PO-Revision-Date: 2010-09-07 11:17+0900\n"
+"POT-Creation-Date: 2010-11-11 01:44+0900\n"
+"PO-Revision-Date: 2010-11-11 01:42+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Japanese\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/base.xml.in.h:1
@@ -29,7 +29,7 @@ msgstr "すべて"
 msgid "Arrow"
 msgstr "矢印"
 
-#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3269
+#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3278
 msgid "Block"
 msgstr "ブロック"
 
@@ -255,7 +255,7 @@ msgid "Keyboard"
 msgstr "キーボード"
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:23
-#: ../input-pad/window-gtk.c:4489 ../input-pad/window-gtk.c:4490
+#: ../input-pad/window-gtk.c:4518 ../input-pad/window-gtk.c:4519
 msgid "Input Pad"
 msgstr "インプットパッド"
 
@@ -550,201 +550,209 @@ msgid "Excited (Waku Waku Teka Teka)"
 msgstr "興奮する (Waku Waku Teka Teka)"
 
 #: ../data/str.xml.in.h:33
+msgid "False Start (Flying Get)"
+msgstr "フライングゲット (Flying Get)"
+
+#: ../data/str.xml.in.h:34
 msgid "Film"
 msgstr "フィルム"
 
-#: ../data/str.xml.in.h:34
+#: ../data/str.xml.in.h:35
 msgid "Foot in Mouth"
 msgstr "失言"
 
-#: ../data/str.xml.in.h:35
+#: ../data/str.xml.in.h:36
 msgid "Fulfilling Life (Real life is Zyujitsu)"
 msgstr "充実した生活 (Real life is Zyujitsu)"
 
-#: ../data/str.xml.in.h:36
+#: ../data/str.xml.in.h:37
 msgid "Girl"
 msgstr "少女"
 
-#: ../data/str.xml.in.h:37
+#: ../data/str.xml.in.h:38
 msgid "Glasses Cool"
 msgstr "サングラス"
 
-#: ../data/str.xml.in.h:38
+#: ../data/str.xml.in.h:39
 msgid "Glasses Cool | Eyeroll"
 msgstr "サングラス | 目をむく"
 
-#: ../data/str.xml.in.h:39
+#: ../data/str.xml.in.h:40
 msgid "Good job (Otsukare)"
 msgstr "お疲れ様 (Otsukare)"
 
-#: ../data/str.xml.in.h:40
+#: ../data/str.xml.in.h:41
 msgid "He (Yatsu &lt;- Yashi)"
 msgstr "彼 (Yatsu &lt;- Yashi)"
 
-#: ../data/str.xml.in.h:41
+#: ../data/str.xml.in.h:42
 msgid "Hey"
 msgstr "おーい"
 
-#: ../data/str.xml.in.h:42
+#: ../data/str.xml.in.h:43
 msgid "Hug"
 msgstr "ハグ"
 
-#: ../data/str.xml.in.h:43
+#: ../data/str.xml.in.h:44
 msgid "Hug Left"
 msgstr "ハグ左"
 
-#: ../data/str.xml.in.h:44
+#: ../data/str.xml.in.h:45
 msgid "Hug Right"
 msgstr "ハグ右"
 
-#: ../data/str.xml.in.h:45
+#: ../data/str.xml.in.h:46
+msgid "In The Meantime (Toriaezu, Ma)"
+msgstr "とりあえず (Toriaezu, Ma)"
+
+#: ../data/str.xml.in.h:47
 msgid "Kiss"
 msgstr "キス"
 
-#: ../data/str.xml.in.h:46
+#: ../data/str.xml.in.h:48
 msgid "Kiss | Secret"
 msgstr "キス | 秘密"
 
-#: ../data/str.xml.in.h:47
+#: ../data/str.xml.in.h:49
 msgid "Laugh"
 msgstr "笑う"
 
-#: ../data/str.xml.in.h:48
+#: ../data/str.xml.in.h:50
 msgid "Laugh (Warau)"
 msgstr "笑う (Warau)"
 
-#: ../data/str.xml.in.h:49
+#: ../data/str.xml.in.h:51
 msgid "Love"
 msgstr "ラブ"
 
-#: ../data/str.xml.in.h:50
+#: ../data/str.xml.in.h:52
 msgid "Love Over"
 msgstr "ラブオーバー"
 
-#: ../data/str.xml.in.h:51
+#: ../data/str.xml.in.h:53
 msgid "Mail"
 msgstr "メール"
 
-#: ../data/str.xml.in.h:52
+#: ../data/str.xml.in.h:54
 msgid "Money Mouth"
 msgstr "金の口"
 
-#: ../data/str.xml.in.h:53
+#: ../data/str.xml.in.h:55
 msgid "Monkey"
 msgstr "猿"
 
-#: ../data/str.xml.in.h:54
+#: ../data/str.xml.in.h:56
 msgid "Moon"
 msgstr "月"
 
-#: ../data/str.xml.in.h:55
+#: ../data/str.xml.in.h:57
 msgid "Musical Note"
 msgstr "音符"
 
-#: ../data/str.xml.in.h:56
+#: ../data/str.xml.in.h:58
 msgid "Neutral"
 msgstr "中立"
 
-#: ../data/str.xml.in.h:57
+#: ../data/str.xml.in.h:59
 msgid "No"
 msgstr "いいえ"
 
-#: ../data/str.xml.in.h:58
+#: ../data/str.xml.in.h:60
 msgid "Omission (Shouryaku)"
 msgstr "省略 (Shouryaku)"
 
-#: ../data/str.xml.in.h:59
+#: ../data/str.xml.in.h:61
 msgid "Party"
 msgstr "パーティ"
 
-#: ../data/str.xml.in.h:60
+#: ../data/str.xml.in.h:62
 msgid "Phone"
 msgstr "電話"
 
-#: ../data/str.xml.in.h:61
+#: ../data/str.xml.in.h:63
 msgid "Present"
 msgstr "プレゼント"
 
-#: ../data/str.xml.in.h:62
+#: ../data/str.xml.in.h:64
 msgid "Sad"
 msgstr "悲しい"
 
-#: ../data/str.xml.in.h:63
+#: ../data/str.xml.in.h:65
 msgid "Say whatever one feels (Iitaidake)"
 msgstr "言いたいだけ"
 
-#: ../data/str.xml.in.h:64
+#: ../data/str.xml.in.h:66
 msgid "Shock"
 msgstr "ショック"
 
-#: ../data/str.xml.in.h:65
+#: ../data/str.xml.in.h:67
 msgid "Shout"
 msgstr "叫ぶ"
 
-#: ../data/str.xml.in.h:66
+#: ../data/str.xml.in.h:68
 msgid "Shut Mouth"
 msgstr "口をつぐむ"
 
-#: ../data/str.xml.in.h:67
+#: ../data/str.xml.in.h:69
 msgid "Sick"
 msgstr "病気"
 
-#: ../data/str.xml.in.h:68
+#: ../data/str.xml.in.h:70
 msgid "Smile"
 msgstr "スマイル"
 
-#: ../data/str.xml.in.h:69
+#: ../data/str.xml.in.h:71
 msgid "Smile Big"
 msgstr "大きなスマイル"
 
-#: ../data/str.xml.in.h:70
+#: ../data/str.xml.in.h:72
 msgid "Smileys"
 msgstr "顔文字"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:72
+#: ../data/str.xml.in.h:74
 msgid "Smileys (Chinese)"
 msgstr "顔文字 (中国語)"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:74
+#: ../data/str.xml.in.h:76
 msgid "Smileys (Japanese 2ch)"
 msgstr "顔文字 (日本語 2ch)"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:76
+#: ../data/str.xml.in.h:78
 msgid "Smileys (Japanese)"
 msgstr "顔文字 (日本語)"
 
-#: ../data/str.xml.in.h:77
+#: ../data/str.xml.in.h:79
 msgid "Smoking"
 msgstr "タバコを吸う"
 
-#: ../data/str.xml.in.h:78
+#: ../data/str.xml.in.h:80
 msgid "Sorry"
 msgstr "ごめんなさい"
 
-#: ../data/str.xml.in.h:79
+#: ../data/str.xml.in.h:81
 msgid "Star"
 msgstr "星"
 
-#: ../data/str.xml.in.h:80
+#: ../data/str.xml.in.h:82
 msgid "Thinking"
 msgstr "考え中"
 
-#: ../data/str.xml.in.h:81
+#: ../data/str.xml.in.h:83
 msgid "Tongue"
 msgstr "舌"
 
-#: ../data/str.xml.in.h:82
+#: ../data/str.xml.in.h:84
 msgid "Wink"
 msgstr "ウインク"
 
-#: ../data/str.xml.in.h:83
+#: ../data/str.xml.in.h:85
 msgid "Yawn"
 msgstr "あくび"
 
-#: ../data/str.xml.in.h:84
+#: ../data/str.xml.in.h:86
 msgid "Yes"
 msgstr "はい"
 
@@ -1551,15 +1559,15 @@ msgstr "文字テーブルの TYPE を使用する。利用可能な TYPE=0, 1, 
 msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
 msgstr "キーボードレイアウトの TYPE を使用する。利用可能な TYPE=0, 1"
 
-#: ../input-pad/window-gtk.c:1002
+#: ../input-pad/window-gtk.c:1009
 msgid "Fold layout"
 msgstr "レイアウトを折りたたむ"
 
-#: ../input-pad/window-gtk.c:1007 ../input-pad/window-gtk.c:2358
+#: ../input-pad/window-gtk.c:1014 ../input-pad/window-gtk.c:2367
 msgid "Extend layout"
 msgstr "レイアウトを広げる"
 
-#: ../input-pad/window-gtk.c:2505
+#: ../input-pad/window-gtk.c:2514
 msgid "_Layout:"
 msgstr "レイアウト(_L):"
 
@@ -1587,16 +1595,16 @@ msgstr "レイアウト(_L):"
 #. license1, license2, license3);
 #.
 #. This format has been used since gtk 2.20.
-#: ../input-pad/window-gtk.c:2565
+#: ../input-pad/window-gtk.c:2574
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
 msgstr ""
 "このプログラムは完全に無保証で提供しています。詳細は、%s を見てください。"
 
-#: ../input-pad/window-gtk.c:3037
+#: ../input-pad/window-gtk.c:3046
 msgid "Group"
 msgstr "グループ"
 
-#: ../input-pad/window-gtk.c:3045
+#: ../input-pad/window-gtk.c:3054
 msgid "Sub Group"
 msgstr "サブグループ"
