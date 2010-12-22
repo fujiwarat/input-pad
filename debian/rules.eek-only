@@ -27,7 +27,7 @@ override_dh_install:
 	 rm -f  usr/lib/libinput-pad.so* ; \
 	 rm -rf usr/lib/pkgconfig ; \
 	 rm -rf usr/lib/python2.6 ; \
-	 rm -rf usr/lib/input-pad-0.1/modules/xkeysend ; \
+	 rm -rf usr/lib/input-pad-1.0/modules/xkeysend ; \
 	);
 	dh_install --list-missing --sourcedir=debian/tmp
 

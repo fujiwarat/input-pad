@@ -20,7 +20,7 @@ Build-Depends:
     python-dev,
     swig,
     debhelper (>= 7.0.50)
-Standards-Version: 3.8.4
+Standards-Version: 3.9.1
 Homepage: http://code.google.com/p/input-pad/
 
 Package: libinput-pad-eek
@@ -28,7 +28,7 @@ Architecture: any
 Depends:
     ${misc:Depends},
     ${shlibs:Depends},
-    libinput-pad0 (>= 0.1.1),
+    libinput-pad1 (>= 1.0.0),
     libeek0
 Description: On-screen Input Pad to Send Characters with Mouse - eek
  The input pad is a tool to send a character on button to text applications.
@@ -41,7 +41,7 @@ Section: libdevel
 Architecture: any
 Depends:
     ${misc:Depends},
-    libinput-pad0 (>= 0.1.1),
+    libinput-pad1 (>= 1.0.0),
     libglib2.0-dev,
     libgtk2.0-dev
 Description: On-screen Input Pad to Send Characters with Mouse - eek-dev

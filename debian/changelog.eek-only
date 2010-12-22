@@ -1,3 +1,16 @@
+input-pad-eek (1.0.0-1ppa1~maverick1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - bump standards version to 3.9.1.
+    - replace libinput-pad0 with libinput-pad1.
+  * debian/libinput-pad-eek-dev.install:
+  * debian/libinput-pad-eek.install:
+  * debian/rule:
+    - bump installed directory to 1.0.
+
+ -- Takao Fujiwara <takao.fujiwara1@gmail.com>  Thu, 16 Dec 2010 14:43:35 +0900
+
 input-pad-eek (0.1.1-1ppa3~lucid) lucid; urgency=low
 
   * Fixed dependency failures.
