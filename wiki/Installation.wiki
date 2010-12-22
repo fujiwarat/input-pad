@@ -13,7 +13,7 @@ usage:
 
 = Fedora =
 Fedora provides the official packages.
-== Fedora 12, 13 ==
+== Fedora 12 or later ==
 
 {{{
 # yum install input-pad
@@ -32,27 +32,22 @@ python package:
 
   * input-pad-xtest is available to use X11 XTEST extension but it is provided for the test purpose only at present.
 
-== Fedora rawhide ==
+=== eekboard extension ===
 
-rawhide also provide eekboard GUI extension [1]
+Fedora 13 or later also provide eekboard GUI extension [1]
 {{{
-# yumdownloader --enablerepo=rawhide input-pad
-# yumdownloader --enablerepo=rawhide eekboard-libs
-# yumdownloader --enablerepo=rawhide eekboard
-# yumdownloader --enablerepo=rawhide input-pad-eek
-# yumdownloader --enablerepo=rawhide ibus-input-pad
-# rpm -ihv input-pad-*.rpm ibus-input-pad-*.rpm eekboard-libs-*.rpm
+# yum install input-pad eekboard-libs eekboard input-pad-eek ibus-input-pad
 % input-pad --help
 }}}
 
 = Ubuntu =
 Non-official packages are available for Ubuntu.
-== Ubuntu 10 (lucid) ==
+== Ubuntu 10.10 (maverick) ==
 
 {{{
 % sudo add-apt-repository ppa:takao-fujiwara/ppa
 % sudo apt-get update
-% sudo apt-get install libinput-pad0
+% sudo apt-get install libinput-pad1
 % sudo apt-get install input-pad
 % sudo apt-get install ibus-input-pad
 }}}
