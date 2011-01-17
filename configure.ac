@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad 
 #
-# Copyright (c) 2010 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010 Red Hat, Inc.
+# Copyright (c) 2010-2011 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2011 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -216,7 +216,7 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 
 AM_GLIB_GNU_GETTEXT
-AM_GLIB_DEFINE_LOCALEDIR(IBUS_LOCALEDIR)
+AM_GLIB_DEFINE_LOCALEDIR(INPUT_PAD_LOCALEDIR)
 
 dnl - OUTPUT files
 AC_CONFIG_FILES([ po/Makefile.in

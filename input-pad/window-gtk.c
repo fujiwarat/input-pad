@@ -1,7 +1,7 @@
 /* vim:set et sts=4: */
 /* input-pad - The input pad
- * Copyright (C) 2010 Takao Fujiwara <takao.fujiwara1@gmail.com>
- * Copyright (C) 2010 Red Hat, Inc.
+ * Copyright (C) 2010-2011 Takao Fujiwara <takao.fujiwara1@gmail.com>
+ * Copyright (C) 2010-2011 Red Hat, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -4509,7 +4509,7 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
     const gchar *name;
 
 #ifdef ENABLE_NLS
-    bindtextdomain (GETTEXT_PACKAGE, IBUS_LOCALEDIR);
+    bindtextdomain (GETTEXT_PACKAGE, INPUT_PAD_LOCALEDIR);
     bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
     setlocale (LC_ALL, "");
