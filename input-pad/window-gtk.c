@@ -31,6 +31,10 @@
 #include <string.h> /* strlen */
 #include <stdlib.h> /* exit */
 
+#ifdef ENABLE_NLS
+#include <locale.h>
+#endif
+
 #include "i18n.h"
 #include "button-gtk.h"
 #include "combobox-gtk.h"
@@ -4508,7 +4512,7 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
     bindtextdomain (GETTEXT_PACKAGE, IBUS_LOCALEDIR);
     bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
-    gtk_set_locale ();
+    setlocale (LC_ALL, "");
 #endif
 
     if (type != INPUT_PAD_WINDOW_TYPE_GTK) {
