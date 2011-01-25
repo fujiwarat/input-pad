@@ -83,11 +83,11 @@ on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
     InputPadGtkWindow *window;
     char *str, *empty = "";
     guint keycode;
-    guint keysym;
-    guint *keysyms;
-    guint keysym0;
-    gint num_groups, num_levels;
-    gint group, level;
+    EekSymbol *symbol;
+    EekSymbol *symbol0;
+    guint keysym = EEK_INVALID_KEYSYM;
+    guint keysym0 = EEK_INVALID_KEYSYM;
+    gint group;
     guint state = 0;
     gboolean retval = FALSE;
 
@@ -96,14 +96,22 @@ on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
 
     window = INPUT_PAD_GTK_WINDOW (user_data);
     keycode = eek_key_get_keycode (key);
-    keysym = eek_key_get_keysym (key);
-    str = eek_keysym_to_string (keysym);
+    symbol = eek_key_get_symbol_with_fallback (key, 0, 0);
+    if (EEK_IS_KEYSYM(symbol))
+        keysym = eek_keysym_get_xkeysym (EEK_KEYSYM(symbol));
+    str = eek_symbol_get_label (symbol);
     if (str == NULL)
         str = empty;
-    eek_key_get_keysyms (key, &keysyms, &num_groups, &num_levels);
-    eek_key_get_keysym_index (key, &group, &level);
+    group = eek_keyboard_get_group (keyboard);
+    symbol0 = eek_key_get_symbol_at_index (key, group, 0, 0, 0);
+    if (EEK_IS_KEYSYM(symbol0))
+        keysym0 = eek_keysym_get_xkeysym (EEK_KEYSYM(symbol0));
+
+    if (keysym0 == EEK_INVALID_KEYSYM) {
+        keysym0 = keysym;
+    }
     state = input_pad_gtk_window_get_keyboard_state (window);
-    if (keysyms && (keysym != keysyms[group * num_levels])) {
+    if (keysym != EEK_INVALID_KEYSYM && keysym != keysym0) {
         state |= ShiftMask;
     }
     state = input_pad_xkb_build_core_state (state, group);
@@ -114,11 +122,6 @@ on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
     if (str != empty)
         g_free (str);
 
-    if (keysyms) {
-        keysym0 = keysyms[0];
-    } else {
-        keysym0 = keysym;
-    }
     if (keysym0 == XK_Num_Lock) {
         keysym0 = XK_Shift_L;
     }
@@ -147,7 +150,7 @@ create_keyboard_layout_ui_real_eek (InputPadGtkKbdui  *kbdui,
 
     keyboard = kbdui_eek->priv->eek_keyboard = eek_keyboard_new (layout, 640, 480);
     g_object_unref (layout);
-    g_object_ref_sink (keyboard);
+    eek_keyboard_set_modifier_behavior (keyboard, EEK_MODIFIER_BEHAVIOR_LATCH);
     widget = eek_gtk_keyboard_new (keyboard);
     eek_keyboard_get_size (keyboard, &width, &height);
 
