@@ -1,3 +1,22 @@
+input-pad (1.0.0-1ppa1~maverick1) maverick; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - bump standards version to 3.9.1.
+    - replace libinput-pad0 with libinput-pad1.
+  * debian/libinput-pad-dev.install:
+  * debian/libinput-pad-xtest.install:
+  * debian/libinput-pad-xtest.symbols:
+  * debian/libinput-pad0.dirs:
+  * debian/libinput-pad0.symbols:
+    - bump installed directory to 1.0.
+  * debian/libinput-pad1.dirs:
+  * debian/libinput-pad1.install:
+  * debian/libinput-pad1.symbols:
+    - rename from libinput-pad0.*.
+
+ -- Takao Fujiwara <takao.fujiwara1@gmail.com>  Thu, 16 Dec 2010 14:43:35 +0900
+
 input-pad (0.1.1-1) lucid; urgency=low
 
   * Initial release

@@ -1,7 +1,7 @@
 /* vim:set et sts=4: */
 /* input-pad - The input pad
- * Copyright (C) 2010 Takao Fujiwara <takao.fujiwara1@gmail.com>
- * Copyright (C) 2010 Red Hat, Inc.
+ * Copyright (C) 2010-2011 Takao Fujiwara <takao.fujiwara1@gmail.com>
+ * Copyright (C) 2010-2011 Red Hat, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -75,7 +75,7 @@ have_extension (InputPadGtkWindow *window)
     g_return_val_if_fail (window != NULL &&
                           INPUT_PAD_IS_GTK_WINDOW (window), FALSE);
 
-    if (!XQueryExtension (GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window),
+    if (!XQueryExtension (GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET (window))),
                          "XTEST", &opcode, &event, &error)) {
         g_warning ("Could not find XTEST module. Maybe you did not install "
                    "libXtst library.\n"
@@ -99,13 +99,13 @@ on_window_button_pressed (InputPadGtkWindow    *window,
     }
     if (type == INPUT_PAD_TABLE_TYPE_CHARS) {
         if (keysym > 0) {
-            send_key_event (GTK_WIDGET(window)->window, keysym, keycode, state);
+            send_key_event (gtk_widget_get_window (GTK_WIDGET (window)), keysym, keycode, state);
             return TRUE;
         } else {
             return FALSE;
         }
     } else if (type == INPUT_PAD_TABLE_TYPE_KEYSYMS) {
-        send_key_event (GTK_WIDGET(window)->window, keysym, keycode, state);
+        send_key_event (gtk_widget_get_window (GTK_WIDGET (window)), keysym, keycode, state);
         return TRUE;
     }
     return FALSE;

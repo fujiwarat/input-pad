@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad 
 #
-# Copyright (c) 2010 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010 Red Hat, Inc.
+# Copyright (c) 2010-2011 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2011 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -70,7 +70,6 @@ libinput_pad_la_SOURCES = \
 	$(NULL)
 
 libinput_pad_la_CFLAGS = \
-	$(GTK2_CFLAGS)                                          \
 	$(LIBXML2_CFLAGS)                                       \
 	$(X11_CFLAGS)                                           \
 	$(XKB_CFLAGS)                                           \
@@ -78,7 +77,6 @@ libinput_pad_la_CFLAGS = \
 	$(NULL)
 
 libinput_pad_la_LIBADD = \
-	$(GTK2_LIBS)                                            \
 	$(LIBXML2_LIBS)                                         \
 	$(X11_LIBS)                                             \
 	$(XKB_LIBS)                                             \
@@ -90,6 +88,14 @@ libinput_pad_la_LDFLAGS = \
 	-version-info $(LT_VERSION_INFO)                        \
 	$(no_undefined)                                         \
 	$(NULL)
+
+if HAVE_GTK3
+    libinput_pad_la_CFLAGS += $(GTK3_CFLAGS)
+    libinput_pad_la_LIBADD += $(GTK3_LIBS)
+else
+    libinput_pad_la_CFLAGS += $(GTK2_CFLAGS)
+    libinput_pad_la_LIBADD += $(GTK2_LIBS)
+endif
 
 input-pad-marshal.h: input-pad-marshal.list
 	@$(GLIB_GENMARSHAL) $< --prefix=INPUT_PAD --header > $@ \
@@ -116,13 +122,11 @@ libinput_pad_xtest_gdk_la_SOURCES = \
 	$(NULL)
 
 libinput_pad_xtest_gdk_la_CFLAGS = \
-	$(GTK2_CFLAGS)                                          \
 	$(X11_CFLAGS)                                           \
 	$(NULL)
 
 libinput_pad_xtest_gdk_la_LIBADD = \
 	$(builddir)/libinput-pad.la                             \
-	$(GTK2_LIBS)                                            \
 	$(X11_LIBS)                                             \
 	$(XTEST_LIBS)                                           \
 	$(NULL)
@@ -132,6 +136,15 @@ libinput_pad_xtest_gdk_la_LDFLAGS = \
 	-avoid-version                                          \
 	$(no_undefined)                                         \
 	$(NULL)
+
+if HAVE_GTK3
+    libinput_pad_xtest_gdk_la_CFLAGS += $(GTK3_CFLAGS)
+    libinput_pad_xtest_gdk_la_LIBADD += $(GTK3_LIBS)
+else
+    libinput_pad_xtest_gdk_la_CFLAGS += $(GTK2_CFLAGS)
+    libinput_pad_xtest_gdk_la_LIBADD += $(GTK2_LIBS)
+endif
+
 endif
 
 if HAVE_EEK

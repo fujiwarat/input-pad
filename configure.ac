@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad 
 #
-# Copyright (c) 2010 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010 Red Hat, Inc.
+# Copyright (c) 2010-2011 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2011 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -22,9 +22,9 @@
 
 dnl - if not 1, append datestamp to the version number.
 m4_define([pad_released], [1])
-m4_define([pad_major_version], [0])
-m4_define([pad_minor_version], [1])
-m4_define([pad_micro_version], [1])
+m4_define([pad_major_version], [1])
+m4_define([pad_minor_version], [0])
+m4_define([pad_micro_version], [0])
 m4_define(pad_maybe_datestamp,
     m4_esyscmd([if test x]pad_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
 
@@ -78,9 +78,36 @@ PKG_CHECK_MODULES(GLIB2, [
     glib-2.0 >= 2.8
 ])
 
-PKG_CHECK_MODULES(GTK2, [
-    gtk+-2.0
-])
+dnl - check gtk
+AC_ARG_WITH([gtk],
+    [AS_HELP_STRING([--with-gtk=2.0|3.0],
+                    [Select GTK+ version. The default is 2.0])],
+    [case "$with_gtk" in
+        2.0|3.0) ;;
+        *) AC_MSG_ERROR([invalid gtk version specified]) ;;
+     esac],
+    [with_gtk=2.0]
+)
+
+case "$with_gtk" in
+    2.0)
+        PKG_CHECK_MODULES(GTK2, [
+            gtk+-2.0
+        ])
+        AM_CONDITIONAL(HAVE_GTK3, false)
+        AM_CONDITIONAL(HAVE_GTK2, true)
+        GTK_API_VERSION=2.0
+        ;;
+    3.0)
+        PKG_CHECK_MODULES(GTK3, [
+            gtk+-3.0
+        ])
+        AM_CONDITIONAL(HAVE_GTK3, true)
+        AM_CONDITIONAL(HAVE_GTK2, false)
+        GTK_API_VERSION=3.0
+    ;;
+esac
+AC_SUBST(GTK_API_VERSION)
 
 PKG_CHECK_MODULES(LIBXML2, [
     libxml-2.0 >= 2.0
@@ -189,7 +216,7 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 
 AM_GLIB_GNU_GETTEXT
-AM_GLIB_DEFINE_LOCALEDIR(IBUS_LOCALEDIR)
+AM_GLIB_DEFINE_LOCALEDIR(INPUT_PAD_LOCALEDIR)
 
 dnl - OUTPUT files
 AC_CONFIG_FILES([ po/Makefile.in
@@ -203,3 +230,15 @@ pyinput-pad/pyinput_pad.pth
 ])
 
 AC_OUTPUT
+echo "
+                input-pad version pad_version
+
+
+libinput_pad version:    $libinput_pad_VERSION
+GTK+ version:            $GTK_API_VERSION
+Have libxklavier:        $have_libxklavier
+Enable EEK               $enable_eek
+Enable Python            $enable_python
+Enable XTEST             $enable_xtest
+lt version info          $LT_VERSION_INFO
+"

@@ -1,6 +1,6 @@
-usr/include/input-pad-0.1
-usr/lib/input-pad-0.1/modules/xkeysend/*.a
-usr/lib/input-pad-0.1/modules/xkeysend/*.la
+usr/include/input-pad-1.0
+usr/lib/input-pad-1.0/modules/xkeysend/*.a
+usr/lib/input-pad-1.0/modules/xkeysend/*.la
 usr/lib/libinput-pad.a
 usr/lib/libinput-pad.la
 usr/lib/libinput-pad.so

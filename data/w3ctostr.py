@@ -2,10 +2,10 @@
 # vim:set et sts=4 sw=4:
 # -*- coding: utf-8 -*-
 #
-# ibus-input-pad - The input pad for IBus
+# input-pad - The input pad
 #
-# Copyright (c) 2010 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010 Red Hat, Inc.
+# Copyright (c) 2010-2011 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2011 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
