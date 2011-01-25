@@ -40,7 +40,6 @@
 
 struct _InputPadGtkKbduiEekPrivate {
     EekKeyboard                *eek_keyboard;
-    EekLayout                  *eek_layout;
 };
 
 static void             create_keyboard_layout_ui_real_eek
@@ -68,16 +67,12 @@ on_window_keyboard_changed_eek (InputPadGtkWindow *window,
                                 gint               group,
                                 gpointer           data)
 {
-    gint prev_group, prev_level;
     InputPadGtkKbduiEek *kbdui;
 
     g_return_if_fail (INPUT_PAD_IS_GTK_KBDUI_EEK (data));
 
     kbdui = INPUT_PAD_GTK_KBDUI_EEK (data);
-    eek_keyboard_get_keysym_index (kbdui->priv->eek_keyboard,
-                                   &prev_group, &prev_level);
-    eek_keyboard_set_keysym_index (kbdui->priv->eek_keyboard,
-                                   group, prev_level);
+    eek_keyboard_set_group (kbdui->priv->eek_keyboard, group);
 }
 
 static void
@@ -130,8 +125,7 @@ on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
     input_pad_gtk_window_set_keyboard_state_with_keysym (window, keysym0);
     if (keysym0 == XK_Shift_L || keysym0 == XK_Shift_R) {
         state = input_pad_gtk_window_get_keyboard_state (window);
-        eek_keyboard_set_keysym_index (keyboard, group,
-                                       state & ShiftMask ? 1 : 0);
+        eek_keyboard_set_level (keyboard, state & ShiftMask ? 1 : 0);
     }
 }
 
@@ -143,27 +137,24 @@ create_keyboard_layout_ui_real_eek (InputPadGtkKbdui  *kbdui,
     InputPadGtkKbduiEek *kbdui_eek;
     EekKeyboard *keyboard;
     EekLayout *layout;
-    EekBounds bounds;
     GtkWidget *widget;
+    gdouble width, height;
 
     g_return_if_fail (INPUT_PAD_IS_GTK_KBDUI_EEK (kbdui));
 
     kbdui_eek = INPUT_PAD_GTK_KBDUI_EEK (kbdui);
-    keyboard = kbdui_eek->priv->eek_keyboard = eek_gtk_keyboard_new ();
+    layout = eek_xkl_layout_new ();
+
+    keyboard = kbdui_eek->priv->eek_keyboard = eek_keyboard_new (layout, 640, 480);
+    g_object_unref (layout);
     g_object_ref_sink (keyboard);
-    layout = kbdui_eek->priv->eek_layout = eek_xkl_layout_new ();
-    g_object_ref_sink (layout);
-    eek_keyboard_set_layout (keyboard, layout);
-    bounds.width = 640;
-    bounds.height = 480;
-    eek_element_set_bounds (EEK_ELEMENT(keyboard), &bounds);
-    widget = eek_gtk_keyboard_get_widget (EEK_GTK_KEYBOARD(keyboard));
-    eek_element_get_bounds (EEK_ELEMENT(keyboard), &bounds);
+    widget = eek_gtk_keyboard_new (keyboard);
+    eek_keyboard_get_size (keyboard, &width, &height);
 
     gtk_box_pack_start (GTK_BOX (vbox), widget, FALSE, FALSE, 0);
     gtk_box_reorder_child (GTK_BOX (vbox), widget, 0);
     gtk_widget_show (widget);
-    gtk_widget_set_size_request (widget, bounds.width, bounds.height);
+    gtk_widget_set_size_request (widget, width, height);
 
     g_signal_connect (G_OBJECT (window), "keyboard-changed",
                       G_CALLBACK (on_window_keyboard_changed_eek),
@@ -191,7 +182,6 @@ destroy_prev_keyboard_layout_eek (InputPadGtkKbdui  *kbdui,
     gtk_widget_destroy (widget);
 
     g_object_unref (kbdui_eek->priv->eek_keyboard);
-    g_object_unref (kbdui_eek->priv->eek_layout);
 }
 
 static void
