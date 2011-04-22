@@ -831,6 +831,10 @@
           <comment>In My Opinion</comment>
         </string>
         <string>
+          <label>LGTM</label>
+          <comment>Looks Good To Me</comment>
+        </string>
+        <string>
           <label>lol</label>
           <comment>Laugh Out Loud</comment>
         </string>
