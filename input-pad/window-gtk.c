@@ -160,10 +160,6 @@ static GtkBuildableIface       *parent_buildable_iface;
 #endif
 
 static GOptionEntry entries[] = {
-#ifdef MODULE_XTEST_GDK_BASE
-  { "enable-module-xtest", 'x', 0, G_OPTION_ARG_NONE, &use_module_xtest,
-    N_("Use XTEST module to send key events"), NULL},
-#endif
   { "version", 'v', 0, G_OPTION_ARG_NONE, &ask_version,
     N_("Display version"), NULL},
   { "with-kbdui", 'k', 0, G_OPTION_ARG_STRING, &kbdui_name,
@@ -177,6 +173,18 @@ static GOptionEntry entries[] = {
     N_("Use TYPE of keyboard layout. The available TYPE=0, 1"), "TYPE"},
   { NULL }
 };
+
+#ifdef MODULE_XTEST_GDK_BASE
+static GOptionEntry enable_xtest_entry[] = {
+  { "enable-module-xtest", 'x', 0, G_OPTION_ARG_NONE, &use_module_xtest,
+    N_("Use XTEST module to send key events"), NULL},
+};
+
+static GOptionEntry disable_xtest_entry[] = {
+  { "disable-module-xtest", 'x', 0, G_OPTION_ARG_NONE, &use_module_xtest,
+    N_("Use XSendEvent to send key events"), NULL},
+};
+#endif
 
 static void             check_window_size_with_hide_widget
                                                 (GtkWidget         *hide_widget,
@@ -2145,7 +2153,8 @@ get_keysym_display_name (guint keysym, GtkWidget *widget, gchar **tooltipp)
     }
     // or KeySymToUcs4 (keysym);
     if ((ch = gdk_keyval_to_unicode (keysym)) != 0 &&
-        g_unichar_validate (ch)) {
+        g_unichar_validate (ch) &&
+        g_unichar_isprint (ch)) {
         buff[g_unichar_to_utf8 (ch, buff)] = '\0';
         display_name = g_strdup (buff);
     } else if (g_str_has_prefix (keysym_name, "XF86_Switch_VT_")) {
@@ -3422,6 +3431,41 @@ create_ui (unsigned int child)
 
 #ifdef MODULE_XTEST_GDK_BASE
 
+static GModule *
+open_xtest_gmodule (gboolean check)
+{
+    gchar *filename;
+    GModule *module = NULL;
+    const gchar *error = NULL;
+
+    g_return_val_if_fail (MODULE_XTEST_GDK_BASE != NULL, NULL);
+
+    if (!g_module_supported ()) {
+        error = g_module_error ();
+        if (!check) {
+            g_warning ("Module (%s) is not supported on your platform: %s",
+                       MODULE_XTEST_GDK_BASE, error ? error : "");
+        }
+        return NULL;
+    }
+
+    filename = g_module_build_path (MODULE_XTEST_GDK_DIR, MODULE_XTEST_GDK_BASE);
+    g_return_val_if_fail (filename != NULL, NULL);
+
+    module = g_module_open (filename, G_MODULE_BIND_LAZY);
+    if (module == NULL) {
+        error = g_module_error ();
+        if (!check) {
+            g_warning ("Could not open %s: %s", filename, error ? error : "");
+        }
+        g_free (filename);
+        return NULL;
+    }
+    g_free (filename);
+
+    return module;
+}
+
 static void
 input_pad_gtk_window_xtest_gdk_destroy (InputPadGtkWindow *window)
 {
@@ -3445,7 +3489,6 @@ input_pad_gtk_window_xtest_gdk_destroy (InputPadGtkWindow *window)
 static void
 input_pad_gtk_window_xtest_gdk_init (InputPadGtkWindow *window)
 {
-    gchar *filename;
     const gchar *error = NULL;
     const gchar *symbol_name;
     const gchar *module_name;
@@ -3459,27 +3502,9 @@ input_pad_gtk_window_xtest_gdk_init (InputPadGtkWindow *window)
     if (window->priv->module_gdk_xtest) {
         return;
     }
-
-    g_return_if_fail (MODULE_XTEST_GDK_BASE != NULL);
-
-    if (!g_module_supported ()) {
-        error = g_module_error ();
-        g_warning ("Module (%s) is not supported on your platform: %s",
-                   MODULE_XTEST_GDK_BASE, error ? error : "");
+    if ((module = open_xtest_gmodule (FALSE)) == NULL) {
         return;
     }
-
-    filename = g_module_build_path (MODULE_XTEST_GDK_DIR, MODULE_XTEST_GDK_BASE);
-    g_return_if_fail (filename != NULL);
-
-    module = g_module_open (filename, G_MODULE_BIND_LAZY);
-    if (module == NULL) {
-        error = g_module_error ();
-        g_warning ("Could not open %s: %s", filename, error ? error : "");
-        g_free (filename);
-        return;
-    }
-    g_free (filename);
 
     window->priv->module_gdk_xtest = module;
 
@@ -4503,6 +4528,10 @@ void
 input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
 {
     GOptionContext *context;
+#ifdef MODULE_XTEST_GDK_BASE
+    GModule *module = NULL;
+    gboolean has_xtest_module = FALSE;
+#endif
     InputPadGtkKbduiContext *kbdui_context;
     GError *error = NULL;
     GList *list = NULL;
@@ -4523,6 +4552,21 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
     context = g_option_context_new (N_("Input Pad"));
     g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
     g_option_context_add_main_entries (context, entries, GETTEXT_PACKAGE);
+
+#ifdef MODULE_XTEST_GDK_BASE
+    if ((module = open_xtest_gmodule (TRUE)) != NULL) {
+        g_module_close (module);
+        has_xtest_module = TRUE;
+        g_option_context_add_main_entries (context,
+                                           disable_xtest_entry,
+                                           GETTEXT_PACKAGE);
+    } else {
+        g_option_context_add_main_entries (context,
+                                           enable_xtest_entry,
+                                           GETTEXT_PACKAGE);
+    }
+#endif
+
     g_option_context_add_group (context, gtk_get_option_group (TRUE));
 
     kbdui_context = input_pad_gtk_kbdui_context_new ();
@@ -4539,6 +4583,12 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
                                        input_pad_get_version ());
         exit (0);
     }
+
+#ifdef MODULE_XTEST_GDK_BASE
+    if (has_xtest_module) {
+        use_module_xtest = !use_module_xtest;
+    }
+#endif
 
     gtk_init (argc, argv);
     input_pad_gtk_window_kbdui_arg_init_post_list (argc, argv, kbdui_context, list);

@@ -39,6 +39,56 @@ gboolean     input_pad_module_setup (InputPadGtkWindow *window);
 G_MODULE_EXPORT
 const gchar* g_module_check_init (GModule *module);
 
+static Display *saved_display = NULL;
+
+static int
+xsend_key_state (Display       *display,
+                 guint          state,
+                 Bool           pressed)
+{
+    KeyCode     keycode_real;
+    static struct {
+        guint   state;
+        KeySym  keysym;
+    } state2keysym[] = {
+        { ControlMask, XK_Control_L } ,
+        { Mod1Mask,    XK_Alt_L },
+        { Mod4Mask,    XK_Super_L },
+        { ShiftMask,   XK_Shift_L },
+        { LockMask,    XK_Caps_Lock },
+        { 0,           0L }
+    };
+    int i;
+
+    if (pressed) {
+        saved_display = display;
+    } else {
+        saved_display = NULL;
+    }
+
+    for (i = 0; state2keysym[i].state != 0; i++) {
+        if (state & state2keysym[i].state) {
+            keycode_real = XKeysymToKeycode (display, state2keysym[i].keysym);
+            XTestFakeKeyEvent (display, keycode_real, pressed, CurrentTime);
+            XSync (display, False);
+        }
+    }
+    return TRUE;
+}
+
+static void
+signal_exit_cb (int signal_id)
+{
+    if (saved_display != NULL) {
+        xsend_key_state (saved_display,
+                         ControlMask | Mod1Mask | Mod4Mask | ShiftMask | LockMask,
+                         FALSE);
+        saved_display = NULL;
+    }
+    signal (signal_id, SIG_DFL);
+    raise (signal_id);
+}
+
 static int
 send_key_event (GdkWindow      *gdkwindow,
                 guint           keysym,
@@ -49,6 +99,9 @@ send_key_event (GdkWindow      *gdkwindow,
     KeyCode     keycode_real;
 
     display = GDK_WINDOW_XDISPLAY (gdkwindow);
+    if (state != 0) {
+        xsend_key_state (display, state, True);
+    }
     if (keycode != 0) {
         keycode_real = (KeyCode) keycode;
     } else {
@@ -58,6 +111,9 @@ send_key_event (GdkWindow      *gdkwindow,
     XSync (display, False);
     XTestFakeKeyEvent (display, keycode_real, False, CurrentTime);
     XSync (display, False);
+    if (state != 0) {
+        xsend_key_state (display, state, False);
+    }
 
     return TRUE;
 }
@@ -126,6 +182,7 @@ on_window_reorder_button_pressed (InputPadGtkWindow    *window,
 gboolean
 input_pad_module_init (InputPadGtkWindow *window)
 {
+    signal (SIGINT, signal_exit_cb);
     return TRUE;
 }
 
