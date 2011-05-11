@@ -3,6 +3,7 @@
 data/base.xml.in
 data/cmd.xml.in
 data/ja.xml.in
+data/runr.xml.in
 data/keyboard.xml.in
 data/input-pad.desktop.in
 [type: gettext/glade]data/input-pad.ui

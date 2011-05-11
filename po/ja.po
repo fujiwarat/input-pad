@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
 "POT-Creation-Date: 2010-11-11 01:44+0900\n"
-"PO-Revision-Date: 2010-11-11 01:42+0900\n"
+"PO-Revision-Date: 2011-05-11 13:19+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -135,7 +135,7 @@ msgid "Symbols"
 msgstr "記号"
 
 #: ../data/base.xml.in.h:31
-msgid "Technicals"
+msgid "Technical"
 msgstr "技術用記号"
 
 #: ../data/base.xml.in.h:32
