@@ -1,0 +1,1648 @@
+# Source translations for input-pad
+# Copyright (C) 1999-2011 Free Software Foundation, Inc.
+# This file is distributed under the same license as the input-pad package.
+# Takao Fujiwara <takao.fujiwara1@gmail.com>, 2010-2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: input-pad HEAD\n"
+"Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
+"POT-Creation-Date: 2011-05-19 11:35+0900\n"
+"PO-Revision-Date: 2011-05-19 11:35+0900\n"
+"Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
+"Language-Team: Source\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/base.xml.in.h:1
+msgid "ASCII"
+msgstr ""
+
+#: ../data/base.xml.in.h:2
+msgid "All"
+msgstr ""
+
+#: ../data/base.xml.in.h:3
+msgid "Arrow"
+msgstr ""
+
+#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3933
+msgid "Block"
+msgstr ""
+
+#: ../data/base.xml.in.h:5 ../input-pad/unicode_block.h:112
+msgid "Box Drawing"
+msgstr ""
+
+#: ../data/base.xml.in.h:6
+msgid "Braille"
+msgstr ""
+
+#: ../data/base.xml.in.h:7
+msgid "CJK"
+msgstr ""
+
+#: ../data/base.xml.in.h:8 ../input-pad/unicode_block.h:145
+msgid "CJK Compatibility"
+msgstr ""
+
+#: ../data/base.xml.in.h:9
+msgid "Controls"
+msgstr ""
+
+#: ../data/base.xml.in.h:10
+msgid "Currency"
+msgstr ""
+
+#: ../data/base.xml.in.h:11 ../input-pad/unicode_block.h:116
+msgid "Dingbats"
+msgstr ""
+
+#: ../data/base.xml.in.h:12
+msgid "Enclosed"
+msgstr ""
+
+#: ../data/base.xml.in.h:13
+msgid "Fraction"
+msgstr ""
+
+#: ../data/base.xml.in.h:14
+msgid "General"
+msgstr ""
+
+#: ../data/base.xml.in.h:15
+msgid "Geometric"
+msgstr ""
+
+#: ../data/base.xml.in.h:16
+msgid "Graphics"
+msgstr ""
+
+#: ../data/base.xml.in.h:17
+msgid "Latin"
+msgstr ""
+
+#: ../data/base.xml.in.h:18 ../input-pad/unicode_block.h:39
+msgid "Latin Extended-A"
+msgstr ""
+
+#: ../data/base.xml.in.h:19 ../input-pad/unicode_block.h:38
+msgid "Latin-1 Supplement"
+msgstr ""
+
+#: ../data/base.xml.in.h:20
+msgid "Letterlike"
+msgstr ""
+
+#: ../data/base.xml.in.h:21
+msgid "Mathematical"
+msgstr ""
+
+#: ../data/base.xml.in.h:22
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../data/base.xml.in.h:23 ../data/zh.xml.in.h:3
+msgid "Numbers"
+msgstr ""
+
+#: ../data/base.xml.in.h:24
+msgid "OCR"
+msgstr ""
+
+#: ../data/base.xml.in.h:25
+msgid "Punctuations"
+msgstr ""
+
+#: ../data/base.xml.in.h:26
+msgid "Roman"
+msgstr ""
+
+#: ../data/base.xml.in.h:27
+msgid "Small Form"
+msgstr ""
+
+#. Translators: Superscripts and Subscripts
+#: ../data/base.xml.in.h:29
+msgid "Super and Sub"
+msgstr ""
+
+#: ../data/base.xml.in.h:30
+msgid "Symbols"
+msgstr ""
+
+#: ../data/base.xml.in.h:31
+msgid "Technical"
+msgstr ""
+
+#: ../data/base.xml.in.h:32
+msgid "Unit"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:1
+msgid "Century Year"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:2
+msgid "ChangeLog date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:3
+msgid "Command"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:4
+msgid "Date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:5
+msgid "Date and Time"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:6
+msgid "English Month"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:7
+msgid "English Short Month"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:8
+msgid "English Short Weekday"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:9
+msgid "English Time"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:10
+msgid "English Weekday"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:11
+msgid "Era"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:12
+msgid "ISO 8601 date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:13
+msgid "Month"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:14
+msgid "Normal Date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:15
+msgid "Normal Time"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:16
+msgid "Short Month"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:17
+msgid "Short Weekday"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:18
+msgid "UK English date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:19
+msgid "USA English date"
+msgstr ""
+
+#: ../data/cmd.xml.in.h:20
+msgid "Weekday"
+msgstr ""
+
+#: ../data/ja.xml.in.h:1 ../input-pad/unicode_block.h:132
+msgid "CJK Radicals Supplement"
+msgstr ""
+
+#: ../data/ja.xml.in.h:2 ../input-pad/unicode_block.h:136
+msgid "Hiragana"
+msgstr ""
+
+#: ../data/ja.xml.in.h:3
+msgid "Japanese"
+msgstr ""
+
+#: ../data/ja.xml.in.h:4 ../input-pad/unicode_block.h:137
+msgid "Katakana"
+msgstr ""
+
+#: ../data/ja.xml.in.h:5 ../data/zh.xml.in.h:4
+msgid "Radicals"
+msgstr ""
+
+#: ../data/runr.xml.in.h:1
+msgid "Elder Fuþark"
+msgstr ""
+
+#: ../data/runr.xml.in.h:2
+msgid "Fuþorc"
+msgstr ""
+
+#: ../data/runr.xml.in.h:3
+msgid "Runes"
+msgstr ""
+
+#: ../data/runr.xml.in.h:4
+msgid "Younger Fuþark"
+msgstr ""
+
+#: ../data/runr.xml.in.h:5
+msgid "runes"
+msgstr ""
+
+#: ../data/keyboard.xml.in.h:1
+msgid "Function Key"
+msgstr ""
+
+#: ../data/keyboard.xml.in.h:2
+msgid "Key Pad"
+msgstr ""
+
+#: ../data/keyboard.xml.in.h:3
+msgid "Keyboard"
+msgstr ""
+
+#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:27
+#: ../input-pad/window-gtk.c:5230 ../input-pad/window-gtk.c:5231
+msgid "Input Pad"
+msgstr ""
+
+#: ../data/input-pad.ui.h:2
+#, no-c-format
+msgid ""
+"\n"
+"This application can be run either as a stand-alone program or under an "
+"input method application.\n"
+"If you wish to send multi-byte characters, this application needs to be run "
+"under an input method application.\n"
+"If you wish to send characters to X11 applications, those applications needs "
+"to allow send events. e.g.\n"
+"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
+"\n"
+"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/"
+"pad to customize those in \"Custom Character\" pain."
+msgstr ""
+
+#: ../data/input-pad.ui.h:9
+msgid "<b>Keyboard Option</b>"
+msgstr ""
+
+#: ../data/input-pad.ui.h:10
+msgid "A_vailable layouts:"
+msgstr ""
+
+#: ../data/input-pad.ui.h:11
+msgid ""
+"Base 10\n"
+"Dec"
+msgstr ""
+
+#: ../data/input-pad.ui.h:13
+msgid ""
+"Base 16\n"
+"Hex"
+msgstr ""
+
+#: ../data/input-pad.ui.h:15
+msgid ""
+"Base 2\n"
+"Bin"
+msgstr ""
+
+#: ../data/input-pad.ui.h:17
+msgid ""
+"Base 8\n"
+"Oct"
+msgstr ""
+
+#: ../data/input-pad.ui.h:19
+msgid "Character:"
+msgstr ""
+
+#: ../data/input-pad.ui.h:20
+msgid "Close the program"
+msgstr ""
+
+#: ../data/input-pad.ui.h:21
+msgid "Code Point Dialog"
+msgstr ""
+
+#: ../data/input-pad.ui.h:22
+msgid "Code Point:"
+msgstr ""
+
+#: ../data/input-pad.ui.h:23
+msgid "Configure Keyboard Layouts"
+msgstr ""
+
+#: ../data/input-pad.ui.h:24
+msgid "Configure Keyboard Options"
+msgstr ""
+
+#: ../data/input-pad.ui.h:25
+msgid "Copy Buffer"
+msgstr ""
+
+#: ../data/input-pad.ui.h:26
+msgid "Current Encoding"
+msgstr ""
+
+#: ../data/input-pad.ui.h:28
+msgid "Input Pad Troubleshoot"
+msgstr ""
+
+#: ../data/input-pad.ui.h:29
+msgid "Set number case to binary"
+msgstr ""
+
+#: ../data/input-pad.ui.h:30
+msgid "Set number case to decimal"
+msgstr ""
+
+#: ../data/input-pad.ui.h:31
+msgid "Set number case to hexadecimal"
+msgstr ""
+
+#: ../data/input-pad.ui.h:32
+msgid "Set number case to octal"
+msgstr ""
+
+#: ../data/input-pad.ui.h:33
+msgid "Show _All Characters"
+msgstr ""
+
+#: ../data/input-pad.ui.h:34
+msgid "Show _Custom Characters"
+msgstr ""
+
+#: ../data/input-pad.ui.h:35
+msgid "Show _Keyboard Layout"
+msgstr ""
+
+#: ../data/input-pad.ui.h:36
+msgid "Show _Nothing"
+msgstr ""
+
+#: ../data/input-pad.ui.h:37
+msgid "The input pad is a tool to send a character on button."
+msgstr ""
+
+#: ../data/input-pad.ui.h:38
+msgid "Unicode"
+msgstr ""
+
+#: ../data/input-pad.ui.h:39
+msgid "Use the defualt XKB option"
+msgstr ""
+
+#: ../data/input-pad.ui.h:40
+msgid "You can choose encoding type"
+msgstr ""
+
+#: ../data/input-pad.ui.h:41
+msgid "_Close"
+msgstr ""
+
+#: ../data/input-pad.ui.h:42
+msgid "_Code Point"
+msgstr ""
+
+#: ../data/input-pad.ui.h:43
+msgid "_File"
+msgstr ""
+
+#: ../data/input-pad.ui.h:44
+msgid "_Help"
+msgstr ""
+
+#: ../data/input-pad.ui.h:45
+msgid "_Layouts shown in the list:"
+msgstr ""
+
+#: ../data/input-pad.ui.h:46
+msgid "_Options"
+msgstr ""
+
+#: ../data/input-pad.ui.h:47
+msgid "_Pad"
+msgstr ""
+
+#: ../data/input-pad.ui.h:48
+msgid "_Send"
+msgstr ""
+
+#: ../data/input-pad.ui.h:49
+msgid "_Show Pad"
+msgstr ""
+
+#: ../data/input-pad.ui.h:50
+msgid "_Troubleshoot"
+msgstr ""
+
+#: ../data/input-pad.ui.h:51
+msgid "_Use the default keyboard option"
+msgstr ""
+
+#: ../data/input-pad.ui.h:52
+msgid "translator_credits"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
+#: ../data/str.xml.in.h:2
+msgid "Acronym"
+msgstr ""
+
+#: ../data/str.xml.in.h:3
+msgid "Acronym (Computer)"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
+#: ../data/str.xml.in.h:5
+msgid "Acronym (Japanese)"
+msgstr ""
+
+#: ../data/str.xml.in.h:6
+msgid "Angel"
+msgstr ""
+
+#: ../data/str.xml.in.h:7
+msgid "Angry"
+msgstr ""
+
+#: ../data/str.xml.in.h:8
+msgid "Bear"
+msgstr ""
+
+#: ../data/str.xml.in.h:9
+msgid "Beer"
+msgstr ""
+
+#: ../data/str.xml.in.h:10
+msgid "Boy"
+msgstr ""
+
+#: ../data/str.xml.in.h:11
+msgid "Bunny"
+msgstr ""
+
+#: ../data/str.xml.in.h:12
+msgid "Bye"
+msgstr ""
+
+#: ../data/str.xml.in.h:13
+msgid "Cake"
+msgstr ""
+
+#: ../data/str.xml.in.h:14
+msgid "Can't get together (Guda Guda)"
+msgstr ""
+
+#: ../data/str.xml.in.h:15
+msgid "Cannot read between lines (Kuuki Ga Yomenai)"
+msgstr ""
+
+#: ../data/str.xml.in.h:16
+msgid "Cat"
+msgstr ""
+
+#: ../data/str.xml.in.h:17
+msgid "Chat"
+msgstr ""
+
+#: ../data/str.xml.in.h:18
+msgid "Clock"
+msgstr ""
+
+#: ../data/str.xml.in.h:19
+msgid "Coffee"
+msgstr ""
+
+#: ../data/str.xml.in.h:20
+msgid "Confused"
+msgstr ""
+
+#: ../data/str.xml.in.h:21
+msgid "Crow"
+msgstr ""
+
+#: ../data/str.xml.in.h:22
+msgid "Crying"
+msgstr ""
+
+#: ../data/str.xml.in.h:23
+msgid "Detail (Kuwashiku)"
+msgstr ""
+
+#: ../data/str.xml.in.h:24
+msgid "Devil"
+msgstr ""
+
+#: ../data/str.xml.in.h:25
+msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
+msgstr ""
+
+#: ../data/str.xml.in.h:26
+msgid "Dog"
+msgstr ""
+
+#: ../data/str.xml.in.h:27
+msgid "Don't Know"
+msgstr ""
+
+#: ../data/str.xml.in.h:28
+msgid "Drink"
+msgstr ""
+
+#: ../data/str.xml.in.h:29
+msgid "Dude (Oi!)"
+msgstr ""
+
+#: ../data/str.xml.in.h:30
+msgid "Embarrassed"
+msgstr ""
+
+#: ../data/str.xml.in.h:31
+msgid "Excited (Kitakore)"
+msgstr ""
+
+#: ../data/str.xml.in.h:32
+msgid "Excited (Waku Waku Teka Teka)"
+msgstr ""
+
+#: ../data/str.xml.in.h:33
+msgid "False Start (Flying Get)"
+msgstr ""
+
+#: ../data/str.xml.in.h:34
+msgid "Film"
+msgstr ""
+
+#: ../data/str.xml.in.h:35
+msgid "Foot in Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:36
+msgid "Fulfilling Life (Real life is Zyujitsu)"
+msgstr ""
+
+#: ../data/str.xml.in.h:37
+msgid "Girl"
+msgstr ""
+
+#: ../data/str.xml.in.h:38
+msgid "Glasses Cool"
+msgstr ""
+
+#: ../data/str.xml.in.h:39
+msgid "Glasses Cool | Eyeroll"
+msgstr ""
+
+#: ../data/str.xml.in.h:40
+msgid "Good job (Otsukare)"
+msgstr ""
+
+#: ../data/str.xml.in.h:41
+msgid "He (Yatsu &lt;- Yashi)"
+msgstr ""
+
+#: ../data/str.xml.in.h:42
+msgid "Hey"
+msgstr ""
+
+#: ../data/str.xml.in.h:43
+msgid "Hug"
+msgstr ""
+
+#: ../data/str.xml.in.h:44
+msgid "Hug Left"
+msgstr ""
+
+#: ../data/str.xml.in.h:45
+msgid "Hug Right"
+msgstr ""
+
+#: ../data/str.xml.in.h:46
+msgid "In The Meantime (Toriaezu, Ma)"
+msgstr ""
+
+#: ../data/str.xml.in.h:47
+msgid "Kiss"
+msgstr ""
+
+#: ../data/str.xml.in.h:48
+msgid "Kiss | Secret"
+msgstr ""
+
+#: ../data/str.xml.in.h:49
+msgid "Laugh"
+msgstr ""
+
+#: ../data/str.xml.in.h:50
+msgid "Laugh (Warau)"
+msgstr ""
+
+#: ../data/str.xml.in.h:51
+msgid "Love"
+msgstr ""
+
+#: ../data/str.xml.in.h:52
+msgid "Love Over"
+msgstr ""
+
+#: ../data/str.xml.in.h:53
+msgid "Mail"
+msgstr ""
+
+#: ../data/str.xml.in.h:54
+msgid "Money Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:55
+msgid "Monkey"
+msgstr ""
+
+#: ../data/str.xml.in.h:56
+msgid "Moon"
+msgstr ""
+
+#: ../data/str.xml.in.h:57
+msgid "Musical Note"
+msgstr ""
+
+#: ../data/str.xml.in.h:58
+msgid "Neutral"
+msgstr ""
+
+#: ../data/str.xml.in.h:59
+msgid "No"
+msgstr ""
+
+#: ../data/str.xml.in.h:60
+msgid "Omission (Shouryaku)"
+msgstr ""
+
+#: ../data/str.xml.in.h:61
+msgid "Party"
+msgstr ""
+
+#: ../data/str.xml.in.h:62
+msgid "Phone"
+msgstr ""
+
+#: ../data/str.xml.in.h:63
+msgid "Present"
+msgstr ""
+
+#: ../data/str.xml.in.h:64
+msgid "Sad"
+msgstr ""
+
+#: ../data/str.xml.in.h:65
+msgid "Say whatever one feels (Iitaidake)"
+msgstr ""
+
+#: ../data/str.xml.in.h:66
+msgid "Shock"
+msgstr ""
+
+#: ../data/str.xml.in.h:67
+msgid "Shout"
+msgstr ""
+
+#: ../data/str.xml.in.h:68
+msgid "Shut Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:69
+msgid "Sick"
+msgstr ""
+
+#: ../data/str.xml.in.h:70
+msgid "Smile"
+msgstr ""
+
+#: ../data/str.xml.in.h:71
+msgid "Smile Big"
+msgstr ""
+
+#: ../data/str.xml.in.h:72
+msgid "Smileys"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:74
+msgid "Smileys (Chinese)"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:76
+msgid "Smileys (Japanese 2ch)"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:78
+msgid "Smileys (Japanese)"
+msgstr ""
+
+#: ../data/str.xml.in.h:79
+msgid "Smoking"
+msgstr ""
+
+#: ../data/str.xml.in.h:80
+msgid "Sorry"
+msgstr ""
+
+#: ../data/str.xml.in.h:81
+msgid "Star"
+msgstr ""
+
+#: ../data/str.xml.in.h:82
+msgid "Thinking"
+msgstr ""
+
+#: ../data/str.xml.in.h:83
+msgid "Tongue"
+msgstr ""
+
+#: ../data/str.xml.in.h:84
+msgid "Wink"
+msgstr ""
+
+#: ../data/str.xml.in.h:85
+msgid "Yawn"
+msgstr ""
+
+#: ../data/str.xml.in.h:86
+msgid "Yes"
+msgstr ""
+
+#: ../data/w3c.xml.in.h:1
+msgid "Char References"
+msgstr ""
+
+#: ../data/zh.xml.in.h:1 ../input-pad/unicode_block.h:138
+msgid "Bopomofo"
+msgstr ""
+
+#: ../data/zh.xml.in.h:2
+msgid "Chinese"
+msgstr ""
+
+#: ../input-pad/eek-gtk.c:61
+msgid "Use libeek to draw keyboard"
+msgstr ""
+
+#: ../input-pad/eek-gtk.c:228
+msgid "eekboard layout"
+msgstr ""
+
+#: ../input-pad/eek-gtk.c:240
+msgid "eekboard Options"
+msgstr ""
+
+#: ../input-pad/eek-gtk.c:240
+msgid "Show eekboard Options"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:37
+msgid "Basic Latin"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:40
+msgid "Latin Extended-B"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:41
+msgid "IPA Extensions"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:42
+msgid "Spacing Modifier Letters"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:43
+msgid "Combining Diacritical Marks"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:44
+msgid "Greek and Coptic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:45
+msgid "Cyrillic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:46
+msgid "Cyrillic Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:47
+msgid "Armenian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:48
+msgid "Hebrew"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:49
+msgid "Arabic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:50
+msgid "Syriac"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:51
+msgid "Arabic Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:52
+msgid "Thaana"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:53
+msgid "NKo"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:54
+msgid "Samaritan"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:55
+msgid "Devanagari"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:56
+msgid "Bengali"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:57
+msgid "Gurmukhi"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:58
+msgid "Gujarati"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:59
+msgid "Oriya"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:60
+msgid "Tamil"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:61
+msgid "Telugu"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:62
+msgid "Kannada"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:63
+msgid "Malayalam"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:64
+msgid "Sinhala"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:65
+msgid "Thai"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:66
+msgid "Lao"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:67
+msgid "Tibetan"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:68
+msgid "Myanmar"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:69
+msgid "Georgian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:70
+msgid "Hangul Jamo"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:71
+msgid "Ethiopic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:72
+msgid "Ethiopic Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:73
+msgid "Cherokee"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:74
+msgid "Unified Canadian Aboriginal Syllabics"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:75
+msgid "Ogham"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:76
+msgid "Runic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:77
+msgid "Tagalog"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:78
+msgid "Hanunoo"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:79
+msgid "Buhid"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:80
+msgid "Tagbanwa"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:81
+msgid "Khmer"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:82
+msgid "Mongolian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:83
+msgid "Unified Canadian Aboriginal Syllabics Extended"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:84
+msgid "Limbu"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:85
+msgid "Tai Le"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:86
+msgid "New Tai Lue"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:87
+msgid "Khmer Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:88
+msgid "Buginese"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:89
+msgid "Tai Tham"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:90
+msgid "Balinese"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:91
+msgid "Sundanese"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:92
+msgid "Lepcha"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:93
+msgid "Ol Chiki"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:94
+msgid "Vedic Extensions"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:95
+msgid "Phonetic Extensions"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:96
+msgid "Phonetic Extensions Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:97
+msgid "Combining Diacritical Marks Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:98
+msgid "Latin Extended Additional"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:99
+msgid "Greek Extended"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:100
+msgid "General Punctuation"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:101
+msgid "Superscripts and Subscripts"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:102
+msgid "Currency Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:103
+msgid "Combining Diacritical Marks for Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:104
+msgid "Letterlike Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:105
+msgid "Number Forms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:106
+msgid "Arrows"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:107
+msgid "Mathematical Operators"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:108
+msgid "Miscellaneous Technical"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:109
+msgid "Control Pictures"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:110
+msgid "Optical Character Recognition"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:111
+msgid "Enclosed Alphanumerics"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:113
+msgid "Block Elements"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:114
+msgid "Geometric Shapes"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:115
+msgid "Miscellaneous Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:117
+msgid "Miscellaneous Mathematical Symbols-A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:118
+msgid "Supplemental Arrows-A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:119
+msgid "Braille Patterns"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:120
+msgid "Supplemental Arrows-B"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:121
+msgid "Miscellaneous Mathematical Symbols-B"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:122
+msgid "Supplemental Mathematical Operators"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:123
+msgid "Miscellaneous Symbols and Arrows"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:124
+msgid "Glagolitic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:125
+msgid "Latin Extended-C"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:126
+msgid "Coptic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:127
+msgid "Georgian Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:128
+msgid "Tifinagh"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:129
+msgid "Ethiopic Extended"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:130
+msgid "Cyrillic Extended-A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:131
+msgid "Supplemental Punctuation"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:133
+msgid "Kangxi Radicals"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:134
+msgid "Ideographic Description Characters"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:135
+msgid "CJK Symbols and Punctuation"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:139
+msgid "Hangul Compatibility Jamo"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:140
+msgid "Kanbun"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:141
+msgid "Bopomofo Extended"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:142
+msgid "CJK Strokes"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:143
+msgid "Katakana Phonetic Extensions"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:144
+msgid "Enclosed CJK Letters and Months"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:146
+msgid "CJK Unified Ideographs Extension A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:147
+msgid "Yijing Hexagram Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:148
+msgid "CJK Unified Ideographs"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:149
+msgid "Yi Syllables"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:150
+msgid "Yi Radicals"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:151
+msgid "Lisu"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:152
+msgid "Vai"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:153
+msgid "Cyrillic Extended-B"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:154
+msgid "Bamum"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:155
+msgid "Modifier Tone Letters"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:156
+msgid "Latin Extended-D"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:157
+msgid "Syloti Nagri"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:158
+msgid "Common Indic Number Forms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:159
+msgid "Phags-pa"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:160
+msgid "Saurashtra"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:161
+msgid "Devanagari Extended"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:162
+msgid "Kayah Li"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:163
+msgid "Rejang"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:164
+msgid "Hangul Jamo Extended-A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:165
+msgid "Javanese"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:166
+msgid "Cham"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:167
+msgid "Myanmar Extended-A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:168
+msgid "Tai Viet"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:169
+msgid "Meetei Mayek"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:170
+msgid "Hangul Syllables"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:171
+msgid "Hangul Jamo Extended-B"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:172
+msgid "High Surrogates"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:173
+msgid "High Private Use Surrogates"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:174
+msgid "Low Surrogates"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:175
+msgid "Private Use Area"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:176
+msgid "CJK Compatibility Ideographs"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:177
+msgid "Alphabetic Presentation Forms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:178
+msgid "Arabic Presentation Forms-A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:179
+msgid "Variation Selectors"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:180
+msgid "Vertical Forms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:181
+msgid "Combining Half Marks"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:182
+msgid "CJK Compatibility Forms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:183
+msgid "Small Form Variants"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:184
+msgid "Arabic Presentation Forms-B"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:185
+msgid "Halfwidth and Fullwidth Forms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:186
+msgid "Specials"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:187
+msgid "Linear B Syllabary"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:188
+msgid "Linear B Ideograms"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:189
+msgid "Aegean Numbers"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:190
+msgid "Ancient Greek Numbers"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:191
+msgid "Ancient Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:192
+msgid "Phaistos Disc"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:193
+msgid "Lycian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:194
+msgid "Carian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:195
+msgid "Old Italic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:196
+msgid "Gothic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:197
+msgid "Ugaritic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:198
+msgid "Old Persian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:199
+msgid "Deseret"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:200
+msgid "Shavian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:201
+msgid "Osmanya"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:202
+msgid "Cypriot Syllabary"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:203
+msgid "Imperial Aramaic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:204
+msgid "Phoenician"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:205
+msgid "Lydian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:206
+msgid "Kharoshthi"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:207
+msgid "Old South Arabian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:208
+msgid "Avestan"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:209
+msgid "Inscriptional Parthian"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:210
+msgid "Inscriptional Pahlavi"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:211
+msgid "Old Turkic"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:212
+msgid "Rumi Numeral Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:213
+msgid "Kaithi"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:214
+msgid "Cuneiform"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:215
+msgid "Cuneiform Numbers and Punctuation"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:216
+msgid "Egyptian Hieroglyphs"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:217
+msgid "Byzantine Musical Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:218
+msgid "Musical Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:219
+msgid "Ancient Greek Musical Notation"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:220
+msgid "Tai Xuan Jing Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:221
+msgid "Counting Rod Numerals"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:222
+msgid "Mathematical Alphanumeric Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:223
+msgid "Mahjong Tiles"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:224
+msgid "Domino Tiles"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:225
+msgid "Enclosed Alphanumeric Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:226
+msgid "Enclosed Ideographic Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:227
+msgid "CJK Unified Ideographs Extension B"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:228
+msgid "CJK Unified Ideographs Extension C"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:229
+msgid "CJK Compatibility Ideographs Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:230
+msgid "Tags"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:231
+msgid "Variation Selectors Supplement"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:232
+msgid "Supplementary Private Use Area-A"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:233
+msgid "Supplementary Private Use Area-B"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:172
+msgid "Display version"
+msgstr ""
+
+#. Translators: the word 'KBDUI' is not translated.
+#: ../input-pad/window-gtk.c:175
+msgid "Use KBDUI to draw keyboard"
+msgstr ""
+
+#. Translators: the word 'TYPE' is not translated.
+#: ../input-pad/window-gtk.c:178
+msgid "Use TYPE of char table. The available TYPE=0, 1, 2"
+msgstr ""
+
+#. Translators: the word 'TYPE' is not translated.
+#: ../input-pad/window-gtk.c:181
+msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:188
+msgid "Use XTEST module to send key events"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:193
+msgid "Use XSendEvent to send key events"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:1301
+msgid "Fold layout"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:1306 ../input-pad/window-gtk.c:2695
+msgid "Extend layout"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:2891
+msgid "Layout"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:3166
+msgid "_Layout:"
+msgstr ""
+
+#. No longer used in gtk 2.20
+#. gchar *license1, *license2, *license3;
+#. license1 = _(""
+#. "This library is free software; you can redistribute it and/or "
+#. "modify it under the terms of the GNU Lesser General Public "
+#. "License as published by the Free Software Foundation; either "
+#. "version 2 of the License, or (at your option) any later version.");
+#.
+#. license2 = _(""
+#. "This library is distributed in the hope that it will be useful, "
+#. "but WITHOUT ANY WARRANTY; without even the implied warranty of "
+#. "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU "
+#. "Lesser General Public License for more details.");
+#.
+#. license3 = _(""
+#. "You should have received a copy of the GNU Lesser General Public "
+#. "License along with this library; if not, write to the Free Software "
+#. "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, "
+#. "MA  02110-1301  USA");
+#.
+#. license = g_strdup_printf ("%s\n\n%s\n\n%s",
+#. license1, license2, license3);
+#.
+#. This format has been used since gtk 2.20.
+#: ../input-pad/window-gtk.c:3235
+#, c-format
+msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:3703
+msgid "Group"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:3711
+msgid "Sub Group"
+msgstr ""
