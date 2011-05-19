@@ -2862,9 +2862,13 @@ config_layouts_list_remove_iter (GtkListStore *list,
         /* FIXME: Should set iter at the end again? */
         return;
     }
+#if GTK_CHECK_VERSION (3, 0, 0)
     if (!gtk_tree_model_iter_previous (GTK_TREE_MODEL (list), iter)) {
         gtk_tree_model_get_iter_first (GTK_TREE_MODEL (list), iter);
     }
+#else
+    gtk_tree_model_get_iter_first (GTK_TREE_MODEL (list), iter);
+#endif
 }
 
 static void
