@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2010-11-11 01:44+0900\n"
-"PO-Revision-Date: 2011-05-11 13:19+0900\n"
+"POT-Creation-Date: 2011-05-19 11:35+0900\n"
+"PO-Revision-Date: 2011-05-19 11:35+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Japanese\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/base.xml.in.h:1
@@ -29,7 +29,7 @@ msgstr "すべて"
 msgid "Arrow"
 msgstr "矢印"
 
-#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3278
+#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3933
 msgid "Block"
 msgstr "ブロック"
 
@@ -242,6 +242,26 @@ msgstr "カタカナ"
 msgid "Radicals"
 msgstr "部首"
 
+#: ../data/runr.xml.in.h:1
+msgid "Elder Fuþark"
+msgstr "Elder Fuþark"
+
+#: ../data/runr.xml.in.h:2
+msgid "Fuþorc"
+msgstr "Fuþorc"
+
+#: ../data/runr.xml.in.h:3
+msgid "Runes"
+msgstr "Runes"
+
+#: ../data/runr.xml.in.h:4
+msgid "Younger Fuþark"
+msgstr "Younger Fuþark"
+
+#: ../data/runr.xml.in.h:5
+msgid "runes"
+msgstr "runes"
+
 #: ../data/keyboard.xml.in.h:1
 msgid "Function Key"
 msgstr "機能キー"
@@ -254,8 +274,8 @@ msgstr "キーパッド"
 msgid "Keyboard"
 msgstr "キーボード"
 
-#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:23
-#: ../input-pad/window-gtk.c:4518 ../input-pad/window-gtk.c:4519
+#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:27
+#: ../input-pad/window-gtk.c:5230 ../input-pad/window-gtk.c:5231
 msgid "Input Pad"
 msgstr "インプットパッド"
 
@@ -288,6 +308,14 @@ msgstr ""
 "可能です。"
 
 #: ../data/input-pad.ui.h:9
+msgid "<b>Keyboard Option</b>"
+msgstr "<b>キーボードオプション</b>"
+
+#: ../data/input-pad.ui.h:10
+msgid "A_vailable layouts:"
+msgstr "利用可能なレイアウト(_V):"
+
+#: ../data/input-pad.ui.h:11
 msgid ""
 "Base 10\n"
 "Dec"
@@ -295,7 +323,7 @@ msgstr ""
 "10 進数\n"
 "Dec"
 
-#: ../data/input-pad.ui.h:11
+#: ../data/input-pad.ui.h:13
 msgid ""
 "Base 16\n"
 "Hex"
@@ -303,7 +331,7 @@ msgstr ""
 "16 進数\n"
 "Hex"
 
-#: ../data/input-pad.ui.h:13
+#: ../data/input-pad.ui.h:15
 msgid ""
 "Base 2\n"
 "Bin"
@@ -311,7 +339,7 @@ msgstr ""
 "2 進数\n"
 "Bin"
 
-#: ../data/input-pad.ui.h:15
+#: ../data/input-pad.ui.h:17
 msgid ""
 "Base 8\n"
 "Oct"
@@ -319,111 +347,135 @@ msgstr ""
 "8 進数\n"
 "Oct"
 
-#: ../data/input-pad.ui.h:17
+#: ../data/input-pad.ui.h:19
 msgid "Character:"
 msgstr "文字:"
 
-#: ../data/input-pad.ui.h:18
+#: ../data/input-pad.ui.h:20
 msgid "Close the program"
 msgstr "プログラムを閉じる"
 
-#: ../data/input-pad.ui.h:19
+#: ../data/input-pad.ui.h:21
 msgid "Code Point Dialog"
 msgstr "コードポイントダイアログ"
 
-#: ../data/input-pad.ui.h:20
+#: ../data/input-pad.ui.h:22
 msgid "Code Point:"
 msgstr "コードポイント:"
 
-#: ../data/input-pad.ui.h:21
+#: ../data/input-pad.ui.h:23
+msgid "Configure Keyboard Layouts"
+msgstr "キーボードレイアウトを構成する"
+
+#: ../data/input-pad.ui.h:24
+msgid "Configure Keyboard Options"
+msgstr "キーボードオプションを構成する"
+
+#: ../data/input-pad.ui.h:25
 msgid "Copy Buffer"
 msgstr "バッファをコピー"
 
-#: ../data/input-pad.ui.h:22
+#: ../data/input-pad.ui.h:26
 msgid "Current Encoding"
 msgstr "現在のエンコーディング"
 
-#: ../data/input-pad.ui.h:24
+#: ../data/input-pad.ui.h:28
 msgid "Input Pad Troubleshoot"
 msgstr "インプットパッドトラブルシュート"
 
-#: ../data/input-pad.ui.h:25
+#: ../data/input-pad.ui.h:29
 msgid "Set number case to binary"
 msgstr "2 進数に設定します"
 
-#: ../data/input-pad.ui.h:26
+#: ../data/input-pad.ui.h:30
 msgid "Set number case to decimal"
 msgstr "10 進数に設定します"
 
-#: ../data/input-pad.ui.h:27
+#: ../data/input-pad.ui.h:31
 msgid "Set number case to hexadecimal"
 msgstr "16 進数に設定します"
 
-#: ../data/input-pad.ui.h:28
+#: ../data/input-pad.ui.h:32
 msgid "Set number case to octal"
 msgstr "8 進数に設定します"
 
-#: ../data/input-pad.ui.h:29
+#: ../data/input-pad.ui.h:33
 msgid "Show _All Characters"
 msgstr "すべての文字を表示する(_A)"
 
-#: ../data/input-pad.ui.h:30
+#: ../data/input-pad.ui.h:34
 msgid "Show _Custom Characters"
 msgstr "カスタム文字を表示する(_C)"
 
-#: ../data/input-pad.ui.h:31
+#: ../data/input-pad.ui.h:35
 msgid "Show _Keyboard Layout"
 msgstr "キーボードレイアウトを表示する(_K)"
 
-#: ../data/input-pad.ui.h:32
+#: ../data/input-pad.ui.h:36
 msgid "Show _Nothing"
 msgstr "なにも表示しない(_N)"
 
-#: ../data/input-pad.ui.h:33
+#: ../data/input-pad.ui.h:37
 msgid "The input pad is a tool to send a character on button."
 msgstr "インプットパッドはボタン上の文字を送るツールです。"
 
-#: ../data/input-pad.ui.h:34
+#: ../data/input-pad.ui.h:38
 msgid "Unicode"
 msgstr "Unicode"
 
-#: ../data/input-pad.ui.h:35
+#: ../data/input-pad.ui.h:39
+msgid "Use the defualt XKB option"
+msgstr "デフォルトの XKB オプションを使用する"
+
+#: ../data/input-pad.ui.h:40
 msgid "You can choose encoding type"
 msgstr "エンコーディングタイプを選択可能です"
 
-#: ../data/input-pad.ui.h:36
+#: ../data/input-pad.ui.h:41
 msgid "_Close"
 msgstr "閉じる(_C)"
 
-#: ../data/input-pad.ui.h:37
+#: ../data/input-pad.ui.h:42
 msgid "_Code Point"
 msgstr "コードポイント(_C)"
 
-#: ../data/input-pad.ui.h:38
+#: ../data/input-pad.ui.h:43
 msgid "_File"
 msgstr "ファイル(_F)"
 
-#: ../data/input-pad.ui.h:39
+#: ../data/input-pad.ui.h:44
 msgid "_Help"
 msgstr "ヘルプ(_H)"
 
-#: ../data/input-pad.ui.h:40
+#: ../data/input-pad.ui.h:45
+msgid "_Layouts shown in the list:"
+msgstr "リストに表示されるレイアウト(_L):"
+
+#: ../data/input-pad.ui.h:46
+msgid "_Options"
+msgstr "オプション(_O)"
+
+#: ../data/input-pad.ui.h:47
 msgid "_Pad"
 msgstr "パッド(_P)"
 
-#: ../data/input-pad.ui.h:41
+#: ../data/input-pad.ui.h:48
 msgid "_Send"
 msgstr "送信する(_S)"
 
-#: ../data/input-pad.ui.h:42
+#: ../data/input-pad.ui.h:49
 msgid "_Show Pad"
 msgstr "パッドを表示する(_S)"
 
-#: ../data/input-pad.ui.h:43
+#: ../data/input-pad.ui.h:50
 msgid "_Troubleshoot"
 msgstr "トラブルシュート(_T)"
 
-#: ../data/input-pad.ui.h:44
+#: ../data/input-pad.ui.h:51
+msgid "_Use the default keyboard option"
+msgstr "デフォルトのキーボードオプションを使用する(_U)"
+
+#: ../data/input-pad.ui.h:52
 msgid "translator_credits"
 msgstr "translator_credits"
 
@@ -768,19 +820,19 @@ msgstr "Bopomofo"
 msgid "Chinese"
 msgstr "中国語"
 
-#: ../input-pad/eek-gtk.c:62
+#: ../input-pad/eek-gtk.c:61
 msgid "Use libeek to draw keyboard"
 msgstr "キーボードを描画するために libeek を使用する"
 
-#: ../input-pad/eek-gtk.c:235
+#: ../input-pad/eek-gtk.c:228
 msgid "eekboard layout"
 msgstr "eekboard レイアウト"
 
-#: ../input-pad/eek-gtk.c:247
+#: ../input-pad/eek-gtk.c:240
 msgid "eekboard Options"
 msgstr "eekboard オプション"
 
-#: ../input-pad/eek-gtk.c:247
+#: ../input-pad/eek-gtk.c:240
 msgid "Show eekboard Options"
 msgstr "eekboard オプションを表示する"
 
@@ -1536,38 +1588,46 @@ msgstr "補足私用領域-A"
 msgid "Supplementary Private Use Area-B"
 msgstr "補足私用領域-B"
 
-#: ../input-pad/window-gtk.c:161
-msgid "Use XTEST module to send key events"
-msgstr "キーイベントを送るために XTEST モジュールを使用する"
-
-#: ../input-pad/window-gtk.c:164
+#: ../input-pad/window-gtk.c:172
 msgid "Display version"
 msgstr "バージョンを表示する"
 
 #. Translators: the word 'KBDUI' is not translated.
-#: ../input-pad/window-gtk.c:167
+#: ../input-pad/window-gtk.c:175
 msgid "Use KBDUI to draw keyboard"
 msgstr "キーボードを描画するために KBDUI を使用する"
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:170
+#: ../input-pad/window-gtk.c:178
 msgid "Use TYPE of char table. The available TYPE=0, 1, 2"
 msgstr "文字テーブルの TYPE を使用する。利用可能な TYPE=0, 1, 2"
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:173
+#: ../input-pad/window-gtk.c:181
 msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
 msgstr "キーボードレイアウトの TYPE を使用する。利用可能な TYPE=0, 1"
 
-#: ../input-pad/window-gtk.c:1009
+#: ../input-pad/window-gtk.c:188
+msgid "Use XTEST module to send key events"
+msgstr "キーイベントを送るために XTEST モジュールを使用する"
+
+#: ../input-pad/window-gtk.c:193
+msgid "Use XSendEvent to send key events"
+msgstr "キーイベントを送るために XSendEvent を使用する"
+
+#: ../input-pad/window-gtk.c:1301
 msgid "Fold layout"
 msgstr "レイアウトを折りたたむ"
 
-#: ../input-pad/window-gtk.c:1014 ../input-pad/window-gtk.c:2367
+#: ../input-pad/window-gtk.c:1306 ../input-pad/window-gtk.c:2695
 msgid "Extend layout"
 msgstr "レイアウトを広げる"
 
-#: ../input-pad/window-gtk.c:2514
+#: ../input-pad/window-gtk.c:2891
+msgid "Layout"
+msgstr "レイアウト"
+
+#: ../input-pad/window-gtk.c:3166
 msgid "_Layout:"
 msgstr "レイアウト(_L):"
 
@@ -1595,16 +1655,16 @@ msgstr "レイアウト(_L):"
 #. license1, license2, license3);
 #.
 #. This format has been used since gtk 2.20.
-#: ../input-pad/window-gtk.c:2574
+#: ../input-pad/window-gtk.c:3235
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
 msgstr ""
 "このプログラムは完全に無保証で提供しています。詳細は、%s を見てください。"
 
-#: ../input-pad/window-gtk.c:3046
+#: ../input-pad/window-gtk.c:3703
 msgid "Group"
 msgstr "グループ"
 
-#: ../input-pad/window-gtk.c:3054
+#: ../input-pad/window-gtk.c:3711
 msgid "Sub Group"
 msgstr "サブグループ"
