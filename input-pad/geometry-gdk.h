@@ -36,6 +36,12 @@ void                    input_pad_gdk_xkb_signal_emit
 char **                 input_pad_gdk_xkb_get_group_layouts
                                         (InputPadGtkWindow     *window,
                                          InputPadXKBKeyList    *xkb_key_list);
+char **                 input_pad_gdk_xkb_get_group_variants
+                                        (InputPadGtkWindow     *window,
+                                         InputPadXKBKeyList    *xkb_key_list);
+char **                 input_pad_gdk_xkb_get_group_options
+                                        (InputPadGtkWindow     *window,
+                                         InputPadXKBKeyList    *xkb_key_list);
 InputPadXKBConfigReg *  input_pad_gdk_xkb_parse_config_registry
                                         (InputPadGtkWindow     *window,
                                          InputPadXKBKeyList    *xkb_key_list);

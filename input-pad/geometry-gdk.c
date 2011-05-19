@@ -58,12 +58,19 @@ extern void xkl_engine_save_toplevel_window_state(XklEngine * engine,
 #endif
 #endif
 
+enum {
+    XKB_GET_LAYOUTS_KEY,
+    XKB_GET_VARIANTS_KEY,
+    XKB_GET_OPTIONS_KEY
+};
+
 #ifdef HAVE_LIBXKLAVIER
 typedef struct _XklSignalData XklSignalData;
 typedef struct _XklLayoutData XklLayoutData;
 
 static XklEngine *xklengine;
 static XklConfigRec *initial_xkl_rec;
+static int initial_group;
 
 struct _XklSignalData {
     GObject   *object;
@@ -224,7 +231,9 @@ get_xkb_section (InputPadXKBKeyList   **xkb_key_listp,
     XkbDrawablePtr draw, draw_head;
     XkbRowPtr   row;
     XkbKeyPtr   key;
+#if 0
     XkbShapePtr shape;
+#endif
     int i, j, k, l, keycode, n_keysyms, groups, n_group, bulk;
     KeySym *keysyms;
 
@@ -243,7 +252,10 @@ get_xkb_section (InputPadXKBKeyList   **xkb_key_listp,
         xkb_key_row_head = NULL;
         key = row->keys;
         for (j = 0; j < row->num_keys; j++) {
+#if 0
+            /* I don't remember why this is needed. */
             shape = XkbKeyShape (xkb->geom, key);
+#endif
             if (key->name.name == NULL) {
                 g_warning ("Invalid key name at (%d, %d).\n", i, j);
                 goto next_key;
@@ -351,7 +363,9 @@ add_xkb_key (InputPadXKBKeyList        *xkb_key_list,
 
 #ifdef HAVE_LIBXKLAVIER
 static XklEngine *
-init_xkl_engine (InputPadGtkWindow *window, XklConfigRec **initial_xkl_recp)
+init_xkl_engine (InputPadGtkWindow     *window,
+                 XklConfigRec         **initial_xkl_recp,
+                 int                   *initial_group)
 {
     Display *xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET (window)));
     XklConfigRec *xklrec;
@@ -369,6 +383,18 @@ init_xkl_engine (InputPadGtkWindow *window, XklConfigRec **initial_xkl_recp)
     }
     if (initial_xkl_recp) {
         *initial_xkl_recp = xklrec;
+    }
+    if (initial_group) {
+        XklState *state;
+        XklState win_state;
+        if (xkl_engine_get_state (xklengine,
+                                  xkl_engine_get_current_window (xklengine),
+                                  &win_state)) {
+            state = &win_state;
+        } else {
+            state = xkl_engine_get_current_state (xklengine);
+        }
+        *initial_group = state->group;
     }
     return xklengine;
 }
@@ -457,7 +483,7 @@ on_state_changed (XklEngine * engine,
 
 #if 0
     if (!xkl_engine_find_toplevel_window (xklengine, 
-                                          GDK_WINDOW_XWINDOW (GTK_WIDGET(signal_data->object)->window),
+                                          GDK_WINDOW_XID (gtk_widget_get_window (GTK_WIDGET (signal_data->object))),
                                           &toplevel_win)) {
         g_warning ("Could not find toplevel window");
     }
@@ -569,7 +595,7 @@ debug_print_layout_list (InputPadXKBLayoutList *xkb_layout_list)
     InputPadXKBVariantList *variants;
     int i, j;
 
-    if (xkb_layout_list == NULL) {
+    if (list == NULL) {
         return;
     }
     if (!g_getenv ("G_MESSAGES_PREFIXED")) {
@@ -583,6 +609,32 @@ debug_print_layout_list (InputPadXKBLayoutList *xkb_layout_list)
                      i, list->layout, list->desc ? list->desc : "(null)",
                      j, variants->variant, variants->desc ? variants->desc : "(null)");
             variants = variants->next;
+        }
+        list = list->next;
+    }
+}
+
+static void
+debug_print_option_group_list (InputPadXKBOptionGroupList *xkb_group_list)
+{
+    InputPadXKBOptionGroupList *list = xkb_group_list;
+    InputPadXKBOptionList *options;
+    int i, j;
+
+    if (list == NULL) {
+        return;
+    }
+    if (!g_getenv ("G_MESSAGES_PREFIXED")) {
+        return;
+    }
+
+    for (i = 0; list; i++) {
+        options = list->options;
+        for (j = 0; options; j++) {
+            g_debug ("%d %s %s %d %s %s",
+                     i, list->option_group, list->desc ? list->desc : "(null)",
+                     j, options->option, options->desc ? options->desc : "(null)");
+            options = options->next;
         }
         list = list->next;
     }
@@ -668,6 +720,68 @@ end_append_layout_variant:
 }
 
 static void
+input_pad_xkb_option_group_list_append_group_option (InputPadXKBOptionGroupList *xkb_group_list,
+                                                     const XklConfigItem   *group,
+                                                     const XklConfigItem   *option)
+{
+    InputPadXKBOptionGroupList *list = xkb_group_list;
+    InputPadXKBOptionList *options;
+
+    g_return_if_fail (xkb_group_list != NULL);
+    g_return_if_fail (group != NULL && group->name != NULL);
+    g_return_if_fail (option != NULL && option->name != NULL);
+
+    while (list) {
+        if (list->option_group == NULL) {
+            list->option_group = g_strdup (group->name);
+            list->desc = g_strdup (group->description);
+            list->options = g_new0 (InputPadXKBOptionList, 1);
+            list->options->option = g_strdup (option->name);
+            list->options->desc = g_strdup (option->description);
+            goto end_append_group_option;
+        }
+        if (!g_strcmp0 (list->option_group, group->name)) {
+            if (list->options == NULL) {
+                list->options = g_new0 (InputPadXKBOptionList, 1);
+                list->options->option = g_strdup (option->name);
+                list->options->desc = g_strdup (option->description);
+                goto end_append_group_option;
+            }
+            options = list->options;
+            while (options->next) {
+                if (options->option == NULL) {
+                    options->option = g_strdup (option->name);
+                    options->desc = g_strdup (option->description);
+                    goto end_append_group_option;
+                }
+                if (!g_strcmp0 (options->option, option->name)) {
+                    goto end_append_group_option;
+                }
+                options = options->next;
+            }
+            options->next = g_new0 (InputPadXKBOptionList, 1);
+            options = options->next;
+            options->option = g_strdup (option->name);
+            options->desc = g_strdup (option->description);
+            goto end_append_group_option;
+        }
+        if (list->next == NULL) {
+            break;
+        }
+        list = list->next;
+    }
+    list->next = g_new0 (InputPadXKBOptionGroupList, 1);
+    list = list->next;
+    list->option_group = g_strdup (group->name);
+    list->desc = g_strdup (group->description);
+    list->options = g_new0 (InputPadXKBOptionList, 1);
+    list->options->option = g_strdup (option->name);
+    list->options->desc = g_strdup (option->description);
+end_append_group_option:
+    ;
+}
+
+static void
 add_variant (XklConfigRegistry   *xklconfig_registry,
              const XklConfigItem *item,
              gpointer             data)
@@ -701,19 +815,86 @@ add_layout (XklConfigRegistry   *xklconfig_registry,
     layout_data.config_regp = NULL;
 }
 
+static void
+add_option (XklConfigRegistry   *xklconfig_registry,
+            const XklConfigItem *item,
+            gpointer             data)
+{
+    XklLayoutData *layout_data = (XklLayoutData *) data;
+    if (*layout_data->config_regp == NULL) {
+        *layout_data->config_regp = g_new0 (InputPadXKBConfigReg, 1);
+    }
+    if ((*layout_data->config_regp)->option_groups == NULL) {
+        (*layout_data->config_regp)->option_groups = g_new0 (InputPadXKBOptionGroupList, 1);
+    }
+    input_pad_xkb_option_group_list_append_group_option ((*layout_data->config_regp)->option_groups,
+                                                         layout_data->layout,
+                                                         item);
+}
+
+static void
+add_option_group (XklConfigRegistry   *xklconfig_registry,
+                  const XklConfigItem *item,
+                  gpointer             data)
+{
+    InputPadXKBConfigReg  **config_regp = (InputPadXKBConfigReg **) data;
+    XklLayoutData layout_data;
+    layout_data.layout = item;
+    layout_data.config_regp = config_regp;
+    xkl_config_registry_foreach_option (xklconfig_registry,
+                                        item->name,
+                                        add_option,
+                                        &layout_data);
+    layout_data.layout = NULL;
+    layout_data.config_regp = NULL;
+}
+
 static gboolean
-get_config_reg_with_xkl_config_registry (InputPadXKBConfigReg  **config_regp,
+get_reg_layout_with_xkl_config_registry (InputPadXKBConfigReg  **config_regp,
                                          XklConfigRegistry *xklconfig_registry)
 {
     g_return_val_if_fail (config_regp != NULL, FALSE);
     g_return_val_if_fail (xklconfig_registry != NULL, FALSE);
 
-    xkl_config_registry_foreach_layout (xklconfig_registry, add_layout, config_regp);
+    xkl_config_registry_foreach_layout (xklconfig_registry,
+                                        add_layout, config_regp);
+    return TRUE;
+}
+
+static gboolean
+get_reg_option_with_xkl_config_registry (InputPadXKBConfigReg  **config_regp,
+                                         XklConfigRegistry *xklconfig_registry)
+{
+    g_return_val_if_fail (config_regp != NULL, FALSE);
+    g_return_val_if_fail (xklconfig_registry != NULL, FALSE);
+
+    xkl_config_registry_foreach_option_group (xklconfig_registry,
+                                              add_option_group, config_regp);
     return TRUE;
 }
 
 static int
-find_layouts_index (gchar **all_layouts, const gchar *sub_layouts)
+find_layouts_index (gchar **all_layouts, const gchar *sub_layouts,
+                    gchar **all_variants, const gchar *sub_variants)
+{
+    int i;
+    int retval = -1;
+
+    for (i = 0; i < g_strv_length (all_layouts); i++) {
+        if (g_strcmp0 (all_layouts[i], sub_layouts) == 0 &&
+            (sub_variants != NULL ?
+             g_strcmp0 (all_variants[i], sub_variants) == 0 : 1)) {
+            retval = i;
+            break;
+        }
+    }
+    return retval;
+}
+
+#if 0
+/* This is no longer needed? */
+static int
+find_options_index (gchar **all_layouts, const gchar *sub_layouts)
 {
     gchar *line, *p, *head;
     int index = 0;
@@ -734,11 +915,12 @@ find_layouts_index (gchar **all_layouts, const gchar *sub_layouts)
 
     return index;
 }
+#endif
 
 static gchar **
 concat_layouts (gchar **all_layouts, const gchar *sub_layouts)
 {
-    gchar **sub_array;
+    gchar **sub_array = NULL;
     gchar **retval;
     const int avoid_loop = 50;
     int groups, i, n_all, n_sub;
@@ -746,28 +928,31 @@ concat_layouts (gchar **all_layouts, const gchar *sub_layouts)
     g_return_val_if_fail (all_layouts != NULL && sub_layouts != NULL, NULL);
 
     groups = MAX (xkl_engine_get_max_num_groups (xklengine), 1);
-    sub_array = g_strsplit (sub_layouts, ",", -1);
-    for (n_all = 0; all_layouts[n_all] && *all_layouts[n_all]; n_all++) {
+    /* Maybe a bug in g_strsplit ? */
+    if (*sub_layouts == '\0') {
+        sub_array = g_new0 (gchar *, 2);
+        sub_array[0] = g_strdup ("");
+    } else {
+        sub_array = g_strsplit (sub_layouts, ",", -1);
+    }
+    for (n_all = 0; all_layouts[n_all]; n_all++) {
         if (n_all >= avoid_loop) {
             break;
         }
     }
-    for (n_sub = 0; sub_array[n_sub] && *sub_array[n_sub]; n_sub++) {
+    for (n_sub = 0; sub_array[n_sub]; n_sub++) {
         if (n_sub >= avoid_loop) {
             break;
         }
     }
     if (n_all + n_sub > groups) {
         n_all = groups - n_sub;
-        if (n_all < 1) {
-            n_all = MAX (groups, 1);
-        }
     }
     retval = g_new0 (char*, n_all + n_sub + 1);
     for (i = 0; i < n_all; i++) {
         retval[i] = g_strdup (all_layouts[i]);
     }
-    for (i = 0; i < n_sub; i++) {
+    for (i = 0; i < n_sub && n_all + i >= 0; i++) {
         retval[n_all + i] = g_strdup (sub_array[i]);
     }
     retval[n_all + n_sub] = NULL;
@@ -846,6 +1031,76 @@ set_xkb_rules (Display *xdisplay,
     return TRUE;
 }
 #endif
+
+static char **
+xkb_get_group_layouts_from_key (InputPadGtkWindow      *window, 
+                                InputPadXKBKeyList     *xkb_key_list,
+                                int                     get_key)
+{
+    Display *xdisplay;
+    char **names;
+    Atom xkb_rules_name, type;
+    int format;
+    unsigned long l, nitems, bytes_after;
+    unsigned char *prop = NULL;
+
+    xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET (window)));
+    xkb_rules_name = XInternAtom (xdisplay, "_XKB_RULES_NAMES", TRUE);
+    if (xkb_rules_name == None) {
+        g_warning ("Could not get XKB rules atom");
+        return NULL;
+    }
+    if (XGetWindowProperty (xdisplay,
+                            XDefaultRootWindow (xdisplay),
+                            xkb_rules_name,
+                            0, 1024, FALSE, XA_STRING,
+                            &type, &format, &nitems, &bytes_after, &prop) != Success) {
+        g_warning ("Could not get X property");
+        return NULL;
+    }
+    if (nitems < 3) {
+        g_warning ("Could not get group layout from X property");
+        return NULL;
+    }
+    for (l = 0; l < 2; l++) {
+        prop += strlen ((const char *) prop) + 1;
+    }
+    if (prop == NULL || *prop == '\0') {
+        g_warning ("No layouts form X property");
+        return NULL;
+    }
+    if (get_key == XKB_GET_LAYOUTS_KEY) {
+        names = g_strsplit ((gchar *) prop, ",", -1);
+        debug_print_group_layout_list (names);
+
+        return names;
+    }
+    prop += strlen ((const char *) prop) + 1;
+    if (prop == NULL) {
+        g_warning ("No variants form X property");
+        return NULL;
+    }
+    if (get_key == XKB_GET_VARIANTS_KEY) {
+        names = g_strsplit ((gchar *) prop, ",", -1);
+        debug_print_group_layout_list (names);
+
+        return names;
+    }
+    prop += strlen ((const char *) prop) + 1;
+    if (prop == NULL) {
+        g_warning ("No options form X property");
+        return NULL;
+    }
+    if (get_key == XKB_GET_OPTIONS_KEY) {
+        names = g_strsplit ((gchar *) prop, ",", -1);
+        debug_print_group_layout_list (names);
+
+        return names;
+    }
+
+    g_assert_not_reached ();
+    return NULL;
+}
 
 void
 input_pad_gdk_xkb_destroy_keyboard_layouts (InputPadGtkWindow   *window,
@@ -960,7 +1215,7 @@ input_pad_gdk_xkb_parse_keyboard_layouts (InputPadGtkWindow   *window)
 
 #ifdef HAVE_LIBXKLAVIER
     if (xklengine == NULL) {
-        xklengine = init_xkl_engine (window, &initial_xkl_rec);
+        xklengine = init_xkl_engine (window, &initial_xkl_rec, &initial_group);
     }
 #endif
 
@@ -979,45 +1234,33 @@ char **
 input_pad_gdk_xkb_get_group_layouts (InputPadGtkWindow   *window, 
                                      InputPadXKBKeyList  *xkb_key_list)
 {
-    Display *xdisplay;
-    char **names;
-    Atom xkb_rules_name, type;
-    int format;
-    unsigned long l, nitems, bytes_after;
-    unsigned char *prop = NULL;
-
     g_return_val_if_fail (window != NULL && INPUT_PAD_IS_GTK_WINDOW (window),
                           NULL);
 
-    xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET (window)));
-    xkb_rules_name = XInternAtom (xdisplay, "_XKB_RULES_NAMES", TRUE);
-    if (xkb_rules_name == None) {
-        g_warning ("Could not get XKB rules atom");
-        return NULL;
-    }
-    if (XGetWindowProperty (xdisplay,
-                            XDefaultRootWindow (xdisplay),
-                            xkb_rules_name,
-                            0, 1024, FALSE, XA_STRING,
-                            &type, &format, &nitems, &bytes_after, &prop) != Success) {
-        g_warning ("Could not get X property");
-        return NULL;
-    }
-    if (nitems < 3) {
-        g_warning ("Could not get group layout from X property");
-        return NULL;
-    }
-    for (l = 0; l < 2; l++) {
-        prop += strlen ((const char *) prop) + 1;
-    }
-    if (prop == NULL || *prop == '\0') {
-        g_warning ("No layouts form X property");
-        return NULL;
-    }
-    names = g_strsplit ((gchar *) prop, ",", -1);
-    debug_print_group_layout_list (names);
+    return xkb_get_group_layouts_from_key (window, xkb_key_list,
+                                           XKB_GET_LAYOUTS_KEY);
+}
 
-    return names;
+char **
+input_pad_gdk_xkb_get_group_variants (InputPadGtkWindow        *window, 
+                                      InputPadXKBKeyList       *xkb_key_list)
+{
+    g_return_val_if_fail (window != NULL && INPUT_PAD_IS_GTK_WINDOW (window),
+                          NULL);
+
+    return xkb_get_group_layouts_from_key (window, xkb_key_list,
+                                           XKB_GET_VARIANTS_KEY);
+}
+
+char **
+input_pad_gdk_xkb_get_group_options (InputPadGtkWindow   *window, 
+                                     InputPadXKBKeyList  *xkb_key_list)
+{
+    g_return_val_if_fail (window != NULL && INPUT_PAD_IS_GTK_WINDOW (window),
+                          NULL);
+
+    return xkb_get_group_layouts_from_key (window, xkb_key_list,
+                                           XKB_GET_OPTIONS_KEY);
 }
 
 InputPadXKBConfigReg *
@@ -1031,13 +1274,16 @@ input_pad_gdk_xkb_parse_config_registry (InputPadGtkWindow   *window,
     g_return_val_if_fail (window != NULL && INPUT_PAD_IS_GTK_WINDOW (window), NULL);
 
     if (xklengine == NULL) {
-        xklengine = init_xkl_engine (window, &initial_xkl_rec);
+        xklengine = init_xkl_engine (window, &initial_xkl_rec, &initial_group);
     }
     xklconfig_registry = init_xkl_config_registry (window);
-    get_config_reg_with_xkl_config_registry (&config_reg,
+    get_reg_layout_with_xkl_config_registry (&config_reg,
+                                             xklconfig_registry);
+    get_reg_option_with_xkl_config_registry (&config_reg,
                                              xklconfig_registry);
 
     debug_print_layout_list (config_reg->layouts);
+    debug_print_option_group_list (config_reg->option_groups);
     return config_reg;
 #else
     return NULL;
@@ -1056,52 +1302,61 @@ input_pad_gdk_xkb_set_layout (InputPadGtkWindow        *window,
     XklState *state;
     int layout_index = -1;
 
-    g_return_val_if_fail (layouts != NULL, FALSE);
     g_return_val_if_fail (initial_xkl_rec != NULL, FALSE);
     g_return_val_if_fail (xklengine != NULL, FALSE);
+
+    if (layouts == NULL && variants == NULL && options == NULL) {
+        xkl_config_rec_activate (initial_xkl_rec, xklengine);
+        xkl_engine_lock_group (xklengine, initial_group);
+        return TRUE;
+    }
 
     xkl_rec = xkl_config_rec_new ();
     xkl_rec->model =  initial_xkl_rec->model ?
                       g_strdup (initial_xkl_rec->model) :
                       g_strdup ("pc105");
-    if (initial_xkl_rec->layouts == NULL) {
-        xkl_rec->layouts = g_strsplit (layouts, ",", -1);
-    } else {
-        layout_index = find_layouts_index (initial_xkl_rec->layouts, layouts);
+    if (initial_xkl_rec->layouts != NULL) {
+        layout_index = find_layouts_index (initial_xkl_rec->layouts, layouts,
+                                           initial_xkl_rec->variants, variants);
         if (layout_index >= 0) {
-            state = xkl_engine_get_current_state (xklengine);
-            if (state->group == layout_index) {
+            XklState win_state;
+            if (xkl_engine_get_state (xklengine,
+                                      xkl_engine_get_current_window (xklengine),
+                                      &win_state)) {
+                state = &win_state;
+            } else {
+                state = xkl_engine_get_current_state (xklengine);
+            }
+            if (state->group == layout_index && options == NULL) {
                 g_free (xkl_rec->model);
                 xkl_rec->model = NULL;
                 g_object_unref (xkl_rec);
                 return TRUE;
             }
             xkl_rec->layouts = g_strdupv (initial_xkl_rec->layouts);
+            if (initial_xkl_rec->variants) {
+                xkl_rec->variants = g_strdupv (initial_xkl_rec->variants);
+            }
         } else {
             xkl_rec->layouts = concat_layouts (initial_xkl_rec->layouts,
                                                layouts);
-            layout_index = find_layouts_index (xkl_rec->layouts, layouts);
+            if (initial_xkl_rec->variants) {
+                xkl_rec->variants = concat_layouts (initial_xkl_rec->variants,
+                                                    variants ? variants : "");
+            }
+            layout_index = find_layouts_index (xkl_rec->layouts, layouts,
+                                               xkl_rec->variants, variants);
         }
-    }
-    if (variants == NULL) {
-        xkl_rec->variants = g_strdupv (initial_xkl_rec->variants);
-    } else if (initial_xkl_rec->variants == NULL) {
-        xkl_rec->variants = variants ? g_strsplit (variants, ",", -1) : NULL;
-    } else if (find_layouts_index (initial_xkl_rec->variants, variants) >= 0) {
-        xkl_rec->variants = g_strdupv (initial_xkl_rec->variants);
     } else {
-        xkl_rec->variants = concat_layouts (initial_xkl_rec->variants,
-                                            variants);
+        xkl_rec->layouts = g_strsplit (layouts, ",", -1);
+        if (variants) {
+            xkl_rec->variants = g_strsplit (variants, ",", -1);
+        }
     }
     if (options == NULL) {
         xkl_rec->options = g_strdupv (initial_xkl_rec->options);
-    } else if (initial_xkl_rec->options== NULL) {
-        xkl_rec->options = options ? g_strsplit (options , ",", -1) : NULL;
-    } else if (find_layouts_index (initial_xkl_rec->options, options) >= 0) {
-        xkl_rec->options = g_strdupv (initial_xkl_rec->options);
     } else {
-        xkl_rec->options = concat_layouts (initial_xkl_rec->options,
-                                           options);
+        xkl_rec->options = g_strsplit (options , ",", -1);
     }
 
     xkl_config_rec_activate (xkl_rec, xklengine);
