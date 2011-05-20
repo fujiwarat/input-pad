@@ -3197,7 +3197,7 @@ create_keyboard_layout_list_ui_real (GtkWidget *vbox, InputPadGtkWindow *window)
                       (gpointer) window);
     window->priv->config_layouts_combobox = combobox;
 
-    button = gtk_button_new_with_mnemonic ("_Configure Layouts");
+    button = gtk_button_new_with_mnemonic (_("_Configure Layouts"));
     gtk_box_pack_start (GTK_BOX (hbox), button, FALSE, FALSE, 0);
     gtk_widget_show (button);
 

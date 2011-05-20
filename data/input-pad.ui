@@ -738,8 +738,8 @@ You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad t
   </object>
   <object class="GtkAboutDialog" id="AboutDialog">
     <property name="program-name" translatable="yes">Input Pad</property>
-    <property name="copyright">Copyright (c) 2010 Takao Fujiwara
-Copyright (c) 2010 Red Hat, Inc.</property>
+    <property name="copyright">Copyright (c) 2010-2011 Takao Fujiwara
+Copyright (c) 2010-2011 Red Hat, Inc.</property>
     <property name="comments" translatable="yes">The input pad is a tool to send a character on button.</property>
     <property name="license">LGPL</property>
     <property name="website">http://code.google.com/p/input-pad/</property>

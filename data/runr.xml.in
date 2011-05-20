@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <input-pad>
-  <pad _name="runes">
+  <pad name="runes">
     <group>
       <_name>Runes</_name>
 <!-- FIXME: Complete the Unicode Block -->

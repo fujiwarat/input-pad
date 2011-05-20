@@ -1,14 +1,14 @@
 # Japanese translations for input-pad
-# Copyright (C) 1999-2011 Free Software Foundation, Inc.
+# Copyright (C) 2010-2011 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
-# Takao Fujiwara <takao.fujiwara1@gmail.com>, 2010-2011.
 #
+# Takao Fujiwara <takao.fujiwara1@gmail.com>, 2010-2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2011-05-19 11:35+0900\n"
-"PO-Revision-Date: 2011-05-19 11:35+0900\n"
+"POT-Creation-Date: 2011-05-20 12:33+0900\n"
+"PO-Revision-Date: 2011-05-20 12:33+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Japanese\n"
 "Language: ja\n"
@@ -29,7 +29,7 @@ msgstr "すべて"
 msgid "Arrow"
 msgstr "矢印"
 
-#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3933
+#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3937
 msgid "Block"
 msgstr "ブロック"
 
@@ -244,23 +244,19 @@ msgstr "部首"
 
 #: ../data/runr.xml.in.h:1
 msgid "Elder Fuþark"
-msgstr "Elder Fuþark"
+msgstr "古代のフザルク (Fuþark)"
 
 #: ../data/runr.xml.in.h:2
 msgid "Fuþorc"
-msgstr "Fuþorc"
+msgstr "フゾルク (Fuþorc)"
 
 #: ../data/runr.xml.in.h:3
 msgid "Runes"
-msgstr "Runes"
+msgstr "ルーン文字"
 
 #: ../data/runr.xml.in.h:4
 msgid "Younger Fuþark"
-msgstr "Younger Fuþark"
-
-#: ../data/runr.xml.in.h:5
-msgid "runes"
-msgstr "runes"
+msgstr "更新されたフザルク (Fuþark)"
 
 #: ../data/keyboard.xml.in.h:1
 msgid "Function Key"
@@ -275,7 +271,7 @@ msgid "Keyboard"
 msgstr "キーボード"
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:27
-#: ../input-pad/window-gtk.c:5230 ../input-pad/window-gtk.c:5231
+#: ../input-pad/window-gtk.c:5234 ../input-pad/window-gtk.c:5235
 msgid "Input Pad"
 msgstr "インプットパッド"
 
@@ -1623,13 +1619,17 @@ msgstr "レイアウトを折りたたむ"
 msgid "Extend layout"
 msgstr "レイアウトを広げる"
 
-#: ../input-pad/window-gtk.c:2891
+#: ../input-pad/window-gtk.c:2895
 msgid "Layout"
 msgstr "レイアウト"
 
-#: ../input-pad/window-gtk.c:3166
+#: ../input-pad/window-gtk.c:3170
 msgid "_Layout:"
 msgstr "レイアウト(_L):"
+
+#: ../input-pad/window-gtk.c:3200
+msgid "_Configure Layouts"
+msgstr "レイアウトを構成する(_C)"
 
 #. No longer used in gtk 2.20
 #. gchar *license1, *license2, *license3;
@@ -1655,16 +1655,16 @@ msgstr "レイアウト(_L):"
 #. license1, license2, license3);
 #.
 #. This format has been used since gtk 2.20.
-#: ../input-pad/window-gtk.c:3235
+#: ../input-pad/window-gtk.c:3239
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
 msgstr ""
 "このプログラムは完全に無保証で提供しています。詳細は、%s を見てください。"
 
-#: ../input-pad/window-gtk.c:3703
+#: ../input-pad/window-gtk.c:3707
 msgid "Group"
 msgstr "グループ"
 
-#: ../input-pad/window-gtk.c:3711
+#: ../input-pad/window-gtk.c:3715
 msgid "Sub Group"
 msgstr "サブグループ"
