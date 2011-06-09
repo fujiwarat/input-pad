@@ -3,8 +3,6 @@
   <pad name="runes">
     <group>
       <_name>Runes</_name>
-<!-- FIXME: Complete the Unicode Block -->
-<!--
       <table>
         <column>10</column>
         <_name>Unicode Block</_name>
@@ -12,8 +10,327 @@
           <label>ᚠ</label>
           <comment>Runic Letter Fehu Feoh Fe F</comment>
         </string>
+        <string>
+          <label>ᚡ</label>
+          <comment>Runic Letter V</comment>
+        </string>
+        <string>
+          <label>ᚢ</label>
+          <comment>Runic Letter Uruz Ur U</comment>
+        </string>
+        <string>
+          <label>ᚣ</label>
+          <comment>Runic Letter Yr</comment>
+        </string>
+        <string>
+          <label>ᚤ</label>
+          <comment>Runic Letter Y</comment>
+        </string>
+        <string>
+          <label>ᚥ</label>
+          <comment>Runic Letter W</comment>
+        </string>
+        <string>
+          <label>ᚦ</label>
+          <comment>Runic Letter Thurisaz Thurs Thorn</comment>
+        </string>
+        <string>
+          <label>ᚧ</label>
+          <comment>Runic Letter Eth</comment>
+        </string>
+        <string>
+          <label>ᚨ</label>
+          <comment>Runic Letter Ansuz A</comment>
+        </string>
+        <string>
+          <label>ᚩ</label>
+          <comment>Runic Letter Os O</comment>
+        </string>
+        <string>
+          <label>ᚪ</label>
+          <comment>Runic Letter Ac A</comment>
+        </string>
+        <string>
+          <label>ᚫ</label>
+          <comment>Runic Letter Aesc</comment>
+        </string>
+        <string>
+          <label>ᚬ</label>
+          <comment>Runic Letter Long-Branch-Oss O</comment>
+        </string>
+        <string>
+          <label>ᚭ</label>
+          <comment>Runic Letter Short-Twig-Oss O</comment>
+        </string>
+        <string>
+          <label>ᚮ</label>
+          <comment>Runic Letter O</comment>
+        </string>
+        <string>
+          <label>ᚯ</label>
+          <comment>Runic Letter Oe</comment>
+        </string>
+        <string>
+          <label>ᚰ</label>
+          <comment>Runic Letter On</comment>
+        </string>
+        <string>
+          <label>ᚱ</label>
+          <comment>Runic Letter Raido Rad Reid R</comment>
+        </string>
+        <string>
+          <label>ᚲ</label>
+          <comment>Runic Letter Kauna</comment>
+        </string>
+        <string>
+          <label>ᚳ</label>
+          <comment>Runic Letter Cen</comment>
+        </string>
+        <string>
+          <label>ᚴ</label>
+          <comment>Runic Letter Kaun K</comment>
+        </string>
+        <string>
+          <label>ᚵ</label>
+          <comment>Runic Letter Kaun G</comment>
+        </string>
+        <string>
+          <label>ᚶ</label>
+          <comment>Runic Letter Kaun Eng</comment>
+        </string>
+        <string>
+          <label>ᚷ</label>
+          <comment>Runic Letter Kaun Gebo Gyfu G</comment>
+        </string>
+        <string>
+          <label>ᚸ</label>
+          <comment>Runic Letter Gar</comment>
+        </string>
+        <string>
+          <label>ᚹ</label>
+          <comment>Runic Letter Wunjo Wynn W</comment>
+        </string>
+        <string>
+          <label>ᚺ</label>
+          <comment>Runic Letter Haglaz H</comment>
+        </string>
+        <string>
+          <label>ᚻ</label>
+          <comment>Runic Letter Haegl H</comment>
+        </string>
+        <string>
+          <label>ᚼ</label>
+          <comment>Runic Letter Long-Branch-Hagall H</comment>
+        </string>
+        <string>
+          <label>ᚽ</label>
+          <comment>Runic Letter Short-Twig-Hagall H</comment>
+        </string>
+        <string>
+          <label>ᚾ</label>
+          <comment>Runic Letter Naudiz Nyd Naud N</comment>
+        </string>
+        <string>
+          <label>ᚿ</label>
+          <comment>Runic Letter Short-Twig-Naud N</comment>
+        </string>
+        <string>
+          <label>ᛀ</label>
+          <comment>Runic Letter Dotted-N</comment>
+        </string>
+        <string>
+          <label>ᛁ</label>
+          <comment>Runic Letter Isaz Is Iss I</comment>
+        </string>
+        <string>
+          <label>ᛂ</label>
+          <comment>Runic Letter E</comment>
+        </string>
+        <string>
+          <label>ᛃ</label>
+          <comment>Runic Letter Jeran J</comment>
+        </string>
+        <string>
+          <label>ᛄ</label>
+          <comment>Runic Letter Ger</comment>
+        </string>
+        <string>
+          <label>ᛅ</label>
+          <comment>Runic Letter Long-Branch-Ar Ae</comment>
+        </string>
+        <string>
+          <label>ᛆ</label>
+          <comment>Runic Letter Short-Twig-Ar A</comment>
+        </string>
+        <string>
+          <label>ᛇ</label>
+          <comment>Runic Letter Iwaz Eoh</comment>
+        </string>
+        <string>
+          <label>ᛈ</label>
+          <comment>Runic Letter Pertho Peorth P</comment>
+        </string>
+        <string>
+          <label>ᛉ</label>
+          <comment>Runic Letter Algiz Eolhx</comment>
+        </string>
+        <string>
+          <label>ᛊ</label>
+          <comment>Runic Letter Sowilo S</comment>
+        </string>
+        <string>
+          <label>ᛋ</label>
+          <comment>Runic Letter Sigel Long-Branch-Sol S</comment>
+        </string>
+        <string>
+          <label>ᛌ</label>
+          <comment>Runic Letter Short-Twig-Sol S</comment>
+        </string>
+        <string>
+          <label>ᛍ</label>
+          <comment>Runic Letter C</comment>
+        </string>
+        <string>
+          <label>ᛎ</label>
+          <comment>Runic Letter Z</comment>
+        </string>
+        <string>
+          <label>ᛏ</label>
+          <comment>Runic Letter Tiwaz Tir Tyr T</comment>
+        </string>
+        <string>
+          <label>ᛐ</label>
+          <comment>Runic Letter Short-Twig-Tyr T</comment>
+        </string>
+        <string>
+          <label>ᛑ</label>
+          <comment>Runic Letter D</comment>
+        </string>
+        <string>
+          <label>ᛒ</label>
+          <comment>Runic Letter Berkanan Beorc Bjarkan B</comment>
+        </string>
+        <string>
+          <label>ᛓ</label>
+          <comment>Runic Letter Short-Twig-Bjarkan B</comment>
+        </string>
+        <string>
+          <label>ᛔ</label>
+          <comment>Runic Letter Dotted-P</comment>
+        </string>
+        <string>
+          <label>ᛕ</label>
+          <comment>Runic Letter Open-P</comment>
+        </string>
+        <string>
+          <label>ᛖ</label>
+          <comment>Runic Letter Ehwaz Eh E</comment>
+        </string>
+        <string>
+          <label>ᛗ</label>
+          <comment>Runic Letter Mannaz Man M</comment>
+        </string>
+        <string>
+          <label>ᛘ</label>
+          <comment>Runic Letter Long-Branch-Madr M</comment>
+        </string>
+        <string>
+          <label>ᛙ</label>
+          <comment>Runic Letter Short-Twig-Madr M</comment>
+        </string>
+        <string>
+          <label>ᛚ</label>
+          <comment>Runic Letter Laukaz Lagu Logr L</comment>
+        </string>
+        <string>
+          <label>ᛛ</label>
+          <comment>Runic Letter Dotted-L</comment>
+        </string>
+        <string>
+          <label>ᛜ</label>
+          <comment>Runic Letter Ingwaz</comment>
+        </string>
+        <string>
+          <label>ᛝ</label>
+          <comment>Runic Letter Ing</comment>
+        </string>
+        <string>
+          <label>ᛞ</label>
+          <comment>Runic Letter Dagaz Daeg D</comment>
+        </string>
+        <string>
+          <label>ᛟ</label>
+          <comment>Runic Letter Othalan Ethel O</comment>
+        </string>
+        <string>
+          <label>ᛠ</label>
+          <comment>Runic Letter Ear</comment>
+        </string>
+        <string>
+          <label>ᛡ</label>
+          <comment>Runic Letter Ior</comment>
+        </string>
+        <string>
+          <label>ᛢ</label>
+          <comment>Runic Letter Cweorth</comment>
+        </string>
+        <string>
+          <label>ᛣ</label>
+          <comment>Runic Letter Calc</comment>
+        </string>
+        <string>
+          <label>ᛤ</label>
+          <comment>Runic Letter Cealc</comment>
+        </string>
+        <string>
+          <label>ᛥ</label>
+          <comment>Runic Letter Stan</comment>
+        </string>
+        <string>
+          <label>ᛦ</label>
+          <comment>Runic Letter Long-Branch-Yr</comment>
+        </string>
+        <string>
+          <label>ᛧ</label>
+          <comment>Runic Letter Short-Twig-Yr</comment>
+        </string>
+        <string>
+          <label>ᛨ</label>
+          <comment>Runic Letter Icelandic-Yr</comment>
+        </string>
+        <string>
+          <label>ᛩ</label>
+          <comment>Runic Letter Q</comment>
+        </string>
+        <string>
+          <label>ᛪ</label>
+          <comment>Runic Letter X</comment>
+        </string>
+        <string>
+          <label>᛫</label>
+          <comment>Runic Single Punctuation</comment>
+        </string>
+        <string>
+          <label>᛬</label>
+          <comment>Runic Multiple Punctuation</comment>
+        </string>
+        <string>
+          <label>᛭</label>
+          <comment>Runic Cross Punctuation</comment>
+        </string>
+        <string>
+          <label>ᛮ</label>
+          <comment>Runic Letter Arlaug Symbol</comment>
+        </string>
+        <string>
+          <label>ᛯ</label>
+          <comment>Runic Letter Tvimadur Symbol</comment>
+        </string>
+        <string>
+          <label>ᛰ</label>
+          <comment>Runic Letter Belgthor Symbol</comment>
+        </string>
       </table>
--->
       <table>
         <column>10</column>
         <_name>Elder Fuþark</_name>
