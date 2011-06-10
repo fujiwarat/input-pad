@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<input-pad>
+  <pad name="base">
+    <group>
+      <_name>Alphabets</_name>
+      @latin@
+      @runr@
+      @goth@
+    </group>
+  </pad>
+</input-pad>

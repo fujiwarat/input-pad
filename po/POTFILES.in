@@ -1,5 +1,6 @@
 # Files with translatable strings.
 # Please keep this file in alphabetical order.
+data/alphabet.xml.in.in
 data/base.xml.in
 data/cmd.xml.in
 data/goth.xml.in
@@ -7,6 +8,7 @@ data/input-pad.desktop.in
 [type: gettext/glade]data/input-pad.ui
 data/ja.xml.in
 data/keyboard.xml.in
+data/latin.xml.in
 data/runr.xml.in
 data/str.xml.in
 data/w3c.xml.in

@@ -1,11 +1,7 @@
-<?xml version="1.0"?>
-<input-pad>
-  <pad name="runes">
-    <group>
-      <_name>Runes</_name>
+<dummy>
       <table>
         <column>10</column>
-        <_name>Unicode Block</_name>
+        <_name>Runes (Unicode Block)</_name>
         <string>
           <label>ᚠ</label>
           <comment>Runic Letter Fehu Feoh Fe F</comment>
@@ -333,7 +329,7 @@
       </table>
       <table>
         <column>10</column>
-        <_name>Elder Fuþark</_name>
+        <_name>Runes (Elder Fuþark)</_name>
         <string>
           <label>ᚠ</label>
           <comment>Fehu</comment>
@@ -433,7 +429,7 @@
       </table>
       <table>
         <column>10</column>
-        <_name>Younger Fuþark</_name>
+        <_name>Runes (Younger Fuþark)</_name>
         <string>
           <label>ᚠ</label>
           <comment>Fé</comment>
@@ -541,7 +537,7 @@
       </table>
       <table>
         <column>10</column>
-        <_name>Fuþorc</_name>
+        <_name>Runes (Fuþorc)</_name>
         <string>
           <label>ᚠ</label>
           <comment>Feoh</comment>
@@ -679,6 +675,4 @@
           <comment>Gar</comment>
         </string>
       </table>
-    </group>
-  </pad>
-</input-pad>
+</dummy>

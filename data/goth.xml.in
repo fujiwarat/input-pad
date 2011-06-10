@@ -1,11 +1,7 @@
-<?xml version="1.0"?>
-<input-pad>
-  <pad name="gothic">
-    <group>
-      <_name>Gothic</_name>
+<dummy>
       <table>
         <column>10</column>
-        <_name>Letters and Numbers</_name>
+        <_name>Gothic</_name>
         <string>
           <label>𐌰</label>
           <comment>Aza/Ans/Asks/1</comment>
@@ -115,6 +111,4 @@
           <comment>900</comment>
         </string>
       </table>
-    </group>
-  </pad>
-</input-pad>
+</dummy>
