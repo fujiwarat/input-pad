@@ -32,6 +32,7 @@ pad_in_files = \
 	ja.xml.in                                               \
 	zh.xml.in                                               \
 	runr.xml.in                                             \
+	goth.xml.in                                             \
 	str.xml.in                                              \
 	w3c.xml.in                                              \
 	cmd.xml.in                                              \
@@ -43,6 +44,7 @@ pad_DATA = \
 	group02-ja.xml                                          \
 	group02-zh.xml                                          \
 	group03-runr.xml                                        \
+	group05-goth.xml                                        \
 	group50-str.xml                                         \
 	group60-w3c.xml                                         \
 	group70-cmd.xml                                         \
@@ -55,6 +57,8 @@ group02-ja.xml: ja.xml
 group02-zh.xml: zh.xml
 	@cp $< $@
 group03-runr.xml: runr.xml
+	@cp $< $@
+group05-goth.xml: goth.xml
 	@cp $< $@
 group50-str.xml: str.xml
 	@cp $< $@
