@@ -1,6 +1,6 @@
 # vim:set noet ts=4:
 #
-# input-pad - The input pad 
+# input-pad - The input pad
 #
 # Copyright (c) 2010-2011 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # Copyright (c) 2010-2011 Red Hat, Inc.
@@ -17,7 +17,7 @@
 #
 # You should have received a copy of the GNU Lesser General Public
 # License along with this library; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, 
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA  02110-1301  USA
 
 noinst_DIST = \

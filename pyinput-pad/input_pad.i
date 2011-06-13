@@ -87,7 +87,7 @@ _input_pad_window_get_kbdui_name_list_wrapper (void)
     }
     retval = PyList_New (0);
     for (i = 0; i < size; i++) {
-        tuple = PyTuple_Pack (3, 
+        tuple = PyTuple_Pack (3,
                               PyString_FromString (list[i].name),
                               PyString_FromString (list[i].description),
                               PyInt_FromLong (list[i].type));
