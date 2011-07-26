@@ -1,5 +1,13 @@
-#summary Input Pad Source Repository for Developers
 #labels Featured
+== Stable Sources ==
+http://code.google.com/p/input-pad/downloads/list
+
+_Note: ibus-input-pad 1.4.x requires ibus 1.4 (currently 1.3.99.xx). If you use ibus 1.3.x, please use ibus-input-pad 0.1.x . You could also find README file in the tarball:_<br />
+https://github.com/fujiwarat/ibus-input-pad/blob/master/README
+
+
+== Development Sources ==
+#summary Input Pad Source Repository for Developers
 
 {{{
 git clone git://github.com/fujiwarat/input-pad.git
