@@ -10,6 +10,7 @@ data/ja.xml.in
 data/keyboard.xml.in
 data/latin.xml.in
 data/runr.xml.in
+data/shaw.xml.in
 data/str.xml.in
 data/w3c.xml.in
 data/zh.xml.in

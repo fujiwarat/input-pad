@@ -7,8 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2011-05-20 12:33+0900\n"
-"POT-Creation-Date: 2011-05-19 11:35+0900\n"
+"POT-Creation-Date: 2011-07-28 13:46+0900\n"
 "PO-Revision-Date: 2011-05-19 11:35+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Source\n"
@@ -17,128 +16,116 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/base.xml.in.h:1
-msgid "ASCII"
+#: ../data/alphabet.xml.in.in.h:1
+msgid "Alphabets"
 msgstr ""
 
-#: ../data/base.xml.in.h:2
+#: ../data/base.xml.in.h:1
 msgid "All"
 msgstr ""
 
-#: ../data/base.xml.in.h:3
+#: ../data/base.xml.in.h:2
 msgid "Arrow"
 msgstr ""
 
-#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3937
+#: ../data/base.xml.in.h:3 ../input-pad/window-gtk.c:3937
 msgid "Block"
 msgstr ""
 
-#: ../data/base.xml.in.h:5 ../input-pad/unicode_block.h:112
+#: ../data/base.xml.in.h:4 ../input-pad/unicode_block.h:112
 msgid "Box Drawing"
 msgstr ""
 
-#: ../data/base.xml.in.h:6
+#: ../data/base.xml.in.h:5
 msgid "Braille"
 msgstr ""
 
-#: ../data/base.xml.in.h:7
+#: ../data/base.xml.in.h:6
 msgid "CJK"
 msgstr ""
 
-#: ../data/base.xml.in.h:8 ../input-pad/unicode_block.h:145
+#: ../data/base.xml.in.h:7 ../input-pad/unicode_block.h:145
 msgid "CJK Compatibility"
 msgstr ""
 
-#: ../data/base.xml.in.h:9
+#: ../data/base.xml.in.h:8
 msgid "Controls"
 msgstr ""
 
-#: ../data/base.xml.in.h:10
+#: ../data/base.xml.in.h:9
 msgid "Currency"
 msgstr ""
 
-#: ../data/base.xml.in.h:11 ../input-pad/unicode_block.h:116
+#: ../data/base.xml.in.h:10 ../input-pad/unicode_block.h:116
 msgid "Dingbats"
 msgstr ""
 
-#: ../data/base.xml.in.h:12
+#: ../data/base.xml.in.h:11
 msgid "Enclosed"
 msgstr ""
 
-#: ../data/base.xml.in.h:13
+#: ../data/base.xml.in.h:12
 msgid "Fraction"
 msgstr ""
 
-#: ../data/base.xml.in.h:14
+#: ../data/base.xml.in.h:13
 msgid "General"
 msgstr ""
 
-#: ../data/base.xml.in.h:15
+#: ../data/base.xml.in.h:14
 msgid "Geometric"
 msgstr ""
 
-#: ../data/base.xml.in.h:16
+#: ../data/base.xml.in.h:15
 msgid "Graphics"
 msgstr ""
 
-#: ../data/base.xml.in.h:17
-msgid "Latin"
-msgstr ""
-
-#: ../data/base.xml.in.h:18 ../input-pad/unicode_block.h:39
-msgid "Latin Extended-A"
-msgstr ""
-
-#: ../data/base.xml.in.h:19 ../input-pad/unicode_block.h:38
-msgid "Latin-1 Supplement"
-msgstr ""
-
-#: ../data/base.xml.in.h:20
+#: ../data/base.xml.in.h:16
 msgid "Letterlike"
 msgstr ""
 
-#: ../data/base.xml.in.h:21
+#: ../data/base.xml.in.h:17
 msgid "Mathematical"
 msgstr ""
 
-#: ../data/base.xml.in.h:22
+#: ../data/base.xml.in.h:18
 msgid "Miscellaneous"
 msgstr ""
 
-#: ../data/base.xml.in.h:23 ../data/zh.xml.in.h:3
+#: ../data/base.xml.in.h:19 ../data/zh.xml.in.h:3
 msgid "Numbers"
 msgstr ""
 
-#: ../data/base.xml.in.h:24
+#: ../data/base.xml.in.h:20
 msgid "OCR"
 msgstr ""
 
-#: ../data/base.xml.in.h:25
+#: ../data/base.xml.in.h:21
 msgid "Punctuations"
 msgstr ""
 
-#: ../data/base.xml.in.h:26
+#: ../data/base.xml.in.h:22
 msgid "Roman"
 msgstr ""
 
-#: ../data/base.xml.in.h:27
+#: ../data/base.xml.in.h:23
 msgid "Small Form"
 msgstr ""
 
 #. Translators: Superscripts and Subscripts
-#: ../data/base.xml.in.h:29
+#: ../data/base.xml.in.h:25
 msgid "Super and Sub"
 msgstr ""
 
-#: ../data/base.xml.in.h:30
+#: ../data/base.xml.in.h:26
 msgid "Symbols"
 msgstr ""
 
-#: ../data/base.xml.in.h:31
+#: ../data/base.xml.in.h:27
 msgid "Technical"
 msgstr ""
 
-#: ../data/base.xml.in.h:32
+#: ../data/base.xml.in.h:28
 msgid "Unit"
 msgstr ""
 
@@ -222,52 +209,8 @@ msgstr ""
 msgid "Weekday"
 msgstr ""
 
-#: ../data/ja.xml.in.h:1 ../input-pad/unicode_block.h:132
-msgid "CJK Radicals Supplement"
-msgstr ""
-
-#: ../data/ja.xml.in.h:2 ../input-pad/unicode_block.h:136
-msgid "Hiragana"
-msgstr ""
-
-#: ../data/ja.xml.in.h:3
-msgid "Japanese"
-msgstr ""
-
-#: ../data/ja.xml.in.h:4 ../input-pad/unicode_block.h:137
-msgid "Katakana"
-msgstr ""
-
-#: ../data/ja.xml.in.h:5 ../data/zh.xml.in.h:4
-msgid "Radicals"
-msgstr ""
-
-#: ../data/runr.xml.in.h:1
-msgid "Elder Fuþark"
-msgstr ""
-
-#: ../data/runr.xml.in.h:2
-msgid "Fuþorc"
-msgstr ""
-
-#: ../data/runr.xml.in.h:3
-msgid "Runes"
-msgstr ""
-
-#: ../data/runr.xml.in.h:4
-msgid "Younger Fuþark"
-msgstr ""
-
-#: ../data/keyboard.xml.in.h:1
-msgid "Function Key"
-msgstr ""
-
-#: ../data/keyboard.xml.in.h:2
-msgid "Key Pad"
-msgstr ""
-
-#: ../data/keyboard.xml.in.h:3
-msgid "Keyboard"
+#: ../data/goth.xml.in.h:1 ../input-pad/unicode_block.h:196
+msgid "Gothic"
 msgstr ""
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:27
@@ -453,6 +396,70 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:52
 msgid "translator_credits"
+msgstr ""
+
+#: ../data/ja.xml.in.h:1 ../input-pad/unicode_block.h:132
+msgid "CJK Radicals Supplement"
+msgstr ""
+
+#: ../data/ja.xml.in.h:2 ../input-pad/unicode_block.h:136
+msgid "Hiragana"
+msgstr ""
+
+#: ../data/ja.xml.in.h:3
+msgid "Japanese"
+msgstr ""
+
+#: ../data/ja.xml.in.h:4 ../input-pad/unicode_block.h:137
+msgid "Katakana"
+msgstr ""
+
+#: ../data/ja.xml.in.h:5 ../data/zh.xml.in.h:4
+msgid "Radicals"
+msgstr ""
+
+#: ../data/keyboard.xml.in.h:1
+msgid "Function Key"
+msgstr ""
+
+#: ../data/keyboard.xml.in.h:2
+msgid "Key Pad"
+msgstr ""
+
+#: ../data/keyboard.xml.in.h:3
+msgid "Keyboard"
+msgstr ""
+
+#: ../data/latin.xml.in.h:1
+msgid "ASCII"
+msgstr ""
+
+#: ../data/latin.xml.in.h:2 ../input-pad/unicode_block.h:39
+msgid "Latin Extended-A"
+msgstr ""
+
+#: ../data/latin.xml.in.h:3 ../input-pad/unicode_block.h:38
+msgid "Latin-1 Supplement"
+msgstr ""
+
+#: ../data/runr.xml.in.h:1
+msgid "Runes (Elder Fuþark)"
+msgstr ""
+
+#: ../data/runr.xml.in.h:2
+msgid "Runes (Fuþorc)"
+msgstr ""
+
+#: ../data/runr.xml.in.h:3
+msgid "Runes (Unicode Block)"
+msgstr ""
+
+#: ../data/runr.xml.in.h:4
+msgid "Runes (Younger Fuþark)"
+msgstr ""
+
+#: ../data/shaw.xml.in.h:1 ../input-pad/unicode_block.h:200
+msgid "Shavian"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
@@ -1412,10 +1419,6 @@ msgstr ""
 msgid "Old Italic"
 msgstr ""
 
-#: ../input-pad/unicode_block.h:196
-msgid "Gothic"
-msgstr ""
-
 #: ../input-pad/unicode_block.h:197
 msgid "Ugaritic"
 msgstr ""
@@ -1426,10 +1429,6 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:199
 msgid "Deseret"
-msgstr ""
-
-#: ../input-pad/unicode_block.h:200
-msgid "Shavian"
 msgstr ""
 
 #: ../input-pad/unicode_block.h:201
@@ -1645,5 +1644,5 @@ msgid "Group"
 msgstr ""
 
 #: ../input-pad/window-gtk.c:3715
-msgid "Sub Group"
+msgid "Subgroup"
 msgstr ""

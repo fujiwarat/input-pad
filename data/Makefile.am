@@ -32,6 +32,7 @@ pad_in_files = \
 	latin.xml.in                                            \
 	runr.xml.in                                             \
 	goth.xml.in                                             \
+	shaw.xml.in                                             \
 	ja.xml.in                                               \
 	zh.xml.in                                               \
 	str.xml.in                                              \
@@ -82,16 +83,19 @@ ALPHABET_TABLE_FILES = \
 	latin.xml                                               \
 	runr.xml                                                \
 	goth.xml                                                \
+	shaw.xml                                                \
 	$(NULL)
 
 alphabet.xml : alphabet.xml.in $(ALPHABET_TABLE_FILES)
 	@sed -e "/@latin@/r latin.xml"                          \
 	     -e "/@runr@/r runr.xml"                            \
 	     -e "/@goth@/r goth.xml"                            \
+	     -e "/@shaw@/r shaw.xml"                            \
 	alphabet.xml.in > $@;                                   \
 	sed -e "/@latin@/d"                                     \
 	    -e "/@runr@/d"                                      \
 	    -e "/@goth@/d"                                      \
+	    -e "/@shaw@/d"                                      \
 	$@ > $@.$$$$;                                           \
 	mv $@.$$$$ $@
 
