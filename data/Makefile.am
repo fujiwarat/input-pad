@@ -30,6 +30,7 @@ paddir = $(pkgdatadir)/pad
 pad_in_files = \
 	base.xml.in                                             \
 	latin.xml.in                                            \
+	ipa.xml.in                                              \
 	runr.xml.in                                             \
 	goth.xml.in                                             \
 	shaw.xml.in                                             \
@@ -81,6 +82,7 @@ alphabet.xml.in : alphabet.xml.in.in
 
 ALPHABET_TABLE_FILES = \
 	latin.xml                                               \
+	ipa.xml                                                 \
 	runr.xml                                                \
 	goth.xml                                                \
 	shaw.xml                                                \
@@ -88,11 +90,13 @@ ALPHABET_TABLE_FILES = \
 
 alphabet.xml : alphabet.xml.in $(ALPHABET_TABLE_FILES)
 	@sed -e "/@latin@/r latin.xml"                          \
+	     -e "/@ipa@/r ipa.xml"                              \
 	     -e "/@runr@/r runr.xml"                            \
 	     -e "/@goth@/r goth.xml"                            \
 	     -e "/@shaw@/r shaw.xml"                            \
 	alphabet.xml.in > $@;                                   \
 	sed -e "/@latin@/d"                                     \
+	    -e "/@ipa@/d"                                       \
 	    -e "/@runr@/d"                                      \
 	    -e "/@goth@/d"                                      \
 	    -e "/@shaw@/d"                                      \

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2011-07-28 13:46+0900\n"
+"POT-Creation-Date: 2012-02-14 13:10+0900\n"
 "PO-Revision-Date: 2011-05-19 11:35+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Source\n"
@@ -396,6 +396,823 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:52
 msgid "translator_credits"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:1
+msgid "Alveolar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:2
+msgid "Alveolar flap"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:3
+msgid "Alveolar lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:4
+msgid "Alveolar lateral click"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:5
+msgid "Alveolar lateral flap"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:6
+msgid "Alveolar nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:7
+msgid "Alveolar trill"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:8
+msgid "Aspiration mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:9
+msgid "Bidental percussive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:10
+msgid "Bilabial click"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:11
+msgid "Bilabial nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:12
+msgid "Bilabial percussive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:13
+msgid "Bilabial trill"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:14
+msgid "Bottom tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:15
+msgid "Breathy voice mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:16
+msgid "Close back rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:17
+msgid "Close back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:18
+msgid "Close central rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:19
+msgid "Close central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:20
+msgid "Close front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:21
+msgid "Close front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:22
+msgid "Close-mid back rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:23
+msgid "Close-mid back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:24
+msgid "Close-mid central rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:25
+msgid "Close-mid central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:26
+msgid "Close-mid front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:27
+msgid "Close-mid front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:28
+msgid "Closing orthographic bracket"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:29
+msgid "Combining apicalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:30
+msgid "Combining bottom tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:31
+msgid "Combining centralization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:32
+msgid "Combining denasalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:33
+msgid "Combining dentalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:34
+msgid "Combining dentolabialization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:35
+msgid "Combining diphthong mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:36
+msgid "Combining dipping tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:37
+msgid "Combining falling tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:38
+msgid "Combining high falling tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:39
+msgid "Combining high rising tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:40
+msgid "Combining high tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:41
+msgid "Combining laminalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:42
+msgid "Combining laryngealization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:43
+msgid "Combining less rounded mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:44
+msgid "Combining ligature tie"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:45
+msgid "Combining ligature undertie"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:46
+msgid "Combining linguolabialization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:47
+msgid "Combining low falling tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:48
+msgid "Combining low rising tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:49
+msgid "Combining low tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:50
+msgid "Combining lowered sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:51
+msgid "Combining mid tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:52
+msgid "Combining mid-centralization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:53
+msgid "Combining more rounded mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:54
+msgid "Combining nasalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:55
+msgid "Combining nasalization mark below"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:56
+msgid "Combining peaking tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:57
+msgid "Combining raised sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:58
+msgid "Combining retroflexion mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:59
+msgid "Combining rising tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:60
+msgid "Combining sliding articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:61
+msgid "Combining strong articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:62
+msgid "Combining syllabic mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:63
+msgid "Combining top tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:64
+msgid "Combining unreleased stop mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:65
+msgid "Combining voiced mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:66
+msgid "Combining voiceless mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:67
+msgid "Combining weak articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:68
+msgid "Dental click"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:69
+msgid "Dipping tone trigraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:70
+msgid "Egression mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:71
+msgid "Ejection mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:72
+msgid "Elongation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:73
+msgid "Epiglottal plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:74
+msgid "Falling tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:75
+msgid "Glottal stop"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:76
+msgid "High falling tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:77
+msgid "High rising tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:78
+msgid "High tone letter"
+msgstr ""
+
+#. "IPA" stands for "International Phonetic Alphabet"
+#: ../data/ipa.xml.in.h:80
+msgid "IPA"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:81
+msgid "Ingression mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:82
+msgid "Labial-palatal approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:83
+msgid "Labialization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:84
+msgid "Labio-palatalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:85
+msgid "Labiodental approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:86
+msgid "Labiodental flap"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:87
+msgid "Labiodental nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:88
+msgid "Labiodentalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:89
+msgid "Lateral release mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:90
+msgid "Low rising tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:91
+msgid "Low tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:92
+msgid "Lowered sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:93
+msgid "Mid tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:94
+msgid "Mid-central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:95
+msgid "Nasal release mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:96
+msgid "Near-close central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:97
+msgid "Near-close central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:98
+msgid "Near-close near-back vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:99
+msgid "Near-close near-front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:100
+msgid "Near-close near-front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:101
+msgid "Near-open central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:102
+msgid "Near-open front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:103
+msgid "Non-aspiration mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:104
+msgid "Open back rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:105
+msgid "Open back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:106
+msgid "Open central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:107
+msgid "Open front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:108
+msgid "Open front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:109
+msgid "Open-mid back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:110
+msgid "Open-mid central rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:111
+msgid "Open-mid central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:112
+msgid "Open-mid front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:113
+msgid "Open-mid front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:114
+msgid "Opening orthographic bracket"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:115
+msgid "Palatal approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:116
+msgid "Palatal lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:117
+msgid "Palatal nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:118
+msgid "Palatalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:119
+msgid "Palato-alveolar click"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:120
+msgid "Peaking tone trigraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:121
+msgid "Pharyngealization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:122
+msgid "Postalveolar click"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:123
+msgid "Raised sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:124
+msgid "Retroflex approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:125
+msgid "Retroflex flap"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:126
+msgid "Retroflex lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:127
+msgid "Retroflex nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:128
+msgid "Rhotacization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:129
+msgid "Rhotacized mid-central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:130
+msgid "Rhotacized open-mid central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:131
+msgid "Rising tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:132
+msgid "Stress mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:133
+msgid "Syllable break"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:134
+msgid "Top tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:135
+msgid "Uvular nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:136
+msgid "Uvular trill"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:137
+msgid "Velar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:138
+msgid "Velar lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:139
+msgid "Velar nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:140
+msgid "Velarization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:141
+msgid "Velarized alveolar lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:142
+msgid "Voiced alveolar affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:143
+msgid "Voiced alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:144
+msgid "Voiced alveolar implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:145
+msgid "Voiced alveolar lateral affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:146
+msgid "Voiced alveolar lateral fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:147
+msgid "Voiced alveolar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:148
+msgid "Voiced alveolo-palatal affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:149
+msgid "Voiced alveolo-palatal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:150
+msgid "Voiced bilabial fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:151
+msgid "Voiced bilabial implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:152
+msgid "Voiced bilabial plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:153
+msgid "Voiced dental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:154
+msgid "Voiced epiglottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:155
+msgid "Voiced glottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:156
+msgid "Voiced labiodental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:157
+msgid "Voiced labiovelar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:158
+msgid "Voiced palatal affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:159
+msgid "Voiced palatal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:160
+msgid "Voiced palatal implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:161
+msgid "Voiced palatal plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:162
+msgid "Voiced pharyngeal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:163
+msgid "Voiced post-alveolar affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:164
+msgid "Voiced postalveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:165
+msgid "Voiced retroflex affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:166
+msgid "Voiced retroflex fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:167
+msgid "Voiced retroflex plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:168
+msgid "Voiced uvular fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:169
+msgid "Voiced uvular implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:170
+msgid "Voiced uvular plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:171
+msgid "Voiced velar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:172
+msgid "Voiced velar implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:173
+msgid "Voiced velar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:174
+msgid "Voiceless alveolar affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:175
+msgid "Voiceless alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:176
+msgid "Voiceless alveolar lateral affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:177
+msgid "Voiceless alveolar lateral fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:178
+msgid "Voiceless alveolar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:179
+msgid "Voiceless alveolo-palatal affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:180
+msgid "Voiceless alveolo-palatal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:181
+msgid "Voiceless bilabial fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:182
+msgid "Voiceless bilabial plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:183
+msgid "Voiceless coarticulated velar and palatoalveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:184
+msgid "Voiceless dental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:185
+msgid "Voiceless epiglottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:186
+msgid "Voiceless glottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:187
+msgid "Voiceless labiodental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:188
+msgid "Voiceless labiovelar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:189
+msgid "Voiceless palatal affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:190
+msgid "Voiceless palatal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:191
+msgid "Voiceless palatal lateral affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:192
+msgid "Voiceless palatal plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:193
+msgid "Voiceless pharyngeal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:194
+msgid "Voiceless postalveolar affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:195
+msgid "Voiceless postaveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:196
+msgid "Voiceless retroflex affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:197
+msgid "Voiceless retroflex fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:198
+msgid "Voiceless retroflex plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:199
+msgid "Voiceless uvular fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:200
+msgid "Voiceless uvular plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:201
+msgid "Voiceless velar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:202
+msgid "Voiceless velar lateral affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:203
+msgid "Voiceless velar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:204
+msgid "Weak elongation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:205
+msgid "Weak stress mark"
 msgstr ""
 
 #: ../data/ja.xml.in.h:1 ../input-pad/unicode_block.h:132

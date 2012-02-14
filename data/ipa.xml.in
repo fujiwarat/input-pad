@@ -1,0 +1,825 @@
+<dummy>
+      <table>
+        <column>10</column>
+        <!--"IPA" stands for "International Phonetic Alphabet"-->
+        <_name>IPA</_name>
+        <string>
+          <label>a</label>
+          <_comment>Open front unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ä</label>
+          <_comment>Open central unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɐ</label>
+          <_comment>Near-open central vowel</_comment>
+        </string>
+        <string>
+          <label>ɑ</label>
+          <_comment>Open back unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɒ</label>
+          <_comment>Open back rounded vowel</_comment>
+        </string>
+        <string>
+          <label>ʌ</label>
+          <_comment>Open-mid back unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>æ</label>
+          <_comment>Near-open front unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>b</label>
+          <_comment>Voiced bilabial plosive</_comment>
+        </string>
+        <string>
+          <label>ɓ</label>
+          <_comment>Voiced bilabial implosive</_comment>
+        </string>
+        <string>
+          <label>ʙ</label>
+          <_comment>Bilabial trill</_comment>
+        </string>
+        <string>
+          <label>β</label>
+          <_comment>Voiced bilabial fricative</_comment>
+        </string>
+        <string>
+          <label>c</label>
+          <_comment>Voiceless palatal plosive</_comment>
+        </string>
+        <string>
+          <label>ç</label>
+          <_comment>Voiceless palatal fricative</_comment>
+        </string>
+        <string>
+          <label>c͡ç</label>
+          <_comment>Voiceless palatal affricate</_comment>
+        </string>
+        <string>
+          <label>c͡ʎ̝̥</label>
+          <_comment>Voiceless palatal lateral affricate</_comment>
+        </string>
+        <string>
+          <label>ɕ</label>
+          <_comment>Voiceless alveolo-palatal fricative</_comment>
+        </string>
+        <string>
+          <label>d</label>
+          <_comment>Voiced alveolar plosive</_comment>
+        </string>
+        <string>
+          <label>ɗ</label>
+          <_comment>Voiced alveolar implosive</_comment>
+        </string>
+        <string>
+          <label>ɖ</label>
+          <_comment>Voiced retroflex plosive</_comment>
+        </string>
+        <string>
+          <label>ð</label>
+          <_comment>Voiced dental fricative</_comment>
+        </string>
+        <string>
+          <label>d͡ɮ</label>
+          <_comment>Voiced alveolar lateral affricate</_comment>
+        </string>
+        <string>
+          <label>d͡z</label>
+          <_comment>Voiced alveolar affricate</_comment>
+        </string>
+        <string>
+          <label>d͡ʒ</label>
+          <_comment>Voiced post-alveolar affricate</_comment>
+        </string>
+        <string>
+          <label>d͡ʑ</label>
+          <_comment>Voiced alveolo-palatal affricate</_comment>
+        </string>
+        <string>
+          <label>d͡ʐ</label>
+          <_comment>Voiced retroflex affricate</_comment>
+        </string>
+        <string>
+          <label>e</label>
+          <_comment>Close-mid front unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɘ</label>
+          <_comment>Close-mid central unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ə</label>
+          <_comment>Mid-central vowel</_comment>
+        </string>
+        <string>
+          <label>ɚ</label>
+          <_comment>Rhotacized mid-central vowel</_comment>
+        </string>
+        <string>
+          <label>ɛ</label>
+          <_comment>Open-mid front unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɞ</label>
+          <_comment>Open-mid central rounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɜ</label>
+          <_comment>Open-mid central unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɝ</label>
+          <_comment>Rhotacized open-mid central unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>f</label>
+          <_comment>Voiceless labiodental fricative</_comment>
+        </string>
+        <string>
+          <label>ɡ</label>
+          <_comment>Voiced velar plosive</_comment>
+        </string>
+        <string>
+          <label>ɠ</label>
+          <_comment>Voiced velar implosive</_comment>
+        </string>
+        <string>
+          <label>ɢ</label>
+          <_comment>Voiced uvular plosive</_comment>
+        </string>
+        <string>
+          <label>ʛ</label>
+          <_comment>Voiced uvular implosive</_comment>
+        </string>
+        <string>
+          <label>h</label>
+          <_comment>Voiceless glottal fricative</_comment>
+        </string>
+        <string>
+          <label>ɦ</label>
+          <_comment>Voiced glottal fricative</_comment>
+        </string>
+        <string>
+          <label>ħ</label>
+          <_comment>Voiceless pharyngeal fricative</_comment>
+        </string>
+        <string>
+          <label>ɧ</label>
+          <_comment>Voiceless coarticulated velar and palatoalveolar fricative</_comment>
+        </string>
+        <string>
+          <label>ʜ</label>
+          <_comment>Voiceless epiglottal fricative</_comment>
+        </string>
+        <string>
+          <label>i</label>
+          <_comment>Close front unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɪ</label>
+          <_comment>Near-close near-front unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɪ̈</label>
+          <_comment>Near-close central unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɨ</label>
+          <_comment>Close central unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>j</label>
+          <_comment>Palatal approximant</_comment>
+        </string>
+        <string>
+          <label>ʝ</label>
+          <_comment>Voiced palatal fricative</_comment>
+        </string>
+        <string>
+          <label>ɟ</label>
+          <_comment>Voiced palatal plosive</_comment>
+        </string>
+        <string>
+          <label>ɟ͡ʝ</label>
+          <_comment>Voiced palatal affricate</_comment>
+        </string>
+        <string>
+          <label>ʄ</label>
+          <_comment>Voiced palatal implosive</_comment>
+        </string>
+        <string>
+          <label>k</label>
+          <_comment>Voiceless velar plosive</_comment>
+        </string>
+        <string>
+          <label>k͡ʟ̝̊</label>
+          <_comment>Voiceless velar lateral affricate</_comment>
+        </string>
+        <string>
+          <label>l</label>
+          <_comment>Alveolar lateral approximant</_comment>
+        </string>
+        <string>
+          <label>ɫ</label>
+          <_comment>Velarized alveolar lateral approximant</_comment>
+        </string>
+        <string>
+          <label>ɬ</label>
+          <_comment>Voiceless alveolar lateral fricative</_comment>
+        </string>
+        <string>
+          <label>ɭ</label>
+          <_comment>Retroflex lateral approximant</_comment>
+        </string>
+        <string>
+          <label>ɮ</label>
+          <_comment>Voiced alveolar lateral fricative</_comment>
+        </string>
+        <string>
+          <label>ʟ</label>
+          <_comment>Velar lateral approximant</_comment>
+        </string>
+        <string>
+          <label>m</label>
+          <_comment>Bilabial nasal</_comment>
+        </string>
+        <string>
+          <label>ɱ</label>
+          <_comment>Labiodental nasal</_comment>
+        </string>
+        <string>
+          <label>n</label>
+          <_comment>Alveolar nasal</_comment>
+        </string>
+        <string>
+          <label>ŋ</label>
+          <_comment>Velar nasal</_comment>
+        </string>
+        <string>
+          <label>ɲ</label>
+          <_comment>Palatal nasal</_comment>
+        </string>
+        <string>
+          <label>ɳ</label>
+          <_comment>Retroflex nasal</_comment>
+        </string>
+        <string>
+          <label>ɴ</label>
+          <_comment>Uvular nasal</_comment>
+        </string>
+        <string>
+          <label>o</label>
+          <_comment>Close-mid back rounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɔ</label>
+          <_comment>Open-mid back unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ø</label>
+          <_comment>Close-mid front rounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɵ</label>
+          <_comment>Close-mid central rounded vowel</_comment>
+        </string>
+        <string>
+          <label>œ</label>
+          <_comment>Open-mid front rounded vowel</_comment>
+        </string>
+        <string>
+          <label>ɶ</label>
+          <_comment>Open front rounded vowel</_comment>
+        </string>
+        <string>
+          <label>p</label>
+          <_comment>Voiceless bilabial plosive</_comment>
+        </string>
+        <string>
+          <label>q</label>
+          <_comment>Voiceless uvular plosive</_comment>
+        </string>
+        <string>
+          <label>r</label>
+          <_comment>Alveolar trill</_comment>
+        </string>
+        <string>
+          <label>ɾ</label>
+          <_comment>Alveolar flap</_comment>
+        </string>
+        <string>
+          <label>ɺ</label>
+          <_comment>Alveolar lateral flap</_comment>
+        </string>
+        <string>
+          <label>ʀ</label>
+          <_comment>Uvular trill</_comment>
+        </string>
+        <string>
+          <label>ɽ</label>
+          <_comment>Retroflex flap</_comment>
+        </string>
+        <string>
+          <label>ɹ</label>
+          <_comment>Alveolar approximant</_comment>
+        </string>
+        <string>
+          <label>ɻ</label>
+          <_comment>Retroflex approximant</_comment>
+        </string>
+        <string>
+          <label>ʁ</label>
+          <_comment>Voiced uvular fricative</_comment>
+        </string>
+        <string>
+          <label>s</label>
+          <_comment>Voiceless alveolar fricative</_comment>
+        </string>
+        <string>
+          <label>ʃ</label>
+          <_comment>Voiceless postaveolar fricative</_comment>
+        </string>
+        <string>
+          <label>ʂ</label>
+          <_comment>Voiceless retroflex fricative</_comment>
+        </string>
+        <string>
+          <label>t</label>
+          <_comment>Voiceless alveolar plosive</_comment>
+        </string>
+        <string>
+          <label>ʈ</label>
+          <_comment>Voiceless retroflex plosive</_comment>
+        </string>
+        <string>
+          <label>t͡ɬ</label>
+          <_comment>Voiceless alveolar lateral affricate</_comment>
+        </string>
+        <string>
+          <label>t͡s</label>
+          <_comment>Voiceless alveolar affricate</_comment>
+        </string>
+        <string>
+          <label>t͡ʃ</label>
+          <_comment>Voiceless postalveolar affricate</_comment>
+        </string>
+        <string>
+          <label>t͡ɕ</label>
+          <_comment>Voiceless alveolo-palatal affricate</_comment>
+        </string>
+        <string>
+          <label>t͡ʂ</label>
+          <_comment>Voiceless retroflex affricate</_comment>
+        </string>
+        <string>
+          <label>u</label>
+          <_comment>Close back rounded vowel</_comment>
+        </string>
+        <string>
+          <label>ʊ</label>
+          <_comment>Near-close near-back vowel</_comment>
+        </string>
+        <string>
+          <label>ʊ̈</label>
+          <_comment>Near-close central vowel</_comment>
+        </string>
+        <string>
+          <label>ʉ</label>
+          <_comment>Close central rounded vowel</_comment>
+        </string>
+        <string>
+          <!--TODO: reconsider the placement of this guy-->
+          <label>ɥ</label>
+          <_comment>Labial-palatal approximant</_comment>
+        </string>
+        <string>
+          <label>ɯ</label>
+          <_comment>Close back unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>v</label>
+          <_comment>Voiced labiodental fricative</_comment>
+        </string>
+        <string>
+          <label>ⱱ</label>
+          <_comment>Labiodental flap</_comment>
+        </string>
+        <string>
+          <label>ʋ</label>
+          <_comment>Labiodental approximant</_comment>
+        </string>
+        <string>
+          <label>ɣ</label>
+          <_comment>Voiced velar fricative</_comment>
+        </string>
+        <string>
+          <label>ɤ</label>
+          <_comment>Close-mid back unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>w</label>
+          <_comment>Voiced labiovelar approximant</_comment>
+        </string>
+        <string>
+          <label>ʍ</label>
+          <_comment>Voiceless labiovelar approximant</_comment>
+        </string>
+        <string>
+          <label>ɰ</label>
+          <_comment>Velar approximant</_comment>
+        </string>
+        <string>
+          <label>ʬ</label>
+          <_comment>Bilabial percussive</_comment>
+        </string>
+        <string>
+          <label>x</label>
+          <_comment>Voiceless velar fricative</_comment>
+        </string>
+        <string>
+          <label>χ</label>
+          <_comment>Voiceless uvular fricative</_comment>
+        </string>
+        <string>
+          <label>y</label>
+          <_comment>Close front rounded vowel</_comment>
+        </string>
+        <string>
+          <label>ʏ</label>
+          <_comment>Near-close near-front rounded vowel</_comment>
+        </string>
+        <string>
+          <label>ʎ</label>
+          <_comment>Palatal lateral approximant</_comment>
+        </string>
+        <string>
+          <label>z</label>
+          <_comment>Voiced alveolar fricative</_comment>
+        </string>
+        <string>
+          <label>ʒ</label>
+          <_comment>Voiced postalveolar fricative</_comment>
+        </string>
+        <string>
+          <label>ʑ</label>
+          <_comment>Voiced alveolo-palatal fricative</_comment>
+        </string>
+        <string>
+          <label>ʐ</label>
+          <_comment>Voiced retroflex fricative</_comment>
+        </string>
+        <string>
+          <label>θ</label>
+          <_comment>Voiceless dental fricative</_comment>
+        </string>
+        <string>
+          <label>ɸ</label>
+          <_comment>Voiceless bilabial fricative</_comment>
+        </string>
+        <string>
+          <label>ʔ</label>
+          <_comment>Glottal stop</_comment>
+        </string>
+        <string>
+          <label>ʡ</label>
+          <_comment>Epiglottal plosive</_comment>
+        </string>
+        <string>
+          <label>ʕ</label>
+          <_comment>Voiced pharyngeal fricative</_comment>
+        </string>
+        <string>
+          <label>ʢ</label>
+          <_comment>Voiced epiglottal fricative</_comment>
+        </string>
+        <string>
+          <label>ǀ</label>
+          <_comment>Dental click</_comment>
+        </string>
+        <string>
+          <label>ǂ</label>
+          <_comment>Palato-alveolar click</_comment>
+        </string>
+        <string>
+          <label>ǁ</label>
+          <_comment>Alveolar lateral click</_comment>
+        </string>
+        <string>
+          <label>ǃ</label>
+          <_comment>Postalveolar click</_comment>
+        </string>
+        <string>
+          <label>ʘ</label>
+          <_comment>Bilabial click</_comment>
+        </string>
+        <string>
+          <label>ʭ</label>
+          <_comment>Bidental percussive</_comment>
+        </string>
+        <string>
+          <label>ʰ</label>
+          <_comment>Aspiration mark</_comment>
+        </string>
+        <string>
+          <!--TODO: reconsider the placement of this guy-->
+          <label>⁼</label>
+          <_comment>Non-aspiration mark</_comment>
+        </string>
+        <string>
+          <label>ʱ</label>
+          <_comment>Breathy voice mark</_comment>
+        </string>
+        <string>
+          <label>ʲ</label>
+          <_comment>Palatalization mark</_comment>
+        </string>
+        <string>
+          <label>ˡ</label>
+          <_comment>Lateral release mark</_comment>
+        </string>
+        <string>
+          <label>ⁿ</label>
+          <_comment>Nasal release mark</_comment>
+        </string>
+        <string>
+          <label>ᶣ</label>
+          <_comment>Labio-palatalization mark</_comment>
+        </string>
+        <string>
+          <label>ᶹ</label>
+          <_comment>Labiodentalization mark</_comment>
+        </string>
+        <string>
+          <label>ʷ</label>
+          <_comment>Labialization mark</_comment>
+        </string>
+        <string>
+          <label>ˠ</label>
+          <_comment>Velarization mark</_comment>
+        </string>
+        <string>
+          <label>ˤ</label>
+          <_comment>Pharyngealization mark</_comment>
+        </string>
+        <string>
+          <label>&#816;</label>
+          <_comment>Combining laryngealization mark</_comment>
+        </string>
+        <string>
+          <label>&#802;</label>
+          <_comment>Combining retroflexion mark</_comment>
+        </string>
+        <string>
+          <label>’</label>
+          <_comment>Ejection mark</_comment>
+        </string>
+        <string>
+          <label>˞</label>
+          <_comment>Rhotacization mark</_comment>
+        </string>
+        <string>
+          <label>&#810;</label>
+          <_comment>Combining dentalization mark</_comment>
+        </string>
+        <string>
+          <label>&#838;</label>
+          <_comment>Combining dentolabialization mark</_comment>
+        </string>
+        <string>
+          <label>&#828;</label>
+          <_comment>Combining linguolabialization mark</_comment>
+        </string>
+        <string>
+          <label>&#826;</label>
+          <_comment>Combining apicalization mark</_comment>
+        </string>
+        <string>
+          <label>&#776;</label>
+          <_comment>Combining centralization mark</_comment>
+        </string>
+        <string>
+          <label>&#829;</label>
+          <_comment>Combining mid-centralization mark</_comment>
+        </string>
+        <string>
+          <label>&#771;</label>
+          <_comment>Combining nasalization mark</_comment>
+        </string>
+        <string>
+          <label>&#808;</label>
+          <_comment>Combining nasalization mark below</_comment>
+        </string>
+        <string>
+          <label>&#842;</label>
+          <_comment>Combining denasalization mark</_comment>
+        </string>
+        <string>
+          <label>&#827;</label>
+          <_comment>Combining laminalization mark</_comment>
+        </string>
+        <string>
+          <label>&#812;</label>
+          <_comment>Combining voiced mark</_comment>
+        </string>
+        <string>
+          <label>&#805;</label>
+          <_comment>Combining voiceless mark</_comment>
+        </string>
+        <string>
+          <label>&#794;</label>
+          <_comment>Combining unreleased stop mark</_comment>
+        </string>
+        <string>
+          <label>&#825;</label>
+          <_comment>Combining more rounded mark</_comment>
+        </string>
+        <string>
+          <label>&#796;</label>
+          <_comment>Combining less rounded mark</_comment>
+        </string>
+        <string>
+          <label>&#809;</label>
+          <_comment>Combining syllabic mark</_comment>
+        </string>
+        <string>
+          <label>&#779;</label>
+          <_comment>Combining top tone mark</_comment>
+        </string>
+        <string>
+          <label>&#769;</label>
+          <_comment>Combining high tone mark</_comment>
+        </string>
+        <string>
+          <label>&#772;</label>
+          <_comment>Combining mid tone mark</_comment>
+        </string>
+        <string>
+          <label>&#768;</label>
+          <_comment>Combining low tone mark</_comment>
+        </string>
+        <string>
+          <label>&#783;</label>
+          <_comment>Combining bottom tone mark</_comment>
+        </string>
+        <string>
+          <label>&#710;</label>
+          <_comment>Combining falling tone mark</_comment>
+        </string>
+        <string>
+          <label>&#7623;</label>
+          <_comment>Combining high falling tone mark</_comment>
+        </string>
+        <string>
+          <label>&#7622;</label>
+          <_comment>Combining low falling tone mark</_comment>
+        </string>
+        <string>
+          <label>&#780;</label>
+          <_comment>Combining rising tone mark</_comment>
+        </string>
+        <string>
+          <label>&#7620;</label>
+          <_comment>Combining high rising tone mark</_comment>
+        </string>
+        <string>
+          <label>&#7621;</label>
+          <_comment>Combining low rising tone mark</_comment>
+        </string>
+        <string>
+          <label>&#7625;</label>
+          <_comment>Combining dipping tone mark</_comment>
+        </string>
+        <string>
+          <label>&#7624;</label>
+          <_comment>Combining peaking tone mark</_comment>
+        </string>
+        <string>
+          <label>˥</label>
+          <_comment>Top tone letter</_comment>
+        </string>
+        <string>
+          <label>˦</label>
+          <_comment>High tone letter</_comment>
+        </string>
+        <string>
+          <label>˧</label>
+          <_comment>Mid tone letter</_comment>
+        </string>
+        <string>
+          <label>˨</label>
+          <_comment>Low tone letter</_comment>
+        </string>
+        <string>
+          <label>˩</label>
+          <_comment>Bottom tone letter</_comment>
+        </string>
+        <string>
+          <label>˥˩</label>
+          <_comment>Falling tone digraph</_comment>
+        </string>
+        <string>
+          <label>˥˧</label>
+          <_comment>High falling tone digraph</_comment>
+        </string>
+        <string>
+          <label>˨˦</label>
+          <_comment>Rising tone digraph</_comment>
+        </string>
+        <string>
+          <label>˧˥</label>
+          <_comment>High rising tone digraph</_comment>
+        </string>
+        <string>
+          <label>˩˧</label>
+          <_comment>Low rising tone digraph</_comment>
+        </string>
+        <string>
+          <label>˨˩˦</label>
+          <_comment>Dipping tone trigraph</_comment>
+        </string>
+        <string>
+          <label>˧˦˨</label>
+          <_comment>Peaking tone trigraph</_comment>
+        </string>
+        <string>
+          <label>ː</label>
+          <_comment>Elongation mark</_comment>
+        </string>
+        <string>
+          <label>ˑ</label>
+          <_comment>Weak elongation mark</_comment>
+        </string>
+        <string>
+          <label>˔</label>
+          <_comment>Raised sound mark</_comment>
+        </string>
+        <string>
+          <label>˕</label>
+          <_comment>Lowered sound mark</_comment>
+        </string>
+        <string>
+          <label>&#797;</label>
+          <_comment>Combining raised sound mark</_comment>
+        </string>
+        <string>
+          <label>&#798;</label>
+          <_comment>Combining lowered sound mark</_comment>
+        </string>
+        <string>
+          <label>&#840;</label>
+          <_comment>Combining strong articulation mark</_comment>
+        </string>
+        <string>
+          <label>&#841;</label>
+          <_comment>Combining weak articulation mark</_comment>
+        </string>
+        <string>
+          <label>&#866;</label>
+          <_comment>Combining sliding articulation mark</_comment>
+        </string>
+        <string>
+          <label>↑</label>
+          <_comment>Egression mark</_comment>
+        </string>
+        <string>
+          <label>↓</label>
+          <_comment>Ingression mark</_comment>
+        </string>
+        <string>
+          <label>&#815;</label>
+          <_comment>Combining diphthong mark</_comment>
+        </string>
+        <string>
+          <label>&#865;</label>
+          <_comment>Combining ligature tie</_comment>
+        </string>
+        <string>
+          <label>&#860;</label>
+          <_comment>Combining ligature undertie</_comment>
+        </string>
+        <string>
+          <label>ˈ</label>
+          <_comment>Stress mark</_comment>
+        </string>
+        <string>
+          <label>ˌ</label>
+          <_comment>Weak stress mark</_comment>
+        </string>
+        <string>
+          <label>.</label>
+          <_comment>Syllable break</_comment>
+        </string>
+        <string>
+          <label>⟨</label>
+          <_comment>Opening orthographic bracket</_comment>
+        </string>
+        <string>
+          <label>⟩</label>
+          <_comment>Closing orthographic bracket</_comment>
+        </string>
+      </table>
+</dummy>

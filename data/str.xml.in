@@ -783,6 +783,10 @@
           <comment>As Soon As Possible</comment>
         </string>
         <string>
+          <label>bbl</label>
+          <comment>Be Back Later</comment>
+        </string>
+        <string>
           <label>BFN</label>
           <comment>Bye For Now</comment>
         </string>

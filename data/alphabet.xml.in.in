@@ -4,6 +4,7 @@
     <group>
       <_name>Alphabets</_name>
       @latin@
+      @ipa@
       @runr@
       @goth@
       @shaw@
