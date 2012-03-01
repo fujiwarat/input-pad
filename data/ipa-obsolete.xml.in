@@ -1,0 +1,72 @@
+<dummy>
+      <table>
+        <!-- Reference: http://en.wikipedia.org/wiki/Obsolete_and_nonstandard_symbols_in_the_International_Phonetic_Alphabet -->
+        <column>10</column>
+        <!--"IPA" stands for "International Phonetic Alphabet"-->
+        <_name>IPA (Obsolete)</_name>
+        <string>
+          <label>ᴀ</label>
+          <_comment>Open back unrounded vowel</_comment>
+        </string>
+        <string>
+          <label>ƈ</label>
+          <_comment>Voiceless palatal implosive</_comment>
+        </string>
+        <string>
+          <label>ʗ</label>
+          <_comment>Alveolar click</_comment>
+        </string>
+        <string>
+          <label>ƙ</label>
+          <_comment>Voiceless velar implosive</_comment>
+        </string>
+        <string>
+          <label>ƞ</label>
+          <_comment>Syllabic alveolar nasal</_comment>
+        </string>
+        <string>
+          <label>ƥ</label>
+          <_comment>Voiceless bilabial implosive</_comment>
+        </string>
+        <string>
+          <label>ɼ</label>
+          <_comment>Voiced strident apico-alveolar trill</_comment>
+        </string>
+        <string>
+          <label>ʆ</label>
+          <_comment>Voiceless alveo-palatal fricative</_comment>
+        </string>
+        <string>
+          <label>ƭ</label>
+          <_comment>Voiceless alveolar implosive</_comment>
+        </string>
+        <string>
+          <label>ʇ</label>
+          <_comment>Dental click</_comment>
+        </string>
+        <string>
+          <label>ʠ</label>
+          <_comment>Voiceless uvular implosive</_comment>
+        </string>
+        <string>
+          <label>ʓ</label>
+          <_comment>Voiced alveo-palatal fricative</_comment>
+        </string>
+        <string>
+          <label>ɷ</label>
+          <_comment>Near-close near-back vowel</_comment>
+        </string>
+        <string>
+          <label>ƻ</label>
+          <_comment>Voiced alveolar affricate</_comment>
+        </string>
+        <string>
+          <label>ʖ</label>
+          <_comment>Alveolar lateral click</_comment>
+        </string>
+        <string>
+          <label>ƾ</label>
+          <_comment>Voiceless alveolar affricate</_comment>
+        </string>
+      </table>
+</dummy>
