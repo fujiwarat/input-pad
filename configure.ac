@@ -142,7 +142,7 @@ AC_MSG_RESULT($enable_eek)
 if test x"$enable_eek" = xyes; then
     dnl - check eek is available
     PKG_CHECK_MODULES(EEK, [
-        eek-gtk-0.90 eek-xkl-0.90
+        eek-gtk-0.90 >= 1.0.6, eek-xkl-0.90 >= 1.0.6
 	],, AC_MSG_ERROR([libeek not found]))
     AM_CONDITIONAL(HAVE_EEK, true)
 else

@@ -27,6 +27,7 @@
 #include <X11/keysym.h>
 #include <eek/eek-gtk.h>
 #include <eek/eek-xkl.h>
+#include <gdk/gdkx.h>
 
 #include "eek-gtk.h"
 #include "geometry-xkb.h"
@@ -72,7 +73,7 @@ on_window_keyboard_changed_eek (InputPadGtkWindow *window,
     g_return_if_fail (INPUT_PAD_IS_GTK_KBDUI_EEK (data));
 
     kbdui = INPUT_PAD_GTK_KBDUI_EEK (data);
-    eek_keyboard_set_group (kbdui->priv->eek_keyboard, group);
+    eek_element_set_group (EEK_ELEMENT(kbdui->priv->eek_keyboard), group);
 }
 
 static void
@@ -81,7 +82,7 @@ on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
                              gpointer     user_data)
 {
     InputPadGtkWindow *window;
-    char *str, *empty = "";
+    const gchar *str, *empty = "";
     guint keycode;
     EekSymbol *symbol;
     EekSymbol *symbol0;
@@ -102,7 +103,7 @@ on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
     str = eek_symbol_get_label (symbol);
     if (str == NULL)
         str = empty;
-    group = eek_keyboard_get_group (keyboard);
+    group = eek_element_get_group (EEK_ELEMENT(keyboard));
     symbol0 = eek_key_get_symbol_at_index (key, group, 0, 0, 0);
     if (EEK_IS_KEYSYM(symbol0))
         keysym0 = eek_keysym_get_xkeysym (EEK_KEYSYM(symbol0));
@@ -119,8 +120,6 @@ on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
     g_signal_emit_by_name (window, "button-pressed",
                    str, INPUT_PAD_TABLE_TYPE_KEYSYMS, keysym, keycode, state,
                    &retval);
-    if (str != empty)
-        g_free (str);
 
     if (keysym0 == XK_Num_Lock) {
         keysym0 = XK_Shift_L;
@@ -128,7 +127,7 @@ on_eek_keyboard_key_pressed (EekKeyboard *keyboard,
     input_pad_gtk_window_set_keyboard_state_with_keysym (window, keysym0);
     if (keysym0 == XK_Shift_L || keysym0 == XK_Shift_R) {
         state = input_pad_gtk_window_get_keyboard_state (window);
-        eek_keyboard_set_level (keyboard, state & ShiftMask ? 1 : 0);
+        eek_element_set_level (EEK_ELEMENT(keyboard), state & ShiftMask ? 1 : 0);
     }
 }
 
@@ -142,11 +141,18 @@ create_keyboard_layout_ui_real_eek (InputPadGtkKbdui  *kbdui,
     EekLayout *layout;
     GtkWidget *widget;
     gdouble width, height;
+    Display *xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET (window)));
+    GError *error = NULL;
 
     g_return_if_fail (INPUT_PAD_IS_GTK_KBDUI_EEK (kbdui));
 
     kbdui_eek = INPUT_PAD_GTK_KBDUI_EEK (kbdui);
-    layout = eek_xkl_layout_new ();
+    layout = eek_xkl_layout_new (xdisplay, &error);
+    if (layout == NULL) {
+        g_warning ("Can't get XKL layout: %s", error->message);
+        g_error_free (error);
+        return;
+    }
 
     keyboard = kbdui_eek->priv->eek_keyboard = eek_keyboard_new (layout, 640, 480);
     g_object_unref (layout);
@@ -258,6 +264,7 @@ input_pad_module_arg_init_post (int                            *argc,
 gboolean
 input_pad_module_init (InputPadGtkWindow *window)
 {
+    eek_init ();
     return TRUE;
 }
 
