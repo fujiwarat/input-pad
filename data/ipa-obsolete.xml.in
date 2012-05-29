@@ -17,6 +17,18 @@
           <_comment>Alveolar click</_comment>
         </string>
         <string>
+          <label>ʣ</label>
+          <_comment>Voiced alveolar affricate</_comment>
+        </string>
+        <string>
+          <label>ʥ</label>
+          <_comment>Voiced alveopalatal affricate</_comment>
+        </string>
+        <string>
+          <label>ʤ</label>
+          <_comment>Voiced palato-alveolar affricate</_comment>
+        </string>
+        <string>
           <label>ƙ</label>
           <_comment>Voiceless velar implosive</_comment>
         </string>
@@ -34,7 +46,19 @@
         </string>
         <string>
           <label>ʆ</label>
-          <_comment>Voiceless alveo-palatal fricative</_comment>
+          <_comment>Voiceless alveopalatal fricative</_comment>
+        </string>
+        <string>
+          <label>ʨ</label>
+          <_comment>Voiceless alveopalatal affricate</_comment>
+        </string>
+        <string>
+          <label>ʦ</label>
+          <_comment>Voiceless alveolar affricate</_comment>
+        </string>
+        <string>
+          <label>ʧ</label>
+          <_comment>Voiceless palato-alveolar affricate</_comment>
         </string>
         <string>
           <label>ƭ</label>
@@ -50,7 +74,7 @@
         </string>
         <string>
           <label>ʓ</label>
-          <_comment>Voiced alveo-palatal fricative</_comment>
+          <_comment>Voiced alveopalatal fricative</_comment>
         </string>
         <string>
           <label>ɷ</label>

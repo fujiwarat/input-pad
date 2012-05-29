@@ -36,6 +36,10 @@
           <_comment>Voiced bilabial plosive</_comment>
         </string>
         <string>
+          <label>b̪͡v</label>
+          <_comment>Voiced labiodental affricate</_comment>
+        </string>
+        <string>
           <label>ɓ</label>
           <_comment>Voiced bilabial implosive</_comment>
         </string>
@@ -65,7 +69,7 @@
         </string>
         <string>
           <label>ɕ</label>
-          <_comment>Voiceless alveolo-palatal fricative</_comment>
+          <_comment>Voiceless alveopalatal fricative</_comment>
         </string>
         <string>
           <label>d</label>
@@ -93,11 +97,11 @@
         </string>
         <string>
           <label>d͡ʒ</label>
-          <_comment>Voiced post-alveolar affricate</_comment>
+          <_comment>Voiced palato-alveolar affricate</_comment>
         </string>
         <string>
           <label>d͡ʑ</label>
-          <_comment>Voiced alveolo-palatal affricate</_comment>
+          <_comment>Voiced alveopalatal affricate</_comment>
         </string>
         <string>
           <label>d͡ʐ</label>
@@ -140,6 +144,10 @@
           <_comment>Voiceless labiodental fricative</_comment>
         </string>
         <string>
+          <label>ʩ</label>
+          <_comment>Velopharyngeal fricative</_comment>
+        </string>
+        <string>
           <label>ɡ</label>
           <_comment>Voiced velar plosive</_comment>
         </string>
@@ -169,7 +177,7 @@
         </string>
         <string>
           <label>ɧ</label>
-          <_comment>Voiceless coarticulated velar and palatoalveolar fricative</_comment>
+          <_comment>Voiceless coarticulated velar and palato-alveolar fricative</_comment>
         </string>
         <string>
           <label>ʜ</label>
@@ -218,6 +226,10 @@
         <string>
           <label>k͡ʟ̝̊</label>
           <_comment>Voiceless velar lateral affricate</_comment>
+        </string>
+        <string>
+          <label>k͡x</label>
+          <_comment>Voiceless velar affricate</_comment>
         </string>
         <string>
           <label>l</label>
@@ -300,6 +312,18 @@
           <_comment>Voiceless bilabial plosive</_comment>
         </string>
         <string>
+          <label>p͡f</label>
+          <_comment>Voiceless bilabial-labiodental affricate</_comment>
+        </string>
+        <string>
+          <label>p͡ɸ</label>
+          <_comment>Voiceless bilabial affricate</_comment>
+        </string>
+        <string>
+          <label>p̪͡f</label>
+          <_comment>Voiceless labiodental affricate</_comment>
+        </string>
+        <string>
           <label>q</label>
           <_comment>Voiceless uvular plosive</_comment>
         </string>
@@ -341,7 +365,7 @@
         </string>
         <string>
           <label>ʃ</label>
-          <_comment>Voiceless postaveolar fricative</_comment>
+          <_comment>Voiceless palato-alveolar fricative</_comment>
         </string>
         <string>
           <label>ʂ</label>
@@ -365,11 +389,11 @@
         </string>
         <string>
           <label>t͡ʃ</label>
-          <_comment>Voiceless postalveolar affricate</_comment>
+          <_comment>Voiceless palato-alveolar affricate</_comment>
         </string>
         <string>
           <label>t͡ɕ</label>
-          <_comment>Voiceless alveolo-palatal affricate</_comment>
+          <_comment>Voiceless alveopalatal affricate</_comment>
         </string>
         <string>
           <label>t͡ʂ</label>
@@ -462,11 +486,11 @@
         </string>
         <string>
           <label>ʒ</label>
-          <_comment>Voiced postalveolar fricative</_comment>
+          <_comment>Voiced palato-alveolar fricative</_comment>
         </string>
         <string>
           <label>ʑ</label>
-          <_comment>Voiced alveolo-palatal fricative</_comment>
+          <_comment>Voiced alveopalatal fricative</_comment>
         </string>
         <string>
           <label>ʐ</label>
@@ -497,24 +521,24 @@
           <_comment>Voiced epiglottal fricative</_comment>
         </string>
         <string>
+          <label>ʘ</label>
+          <_comment>Bilabial click</_comment>
+        </string>
+        <string>
           <label>ǀ</label>
           <_comment>Dental click</_comment>
         </string>
         <string>
+          <label>ǃ</label>
+          <_comment>Alveolar click</_comment>
+        </string>
+        <string>
           <label>ǂ</label>
-          <_comment>Palato-alveolar click</_comment>
+          <_comment>Palatal click</_comment>
         </string>
         <string>
           <label>ǁ</label>
           <_comment>Alveolar lateral click</_comment>
-        </string>
-        <string>
-          <label>ǃ</label>
-          <_comment>Postalveolar click</_comment>
-        </string>
-        <string>
-          <label>ʘ</label>
-          <_comment>Bilabial click</_comment>
         </string>
         <string>
           <label>ʭ</label>
@@ -561,6 +585,10 @@
           <label>ˠ</label>
           <_comment>Velarization mark</_comment>
         </string>
+       <string>
+          <label>ˀ</label>
+          <_comment>Glottalization mark</_comment>
+        </string>
         <string>
           <label>ˤ</label>
           <_comment>Pharyngealization mark</_comment>
@@ -590,12 +618,20 @@
           <_comment>Combining dentolabialization mark</_comment>
         </string>
         <string>
+          <label>&#839;</label>
+          <_comment>Combining alveolarization mark</_comment>
+        </string>
+        <string>
           <label>&#828;</label>
           <_comment>Combining linguolabialization mark</_comment>
         </string>
         <string>
           <label>&#826;</label>
           <_comment>Combining apicalization mark</_comment>
+        </string>
+        <string>
+          <label>&#827;</label>
+          <_comment>Combining laminalization mark</_comment>
         </string>
         <string>
           <label>&#776;</label>
@@ -618,8 +654,12 @@
           <_comment>Combining denasalization mark</_comment>
         </string>
         <string>
-          <label>&#827;</label>
-          <_comment>Combining laminalization mark</_comment>
+          <label>&#843;</label>
+          <_comment>Combining nasal friction mark</_comment>
+        </string>
+        <string>
+          <label>&#844;</label>
+          <_comment>Combining velopharyngeal friction mark</_comment>
         </string>
         <string>
           <label>&#812;</label>
@@ -628,6 +668,10 @@
         <string>
           <label>&#805;</label>
           <_comment>Combining voiceless mark</_comment>
+        </string>
+        <string>
+          <label>&#804;</label>
+          <_comment>Combining breathy voice mark</_comment>
         </string>
         <string>
           <label>&#794;</label>
@@ -640,6 +684,10 @@
         <string>
           <label>&#796;</label>
           <_comment>Combining less rounded mark</_comment>
+        </string>
+        <string>
+          <label>&#845;</label>
+          <_comment>Combining labial spreading mark</_comment>
         </string>
         <string>
           <label>&#809;</label>
@@ -770,12 +818,24 @@
           <_comment>Combining lowered sound mark</_comment>
         </string>
         <string>
+          <label>&#792;</label>
+          <_comment>Combining tongue root advancement mark</_comment>
+        </string>
+        <string>
+          <label>&#793;</label>
+          <_comment>Combining tongue root retraction mark</_comment>
+        </string>
+        <string>
           <label>&#840;</label>
           <_comment>Combining strong articulation mark</_comment>
         </string>
         <string>
           <label>&#841;</label>
           <_comment>Combining weak articulation mark</_comment>
+        </string>
+        <string>
+          <label>&#846;</label>
+          <_comment>Combining whistled articulation mark</_comment>
         </string>
         <string>
           <label>&#866;</label>
