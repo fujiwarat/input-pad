@@ -1,8 +1,8 @@
 /* vim:set et sts=4: */
 /* input-pad - The input pad
- * Copyright (C) 2010-2011 Takao Fujiwara <takao.fujiwara1@gmail.com>
+ * Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
  * Copyright (C) 2010 Daiki Ueno <ueno@unixuser.org>
- * Copyright (C) 2010-2011 Red Hat, Inc.
+ * Copyright (C) 2010-2012 Red Hat, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public

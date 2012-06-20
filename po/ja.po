@@ -1,8 +1,8 @@
 # Japanese translations for input-pad
-# Copyright (C) 2010-2011 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
 #
-# Takao Fujiwara <takao.fujiwara1@gmail.com>, 2010-2011.
+# Takao Fujiwara <takao.fujiwara1@gmail.com>, 2010-2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
