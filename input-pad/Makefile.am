@@ -80,6 +80,7 @@ libinput_pad_la_SOURCES = \
 	$(NULL)
 
 libinput_pad_la_CFLAGS = \
+	$(GMODULE2_CFLAGS)                                      \
 	$(LIBXML2_CFLAGS)                                       \
 	$(X11_CFLAGS)                                           \
 	$(XKB_CFLAGS)                                           \
@@ -87,6 +88,7 @@ libinput_pad_la_CFLAGS = \
 	$(NULL)
 
 libinput_pad_la_LIBADD = \
+	$(GMODULE2_LIBS)                                        \
 	$(LIBXML2_LIBS)                                         \
 	$(X11_LIBS)                                             \
 	$(XKB_LIBS)                                             \

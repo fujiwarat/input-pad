@@ -78,6 +78,12 @@ PKG_CHECK_MODULES(GLIB2, [
     glib-2.0 >= 2.8
 ])
 
+PKG_CHECK_MODULES(GMODULE2,
+    [gmodule-2.0],
+    [],
+    [AC_MSG_NOTICE([gmodule-2.0 is required by glib-2.0 >= 2.30])]
+)
+
 dnl - check gtk
 AC_ARG_WITH([gtk],
     [AS_HELP_STRING([--with-gtk=2.0|3.0],
