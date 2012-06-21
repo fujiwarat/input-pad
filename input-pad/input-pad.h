@@ -70,6 +70,13 @@ void                input_pad_window_reorder_button_pressed
                                         (void          *window_data);
 InputPadWindowKbduiName *
                     input_pad_window_get_kbdui_name_list (void);
+int                 input_pad_window_get_kbdui_name_list_length (void);
+char *              input_pad_window_get_kbdui_name_get_name_with_index
+                                        (int            index);
+char *              input_pad_window_get_kbdui_name_get_description_with_index
+                                        (int            index);
+InputPadWindowType  input_pad_window_get_kbdui_name_get_type_with_index
+                                        (int            index);
 void                input_pad_window_set_kbdui_name
                                         (void          *window_data,
                                          const char    *name);

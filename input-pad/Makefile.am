@@ -23,6 +23,16 @@
 noinst_DIST = \
 	$(NULL)
 
+# gobject introspection
+-include $(INTROSPECTION_MAKEFILE)
+INTROSPECTION_SCANNER_ARGS =
+INTROSPECTION_COMPILER_ARGS = \
+    --includedir=$(srcdir)    \
+    --includedir=.            \
+    $(NULL)
+INTROSPECTION_GIRS =
+CLEANFILES =
+
 MODULE_DIR = $(libdir)/$(PACKAGE)-$(libinput_pad_VERSION)/modules
 MODULE_KBDUI_DIR = $(MODULE_DIR)/kbdui
 MODULE_XKEYSEND_DIR = $(MODULE_DIR)/xkeysend
@@ -193,7 +203,37 @@ input_pad_LDADD = \
 	$(builddir)/libinput-pad.la                             \
 	$(NULL)
 
-CLEANFILES = \
+if HAVE_INTROSPECTION
+introspection_files = \
+    $(libinput_pad_la_SOURCES)                                  \
+    $(NULL)
+InputPad-1.0.gir: $(libinput_pad_LTLIBRARIES) Makefile
+InputPad_1_0_gir_SCANNERFLAGS = \
+    --pkg-export=input-pad                                      \
+    --warn-all                                                  \
+    $(INPUT_PAD_GIR_SCANNERFLAGS)
+InputPad_1_0_gir_INCLUDES = GLib-2.0 GObject-2.0 Gio-2.0
+if HAVE_GTK3
+InputPad_1_0_gir_INCLUDES += Gtk-3.0
+else
+InputPad_1_0_gir_INCLUDES += Gtk-2.0
+InputPad_1_0_gir_SCANNERFLAGS += --pkg=gtk+-2.0
+endif
+InputPad_1_0_gir_LIBS = $(libinput_pad_LTLIBRARIES)
+InputPad_1_0_gir_FILES = $(addprefix $(srcdir)/,$(introspection_files))
+InputPad_1_0_gir_CFLAGS = -DIBUS_COMPILATION
+INTROSPECTION_GIRS += InputPad-1.0.gir
+
+girdir = $(datadir)/gir-1.0
+dist_gir_DATA = $(INTROSPECTION_GIRS)
+
+typelibsdir = $(libdir)/girepository-1.0
+typelibs_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
+
+CLEANFILES += $(dist_gir_DATA) $(typelibs_DATA)
+endif
+
+CLEANFILES += \
 	$(BUILT_SOURCES)                                        \
 	$(NULL)
 

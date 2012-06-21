@@ -152,17 +152,34 @@ fi
 dnl - check file path of glib-genmarshal
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
-dnl - check python
-AC_MSG_CHECKING([where you enable python])
-AC_ARG_ENABLE(python,
-              AS_HELP_STRING([--enable-python=no/yes],
-                             [Enable Python wrapper default=yes]),,
-              enable_python=yes)
-AC_MSG_RESULT($enable_python)
+dnl - GObject introspection
+GOBJECT_INTROSPECTION_CHECK([0.6.8])
 
-if test x"$enable_python" = xyes; then
+INPUT_PAD_GIR_SCANNERFLAGS=
+if test x"$found_introspection" = x"yes" ; then
+    INPUT_PAD_GIR_SCANNERFLAGS="--identifier-prefix=InputPad --symbol-prefix=input_pad"
+    PKG_CHECK_EXISTS([gobject-introspection-1.0 >= 0.9.6],
+                     [gir_symbol_prefix=yes],
+                     [gir_symbol_prefix=no])
+    if test x"$gir_symbol_prefix" = x"no" ; then
+        INPUT_PAD_GIR_SCANNERFLAGS="--strip-prefix=InputPad"
+    fi
+fi
+AC_SUBST(IBUS_GIR_SCANNERFLAGS)
+
+dnl - check pygobject2
+AC_MSG_CHECKING([where you enable pygobject2])
+AC_ARG_ENABLE(pygobject2,
+              AS_HELP_STRING([--enable-pygobject2=no/yes],
+                             [Enable PyGObject2 default=no]),,
+              enable_pygobject2=no)
+AC_MSG_RESULT($enable_pygobject2)
+
+if test x"$enable_pygobject2" = xyes; then
     AM_CONDITIONAL(HAVE_PYTHON, true)
+    AM_CONDITIONAL(HAVE_PYGOBJECT2, true)
     AM_PATH_PYTHON([2.5], [], [])
+
     AC_PATH_PROG(PYTHON_CONFIG, python$PYTHON_VERSION-config)
     if test x"$PYTHON_CONFIG" = x""; then
         AC_PATH_PROG(PYTHON_CONFIG, python-config-$PYTHON_VERSION)
@@ -181,12 +198,18 @@ if test x"$enable_python" = xyes; then
     if test x"$SWIG" = x""; then
         AC_MSG_ERROR([Could not find swig])
     fi
+
+    AC_SUBST(PYTHON_CFLAGS)
+    AC_SUBST(PYTHON_LIBS)
+    AC_SUBST(SWIG)
 else
-    AM_CONDITIONAL(HAVE_PYTHON, false)
+    if test x"$found_introspection" = x"yes" ; then
+        AM_CONDITIONAL(HAVE_PYTHON, true)
+    else
+        AM_CONDITIONAL(HAVE_PYTHON, false)
+    fi
+    AM_CONDITIONAL(HAVE_PYGOBJECT2, false)
 fi
-AC_SUBST(PYTHON_CFLAGS)
-AC_SUBST(PYTHON_LIBS)
-AC_SUBST(SWIG)
 
 dnl - check XTest module
 AC_MSG_CHECKING([whether you enable xtest module])
@@ -241,7 +264,9 @@ libinput_pad version:    $libinput_pad_VERSION
 GTK+ version:            $GTK_API_VERSION
 Have libxklavier:        $have_libxklavier
 Enable EEK               $enable_eek
-Enable Python            $enable_python
+Enable PyGObject2        $enable_pygobject2
+Enable PyGObject3        $found_introspection
+GIR scannerflags         "$INPUT_PAD_GIR_SCANNERFLAGS"
 Enable XTEST             $enable_xtest
 lt version info          $LT_VERSION_INFO
 "

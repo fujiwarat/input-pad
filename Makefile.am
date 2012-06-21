@@ -26,7 +26,7 @@ SUBDIRS = \
 	input-pad \
 	$(NULL)
 
-if HAVE_PYTHON
+if HAVE_PYGOBJECT2
 SUBDIRS += pyinput-pad
 endif
 

@@ -1,8 +1,9 @@
-%{!?have_python_devel: %define have_python_devel %(rpm -q --quiet python-devel && echo 1 || echo 0)}
+%{!?have_pygobject3_devel: %define have_pygobject3_devel %(rpm -q --quiet gobject-introspection-devel && echo 1 || echo 0)}
+%{!?have_pygobject2_devel: %define have_pygobject2_devel %(rpm -q --quiet python-devel && echo 1 || echo 0)}
 %{!?have_xtest_devel:  %define have_xtest_devel  %(rpm -q --quiet libXtst-devel && echo 1 || echo 0)}
 %{!?have_eek_devel:    %define have_eek_devel    %(rpm -q --quiet eekboard-devel && echo 1 || echo 0)}
 
-%if %have_python_devel
+%if %have_pygobject2_devel
   %if ! (0%{?fedora} > 12 || 0%{?rhel} > 5)
   %{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
   %endif
@@ -40,12 +41,19 @@ BuildRequires:  pkgconfig
 %if %have_xtest_devel
 BuildRequires:  libXtst-devel
 %endif
-%if %have_python_devel
+%if %have_pygobject3_devel
+BuildRequires:  gobject-introspection-devel
+%endif
+%if %have_pygobject2_devel
 BuildRequires:  python2-devel
 BuildRequires:  swig
 %endif
 %if %have_eek_devel
 BuildRequires:  eekboard-devel
+%endif
+%if %have_pygobject3_devel
+Requires:       gobject-introspection
+Requires:       pygobject3
 %endif
 
 %description
@@ -59,14 +67,15 @@ Requires:   %{name} = %{version}-%{release}
 %description devel
 The input-pad-devel package contains the header files.
 
-%if %have_python_devel
-%package python
-Summary:    Input Pad for python
+%if %have_pygobject2_devel
+%package pygobject2
+Summary:    Input Pad for Python GObject2
 Group:      System Environment/Libraries
 Requires:   %{name} = %{version}-%{release}
+Requires:   pygtk2
 
-%description python
-The input-pad-python package contains the python wrapper files.
+%description pygobject2
+The input-pad-pygobject2 package contains the python wrapper files.
 %endif
 
 %if %have_xtest_devel
@@ -94,8 +103,8 @@ The input-pad-eek package contains eekboard extension module
 
 %build
 %configure \
-%if ! %have_python_devel
-    --disable-python            \
+%if %have_pygobject2_devel
+    --enable-pygobject2         \
 %endif
 %if %have_eek_devel
     --enable-eek                \
@@ -127,7 +136,7 @@ rm -f $RPM_BUILD_ROOT%xkeysenddir/*.a
 rm -f $RPM_BUILD_ROOT%kbduidir/*.la
 rm -f $RPM_BUILD_ROOT%kbduidir/*.a
 %endif
-%if %have_python_devel
+%if %have_pygobject2_devel
 rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.la
 rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.a
 %endif
@@ -150,6 +159,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %xkeysenddir
 %dir %kbduidir
 %{_libdir}/libinput-pad.so.*
+%if %have_pygobject3_devel
+%{_libdir}/girepository-1.0/InputPad-1.0.typelib
+%endif
 %{_datadir}/%name
 %{_datadir}/pixmaps/input-pad.png
 
@@ -158,9 +170,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/%{name}-%sub_version
 %{_libdir}/libinput-pad.so
 %{_libdir}/pkgconfig/*.pc
+%if %have_pygobject3_devel
+%{_datadir}/gir-1.0/InputPad-1.0.gir
+%endif
 
-%if %have_python_devel
-%files python
+%if %have_pygobject2_devel
+%files pygobject2
 %defattr(-,root,root,-)
 %python_sitearch/%{name}-%sub_version
 %python_sitearch/pyinput_pad.pth

@@ -5124,6 +5124,92 @@ input_pad_gtk_window_get_kbdui_name_list (void)
 }
 
 void
+input_pad_gtk_window_get_kbdui_name_list_free (InputPadWindowKbduiName *list)
+{
+    int i;
+
+    for (i = 0; list[i].name != NULL; i++) {
+        g_free (list[i].name);
+        g_free (list[i].description);
+        list[i].name = NULL;
+        list[i].description = NULL;
+    }
+    g_free (list);
+}
+
+int
+input_pad_gtk_window_get_kbdui_name_list_length (void)
+{
+    InputPadWindowKbduiName *list;
+    int length = 0;
+
+    list = input_pad_gtk_window_get_kbdui_name_list ();
+
+    if (list == NULL) {
+        return 0;
+    }
+
+    for (length = 0; list[length].name != NULL; length++);
+    input_pad_gtk_window_get_kbdui_name_list_free (list);
+
+    return length;
+}
+
+gchar *
+input_pad_gtk_window_get_kbdui_name_get_name_with_index (int index)
+{
+    InputPadWindowKbduiName *list;
+    gchar *name = NULL;
+
+    list = input_pad_gtk_window_get_kbdui_name_list ();
+
+    if (list == NULL) {
+        return NULL;
+    }
+
+    name = g_strdup (list[index].name);
+    input_pad_gtk_window_get_kbdui_name_list_free (list);
+
+    return name;
+}
+
+gchar *
+input_pad_gtk_window_get_kbdui_name_get_description_with_index (int index)
+{
+    InputPadWindowKbduiName *list;
+    gchar *description = NULL;
+
+    list = input_pad_gtk_window_get_kbdui_name_list ();
+
+    if (list == NULL) {
+        return NULL;
+    }
+
+    description = g_strdup (list[index].description);
+    input_pad_gtk_window_get_kbdui_name_list_free (list);
+
+    return description;
+}
+
+InputPadWindowType
+input_pad_gtk_window_get_kbdui_name_get_type_with_index (int index)
+{
+    InputPadWindowKbduiName *list;
+    InputPadWindowType type;
+
+    list = input_pad_gtk_window_get_kbdui_name_list ();
+
+    if (list == NULL) {
+        return INPUT_PAD_WINDOW_TYPE_GTK;
+    }
+
+    type = list[index].type;
+    input_pad_gtk_window_get_kbdui_name_list_free (list);
+
+    return type;
+}
+
+void
 input_pad_gtk_window_set_kbdui_name (InputPadGtkWindow *window,
                                      const gchar       *name)
 {
@@ -5378,6 +5464,30 @@ InputPadWindowKbduiName *
 input_pad_window_get_kbdui_name_list (void)
 {
     return input_pad_gtk_window_get_kbdui_name_list ();
+}
+
+int
+input_pad_window_get_kbdui_name_list_length (void)
+{
+    return input_pad_gtk_window_get_kbdui_name_list_length ();
+}
+
+char *
+input_pad_window_get_kbdui_name_get_name_with_index (int index)
+{
+    return input_pad_gtk_window_get_kbdui_name_get_name_with_index (index);
+}
+
+char *
+input_pad_window_get_kbdui_name_get_description_with_index (int index)
+{
+    return input_pad_gtk_window_get_kbdui_name_get_description_with_index (index);
+}
+
+InputPadWindowType
+input_pad_window_get_kbdui_name_get_type_with_index (int index)
+{
+    return input_pad_gtk_window_get_kbdui_name_get_type_with_index (index);
 }
 
 void

@@ -105,6 +105,13 @@ void                input_pad_gtk_window_set_keyboard_state_with_keysym
                                         guint                   keysym);
 InputPadWindowKbduiName *
                     input_pad_gtk_window_get_kbdui_name_list (void);
+int                 input_pad_gtk_window_get_kbdui_name_list_length (void);
+gchar *             input_pad_gtk_window_get_kbdui_name_get_name_with_index
+                                       (int                     index);
+gchar *             input_pad_gtk_window_get_kbdui_name_get_description_with_index
+                                       (int                     index);
+InputPadWindowType  input_pad_gtk_window_get_kbdui_name_get_type_with_index
+                                       (int                     index);
 void                input_pad_gtk_window_set_kbdui_name
                                        (InputPadGtkWindow      *window,
                                         const gchar            *name);
