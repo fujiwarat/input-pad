@@ -3,31 +3,32 @@
 # This file is distributed under the same license as the input-pad package.
 #
 # Translators:
-# Takao Fujiwara <takao.fujiwara1@gmail.com>, 2010-2012.
+# Walter Cheuk <wwycheuk@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
 "POT-Creation-Date: 2012-06-22 18:01+0900\n"
-"PO-Revision-Date: 2012-06-22 17:50+0900\n"
-"Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
-"Language-Team: Source\n"
-"Language: en\n"
+"PO-Revision-Date: 2012-06-22 18:01+0900\n"
+"Last-Translator: Walter Cheuk <wwycheuk@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) <trans-zh_TW@lists.fedoraproject.org>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/alphabet.xml.in.in.h:1
 msgid "Alphabets"
-msgstr ""
+msgstr "字母"
 
 #: ../data/base.xml.in.h:1
 msgid "Symbols"
-msgstr ""
+msgstr "符號"
 
 #: ../data/base.xml.in.h:2
 msgid "Currency"
-msgstr ""
+msgstr "貨幣"
 
 #: ../data/base.xml.in.h:3
 msgid "Letterlike"
@@ -35,16 +36,16 @@ msgstr ""
 
 #: ../data/base.xml.in.h:4
 msgid "Miscellaneous"
-msgstr ""
+msgstr "雜項"
 
 #: ../data/base.xml.in.h:5 ../input-pad/unicode_block.h:116
 msgid "Dingbats"
-msgstr ""
+msgstr "Dingbats"
 
 #. Translators: Superscripts and Subscripts
 #: ../data/base.xml.in.h:7
 msgid "Super and Sub"
-msgstr ""
+msgstr "上標與下標"
 
 #: ../data/base.xml.in.h:8
 msgid "Bold"
@@ -64,11 +65,11 @@ msgstr ""
 
 #: ../data/base.xml.in.h:12
 msgid "All"
-msgstr ""
+msgstr "全部"
 
 #: ../data/base.xml.in.h:13 ../data/zh.xml.in.h:2
 msgid "Numbers"
-msgstr ""
+msgstr "數字"
 
 #: ../data/base.xml.in.h:14
 msgid "Roman"
@@ -76,23 +77,23 @@ msgstr ""
 
 #: ../data/base.xml.in.h:15
 msgid "Enclosed"
-msgstr ""
+msgstr "包起來的符號"
 
 #: ../data/base.xml.in.h:16
 msgid "Fraction"
-msgstr ""
+msgstr "分數"
 
 #: ../data/base.xml.in.h:17
 msgid "Technical"
-msgstr ""
+msgstr "技術"
 
 #: ../data/base.xml.in.h:18
 msgid "Unit"
-msgstr ""
+msgstr "單位"
 
 #: ../data/base.xml.in.h:19
 msgid "Mathematical"
-msgstr ""
+msgstr "數學"
 
 #: ../data/base.xml.in.h:20
 msgid "Controls"
@@ -124,63 +125,63 @@ msgstr ""
 
 #: ../data/base.xml.in.h:27
 msgid "Braille"
-msgstr ""
+msgstr "盲人點字"
 
 #: ../data/base.xml.in.h:28
 msgid "Punctuations"
-msgstr ""
+msgstr "標點"
 
 #: ../data/base.xml.in.h:29
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: ../data/base.xml.in.h:30
 msgid "CJK"
-msgstr ""
+msgstr "中日韓"
 
 #: ../data/base.xml.in.h:31 ../input-pad/unicode_block.h:145
 msgid "CJK Compatibility"
-msgstr ""
+msgstr "中日韓相容"
 
 #: ../data/base.xml.in.h:32
 msgid "Small Form"
-msgstr ""
+msgstr "小寫"
 
 #: ../data/cmd.xml.in.h:1
 msgid "Command"
-msgstr ""
+msgstr "指令"
 
 #: ../data/cmd.xml.in.h:2
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #: ../data/cmd.xml.in.h:3
 msgid "Normal Date"
-msgstr ""
+msgstr "正常日期"
 
 #: ../data/cmd.xml.in.h:4
 msgid "Date and Time"
-msgstr ""
+msgstr "日期與時間"
 
 #: ../data/cmd.xml.in.h:5
 msgid "ChangeLog date"
-msgstr ""
+msgstr "變更記錄日期"
 
 #: ../data/cmd.xml.in.h:6
 msgid "USA English date"
-msgstr ""
+msgstr "美式英文日期"
 
 #: ../data/cmd.xml.in.h:7
 msgid "UK English date"
-msgstr ""
+msgstr "英式英文日期"
 
 #: ../data/cmd.xml.in.h:8
 msgid "ISO 8601 date"
-msgstr ""
+msgstr "ISO 8601 日期"
 
 #: ../data/cmd.xml.in.h:9
 msgid "Era"
-msgstr ""
+msgstr "年代"
 
 #: ../data/cmd.xml.in.h:10
 msgid "Century Year"
@@ -188,43 +189,43 @@ msgstr ""
 
 #: ../data/cmd.xml.in.h:11
 msgid "Normal Time"
-msgstr ""
+msgstr "正常時間"
 
 #: ../data/cmd.xml.in.h:12
 msgid "English Time"
-msgstr ""
+msgstr "英文時間"
 
 #: ../data/cmd.xml.in.h:13
 msgid "Month"
-msgstr ""
+msgstr "月份"
 
 #: ../data/cmd.xml.in.h:14
 msgid "English Month"
-msgstr ""
+msgstr "英文月份"
 
 #: ../data/cmd.xml.in.h:15
 msgid "Short Month"
-msgstr ""
+msgstr "簡短月份"
 
 #: ../data/cmd.xml.in.h:16
 msgid "English Short Month"
-msgstr ""
+msgstr "英文簡短月份"
 
 #: ../data/cmd.xml.in.h:17
 msgid "Weekday"
-msgstr ""
+msgstr "週日"
 
 #: ../data/cmd.xml.in.h:18
 msgid "English Weekday"
-msgstr ""
+msgstr "英文週日"
 
 #: ../data/cmd.xml.in.h:19
 msgid "Short Weekday"
-msgstr ""
+msgstr "簡短週日"
 
 #: ../data/cmd.xml.in.h:20
 msgid "English Short Weekday"
-msgstr ""
+msgstr "英文簡短週日"
 
 #: ../data/goth.xml.in.h:1 ../input-pad/unicode_block.h:196
 msgid "Gothic"
@@ -237,15 +238,15 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:1
 msgid "_File"
-msgstr ""
+msgstr "檔案(_F)"
 
 #: ../data/input-pad.ui.h:2
 msgid "Close the program"
-msgstr ""
+msgstr "關閉程式"
 
 #: ../data/input-pad.ui.h:3
 msgid "_Close"
-msgstr ""
+msgstr "關閉(_C)"
 
 #: ../data/input-pad.ui.h:4
 msgid "_Pad"
@@ -253,31 +254,31 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:5
 msgid "_Code Point"
-msgstr ""
+msgstr "碼位(_C)"
 
 #: ../data/input-pad.ui.h:6
 msgid "_Show Pad"
-msgstr ""
+msgstr "顯示 Pad(_S)"
 
 #: ../data/input-pad.ui.h:7
 msgid "Show _All Characters"
-msgstr ""
+msgstr "顯示全部字元(_A)"
 
 #: ../data/input-pad.ui.h:8
 msgid "Show _Custom Characters"
-msgstr ""
+msgstr "顯示自訂字元(_C)"
 
 #: ../data/input-pad.ui.h:9
 msgid "Show _Nothing"
-msgstr ""
+msgstr "不顯示(_N)"
 
 #: ../data/input-pad.ui.h:10
 msgid "Show _Keyboard Layout"
-msgstr ""
+msgstr "顯示鍵盤配置(_K)"
 
 #: ../data/input-pad.ui.h:11
 msgid "_Help"
-msgstr ""
+msgstr "求助(_H)"
 
 #: ../data/input-pad.ui.h:12
 msgid "_Troubleshoot"
@@ -293,11 +294,11 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:15
 msgid "You can choose encoding type"
-msgstr ""
+msgstr "可選擇編碼類型"
 
 #: ../data/input-pad.ui.h:16
 msgid "Current Encoding"
-msgstr ""
+msgstr "當前編碼"
 
 #: ../data/input-pad.ui.h:17
 msgid "Copy Buffer"
@@ -308,6 +309,8 @@ msgid ""
 "Base 16\n"
 "Hex"
 msgstr ""
+"十六進制\n"
+"Hex"
 
 #: ../data/input-pad.ui.h:20
 msgid "Set number case to hexadecimal"
@@ -318,6 +321,8 @@ msgid ""
 "Base 10\n"
 "Dec"
 msgstr ""
+"十進制\n"
+"Dec"
 
 #: ../data/input-pad.ui.h:23
 msgid "Set number case to decimal"
@@ -328,6 +333,8 @@ msgid ""
 "Base 8\n"
 "Oct"
 msgstr ""
+"八進制\n"
+"Oct"
 
 #: ../data/input-pad.ui.h:26
 msgid "Set number case to octal"
@@ -338,6 +345,8 @@ msgid ""
 "Base 2\n"
 "Bin"
 msgstr ""
+"二進制\n"
+"Bin"
 
 #: ../data/input-pad.ui.h:29
 msgid "Set number case to binary"
@@ -345,15 +354,15 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:30
 msgid "Code Point:"
-msgstr ""
+msgstr "碼位:"
 
 #: ../data/input-pad.ui.h:31
 msgid "Character:"
-msgstr ""
+msgstr "字元:"
 
 #: ../data/input-pad.ui.h:32
 msgid "_Send"
-msgstr ""
+msgstr "發送(_S)"
 
 #: ../data/input-pad.ui.h:33
 msgid "Input Pad Troubleshoot"
@@ -377,11 +386,11 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:42
 msgid "Configure Keyboard Layouts"
-msgstr ""
+msgstr "設定鍵盤配置"
 
 #: ../data/input-pad.ui.h:43
 msgid "A_vailable layouts:"
-msgstr ""
+msgstr "可用配置(_V):"
 
 #: ../data/input-pad.ui.h:44
 msgid "_Layouts shown in the list:"
@@ -389,23 +398,23 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:45
 msgid "_Options"
-msgstr ""
+msgstr "選項(_O)"
 
 #: ../data/input-pad.ui.h:46
 msgid "Configure Keyboard Options"
-msgstr ""
+msgstr "設定鍵盤選項"
 
 #: ../data/input-pad.ui.h:47
 msgid "_Use the default keyboard option"
-msgstr ""
+msgstr "使用預設鍵盤選項(_U)"
 
 #: ../data/input-pad.ui.h:48
 msgid "Use the defualt XKB option"
-msgstr ""
+msgstr "使用預設 XKB 選項"
 
 #: ../data/input-pad.ui.h:49
 msgid "<b>Keyboard Option</b>"
-msgstr ""
+msgstr "<b>鍵盤選項</b>"
 
 #: ../data/input-pad.ui.h:51
 msgid "The input pad is a tool to send a character on button."
@@ -963,7 +972,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:127
 msgid "Glottal stop"
-msgstr ""
+msgstr "子群組"
 
 #: ../data/ipa.xml.in.h:128
 msgid "Epiglottal plosive"
@@ -1307,7 +1316,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:216
 msgid "Stress mark"
-msgstr ""
+msgstr "重音標記"
 
 #: ../data/ipa.xml.in.h:217
 msgid "Weak stress mark"
@@ -1315,7 +1324,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:218
 msgid "Syllable break"
-msgstr ""
+msgstr "音節分隔"
 
 #: ../data/ipa.xml.in.h:219
 msgid "Opening orthographic bracket"
@@ -1327,23 +1336,23 @@ msgstr ""
 
 #: ../data/ja.xml.in.h:1
 msgid "Japanese"
-msgstr ""
+msgstr "日文"
 
 #: ../data/ja.xml.in.h:2 ../input-pad/unicode_block.h:136
 msgid "Hiragana"
-msgstr ""
+msgstr "平假名"
 
 #: ../data/ja.xml.in.h:3 ../input-pad/unicode_block.h:137
 msgid "Katakana"
-msgstr ""
+msgstr "片假名"
 
 #: ../data/ja.xml.in.h:4 ../data/zh.xml.in.h:3
 msgid "Radicals"
-msgstr ""
+msgstr "部首"
 
 #: ../data/ja.xml.in.h:5 ../input-pad/unicode_block.h:132
 msgid "CJK Radicals Supplement"
-msgstr ""
+msgstr "中日韓部首補充"
 
 #: ../data/keyboard.xml.in.h:1
 msgid "Keyboard"
@@ -1351,7 +1360,7 @@ msgstr ""
 
 #: ../data/keyboard.xml.in.h:2
 msgid "Function Key"
-msgstr ""
+msgstr "功能鍵"
 
 #: ../data/keyboard.xml.in.h:3
 msgid "Key Pad"
@@ -1359,7 +1368,7 @@ msgstr ""
 
 #: ../data/latin.xml.in.h:1
 msgid "ASCII"
-msgstr ""
+msgstr "ASCII"
 
 #: ../data/latin.xml.in.h:2 ../input-pad/unicode_block.h:38
 msgid "Latin-1 Supplement"
@@ -1391,23 +1400,23 @@ msgstr ""
 
 #: ../data/str.xml.in.h:1
 msgid "Chat"
-msgstr ""
+msgstr "聊天"
 
 #: ../data/str.xml.in.h:2
 msgid "Smileys"
-msgstr ""
+msgstr "笑面"
 
 #: ../data/str.xml.in.h:3
 msgid "Smile"
-msgstr ""
+msgstr "微笑"
 
 #: ../data/str.xml.in.h:4
 msgid "Smile Big"
-msgstr ""
+msgstr "大微笑"
 
 #: ../data/str.xml.in.h:5
 msgid "Sad"
-msgstr ""
+msgstr "哀"
 
 #: ../data/str.xml.in.h:6
 msgid "Wink"
@@ -1423,7 +1432,7 @@ msgstr ""
 
 #: ../data/str.xml.in.h:9
 msgid "Kiss | Secret"
-msgstr ""
+msgstr "吻 | 祕密"
 
 #: ../data/str.xml.in.h:10
 msgid "Glasses Cool | Eyeroll"
@@ -1435,11 +1444,11 @@ msgstr ""
 
 #: ../data/str.xml.in.h:12
 msgid "Angry"
-msgstr ""
+msgstr "生氣"
 
 #: ../data/str.xml.in.h:13
 msgid "Embarrassed"
-msgstr ""
+msgstr "尷尬"
 
 #: ../data/str.xml.in.h:14
 msgid "Confused"
@@ -1447,7 +1456,7 @@ msgstr ""
 
 #: ../data/str.xml.in.h:15
 msgid "Crying"
-msgstr ""
+msgstr "哭"
 
 #: ../data/str.xml.in.h:16
 msgid "Neutral"
@@ -1459,7 +1468,7 @@ msgstr ""
 
 #: ../data/str.xml.in.h:18
 msgid "Don't Know"
-msgstr ""
+msgstr "不懂"
 
 #: ../data/str.xml.in.h:19
 msgid "Party"
@@ -1467,7 +1476,7 @@ msgstr ""
 
 #: ../data/str.xml.in.h:20
 msgid "Yawn"
-msgstr ""
+msgstr "打哈欠"
 
 #: ../data/str.xml.in.h:21
 msgid "Bunny"
@@ -1475,39 +1484,39 @@ msgstr ""
 
 #: ../data/str.xml.in.h:22
 msgid "Sick"
-msgstr ""
+msgstr "病"
 
 #: ../data/str.xml.in.h:23
 msgid "Devil"
-msgstr ""
+msgstr "魔鬼"
 
 #: ../data/str.xml.in.h:24
 msgid "Angel"
-msgstr ""
+msgstr "天使"
 
 #: ../data/str.xml.in.h:25
 msgid "Love"
-msgstr ""
+msgstr "愛"
 
 #: ../data/str.xml.in.h:26
 msgid "Love Over"
-msgstr ""
+msgstr "愛完結"
 
 #: ../data/str.xml.in.h:27
 msgid "Cat"
-msgstr ""
+msgstr "貓"
 
 #: ../data/str.xml.in.h:28
 msgid "Dog"
-msgstr ""
+msgstr "狗"
 
 #: ../data/str.xml.in.h:29
 msgid "Moon"
-msgstr ""
+msgstr "月"
 
 #: ../data/str.xml.in.h:30
 msgid "Star"
-msgstr ""
+msgstr "星"
 
 #: ../data/str.xml.in.h:31
 msgid "Film"
@@ -1515,7 +1524,7 @@ msgstr ""
 
 #: ../data/str.xml.in.h:32
 msgid "Musical Note"
-msgstr ""
+msgstr "音符"
 
 #: ../data/str.xml.in.h:33
 msgid "Mail"
@@ -1523,11 +1532,11 @@ msgstr ""
 
 #: ../data/str.xml.in.h:34
 msgid "Clock"
-msgstr ""
+msgstr "時鐘"
 
 #: ../data/str.xml.in.h:35
 msgid "Kiss"
-msgstr ""
+msgstr "吻"
 
 #: ../data/str.xml.in.h:36
 msgid "Present"
@@ -1535,27 +1544,27 @@ msgstr ""
 
 #: ../data/str.xml.in.h:37
 msgid "Cake"
-msgstr ""
+msgstr "蛋糕"
 
 #: ../data/str.xml.in.h:38
 msgid "Coffee"
-msgstr ""
+msgstr "咖啡"
 
 #: ../data/str.xml.in.h:39
 msgid "Phone"
-msgstr ""
+msgstr "電話"
 
 #: ../data/str.xml.in.h:40
 msgid "Hug Left"
-msgstr ""
+msgstr "左抱"
 
 #: ../data/str.xml.in.h:41
 msgid "Hug Right"
-msgstr ""
+msgstr "右抱"
 
 #: ../data/str.xml.in.h:42
 msgid "Beer"
-msgstr ""
+msgstr "啤酒"
 
 #: ../data/str.xml.in.h:43
 msgid "Drink"
@@ -1563,11 +1572,11 @@ msgstr ""
 
 #: ../data/str.xml.in.h:44
 msgid "Boy"
-msgstr ""
+msgstr "男孩"
 
 #: ../data/str.xml.in.h:45
 msgid "Girl"
-msgstr ""
+msgstr "女孩"
 
 #: ../data/str.xml.in.h:46
 msgid "Yes"
@@ -1595,16 +1604,16 @@ msgstr ""
 
 #: ../data/str.xml.in.h:52
 msgid "Monkey"
-msgstr ""
+msgstr "猴"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
 #: ../data/str.xml.in.h:54
 msgid "Smileys (Japanese)"
-msgstr ""
+msgstr "笑面 (日文)"
 
 #: ../data/str.xml.in.h:55
 msgid "Smoking"
-msgstr ""
+msgstr "抽煙"
 
 #: ../data/str.xml.in.h:56
 msgid "Sorry"
@@ -1612,12 +1621,12 @@ msgstr ""
 
 #: ../data/str.xml.in.h:57
 msgid "Hug"
-msgstr ""
+msgstr "抱"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
 #: ../data/str.xml.in.h:59
 msgid "Smileys (Japanese 2ch)"
-msgstr ""
+msgstr "笑面 (日文 2ch)"
 
 #: ../data/str.xml.in.h:60
 msgid "Hey"
@@ -1626,11 +1635,11 @@ msgstr ""
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
 #: ../data/str.xml.in.h:62
 msgid "Smileys (Chinese)"
-msgstr ""
+msgstr "笑面 (中文)"
 
 #: ../data/str.xml.in.h:63
 msgid "Crow"
-msgstr ""
+msgstr "烏鴉"
 
 #: ../data/str.xml.in.h:64
 msgid "Bear"
@@ -1639,16 +1648,16 @@ msgstr ""
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
 #: ../data/str.xml.in.h:66
 msgid "Acronym"
-msgstr ""
+msgstr "縮寫"
 
 #: ../data/str.xml.in.h:67
 msgid "Acronym (Computer)"
-msgstr ""
+msgstr "縮寫 (電腦)"
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
 #: ../data/str.xml.in.h:69
 msgid "Acronym (Japanese)"
-msgstr ""
+msgstr "縮寫 (日文)"
 
 #: ../data/str.xml.in.h:70
 msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
@@ -1664,11 +1673,11 @@ msgstr ""
 
 #: ../data/str.xml.in.h:73
 msgid "Excited (Kitakore)"
-msgstr ""
+msgstr "興奮 (Kitakore)"
 
 #: ../data/str.xml.in.h:74
 msgid "Detail (Kuwashiku)"
-msgstr ""
+msgstr "詳細"
 
 #: ../data/str.xml.in.h:75
 msgid "Cannot read between lines (Kuuki Ga Yomenai)"
@@ -1680,11 +1689,11 @@ msgstr ""
 
 #: ../data/str.xml.in.h:77
 msgid "Excited (Waku Waku Teka Teka)"
-msgstr ""
+msgstr "興奮 (Waku Waku Teka Teka)"
 
 #: ../data/str.xml.in.h:78
 msgid "Laugh"
-msgstr ""
+msgstr "笑"
 
 #: ../data/str.xml.in.h:79
 msgid "Dude (Oi!)"
@@ -1708,7 +1717,7 @@ msgstr ""
 
 #: ../data/str.xml.in.h:84
 msgid "Laugh (Warau)"
-msgstr ""
+msgstr "笑 (Warau)"
 
 #: ../data/str.xml.in.h:85
 msgid "Good job (Otsukare)"
@@ -1724,27 +1733,27 @@ msgstr ""
 
 #: ../data/zh.xml.in.h:1
 msgid "Chinese"
-msgstr ""
+msgstr "中文"
 
 #: ../data/zh.xml.in.h:4 ../input-pad/unicode_block.h:138
 msgid "Bopomofo"
-msgstr ""
+msgstr "注音符號"
 
 #: ../input-pad/eek-gtk.c:62
 msgid "Use libeek to draw keyboard"
-msgstr ""
+msgstr "以 libeek 繪畫鍵盤"
 
 #: ../input-pad/eek-gtk.c:234
 msgid "eekboard layout"
-msgstr ""
+msgstr "eekboard 配置"
 
 #: ../input-pad/eek-gtk.c:246
 msgid "eekboard Options"
-msgstr ""
+msgstr "eekboard 選項"
 
 #: ../input-pad/eek-gtk.c:246
 msgid "Show eekboard Options"
-msgstr ""
+msgstr "顯示 eekboard 選項"
 
 #: ../input-pad/unicode_block.h:37
 msgid "Basic Latin"
@@ -1784,11 +1793,11 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:48
 msgid "Hebrew"
-msgstr ""
+msgstr "希伯來文"
 
 #: ../input-pad/unicode_block.h:49
 msgid "Arabic"
-msgstr ""
+msgstr "阿拉伯文"
 
 #: ../input-pad/unicode_block.h:50
 msgid "Syriac"
@@ -1796,7 +1805,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:51
 msgid "Arabic Supplement"
-msgstr ""
+msgstr "阿拉伯文補充"
 
 #: ../input-pad/unicode_block.h:52
 msgid "Thaana"
@@ -1812,11 +1821,11 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:55
 msgid "Devanagari"
-msgstr ""
+msgstr "天城文"
 
 #: ../input-pad/unicode_block.h:56
 msgid "Bengali"
-msgstr ""
+msgstr "孟加拉文"
 
 #: ../input-pad/unicode_block.h:57
 msgid "Gurmukhi"
@@ -1832,7 +1841,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:60
 msgid "Tamil"
-msgstr ""
+msgstr "泰米爾文"
 
 #: ../input-pad/unicode_block.h:61
 msgid "Telugu"
@@ -1844,7 +1853,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:63
 msgid "Malayalam"
-msgstr ""
+msgstr "馬來文"
 
 #: ../input-pad/unicode_block.h:64
 msgid "Sinhala"
@@ -1852,27 +1861,27 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:65
 msgid "Thai"
-msgstr ""
+msgstr "泰文"
 
 #: ../input-pad/unicode_block.h:66
 msgid "Lao"
-msgstr ""
+msgstr "寮文"
 
 #: ../input-pad/unicode_block.h:67
 msgid "Tibetan"
-msgstr ""
+msgstr "藏文"
 
 #: ../input-pad/unicode_block.h:68
 msgid "Myanmar"
-msgstr ""
+msgstr "緬文"
 
 #: ../input-pad/unicode_block.h:69
 msgid "Georgian"
-msgstr ""
+msgstr "喬治亞文"
 
 #: ../input-pad/unicode_block.h:70
 msgid "Hangul Jamo"
-msgstr ""
+msgstr "諺文字母"
 
 #: ../input-pad/unicode_block.h:71
 msgid "Ethiopic"
@@ -1900,7 +1909,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:77
 msgid "Tagalog"
-msgstr ""
+msgstr "他加祿文"
 
 #: ../input-pad/unicode_block.h:78
 msgid "Hanunoo"
@@ -1916,11 +1925,11 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:81
 msgid "Khmer"
-msgstr ""
+msgstr "高棉文"
 
 #: ../input-pad/unicode_block.h:82
 msgid "Mongolian"
-msgstr ""
+msgstr "蒙文"
 
 #: ../input-pad/unicode_block.h:83
 msgid "Unified Canadian Aboriginal Syllabics Extended"
@@ -1940,7 +1949,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:87
 msgid "Khmer Symbols"
-msgstr ""
+msgstr "高棉符號"
 
 #: ../input-pad/unicode_block.h:88
 msgid "Buginese"
@@ -1956,7 +1965,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:91
 msgid "Sundanese"
-msgstr ""
+msgstr "巽他文"
 
 #: ../input-pad/unicode_block.h:92
 msgid "Lepcha"
@@ -1992,15 +2001,15 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:100
 msgid "General Punctuation"
-msgstr ""
+msgstr "一般標點"
 
 #: ../input-pad/unicode_block.h:101
 msgid "Superscripts and Subscripts"
-msgstr ""
+msgstr "上標與下標"
 
 #: ../input-pad/unicode_block.h:102
 msgid "Currency Symbols"
-msgstr ""
+msgstr "貨幣符號"
 
 #: ../input-pad/unicode_block.h:103
 msgid "Combining Diacritical Marks for Symbols"
@@ -2016,15 +2025,15 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:106
 msgid "Arrows"
-msgstr ""
+msgstr "箭頭"
 
 #: ../input-pad/unicode_block.h:107
 msgid "Mathematical Operators"
-msgstr ""
+msgstr "數學運算子"
 
 #: ../input-pad/unicode_block.h:108
 msgid "Miscellaneous Technical"
-msgstr ""
+msgstr "雜項科技"
 
 #: ../input-pad/unicode_block.h:109
 msgid "Control Pictures"
@@ -2032,11 +2041,11 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:110
 msgid "Optical Character Recognition"
-msgstr ""
+msgstr "泰米爾文"
 
 #: ../input-pad/unicode_block.h:111
 msgid "Enclosed Alphanumerics"
-msgstr ""
+msgstr "包起來的字母和數字"
 
 #: ../input-pad/unicode_block.h:113
 msgid "Block Elements"
@@ -2044,31 +2053,31 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:114
 msgid "Geometric Shapes"
-msgstr ""
+msgstr "地理學圖形"
 
 #: ../input-pad/unicode_block.h:115
 msgid "Miscellaneous Symbols"
-msgstr ""
+msgstr "雜項符號"
 
 #: ../input-pad/unicode_block.h:117
 msgid "Miscellaneous Mathematical Symbols-A"
-msgstr ""
+msgstr "雜項數學符號-A"
 
 #: ../input-pad/unicode_block.h:118
 msgid "Supplemental Arrows-A"
-msgstr ""
+msgstr "補充箭頭-A"
 
 #: ../input-pad/unicode_block.h:119
 msgid "Braille Patterns"
-msgstr ""
+msgstr "盲文式樣"
 
 #: ../input-pad/unicode_block.h:120
 msgid "Supplemental Arrows-B"
-msgstr ""
+msgstr "補充箭頭-B"
 
 #: ../input-pad/unicode_block.h:121
 msgid "Miscellaneous Mathematical Symbols-B"
-msgstr ""
+msgstr "雜項數學符號-B"
 
 #: ../input-pad/unicode_block.h:122
 msgid "Supplemental Mathematical Operators"
@@ -2076,7 +2085,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:123
 msgid "Miscellaneous Symbols and Arrows"
-msgstr ""
+msgstr "雜項符號和箭頭"
 
 #: ../input-pad/unicode_block.h:124
 msgid "Glagolitic"
@@ -2092,7 +2101,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:127
 msgid "Georgian Supplement"
-msgstr ""
+msgstr "喬治亞文補充"
 
 #: ../input-pad/unicode_block.h:128
 msgid "Tifinagh"
@@ -2112,31 +2121,31 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:133
 msgid "Kangxi Radicals"
-msgstr ""
+msgstr "康熙部首"
 
 #: ../input-pad/unicode_block.h:134
 msgid "Ideographic Description Characters"
-msgstr ""
+msgstr "表意文字說明字元"
 
 #: ../input-pad/unicode_block.h:135
 msgid "CJK Symbols and Punctuation"
-msgstr ""
+msgstr "中日韓符號和標點"
 
 #: ../input-pad/unicode_block.h:139
 msgid "Hangul Compatibility Jamo"
-msgstr ""
+msgstr "諺文相容字母"
 
 #: ../input-pad/unicode_block.h:140
 msgid "Kanbun"
-msgstr ""
+msgstr "漢文"
 
 #: ../input-pad/unicode_block.h:141
 msgid "Bopomofo Extended"
-msgstr ""
+msgstr "注音符號擴充"
 
 #: ../input-pad/unicode_block.h:142
 msgid "CJK Strokes"
-msgstr ""
+msgstr "中日韓筆畫"
 
 #: ../input-pad/unicode_block.h:143
 msgid "Katakana Phonetic Extensions"
@@ -2144,27 +2153,27 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:144
 msgid "Enclosed CJK Letters and Months"
-msgstr ""
+msgstr "包起來的中日韓字母和月份符號"
 
 #: ../input-pad/unicode_block.h:146
 msgid "CJK Unified Ideographs Extension A"
-msgstr ""
+msgstr "中日韓統一表意文字擴充 A 集"
 
 #: ../input-pad/unicode_block.h:147
 msgid "Yijing Hexagram Symbols"
-msgstr ""
+msgstr "易經八卦符號"
 
 #: ../input-pad/unicode_block.h:148
 msgid "CJK Unified Ideographs"
-msgstr ""
+msgstr "中日韓統一表意文字"
 
 #: ../input-pad/unicode_block.h:149
 msgid "Yi Syllables"
-msgstr ""
+msgstr "彞文音節"
 
 #: ../input-pad/unicode_block.h:150
 msgid "Yi Radicals"
-msgstr ""
+msgstr "彞文部首"
 
 #: ../input-pad/unicode_block.h:151
 msgid "Lisu"
@@ -2208,7 +2217,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:161
 msgid "Devanagari Extended"
-msgstr ""
+msgstr "天城文擴充"
 
 #: ../input-pad/unicode_block.h:162
 msgid "Kayah Li"
@@ -2220,11 +2229,11 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:164
 msgid "Hangul Jamo Extended-A"
-msgstr ""
+msgstr "諺文字母擴充-A"
 
 #: ../input-pad/unicode_block.h:165
 msgid "Javanese"
-msgstr ""
+msgstr "爪哇文"
 
 #: ../input-pad/unicode_block.h:166
 msgid "Cham"
@@ -2232,7 +2241,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:167
 msgid "Myanmar Extended-A"
-msgstr ""
+msgstr "緬文擴充-A"
 
 #: ../input-pad/unicode_block.h:168
 msgid "Tai Viet"
@@ -2244,11 +2253,11 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:170
 msgid "Hangul Syllables"
-msgstr ""
+msgstr "諺文音節"
 
 #: ../input-pad/unicode_block.h:171
 msgid "Hangul Jamo Extended-B"
-msgstr ""
+msgstr "諺文字母擴充-B"
 
 #: ../input-pad/unicode_block.h:172
 msgid "High Surrogates"
@@ -2268,23 +2277,23 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:176
 msgid "CJK Compatibility Ideographs"
-msgstr ""
+msgstr "中日韓相容表意文字"
 
 #: ../input-pad/unicode_block.h:177
 msgid "Alphabetic Presentation Forms"
-msgstr ""
+msgstr "字母表現形式"
 
 #: ../input-pad/unicode_block.h:178
 msgid "Arabic Presentation Forms-A"
-msgstr ""
+msgstr "阿拉伯字母表現形式 A"
 
 #: ../input-pad/unicode_block.h:179
 msgid "Variation Selectors"
-msgstr ""
+msgstr "異體字選擇元"
 
 #: ../input-pad/unicode_block.h:180
 msgid "Vertical Forms"
-msgstr ""
+msgstr "直排"
 
 #: ../input-pad/unicode_block.h:181
 msgid "Combining Half Marks"
@@ -2292,23 +2301,23 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:182
 msgid "CJK Compatibility Forms"
-msgstr ""
+msgstr "中日韓相容形式"
 
 #: ../input-pad/unicode_block.h:183
 msgid "Small Form Variants"
-msgstr ""
+msgstr "小型相容形式"
 
 #: ../input-pad/unicode_block.h:184
 msgid "Arabic Presentation Forms-B"
-msgstr ""
+msgstr "阿拉伯字母表現形式 B"
 
 #: ../input-pad/unicode_block.h:185
 msgid "Halfwidth and Fullwidth Forms"
-msgstr ""
+msgstr "半形和全形"
 
 #: ../input-pad/unicode_block.h:186
 msgid "Specials"
-msgstr ""
+msgstr "特殊字元"
 
 #: ../input-pad/unicode_block.h:187
 msgid "Linear B Syllabary"
@@ -2324,11 +2333,11 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:190
 msgid "Ancient Greek Numbers"
-msgstr ""
+msgstr "古希臘數字"
 
 #: ../input-pad/unicode_block.h:191
 msgid "Ancient Symbols"
-msgstr ""
+msgstr "古符號"
 
 #: ../input-pad/unicode_block.h:192
 msgid "Phaistos Disc"
@@ -2424,23 +2433,23 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:217
 msgid "Byzantine Musical Symbols"
-msgstr ""
+msgstr "Byzantine 音符"
 
 #: ../input-pad/unicode_block.h:218
 msgid "Musical Symbols"
-msgstr ""
+msgstr "音符"
 
 #: ../input-pad/unicode_block.h:219
 msgid "Ancient Greek Musical Notation"
-msgstr ""
+msgstr "古希臘音符"
 
 #: ../input-pad/unicode_block.h:220
 msgid "Tai Xuan Jing Symbols"
-msgstr ""
+msgstr "太玄經符號"
 
 #: ../input-pad/unicode_block.h:221
 msgid "Counting Rod Numerals"
-msgstr ""
+msgstr "算籌數字"
 
 #: ../input-pad/unicode_block.h:222
 msgid "Mathematical Alphanumeric Symbols"
@@ -2448,39 +2457,39 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:223
 msgid "Mahjong Tiles"
-msgstr ""
+msgstr "麻將牌"
 
 #: ../input-pad/unicode_block.h:224
 msgid "Domino Tiles"
-msgstr ""
+msgstr "骨牌"
 
 #: ../input-pad/unicode_block.h:225
 msgid "Enclosed Alphanumeric Supplement"
-msgstr ""
+msgstr "包起來的字母和數字補充"
 
 #: ../input-pad/unicode_block.h:226
 msgid "Enclosed Ideographic Supplement"
-msgstr ""
+msgstr "包起來的表音文字補充"
 
 #: ../input-pad/unicode_block.h:227
 msgid "CJK Unified Ideographs Extension B"
-msgstr ""
+msgstr "中日韓統一表意文字擴充 B 集"
 
 #: ../input-pad/unicode_block.h:228
 msgid "CJK Unified Ideographs Extension C"
-msgstr ""
+msgstr "中日韓統一表意文字擴充 C 集"
 
 #: ../input-pad/unicode_block.h:229
 msgid "CJK Compatibility Ideographs Supplement"
-msgstr ""
+msgstr "中日韓相容表意文字補充"
 
 #: ../input-pad/unicode_block.h:230
 msgid "Tags"
-msgstr ""
+msgstr "標記"
 
 #: ../input-pad/unicode_block.h:231
 msgid "Variation Selectors Supplement"
-msgstr ""
+msgstr "異體字選擇元補充"
 
 #: ../input-pad/unicode_block.h:232
 msgid "Supplementary Private Use Area-A"
@@ -2492,12 +2501,12 @@ msgstr ""
 
 #: ../input-pad/window-gtk.c:172
 msgid "Display version"
-msgstr ""
+msgstr "顯示版本"
 
 #. Translators: the word 'KBDUI' is not translated.
 #: ../input-pad/window-gtk.c:175
 msgid "Use KBDUI to draw keyboard"
-msgstr ""
+msgstr "以 KBDUI 繪畫鍵盤"
 
 #. Translators: the word 'TYPE' is not translated.
 #: ../input-pad/window-gtk.c:178
@@ -2527,15 +2536,15 @@ msgstr ""
 
 #: ../input-pad/window-gtk.c:2895
 msgid "Layout"
-msgstr ""
+msgstr "配置"
 
 #: ../input-pad/window-gtk.c:3170
 msgid "_Layout:"
-msgstr ""
+msgstr "配置(_L):"
 
 #: ../input-pad/window-gtk.c:3200
 msgid "_Configure Layouts"
-msgstr ""
+msgstr "設定配置(_C)"
 
 #. No longer used in gtk 2.20
 #. gchar *license1, *license2, *license3;
@@ -2568,8 +2577,8 @@ msgstr ""
 
 #: ../input-pad/window-gtk.c:3707
 msgid "Group"
-msgstr ""
+msgstr "群組"
 
 #: ../input-pad/window-gtk.c:3715
 msgid "Subgroup"
-msgstr ""
+msgstr "子群組"

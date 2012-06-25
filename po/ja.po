@@ -2,280 +2,373 @@
 # Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
 #
+# Translators:
 # Takao Fujiwara <takao.fujiwara1@gmail.com>, 2010-2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
-"Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/entry\n"
-"POT-Creation-Date: 2011-05-20 12:33+0900\n"
-"PO-Revision-Date: 2011-05-20 12:33+0900\n"
+"Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
+"POT-Creation-Date: 2012-06-22 18:01+0900\n"
+"PO-Revision-Date: 2012-06-22 18:01+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
-"Language-Team: Japanese\n"
+"Language-Team: Japanese <trans-ja@lists.fedoraproject.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: ../data/alphabet.xml.in.in.h:1
+msgid "Alphabets"
+msgstr "アルファベット"
+
 #: ../data/base.xml.in.h:1
-msgid "ASCII"
-msgstr "ASCII"
-
-#: ../data/base.xml.in.h:2
-msgid "All"
-msgstr "すべて"
-
-#: ../data/base.xml.in.h:3
-msgid "Arrow"
-msgstr "矢印"
-
-#: ../data/base.xml.in.h:4 ../input-pad/window-gtk.c:3937
-msgid "Block"
-msgstr "ブロック"
-
-#: ../data/base.xml.in.h:5 ../input-pad/unicode_block.h:112
-msgid "Box Drawing"
-msgstr "罫線素片"
-
-#: ../data/base.xml.in.h:6
-msgid "Braille"
-msgstr "点字"
-
-#: ../data/base.xml.in.h:7
-msgid "CJK"
-msgstr "CJK"
-
-#: ../data/base.xml.in.h:8 ../input-pad/unicode_block.h:145
-msgid "CJK Compatibility"
-msgstr "CJK 互換文字"
-
-#: ../data/base.xml.in.h:9
-msgid "Controls"
-msgstr "制御記号"
-
-#: ../data/base.xml.in.h:10
-msgid "Currency"
-msgstr "通貨"
-
-#: ../data/base.xml.in.h:11 ../input-pad/unicode_block.h:116
-msgid "Dingbats"
-msgstr "装飾記号"
-
-#: ../data/base.xml.in.h:12
-msgid "Enclosed"
-msgstr "囲み文字"
-
-#: ../data/base.xml.in.h:13
-msgid "Fraction"
-msgstr "分数"
-
-#: ../data/base.xml.in.h:14
-msgid "General"
-msgstr "一般"
-
-#: ../data/base.xml.in.h:15
-msgid "Geometric"
-msgstr "幾何学模様"
-
-#: ../data/base.xml.in.h:16
-msgid "Graphics"
-msgstr "図形"
-
-#: ../data/base.xml.in.h:17
-msgid "Latin"
-msgstr "ラテン文字"
-
-#: ../data/base.xml.in.h:18 ../input-pad/unicode_block.h:39
-msgid "Latin Extended-A"
-msgstr "ラテン文字拡張-A"
-
-#: ../data/base.xml.in.h:19 ../input-pad/unicode_block.h:38
-msgid "Latin-1 Supplement"
-msgstr "ラテン文字-1 補足"
-
-#: ../data/base.xml.in.h:20
-msgid "Letterlike"
-msgstr "字様記号"
-
-#: ../data/base.xml.in.h:21
-msgid "Mathematical"
-msgstr "数学演算子"
-
-#: ../data/base.xml.in.h:22
-msgid "Miscellaneous"
-msgstr "その他"
-
-#: ../data/base.xml.in.h:23 ../data/zh.xml.in.h:3
-msgid "Numbers"
-msgstr "数字"
-
-#: ../data/base.xml.in.h:24
-msgid "OCR"
-msgstr "OCR"
-
-#: ../data/base.xml.in.h:25
-msgid "Punctuations"
-msgstr "句読点"
-
-#: ../data/base.xml.in.h:26
-msgid "Roman"
-msgstr "ローマ数字"
-
-#: ../data/base.xml.in.h:27
-msgid "Small Form"
-msgstr "小字形"
-
-#. Translators: Superscripts and Subscripts
-#: ../data/base.xml.in.h:29
-msgid "Super and Sub"
-msgstr "上付き・下付き"
-
-#: ../data/base.xml.in.h:30
 msgid "Symbols"
 msgstr "記号"
 
-#: ../data/base.xml.in.h:31
+#: ../data/base.xml.in.h:2
+msgid "Currency"
+msgstr "通貨"
+
+#: ../data/base.xml.in.h:3
+msgid "Letterlike"
+msgstr "字様記号"
+
+#: ../data/base.xml.in.h:4
+msgid "Miscellaneous"
+msgstr "その他"
+
+#: ../data/base.xml.in.h:5 ../input-pad/unicode_block.h:116
+msgid "Dingbats"
+msgstr "装飾記号"
+
+#. Translators: Superscripts and Subscripts
+#: ../data/base.xml.in.h:7
+msgid "Super and Sub"
+msgstr "上付き・下付き"
+
+#: ../data/base.xml.in.h:8
+msgid "Bold"
+msgstr "ボールド"
+
+#: ../data/base.xml.in.h:9
+msgid "Italic"
+msgstr "イタリック"
+
+#: ../data/base.xml.in.h:10
+msgid "Script"
+msgstr "手書き"
+
+#: ../data/base.xml.in.h:11
+msgid "Double Struck"
+msgstr "黒板文字"
+
+#: ../data/base.xml.in.h:12
+msgid "All"
+msgstr "すべて"
+
+#: ../data/base.xml.in.h:13 ../data/zh.xml.in.h:2
+msgid "Numbers"
+msgstr "数字"
+
+#: ../data/base.xml.in.h:14
+msgid "Roman"
+msgstr "ローマ数字"
+
+#: ../data/base.xml.in.h:15
+msgid "Enclosed"
+msgstr "囲み文字"
+
+#: ../data/base.xml.in.h:16
+msgid "Fraction"
+msgstr "分数"
+
+#: ../data/base.xml.in.h:17
 msgid "Technical"
 msgstr "技術用記号"
 
-#: ../data/base.xml.in.h:32
+#: ../data/base.xml.in.h:18
 msgid "Unit"
 msgstr "単位"
 
+#: ../data/base.xml.in.h:19
+msgid "Mathematical"
+msgstr "数学演算子"
+
+#: ../data/base.xml.in.h:20
+msgid "Controls"
+msgstr "制御記号"
+
+#: ../data/base.xml.in.h:21
+msgid "OCR"
+msgstr "OCR"
+
+#: ../data/base.xml.in.h:22
+msgid "Graphics"
+msgstr "図形"
+
+#: ../data/base.xml.in.h:23
+msgid "Arrow"
+msgstr "矢印"
+
+#: ../data/base.xml.in.h:24 ../input-pad/unicode_block.h:112
+msgid "Box Drawing"
+msgstr "罫線素片"
+
+#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3937
+msgid "Block"
+msgstr "ブロック"
+
+#: ../data/base.xml.in.h:26
+msgid "Geometric"
+msgstr "幾何学模様"
+
+#: ../data/base.xml.in.h:27
+msgid "Braille"
+msgstr "点字"
+
+#: ../data/base.xml.in.h:28
+msgid "Punctuations"
+msgstr "句読点"
+
+#: ../data/base.xml.in.h:29
+msgid "General"
+msgstr "一般"
+
+#: ../data/base.xml.in.h:30
+msgid "CJK"
+msgstr "CJK"
+
+#: ../data/base.xml.in.h:31 ../input-pad/unicode_block.h:145
+msgid "CJK Compatibility"
+msgstr "CJK 互換文字"
+
+#: ../data/base.xml.in.h:32
+msgid "Small Form"
+msgstr "小字形"
+
 #: ../data/cmd.xml.in.h:1
-msgid "Century Year"
-msgstr "西暦"
-
-#: ../data/cmd.xml.in.h:2
-msgid "ChangeLog date"
-msgstr "ChangeLog 日付"
-
-#: ../data/cmd.xml.in.h:3
 msgid "Command"
 msgstr "コマンド"
 
-#: ../data/cmd.xml.in.h:4
+#: ../data/cmd.xml.in.h:2
 msgid "Date"
 msgstr "日付"
 
-#: ../data/cmd.xml.in.h:5
+#: ../data/cmd.xml.in.h:3
+msgid "Normal Date"
+msgstr "通常の日付"
+
+#: ../data/cmd.xml.in.h:4
 msgid "Date and Time"
 msgstr "日付と時間"
 
+#: ../data/cmd.xml.in.h:5
+msgid "ChangeLog date"
+msgstr "ChangeLog 日付"
+
 #: ../data/cmd.xml.in.h:6
-msgid "English Month"
-msgstr "英語の月"
+msgid "USA English date"
+msgstr "USA 英語の日付"
 
 #: ../data/cmd.xml.in.h:7
-msgid "English Short Month"
-msgstr "英語の短い月"
+msgid "UK English date"
+msgstr "UK 英語の日付"
 
 #: ../data/cmd.xml.in.h:8
-msgid "English Short Weekday"
-msgstr "英語の短い曜日"
+msgid "ISO 8601 date"
+msgstr "ISO 8601 日付"
 
 #: ../data/cmd.xml.in.h:9
-msgid "English Time"
-msgstr "英語の時間"
-
-#: ../data/cmd.xml.in.h:10
-msgid "English Weekday"
-msgstr "英語の曜日"
-
-#: ../data/cmd.xml.in.h:11
 msgid "Era"
 msgstr "和暦"
 
+#: ../data/cmd.xml.in.h:10
+msgid "Century Year"
+msgstr "西暦"
+
+#: ../data/cmd.xml.in.h:11
+msgid "Normal Time"
+msgstr "通常の時間"
+
 #: ../data/cmd.xml.in.h:12
-msgid "ISO 8601 date"
-msgstr "ISO 8601 日付"
+msgid "English Time"
+msgstr "英語の時間"
 
 #: ../data/cmd.xml.in.h:13
 msgid "Month"
 msgstr "月"
 
 #: ../data/cmd.xml.in.h:14
-msgid "Normal Date"
-msgstr "通常の日付"
+msgid "English Month"
+msgstr "英語の月"
 
 #: ../data/cmd.xml.in.h:15
-msgid "Normal Time"
-msgstr "通常の時間"
-
-#: ../data/cmd.xml.in.h:16
 msgid "Short Month"
 msgstr "短い月"
 
+#: ../data/cmd.xml.in.h:16
+msgid "English Short Month"
+msgstr "英語の短い月"
+
 #: ../data/cmd.xml.in.h:17
-msgid "Short Weekday"
-msgstr "短い曜日"
-
-#: ../data/cmd.xml.in.h:18
-msgid "UK English date"
-msgstr "UK 英語の日付"
-
-#: ../data/cmd.xml.in.h:19
-msgid "USA English date"
-msgstr "USA 英語の日付"
-
-#: ../data/cmd.xml.in.h:20
 msgid "Weekday"
 msgstr "曜日"
 
-#: ../data/ja.xml.in.h:1 ../input-pad/unicode_block.h:132
-msgid "CJK Radicals Supplement"
-msgstr "CJK 部首補足"
+#: ../data/cmd.xml.in.h:18
+msgid "English Weekday"
+msgstr "英語の曜日"
 
-#: ../data/ja.xml.in.h:2 ../input-pad/unicode_block.h:136
-msgid "Hiragana"
-msgstr "ひらがな"
+#: ../data/cmd.xml.in.h:19
+msgid "Short Weekday"
+msgstr "短い曜日"
 
-#: ../data/ja.xml.in.h:3
-msgid "Japanese"
-msgstr "日本語"
+#: ../data/cmd.xml.in.h:20
+msgid "English Short Weekday"
+msgstr "英語の短い曜日"
 
-#: ../data/ja.xml.in.h:4 ../input-pad/unicode_block.h:137
-msgid "Katakana"
-msgstr "カタカナ"
+#: ../data/goth.xml.in.h:1 ../input-pad/unicode_block.h:196
+msgid "Gothic"
+msgstr "ゴート文字"
 
-#: ../data/ja.xml.in.h:5 ../data/zh.xml.in.h:4
-msgid "Radicals"
-msgstr "部首"
-
-#: ../data/runr.xml.in.h:1
-msgid "Elder Fuþark"
-msgstr "古代のフザルク (Fuþark)"
-
-#: ../data/runr.xml.in.h:2
-msgid "Fuþorc"
-msgstr "フゾルク (Fuþorc)"
-
-#: ../data/runr.xml.in.h:3
-msgid "Runes"
-msgstr "ルーン文字"
-
-#: ../data/runr.xml.in.h:4
-msgid "Younger Fuþark"
-msgstr "更新されたフザルク (Fuþark)"
-
-#: ../data/keyboard.xml.in.h:1
-msgid "Function Key"
-msgstr "機能キー"
-
-#: ../data/keyboard.xml.in.h:2
-msgid "Key Pad"
-msgstr "キーパッド"
-
-#: ../data/keyboard.xml.in.h:3
-msgid "Keyboard"
-msgstr "キーボード"
-
-#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:27
-#: ../input-pad/window-gtk.c:5234 ../input-pad/window-gtk.c:5235
+#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:50
+#: ../input-pad/window-gtk.c:5320 ../input-pad/window-gtk.c:5321
 msgid "Input Pad"
 msgstr "インプットパッド"
 
+#: ../data/input-pad.ui.h:1
+msgid "_File"
+msgstr "ファイル(_F)"
+
 #: ../data/input-pad.ui.h:2
+msgid "Close the program"
+msgstr "プログラムを閉じる"
+
+#: ../data/input-pad.ui.h:3
+msgid "_Close"
+msgstr "閉じる(_C)"
+
+#: ../data/input-pad.ui.h:4
+msgid "_Pad"
+msgstr "パッド(_P)"
+
+#: ../data/input-pad.ui.h:5
+msgid "_Code Point"
+msgstr "コードポイント(_C)"
+
+#: ../data/input-pad.ui.h:6
+msgid "_Show Pad"
+msgstr "パッドを表示する(_S)"
+
+#: ../data/input-pad.ui.h:7
+msgid "Show _All Characters"
+msgstr "すべての文字を表示する(_A)"
+
+#: ../data/input-pad.ui.h:8
+msgid "Show _Custom Characters"
+msgstr "カスタム文字を表示する(_C)"
+
+#: ../data/input-pad.ui.h:9
+msgid "Show _Nothing"
+msgstr "なにも表示しない(_N)"
+
+#: ../data/input-pad.ui.h:10
+msgid "Show _Keyboard Layout"
+msgstr "キーボードレイアウトを表示する(_K)"
+
+#: ../data/input-pad.ui.h:11
+msgid "_Help"
+msgstr "ヘルプ(_H)"
+
+#: ../data/input-pad.ui.h:12
+msgid "_Troubleshoot"
+msgstr "トラブルシュート(_T)"
+
+#: ../data/input-pad.ui.h:13
+msgid "Code Point Dialog"
+msgstr "コードポイントダイアログ"
+
+#: ../data/input-pad.ui.h:14
+msgid "Unicode"
+msgstr "Unicode"
+
+#: ../data/input-pad.ui.h:15
+msgid "You can choose encoding type"
+msgstr "エンコーディングタイプを選択可能です"
+
+#: ../data/input-pad.ui.h:16
+msgid "Current Encoding"
+msgstr "現在のエンコーディング"
+
+#: ../data/input-pad.ui.h:17
+msgid "Copy Buffer"
+msgstr "バッファをコピー"
+
+#: ../data/input-pad.ui.h:18
+msgid ""
+"Base 16\n"
+"Hex"
+msgstr ""
+"16 進数\n"
+"Hex"
+
+#: ../data/input-pad.ui.h:20
+msgid "Set number case to hexadecimal"
+msgstr "16 進数に設定します"
+
+#: ../data/input-pad.ui.h:21
+msgid ""
+"Base 10\n"
+"Dec"
+msgstr ""
+"10 進数\n"
+"Dec"
+
+#: ../data/input-pad.ui.h:23
+msgid "Set number case to decimal"
+msgstr "10 進数に設定します"
+
+#: ../data/input-pad.ui.h:24
+msgid ""
+"Base 8\n"
+"Oct"
+msgstr ""
+"8 進数\n"
+"Oct"
+
+#: ../data/input-pad.ui.h:26
+msgid "Set number case to octal"
+msgstr "8 進数に設定します"
+
+#: ../data/input-pad.ui.h:27
+msgid ""
+"Base 2\n"
+"Bin"
+msgstr ""
+"2 進数\n"
+"Bin"
+
+#: ../data/input-pad.ui.h:29
+msgid "Set number case to binary"
+msgstr "2 進数に設定します"
+
+#: ../data/input-pad.ui.h:30
+msgid "Code Point:"
+msgstr "コードポイント:"
+
+#: ../data/input-pad.ui.h:31
+msgid "Character:"
+msgstr "文字:"
+
+#: ../data/input-pad.ui.h:32
+msgid "_Send"
+msgstr "送信する(_S)"
+
+#: ../data/input-pad.ui.h:33
+msgid "Input Pad Troubleshoot"
+msgstr "インプットパッドトラブルシュート"
+
+#: ../data/input-pad.ui.h:35
 #, no-c-format
 msgid ""
 "\n"
@@ -303,532 +396,1374 @@ msgstr ""
 "share/input-pad/pad から $HOME/.config/pad にパッドファイルをコピーすることが"
 "可能です。"
 
-#: ../data/input-pad.ui.h:9
-msgid "<b>Keyboard Option</b>"
-msgstr "<b>キーボードオプション</b>"
-
-#: ../data/input-pad.ui.h:10
-msgid "A_vailable layouts:"
-msgstr "利用可能なレイアウト(_V):"
-
-#: ../data/input-pad.ui.h:11
-msgid ""
-"Base 10\n"
-"Dec"
-msgstr ""
-"10 進数\n"
-"Dec"
-
-#: ../data/input-pad.ui.h:13
-msgid ""
-"Base 16\n"
-"Hex"
-msgstr ""
-"16 進数\n"
-"Hex"
-
-#: ../data/input-pad.ui.h:15
-msgid ""
-"Base 2\n"
-"Bin"
-msgstr ""
-"2 進数\n"
-"Bin"
-
-#: ../data/input-pad.ui.h:17
-msgid ""
-"Base 8\n"
-"Oct"
-msgstr ""
-"8 進数\n"
-"Oct"
-
-#: ../data/input-pad.ui.h:19
-msgid "Character:"
-msgstr "文字:"
-
-#: ../data/input-pad.ui.h:20
-msgid "Close the program"
-msgstr "プログラムを閉じる"
-
-#: ../data/input-pad.ui.h:21
-msgid "Code Point Dialog"
-msgstr "コードポイントダイアログ"
-
-#: ../data/input-pad.ui.h:22
-msgid "Code Point:"
-msgstr "コードポイント:"
-
-#: ../data/input-pad.ui.h:23
+#: ../data/input-pad.ui.h:42
 msgid "Configure Keyboard Layouts"
 msgstr "キーボードレイアウトを構成する"
 
-#: ../data/input-pad.ui.h:24
-msgid "Configure Keyboard Options"
-msgstr "キーボードオプションを構成する"
-
-#: ../data/input-pad.ui.h:25
-msgid "Copy Buffer"
-msgstr "バッファをコピー"
-
-#: ../data/input-pad.ui.h:26
-msgid "Current Encoding"
-msgstr "現在のエンコーディング"
-
-#: ../data/input-pad.ui.h:28
-msgid "Input Pad Troubleshoot"
-msgstr "インプットパッドトラブルシュート"
-
-#: ../data/input-pad.ui.h:29
-msgid "Set number case to binary"
-msgstr "2 進数に設定します"
-
-#: ../data/input-pad.ui.h:30
-msgid "Set number case to decimal"
-msgstr "10 進数に設定します"
-
-#: ../data/input-pad.ui.h:31
-msgid "Set number case to hexadecimal"
-msgstr "16 進数に設定します"
-
-#: ../data/input-pad.ui.h:32
-msgid "Set number case to octal"
-msgstr "8 進数に設定します"
-
-#: ../data/input-pad.ui.h:33
-msgid "Show _All Characters"
-msgstr "すべての文字を表示する(_A)"
-
-#: ../data/input-pad.ui.h:34
-msgid "Show _Custom Characters"
-msgstr "カスタム文字を表示する(_C)"
-
-#: ../data/input-pad.ui.h:35
-msgid "Show _Keyboard Layout"
-msgstr "キーボードレイアウトを表示する(_K)"
-
-#: ../data/input-pad.ui.h:36
-msgid "Show _Nothing"
-msgstr "なにも表示しない(_N)"
-
-#: ../data/input-pad.ui.h:37
-msgid "The input pad is a tool to send a character on button."
-msgstr "インプットパッドはボタン上の文字を送るツールです。"
-
-#: ../data/input-pad.ui.h:38
-msgid "Unicode"
-msgstr "Unicode"
-
-#: ../data/input-pad.ui.h:39
-msgid "Use the defualt XKB option"
-msgstr "デフォルトの XKB オプションを使用する"
-
-#: ../data/input-pad.ui.h:40
-msgid "You can choose encoding type"
-msgstr "エンコーディングタイプを選択可能です"
-
-#: ../data/input-pad.ui.h:41
-msgid "_Close"
-msgstr "閉じる(_C)"
-
-#: ../data/input-pad.ui.h:42
-msgid "_Code Point"
-msgstr "コードポイント(_C)"
-
 #: ../data/input-pad.ui.h:43
-msgid "_File"
-msgstr "ファイル(_F)"
+msgid "A_vailable layouts:"
+msgstr "利用可能なレイアウト(_V):"
 
 #: ../data/input-pad.ui.h:44
-msgid "_Help"
-msgstr "ヘルプ(_H)"
-
-#: ../data/input-pad.ui.h:45
 msgid "_Layouts shown in the list:"
 msgstr "リストに表示されるレイアウト(_L):"
 
-#: ../data/input-pad.ui.h:46
+#: ../data/input-pad.ui.h:45
 msgid "_Options"
 msgstr "オプション(_O)"
 
+#: ../data/input-pad.ui.h:46
+msgid "Configure Keyboard Options"
+msgstr "キーボードオプションを構成する"
+
 #: ../data/input-pad.ui.h:47
-msgid "_Pad"
-msgstr "パッド(_P)"
-
-#: ../data/input-pad.ui.h:48
-msgid "_Send"
-msgstr "送信する(_S)"
-
-#: ../data/input-pad.ui.h:49
-msgid "_Show Pad"
-msgstr "パッドを表示する(_S)"
-
-#: ../data/input-pad.ui.h:50
-msgid "_Troubleshoot"
-msgstr "トラブルシュート(_T)"
-
-#: ../data/input-pad.ui.h:51
 msgid "_Use the default keyboard option"
 msgstr "デフォルトのキーボードオプションを使用する(_U)"
+
+#: ../data/input-pad.ui.h:48
+msgid "Use the defualt XKB option"
+msgstr "デフォルトの XKB オプションを使用する"
+
+#: ../data/input-pad.ui.h:49
+msgid "<b>Keyboard Option</b>"
+msgstr "<b>キーボードオプション</b>"
+
+#: ../data/input-pad.ui.h:51
+msgid "The input pad is a tool to send a character on button."
+msgstr "インプットパッドはボタン上の文字を送るツールです。"
 
 #: ../data/input-pad.ui.h:52
 msgid "translator_credits"
 msgstr "translator_credits"
 
-#. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
+#. "IPA" stands for "International Phonetic Alphabet"
+#: ../data/ipa-obsolete.xml.in.h:2
+msgid "IPA (Obsolete)"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:3 ../data/ipa.xml.in.h:6
+msgid "Open back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:4
+msgid "Voiceless palatal implosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:5 ../data/ipa.xml.in.h:133
+msgid "Alveolar click"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:6 ../data/ipa.xml.in.h:25
+msgid "Voiced alveolar affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:7 ../data/ipa.xml.in.h:27
+msgid "Voiced alveopalatal affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:8 ../data/ipa.xml.in.h:26
+msgid "Voiced palato-alveolar affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:9
+msgid "Voiceless velar implosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:10
+msgid "Syllabic alveolar nasal"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:11
+msgid "Voiceless bilabial implosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:12
+msgid "Voiced strident apico-alveolar trill"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:13 ../data/ipa.xml.in.h:19
+msgid "Voiceless alveopalatal fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:14 ../data/ipa.xml.in.h:99
+msgid "Voiceless alveopalatal affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:15 ../data/ipa.xml.in.h:97
+msgid "Voiceless alveolar affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:16 ../data/ipa.xml.in.h:98
+msgid "Voiceless palato-alveolar affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:17
+msgid "Voiceless alveolar implosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:18 ../data/ipa.xml.in.h:132
+msgid "Dental click"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:19
+msgid "Voiceless uvular implosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:20 ../data/ipa.xml.in.h:123
+msgid "Voiced alveopalatal fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:21 ../data/ipa.xml.in.h:102
+msgid "Near-close near-back vowel"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in.h:22 ../data/ipa.xml.in.h:135
+msgid "Alveolar lateral click"
+msgstr ""
+
+#. "IPA" stands for "International Phonetic Alphabet"
+#: ../data/ipa.xml.in.h:2
+msgid "IPA"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:3
+msgid "Open front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:4
+msgid "Open central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:5
+msgid "Near-open central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:7
+msgid "Open back rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:8
+msgid "Open-mid back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:9
+msgid "Near-open front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:10
+msgid "Voiced bilabial plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:11
+msgid "Voiced labiodental affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:12
+msgid "Voiced bilabial implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:13
+msgid "Bilabial trill"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:14
+msgid "Voiced bilabial fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:15
+msgid "Voiceless palatal plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:16
+msgid "Voiceless palatal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:17
+msgid "Voiceless palatal affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:18
+msgid "Voiceless palatal lateral affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:20
+msgid "Voiced alveolar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:21
+msgid "Voiced alveolar implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:22
+msgid "Voiced retroflex plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:23
+msgid "Voiced dental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:24
+msgid "Voiced alveolar lateral affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:28
+msgid "Voiced retroflex affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:29
+msgid "Close-mid front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:30
+msgid "Close-mid central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:31
+msgid "Mid-central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:32
+msgid "Rhotacized mid-central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:33
+msgid "Open-mid front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:34
+msgid "Open-mid central rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:35
+msgid "Open-mid central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:36
+msgid "Rhotacized open-mid central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:37
+msgid "Voiceless labiodental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:38
+msgid "Velopharyngeal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:39
+msgid "Voiced velar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:40
+msgid "Voiced velar implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:41
+msgid "Voiced uvular plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:42
+msgid "Voiced uvular implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:43
+msgid "Voiceless glottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:44
+msgid "Voiced glottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:45
+msgid "Voiceless pharyngeal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:46
+msgid "Voiceless coarticulated velar and palato-alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:47
+msgid "Voiceless epiglottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:48
+msgid "Close front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:49
+msgid "Near-close near-front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:50
+msgid "Near-close central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:51
+msgid "Close central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:52
+msgid "Palatal approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:53
+msgid "Voiced palatal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:54
+msgid "Voiced palatal plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:55
+msgid "Voiced palatal affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:56
+msgid "Voiced palatal implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:57
+msgid "Voiceless velar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:58
+msgid "Voiceless velar lateral affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:59
+msgid "Voiceless velar affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:60
+msgid "Alveolar lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:61
+msgid "Velarized alveolar lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:62
+msgid "Voiceless alveolar lateral fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:63
+msgid "Retroflex lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:64
+msgid "Voiced alveolar lateral fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:65
+msgid "Velar lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:66
+msgid "Bilabial nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:67
+msgid "Labiodental nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:68
+msgid "Alveolar nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:69
+msgid "Velar nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:70
+msgid "Palatal nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:71
+msgid "Retroflex nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:72
+msgid "Uvular nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:73
+msgid "Close-mid back rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:74
+msgid "Close-mid front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:75
+msgid "Close-mid central rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:76
+msgid "Open-mid front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:77
+msgid "Open front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:78
+msgid "Voiceless bilabial plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:79
+msgid "Voiceless bilabial-labiodental affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:80
+msgid "Voiceless bilabial affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:81
+msgid "Voiceless labiodental affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:82
+msgid "Voiceless uvular plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:83
+msgid "Alveolar trill"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:84
+msgid "Alveolar flap"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:85
+msgid "Alveolar lateral flap"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:86
+msgid "Uvular trill"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:87
+msgid "Retroflex flap"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:88
+msgid "Alveolar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:89
+msgid "Retroflex approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:90
+msgid "Voiced uvular fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:91
+msgid "Voiceless alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:92
+msgid "Voiceless palato-alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:93
+msgid "Voiceless retroflex fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:94
+msgid "Voiceless alveolar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:95
+msgid "Voiceless retroflex plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:96
+msgid "Voiceless alveolar lateral affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:100
+msgid "Voiceless retroflex affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:101
+msgid "Close back rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:103
+msgid "Near-close central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:104
+msgid "Close central rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:105
+msgid "Labial-palatal approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:106
+msgid "Close back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:107
+msgid "Voiced labiodental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:108
+msgid "Labiodental flap"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:109
+msgid "Labiodental approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:110
+msgid "Voiced velar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:111
+msgid "Close-mid back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:112
+msgid "Voiced labiovelar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:113
+msgid "Voiceless labiovelar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:114
+msgid "Velar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:115
+msgid "Bilabial percussive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:116
+msgid "Voiceless velar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:117
+msgid "Voiceless uvular fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:118
+msgid "Close front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:119
+msgid "Near-close near-front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:120
+msgid "Palatal lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:121
+msgid "Voiced alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:122
+msgid "Voiced palato-alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:124
+msgid "Voiced retroflex fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:125
+msgid "Voiceless dental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:126
+msgid "Voiceless bilabial fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:127
+msgid "Glottal stop"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:128
+msgid "Epiglottal plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:129
+msgid "Voiced pharyngeal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:130
+msgid "Voiced epiglottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:131
+msgid "Bilabial click"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:134
+msgid "Palatal click"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:136
+msgid "Bidental percussive"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:137
+msgid "Aspiration mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:138
+msgid "Non-aspiration mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:139
+msgid "Breathy voice mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:140
+msgid "Palatalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:141
+msgid "Lateral release mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:142
+msgid "Nasal release mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:143
+msgid "Labio-palatalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:144
+msgid "Labiodentalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:145
+msgid "Labialization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:146
+msgid "Velarization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:147
+msgid "Glottalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:148
+msgid "Pharyngealization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:149
+msgid "Combining laryngealization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:150
+msgid "Combining retroflexion mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:151
+msgid "Ejection mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:152
+msgid "Rhotacization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:153
+msgid "Combining dentalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:154
+msgid "Combining dentolabialization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:155
+msgid "Combining alveolarization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:156
+msgid "Combining linguolabialization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:157
+msgid "Combining apicalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:158
+msgid "Combining laminalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:159
+msgid "Combining centralization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:160
+msgid "Combining mid-centralization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:161
+msgid "Combining nasalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:162
+msgid "Combining nasalization mark below"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:163
+msgid "Combining denasalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:164
+msgid "Combining nasal friction mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:165
+msgid "Combining velopharyngeal friction mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:166
+msgid "Combining voiced mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:167
+msgid "Combining voiceless mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:168
+msgid "Combining breathy voice mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:169
+msgid "Combining unreleased stop mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:170
+msgid "Combining more rounded mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:171
+msgid "Combining less rounded mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:172
+msgid "Combining labial spreading mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:173
+msgid "Combining syllabic mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:174
+msgid "Combining top tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:175
+msgid "Combining high tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:176
+msgid "Combining mid tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:177
+msgid "Combining low tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:178
+msgid "Combining bottom tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:179
+msgid "Combining falling tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:180
+msgid "Combining high falling tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:181
+msgid "Combining low falling tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:182
+msgid "Combining rising tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:183
+msgid "Combining high rising tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:184
+msgid "Combining low rising tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:185
+msgid "Combining dipping tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:186
+msgid "Combining peaking tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:187
+msgid "Top tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:188
+msgid "High tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:189
+msgid "Mid tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:190
+msgid "Low tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:191
+msgid "Bottom tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:192
+msgid "Falling tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:193
+msgid "High falling tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:194
+msgid "Rising tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:195
+msgid "High rising tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:196
+msgid "Low rising tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:197
+msgid "Dipping tone trigraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:198
+msgid "Peaking tone trigraph"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:199
+msgid "Elongation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:200
+msgid "Weak elongation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:201
+msgid "Raised sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:202
+msgid "Lowered sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:203
+msgid "Combining raised sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:204
+msgid "Combining lowered sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:205
+msgid "Combining tongue root advancement mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:206
+msgid "Combining tongue root retraction mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:207
+msgid "Combining strong articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:208
+msgid "Combining weak articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:209
+msgid "Combining whistled articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:210
+msgid "Combining sliding articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:211
+msgid "Egression mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:212
+msgid "Ingression mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:213
+msgid "Combining diphthong mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:214
+msgid "Combining ligature tie"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:215
+msgid "Combining ligature undertie"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:216
+msgid "Stress mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:217
+msgid "Weak stress mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:218
+msgid "Syllable break"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:219
+msgid "Opening orthographic bracket"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:220
+msgid "Closing orthographic bracket"
+msgstr ""
+
+#: ../data/ja.xml.in.h:1
+msgid "Japanese"
+msgstr "日本語"
+
+#: ../data/ja.xml.in.h:2 ../input-pad/unicode_block.h:136
+msgid "Hiragana"
+msgstr "ひらがな"
+
+#: ../data/ja.xml.in.h:3 ../input-pad/unicode_block.h:137
+msgid "Katakana"
+msgstr "カタカナ"
+
+#: ../data/ja.xml.in.h:4 ../data/zh.xml.in.h:3
+msgid "Radicals"
+msgstr "部首"
+
+#: ../data/ja.xml.in.h:5 ../input-pad/unicode_block.h:132
+msgid "CJK Radicals Supplement"
+msgstr "CJK 部首補足"
+
+#: ../data/keyboard.xml.in.h:1
+msgid "Keyboard"
+msgstr "キーボード"
+
+#: ../data/keyboard.xml.in.h:2
+msgid "Function Key"
+msgstr "機能キー"
+
+#: ../data/keyboard.xml.in.h:3
+msgid "Key Pad"
+msgstr "キーパッド"
+
+#: ../data/latin.xml.in.h:1
+msgid "ASCII"
+msgstr "ASCII"
+
+#: ../data/latin.xml.in.h:2 ../input-pad/unicode_block.h:38
+msgid "Latin-1 Supplement"
+msgstr "ラテン文字-1 補足"
+
+#: ../data/latin.xml.in.h:3 ../input-pad/unicode_block.h:39
+msgid "Latin Extended-A"
+msgstr "ラテン文字拡張-A"
+
+#: ../data/runr.xml.in.h:1
+msgid "Runes (Unicode Block)"
+msgstr "ルーン文字 (Unicode ブロック)"
+
+#: ../data/runr.xml.in.h:2
+msgid "Runes (Elder Fuþark)"
+msgstr "ルーン文字 (古代のフザルク)"
+
+#: ../data/runr.xml.in.h:3
+msgid "Runes (Younger Fuþark)"
+msgstr "ルーン文字 (更新されたフザルク)"
+
+#: ../data/runr.xml.in.h:4
+msgid "Runes (Fuþorc)"
+msgstr "ルーン文字 (フゾルク)"
+
+#: ../data/shaw.xml.in.h:1 ../input-pad/unicode_block.h:200
+msgid "Shavian"
+msgstr "ショウ文字"
+
+#: ../data/str.xml.in.h:1
+msgid "Chat"
+msgstr "チャット"
+
 #: ../data/str.xml.in.h:2
+msgid "Smileys"
+msgstr "顔文字"
+
+#: ../data/str.xml.in.h:3
+msgid "Smile"
+msgstr "スマイル"
+
+#: ../data/str.xml.in.h:4
+msgid "Smile Big"
+msgstr "大きなスマイル"
+
+#: ../data/str.xml.in.h:5
+msgid "Sad"
+msgstr "悲しい"
+
+#: ../data/str.xml.in.h:6
+msgid "Wink"
+msgstr "ウインク"
+
+#: ../data/str.xml.in.h:7
+msgid "Tongue"
+msgstr "舌"
+
+#: ../data/str.xml.in.h:8
+msgid "Shock"
+msgstr "ショック"
+
+#: ../data/str.xml.in.h:9
+msgid "Kiss | Secret"
+msgstr "キス | 秘密"
+
+#: ../data/str.xml.in.h:10
+msgid "Glasses Cool | Eyeroll"
+msgstr "サングラス | 目をむく"
+
+#: ../data/str.xml.in.h:11
+msgid "Glasses Cool"
+msgstr "サングラス"
+
+#: ../data/str.xml.in.h:12
+msgid "Angry"
+msgstr "怒る"
+
+#: ../data/str.xml.in.h:13
+msgid "Embarrassed"
+msgstr "あせる"
+
+#: ../data/str.xml.in.h:14
+msgid "Confused"
+msgstr "混乱する"
+
+#: ../data/str.xml.in.h:15
+msgid "Crying"
+msgstr "泣き顔"
+
+#: ../data/str.xml.in.h:16
+msgid "Neutral"
+msgstr "中立"
+
+#: ../data/str.xml.in.h:17
+msgid "Thinking"
+msgstr "考え中"
+
+#: ../data/str.xml.in.h:18
+msgid "Don't Know"
+msgstr "分かりません"
+
+#: ../data/str.xml.in.h:19
+msgid "Party"
+msgstr "パーティ"
+
+#: ../data/str.xml.in.h:20
+msgid "Yawn"
+msgstr "あくび"
+
+#: ../data/str.xml.in.h:21
+msgid "Bunny"
+msgstr "うさぎ"
+
+#: ../data/str.xml.in.h:22
+msgid "Sick"
+msgstr "病気"
+
+#: ../data/str.xml.in.h:23
+msgid "Devil"
+msgstr "悪魔"
+
+#: ../data/str.xml.in.h:24
+msgid "Angel"
+msgstr "天使"
+
+#: ../data/str.xml.in.h:25
+msgid "Love"
+msgstr "ラブ"
+
+#: ../data/str.xml.in.h:26
+msgid "Love Over"
+msgstr "ラブオーバー"
+
+#: ../data/str.xml.in.h:27
+msgid "Cat"
+msgstr "猫"
+
+#: ../data/str.xml.in.h:28
+msgid "Dog"
+msgstr "犬"
+
+#: ../data/str.xml.in.h:29
+msgid "Moon"
+msgstr "月"
+
+#: ../data/str.xml.in.h:30
+msgid "Star"
+msgstr "星"
+
+#: ../data/str.xml.in.h:31
+msgid "Film"
+msgstr "フィルム"
+
+#: ../data/str.xml.in.h:32
+msgid "Musical Note"
+msgstr "音符"
+
+#: ../data/str.xml.in.h:33
+msgid "Mail"
+msgstr "メール"
+
+#: ../data/str.xml.in.h:34
+msgid "Clock"
+msgstr "時計"
+
+#: ../data/str.xml.in.h:35
+msgid "Kiss"
+msgstr "キス"
+
+#: ../data/str.xml.in.h:36
+msgid "Present"
+msgstr "プレゼント"
+
+#: ../data/str.xml.in.h:37
+msgid "Cake"
+msgstr "ケーキ"
+
+#: ../data/str.xml.in.h:38
+msgid "Coffee"
+msgstr "コーヒー"
+
+#: ../data/str.xml.in.h:39
+msgid "Phone"
+msgstr "電話"
+
+#: ../data/str.xml.in.h:40
+msgid "Hug Left"
+msgstr "ハグ左"
+
+#: ../data/str.xml.in.h:41
+msgid "Hug Right"
+msgstr "ハグ右"
+
+#: ../data/str.xml.in.h:42
+msgid "Beer"
+msgstr "ビール"
+
+#: ../data/str.xml.in.h:43
+msgid "Drink"
+msgstr "飲む"
+
+#: ../data/str.xml.in.h:44
+msgid "Boy"
+msgstr "少年"
+
+#: ../data/str.xml.in.h:45
+msgid "Girl"
+msgstr "少女"
+
+#: ../data/str.xml.in.h:46
+msgid "Yes"
+msgstr "はい"
+
+#: ../data/str.xml.in.h:47
+msgid "No"
+msgstr "いいえ"
+
+#: ../data/str.xml.in.h:48
+msgid "Shut Mouth"
+msgstr "口をつぐむ"
+
+#: ../data/str.xml.in.h:49
+msgid "Money Mouth"
+msgstr "金の口"
+
+#: ../data/str.xml.in.h:50
+msgid "Foot in Mouth"
+msgstr "失言"
+
+#: ../data/str.xml.in.h:51
+msgid "Shout"
+msgstr "叫ぶ"
+
+#: ../data/str.xml.in.h:52
+msgid "Monkey"
+msgstr "猿"
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:54
+msgid "Smileys (Japanese)"
+msgstr "顔文字 (日本語)"
+
+#: ../data/str.xml.in.h:55
+msgid "Smoking"
+msgstr "タバコを吸う"
+
+#: ../data/str.xml.in.h:56
+msgid "Sorry"
+msgstr "ごめんなさい"
+
+#: ../data/str.xml.in.h:57
+msgid "Hug"
+msgstr "ハグ"
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:59
+msgid "Smileys (Japanese 2ch)"
+msgstr "顔文字 (日本語 2ch)"
+
+#: ../data/str.xml.in.h:60
+msgid "Hey"
+msgstr "おーい"
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:62
+msgid "Smileys (Chinese)"
+msgstr "顔文字 (中国語)"
+
+#: ../data/str.xml.in.h:63
+msgid "Crow"
+msgstr "カラス"
+
+#: ../data/str.xml.in.h:64
+msgid "Bear"
+msgstr "熊"
+
+#. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
+#: ../data/str.xml.in.h:66
 msgid "Acronym"
 msgstr "略語"
 
-#: ../data/str.xml.in.h:3
+#: ../data/str.xml.in.h:67
 msgid "Acronym (Computer)"
 msgstr "略語 (コンピューター)"
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:5
+#: ../data/str.xml.in.h:69
 msgid "Acronym (Japanese)"
 msgstr "略語 (日本語)"
 
-#: ../data/str.xml.in.h:6
-msgid "Angel"
-msgstr "天使"
-
-#: ../data/str.xml.in.h:7
-msgid "Angry"
-msgstr "怒る"
-
-#: ../data/str.xml.in.h:8
-msgid "Bear"
-msgstr "熊"
-
-#: ../data/str.xml.in.h:9
-msgid "Beer"
-msgstr "ビール"
-
-#: ../data/str.xml.in.h:10
-msgid "Boy"
-msgstr "少年"
-
-#: ../data/str.xml.in.h:11
-msgid "Bunny"
-msgstr "うさぎ"
-
-#: ../data/str.xml.in.h:12
-msgid "Bye"
-msgstr "さよなら"
-
-#: ../data/str.xml.in.h:13
-msgid "Cake"
-msgstr "ケーキ"
-
-#: ../data/str.xml.in.h:14
-msgid "Can't get together (Guda Guda)"
-msgstr "まとまらない (Guda Guda)"
-
-#: ../data/str.xml.in.h:15
-msgid "Cannot read between lines (Kuuki Ga Yomenai)"
-msgstr "空気が読めない (Kuuki Ga Yomenai)"
-
-#: ../data/str.xml.in.h:16
-msgid "Cat"
-msgstr "猫"
-
-#: ../data/str.xml.in.h:17
-msgid "Chat"
-msgstr "チャット"
-
-#: ../data/str.xml.in.h:18
-msgid "Clock"
-msgstr "時計"
-
-#: ../data/str.xml.in.h:19
-msgid "Coffee"
-msgstr "コーヒー"
-
-#: ../data/str.xml.in.h:20
-msgid "Confused"
-msgstr "混乱する"
-
-#: ../data/str.xml.in.h:21
-msgid "Crow"
-msgstr "カラス"
-
-#: ../data/str.xml.in.h:22
-msgid "Crying"
-msgstr "泣き顔"
-
-#: ../data/str.xml.in.h:23
-msgid "Detail (Kuwashiku)"
-msgstr "詳しく"
-
-#: ../data/str.xml.in.h:24
-msgid "Devil"
-msgstr "悪魔"
-
-#: ../data/str.xml.in.h:25
+#: ../data/str.xml.in.h:70
 msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
 msgstr "敢えて空気を読まない"
 
-#: ../data/str.xml.in.h:26
-msgid "Dog"
-msgstr "犬"
+#: ../data/str.xml.in.h:71
+msgid "Can't get together (Guda Guda)"
+msgstr "まとまらない (Guda Guda)"
 
-#: ../data/str.xml.in.h:27
-msgid "Don't Know"
-msgstr "分かりません"
-
-#: ../data/str.xml.in.h:28
-msgid "Drink"
-msgstr "飲む"
-
-#: ../data/str.xml.in.h:29
-msgid "Dude (Oi!)"
-msgstr "つっこみ (Oi!)"
-
-#: ../data/str.xml.in.h:30
-msgid "Embarrassed"
-msgstr "あせる"
-
-#: ../data/str.xml.in.h:31
-msgid "Excited (Kitakore)"
-msgstr "興奮する (Kitakore)"
-
-#: ../data/str.xml.in.h:32
-msgid "Excited (Waku Waku Teka Teka)"
-msgstr "興奮する (Waku Waku Teka Teka)"
-
-#: ../data/str.xml.in.h:33
-msgid "False Start (Flying Get)"
-msgstr "フライングゲット (Flying Get)"
-
-#: ../data/str.xml.in.h:34
-msgid "Film"
-msgstr "フィルム"
-
-#: ../data/str.xml.in.h:35
-msgid "Foot in Mouth"
-msgstr "失言"
-
-#: ../data/str.xml.in.h:36
-msgid "Fulfilling Life (Real life is Zyujitsu)"
-msgstr "充実した生活 (Real life is Zyujitsu)"
-
-#: ../data/str.xml.in.h:37
-msgid "Girl"
-msgstr "少女"
-
-#: ../data/str.xml.in.h:38
-msgid "Glasses Cool"
-msgstr "サングラス"
-
-#: ../data/str.xml.in.h:39
-msgid "Glasses Cool | Eyeroll"
-msgstr "サングラス | 目をむく"
-
-#: ../data/str.xml.in.h:40
-msgid "Good job (Otsukare)"
-msgstr "お疲れ様 (Otsukare)"
-
-#: ../data/str.xml.in.h:41
-msgid "He (Yatsu &lt;- Yashi)"
-msgstr "彼 (Yatsu &lt;- Yashi)"
-
-#: ../data/str.xml.in.h:42
-msgid "Hey"
-msgstr "おーい"
-
-#: ../data/str.xml.in.h:43
-msgid "Hug"
-msgstr "ハグ"
-
-#: ../data/str.xml.in.h:44
-msgid "Hug Left"
-msgstr "ハグ左"
-
-#: ../data/str.xml.in.h:45
-msgid "Hug Right"
-msgstr "ハグ右"
-
-#: ../data/str.xml.in.h:46
-msgid "In The Meantime (Toriaezu, Ma)"
-msgstr "とりあえず (Toriaezu, Ma)"
-
-#: ../data/str.xml.in.h:47
-msgid "Kiss"
-msgstr "キス"
-
-#: ../data/str.xml.in.h:48
-msgid "Kiss | Secret"
-msgstr "キス | 秘密"
-
-#: ../data/str.xml.in.h:49
-msgid "Laugh"
-msgstr "笑う"
-
-#: ../data/str.xml.in.h:50
-msgid "Laugh (Warau)"
-msgstr "笑う (Warau)"
-
-#: ../data/str.xml.in.h:51
-msgid "Love"
-msgstr "ラブ"
-
-#: ../data/str.xml.in.h:52
-msgid "Love Over"
-msgstr "ラブオーバー"
-
-#: ../data/str.xml.in.h:53
-msgid "Mail"
-msgstr "メール"
-
-#: ../data/str.xml.in.h:54
-msgid "Money Mouth"
-msgstr "金の口"
-
-#: ../data/str.xml.in.h:55
-msgid "Monkey"
-msgstr "猿"
-
-#: ../data/str.xml.in.h:56
-msgid "Moon"
-msgstr "月"
-
-#: ../data/str.xml.in.h:57
-msgid "Musical Note"
-msgstr "音符"
-
-#: ../data/str.xml.in.h:58
-msgid "Neutral"
-msgstr "中立"
-
-#: ../data/str.xml.in.h:59
-msgid "No"
-msgstr "いいえ"
-
-#: ../data/str.xml.in.h:60
-msgid "Omission (Shouryaku)"
-msgstr "省略 (Shouryaku)"
-
-#: ../data/str.xml.in.h:61
-msgid "Party"
-msgstr "パーティ"
-
-#: ../data/str.xml.in.h:62
-msgid "Phone"
-msgstr "電話"
-
-#: ../data/str.xml.in.h:63
-msgid "Present"
-msgstr "プレゼント"
-
-#: ../data/str.xml.in.h:64
-msgid "Sad"
-msgstr "悲しい"
-
-#: ../data/str.xml.in.h:65
+#: ../data/str.xml.in.h:72
 msgid "Say whatever one feels (Iitaidake)"
 msgstr "言いたいだけ"
 
-#: ../data/str.xml.in.h:66
-msgid "Shock"
-msgstr "ショック"
+#: ../data/str.xml.in.h:73
+msgid "Excited (Kitakore)"
+msgstr "興奮する (Kitakore)"
 
-#: ../data/str.xml.in.h:67
-msgid "Shout"
-msgstr "叫ぶ"
-
-#: ../data/str.xml.in.h:68
-msgid "Shut Mouth"
-msgstr "口をつぐむ"
-
-#: ../data/str.xml.in.h:69
-msgid "Sick"
-msgstr "病気"
-
-#: ../data/str.xml.in.h:70
-msgid "Smile"
-msgstr "スマイル"
-
-#: ../data/str.xml.in.h:71
-msgid "Smile Big"
-msgstr "大きなスマイル"
-
-#: ../data/str.xml.in.h:72
-msgid "Smileys"
-msgstr "顔文字"
-
-#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
 #: ../data/str.xml.in.h:74
-msgid "Smileys (Chinese)"
-msgstr "顔文字 (中国語)"
+msgid "Detail (Kuwashiku)"
+msgstr "詳しく"
 
-#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:75
+msgid "Cannot read between lines (Kuuki Ga Yomenai)"
+msgstr "空気が読めない (Kuuki Ga Yomenai)"
+
 #: ../data/str.xml.in.h:76
-msgid "Smileys (Japanese 2ch)"
-msgstr "顔文字 (日本語 2ch)"
+msgid "Omission (Shouryaku)"
+msgstr "省略 (Shouryaku)"
 
-#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:77
+msgid "Excited (Waku Waku Teka Teka)"
+msgstr "興奮する (Waku Waku Teka Teka)"
+
 #: ../data/str.xml.in.h:78
-msgid "Smileys (Japanese)"
-msgstr "顔文字 (日本語)"
+msgid "Laugh"
+msgstr "笑う"
 
 #: ../data/str.xml.in.h:79
-msgid "Smoking"
-msgstr "タバコを吸う"
+msgid "Dude (Oi!)"
+msgstr "つっこみ (Oi!)"
 
 #: ../data/str.xml.in.h:80
-msgid "Sorry"
-msgstr "ごめんなさい"
+msgid "In The Meantime (Toriaezu, Ma)"
+msgstr "とりあえず (Toriaezu, Ma)"
 
 #: ../data/str.xml.in.h:81
-msgid "Star"
-msgstr "星"
+msgid "Bye"
+msgstr "さよなら"
 
 #: ../data/str.xml.in.h:82
-msgid "Thinking"
-msgstr "考え中"
+msgid "False Start (Flying Get)"
+msgstr "フライングゲット (Flying Get)"
 
 #: ../data/str.xml.in.h:83
-msgid "Tongue"
-msgstr "舌"
+msgid "Fulfilling Life (Real life is Zyujitsu)"
+msgstr "充実した生活 (Real life is Zyujitsu)"
 
 #: ../data/str.xml.in.h:84
-msgid "Wink"
-msgstr "ウインク"
+msgid "Laugh (Warau)"
+msgstr "笑う (Warau)"
 
 #: ../data/str.xml.in.h:85
-msgid "Yawn"
-msgstr "あくび"
+msgid "Good job (Otsukare)"
+msgstr "お疲れ様 (Otsukare)"
 
 #: ../data/str.xml.in.h:86
-msgid "Yes"
-msgstr "はい"
+msgid "He (Yatsu &lt;- Yashi)"
+msgstr "彼 (Yatsu &lt;- Yashi)"
 
 #: ../data/w3c.xml.in.h:1
 msgid "Char References"
 msgstr "文字参照"
 
-#: ../data/zh.xml.in.h:1 ../input-pad/unicode_block.h:138
-msgid "Bopomofo"
-msgstr "Bopomofo"
-
-#: ../data/zh.xml.in.h:2
+#: ../data/zh.xml.in.h:1
 msgid "Chinese"
 msgstr "中国語"
 
-#: ../input-pad/eek-gtk.c:61
+#: ../data/zh.xml.in.h:4 ../input-pad/unicode_block.h:138
+msgid "Bopomofo"
+msgstr "Bopomofo"
+
+#: ../input-pad/eek-gtk.c:62
 msgid "Use libeek to draw keyboard"
 msgstr "キーボードを描画するために libeek を使用する"
 
-#: ../input-pad/eek-gtk.c:228
+#: ../input-pad/eek-gtk.c:234
 msgid "eekboard layout"
 msgstr "eekboard レイアウト"
 
-#: ../input-pad/eek-gtk.c:240
+#: ../input-pad/eek-gtk.c:246
 msgid "eekboard Options"
 msgstr "eekboard オプション"
 
-#: ../input-pad/eek-gtk.c:240
+#: ../input-pad/eek-gtk.c:246
 msgid "Show eekboard Options"
 msgstr "eekboard オプションを表示する"
 
@@ -1432,10 +2367,6 @@ msgstr "カリア文字"
 msgid "Old Italic"
 msgstr "オールド・イタリック"
 
-#: ../input-pad/unicode_block.h:196
-msgid "Gothic"
-msgstr "ゴート文字"
-
 #: ../input-pad/unicode_block.h:197
 msgid "Ugaritic"
 msgstr "ウガリト文字"
@@ -1447,10 +2378,6 @@ msgstr "楔形文字"
 #: ../input-pad/unicode_block.h:199
 msgid "Deseret"
 msgstr "デゼレット文字"
-
-#: ../input-pad/unicode_block.h:200
-msgid "Shavian"
-msgstr "ショウ文字"
 
 #: ../input-pad/unicode_block.h:201
 msgid "Osmanya"
@@ -1666,5 +2593,5 @@ msgid "Group"
 msgstr "グループ"
 
 #: ../input-pad/window-gtk.c:3715
-msgid "Sub Group"
+msgid "Subgroup"
 msgstr "サブグループ"

@@ -3,56 +3,59 @@
 # This file is distributed under the same license as the input-pad package.
 #
 # Translators:
-# Takao Fujiwara <takao.fujiwara1@gmail.com>, 2010-2012.
+# Yuri Chornoivan <yurchor@ukr.net>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: input-pad HEAD\n"
+"Project-Id-Version: input-pad\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
 "POT-Creation-Date: 2012-06-22 18:01+0900\n"
-"PO-Revision-Date: 2012-06-22 17:50+0900\n"
-"Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
-"Language-Team: Source\n"
-"Language: en\n"
+"PO-Revision-Date: 2012-06-22 18:01+0900\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: ../data/alphabet.xml.in.in.h:1
 msgid "Alphabets"
-msgstr ""
+msgstr "Алфавіти"
 
 #: ../data/base.xml.in.h:1
 msgid "Symbols"
-msgstr ""
+msgstr "Символи"
 
 #: ../data/base.xml.in.h:2
 msgid "Currency"
-msgstr ""
+msgstr "Валюти"
 
 #: ../data/base.xml.in.h:3
 msgid "Letterlike"
-msgstr ""
+msgstr "Символи літер"
 
 #: ../data/base.xml.in.h:4
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Різне"
 
 #: ../data/base.xml.in.h:5 ../input-pad/unicode_block.h:116
 msgid "Dingbats"
-msgstr ""
+msgstr "Декоративні"
 
 #. Translators: Superscripts and Subscripts
 #: ../data/base.xml.in.h:7
 msgid "Super and Sub"
-msgstr ""
+msgstr "Верхні і нижні індекси"
 
 #: ../data/base.xml.in.h:8
 msgid "Bold"
 msgstr ""
 
 #: ../data/base.xml.in.h:9
+#, fuzzy
 msgid "Italic"
-msgstr ""
+msgstr "Давня італійська"
 
 #: ../data/base.xml.in.h:10
 msgid "Script"
@@ -64,300 +67,308 @@ msgstr ""
 
 #: ../data/base.xml.in.h:12
 msgid "All"
-msgstr ""
+msgstr "Всі"
 
 #: ../data/base.xml.in.h:13 ../data/zh.xml.in.h:2
 msgid "Numbers"
-msgstr ""
+msgstr "Числа"
 
 #: ../data/base.xml.in.h:14
 msgid "Roman"
-msgstr ""
+msgstr "Римські"
 
 #: ../data/base.xml.in.h:15
 msgid "Enclosed"
-msgstr ""
+msgstr "У рамці"
 
 #: ../data/base.xml.in.h:16
 msgid "Fraction"
-msgstr ""
+msgstr "Дроби"
 
 #: ../data/base.xml.in.h:17
 msgid "Technical"
-msgstr ""
+msgstr "Технічні"
 
 #: ../data/base.xml.in.h:18
 msgid "Unit"
-msgstr ""
+msgstr "Одиниці"
 
 #: ../data/base.xml.in.h:19
 msgid "Mathematical"
-msgstr ""
+msgstr "Математичні"
 
 #: ../data/base.xml.in.h:20
 msgid "Controls"
-msgstr ""
+msgstr "Керування"
 
 #: ../data/base.xml.in.h:21
 msgid "OCR"
-msgstr ""
+msgstr "ОРС"
 
 #: ../data/base.xml.in.h:22
 msgid "Graphics"
-msgstr ""
+msgstr "Графіка"
 
 #: ../data/base.xml.in.h:23
 msgid "Arrow"
-msgstr ""
+msgstr "Стрілка"
 
 #: ../data/base.xml.in.h:24 ../input-pad/unicode_block.h:112
 msgid "Box Drawing"
-msgstr ""
+msgstr "Для малювання рамок"
 
 #: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3937
 msgid "Block"
-msgstr ""
+msgstr "Блоки"
 
 #: ../data/base.xml.in.h:26
 msgid "Geometric"
-msgstr ""
+msgstr "Геометричні"
 
 #: ../data/base.xml.in.h:27
 msgid "Braille"
-msgstr ""
+msgstr "Шрифт Брайля"
 
 #: ../data/base.xml.in.h:28
 msgid "Punctuations"
-msgstr ""
+msgstr "Символи пунктуації"
 
 #: ../data/base.xml.in.h:29
 msgid "General"
-msgstr ""
+msgstr "Загальне"
 
 #: ../data/base.xml.in.h:30
 msgid "CJK"
-msgstr ""
+msgstr "CJK"
 
 #: ../data/base.xml.in.h:31 ../input-pad/unicode_block.h:145
 msgid "CJK Compatibility"
-msgstr ""
+msgstr "Сумісність з CJK"
 
 #: ../data/base.xml.in.h:32
 msgid "Small Form"
-msgstr ""
+msgstr "Малі форми"
 
 #: ../data/cmd.xml.in.h:1
 msgid "Command"
-msgstr ""
+msgstr "Команда"
 
 #: ../data/cmd.xml.in.h:2
 msgid "Date"
-msgstr ""
+msgstr "Дата"
 
 #: ../data/cmd.xml.in.h:3
 msgid "Normal Date"
-msgstr ""
+msgstr "Звичайна дата"
 
 #: ../data/cmd.xml.in.h:4
 msgid "Date and Time"
-msgstr ""
+msgstr "Дата і час"
 
 #: ../data/cmd.xml.in.h:5
 msgid "ChangeLog date"
-msgstr ""
+msgstr "Дата журналу змін"
 
 #: ../data/cmd.xml.in.h:6
 msgid "USA English date"
-msgstr ""
+msgstr "Дата (США)"
 
 #: ../data/cmd.xml.in.h:7
 msgid "UK English date"
-msgstr ""
+msgstr "Дата (Великобританія)"
 
 #: ../data/cmd.xml.in.h:8
 msgid "ISO 8601 date"
-msgstr ""
+msgstr "Дата у форматі ISO 8601"
 
 #: ../data/cmd.xml.in.h:9
 msgid "Era"
-msgstr ""
+msgstr "Ера"
 
 #: ../data/cmd.xml.in.h:10
 msgid "Century Year"
-msgstr ""
+msgstr "Рік століття"
 
 #: ../data/cmd.xml.in.h:11
 msgid "Normal Time"
-msgstr ""
+msgstr "Звичайний час"
 
 #: ../data/cmd.xml.in.h:12
 msgid "English Time"
-msgstr ""
+msgstr "Час англійською"
 
 #: ../data/cmd.xml.in.h:13
 msgid "Month"
-msgstr ""
+msgstr "Місяць"
 
 #: ../data/cmd.xml.in.h:14
 msgid "English Month"
-msgstr ""
+msgstr "Місяць англійською"
 
 #: ../data/cmd.xml.in.h:15
 msgid "Short Month"
-msgstr ""
+msgstr "Місяць (скорочено)"
 
 #: ../data/cmd.xml.in.h:16
 msgid "English Short Month"
-msgstr ""
+msgstr "Місяць англійською (скорочено)"
 
 #: ../data/cmd.xml.in.h:17
 msgid "Weekday"
-msgstr ""
+msgstr "День тижня"
 
 #: ../data/cmd.xml.in.h:18
 msgid "English Weekday"
-msgstr ""
+msgstr "День тижня англійською"
 
 #: ../data/cmd.xml.in.h:19
 msgid "Short Weekday"
-msgstr ""
+msgstr "День тижня (скорочено)"
 
 #: ../data/cmd.xml.in.h:20
 msgid "English Short Weekday"
-msgstr ""
+msgstr "День тижня англійською (скорочено)"
 
 #: ../data/goth.xml.in.h:1 ../input-pad/unicode_block.h:196
 msgid "Gothic"
-msgstr ""
+msgstr "Готичні"
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:50
 #: ../input-pad/window-gtk.c:5320 ../input-pad/window-gtk.c:5321
 msgid "Input Pad"
-msgstr ""
+msgstr "Панель введення"
 
 #: ../data/input-pad.ui.h:1
 msgid "_File"
-msgstr ""
+msgstr "_Файл"
 
 #: ../data/input-pad.ui.h:2
 msgid "Close the program"
-msgstr ""
+msgstr "Закрити вікно програми"
 
 #: ../data/input-pad.ui.h:3
 msgid "_Close"
-msgstr ""
+msgstr "_Закрити"
 
 #: ../data/input-pad.ui.h:4
 msgid "_Pad"
-msgstr ""
+msgstr "_Панель"
 
 #: ../data/input-pad.ui.h:5
 msgid "_Code Point"
-msgstr ""
+msgstr "_Точка кодування"
 
 #: ../data/input-pad.ui.h:6
 msgid "_Show Pad"
-msgstr ""
+msgstr "_Показ панелі"
 
 #: ../data/input-pad.ui.h:7
 msgid "Show _All Characters"
-msgstr ""
+msgstr "Показати _всі символи"
 
 #: ../data/input-pad.ui.h:8
 msgid "Show _Custom Characters"
-msgstr ""
+msgstr "Показати _нетипові символи"
 
 #: ../data/input-pad.ui.h:9
 msgid "Show _Nothing"
-msgstr ""
+msgstr "_Нічого не показувати"
 
 #: ../data/input-pad.ui.h:10
 msgid "Show _Keyboard Layout"
-msgstr ""
+msgstr "Показати _розкладку клавіатури"
 
 #: ../data/input-pad.ui.h:11
 msgid "_Help"
-msgstr ""
+msgstr "_Довідка"
 
 #: ../data/input-pad.ui.h:12
 msgid "_Troubleshoot"
-msgstr ""
+msgstr "_Усування вад"
 
 #: ../data/input-pad.ui.h:13
 msgid "Code Point Dialog"
-msgstr ""
+msgstr "Діалогове вікно точки кодування"
 
 #: ../data/input-pad.ui.h:14
 msgid "Unicode"
-msgstr ""
+msgstr "Unicode"
 
 #: ../data/input-pad.ui.h:15
 msgid "You can choose encoding type"
-msgstr ""
+msgstr "Ви можете вибрати тип кодування"
 
 #: ../data/input-pad.ui.h:16
 msgid "Current Encoding"
-msgstr ""
+msgstr "Поточне кодування"
 
 #: ../data/input-pad.ui.h:17
 msgid "Copy Buffer"
-msgstr ""
+msgstr "Буфер копіювання"
 
 #: ../data/input-pad.ui.h:18
 msgid ""
 "Base 16\n"
 "Hex"
 msgstr ""
+"За основою\n"
+"16"
 
 #: ../data/input-pad.ui.h:20
 msgid "Set number case to hexadecimal"
-msgstr ""
+msgstr "Використати шістнадцятковий запис"
 
 #: ../data/input-pad.ui.h:21
 msgid ""
 "Base 10\n"
 "Dec"
 msgstr ""
+"За основою\n"
+"10"
 
 #: ../data/input-pad.ui.h:23
 msgid "Set number case to decimal"
-msgstr ""
+msgstr "Використати десятковий запис"
 
 #: ../data/input-pad.ui.h:24
 msgid ""
 "Base 8\n"
 "Oct"
 msgstr ""
+"За основою\n"
+"8"
 
 #: ../data/input-pad.ui.h:26
 msgid "Set number case to octal"
-msgstr ""
+msgstr "Використати вісімковий запис"
 
 #: ../data/input-pad.ui.h:27
 msgid ""
 "Base 2\n"
 "Bin"
 msgstr ""
+"За основою\n"
+"2"
 
 #: ../data/input-pad.ui.h:29
 msgid "Set number case to binary"
-msgstr ""
+msgstr "Використати двійковий запис"
 
 #: ../data/input-pad.ui.h:30
 msgid "Code Point:"
-msgstr ""
+msgstr "Точка кодування:"
 
 #: ../data/input-pad.ui.h:31
 msgid "Character:"
-msgstr ""
+msgstr "Символ:"
 
 #: ../data/input-pad.ui.h:32
 msgid "_Send"
-msgstr ""
+msgstr "_Надіслати"
 
 #: ../data/input-pad.ui.h:33
 msgid "Input Pad Troubleshoot"
-msgstr ""
+msgstr "Діагностування панелі введення"
 
 #: ../data/input-pad.ui.h:35
 #, no-c-format
@@ -374,123 +385,136 @@ msgid ""
 "You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/"
 "pad to customize those in \"Custom Character\" pain."
 msgstr ""
+"\n"
+"Цю програму можна запустити окремо або з програми керування способами "
+"введення даних.\n"
+"Якщо вам потрібно вводити мультибайтові символи, цю програму слід запустити "
+"з програми керування способами введення.\n"
+"Якщо вам потрібно передавати символи графічним програмам, слід увімкнути "
+"події надсилання даних для таких програм, наприклад\n"
+"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
+"\n"
+"Вам також слід скопіювати файли наборів з /usr/share/input-pad/pad до $HOME/."
+"config/pad, щоб змінити ті з них, які належать до групи «Нетипові символи»."
 
 #: ../data/input-pad.ui.h:42
 msgid "Configure Keyboard Layouts"
-msgstr ""
+msgstr "Налаштувати клавіатурні скорочення"
 
 #: ../data/input-pad.ui.h:43
 msgid "A_vailable layouts:"
-msgstr ""
+msgstr "Д_оступні розкладки:"
 
 #: ../data/input-pad.ui.h:44
 msgid "_Layouts shown in the list:"
-msgstr ""
+msgstr "_Розкладки, показані у списку:"
 
 #: ../data/input-pad.ui.h:45
 msgid "_Options"
-msgstr ""
+msgstr "П_араметри"
 
 #: ../data/input-pad.ui.h:46
 msgid "Configure Keyboard Options"
-msgstr ""
+msgstr "Налаштувати параметри клавіатури"
 
 #: ../data/input-pad.ui.h:47
 msgid "_Use the default keyboard option"
-msgstr ""
+msgstr "В_икористовувати типовий варіант клавіатури"
 
 #: ../data/input-pad.ui.h:48
 msgid "Use the defualt XKB option"
-msgstr ""
+msgstr "Використовувати типовий параметр XKB"
 
 #: ../data/input-pad.ui.h:49
 msgid "<b>Keyboard Option</b>"
-msgstr ""
+msgstr "<b>Варіант клавіатури</b>"
 
 #: ../data/input-pad.ui.h:51
 msgid "The input pad is a tool to send a character on button."
 msgstr ""
+"Панель введення — це програма для надсилання символів, намальованих на "
+"кнопках."
 
 #: ../data/input-pad.ui.h:52
 msgid "translator_credits"
-msgstr ""
+msgstr "Юрій Чорноіван <yurchor@ukr.net>"
 
 #. "IPA" stands for "International Phonetic Alphabet"
 #: ../data/ipa-obsolete.xml.in.h:2
 msgid "IPA (Obsolete)"
-msgstr ""
+msgstr "IPA (застарілі)"
 
 #: ../data/ipa-obsolete.xml.in.h:3 ../data/ipa.xml.in.h:6
 msgid "Open back unrounded vowel"
-msgstr ""
+msgstr "Неогублений голосний заднього ряду низького піднесення"
 
 #: ../data/ipa-obsolete.xml.in.h:4
 msgid "Voiceless palatal implosive"
-msgstr ""
+msgstr "Глухий твердопіднебінний вибуховий"
 
 #: ../data/ipa-obsolete.xml.in.h:5 ../data/ipa.xml.in.h:133
 msgid "Alveolar click"
-msgstr ""
+msgstr "Ясенний клацальний приголосний"
 
 #: ../data/ipa-obsolete.xml.in.h:6 ../data/ipa.xml.in.h:25
 msgid "Voiced alveolar affricate"
-msgstr ""
+msgstr "Дзвінкий ясенний африкативний"
 
 #: ../data/ipa-obsolete.xml.in.h:7 ../data/ipa.xml.in.h:27
 msgid "Voiced alveopalatal affricate"
-msgstr ""
+msgstr "Дзвінкий заясенний африкативний"
 
 #: ../data/ipa-obsolete.xml.in.h:8 ../data/ipa.xml.in.h:26
 msgid "Voiced palato-alveolar affricate"
-msgstr ""
+msgstr "Дзвінкий заясенний африкативний"
 
 #: ../data/ipa-obsolete.xml.in.h:9
 msgid "Voiceless velar implosive"
-msgstr ""
+msgstr "Глухий задньопіднебінний вибуховий"
 
 #: ../data/ipa-obsolete.xml.in.h:10
 msgid "Syllabic alveolar nasal"
-msgstr ""
+msgstr "Складовий ясенний носовий звук"
 
 #: ../data/ipa-obsolete.xml.in.h:11
 msgid "Voiceless bilabial implosive"
-msgstr ""
+msgstr "Глухий губно-губний вибуховий"
 
 #: ../data/ipa-obsolete.xml.in.h:12
 msgid "Voiced strident apico-alveolar trill"
-msgstr ""
+msgstr "Дзвінкий різкий верхньо-ясенний дрижачий"
 
 #: ../data/ipa-obsolete.xml.in.h:13 ../data/ipa.xml.in.h:19
 msgid "Voiceless alveopalatal fricative"
-msgstr ""
+msgstr "Глухий заясенний фрикативний"
 
 #: ../data/ipa-obsolete.xml.in.h:14 ../data/ipa.xml.in.h:99
 msgid "Voiceless alveopalatal affricate"
-msgstr ""
+msgstr "Глухий заясенний африкативний"
 
 #: ../data/ipa-obsolete.xml.in.h:15 ../data/ipa.xml.in.h:97
 msgid "Voiceless alveolar affricate"
-msgstr ""
+msgstr "Глухий ясенний африкативний"
 
 #: ../data/ipa-obsolete.xml.in.h:16 ../data/ipa.xml.in.h:98
 msgid "Voiceless palato-alveolar affricate"
-msgstr ""
+msgstr "Глухий заясенний африкативний"
 
 #: ../data/ipa-obsolete.xml.in.h:17
 msgid "Voiceless alveolar implosive"
-msgstr ""
+msgstr "Глухий ясенний вибуховий"
 
 #: ../data/ipa-obsolete.xml.in.h:18 ../data/ipa.xml.in.h:132
 msgid "Dental click"
-msgstr ""
+msgstr "Зубний клацальний"
 
 #: ../data/ipa-obsolete.xml.in.h:19
 msgid "Voiceless uvular implosive"
-msgstr ""
+msgstr "Глухий язичковий вибуховий"
 
 #: ../data/ipa-obsolete.xml.in.h:20 ../data/ipa.xml.in.h:123
 msgid "Voiced alveopalatal fricative"
-msgstr ""
+msgstr "Дзвінкий заясенний фрикативний"
 
 #: ../data/ipa-obsolete.xml.in.h:21 ../data/ipa.xml.in.h:102
 msgid "Near-close near-back vowel"
@@ -498,20 +522,20 @@ msgstr ""
 
 #: ../data/ipa-obsolete.xml.in.h:22 ../data/ipa.xml.in.h:135
 msgid "Alveolar lateral click"
-msgstr ""
+msgstr "Ясенний боковий клацальний приголосний"
 
 #. "IPA" stands for "International Phonetic Alphabet"
 #: ../data/ipa.xml.in.h:2
 msgid "IPA"
-msgstr ""
+msgstr "IPA"
 
 #: ../data/ipa.xml.in.h:3
 msgid "Open front unrounded vowel"
-msgstr ""
+msgstr "Неогублений голосний переднього ряду низького піднесення"
 
 #: ../data/ipa.xml.in.h:4
 msgid "Open central unrounded vowel"
-msgstr ""
+msgstr "Неогублений голосний центрального ряду низького піднесення"
 
 #: ../data/ipa.xml.in.h:5
 msgid "Near-open central vowel"
@@ -519,7 +543,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:7
 msgid "Open back rounded vowel"
-msgstr ""
+msgstr "Огублений голосний заднього ряду низького піднесення"
 
 #: ../data/ipa.xml.in.h:8
 msgid "Open-mid back unrounded vowel"
@@ -527,11 +551,11 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:9
 msgid "Near-open front unrounded vowel"
-msgstr ""
+msgstr "Майже неогублений голосний переднього ряду низького піднесення"
 
 #: ../data/ipa.xml.in.h:10
 msgid "Voiced bilabial plosive"
-msgstr ""
+msgstr "Дзвінкий губно-губний проривний"
 
 #: ../data/ipa.xml.in.h:11
 msgid "Voiced labiodental affricate"
@@ -539,31 +563,31 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:12
 msgid "Voiced bilabial implosive"
-msgstr ""
+msgstr "Дзвінкий губно-губний імплозивний"
 
 #: ../data/ipa.xml.in.h:13
 msgid "Bilabial trill"
-msgstr ""
+msgstr "Двозубий дрижачий приголосний"
 
 #: ../data/ipa.xml.in.h:14
 msgid "Voiced bilabial fricative"
-msgstr ""
+msgstr "Дзвінкий губно-губний фрикативний"
 
 #: ../data/ipa.xml.in.h:15
 msgid "Voiceless palatal plosive"
-msgstr ""
+msgstr "Глухий твердопіднебінний проривний"
 
 #: ../data/ipa.xml.in.h:16
 msgid "Voiceless palatal fricative"
-msgstr ""
+msgstr "Глухий твердопіднебінний фрикативний"
 
 #: ../data/ipa.xml.in.h:17
 msgid "Voiceless palatal affricate"
-msgstr ""
+msgstr "Глухий твердопіднебінний африкативний"
 
 #: ../data/ipa.xml.in.h:18
 msgid "Voiceless palatal lateral affricate"
-msgstr ""
+msgstr "Глухий твердопіднебінний бічний африкативний"
 
 #: ../data/ipa.xml.in.h:20
 msgid "Voiced alveolar plosive"
@@ -591,11 +615,11 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:29
 msgid "Close-mid front unrounded vowel"
-msgstr ""
+msgstr "Неогублений голосний переднього ряду високо-середнього піднесення"
 
 #: ../data/ipa.xml.in.h:30
 msgid "Close-mid central unrounded vowel"
-msgstr ""
+msgstr "Неогублений голосний середнього ряду високо-середнього піднесення"
 
 #: ../data/ipa.xml.in.h:31
 msgid "Mid-central vowel"
@@ -667,7 +691,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:48
 msgid "Close front unrounded vowel"
-msgstr ""
+msgstr "Неогублений голосний переднього ряду високого піднесення"
 
 #: ../data/ipa.xml.in.h:49
 msgid "Near-close near-front unrounded vowel"
@@ -679,7 +703,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:51
 msgid "Close central unrounded vowel"
-msgstr ""
+msgstr "Неогублений голосний середнього ряду високого піднесення"
 
 #: ../data/ipa.xml.in.h:52
 msgid "Palatal approximant"
@@ -715,7 +739,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:60
 msgid "Alveolar lateral approximant"
-msgstr ""
+msgstr "Ясенний боковий апроксимант"
 
 #: ../data/ipa.xml.in.h:61
 msgid "Velarized alveolar lateral approximant"
@@ -735,11 +759,11 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:65
 msgid "Velar lateral approximant"
-msgstr ""
+msgstr "М’якопіднебінний боковий апроксимант"
 
 #: ../data/ipa.xml.in.h:66
 msgid "Bilabial nasal"
-msgstr ""
+msgstr "Двозубий носовий приголосний"
 
 #: ../data/ipa.xml.in.h:67
 msgid "Labiodental nasal"
@@ -747,7 +771,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:68
 msgid "Alveolar nasal"
-msgstr ""
+msgstr "Ясенний носовий"
 
 #: ../data/ipa.xml.in.h:69
 msgid "Velar nasal"
@@ -767,15 +791,15 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:73
 msgid "Close-mid back rounded vowel"
-msgstr ""
+msgstr "Огублений голосний заднього ряду високо-середнього піднесення"
 
 #: ../data/ipa.xml.in.h:74
 msgid "Close-mid front rounded vowel"
-msgstr ""
+msgstr "Огублений голосний переднього ряду високо-середнього піднесення"
 
 #: ../data/ipa.xml.in.h:75
 msgid "Close-mid central rounded vowel"
-msgstr ""
+msgstr "Огублений голосний середнього ряду високо-середнього піднесення"
 
 #: ../data/ipa.xml.in.h:76
 msgid "Open-mid front rounded vowel"
@@ -803,19 +827,19 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:82
 msgid "Voiceless uvular plosive"
-msgstr ""
+msgstr "Глухий язичковий проривний"
 
 #: ../data/ipa.xml.in.h:83
 msgid "Alveolar trill"
-msgstr ""
+msgstr "Ясенний дрижачий приголосний"
 
 #: ../data/ipa.xml.in.h:84
 msgid "Alveolar flap"
-msgstr ""
+msgstr "Ясенний одноударний приголосний"
 
 #: ../data/ipa.xml.in.h:85
 msgid "Alveolar lateral flap"
-msgstr ""
+msgstr "Ясенний боковий одноударний приголосний"
 
 #: ../data/ipa.xml.in.h:86
 msgid "Uvular trill"
@@ -827,7 +851,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:88
 msgid "Alveolar approximant"
-msgstr ""
+msgstr "Ясенний апроксимант"
 
 #: ../data/ipa.xml.in.h:89
 msgid "Retroflex approximant"
@@ -843,7 +867,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:92
 msgid "Voiceless palato-alveolar fricative"
-msgstr ""
+msgstr "Глухий заясенний фрикативний"
 
 #: ../data/ipa.xml.in.h:93
 msgid "Voiceless retroflex fricative"
@@ -867,7 +891,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:101
 msgid "Close back rounded vowel"
-msgstr ""
+msgstr "Огублений голосний заднього ряду високого піднесення"
 
 #: ../data/ipa.xml.in.h:103
 msgid "Near-close central vowel"
@@ -875,7 +899,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:104
 msgid "Close central rounded vowel"
-msgstr ""
+msgstr "Огублений голосний середнього ряду високого піднесення"
 
 #: ../data/ipa.xml.in.h:105
 msgid "Labial-palatal approximant"
@@ -883,7 +907,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:106
 msgid "Close back unrounded vowel"
-msgstr ""
+msgstr "Неогублений голосний заднього ряду високого піднесення"
 
 #: ../data/ipa.xml.in.h:107
 msgid "Voiced labiodental fricative"
@@ -903,7 +927,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:111
 msgid "Close-mid back unrounded vowel"
-msgstr ""
+msgstr "Неогублений голосний заднього ряду високо-середнього піднесення"
 
 #: ../data/ipa.xml.in.h:112
 msgid "Voiced labiovelar approximant"
@@ -923,15 +947,15 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:116
 msgid "Voiceless velar fricative"
-msgstr ""
+msgstr "Глухий задньопіднебінний фрикативний"
 
 #: ../data/ipa.xml.in.h:117
 msgid "Voiceless uvular fricative"
-msgstr ""
+msgstr "Глухий язичковий фрикативний"
 
 #: ../data/ipa.xml.in.h:118
 msgid "Close front rounded vowel"
-msgstr ""
+msgstr "Огублений голосний переднього ряду високого піднесення"
 
 #: ../data/ipa.xml.in.h:119
 msgid "Near-close near-front rounded vowel"
@@ -947,7 +971,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:122
 msgid "Voiced palato-alveolar fricative"
-msgstr ""
+msgstr "Дзвінкий заясенний фрикативний"
 
 #: ../data/ipa.xml.in.h:124
 msgid "Voiced retroflex fricative"
@@ -991,7 +1015,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:137
 msgid "Aspiration mark"
-msgstr ""
+msgstr "Позначка придихання"
 
 #: ../data/ipa.xml.in.h:138
 msgid "Non-aspiration mark"
@@ -999,7 +1023,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:139
 msgid "Breathy voice mark"
-msgstr ""
+msgstr "Позначка хрипкої вимови"
 
 #: ../data/ipa.xml.in.h:140
 msgid "Palatalization mark"
@@ -1171,7 +1195,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:182
 msgid "Combining rising tone mark"
-msgstr ""
+msgstr "Поєднальна позначка підвищення тону"
 
 #: ../data/ipa.xml.in.h:183
 msgid "Combining high rising tone mark"
@@ -1191,19 +1215,19 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:187
 msgid "Top tone letter"
-msgstr ""
+msgstr "Літера найвищого тону"
 
 #: ../data/ipa.xml.in.h:188
 msgid "High tone letter"
-msgstr ""
+msgstr "Літера з підвищеним тоном"
 
 #: ../data/ipa.xml.in.h:189
 msgid "Mid tone letter"
-msgstr ""
+msgstr "Літера з середнім тоном"
 
 #: ../data/ipa.xml.in.h:190
 msgid "Low tone letter"
-msgstr ""
+msgstr "Літера з пониженим тоном"
 
 #: ../data/ipa.xml.in.h:191
 msgid "Bottom tone letter"
@@ -1211,7 +1235,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:192
 msgid "Falling tone digraph"
-msgstr ""
+msgstr "Диграма спадного тону"
 
 #: ../data/ipa.xml.in.h:193
 msgid "High falling tone digraph"
@@ -1231,7 +1255,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:197
 msgid "Dipping tone trigraph"
-msgstr ""
+msgstr "Триграма зі зниженням тону"
 
 #: ../data/ipa.xml.in.h:198
 msgid "Peaking tone trigraph"
@@ -1243,7 +1267,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:200
 msgid "Weak elongation mark"
-msgstr ""
+msgstr "Позначки слабкої протяжності"
 
 #: ../data/ipa.xml.in.h:201
 msgid "Raised sound mark"
@@ -1251,7 +1275,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:202
 msgid "Lowered sound mark"
-msgstr ""
+msgstr "Позначка зниженого тону"
 
 #: ../data/ipa.xml.in.h:203
 msgid "Combining raised sound mark"
@@ -1307,400 +1331,400 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:216
 msgid "Stress mark"
-msgstr ""
+msgstr "Позначка наголосу"
 
 #: ../data/ipa.xml.in.h:217
 msgid "Weak stress mark"
-msgstr ""
+msgstr "Позначка слабкого наголосу"
 
 #: ../data/ipa.xml.in.h:218
 msgid "Syllable break"
-msgstr ""
+msgstr "Кінець складу"
 
 #: ../data/ipa.xml.in.h:219
 msgid "Opening orthographic bracket"
-msgstr ""
+msgstr "Початкова орфографічна дужка"
 
 #: ../data/ipa.xml.in.h:220
 msgid "Closing orthographic bracket"
-msgstr ""
+msgstr "Завершальна орфографічна дужка"
 
 #: ../data/ja.xml.in.h:1
 msgid "Japanese"
-msgstr ""
+msgstr "Японська"
 
 #: ../data/ja.xml.in.h:2 ../input-pad/unicode_block.h:136
 msgid "Hiragana"
-msgstr ""
+msgstr "Хірагана"
 
 #: ../data/ja.xml.in.h:3 ../input-pad/unicode_block.h:137
 msgid "Katakana"
-msgstr ""
+msgstr "Катакана"
 
 #: ../data/ja.xml.in.h:4 ../data/zh.xml.in.h:3
 msgid "Radicals"
-msgstr ""
+msgstr "Радикали"
 
 #: ../data/ja.xml.in.h:5 ../input-pad/unicode_block.h:132
 msgid "CJK Radicals Supplement"
-msgstr ""
+msgstr "Додатки радикалів ієрогліфів"
 
 #: ../data/keyboard.xml.in.h:1
 msgid "Keyboard"
-msgstr ""
+msgstr "Клавіатура"
 
 #: ../data/keyboard.xml.in.h:2
 msgid "Function Key"
-msgstr ""
+msgstr "Функціональна клавіша"
 
 #: ../data/keyboard.xml.in.h:3
 msgid "Key Pad"
-msgstr ""
+msgstr "Бічна панель"
 
 #: ../data/latin.xml.in.h:1
 msgid "ASCII"
-msgstr ""
+msgstr "ASCII"
 
 #: ../data/latin.xml.in.h:2 ../input-pad/unicode_block.h:38
 msgid "Latin-1 Supplement"
-msgstr ""
+msgstr "Додаткові Latin-1"
 
 #: ../data/latin.xml.in.h:3 ../input-pad/unicode_block.h:39
 msgid "Latin Extended-A"
-msgstr ""
+msgstr "Латинь розширена-A"
 
 #: ../data/runr.xml.in.h:1
 msgid "Runes (Unicode Block)"
-msgstr ""
+msgstr "Руни (блок Unicode)"
 
 #: ../data/runr.xml.in.h:2
 msgid "Runes (Elder Fuþark)"
-msgstr ""
+msgstr "Руни (старий футарк)"
 
 #: ../data/runr.xml.in.h:3
 msgid "Runes (Younger Fuþark)"
-msgstr ""
+msgstr "Руни (новий футорк)"
 
 #: ../data/runr.xml.in.h:4
 msgid "Runes (Fuþorc)"
-msgstr ""
+msgstr "Руки (футорк)"
 
 #: ../data/shaw.xml.in.h:1 ../input-pad/unicode_block.h:200
 msgid "Shavian"
-msgstr ""
+msgstr "Шавіан"
 
 #: ../data/str.xml.in.h:1
 msgid "Chat"
-msgstr ""
+msgstr "Балачка"
 
 #: ../data/str.xml.in.h:2
 msgid "Smileys"
-msgstr ""
+msgstr "Емоційки"
 
 #: ../data/str.xml.in.h:3
 msgid "Smile"
-msgstr ""
+msgstr "Посмішка"
 
 #: ../data/str.xml.in.h:4
 msgid "Smile Big"
-msgstr ""
+msgstr "Посмішка до вух"
 
 #: ../data/str.xml.in.h:5
 msgid "Sad"
-msgstr ""
+msgstr "Сумний"
 
 #: ../data/str.xml.in.h:6
 msgid "Wink"
-msgstr ""
+msgstr "Підморгує"
 
 #: ../data/str.xml.in.h:7
 msgid "Tongue"
-msgstr ""
+msgstr "Показує язика"
 
 #: ../data/str.xml.in.h:8
 msgid "Shock"
-msgstr ""
+msgstr "Шок"
 
 #: ../data/str.xml.in.h:9
 msgid "Kiss | Secret"
-msgstr ""
+msgstr "Цілунок | Потайки"
 
 #: ../data/str.xml.in.h:10
 msgid "Glasses Cool | Eyeroll"
-msgstr ""
+msgstr "Крутий в окулярах або вирячені очі"
 
 #: ../data/str.xml.in.h:11
 msgid "Glasses Cool"
-msgstr ""
+msgstr "Крутий в окулярах"
 
 #: ../data/str.xml.in.h:12
 msgid "Angry"
-msgstr ""
+msgstr "Злий"
 
 #: ../data/str.xml.in.h:13
 msgid "Embarrassed"
-msgstr ""
+msgstr "Стурбований"
 
 #: ../data/str.xml.in.h:14
 msgid "Confused"
-msgstr ""
+msgstr "Збентежений"
 
 #: ../data/str.xml.in.h:15
 msgid "Crying"
-msgstr ""
+msgstr "Ридаючий"
 
 #: ../data/str.xml.in.h:16
 msgid "Neutral"
-msgstr ""
+msgstr "Нейтральний"
 
 #: ../data/str.xml.in.h:17
 msgid "Thinking"
-msgstr ""
+msgstr "Думає"
 
 #: ../data/str.xml.in.h:18
 msgid "Don't Know"
-msgstr ""
+msgstr "Не знаю"
 
 #: ../data/str.xml.in.h:19
 msgid "Party"
-msgstr ""
+msgstr "Вечірка"
 
 #: ../data/str.xml.in.h:20
 msgid "Yawn"
-msgstr ""
+msgstr "Позіхає"
 
 #: ../data/str.xml.in.h:21
 msgid "Bunny"
-msgstr ""
+msgstr "Кролик"
 
 #: ../data/str.xml.in.h:22
 msgid "Sick"
-msgstr ""
+msgstr "Хворий"
 
 #: ../data/str.xml.in.h:23
 msgid "Devil"
-msgstr ""
+msgstr "Знавіснілий"
 
 #: ../data/str.xml.in.h:24
 msgid "Angel"
-msgstr ""
+msgstr "Ангел"
 
 #: ../data/str.xml.in.h:25
 msgid "Love"
-msgstr ""
+msgstr "Любов"
 
 #: ../data/str.xml.in.h:26
 msgid "Love Over"
-msgstr ""
+msgstr "Кінець кохання"
 
 #: ../data/str.xml.in.h:27
 msgid "Cat"
-msgstr ""
+msgstr "Кіт"
 
 #: ../data/str.xml.in.h:28
 msgid "Dog"
-msgstr ""
+msgstr "Собака"
 
 #: ../data/str.xml.in.h:29
 msgid "Moon"
-msgstr ""
+msgstr "Місяць"
 
 #: ../data/str.xml.in.h:30
 msgid "Star"
-msgstr ""
+msgstr "Зірка"
 
 #: ../data/str.xml.in.h:31
 msgid "Film"
-msgstr ""
+msgstr "Кінострічка"
 
 #: ../data/str.xml.in.h:32
 msgid "Musical Note"
-msgstr ""
+msgstr "Музична нота"
 
 #: ../data/str.xml.in.h:33
 msgid "Mail"
-msgstr ""
+msgstr "Пошта"
 
 #: ../data/str.xml.in.h:34
 msgid "Clock"
-msgstr ""
+msgstr "Годинник"
 
 #: ../data/str.xml.in.h:35
 msgid "Kiss"
-msgstr ""
+msgstr "Цілунок"
 
 #: ../data/str.xml.in.h:36
 msgid "Present"
-msgstr ""
+msgstr "Подарунок"
 
 #: ../data/str.xml.in.h:37
 msgid "Cake"
-msgstr ""
+msgstr "Торт"
 
 #: ../data/str.xml.in.h:38
 msgid "Coffee"
-msgstr ""
+msgstr "Кава"
 
 #: ../data/str.xml.in.h:39
 msgid "Phone"
-msgstr ""
+msgstr "Телефон"
 
 #: ../data/str.xml.in.h:40
 msgid "Hug Left"
-msgstr ""
+msgstr "Обнімає ліворуч"
 
 #: ../data/str.xml.in.h:41
 msgid "Hug Right"
-msgstr ""
+msgstr "Обнімає праворуч"
 
 #: ../data/str.xml.in.h:42
 msgid "Beer"
-msgstr ""
+msgstr "Пиво"
 
 #: ../data/str.xml.in.h:43
 msgid "Drink"
-msgstr ""
+msgstr "Напій"
 
 #: ../data/str.xml.in.h:44
 msgid "Boy"
-msgstr ""
+msgstr "Хлопчик"
 
 #: ../data/str.xml.in.h:45
 msgid "Girl"
-msgstr ""
+msgstr "Дівчинка"
 
 #: ../data/str.xml.in.h:46
 msgid "Yes"
-msgstr ""
+msgstr "Так"
 
 #: ../data/str.xml.in.h:47
 msgid "No"
-msgstr ""
+msgstr "Ні"
 
 #: ../data/str.xml.in.h:48
 msgid "Shut Mouth"
-msgstr ""
+msgstr "Закритий рот"
 
 #: ../data/str.xml.in.h:49
 msgid "Money Mouth"
-msgstr ""
+msgstr "Гроші тримаю при собі"
 
 #: ../data/str.xml.in.h:50
 msgid "Foot in Mouth"
-msgstr ""
+msgstr "Не варто було цього казати"
 
 #: ../data/str.xml.in.h:51
 msgid "Shout"
-msgstr ""
+msgstr "Крик"
 
 #: ../data/str.xml.in.h:52
 msgid "Monkey"
-msgstr ""
+msgstr "Мавпа"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
 #: ../data/str.xml.in.h:54
 msgid "Smileys (Japanese)"
-msgstr ""
+msgstr "Емоційки (японські)"
 
 #: ../data/str.xml.in.h:55
 msgid "Smoking"
-msgstr ""
+msgstr "Курить"
 
 #: ../data/str.xml.in.h:56
 msgid "Sorry"
-msgstr ""
+msgstr "Вибач"
 
 #: ../data/str.xml.in.h:57
 msgid "Hug"
-msgstr ""
+msgstr "Обнімає"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
 #: ../data/str.xml.in.h:59
 msgid "Smileys (Japanese 2ch)"
-msgstr ""
+msgstr "Емоційки (японські, 2ch)"
 
 #: ../data/str.xml.in.h:60
 msgid "Hey"
-msgstr ""
+msgstr "Гей"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
 #: ../data/str.xml.in.h:62
 msgid "Smileys (Chinese)"
-msgstr ""
+msgstr "Емоційки (китайські)"
 
 #: ../data/str.xml.in.h:63
 msgid "Crow"
-msgstr ""
+msgstr "Ворона"
 
 #: ../data/str.xml.in.h:64
 msgid "Bear"
-msgstr ""
+msgstr "Ведмідь"
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
 #: ../data/str.xml.in.h:66
 msgid "Acronym"
-msgstr ""
+msgstr "Абревіатури"
 
 #: ../data/str.xml.in.h:67
 msgid "Acronym (Computer)"
-msgstr ""
+msgstr "Абревіатури (комп’ютерні)"
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
 #: ../data/str.xml.in.h:69
 msgid "Acronym (Japanese)"
-msgstr ""
+msgstr "Абревіатури (японські)"
 
 #: ../data/str.xml.in.h:70
 msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
-msgstr ""
+msgstr "Не хочу читати між рядками"
 
 #: ../data/str.xml.in.h:71
 msgid "Can't get together (Guda Guda)"
-msgstr ""
+msgstr "Не можу розібратися"
 
 #: ../data/str.xml.in.h:72
 msgid "Say whatever one feels (Iitaidake)"
-msgstr ""
+msgstr "Точно сказано (ітайдаке)"
 
 #: ../data/str.xml.in.h:73
 msgid "Excited (Kitakore)"
-msgstr ""
+msgstr "Захоплення (кітакоре)"
 
 #: ../data/str.xml.in.h:74
 msgid "Detail (Kuwashiku)"
-msgstr ""
+msgstr "Докладніше"
 
 #: ../data/str.xml.in.h:75
 msgid "Cannot read between lines (Kuuki Ga Yomenai)"
-msgstr ""
+msgstr "Не можу читати між рядками"
 
 #: ../data/str.xml.in.h:76
 msgid "Omission (Shouryaku)"
-msgstr ""
+msgstr "Недогляд (сьоряку)"
 
 #: ../data/str.xml.in.h:77
 msgid "Excited (Waku Waku Teka Teka)"
-msgstr ""
+msgstr "Захоплення (ваку-ваку тека-тека)"
 
 #: ../data/str.xml.in.h:78
 msgid "Laugh"
-msgstr ""
+msgstr "Гигикає"
 
 #: ../data/str.xml.in.h:79
 msgid "Dude (Oi!)"
-msgstr ""
+msgstr "Чувак"
 
 #: ../data/str.xml.in.h:80
 msgid "In The Meantime (Toriaezu, Ma)"
-msgstr ""
+msgstr "Між тим (торіецу, ма)"
 
 #: ../data/str.xml.in.h:81
 msgid "Bye"
-msgstr ""
+msgstr "Па"
 
 #: ../data/str.xml.in.h:82
 msgid "False Start (Flying Get)"
-msgstr ""
+msgstr "Фальстарт"
 
 #: ../data/str.xml.in.h:83
 msgid "Fulfilling Life (Real life is Zyujitsu)"
@@ -1708,11 +1732,11 @@ msgstr ""
 
 #: ../data/str.xml.in.h:84
 msgid "Laugh (Warau)"
-msgstr ""
+msgstr "Гигикає (варо)"
 
 #: ../data/str.xml.in.h:85
 msgid "Good job (Otsukare)"
-msgstr ""
+msgstr "Чудова робота (отсукаре)"
 
 #: ../data/str.xml.in.h:86
 msgid "He (Yatsu &lt;- Yashi)"
@@ -1720,822 +1744,824 @@ msgstr ""
 
 #: ../data/w3c.xml.in.h:1
 msgid "Char References"
-msgstr ""
+msgstr "Довідник з символів"
 
 #: ../data/zh.xml.in.h:1
 msgid "Chinese"
-msgstr ""
+msgstr "Китайська"
 
 #: ../data/zh.xml.in.h:4 ../input-pad/unicode_block.h:138
 msgid "Bopomofo"
-msgstr ""
+msgstr "Бопомофо"
 
 #: ../input-pad/eek-gtk.c:62
 msgid "Use libeek to draw keyboard"
-msgstr ""
+msgstr "Використовувати libeek для малювання клавіатури"
 
 #: ../input-pad/eek-gtk.c:234
 msgid "eekboard layout"
-msgstr ""
+msgstr "Розкладка eekboard"
 
 #: ../input-pad/eek-gtk.c:246
 msgid "eekboard Options"
-msgstr ""
+msgstr "Параметри eekboard"
 
 #: ../input-pad/eek-gtk.c:246
 msgid "Show eekboard Options"
-msgstr ""
+msgstr "Показати параметри eekboard"
 
 #: ../input-pad/unicode_block.h:37
 msgid "Basic Latin"
-msgstr ""
+msgstr "Основні латинські"
 
 #: ../input-pad/unicode_block.h:40
 msgid "Latin Extended-B"
-msgstr ""
+msgstr "Латинь розширена-B"
 
 #: ../input-pad/unicode_block.h:41
 msgid "IPA Extensions"
-msgstr ""
+msgstr "Розширена IPA"
 
 #: ../input-pad/unicode_block.h:42
 msgid "Spacing Modifier Letters"
-msgstr ""
+msgstr "Знаки інтервалів"
 
 #: ../input-pad/unicode_block.h:43
 msgid "Combining Diacritical Marks"
-msgstr ""
+msgstr "Об’єднання діакритичних знаків"
 
 #: ../input-pad/unicode_block.h:44
 msgid "Greek and Coptic"
-msgstr ""
+msgstr "Грецькі і коптські"
 
 #: ../input-pad/unicode_block.h:45
 msgid "Cyrillic"
-msgstr ""
+msgstr "Кирилиця"
 
 #: ../input-pad/unicode_block.h:46
 msgid "Cyrillic Supplement"
-msgstr ""
+msgstr "Додаткова кирилиця"
 
 #: ../input-pad/unicode_block.h:47
 msgid "Armenian"
-msgstr ""
+msgstr "Вірменська"
 
 #: ../input-pad/unicode_block.h:48
 msgid "Hebrew"
-msgstr ""
+msgstr "Іврит"
 
 #: ../input-pad/unicode_block.h:49
 msgid "Arabic"
-msgstr ""
+msgstr "Арабська"
 
 #: ../input-pad/unicode_block.h:50
 msgid "Syriac"
-msgstr ""
+msgstr "Сирійська"
 
 #: ../input-pad/unicode_block.h:51
 msgid "Arabic Supplement"
-msgstr ""
+msgstr "Додаткові арабські"
 
 #: ../input-pad/unicode_block.h:52
 msgid "Thaana"
-msgstr ""
+msgstr "Таана"
 
 #: ../input-pad/unicode_block.h:53
 msgid "NKo"
-msgstr ""
+msgstr "Н’Ко"
 
 #: ../input-pad/unicode_block.h:54
 msgid "Samaritan"
-msgstr ""
+msgstr "Самаритянська"
 
 #: ../input-pad/unicode_block.h:55
 msgid "Devanagari"
-msgstr ""
+msgstr "Деванагарі"
 
 #: ../input-pad/unicode_block.h:56
 msgid "Bengali"
-msgstr ""
+msgstr "Бенгальська"
 
 #: ../input-pad/unicode_block.h:57
 msgid "Gurmukhi"
-msgstr ""
+msgstr "Гурмухі"
 
 #: ../input-pad/unicode_block.h:58
 msgid "Gujarati"
-msgstr ""
+msgstr "Гуджараті"
 
 #: ../input-pad/unicode_block.h:59
 msgid "Oriya"
-msgstr ""
+msgstr "Орія"
 
 #: ../input-pad/unicode_block.h:60
 msgid "Tamil"
-msgstr ""
+msgstr "Тамільська"
 
 #: ../input-pad/unicode_block.h:61
 msgid "Telugu"
-msgstr ""
+msgstr "Телугу"
 
 #: ../input-pad/unicode_block.h:62
 msgid "Kannada"
-msgstr ""
+msgstr "Каннада"
 
 #: ../input-pad/unicode_block.h:63
 msgid "Malayalam"
-msgstr ""
+msgstr "Малаялам"
 
 #: ../input-pad/unicode_block.h:64
 msgid "Sinhala"
-msgstr ""
+msgstr "Сингалійська"
 
 #: ../input-pad/unicode_block.h:65
 msgid "Thai"
-msgstr ""
+msgstr "Таїландська"
 
 #: ../input-pad/unicode_block.h:66
 msgid "Lao"
-msgstr ""
+msgstr "Лаоська"
 
 #: ../input-pad/unicode_block.h:67
 msgid "Tibetan"
-msgstr ""
+msgstr "Тибетська"
 
 #: ../input-pad/unicode_block.h:68
 msgid "Myanmar"
-msgstr ""
+msgstr "М’янмська"
 
 #: ../input-pad/unicode_block.h:69
 msgid "Georgian"
-msgstr ""
+msgstr "Грузинська"
 
 #: ../input-pad/unicode_block.h:70
 msgid "Hangul Jamo"
-msgstr ""
+msgstr "Хангиль-чжамо"
 
 #: ../input-pad/unicode_block.h:71
 msgid "Ethiopic"
-msgstr ""
+msgstr "Ефіопська"
 
 #: ../input-pad/unicode_block.h:72
 msgid "Ethiopic Supplement"
-msgstr ""
+msgstr "Додаткові ефіопські"
 
 #: ../input-pad/unicode_block.h:73
 msgid "Cherokee"
-msgstr ""
+msgstr "Черокі"
 
 #: ../input-pad/unicode_block.h:74
 msgid "Unified Canadian Aboriginal Syllabics"
-msgstr ""
+msgstr "Уніфіковані силабічні канадських аборигенів"
 
 #: ../input-pad/unicode_block.h:75
 msgid "Ogham"
-msgstr ""
+msgstr "Огам"
 
 #: ../input-pad/unicode_block.h:76
 msgid "Runic"
-msgstr ""
+msgstr "Рунічна"
 
 #: ../input-pad/unicode_block.h:77
 msgid "Tagalog"
-msgstr ""
+msgstr "Тагалог"
 
 #: ../input-pad/unicode_block.h:78
 msgid "Hanunoo"
-msgstr ""
+msgstr "Хануну"
 
 #: ../input-pad/unicode_block.h:79
 msgid "Buhid"
-msgstr ""
+msgstr "Бухід"
 
 #: ../input-pad/unicode_block.h:80
 msgid "Tagbanwa"
-msgstr ""
+msgstr "Таґбанва"
 
 #: ../input-pad/unicode_block.h:81
 msgid "Khmer"
-msgstr ""
+msgstr "Кхмерська"
 
 #: ../input-pad/unicode_block.h:82
 msgid "Mongolian"
-msgstr ""
+msgstr "Монгольська"
 
 #: ../input-pad/unicode_block.h:83
 msgid "Unified Canadian Aboriginal Syllabics Extended"
-msgstr ""
+msgstr "Уніфіковані силабічні канадських аборигенів (додаткові)"
 
 #: ../input-pad/unicode_block.h:84
 msgid "Limbu"
-msgstr ""
+msgstr "Лімбу"
 
 #: ../input-pad/unicode_block.h:85
 msgid "Tai Le"
-msgstr ""
+msgstr "Тай лі"
 
 #: ../input-pad/unicode_block.h:86
 msgid "New Tai Lue"
-msgstr ""
+msgstr "Нова тай лі"
 
 #: ../input-pad/unicode_block.h:87
 msgid "Khmer Symbols"
-msgstr ""
+msgstr "Кхмерські символи"
 
 #: ../input-pad/unicode_block.h:88
 msgid "Buginese"
-msgstr ""
+msgstr "Бугійська"
 
 #: ../input-pad/unicode_block.h:89
 msgid "Tai Tham"
-msgstr ""
+msgstr "Тай-тхем"
 
 #: ../input-pad/unicode_block.h:90
 msgid "Balinese"
-msgstr ""
+msgstr "Балійська"
 
 #: ../input-pad/unicode_block.h:91
 msgid "Sundanese"
-msgstr ""
+msgstr "Сунданська"
 
 #: ../input-pad/unicode_block.h:92
 msgid "Lepcha"
-msgstr ""
+msgstr "Лепча"
 
 #: ../input-pad/unicode_block.h:93
 msgid "Ol Chiki"
-msgstr ""
+msgstr "Ол-чикі"
 
 #: ../input-pad/unicode_block.h:94
 msgid "Vedic Extensions"
-msgstr ""
+msgstr "Ведичні розширення"
 
 #: ../input-pad/unicode_block.h:95
 msgid "Phonetic Extensions"
-msgstr ""
+msgstr "Фонетичні розширення"
 
 #: ../input-pad/unicode_block.h:96
 msgid "Phonetic Extensions Supplement"
-msgstr ""
+msgstr "Додаткові фонетичні розширення"
 
 #: ../input-pad/unicode_block.h:97
 msgid "Combining Diacritical Marks Supplement"
-msgstr ""
+msgstr "Додаткові об’єднання діакритичних знаків"
 
 #: ../input-pad/unicode_block.h:98
 msgid "Latin Extended Additional"
-msgstr ""
+msgstr "Латинські додаткові розширені"
 
 #: ../input-pad/unicode_block.h:99
 msgid "Greek Extended"
-msgstr ""
+msgstr "Розширені грецькі"
 
 #: ../input-pad/unicode_block.h:100
 msgid "General Punctuation"
-msgstr ""
+msgstr "Загальна пунктуація"
 
 #: ../input-pad/unicode_block.h:101
 msgid "Superscripts and Subscripts"
-msgstr ""
+msgstr "Верхні і нижні індекси"
 
 #: ../input-pad/unicode_block.h:102
 msgid "Currency Symbols"
-msgstr ""
+msgstr "Символи грошових одиниць"
 
 #: ../input-pad/unicode_block.h:103
 msgid "Combining Diacritical Marks for Symbols"
-msgstr ""
+msgstr "Об’єднання діакритичних знаків і символів"
 
 #: ../input-pad/unicode_block.h:104
 msgid "Letterlike Symbols"
-msgstr ""
+msgstr "Схожі на літери символи"
 
 #: ../input-pad/unicode_block.h:105
 msgid "Number Forms"
-msgstr ""
+msgstr "Форми чисел"
 
 #: ../input-pad/unicode_block.h:106
 msgid "Arrows"
-msgstr ""
+msgstr "Стрілки"
 
 #: ../input-pad/unicode_block.h:107
 msgid "Mathematical Operators"
-msgstr ""
+msgstr "Математичні оператори"
 
 #: ../input-pad/unicode_block.h:108
 msgid "Miscellaneous Technical"
-msgstr ""
+msgstr "Різні технічні"
 
 #: ../input-pad/unicode_block.h:109
 msgid "Control Pictures"
-msgstr ""
+msgstr "Малюнки керування"
 
 #: ../input-pad/unicode_block.h:110
 msgid "Optical Character Recognition"
-msgstr ""
+msgstr "Оптичне розпізнавання знаків"
 
 #: ../input-pad/unicode_block.h:111
 msgid "Enclosed Alphanumerics"
-msgstr ""
+msgstr "Буквено-цифрові у рамках"
 
 #: ../input-pad/unicode_block.h:113
 msgid "Block Elements"
-msgstr ""
+msgstr "Блокові елементи"
 
 #: ../input-pad/unicode_block.h:114
 msgid "Geometric Shapes"
-msgstr ""
+msgstr "Геометричні форми"
 
 #: ../input-pad/unicode_block.h:115
 msgid "Miscellaneous Symbols"
-msgstr ""
+msgstr "Різні символи"
 
 #: ../input-pad/unicode_block.h:117
 msgid "Miscellaneous Mathematical Symbols-A"
-msgstr ""
+msgstr "Різні математичні символи-A"
 
 #: ../input-pad/unicode_block.h:118
 msgid "Supplemental Arrows-A"
-msgstr ""
+msgstr "Додаткові стрілки-A"
 
 #: ../input-pad/unicode_block.h:119
 msgid "Braille Patterns"
-msgstr ""
+msgstr "Шаблони Брайля"
 
 #: ../input-pad/unicode_block.h:120
 msgid "Supplemental Arrows-B"
-msgstr ""
+msgstr "Додаткові стрілки-B"
 
 #: ../input-pad/unicode_block.h:121
 msgid "Miscellaneous Mathematical Symbols-B"
-msgstr ""
+msgstr "Різні математичні символи-B"
 
 #: ../input-pad/unicode_block.h:122
 msgid "Supplemental Mathematical Operators"
-msgstr ""
+msgstr "Додаткові математичні дії"
 
 #: ../input-pad/unicode_block.h:123
 msgid "Miscellaneous Symbols and Arrows"
-msgstr ""
+msgstr "Різні символи і стрілки"
 
 #: ../input-pad/unicode_block.h:124
 msgid "Glagolitic"
-msgstr ""
+msgstr "Глаголиця"
 
 #: ../input-pad/unicode_block.h:125
 msgid "Latin Extended-C"
-msgstr ""
+msgstr "Латинь розширена-C"
 
 #: ../input-pad/unicode_block.h:126
 msgid "Coptic"
-msgstr ""
+msgstr "Коптська"
 
 #: ../input-pad/unicode_block.h:127
 msgid "Georgian Supplement"
-msgstr ""
+msgstr "Додаткові грузинські"
 
 #: ../input-pad/unicode_block.h:128
 msgid "Tifinagh"
-msgstr ""
+msgstr "Тіфінаг"
 
 #: ../input-pad/unicode_block.h:129
 msgid "Ethiopic Extended"
-msgstr ""
+msgstr "Розширена ефіопська"
 
 #: ../input-pad/unicode_block.h:130
 msgid "Cyrillic Extended-A"
-msgstr ""
+msgstr "Розширена кирилиця-A"
 
 #: ../input-pad/unicode_block.h:131
 msgid "Supplemental Punctuation"
-msgstr ""
+msgstr "Додаткова пунктуація"
 
 #: ../input-pad/unicode_block.h:133
 msgid "Kangxi Radicals"
-msgstr ""
+msgstr "Радикали кандзі"
 
 #: ../input-pad/unicode_block.h:134
 msgid "Ideographic Description Characters"
-msgstr ""
+msgstr "Символи-ідеограми"
 
 #: ../input-pad/unicode_block.h:135
 msgid "CJK Symbols and Punctuation"
-msgstr ""
+msgstr "Символи і пунктуація CJK"
 
 #: ../input-pad/unicode_block.h:139
 msgid "Hangul Compatibility Jamo"
-msgstr ""
+msgstr "Сумісні корейські"
 
 #: ../input-pad/unicode_block.h:140
 msgid "Kanbun"
-msgstr ""
+msgstr "Канбун"
 
 #: ../input-pad/unicode_block.h:141
 msgid "Bopomofo Extended"
-msgstr ""
+msgstr "Додаткові бопомофо"
 
 #: ../input-pad/unicode_block.h:142
 msgid "CJK Strokes"
-msgstr ""
+msgstr "Штрихи CJK"
 
 #: ../input-pad/unicode_block.h:143
 msgid "Katakana Phonetic Extensions"
-msgstr ""
+msgstr "Фонетичні розширення катакани"
 
 #: ../input-pad/unicode_block.h:144
 msgid "Enclosed CJK Letters and Months"
-msgstr ""
+msgstr "Вкладені ієрогліфи і назви місяців"
 
 #: ../input-pad/unicode_block.h:146
 msgid "CJK Unified Ideographs Extension A"
-msgstr ""
+msgstr "Ієрогліфічні ідеограми Додаток A"
 
 #: ../input-pad/unicode_block.h:147
 msgid "Yijing Hexagram Symbols"
-msgstr ""
+msgstr "Символи гексаграм «Книги перетворень»"
 
 #: ../input-pad/unicode_block.h:148
 msgid "CJK Unified Ideographs"
-msgstr ""
+msgstr "Універсальні ідеографічні ієрогліфи"
 
 #: ../input-pad/unicode_block.h:149
 msgid "Yi Syllables"
-msgstr ""
+msgstr "Склади Ї"
 
 #: ../input-pad/unicode_block.h:150
 msgid "Yi Radicals"
-msgstr ""
+msgstr "Радикалі Ї"
 
 #: ../input-pad/unicode_block.h:151
 msgid "Lisu"
-msgstr ""
+msgstr "Лісу"
 
 #: ../input-pad/unicode_block.h:152
 msgid "Vai"
-msgstr ""
+msgstr "Вай"
 
 #: ../input-pad/unicode_block.h:153
 msgid "Cyrillic Extended-B"
-msgstr ""
+msgstr "Розширена кирилиця-B"
 
 #: ../input-pad/unicode_block.h:154
 msgid "Bamum"
-msgstr ""
+msgstr "Бамум"
 
 #: ../input-pad/unicode_block.h:155
 msgid "Modifier Tone Letters"
-msgstr ""
+msgstr "Символи зміни тону"
 
 #: ../input-pad/unicode_block.h:156
 msgid "Latin Extended-D"
-msgstr ""
+msgstr "Латинь розширена-D"
 
 #: ../input-pad/unicode_block.h:157
 msgid "Syloti Nagri"
-msgstr ""
+msgstr "Силоті нагрі"
 
 #: ../input-pad/unicode_block.h:158
 msgid "Common Indic Number Forms"
-msgstr ""
+msgstr "Загальні індійські форми чисел"
 
 #: ../input-pad/unicode_block.h:159
 msgid "Phags-pa"
-msgstr ""
+msgstr "Фагс-па"
 
 #: ../input-pad/unicode_block.h:160
 msgid "Saurashtra"
-msgstr ""
+msgstr "Саураштра"
 
 #: ../input-pad/unicode_block.h:161
 msgid "Devanagari Extended"
-msgstr ""
+msgstr "Розширена деванагарі"
 
 #: ../input-pad/unicode_block.h:162
 msgid "Kayah Li"
-msgstr ""
+msgstr "Кая-лі"
 
 #: ../input-pad/unicode_block.h:163
 msgid "Rejang"
-msgstr ""
+msgstr "Реджан"
 
 #: ../input-pad/unicode_block.h:164
 msgid "Hangul Jamo Extended-A"
-msgstr ""
+msgstr "Корейска розширена-A"
 
 #: ../input-pad/unicode_block.h:165
 msgid "Javanese"
-msgstr ""
+msgstr "Яванська"
 
 #: ../input-pad/unicode_block.h:166
 msgid "Cham"
-msgstr ""
+msgstr "Тьям"
 
 #: ../input-pad/unicode_block.h:167
 msgid "Myanmar Extended-A"
-msgstr ""
+msgstr "М’янмська розширена-A"
 
 #: ../input-pad/unicode_block.h:168
 msgid "Tai Viet"
-msgstr ""
+msgstr "Тай-в’єт"
 
 #: ../input-pad/unicode_block.h:169
 msgid "Meetei Mayek"
-msgstr ""
+msgstr "Маніпурі"
 
 #: ../input-pad/unicode_block.h:170
 msgid "Hangul Syllables"
-msgstr ""
+msgstr "Склади хангиля"
 
 #: ../input-pad/unicode_block.h:171
 msgid "Hangul Jamo Extended-B"
-msgstr ""
+msgstr "Корейська розширена-B"
 
 #: ../input-pad/unicode_block.h:172
 msgid "High Surrogates"
-msgstr ""
+msgstr "Верхні замінники"
 
 #: ../input-pad/unicode_block.h:173
 msgid "High Private Use Surrogates"
-msgstr ""
+msgstr "Верхні приватні замінники"
 
 #: ../input-pad/unicode_block.h:174
 msgid "Low Surrogates"
-msgstr ""
+msgstr "Нижні замінники"
 
 #: ../input-pad/unicode_block.h:175
 msgid "Private Use Area"
-msgstr ""
+msgstr "Область приватного використання"
 
 #: ../input-pad/unicode_block.h:176
 msgid "CJK Compatibility Ideographs"
-msgstr ""
+msgstr "Сумісні ієрогліфічні ідеограми"
 
 #: ../input-pad/unicode_block.h:177
 msgid "Alphabetic Presentation Forms"
-msgstr ""
+msgstr "Форми відтворення абеток"
 
 #: ../input-pad/unicode_block.h:178
 msgid "Arabic Presentation Forms-A"
-msgstr ""
+msgstr "Форми відображення арабської A"
 
 #: ../input-pad/unicode_block.h:179
 msgid "Variation Selectors"
-msgstr ""
+msgstr "Вибір варіантів"
 
 #: ../input-pad/unicode_block.h:180
 msgid "Vertical Forms"
-msgstr ""
+msgstr "Вертикальні форми"
 
 #: ../input-pad/unicode_block.h:181
 msgid "Combining Half Marks"
-msgstr ""
+msgstr "Комбіновані позначки половинок"
 
 #: ../input-pad/unicode_block.h:182
 msgid "CJK Compatibility Forms"
-msgstr ""
+msgstr "Сумісні ієрогліфічні форми"
 
 #: ../input-pad/unicode_block.h:183
 msgid "Small Form Variants"
-msgstr ""
+msgstr "Варіанти малих форм"
 
 #: ../input-pad/unicode_block.h:184
 msgid "Arabic Presentation Forms-B"
-msgstr ""
+msgstr "Форми відображення арабської B"
 
 #: ../input-pad/unicode_block.h:185
 msgid "Halfwidth and Fullwidth Forms"
-msgstr ""
+msgstr "Форми півширини та повної ширини"
 
 #: ../input-pad/unicode_block.h:186
 msgid "Specials"
-msgstr ""
+msgstr "Спеціальні"
 
 #: ../input-pad/unicode_block.h:187
 msgid "Linear B Syllabary"
-msgstr ""
+msgstr "Лінійна писемність B, склади"
 
 #: ../input-pad/unicode_block.h:188
 msgid "Linear B Ideograms"
-msgstr ""
+msgstr "Лінійна писемність B, ідеограми"
 
 #: ../input-pad/unicode_block.h:189
 msgid "Aegean Numbers"
-msgstr ""
+msgstr "Егейські числа"
 
 #: ../input-pad/unicode_block.h:190
 msgid "Ancient Greek Numbers"
-msgstr ""
+msgstr "Давньогрецькі числа"
 
 #: ../input-pad/unicode_block.h:191
 msgid "Ancient Symbols"
-msgstr ""
+msgstr "Давні символи"
 
 #: ../input-pad/unicode_block.h:192
 msgid "Phaistos Disc"
-msgstr ""
+msgstr "Фестський диск"
 
 #: ../input-pad/unicode_block.h:193
 msgid "Lycian"
-msgstr ""
+msgstr "лікійська"
 
 #: ../input-pad/unicode_block.h:194
 msgid "Carian"
-msgstr ""
+msgstr "Карійська"
 
 #: ../input-pad/unicode_block.h:195
 msgid "Old Italic"
-msgstr ""
+msgstr "Давня італійська"
 
 #: ../input-pad/unicode_block.h:197
 msgid "Ugaritic"
-msgstr ""
+msgstr "Угаритська"
 
 #: ../input-pad/unicode_block.h:198
 msgid "Old Persian"
-msgstr ""
+msgstr "Старовинна персидська"
 
 #: ../input-pad/unicode_block.h:199
 msgid "Deseret"
-msgstr ""
+msgstr "Дезерет"
 
 #: ../input-pad/unicode_block.h:201
 msgid "Osmanya"
-msgstr ""
+msgstr "Османья"
 
 #: ../input-pad/unicode_block.h:202
 msgid "Cypriot Syllabary"
-msgstr ""
+msgstr "Кіпріотська складова абетка"
 
 #: ../input-pad/unicode_block.h:203
 msgid "Imperial Aramaic"
-msgstr ""
+msgstr "імперська арамейська"
 
 #: ../input-pad/unicode_block.h:204
 msgid "Phoenician"
-msgstr ""
+msgstr "фінікійська"
 
 #: ../input-pad/unicode_block.h:205
 msgid "Lydian"
-msgstr ""
+msgstr "лідійська"
 
 #: ../input-pad/unicode_block.h:206
 msgid "Kharoshthi"
-msgstr ""
+msgstr "Кхароштхі"
 
 #: ../input-pad/unicode_block.h:207
 msgid "Old South Arabian"
-msgstr ""
+msgstr "Давня південноарабська"
 
 #: ../input-pad/unicode_block.h:208
 msgid "Avestan"
-msgstr ""
+msgstr "Авестанська"
 
 #: ../input-pad/unicode_block.h:209
 msgid "Inscriptional Parthian"
-msgstr ""
+msgstr "Інскрипційна парфянська"
 
 #: ../input-pad/unicode_block.h:210
 msgid "Inscriptional Pahlavi"
-msgstr ""
+msgstr "Інскрипційна пехлеві"
 
 #: ../input-pad/unicode_block.h:211
 msgid "Old Turkic"
-msgstr ""
+msgstr "Давня турецька"
 
 #: ../input-pad/unicode_block.h:212
 msgid "Rumi Numeral Symbols"
-msgstr ""
+msgstr "Числові символи румі"
 
 #: ../input-pad/unicode_block.h:213
 msgid "Kaithi"
-msgstr ""
+msgstr "Кайтхі"
 
 #: ../input-pad/unicode_block.h:214
 msgid "Cuneiform"
-msgstr ""
+msgstr "Клинопис"
 
 #: ../input-pad/unicode_block.h:215
 msgid "Cuneiform Numbers and Punctuation"
-msgstr ""
+msgstr "Клинописні числа і пунктуація"
 
 #: ../input-pad/unicode_block.h:216
 msgid "Egyptian Hieroglyphs"
-msgstr ""
+msgstr "Єгипетська ієрогліфічна"
 
 #: ../input-pad/unicode_block.h:217
 msgid "Byzantine Musical Symbols"
-msgstr ""
+msgstr "Візантійські музичні символи"
 
 #: ../input-pad/unicode_block.h:218
 msgid "Musical Symbols"
-msgstr ""
+msgstr "Музичні символи"
 
 #: ../input-pad/unicode_block.h:219
 msgid "Ancient Greek Musical Notation"
-msgstr ""
+msgstr "Давньогрецькі символи запису музики"
 
 #: ../input-pad/unicode_block.h:220
 msgid "Tai Xuan Jing Symbols"
-msgstr ""
+msgstr "Символи Тай Хуан Жинь"
 
 #: ../input-pad/unicode_block.h:221
 msgid "Counting Rod Numerals"
-msgstr ""
+msgstr "Числа з паличок для лічби"
 
 #: ../input-pad/unicode_block.h:222
 msgid "Mathematical Alphanumeric Symbols"
-msgstr ""
+msgstr "Математичні буквено-цифрові символи"
 
 #: ../input-pad/unicode_block.h:223
 msgid "Mahjong Tiles"
-msgstr ""
+msgstr "Плитки маджонґ"
 
 #: ../input-pad/unicode_block.h:224
 msgid "Domino Tiles"
-msgstr ""
+msgstr "Плитки доміно"
 
 #: ../input-pad/unicode_block.h:225
 msgid "Enclosed Alphanumeric Supplement"
-msgstr ""
+msgstr "Додаткові буквенно-цифрові у рамках"
 
 #: ../input-pad/unicode_block.h:226
 msgid "Enclosed Ideographic Supplement"
-msgstr ""
+msgstr "Додаткові ідеографічні у рамках"
 
 #: ../input-pad/unicode_block.h:227
 msgid "CJK Unified Ideographs Extension B"
-msgstr ""
+msgstr "Уніфіковані ієрогліфічні ідеограми, додаток B"
 
 #: ../input-pad/unicode_block.h:228
 msgid "CJK Unified Ideographs Extension C"
-msgstr ""
+msgstr "Ієрогліфічні ідеограми, додаток C"
 
 #: ../input-pad/unicode_block.h:229
 msgid "CJK Compatibility Ideographs Supplement"
-msgstr ""
+msgstr "Додаткові ієрогліфічні ідеограми для сумісності"
 
 #: ../input-pad/unicode_block.h:230
 msgid "Tags"
-msgstr ""
+msgstr "Мітки"
 
 #: ../input-pad/unicode_block.h:231
 msgid "Variation Selectors Supplement"
-msgstr ""
+msgstr "Додаткові символи зміни"
 
 #: ../input-pad/unicode_block.h:232
 msgid "Supplementary Private Use Area-A"
-msgstr ""
+msgstr "Додаткова область приватного використання A"
 
 #: ../input-pad/unicode_block.h:233
 msgid "Supplementary Private Use Area-B"
-msgstr ""
+msgstr "Додаткова область приватного використання B"
 
 #: ../input-pad/window-gtk.c:172
 msgid "Display version"
-msgstr ""
+msgstr "Показати дані щодо версії"
 
 #. Translators: the word 'KBDUI' is not translated.
 #: ../input-pad/window-gtk.c:175
 msgid "Use KBDUI to draw keyboard"
-msgstr ""
+msgstr "Використовувати KBDUI для малювання клавіатури"
 
 #. Translators: the word 'TYPE' is not translated.
 #: ../input-pad/window-gtk.c:178
 msgid "Use TYPE of char table. The available TYPE=0, 1, 2"
 msgstr ""
+"Використовувати тип TYPE таблиці символів. Доступні значення: TYPE=0, 1, 2"
 
 #. Translators: the word 'TYPE' is not translated.
 #: ../input-pad/window-gtk.c:181
 msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
 msgstr ""
+"Використовувати тип TYPE розкладки клавіатури. Доступні значення: TYPE=0, 1"
 
 #: ../input-pad/window-gtk.c:188
 msgid "Use XTEST module to send key events"
-msgstr ""
+msgstr "Використовувати модуль XTEST для надсилання натискань клавіш"
 
 #: ../input-pad/window-gtk.c:193
 msgid "Use XSendEvent to send key events"
-msgstr ""
+msgstr "Використовувати XSendEvent для надсилання натискань клавіш"
 
 #: ../input-pad/window-gtk.c:1301
 msgid "Fold layout"
-msgstr ""
+msgstr "Згорнути розкладку"
 
 #: ../input-pad/window-gtk.c:1306 ../input-pad/window-gtk.c:2695
 msgid "Extend layout"
-msgstr ""
+msgstr "Розгорнути розкладку"
 
 #: ../input-pad/window-gtk.c:2895
 msgid "Layout"
-msgstr ""
+msgstr "Розкладка"
 
 #: ../input-pad/window-gtk.c:3170
 msgid "_Layout:"
-msgstr ""
+msgstr "_Розкладка:"
 
 #: ../input-pad/window-gtk.c:3200
 msgid "_Configure Layouts"
-msgstr ""
+msgstr "_Налаштувати розкладки"
 
 #. No longer used in gtk 2.20
 #. gchar *license1, *license2, *license3;
@@ -2565,11 +2591,13 @@ msgstr ""
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
 msgstr ""
+"Вам не надається жодних гарантій щодо роботи цієї програми. Щоб дізнатися "
+"більше, відвідайте %s"
 
 #: ../input-pad/window-gtk.c:3707
 msgid "Group"
-msgstr ""
+msgstr "Група"
 
 #: ../input-pad/window-gtk.c:3715
 msgid "Subgroup"
-msgstr ""
+msgstr "Підгрупа"
