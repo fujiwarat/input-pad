@@ -9,12 +9,20 @@
           <_comment>Open back unrounded vowel</_comment>
         </string>
         <string>
+          <label>ᶀ</label>
+          <_comment>Palatalized voiced bilabial plosive</_comment>
+        </string>
+        <string>
           <label>ƈ</label>
           <_comment>Voiceless palatal implosive</_comment>
         </string>
         <string>
           <label>ʗ</label>
           <_comment>Alveolar click</_comment>
+        </string>
+        <string>
+          <label>ᶁ</label>
+          <_comment>Palatalized voiced alveolar plosive</_comment>
         </string>
         <string>
           <label>ʣ</label>
@@ -29,24 +37,68 @@
           <_comment>Voiced palato-alveolar affricate</_comment>
         </string>
         <string>
+          <label>ᶂ</label>
+          <_comment>Palatalized voiceless labiodental fricative</_comment>
+        </string>
+        <string>
+          <label>ᶃ</label>
+          <_comment>Palatalized voiced velar plosive</_comment>
+        </string>
+        <string>
+          <label>ᶄ</label>
+          <_comment>Palatalized voiceless velar plosive</_comment>
+        </string>
+        <string>
           <label>ƙ</label>
           <_comment>Voiceless velar implosive</_comment>
+        </string>
+        <string>
+          <label>ᶅ</label>
+          <_comment>Palatalized alveolar lateral approximant</_comment>
+        </string>
+        <string>
+          <label>ᶆ</label>
+          <_comment>Palatalized bilabial nasal</_comment>
+        </string>
+        <string>
+          <label>ᶇ</label>
+          <_comment>Palatalized alveolar nasal</_comment>
         </string>
         <string>
           <label>ƞ</label>
           <_comment>Syllabic alveolar nasal</_comment>
         </string>
         <string>
+          <label>ᶈ</label>
+          <_comment>Palatalized voiceless bilabial plosive</_comment>
+        </string>
+        <string>
           <label>ƥ</label>
           <_comment>Voiceless bilabial implosive</_comment>
+        </string>
+        <string>
+          <label>ᶉ</label>
+          <_comment>Palatalized alveolar trill</_comment>
         </string>
         <string>
           <label>ɼ</label>
           <_comment>Voiced strident apico-alveolar trill</_comment>
         </string>
         <string>
+          <label>ᶊ</label>
+          <_comment>Palatalized voiceless alveolar fricative</_comment>
+        </string>
+        <string>
+          <label>ᶋ</label>
+          <_comment>Voiceless alveopalatal fricative</_comment>
+        </string>
+        <string>
           <label>ʆ</label>
           <_comment>Voiceless alveopalatal fricative</_comment>
+        </string>
+        <string>
+          <label>ƪ</label>
+          <_comment>Labialized voiceless palato-alveolar fricative</_comment>
         </string>
         <string>
           <label>ʨ</label>
@@ -61,6 +113,10 @@
           <_comment>Voiceless palato-alveolar affricate</_comment>
         </string>
         <string>
+          <label>ƫ</label>
+          <_comment>Palatalized voiceless alveolar plosive</_comment>
+        </string>
+        <string>
           <label>ƭ</label>
           <_comment>Voiceless alveolar implosive</_comment>
         </string>
@@ -71,6 +127,22 @@
         <string>
           <label>ʠ</label>
           <_comment>Voiceless uvular implosive</_comment>
+        </string>
+        <string>
+          <label>ᶌ</label>
+          <_comment>Palatalized voiced labiodental fricative</_comment>
+        </string>
+        <string>
+          <label>ᶍ</label>
+          <_comment>Palatalized voiceless velar fricative</_comment>
+        </string>
+        <string>
+          <label>ᶎ</label>
+          <_comment>Palatalized voiced alveolar fricative</_comment>
+        </string>
+        <string>
+          <label>ƺ</label>
+          <_comment>Labialized voiced palato-alveolar fricative</_comment>
         </string>
         <string>
           <label>ʓ</label>
@@ -91,6 +163,22 @@
         <string>
           <label>ƾ</label>
           <_comment>Voiceless alveolar affricate</_comment>
+        </string>
+        <string>
+          <label>σ</label>
+          <_comment>Labialized voiceless alveolar or dental fricative</_comment>
+        </string>
+        <string>
+          <label>ƍ</label>
+          <_comment>Labialized voiced alveolar or dental fricative</_comment>
+        </string>
+        <string>
+          <label>&#811;</label>
+          <_comment>Combining labialization mark</_comment>
+        </string>
+        <string>
+          <label>&#801;</label>
+          <_comment>Combining palatalization mark</_comment>
         </string>
       </table>
 </dummy>

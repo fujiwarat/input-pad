@@ -7,6 +7,7 @@ data/goth.xml.in
 data/input-pad.desktop.in
 [type: gettext/glade]data/input-pad.ui
 data/ipa-obsolete.xml.in
+data/ipa-unofficial.xml.in
 data/ipa.xml.in
 data/ja.xml.in
 data/keyboard.xml.in

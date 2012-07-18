@@ -24,7 +24,11 @@
           <_comment>Open back rounded vowel</_comment>
         </string>
         <string>
-          <label>ʌ</label>
+          <!-- For some reason, certain apps think that wedge
+               and capital lambda are equivalent
+               ... including git, so... I'll just use this
+               entity... -->
+          <label>&#652;</label>
           <_comment>Open-mid back unrounded vowel</_comment>
         </string>
         <string>
@@ -152,6 +156,10 @@
           <_comment>Voiced velar plosive</_comment>
         </string>
         <string>
+          <label>ɡ͡b</label>
+          <_comment>Voiced labial-velar plosive</_comment>
+        </string>
+        <string>
           <label>ɠ</label>
           <_comment>Voiced velar implosive</_comment>
         </string>
@@ -228,6 +236,10 @@
           <_comment>Voiceless velar lateral affricate</_comment>
         </string>
         <string>
+          <label>k͡p</label>
+          <_comment>Voiceless labial-velar plosive</_comment>
+        </string>
+        <string>
           <label>k͡x</label>
           <_comment>Voiceless velar affricate</_comment>
         </string>
@@ -256,6 +268,10 @@
           <_comment>Velar lateral approximant</_comment>
         </string>
         <string>
+          <label>ʟ̝̊</label>
+          <_comment>Voiceless velar lateral fricative</_comment>
+        </string>
+        <string>
           <label>m</label>
           <_comment>Bilabial nasal</_comment>
         </string>
@@ -270,6 +286,10 @@
         <string>
           <label>ŋ</label>
           <_comment>Velar nasal</_comment>
+        </string>
+        <string>
+          <label>ŋ͡m</label>
+          <_comment>Labial-velar nasal</_comment>
         </string>
         <string>
           <label>ɲ</label>
@@ -481,6 +501,10 @@
           <_comment>Palatal lateral approximant</_comment>
         </string>
         <string>
+          <label>ʎ̝̊</label>
+          <_comment>Voiceless palatal lateral fricative</_comment>
+        </string>
+        <string>
           <label>z</label>
           <_comment>Voiced alveolar fricative</_comment>
         </string>
@@ -566,8 +590,28 @@
           <_comment>Lateral release mark</_comment>
         </string>
         <string>
+          <label>ᵐ</label>
+          <_comment>Bilabial nasal release mark</_comment>
+        </string>
+        <string>
+          <label>ᶬ</label>
+          <_comment>Labiodental nasal release mark</_comment>
+        </string>
+        <string>
           <label>ⁿ</label>
-          <_comment>Nasal release mark</_comment>
+          <_comment>Alveolar nasal release mark</_comment>
+        </string>
+        <string>
+          <label>ᶮ</label>
+          <_comment>Palatal nasal release mark</_comment>
+        </string>
+        <string>
+          <label>ᶯ</label>
+          <_comment>Retroflex nasal release mark</_comment>
+        </string>
+        <string>
+          <label>ᶰ</label>
+          <_comment>Uvular nasal release mark</_comment>
         </string>
         <string>
           <label>ᶣ</label>
@@ -594,6 +638,10 @@
           <_comment>Pharyngealization mark</_comment>
         </string>
         <string>
+          <label>&#820;</label>
+          <_comment>Combining velarization/pharyngealization mark</_comment>
+        </string>
+        <string>
           <label>&#816;</label>
           <_comment>Combining laryngealization mark</_comment>
         </string>
@@ -602,7 +650,7 @@
           <_comment>Combining retroflexion mark</_comment>
         </string>
         <string>
-          <label>’</label>
+          <label>ʼ</label>
           <_comment>Ejection mark</_comment>
         </string>
         <string>
@@ -670,6 +718,14 @@
           <_comment>Combining voiceless mark</_comment>
         </string>
         <string>
+          <label>&#778;</label>
+          <_comment>Combining voiceless mark above</_comment>
+        </string>
+        <string>
+          <label>˯</label>
+          <_comment>Pre-voicing/post-voicing mark</_comment>
+        </string>
+        <string>
           <label>&#804;</label>
           <_comment>Combining breathy voice mark</_comment>
         </string>
@@ -692,6 +748,18 @@
         <string>
           <label>&#809;</label>
           <_comment>Combining syllabic mark</_comment>
+        </string>
+        <string>
+          <label>&#781;</label>
+          <_comment>Combining syllabic mark above</_comment>
+        </string>
+        <string>
+          <label>&#815;</label>
+          <_comment>Combining non-syllabic mark</_comment>
+        </string>
+        <string>
+          <label>&#785;</label>
+          <_comment>Combining non-syllabic mark above</_comment>
         </string>
         <string>
           <label>&#779;</label>
@@ -794,12 +862,44 @@
           <_comment>Peaking tone trigraph</_comment>
         </string>
         <string>
-          <label>ː</label>
-          <_comment>Elongation mark</_comment>
+          <label>ꜛ</label>
+          <_comment>Upstep mark</_comment>
         </string>
         <string>
-          <label>ˑ</label>
-          <_comment>Weak elongation mark</_comment>
+          <label>ꜜ</label>
+          <_comment>Downstep mark</_comment>
+        </string>
+        <string>
+          <label>|</label>
+          <_comment>Minor break</_comment>
+        </string>
+        <string>
+          <label>‖</label>
+          <_comment>Major break</_comment>
+        </string>
+        <string>
+          <label>↗</label>
+          <_comment>Rising intonation mark</_comment>
+        </string>
+        <string>
+          <label>↘</label>
+          <_comment>Falling intonation mark</_comment>
+        </string>
+        <string>
+          <label>˖</label>
+          <_comment>Advanced articulation mark</_comment>
+        </string>
+        <string>
+          <label>˗</label>
+          <_comment>Retracted articulation mark</_comment>
+        </string>
+        <string>
+          <label>&#799;</label>
+          <_comment>Combining advanced articulation mark</_comment>
+        </string>
+        <string>
+          <label>&#800;</label>
+          <_comment>Combining retracted articulation mark</_comment>
         </string>
         <string>
           <label>˔</label>
@@ -850,16 +950,28 @@
           <_comment>Ingression mark</_comment>
         </string>
         <string>
-          <label>&#815;</label>
-          <_comment>Combining diphthong mark</_comment>
-        </string>
-        <string>
           <label>&#865;</label>
           <_comment>Combining ligature tie</_comment>
         </string>
         <string>
           <label>&#860;</label>
           <_comment>Combining ligature undertie</_comment>
+        </string>
+        <string>
+          <label>ː</label>
+          <_comment>Elongation mark</_comment>
+        </string>
+        <string>
+          <label>ˑ</label>
+          <_comment>Weak elongation mark</_comment>
+        </string>
+        <string>
+          <label>&#774;</label>
+          <_comment>Combining extra-short duration mark</_comment>
+        </string>
+        <string>
+          <label>‿</label>
+          <_comment>Liaison mark</_comment>
         </string>
         <string>
           <label>ˈ</label>

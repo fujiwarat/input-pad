@@ -1,0 +1,96 @@
+<dummy>
+      <table>
+        <!-- To be able to see proper renderings of the PUA characters used
+             in this file, install either Charis SIL or Doulos SIL.
+             Their official homepages are listed below:
+             http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=CharisSILfont
+             http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=DoulosSILfont
+             Both fonts are available under the SIL Open Font License:
+             http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&item_id=OFL
+         -->
+        <column>10</column>
+        <!-- "IPA" stands for "International Phonetic Alphabet" -->
+        <_name>IPA (Unofficial)</_name>
+        <string>
+          <label>ȸ</label>
+          <_comment>Voiced labiodental plosive</_comment>
+        </string>
+        <!-- This uses a PUA character -->
+        <string>
+          <label>c͡</label>
+          <_comment>Voiceless palatal lateral affricate</_comment>
+        </string>
+        <string>
+          <label>ᶑ</label>
+          <_comment>Voiced retroflex implosive</_comment>
+        </string>
+        <string>
+          <label>ᴅ</label>
+          <_comment>Alveolar flap</_comment>
+        </string>
+        <!-- This is a PUA character -->
+        <string>
+          <label></label>
+          <_comment>Voiceless palatal lateral fricative</_comment>
+        </string>
+        <!-- This is a PUA character -->
+        <string>
+          <label></label>
+          <_comment>Retroflex flap</_comment>
+        </string>
+        <string>
+          <label>ꞎ</label>
+          <_comment>Voiceless retroflex lateral fricative</_comment>
+        </string>
+        <!-- This is a PUA character. This is here for those who desire it...
+             in cases like better font support.
+        -->
+        <string>
+          <label></label>
+          <!-- "PUA" stands for "Private Use Area" -->
+          <_comment>Voiceless retroflex lateral fricative (PUA)</_comment>
+        </string>
+        <!-- This uses a PUA character -->
+        <string>
+          <label>k͡</label>
+          <_comment>Voiceless velar lateral affricate</_comment>
+        </string>
+        <!-- This is a PUA character -->
+        <string>
+          <label></label>
+          <_comment>Voiceless velar lateral fricative</_comment>
+        </string>
+        <string>
+          <label>ᴙ</label>
+          <_comment>Epiglottal trill</_comment>
+        </string>
+        <string>
+          <label>ȹ</label>
+          <_comment>Voiceless labiodental plosive</_comment>
+        </string>
+        <string>
+          <label>ʈ͡ꞎ</label>
+          <_comment>Voiceless retroflex lateral affricate</_comment>
+        </string>
+        <!-- This uses a PUA character. This is here for those who desire it...
+             in cases like better font support.
+        -->
+        <string>
+          <label>ʈ͡</label>
+          <!-- "PUA" stands for "Private Use Area" -->
+          <_comment>Voiceless retroflex lateral affricate (PUA)</_comment>
+        </string>
+        <string>
+          <label>&#7677;</label>
+          <_comment>Combining stridency mark</_comment>
+        </string>
+        <!-- This is a PUA character. This is here for those who desire it...
+             in cases like better font support.
+        -->
+        <string>
+          <label>&#61819;</label>
+          <!-- "PUA" stands for "Private Use Area" -->
+          <_comment>Combining stridency mark (PUA)</_comment>
+        </string>
+      </table>
+</dummy>
