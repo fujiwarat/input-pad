@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
-"POT-Creation-Date: 2012-07-18 20:28+0900\n"
+"POT-Creation-Date: 2012-08-06 18:52-0400\n"
 "PO-Revision-Date: 2012-06-22 17:50+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Source\n"
@@ -1607,6 +1607,10 @@ msgstr ""
 
 #: ../data/latin.xml.in.h:3 ../input-pad/unicode_block.h:39
 msgid "Latin Extended-A"
+msgstr ""
+
+#: ../data/latin.xml.in.h:4
+msgid "Old and Middle English"
 msgstr ""
 
 #: ../data/runr.xml.in.h:1
