@@ -359,7 +359,7 @@ If you wish to send multi-byte characters, this application needs to be run unde
 If you wish to send characters to X11 applications, those applications needs to allow send events. e.g.
 % xterm -xrm "XTerm*allowSendEvents: true"
 
-You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad to customize those in "Custom Character" pain.</property>
+You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad to customize those in "Custom Character" pane.</property>
           </object>
           <packing>
             <property name="expand">False</property>

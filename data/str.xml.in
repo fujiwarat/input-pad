@@ -811,10 +811,6 @@
           <comment>See You Again</comment>
         </string>
         <string>
-          <label>DND</label>
-          <comment>Drag-aNd-Drop</comment>
-        </string>
-        <string>
           <label>FYA</label>
           <comment>For Your Amusement</comment>
         </string>
@@ -845,6 +841,10 @@
         <string>
           <label>N/A</label>
           <comment>Not Applicable</comment>
+        </string>
+        <string>
+          <label>OMG</label>
+          <comment>Oh My God</comment>
         </string>
         <string>
           <label>R.I.P</label>
@@ -891,8 +891,16 @@
           <comment>Carbon Copy</comment>
         </string>
         <string>
+          <label>DND</label>
+          <comment>Drag-aNd-Drop</comment>
+        </string>
+        <string>
           <label>E$</label>
           <comment>Extended Cache</comment>
+        </string>
+        <string>
+          <label>ETA</label>
+          <comment>Estimated Time of Arrival</comment>
         </string>
         <string>
           <label>GBIC</label>
@@ -969,6 +977,11 @@
         <string>
           <label>SCM</label>
           <comment>Source Codes Management</comment>
+        </string>
+        <string>
+          <!-- http://en.wikipedia.org/wiki/WYSIWYG -->
+          <label>WYSIWHG</label>
+          <comment>What You See Is What You Get</comment>
         </string>
       </table>
       <table>

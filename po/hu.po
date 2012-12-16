@@ -1,66 +1,63 @@
-# French translations for input-pad
+# Hungarian translations for input-pad
 # Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
 #
 # Translators:
-# Jérôme Fenal <jfenal@gmail.com>, 2012.
-# Nobuharu Kojima <pythonsnake@fedoraproject.org>, 2012.
-#   <pythonsnake98@gmail.com>, 2012.
-#   <pythonsnake@fedoraproject.org>, 2012.
+# Zoltan Hoppár <hopparz@gmail.com>, 2012.
 msgid ""
 msgstr ""
-"Project-Id-Version: input-pad HEAD\n"
+"Project-Id-Version: input-pad\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
 "POT-Creation-Date: 2012-12-17 04:12+0900\n"
-"PO-Revision-Date: 2012-10-20 22:29+0000\n"
-"Last-Translator: Nobuharu Kojima <pythonsnake@fedoraproject.org>\n"
-"Language-Team: French <trans-fr@lists.fedoraproject.org>\n"
-"Language: fr\n"
+"PO-Revision-Date: 2012-12-03 15:19+0000\n"
+"Last-Translator: Zoltan Hoppár <hopparz@gmail.com>\n"
+"Language-Team: Hungarian <trans-hu@lists.fedoraproject.org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/alphabet.xml.in.in.h:1
 msgid "Alphabets"
-msgstr "Alphabets"
+msgstr ""
 
 #: ../data/base.xml.in.h:1
 msgid "Symbols"
-msgstr "Symboles"
+msgstr "Szimbólumok"
 
 #: ../data/base.xml.in.h:2
 msgid "Currency"
-msgstr "Monnaie"
+msgstr "Pénznem"
 
 #: ../data/base.xml.in.h:3
 msgid "Letterlike"
-msgstr ""
+msgstr "Betűszerű"
 
 #: ../data/base.xml.in.h:4
 msgid "Miscellaneous"
-msgstr "Divers"
+msgstr "Egyéb"
 
 #: ../data/base.xml.in.h:5 ../input-pad/unicode_block.h:116
 msgid "Dingbats"
-msgstr "Casseaux"
+msgstr "Apróságok"
 
 #. Translators: Superscripts and Subscripts
 #: ../data/base.xml.in.h:7
 msgid "Super and Sub"
-msgstr ""
+msgstr "Kitevő és alszám"
 
 #: ../data/base.xml.in.h:8
 msgid "Bold"
-msgstr "Gras"
+msgstr ""
 
 #: ../data/base.xml.in.h:9
 msgid "Italic"
-msgstr "Italique"
+msgstr ""
 
 #: ../data/base.xml.in.h:10
 msgid "Script"
-msgstr "Script"
+msgstr ""
 
 #: ../data/base.xml.in.h:11
 msgid "Double Struck"
@@ -68,39 +65,39 @@ msgstr ""
 
 #: ../data/base.xml.in.h:12
 msgid "All"
-msgstr "Tous"
+msgstr "Összes"
 
 #: ../data/base.xml.in.h:13 ../data/zh.xml.in.h:2
 msgid "Numbers"
-msgstr "Nombres"
+msgstr "Számok"
 
 #: ../data/base.xml.in.h:14
 msgid "Roman"
-msgstr "Romain"
+msgstr "Román"
 
 #: ../data/base.xml.in.h:15
 msgid "Enclosed"
-msgstr "Cerclés"
+msgstr "Beépített"
 
 #: ../data/base.xml.in.h:16
 msgid "Fraction"
-msgstr "Fraction"
+msgstr "Töredék"
 
 #: ../data/base.xml.in.h:17
 msgid "Technical"
-msgstr "Technique"
+msgstr ""
 
 #: ../data/base.xml.in.h:18
 msgid "Unit"
-msgstr "Unité"
+msgstr "Egység"
 
 #: ../data/base.xml.in.h:19
 msgid "Mathematical"
-msgstr "Mathématiques"
+msgstr "Matematikai"
 
 #: ../data/base.xml.in.h:20
 msgid "Controls"
-msgstr "Contrôles"
+msgstr "Vezérlők"
 
 #: ../data/base.xml.in.h:21
 msgid "OCR"
@@ -108,23 +105,23 @@ msgstr "OCR"
 
 #: ../data/base.xml.in.h:22
 msgid "Graphics"
-msgstr "Graphiques"
+msgstr "Grafikai"
 
 #: ../data/base.xml.in.h:23
 msgid "Arrow"
-msgstr "Flèche"
+msgstr "Nyíl"
 
 #: ../data/base.xml.in.h:24 ../input-pad/unicode_block.h:112
 msgid "Box Drawing"
-msgstr "Dessiner des boîtes"
+msgstr "Négyzet rajz"
 
 #: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3937
 msgid "Block"
-msgstr "Bloc"
+msgstr "Blokk"
 
 #: ../data/base.xml.in.h:26
 msgid "Geometric"
-msgstr "Géométriques"
+msgstr "Geometriai"
 
 #: ../data/base.xml.in.h:27
 msgid "Braille"
@@ -132,11 +129,11 @@ msgstr "Braille"
 
 #: ../data/base.xml.in.h:28
 msgid "Punctuations"
-msgstr "Ponctuations"
+msgstr "Beszúrások"
 
 #: ../data/base.xml.in.h:29
 msgid "General"
-msgstr "Généraux"
+msgstr "Általános"
 
 #: ../data/base.xml.in.h:30
 msgid "CJK"
@@ -144,91 +141,91 @@ msgstr "CJK"
 
 #: ../data/base.xml.in.h:31 ../input-pad/unicode_block.h:145
 msgid "CJK Compatibility"
-msgstr "Compatibilité CJK "
+msgstr "CJK Kompatibilitás"
 
 #: ../data/base.xml.in.h:32
 msgid "Small Form"
-msgstr "Petite forme"
+msgstr "Kis formátumú"
 
 #: ../data/cmd.xml.in.h:1
 msgid "Command"
-msgstr "Commande"
+msgstr "Parancs"
 
 #: ../data/cmd.xml.in.h:2
 msgid "Date"
-msgstr "Date"
+msgstr "Dátum"
 
 #: ../data/cmd.xml.in.h:3
 msgid "Normal Date"
-msgstr "Date normale"
+msgstr "Normál Dátum"
 
 #: ../data/cmd.xml.in.h:4
 msgid "Date and Time"
-msgstr "Date et temps"
+msgstr "Dátum és Idő"
 
 #: ../data/cmd.xml.in.h:5
 msgid "ChangeLog date"
-msgstr "Date du journal de modification"
+msgstr "Változásnapló dátuma"
 
 #: ../data/cmd.xml.in.h:6
 msgid "USA English date"
-msgstr ""
+msgstr "USA angol dátum"
 
 #: ../data/cmd.xml.in.h:7
 msgid "UK English date"
-msgstr ""
+msgstr "Brit angol dátum"
 
 #: ../data/cmd.xml.in.h:8
 msgid "ISO 8601 date"
-msgstr "Date ISO 8601"
+msgstr "ISO 8601 dátum"
 
 #: ../data/cmd.xml.in.h:9
 msgid "Era"
-msgstr ""
+msgstr "Era"
 
 #: ../data/cmd.xml.in.h:10
 msgid "Century Year"
-msgstr "Émoticones"
+msgstr "Évszázadok"
 
 #: ../data/cmd.xml.in.h:11
 msgid "Normal Time"
-msgstr "Temps normal"
+msgstr "Normál idő"
 
 #: ../data/cmd.xml.in.h:12
 msgid "English Time"
-msgstr "Temps anglais"
+msgstr "Angol idő"
 
 #: ../data/cmd.xml.in.h:13
 msgid "Month"
-msgstr "Mois"
+msgstr "Hónap"
 
 #: ../data/cmd.xml.in.h:14
 msgid "English Month"
-msgstr "Mois anglais"
+msgstr "Angol hónapok"
 
 #: ../data/cmd.xml.in.h:15
 msgid "Short Month"
-msgstr "Mois court"
+msgstr "Röv. hónap"
 
 #: ../data/cmd.xml.in.h:16
 msgid "English Short Month"
-msgstr "Court mois anglais"
+msgstr "Angol röv. hónapok"
 
 #: ../data/cmd.xml.in.h:17
 msgid "Weekday"
-msgstr "Jour de la semaine"
+msgstr "Hétköznap"
 
 #: ../data/cmd.xml.in.h:18
 msgid "English Weekday"
-msgstr "Jour de la semaine anglais"
+msgstr "Angol hétköznapok"
 
 #: ../data/cmd.xml.in.h:19
 msgid "Short Weekday"
-msgstr "Jour de la semaine court"
+msgstr "Röv. hétköznapok"
 
 #: ../data/cmd.xml.in.h:20
 msgid "English Short Weekday"
-msgstr "Court jour de la semaine anglais"
+msgstr "Angol röv. hétköznapok"
 
 #: ../data/goth.xml.in.h:1 ../input-pad/unicode_block.h:196
 msgid "Gothic"
@@ -237,23 +234,23 @@ msgstr ""
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:50
 #: ../input-pad/window-gtk.c:5320 ../input-pad/window-gtk.c:5321
 msgid "Input Pad"
-msgstr "Pad de saisie"
+msgstr ""
 
 #: ../data/input-pad.ui.h:1
 msgid "_File"
-msgstr "_Fichier"
+msgstr ""
 
 #: ../data/input-pad.ui.h:2
 msgid "Close the program"
-msgstr "Fermer le programme"
+msgstr ""
 
 #: ../data/input-pad.ui.h:3
 msgid "_Close"
-msgstr "_Fermer"
+msgstr ""
 
 #: ../data/input-pad.ui.h:4
 msgid "_Pad"
-msgstr "_Pad"
+msgstr ""
 
 #: ../data/input-pad.ui.h:5
 msgid "_Code Point"
@@ -261,31 +258,31 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:6
 msgid "_Show Pad"
-msgstr "Afficher le _pad"
+msgstr ""
 
 #: ../data/input-pad.ui.h:7
 msgid "Show _All Characters"
-msgstr "_Afficher tous les caractères"
+msgstr ""
 
 #: ../data/input-pad.ui.h:8
 msgid "Show _Custom Characters"
-msgstr "Afficher des _caractères personnalisés"
+msgstr ""
 
 #: ../data/input-pad.ui.h:9
 msgid "Show _Nothing"
-msgstr "_Ne rien afficher"
+msgstr ""
 
 #: ../data/input-pad.ui.h:10
 msgid "Show _Keyboard Layout"
-msgstr "Afficher la disposition des touches du _clavier"
+msgstr ""
 
 #: ../data/input-pad.ui.h:11
 msgid "_Help"
-msgstr "_Aide"
+msgstr ""
 
 #: ../data/input-pad.ui.h:12
 msgid "_Troubleshoot"
-msgstr "_Résoudre les problèmes"
+msgstr ""
 
 #: ../data/input-pad.ui.h:13
 msgid "Code Point Dialog"
@@ -293,27 +290,25 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:14
 msgid "Unicode"
-msgstr "Unicode"
+msgstr ""
 
 #: ../data/input-pad.ui.h:15
 msgid "You can choose encoding type"
-msgstr "Vous pouvez choisir le type d'encodage"
+msgstr ""
 
 #: ../data/input-pad.ui.h:16
 msgid "Current Encoding"
-msgstr "Encodage actuel"
+msgstr ""
 
 #: ../data/input-pad.ui.h:17
 msgid "Copy Buffer"
-msgstr "Mémoire tampon de copie"
+msgstr ""
 
 #: ../data/input-pad.ui.h:18
 msgid ""
 "Base 16\n"
 "Hex"
 msgstr ""
-"Base 16\n"
-"Hex"
 
 #: ../data/input-pad.ui.h:20
 msgid "Set number case to hexadecimal"
@@ -324,8 +319,6 @@ msgid ""
 "Base 10\n"
 "Dec"
 msgstr ""
-"Base 10\n"
-"Dec"
 
 #: ../data/input-pad.ui.h:23
 msgid "Set number case to decimal"
@@ -336,8 +329,6 @@ msgid ""
 "Base 8\n"
 "Oct"
 msgstr ""
-"Base 8\n"
-"Oct"
 
 #: ../data/input-pad.ui.h:26
 msgid "Set number case to octal"
@@ -348,8 +339,6 @@ msgid ""
 "Base 2\n"
 "Bin"
 msgstr ""
-"Base 2\n"
-"Bin"
 
 #: ../data/input-pad.ui.h:29
 msgid "Set number case to binary"
@@ -361,11 +350,11 @@ msgstr ""
 
 #: ../data/input-pad.ui.h:31
 msgid "Character:"
-msgstr "Caractère :"
+msgstr ""
 
 #: ../data/input-pad.ui.h:32
 msgid "_Send"
-msgstr "_Envoyer"
+msgstr ""
 
 #: ../data/input-pad.ui.h:33
 msgid "Input Pad Troubleshoot"
@@ -386,54 +375,42 @@ msgid ""
 "You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/"
 "pad to customize those in \"Custom Character\" pane."
 msgstr ""
-"\n"
-"Cette application peut être exécutée en tant que programme autonome ou sous "
-"une méthode d'entrée. \n"
-"Si vous souhaitez envoyer caractères multi-octets, cette application doit "
-"être exécutée sous une méthode d'entrée. \n"
-"Si vous souhaitez envoyer des caractères à des applications X11, ces "
-"applications doivent autoriser les événements d'envoi. EX. \n"
-"% xterm -xrm \"XTerm*allowSendEvents: true\" \n"
-"\n"
-"Vous pouvez également copier des fichiers pad de /usr/share/entrée-pad/pad "
-"dans $HOME/.config/pad pour personnaliser ceux dans « caractère personnalisé "
-"»."
 
 #: ../data/input-pad.ui.h:42
 msgid "Configure Keyboard Layouts"
-msgstr "Configurer la disposition des touches du clavier"
+msgstr ""
 
 #: ../data/input-pad.ui.h:43
 msgid "A_vailable layouts:"
-msgstr "Dispositions _disponibles:"
+msgstr ""
 
 #: ../data/input-pad.ui.h:44
 msgid "_Layouts shown in the list:"
-msgstr "Dispositions figurant dans la _liste:"
+msgstr ""
 
 #: ../data/input-pad.ui.h:45
 msgid "_Options"
-msgstr "_Options"
+msgstr ""
 
 #: ../data/input-pad.ui.h:46
 msgid "Configure Keyboard Options"
-msgstr "Configurer les options du clavier"
+msgstr ""
 
 #: ../data/input-pad.ui.h:47
 msgid "_Use the default keyboard option"
-msgstr "_Utiliser l'option par défaut du clavier"
+msgstr ""
 
 #: ../data/input-pad.ui.h:48
 msgid "Use the defualt XKB option"
-msgstr "Utiliser l'option XKB par défaut"
+msgstr ""
 
 #: ../data/input-pad.ui.h:49
 msgid "<b>Keyboard Option</b>"
-msgstr "<b>Options du clavier</b>"
+msgstr ""
 
 #: ../data/input-pad.ui.h:51
 msgid "The input pad is a tool to send a character on button."
-msgstr "Le pad de saisie est un outil pour envoyer un caractère sur un bouton."
+msgstr ""
 
 #: ../data/input-pad.ui.h:52
 msgid "translator_credits"
@@ -558,7 +535,7 @@ msgstr ""
 
 #: ../data/ipa-obsolete.xml.in.h:31 ../data/ipa.xml.in.h:137
 msgid "Dental click"
-msgstr "Cyrillique étendu-B"
+msgstr ""
 
 #: ../data/ipa-obsolete.xml.in.h:32
 msgid "Voiceless uvular implosive"
@@ -627,11 +604,11 @@ msgstr ""
 
 #: ../data/ipa-unofficial.xml.in.h:6 ../data/ipa.xml.in.h:88
 msgid "Alveolar flap"
-msgstr "Consonne battue alvéolaire voisée"
+msgstr ""
 
 #: ../data/ipa-unofficial.xml.in.h:7 ../data/ipa.xml.in.h:125
 msgid "Voiceless palatal lateral fricative"
-msgstr "Consonne fricative latérale palatale sourde"
+msgstr ""
 
 #: ../data/ipa-unofficial.xml.in.h:8 ../data/ipa.xml.in.h:91
 msgid "Retroflex flap"
@@ -699,7 +676,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:7
 msgid "Open back rounded vowel"
-msgstr "Voyelle ouverte postérieure arrondie"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:8
 msgid "Open-mid back unrounded vowel"
@@ -775,7 +752,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:31
 msgid "Mid-central vowel"
-msgstr "Voyelle moyenne centrale"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:32
 msgid "Rhotacized mid-central vowel"
@@ -835,7 +812,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:46
 msgid "Voiceless pharyngeal fricative"
-msgstr "Hangeul Jamo"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:47
 msgid "Voiceless coarticulated velar and palato-alveolar fricative"
@@ -883,7 +860,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:58
 msgid "Voiceless velar plosive"
-msgstr "Consonne occlusive vélaire sourde"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:60
 msgid "Voiceless labial-velar plosive"
@@ -895,7 +872,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:62
 msgid "Alveolar lateral approximant"
-msgstr "Consonne spirante latérale alvéolaire voisée"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:63
 msgid "Velarized alveolar lateral approximant"
@@ -903,7 +880,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:64
 msgid "Voiceless alveolar lateral fricative"
-msgstr "Formes de compatibilité CJC"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:65
 msgid "Retroflex lateral approximant"
@@ -911,7 +888,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:66
 msgid "Voiced alveolar lateral fricative"
-msgstr "Consonne fricative latérale alvéolaire voisée"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:67
 msgid "Velar lateral approximant"
@@ -995,7 +972,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:89
 msgid "Alveolar lateral flap"
-msgstr "Consonne battue latérale alvéolaire voisée"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:90
 msgid "Uvular trill"
@@ -1003,7 +980,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:92
 msgid "Alveolar approximant"
-msgstr "Consonne spirante alvéolaire voisée"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:93
 msgid "Retroflex approximant"
@@ -1099,7 +1076,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:120
 msgid "Voiceless velar fricative"
-msgstr "Consonne fricative vélaire sourde"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:121
 msgid "Voiceless uvular fricative"
@@ -1591,31 +1568,31 @@ msgstr ""
 
 #: ../data/ja.xml.in.h:1
 msgid "Japanese"
-msgstr "Japonais"
+msgstr ""
 
 #: ../data/ja.xml.in.h:2 ../input-pad/unicode_block.h:136
 msgid "Hiragana"
-msgstr "Hiragana"
+msgstr ""
 
 #: ../data/ja.xml.in.h:3 ../input-pad/unicode_block.h:137
 msgid "Katakana"
-msgstr "Katakana"
+msgstr ""
 
 #: ../data/ja.xml.in.h:4 ../data/zh.xml.in.h:3
 msgid "Radicals"
-msgstr "Radicaux"
+msgstr ""
 
 #: ../data/ja.xml.in.h:5 ../input-pad/unicode_block.h:132
 msgid "CJK Radicals Supplement"
-msgstr "Radicaux suppléments CJC"
+msgstr "CJK Radikális kiegészítők"
 
 #: ../data/keyboard.xml.in.h:1
 msgid "Keyboard"
-msgstr "Clavier"
+msgstr ""
 
 #: ../data/keyboard.xml.in.h:2
 msgid "Function Key"
-msgstr "Touche de fonction"
+msgstr ""
 
 #: ../data/keyboard.xml.in.h:3
 msgid "Key Pad"
@@ -1627,11 +1604,11 @@ msgstr "ASCII"
 
 #: ../data/latin.xml.in.h:2 ../input-pad/unicode_block.h:38
 msgid "Latin-1 Supplement"
-msgstr "Supplément Latin-1"
+msgstr "Latin-1 Kiegészítés"
 
 #: ../data/latin.xml.in.h:3 ../input-pad/unicode_block.h:39
 msgid "Latin Extended-A"
-msgstr "Latin étendu-A"
+msgstr "Latin kiterjesztett-A"
 
 #: ../data/latin.xml.in.h:4
 msgid "Old and Middle English"
@@ -1659,15 +1636,15 @@ msgstr ""
 
 #: ../data/str.xml.in.h:1
 msgid "Chat"
-msgstr "Bavarder"
+msgstr ""
 
 #: ../data/str.xml.in.h:2
 msgid "Smileys"
-msgstr "Émoticones"
+msgstr ""
 
 #: ../data/str.xml.in.h:3
 msgid "Smile"
-msgstr "Sourire"
+msgstr ""
 
 #: ../data/str.xml.in.h:4
 msgid "Smile Big"
@@ -1675,23 +1652,23 @@ msgstr ""
 
 #: ../data/str.xml.in.h:5
 msgid "Sad"
-msgstr "Triste"
+msgstr ""
 
 #: ../data/str.xml.in.h:6
 msgid "Wink"
-msgstr "Cligner"
+msgstr ""
 
 #: ../data/str.xml.in.h:7
 msgid "Tongue"
-msgstr "Langue"
+msgstr ""
 
 #: ../data/str.xml.in.h:8
 msgid "Shock"
-msgstr "Choc"
+msgstr ""
 
 #: ../data/str.xml.in.h:9
 msgid "Kiss | Secret"
-msgstr "Embrasser | Secret"
+msgstr ""
 
 #: ../data/str.xml.in.h:10
 msgid "Glasses Cool | Eyeroll"
@@ -1703,47 +1680,47 @@ msgstr ""
 
 #: ../data/str.xml.in.h:12
 msgid "Angry"
-msgstr "Fâché"
+msgstr ""
 
 #: ../data/str.xml.in.h:13
 msgid "Embarrassed"
-msgstr "Embarrassé"
+msgstr ""
 
 #: ../data/str.xml.in.h:14
 msgid "Confused"
-msgstr "Confus"
+msgstr ""
 
 #: ../data/str.xml.in.h:15
 msgid "Crying"
-msgstr "Pleurs"
+msgstr ""
 
 #: ../data/str.xml.in.h:16
 msgid "Neutral"
-msgstr "Neutres"
+msgstr ""
 
 #: ../data/str.xml.in.h:17
 msgid "Thinking"
-msgstr "Réfléchir"
+msgstr ""
 
 #: ../data/str.xml.in.h:18
 msgid "Don't Know"
-msgstr "Ne pas savoir"
+msgstr ""
 
 #: ../data/str.xml.in.h:19
 msgid "Party"
-msgstr "Fête"
+msgstr ""
 
 #: ../data/str.xml.in.h:20
 msgid "Yawn"
-msgstr "Bâiller"
+msgstr ""
 
 #: ../data/str.xml.in.h:21
 msgid "Bunny"
-msgstr "Lapin"
+msgstr ""
 
 #: ../data/str.xml.in.h:22
 msgid "Sick"
-msgstr "Malade"
+msgstr ""
 
 #: ../data/str.xml.in.h:23
 msgid "Devil"
@@ -1755,7 +1732,7 @@ msgstr ""
 
 #: ../data/str.xml.in.h:25
 msgid "Love"
-msgstr "Aimer"
+msgstr ""
 
 #: ../data/str.xml.in.h:26
 msgid "Love Over"
@@ -1763,27 +1740,27 @@ msgstr ""
 
 #: ../data/str.xml.in.h:27
 msgid "Cat"
-msgstr "Chat"
+msgstr ""
 
 #: ../data/str.xml.in.h:28
 msgid "Dog"
-msgstr "Chien"
+msgstr ""
 
 #: ../data/str.xml.in.h:29
 msgid "Moon"
-msgstr "Lune"
+msgstr ""
 
 #: ../data/str.xml.in.h:30
 msgid "Star"
-msgstr "Étoile"
+msgstr ""
 
 #: ../data/str.xml.in.h:31
 msgid "Film"
-msgstr "Film"
+msgstr ""
 
 #: ../data/str.xml.in.h:32
 msgid "Musical Note"
-msgstr "Note musicale"
+msgstr ""
 
 #: ../data/str.xml.in.h:33
 msgid "Mail"
@@ -1791,27 +1768,27 @@ msgstr ""
 
 #: ../data/str.xml.in.h:34
 msgid "Clock"
-msgstr "Montre"
+msgstr ""
 
 #: ../data/str.xml.in.h:35
 msgid "Kiss"
-msgstr "Embrasser"
+msgstr ""
 
 #: ../data/str.xml.in.h:36
 msgid "Present"
-msgstr "Cadeau"
+msgstr ""
 
 #: ../data/str.xml.in.h:37
 msgid "Cake"
-msgstr "Gâteau"
+msgstr ""
 
 #: ../data/str.xml.in.h:38
 msgid "Coffee"
-msgstr "Café"
+msgstr ""
 
 #: ../data/str.xml.in.h:39
 msgid "Phone"
-msgstr "Téléphone"
+msgstr ""
 
 #: ../data/str.xml.in.h:40
 msgid "Hug Left"
@@ -1823,60 +1800,60 @@ msgstr ""
 
 #: ../data/str.xml.in.h:42
 msgid "Beer"
-msgstr "Bière"
+msgstr ""
 
 #: ../data/str.xml.in.h:43
 msgid "Drink"
-msgstr "Boisson"
+msgstr ""
 
 #: ../data/str.xml.in.h:44
 msgid "Boy"
-msgstr "Garçon"
+msgstr ""
 
 #: ../data/str.xml.in.h:45
 msgid "Girl"
-msgstr "Fille"
+msgstr ""
 
 #: ../data/str.xml.in.h:46
 msgid "Yes"
-msgstr "Oui"
+msgstr ""
 
 #: ../data/str.xml.in.h:47
 msgid "No"
-msgstr "Non"
+msgstr ""
 
 #: ../data/str.xml.in.h:48
 msgid "Shut Mouth"
-msgstr "Fermer la bouche"
+msgstr ""
 
 #: ../data/str.xml.in.h:49
 msgid "Money Mouth"
-msgstr "Bouche d'argent"
+msgstr ""
 
 #: ../data/str.xml.in.h:50
 msgid "Foot in Mouth"
-msgstr "Pied dans la bouche"
+msgstr ""
 
 #: ../data/str.xml.in.h:51
 msgid "Shout"
-msgstr "Crier"
+msgstr ""
 
 #: ../data/str.xml.in.h:52
 msgid "Monkey"
-msgstr "Singe"
+msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
 #: ../data/str.xml.in.h:54
 msgid "Smileys (Japanese)"
-msgstr "Émoticones (japonais)"
+msgstr ""
 
 #: ../data/str.xml.in.h:55
 msgid "Smoking"
-msgstr "Fumer"
+msgstr ""
 
 #: ../data/str.xml.in.h:56
 msgid "Sorry"
-msgstr "Désolé"
+msgstr ""
 
 #: ../data/str.xml.in.h:57
 msgid "Hug"
@@ -1885,62 +1862,62 @@ msgstr ""
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
 #: ../data/str.xml.in.h:59
 msgid "Smileys (Japanese 2ch)"
-msgstr "Émoticones (japonais 2ch)"
+msgstr ""
 
 #: ../data/str.xml.in.h:60
 msgid "Hey"
-msgstr "Hé"
+msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
 #: ../data/str.xml.in.h:62
 msgid "Smileys (Chinese)"
-msgstr "Émoticones (chinois)"
+msgstr ""
 
 #: ../data/str.xml.in.h:63
 msgid "Crow"
-msgstr "Corneille"
+msgstr ""
 
 #: ../data/str.xml.in.h:64
 msgid "Bear"
-msgstr "Ours"
+msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
 #: ../data/str.xml.in.h:66
 msgid "Acronym"
-msgstr "Acronyme"
+msgstr ""
 
 #: ../data/str.xml.in.h:67
 msgid "Acronym (Computer)"
-msgstr "Acronyme (ordinateur)"
+msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
 #: ../data/str.xml.in.h:69
 msgid "Acronym (Japanese)"
-msgstr "Acronyme (japonais)"
+msgstr ""
 
 #: ../data/str.xml.in.h:70
 msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
-msgstr "Vous pas vouloir lire entre les lignes (Aete Kuuki Wo Yomanai)"
+msgstr ""
 
 #: ../data/str.xml.in.h:71
 msgid "Can't get together (Guda Guda)"
-msgstr "Ne pas pouvoir se réunir (Guda Guda)"
+msgstr ""
 
 #: ../data/str.xml.in.h:72
 msgid "Say whatever one feels (Iitaidake)"
-msgstr "Dire ce que l'on ressent (Iitaidake)"
+msgstr ""
 
 #: ../data/str.xml.in.h:73
 msgid "Excited (Kitakore)"
-msgstr "Excité (Kitakore)"
+msgstr ""
 
 #: ../data/str.xml.in.h:74
 msgid "Detail (Kuwashiku)"
-msgstr "Détail (Kuwashiku)"
+msgstr ""
 
 #: ../data/str.xml.in.h:75
 msgid "Cannot read between lines (Kuuki Ga Yomenai)"
-msgstr "Impossible de lire entre les lignes (Kuuki Ga Yomenai)"
+msgstr ""
 
 #: ../data/str.xml.in.h:76
 msgid "Omission (Shouryaku)"
@@ -1948,11 +1925,11 @@ msgstr ""
 
 #: ../data/str.xml.in.h:77
 msgid "Excited (Waku Waku Teka Teka)"
-msgstr "Excité (Waku Waku Teka Teka)"
+msgstr ""
 
 #: ../data/str.xml.in.h:78
 msgid "Laugh"
-msgstr "Rire"
+msgstr ""
 
 #: ../data/str.xml.in.h:79
 msgid "Dude (Oi!)"
@@ -1964,7 +1941,7 @@ msgstr ""
 
 #: ../data/str.xml.in.h:81
 msgid "Bye"
-msgstr "Au revoir"
+msgstr ""
 
 #: ../data/str.xml.in.h:82
 msgid "False Start (Flying Get)"
@@ -1976,7 +1953,7 @@ msgstr ""
 
 #: ../data/str.xml.in.h:84
 msgid "Laugh (Warau)"
-msgstr "Rire (Warau)"
+msgstr ""
 
 #: ../data/str.xml.in.h:85
 msgid "Good job (Otsukare)"
@@ -1988,43 +1965,43 @@ msgstr ""
 
 #: ../data/w3c.xml.in.h:1
 msgid "Char References"
-msgstr "Références Char"
+msgstr ""
 
 #: ../data/zh.xml.in.h:1
 msgid "Chinese"
-msgstr "Chinois"
+msgstr ""
 
 #: ../data/zh.xml.in.h:4 ../input-pad/unicode_block.h:138
 msgid "Bopomofo"
-msgstr "Bopomofo"
+msgstr ""
 
 #: ../input-pad/eek-gtk.c:62
 msgid "Use libeek to draw keyboard"
-msgstr "Utilisez libeek de dessiner le clavier"
+msgstr ""
 
 #: ../input-pad/eek-gtk.c:234
 msgid "eekboard layout"
-msgstr "Disposition eekboard"
+msgstr ""
 
 #: ../input-pad/eek-gtk.c:246
 msgid "eekboard Options"
-msgstr "Options d'eekboard"
+msgstr ""
 
 #: ../input-pad/eek-gtk.c:246
 msgid "Show eekboard Options"
-msgstr "Afficher les options d'eekboard"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:37
 msgid "Basic Latin"
-msgstr "Latin de base"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:40
 msgid "Latin Extended-B"
-msgstr "Latin étendu-B"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:41
 msgid "IPA Extensions"
-msgstr "Extensions IPA"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:42
 msgid "Spacing Modifier Letters"
@@ -2036,19 +2013,19 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:44
 msgid "Greek and Coptic"
-msgstr "Grec et copte"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:45
 msgid "Cyrillic"
-msgstr "Cyrillique"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:46
 msgid "Cyrillic Supplement"
-msgstr "Supplément cyrillique"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:47
 msgid "Armenian"
-msgstr "Arménien"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:48
 msgid "Hebrew"
@@ -2056,27 +2033,27 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:49
 msgid "Arabic"
-msgstr "Arabe"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:50
 msgid "Syriac"
-msgstr "Syriaque"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:51
 msgid "Arabic Supplement"
-msgstr "Supplément arabe"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:52
 msgid "Thaana"
-msgstr "Thaana"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:53
 msgid "NKo"
-msgstr "NKo"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:54
 msgid "Samaritan"
-msgstr "Samaritain"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:55
 msgid "Devanagari"
@@ -2084,55 +2061,55 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:56
 msgid "Bengali"
-msgstr "Bengali"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:57
 msgid "Gurmukhi"
-msgstr "Gurmukhi"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:58
 msgid "Gujarati"
-msgstr "Gujarati"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:59
 msgid "Oriya"
-msgstr "Oriya"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:60
 msgid "Tamil"
-msgstr "Tamil"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:61
 msgid "Telugu"
-msgstr "Telugu"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:62
 msgid "Kannada"
-msgstr "_Ne rien afficher"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:63
 msgid "Malayalam"
-msgstr "Malayalam"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:64
 msgid "Sinhala"
-msgstr "Sinhala"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:65
 msgid "Thai"
-msgstr "Thaïlandais"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:66
 msgid "Lao"
-msgstr "Lao"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:67
 msgid "Tibetan"
-msgstr "Tibétain"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:68
 msgid "Myanmar"
-msgstr "Myanmar"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:69
 msgid "Georgian"
@@ -2140,7 +2117,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:70
 msgid "Hangul Jamo"
-msgstr "Hangeul Jamo"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:71
 msgid "Ethiopic"
@@ -2152,7 +2129,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:73
 msgid "Cherokee"
-msgstr "Cherokee"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:74
 msgid "Unified Canadian Aboriginal Syllabics"
@@ -2160,91 +2137,91 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:75
 msgid "Ogham"
-msgstr "Ogham"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:76
 msgid "Runic"
-msgstr "Runique"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:77
 msgid "Tagalog"
-msgstr "Tagalog"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:78
 msgid "Hanunoo"
-msgstr "Hanunoo"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:79
 msgid "Buhid"
-msgstr "Buhid"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:80
 msgid "Tagbanwa"
-msgstr "Tagbanwa"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:81
 msgid "Khmer"
-msgstr "Khmer"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:82
 msgid "Mongolian"
-msgstr "Anciens symboles "
+msgstr ""
 
 #: ../input-pad/unicode_block.h:83
 msgid "Unified Canadian Aboriginal Syllabics Extended"
-msgstr "Syllabaires canadiens autochtones unifiés étendus"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:84
 msgid "Limbu"
-msgstr "Choc"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:85
 msgid "Tai Le"
-msgstr "Tai Le"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:86
 msgid "New Tai Lue"
-msgstr "Nouveau Tai Lue"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:87
 msgid "Khmer Symbols"
-msgstr "Symboles khmers"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:88
 msgid "Buginese"
-msgstr "Bugis"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:89
 msgid "Tai Tham"
-msgstr "Tai Tham"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:90
 msgid "Balinese"
-msgstr "Balinais"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:91
 msgid "Sundanese"
-msgstr "Sundanais"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:92
 msgid "Lepcha"
-msgstr "Lepcha"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:93
 msgid "Ol Chiki"
-msgstr "Ol Chiki"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:94
 msgid "Vedic Extensions"
-msgstr "Extensions védiques"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:95
 msgid "Phonetic Extensions"
-msgstr "Extensions phonétiques"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:96
 msgid "Phonetic Extensions Supplement"
-msgstr "Extensions phonétiques suppléments"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:97
 msgid "Combining Diacritical Marks Supplement"
@@ -2252,15 +2229,15 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:98
 msgid "Latin Extended Additional"
-msgstr "Latin étendu additionnel"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:99
 msgid "Greek Extended"
-msgstr "Grec étendu"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:100
 msgid "General Punctuation"
-msgstr "Ponctuation générale"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:101
 msgid "Superscripts and Subscripts"
@@ -2268,7 +2245,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:102
 msgid "Currency Symbols"
-msgstr "Symboles monétaires"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:103
 msgid "Combining Diacritical Marks for Symbols"
@@ -2280,31 +2257,31 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:105
 msgid "Number Forms"
-msgstr "Formes numérales"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:106
 msgid "Arrows"
-msgstr "Flèches"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:107
 msgid "Mathematical Operators"
-msgstr "Opérateurs mathématiques"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:108
 msgid "Miscellaneous Technical"
-msgstr "Divers techniques"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:109
 msgid "Control Pictures"
-msgstr "Contrôler des photos"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:110
 msgid "Optical Character Recognition"
-msgstr "Reconnaissance optique de caractères"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:111
 msgid "Enclosed Alphanumerics"
-msgstr "Alphanumériques cerclés"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:113
 msgid "Block Elements"
@@ -2312,51 +2289,51 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:114
 msgid "Geometric Shapes"
-msgstr "Formes géométriques"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:115
 msgid "Miscellaneous Symbols"
-msgstr "Symboles divers"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:117
 msgid "Miscellaneous Mathematical Symbols-A"
-msgstr "Divers symboles mathématiques-A"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:118
 msgid "Supplemental Arrows-A"
-msgstr "Flèches-A supplémentaires"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:119
 msgid "Braille Patterns"
-msgstr "Motifs en braille"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:120
 msgid "Supplemental Arrows-B"
-msgstr "Flèches-B supplémentaires"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:121
 msgid "Miscellaneous Mathematical Symbols-B"
-msgstr "Symboles mathématiques-B divers"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:122
 msgid "Supplemental Mathematical Operators"
-msgstr "Opérateurs mathématiques supplémentaires"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:123
 msgid "Miscellaneous Symbols and Arrows"
-msgstr "Symboles et flèches divers"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:124
 msgid "Glagolitic"
-msgstr "Glagolitique"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:125
 msgid "Latin Extended-C"
-msgstr "Latin étendu-C"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:126
 msgid "Coptic"
-msgstr "Copte"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:127
 msgid "Georgian Supplement"
@@ -2364,7 +2341,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:128
 msgid "Tifinagh"
-msgstr "Tifinagh"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:129
 msgid "Ethiopic Extended"
@@ -2372,51 +2349,51 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:130
 msgid "Cyrillic Extended-A"
-msgstr "Cyrillique étendu-A"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:131
 msgid "Supplemental Punctuation"
-msgstr "Ponctuation complémentaire"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:133
 msgid "Kangxi Radicals"
-msgstr "Radicaux Kangxi"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:134
 msgid "Ideographic Description Characters"
-msgstr "Caractères de description idéographique"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:135
 msgid "CJK Symbols and Punctuation"
-msgstr "Symboles et ponctuation CJC"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:139
 msgid "Hangul Compatibility Jamo"
-msgstr "Compatibilité Hangeul Jamo"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:140
 msgid "Kanbun"
-msgstr "Kanbun"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:141
 msgid "Bopomofo Extended"
-msgstr "Bopomofo étendu"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:142
 msgid "CJK Strokes"
-msgstr "Traits CJC"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:143
 msgid "Katakana Phonetic Extensions"
-msgstr "Extensions Katakana phonétiques"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:144
 msgid "Enclosed CJK Letters and Months"
-msgstr "Lettres et mois CJC cerclés"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:146
 msgid "CJK Unified Ideographs Extension A"
-msgstr "Idéographes unifiés CJC Extension A"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:147
 msgid "Yijing Hexagram Symbols"
@@ -2424,27 +2401,27 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:148
 msgid "CJK Unified Ideographs"
-msgstr "Idéographes unifiés CJC"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:149
 msgid "Yi Syllables"
-msgstr "Syllables Yi"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:150
 msgid "Yi Radicals"
-msgstr "Radicaux Yi"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:151
 msgid "Lisu"
-msgstr "Lisu"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:152
 msgid "Vai"
-msgstr "Vai"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:153
 msgid "Cyrillic Extended-B"
-msgstr "Cyrillique étendu-B"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:154
 msgid "Bamum"
@@ -2456,11 +2433,11 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:156
 msgid "Latin Extended-D"
-msgstr "Latin étendu-D"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:157
 msgid "Syloti Nagri"
-msgstr "Afficher les options d'eekboard"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:158
 msgid "Common Indic Number Forms"
@@ -2476,51 +2453,51 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:161
 msgid "Devanagari Extended"
-msgstr "Devanagari étendu"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:162
 msgid "Kayah Li"
-msgstr "Kayah Li"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:163
 msgid "Rejang"
-msgstr "Rejang"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:164
 msgid "Hangul Jamo Extended-A"
-msgstr "Hangeul Jamo étendu-A"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:165
 msgid "Javanese"
-msgstr "Javanais"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:166
 msgid "Cham"
-msgstr "Cham"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:167
 msgid "Myanmar Extended-A"
-msgstr "Myanmar étendu-A"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:168
 msgid "Tai Viet"
-msgstr "Tai Viet"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:169
 msgid "Meetei Mayek"
-msgstr "Meetei Mayek"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:170
 msgid "Hangul Syllables"
-msgstr "Syllabes hangeul"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:171
 msgid "Hangul Jamo Extended-B"
-msgstr "Hangeul Jamo étendu-B"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:172
 msgid "High Surrogates"
-msgstr "Substituts hauts"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:173
 msgid "High Private Use Surrogates"
@@ -2528,15 +2505,15 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:174
 msgid "Low Surrogates"
-msgstr "Substituts bas"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:175
 msgid "Private Use Area"
-msgstr "Zone à usage privé"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:176
 msgid "CJK Compatibility Ideographs"
-msgstr "Idéographes de compatibilité CJC"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:177
 msgid "Alphabetic Presentation Forms"
@@ -2560,7 +2537,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:182
 msgid "CJK Compatibility Forms"
-msgstr "Formes de compatibilité CJC"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:183
 msgid "Small Form Variants"
@@ -2588,15 +2565,15 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:189
 msgid "Aegean Numbers"
-msgstr "Gurmukhi"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:190
 msgid "Ancient Greek Numbers"
-msgstr "Nombres grecs anciens"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:191
 msgid "Ancient Symbols"
-msgstr "Anciens symboles "
+msgstr ""
 
 #: ../input-pad/unicode_block.h:192
 msgid "Phaistos Disc"
@@ -2604,7 +2581,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:193
 msgid "Lycian"
-msgstr "Lycien"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:194
 msgid "Carian"
@@ -2612,15 +2589,15 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:195
 msgid "Old Italic"
-msgstr "Vieux italique"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:197
 msgid "Ugaritic"
-msgstr "Ugaritique"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:198
 msgid "Old Persian"
-msgstr "Vieux-perse"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:199
 msgid "Deseret"
@@ -2640,7 +2617,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:204
 msgid "Phoenician"
-msgstr "Chat"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:205
 msgid "Lydian"
@@ -2648,11 +2625,11 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:206
 msgid "Kharoshthi"
-msgstr "Extensions Katakana phonétiques"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:207
 msgid "Old South Arabian"
-msgstr "Vieux Arabe du Sud"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:208
 msgid "Avestan"
@@ -2676,7 +2653,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:213
 msgid "Kaithi"
-msgstr "Kaithi"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:214
 msgid "Cuneiform"
@@ -2692,19 +2669,19 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:217
 msgid "Byzantine Musical Symbols"
-msgstr "Symboles musicaux byzantins"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:218
 msgid "Musical Symbols"
-msgstr "Symboles musicaux"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:219
 msgid "Ancient Greek Musical Notation"
-msgstr "Notation musicale grecque ancienne"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:220
 msgid "Tai Xuan Jing Symbols"
-msgstr "Symboles Tai Xuan Jing"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:221
 msgid "Counting Rod Numerals"
@@ -2712,31 +2689,31 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:222
 msgid "Mathematical Alphanumeric Symbols"
-msgstr "Symboles mathématiques alphanumériques"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:223
 msgid "Mahjong Tiles"
-msgstr "Tuiles de mahjong"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:224
 msgid "Domino Tiles"
-msgstr "Dominos"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:225
 msgid "Enclosed Alphanumeric Supplement"
-msgstr "Supplément alphanumérique cerclé"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:226
 msgid "Enclosed Ideographic Supplement"
-msgstr "Supplément idéographique cerclé"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:227
 msgid "CJK Unified Ideographs Extension B"
-msgstr "Idéographes unifiés CJC Extension B"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:228
 msgid "CJK Unified Ideographs Extension C"
-msgstr "Idéographes unifiés CJC Extension C"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:229
 msgid "CJK Compatibility Ideographs Supplement"
@@ -2744,7 +2721,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:230
 msgid "Tags"
-msgstr "Mots-clés"
+msgstr ""
 
 #: ../input-pad/unicode_block.h:231
 msgid "Variation Selectors Supplement"
@@ -2760,7 +2737,7 @@ msgstr ""
 
 #: ../input-pad/window-gtk.c:172
 msgid "Display version"
-msgstr "Afficher la version"
+msgstr ""
 
 #. Translators: the word 'KBDUI' is not translated.
 #: ../input-pad/window-gtk.c:175
@@ -2795,15 +2772,15 @@ msgstr ""
 
 #: ../input-pad/window-gtk.c:2895
 msgid "Layout"
-msgstr "Disposition"
+msgstr ""
 
 #: ../input-pad/window-gtk.c:3170
 msgid "_Layout:"
-msgstr "_Disposition:"
+msgstr ""
 
 #: ../input-pad/window-gtk.c:3200
 msgid "_Configure Layouts"
-msgstr "_Configurer les dispositions"
+msgstr ""
 
 #. No longer used in gtk 2.20
 #. gchar *license1, *license2, *license3;
@@ -2833,13 +2810,11 @@ msgstr "_Configurer les dispositions"
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
 msgstr ""
-"Ce programme est livré avec ABSOLUMENT AUCUNE GARANTIE; pour plus de "
-"détails, visitez le site %s"
 
 #: ../input-pad/window-gtk.c:3707
 msgid "Group"
-msgstr "Groupe"
+msgstr ""
 
 #: ../input-pad/window-gtk.c:3715
 msgid "Subgroup"
-msgstr "Sous-groupe"
+msgstr ""

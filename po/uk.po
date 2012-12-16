@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
-"POT-Creation-Date: 2012-06-22 18:01+0900\n"
+"POT-Creation-Date: 2012-12-17 04:12+0900\n"
 "PO-Revision-Date: 2012-06-22 18:01+0900\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -383,7 +383,7 @@ msgid ""
 "% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
 "\n"
 "You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/"
-"pad to customize those in \"Custom Character\" pain."
+"pad to customize those in \"Custom Character\" pane."
 msgstr ""
 "\n"
 "Цю програму можна запустити окремо або з програми керування способами "
@@ -449,80 +449,269 @@ msgid "Open back unrounded vowel"
 msgstr "Неогублений голосний заднього ряду низького піднесення"
 
 #: ../data/ipa-obsolete.xml.in.h:4
+#, fuzzy
+msgid "Palatalized voiced bilabial plosive"
+msgstr "Дзвінкий губно-губний проривний"
+
+#: ../data/ipa-obsolete.xml.in.h:5
 msgid "Voiceless palatal implosive"
 msgstr "Глухий твердопіднебінний вибуховий"
 
-#: ../data/ipa-obsolete.xml.in.h:5 ../data/ipa.xml.in.h:133
+#: ../data/ipa-obsolete.xml.in.h:6 ../data/ipa.xml.in.h:138
 msgid "Alveolar click"
 msgstr "Ясенний клацальний приголосний"
 
-#: ../data/ipa-obsolete.xml.in.h:6 ../data/ipa.xml.in.h:25
+#: ../data/ipa-obsolete.xml.in.h:7
+#, fuzzy
+msgid "Palatalized voiced alveolar plosive"
+msgstr "Глухий ясенний вибуховий"
+
+#: ../data/ipa-obsolete.xml.in.h:8 ../data/ipa.xml.in.h:25
 msgid "Voiced alveolar affricate"
 msgstr "Дзвінкий ясенний африкативний"
 
-#: ../data/ipa-obsolete.xml.in.h:7 ../data/ipa.xml.in.h:27
+#: ../data/ipa-obsolete.xml.in.h:9 ../data/ipa.xml.in.h:27
 msgid "Voiced alveopalatal affricate"
 msgstr "Дзвінкий заясенний африкативний"
 
-#: ../data/ipa-obsolete.xml.in.h:8 ../data/ipa.xml.in.h:26
+#: ../data/ipa-obsolete.xml.in.h:10 ../data/ipa.xml.in.h:26
 msgid "Voiced palato-alveolar affricate"
 msgstr "Дзвінкий заясенний африкативний"
 
-#: ../data/ipa-obsolete.xml.in.h:9
+#: ../data/ipa-obsolete.xml.in.h:11
+#, fuzzy
+msgid "Palatalized voiceless labiodental fricative"
+msgstr "Глухий твердопіднебінний фрикативний"
+
+#: ../data/ipa-obsolete.xml.in.h:12
+#, fuzzy
+msgid "Palatalized voiced velar plosive"
+msgstr "Глухий задньопіднебінний вибуховий"
+
+#: ../data/ipa-obsolete.xml.in.h:13
+#, fuzzy
+msgid "Palatalized voiceless velar plosive"
+msgstr "Глухий задньопіднебінний вибуховий"
+
+#: ../data/ipa-obsolete.xml.in.h:14
 msgid "Voiceless velar implosive"
 msgstr "Глухий задньопіднебінний вибуховий"
 
-#: ../data/ipa-obsolete.xml.in.h:10
+#: ../data/ipa-obsolete.xml.in.h:15
+#, fuzzy
+msgid "Palatalized alveolar lateral approximant"
+msgstr "Ясенний боковий апроксимант"
+
+#: ../data/ipa-obsolete.xml.in.h:16
+#, fuzzy
+msgid "Palatalized bilabial nasal"
+msgstr "Двозубий носовий приголосний"
+
+#: ../data/ipa-obsolete.xml.in.h:17
+#, fuzzy
+msgid "Palatalized alveolar nasal"
+msgstr "Складовий ясенний носовий звук"
+
+#: ../data/ipa-obsolete.xml.in.h:18
 msgid "Syllabic alveolar nasal"
 msgstr "Складовий ясенний носовий звук"
 
-#: ../data/ipa-obsolete.xml.in.h:11
+#: ../data/ipa-obsolete.xml.in.h:19
+#, fuzzy
+msgid "Palatalized voiceless bilabial plosive"
+msgstr "Глухий губно-губний вибуховий"
+
+#: ../data/ipa-obsolete.xml.in.h:20
 msgid "Voiceless bilabial implosive"
 msgstr "Глухий губно-губний вибуховий"
 
-#: ../data/ipa-obsolete.xml.in.h:12
+#: ../data/ipa-obsolete.xml.in.h:21
+#, fuzzy
+msgid "Palatalized alveolar trill"
+msgstr "Ясенний дрижачий приголосний"
+
+#: ../data/ipa-obsolete.xml.in.h:22
 msgid "Voiced strident apico-alveolar trill"
 msgstr "Дзвінкий різкий верхньо-ясенний дрижачий"
 
-#: ../data/ipa-obsolete.xml.in.h:13 ../data/ipa.xml.in.h:19
+#: ../data/ipa-obsolete.xml.in.h:23
+#, fuzzy
+msgid "Palatalized voiceless alveolar fricative"
+msgstr "Глухий задньопіднебінний фрикативний"
+
+#: ../data/ipa-obsolete.xml.in.h:24 ../data/ipa.xml.in.h:19
 msgid "Voiceless alveopalatal fricative"
 msgstr "Глухий заясенний фрикативний"
 
-#: ../data/ipa-obsolete.xml.in.h:14 ../data/ipa.xml.in.h:99
+#: ../data/ipa-obsolete.xml.in.h:25
+#, fuzzy
+msgid "Labialized voiceless palato-alveolar fricative"
+msgstr "Глухий заясенний фрикативний"
+
+#: ../data/ipa-obsolete.xml.in.h:26 ../data/ipa.xml.in.h:103
 msgid "Voiceless alveopalatal affricate"
 msgstr "Глухий заясенний африкативний"
 
-#: ../data/ipa-obsolete.xml.in.h:15 ../data/ipa.xml.in.h:97
+#: ../data/ipa-obsolete.xml.in.h:27 ../data/ipa.xml.in.h:101
 msgid "Voiceless alveolar affricate"
 msgstr "Глухий ясенний африкативний"
 
-#: ../data/ipa-obsolete.xml.in.h:16 ../data/ipa.xml.in.h:98
+#: ../data/ipa-obsolete.xml.in.h:28 ../data/ipa.xml.in.h:102
 msgid "Voiceless palato-alveolar affricate"
 msgstr "Глухий заясенний африкативний"
 
-#: ../data/ipa-obsolete.xml.in.h:17
+#: ../data/ipa-obsolete.xml.in.h:29
+#, fuzzy
+msgid "Palatalized voiceless alveolar plosive"
+msgstr "Глухий ясенний вибуховий"
+
+#: ../data/ipa-obsolete.xml.in.h:30
 msgid "Voiceless alveolar implosive"
 msgstr "Глухий ясенний вибуховий"
 
-#: ../data/ipa-obsolete.xml.in.h:18 ../data/ipa.xml.in.h:132
+#: ../data/ipa-obsolete.xml.in.h:31 ../data/ipa.xml.in.h:137
 msgid "Dental click"
 msgstr "Зубний клацальний"
 
-#: ../data/ipa-obsolete.xml.in.h:19
+#: ../data/ipa-obsolete.xml.in.h:32
 msgid "Voiceless uvular implosive"
 msgstr "Глухий язичковий вибуховий"
 
-#: ../data/ipa-obsolete.xml.in.h:20 ../data/ipa.xml.in.h:123
+#: ../data/ipa-obsolete.xml.in.h:33
+#, fuzzy
+msgid "Palatalized voiced labiodental fricative"
+msgstr "Дзвінкий губно-губний фрикативний"
+
+#: ../data/ipa-obsolete.xml.in.h:34
+#, fuzzy
+msgid "Palatalized voiceless velar fricative"
+msgstr "Глухий задньопіднебінний фрикативний"
+
+#: ../data/ipa-obsolete.xml.in.h:35
+#, fuzzy
+msgid "Palatalized voiced alveolar fricative"
+msgstr "Дзвінкий ясенний африкативний"
+
+#: ../data/ipa-obsolete.xml.in.h:36
+#, fuzzy
+msgid "Labialized voiced palato-alveolar fricative"
+msgstr "Дзвінкий заясенний фрикативний"
+
+#: ../data/ipa-obsolete.xml.in.h:37 ../data/ipa.xml.in.h:128
 msgid "Voiced alveopalatal fricative"
 msgstr "Дзвінкий заясенний фрикативний"
 
-#: ../data/ipa-obsolete.xml.in.h:21 ../data/ipa.xml.in.h:102
+#: ../data/ipa-obsolete.xml.in.h:38 ../data/ipa.xml.in.h:106
 msgid "Near-close near-back vowel"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:22 ../data/ipa.xml.in.h:135
+#: ../data/ipa-obsolete.xml.in.h:39 ../data/ipa.xml.in.h:140
 msgid "Alveolar lateral click"
 msgstr "Ясенний боковий клацальний приголосний"
+
+#: ../data/ipa-obsolete.xml.in.h:40
+#, fuzzy
+msgid "Labialized voiceless alveolar or dental fricative"
+msgstr "Глухий заясенний фрикативний"
+
+#: ../data/ipa-obsolete.xml.in.h:41
+#, fuzzy
+msgid "Labialized voiced alveolar or dental fricative"
+msgstr "Дзвінкий заясенний фрикативний"
+
+#: ../data/ipa-obsolete.xml.in.h:42
+#, fuzzy
+msgid "Combining labialization mark"
+msgstr "Поєднальна позначка підвищення тону"
+
+#: ../data/ipa-obsolete.xml.in.h:43
+#, fuzzy
+msgid "Combining palatalization mark"
+msgstr "Поєднальна позначка підвищення тону"
+
+#. "IPA" stands for "International Phonetic Alphabet"
+#: ../data/ipa-unofficial.xml.in.h:2
+msgid "IPA (Unofficial)"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in.h:3
+#, fuzzy
+msgid "Voiced labiodental plosive"
+msgstr "Дзвінкий губно-губний проривний"
+
+#: ../data/ipa-unofficial.xml.in.h:4 ../data/ipa.xml.in.h:18
+msgid "Voiceless palatal lateral affricate"
+msgstr "Глухий твердопіднебінний бічний африкативний"
+
+#: ../data/ipa-unofficial.xml.in.h:5
+#, fuzzy
+msgid "Voiced retroflex implosive"
+msgstr "Дзвінкий губно-губний імплозивний"
+
+#: ../data/ipa-unofficial.xml.in.h:6 ../data/ipa.xml.in.h:88
+msgid "Alveolar flap"
+msgstr "Ясенний одноударний приголосний"
+
+#: ../data/ipa-unofficial.xml.in.h:7 ../data/ipa.xml.in.h:125
+#, fuzzy
+msgid "Voiceless palatal lateral fricative"
+msgstr "Глухий твердопіднебінний бічний африкативний"
+
+#: ../data/ipa-unofficial.xml.in.h:8 ../data/ipa.xml.in.h:91
+msgid "Retroflex flap"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in.h:9
+#, fuzzy
+msgid "Voiceless retroflex lateral fricative"
+msgstr "Глухий заясенний фрикативний"
+
+#. "PUA" stands for "Private Use Area"
+#: ../data/ipa-unofficial.xml.in.h:11
+#, fuzzy
+msgid "Voiceless retroflex lateral fricative (PUA)"
+msgstr "Глухий заясенний фрикативний"
+
+#: ../data/ipa-unofficial.xml.in.h:12 ../data/ipa.xml.in.h:59
+msgid "Voiceless velar lateral affricate"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in.h:13 ../data/ipa.xml.in.h:68
+#, fuzzy
+msgid "Voiceless velar lateral fricative"
+msgstr "Глухий твердопіднебінний фрикативний"
+
+#: ../data/ipa-unofficial.xml.in.h:14
+#, fuzzy
+msgid "Epiglottal trill"
+msgstr "Двозубий дрижачий приголосний"
+
+#: ../data/ipa-unofficial.xml.in.h:15
+#, fuzzy
+msgid "Voiceless labiodental plosive"
+msgstr "Глухий твердопіднебінний проривний"
+
+#: ../data/ipa-unofficial.xml.in.h:16
+#, fuzzy
+msgid "Voiceless retroflex lateral affricate"
+msgstr "Глухий твердопіднебінний бічний африкативний"
+
+#. "PUA" stands for "Private Use Area"
+#: ../data/ipa-unofficial.xml.in.h:18
+#, fuzzy
+msgid "Voiceless retroflex lateral affricate (PUA)"
+msgstr "Глухий твердопіднебінний бічний африкативний"
+
+#: ../data/ipa-unofficial.xml.in.h:19
+#, fuzzy
+msgid "Combining stridency mark"
+msgstr "Поєднальна позначка підвищення тону"
+
+#. "PUA" stands for "Private Use Area"
+#: ../data/ipa-unofficial.xml.in.h:21
+#, fuzzy
+msgid "Combining stridency mark (PUA)"
+msgstr "Поєднальна позначка підвищення тону"
 
 #. "IPA" stands for "International Phonetic Alphabet"
 #: ../data/ipa.xml.in.h:2
@@ -584,10 +773,6 @@ msgstr "Глухий твердопіднебінний фрикативний"
 #: ../data/ipa.xml.in.h:17
 msgid "Voiceless palatal affricate"
 msgstr "Глухий твердопіднебінний африкативний"
-
-#: ../data/ipa.xml.in.h:18
-msgid "Voiceless palatal lateral affricate"
-msgstr "Глухий твердопіднебінний бічний африкативний"
 
 #: ../data/ipa.xml.in.h:20
 msgid "Voiced alveolar plosive"
@@ -658,694 +843,799 @@ msgid "Voiced velar plosive"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:40
+#, fuzzy
+msgid "Voiced labial-velar plosive"
+msgstr "Дзвінкий губно-губний проривний"
+
+#: ../data/ipa.xml.in.h:41
 msgid "Voiced velar implosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:41
+#: ../data/ipa.xml.in.h:42
 msgid "Voiced uvular plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:42
+#: ../data/ipa.xml.in.h:43
 msgid "Voiced uvular implosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:43
+#: ../data/ipa.xml.in.h:44
 msgid "Voiceless glottal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:44
+#: ../data/ipa.xml.in.h:45
 msgid "Voiced glottal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:45
+#: ../data/ipa.xml.in.h:46
 msgid "Voiceless pharyngeal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:46
+#: ../data/ipa.xml.in.h:47
 msgid "Voiceless coarticulated velar and palato-alveolar fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:47
+#: ../data/ipa.xml.in.h:48
 msgid "Voiceless epiglottal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:48
+#: ../data/ipa.xml.in.h:49
 msgid "Close front unrounded vowel"
 msgstr "Неогублений голосний переднього ряду високого піднесення"
 
-#: ../data/ipa.xml.in.h:49
+#: ../data/ipa.xml.in.h:50
 msgid "Near-close near-front unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:50
+#: ../data/ipa.xml.in.h:51
 msgid "Near-close central unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:51
+#: ../data/ipa.xml.in.h:52
 msgid "Close central unrounded vowel"
 msgstr "Неогублений голосний середнього ряду високого піднесення"
 
-#: ../data/ipa.xml.in.h:52
+#: ../data/ipa.xml.in.h:53
 msgid "Palatal approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:53
+#: ../data/ipa.xml.in.h:54
 msgid "Voiced palatal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:54
+#: ../data/ipa.xml.in.h:55
 msgid "Voiced palatal plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:55
+#: ../data/ipa.xml.in.h:56
 msgid "Voiced palatal affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:56
+#: ../data/ipa.xml.in.h:57
 msgid "Voiced palatal implosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:57
+#: ../data/ipa.xml.in.h:58
 msgid "Voiceless velar plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:58
-msgid "Voiceless velar lateral affricate"
-msgstr ""
+#: ../data/ipa.xml.in.h:60
+#, fuzzy
+msgid "Voiceless labial-velar plosive"
+msgstr "Глухий ясенний вибуховий"
 
-#: ../data/ipa.xml.in.h:59
+#: ../data/ipa.xml.in.h:61
 msgid "Voiceless velar affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:60
+#: ../data/ipa.xml.in.h:62
 msgid "Alveolar lateral approximant"
 msgstr "Ясенний боковий апроксимант"
 
-#: ../data/ipa.xml.in.h:61
+#: ../data/ipa.xml.in.h:63
 msgid "Velarized alveolar lateral approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:62
+#: ../data/ipa.xml.in.h:64
 msgid "Voiceless alveolar lateral fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:63
+#: ../data/ipa.xml.in.h:65
 msgid "Retroflex lateral approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:64
+#: ../data/ipa.xml.in.h:66
 msgid "Voiced alveolar lateral fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:65
+#: ../data/ipa.xml.in.h:67
 msgid "Velar lateral approximant"
 msgstr "М’якопіднебінний боковий апроксимант"
 
-#: ../data/ipa.xml.in.h:66
+#: ../data/ipa.xml.in.h:69
 msgid "Bilabial nasal"
 msgstr "Двозубий носовий приголосний"
 
-#: ../data/ipa.xml.in.h:67
+#: ../data/ipa.xml.in.h:70
 msgid "Labiodental nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:68
+#: ../data/ipa.xml.in.h:71
 msgid "Alveolar nasal"
 msgstr "Ясенний носовий"
 
-#: ../data/ipa.xml.in.h:69
+#: ../data/ipa.xml.in.h:72
 msgid "Velar nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:70
+#: ../data/ipa.xml.in.h:73
+#, fuzzy
+msgid "Labial-velar nasal"
+msgstr "Складовий ясенний носовий звук"
+
+#: ../data/ipa.xml.in.h:74
 msgid "Palatal nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:71
+#: ../data/ipa.xml.in.h:75
 msgid "Retroflex nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:72
+#: ../data/ipa.xml.in.h:76
 msgid "Uvular nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:73
+#: ../data/ipa.xml.in.h:77
 msgid "Close-mid back rounded vowel"
 msgstr "Огублений голосний заднього ряду високо-середнього піднесення"
 
-#: ../data/ipa.xml.in.h:74
+#: ../data/ipa.xml.in.h:78
 msgid "Close-mid front rounded vowel"
 msgstr "Огублений голосний переднього ряду високо-середнього піднесення"
 
-#: ../data/ipa.xml.in.h:75
+#: ../data/ipa.xml.in.h:79
 msgid "Close-mid central rounded vowel"
 msgstr "Огублений голосний середнього ряду високо-середнього піднесення"
 
-#: ../data/ipa.xml.in.h:76
+#: ../data/ipa.xml.in.h:80
 msgid "Open-mid front rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:77
+#: ../data/ipa.xml.in.h:81
 msgid "Open front rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:78
+#: ../data/ipa.xml.in.h:82
 msgid "Voiceless bilabial plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:79
+#: ../data/ipa.xml.in.h:83
 msgid "Voiceless bilabial-labiodental affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:80
+#: ../data/ipa.xml.in.h:84
 msgid "Voiceless bilabial affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:81
+#: ../data/ipa.xml.in.h:85
 msgid "Voiceless labiodental affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:82
+#: ../data/ipa.xml.in.h:86
 msgid "Voiceless uvular plosive"
 msgstr "Глухий язичковий проривний"
 
-#: ../data/ipa.xml.in.h:83
+#: ../data/ipa.xml.in.h:87
 msgid "Alveolar trill"
 msgstr "Ясенний дрижачий приголосний"
 
-#: ../data/ipa.xml.in.h:84
-msgid "Alveolar flap"
-msgstr "Ясенний одноударний приголосний"
-
-#: ../data/ipa.xml.in.h:85
+#: ../data/ipa.xml.in.h:89
 msgid "Alveolar lateral flap"
 msgstr "Ясенний боковий одноударний приголосний"
 
-#: ../data/ipa.xml.in.h:86
+#: ../data/ipa.xml.in.h:90
 msgid "Uvular trill"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:87
-msgid "Retroflex flap"
-msgstr ""
-
-#: ../data/ipa.xml.in.h:88
+#: ../data/ipa.xml.in.h:92
 msgid "Alveolar approximant"
 msgstr "Ясенний апроксимант"
 
-#: ../data/ipa.xml.in.h:89
+#: ../data/ipa.xml.in.h:93
 msgid "Retroflex approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:90
+#: ../data/ipa.xml.in.h:94
 msgid "Voiced uvular fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:91
+#: ../data/ipa.xml.in.h:95
 msgid "Voiceless alveolar fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:92
+#: ../data/ipa.xml.in.h:96
 msgid "Voiceless palato-alveolar fricative"
 msgstr "Глухий заясенний фрикативний"
 
-#: ../data/ipa.xml.in.h:93
+#: ../data/ipa.xml.in.h:97
 msgid "Voiceless retroflex fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:94
+#: ../data/ipa.xml.in.h:98
 msgid "Voiceless alveolar plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:95
+#: ../data/ipa.xml.in.h:99
 msgid "Voiceless retroflex plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:96
+#: ../data/ipa.xml.in.h:100
 msgid "Voiceless alveolar lateral affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:100
+#: ../data/ipa.xml.in.h:104
 msgid "Voiceless retroflex affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:101
+#: ../data/ipa.xml.in.h:105
 msgid "Close back rounded vowel"
 msgstr "Огублений голосний заднього ряду високого піднесення"
 
-#: ../data/ipa.xml.in.h:103
+#: ../data/ipa.xml.in.h:107
 msgid "Near-close central vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:104
+#: ../data/ipa.xml.in.h:108
 msgid "Close central rounded vowel"
 msgstr "Огублений голосний середнього ряду високого піднесення"
 
-#: ../data/ipa.xml.in.h:105
+#: ../data/ipa.xml.in.h:109
 msgid "Labial-palatal approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:106
+#: ../data/ipa.xml.in.h:110
 msgid "Close back unrounded vowel"
 msgstr "Неогублений голосний заднього ряду високого піднесення"
 
-#: ../data/ipa.xml.in.h:107
+#: ../data/ipa.xml.in.h:111
 msgid "Voiced labiodental fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:108
+#: ../data/ipa.xml.in.h:112
 msgid "Labiodental flap"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:109
+#: ../data/ipa.xml.in.h:113
 msgid "Labiodental approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:110
+#: ../data/ipa.xml.in.h:114
 msgid "Voiced velar fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:111
+#: ../data/ipa.xml.in.h:115
 msgid "Close-mid back unrounded vowel"
 msgstr "Неогублений голосний заднього ряду високо-середнього піднесення"
 
-#: ../data/ipa.xml.in.h:112
+#: ../data/ipa.xml.in.h:116
 msgid "Voiced labiovelar approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:113
+#: ../data/ipa.xml.in.h:117
 msgid "Voiceless labiovelar approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:114
+#: ../data/ipa.xml.in.h:118
 msgid "Velar approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:115
+#: ../data/ipa.xml.in.h:119
 msgid "Bilabial percussive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:116
+#: ../data/ipa.xml.in.h:120
 msgid "Voiceless velar fricative"
 msgstr "Глухий задньопіднебінний фрикативний"
 
-#: ../data/ipa.xml.in.h:117
+#: ../data/ipa.xml.in.h:121
 msgid "Voiceless uvular fricative"
 msgstr "Глухий язичковий фрикативний"
 
-#: ../data/ipa.xml.in.h:118
+#: ../data/ipa.xml.in.h:122
 msgid "Close front rounded vowel"
 msgstr "Огублений голосний переднього ряду високого піднесення"
 
-#: ../data/ipa.xml.in.h:119
+#: ../data/ipa.xml.in.h:123
 msgid "Near-close near-front rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:120
+#: ../data/ipa.xml.in.h:124
 msgid "Palatal lateral approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:121
+#: ../data/ipa.xml.in.h:126
 msgid "Voiced alveolar fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:122
+#: ../data/ipa.xml.in.h:127
 msgid "Voiced palato-alveolar fricative"
 msgstr "Дзвінкий заясенний фрикативний"
 
-#: ../data/ipa.xml.in.h:124
+#: ../data/ipa.xml.in.h:129
 msgid "Voiced retroflex fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:125
+#: ../data/ipa.xml.in.h:130
 msgid "Voiceless dental fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:126
+#: ../data/ipa.xml.in.h:131
 msgid "Voiceless bilabial fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:127
+#: ../data/ipa.xml.in.h:132
 msgid "Glottal stop"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:128
+#: ../data/ipa.xml.in.h:133
 msgid "Epiglottal plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:129
+#: ../data/ipa.xml.in.h:134
 msgid "Voiced pharyngeal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:130
+#: ../data/ipa.xml.in.h:135
 msgid "Voiced epiglottal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:131
+#: ../data/ipa.xml.in.h:136
 msgid "Bilabial click"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:134
+#: ../data/ipa.xml.in.h:139
 msgid "Palatal click"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:136
+#: ../data/ipa.xml.in.h:141
 msgid "Bidental percussive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:137
+#: ../data/ipa.xml.in.h:142
 msgid "Aspiration mark"
 msgstr "Позначка придихання"
 
-#: ../data/ipa.xml.in.h:138
+#: ../data/ipa.xml.in.h:143
 msgid "Non-aspiration mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:139
+#: ../data/ipa.xml.in.h:144
 msgid "Breathy voice mark"
 msgstr "Позначка хрипкої вимови"
 
-#: ../data/ipa.xml.in.h:140
+#: ../data/ipa.xml.in.h:145
 msgid "Palatalization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:141
+#: ../data/ipa.xml.in.h:146
 msgid "Lateral release mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:142
-msgid "Nasal release mark"
-msgstr ""
-
-#: ../data/ipa.xml.in.h:143
-msgid "Labio-palatalization mark"
-msgstr ""
-
-#: ../data/ipa.xml.in.h:144
-msgid "Labiodentalization mark"
-msgstr ""
-
-#: ../data/ipa.xml.in.h:145
-msgid "Labialization mark"
-msgstr ""
-
-#: ../data/ipa.xml.in.h:146
-msgid "Velarization mark"
-msgstr ""
-
 #: ../data/ipa.xml.in.h:147
-msgid "Glottalization mark"
-msgstr ""
+#, fuzzy
+msgid "Bilabial nasal release mark"
+msgstr "Двозубий носовий приголосний"
 
 #: ../data/ipa.xml.in.h:148
-msgid "Pharyngealization mark"
+msgid "Labiodental nasal release mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:149
-msgid "Combining laryngealization mark"
-msgstr ""
+#, fuzzy
+msgid "Alveolar nasal release mark"
+msgstr "Ясенний носовий"
 
 #: ../data/ipa.xml.in.h:150
-msgid "Combining retroflexion mark"
+msgid "Palatal nasal release mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:151
-msgid "Ejection mark"
+msgid "Retroflex nasal release mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:152
-msgid "Rhotacization mark"
+msgid "Uvular nasal release mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:153
-msgid "Combining dentalization mark"
+msgid "Labio-palatalization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:154
-msgid "Combining dentolabialization mark"
+msgid "Labiodentalization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:155
-msgid "Combining alveolarization mark"
+msgid "Labialization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:156
-msgid "Combining linguolabialization mark"
+msgid "Velarization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:157
-msgid "Combining apicalization mark"
+msgid "Glottalization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:158
-msgid "Combining laminalization mark"
+msgid "Pharyngealization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:159
-msgid "Combining centralization mark"
-msgstr ""
+#, fuzzy
+msgid "Combining velarization/pharyngealization mark"
+msgstr "Поєднальна позначка підвищення тону"
 
 #: ../data/ipa.xml.in.h:160
-msgid "Combining mid-centralization mark"
+msgid "Combining laryngealization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:161
-msgid "Combining nasalization mark"
+msgid "Combining retroflexion mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:162
-msgid "Combining nasalization mark below"
+msgid "Ejection mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:163
-msgid "Combining denasalization mark"
+msgid "Rhotacization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:164
-msgid "Combining nasal friction mark"
+msgid "Combining dentalization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:165
-msgid "Combining velopharyngeal friction mark"
+msgid "Combining dentolabialization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:166
-msgid "Combining voiced mark"
+msgid "Combining alveolarization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:167
-msgid "Combining voiceless mark"
+msgid "Combining linguolabialization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:168
-msgid "Combining breathy voice mark"
+msgid "Combining apicalization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:169
-msgid "Combining unreleased stop mark"
+msgid "Combining laminalization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:170
-msgid "Combining more rounded mark"
+msgid "Combining centralization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:171
-msgid "Combining less rounded mark"
+msgid "Combining mid-centralization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:172
-msgid "Combining labial spreading mark"
+msgid "Combining nasalization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:173
-msgid "Combining syllabic mark"
+msgid "Combining nasalization mark below"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:174
-msgid "Combining top tone mark"
+msgid "Combining denasalization mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:175
-msgid "Combining high tone mark"
+msgid "Combining nasal friction mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:176
-msgid "Combining mid tone mark"
+msgid "Combining velopharyngeal friction mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:177
-msgid "Combining low tone mark"
+msgid "Combining voiced mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:178
-msgid "Combining bottom tone mark"
+msgid "Combining voiceless mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:179
-msgid "Combining falling tone mark"
-msgstr ""
+#, fuzzy
+msgid "Combining voiceless mark above"
+msgstr "Поєднальна позначка підвищення тону"
 
 #: ../data/ipa.xml.in.h:180
-msgid "Combining high falling tone mark"
+msgid "Pre-voicing/post-voicing mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:181
-msgid "Combining low falling tone mark"
+msgid "Combining breathy voice mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:182
-msgid "Combining rising tone mark"
-msgstr "Поєднальна позначка підвищення тону"
+msgid "Combining unreleased stop mark"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:183
-msgid "Combining high rising tone mark"
+msgid "Combining more rounded mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:184
-msgid "Combining low rising tone mark"
+msgid "Combining less rounded mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:185
-msgid "Combining dipping tone mark"
+msgid "Combining labial spreading mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:186
-msgid "Combining peaking tone mark"
+msgid "Combining syllabic mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:187
-msgid "Top tone letter"
-msgstr "Літера найвищого тону"
+#, fuzzy
+msgid "Combining syllabic mark above"
+msgstr "Поєднальна позначка підвищення тону"
 
 #: ../data/ipa.xml.in.h:188
-msgid "High tone letter"
-msgstr "Літера з підвищеним тоном"
+#, fuzzy
+msgid "Combining non-syllabic mark"
+msgstr "Поєднальна позначка підвищення тону"
 
 #: ../data/ipa.xml.in.h:189
-msgid "Mid tone letter"
-msgstr "Літера з середнім тоном"
+#, fuzzy
+msgid "Combining non-syllabic mark above"
+msgstr "Поєднальна позначка підвищення тону"
 
 #: ../data/ipa.xml.in.h:190
-msgid "Low tone letter"
-msgstr "Літера з пониженим тоном"
+msgid "Combining top tone mark"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:191
-msgid "Bottom tone letter"
+msgid "Combining high tone mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:192
-msgid "Falling tone digraph"
-msgstr "Диграма спадного тону"
+msgid "Combining mid tone mark"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:193
-msgid "High falling tone digraph"
+msgid "Combining low tone mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:194
-msgid "Rising tone digraph"
+msgid "Combining bottom tone mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:195
-msgid "High rising tone digraph"
+msgid "Combining falling tone mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:196
-msgid "Low rising tone digraph"
+msgid "Combining high falling tone mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:197
-msgid "Dipping tone trigraph"
-msgstr "Триграма зі зниженням тону"
-
-#: ../data/ipa.xml.in.h:198
-msgid "Peaking tone trigraph"
+msgid "Combining low falling tone mark"
 msgstr ""
 
+#: ../data/ipa.xml.in.h:198
+msgid "Combining rising tone mark"
+msgstr "Поєднальна позначка підвищення тону"
+
 #: ../data/ipa.xml.in.h:199
-msgid "Elongation mark"
+msgid "Combining high rising tone mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:200
-msgid "Weak elongation mark"
-msgstr "Позначки слабкої протяжності"
+msgid "Combining low rising tone mark"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:201
-msgid "Raised sound mark"
+msgid "Combining dipping tone mark"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:202
-msgid "Lowered sound mark"
-msgstr "Позначка зниженого тону"
+msgid "Combining peaking tone mark"
+msgstr ""
 
 #: ../data/ipa.xml.in.h:203
-msgid "Combining raised sound mark"
-msgstr ""
+msgid "Top tone letter"
+msgstr "Літера найвищого тону"
 
 #: ../data/ipa.xml.in.h:204
-msgid "Combining lowered sound mark"
-msgstr ""
+msgid "High tone letter"
+msgstr "Літера з підвищеним тоном"
 
 #: ../data/ipa.xml.in.h:205
-msgid "Combining tongue root advancement mark"
-msgstr ""
+msgid "Mid tone letter"
+msgstr "Літера з середнім тоном"
 
 #: ../data/ipa.xml.in.h:206
-msgid "Combining tongue root retraction mark"
-msgstr ""
+msgid "Low tone letter"
+msgstr "Літера з пониженим тоном"
 
 #: ../data/ipa.xml.in.h:207
-msgid "Combining strong articulation mark"
+msgid "Bottom tone letter"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:208
-msgid "Combining weak articulation mark"
-msgstr ""
+msgid "Falling tone digraph"
+msgstr "Диграма спадного тону"
 
 #: ../data/ipa.xml.in.h:209
-msgid "Combining whistled articulation mark"
+msgid "High falling tone digraph"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:210
-msgid "Combining sliding articulation mark"
+msgid "Rising tone digraph"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:211
-msgid "Egression mark"
+msgid "High rising tone digraph"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:212
-msgid "Ingression mark"
+msgid "Low rising tone digraph"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:213
-msgid "Combining diphthong mark"
-msgstr ""
+msgid "Dipping tone trigraph"
+msgstr "Триграма зі зниженням тону"
 
 #: ../data/ipa.xml.in.h:214
-msgid "Combining ligature tie"
+msgid "Peaking tone trigraph"
 msgstr ""
 
 #: ../data/ipa.xml.in.h:215
+#, fuzzy
+msgid "Upstep mark"
+msgstr "Позначка наголосу"
+
+#: ../data/ipa.xml.in.h:216
+msgid "Downstep mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:217
+msgid "Minor break"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:218
+msgid "Major break"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:219
+#, fuzzy
+msgid "Rising intonation mark"
+msgstr "Позначка придихання"
+
+#: ../data/ipa.xml.in.h:220
+#, fuzzy
+msgid "Falling intonation mark"
+msgstr "Позначки слабкої протяжності"
+
+#: ../data/ipa.xml.in.h:221
+msgid "Advanced articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:222
+msgid "Retracted articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:223
+#, fuzzy
+msgid "Combining advanced articulation mark"
+msgstr "Об’єднання діакритичних знаків"
+
+#: ../data/ipa.xml.in.h:224
+#, fuzzy
+msgid "Combining retracted articulation mark"
+msgstr "Об’єднання діакритичних знаків"
+
+#: ../data/ipa.xml.in.h:225
+msgid "Raised sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:226
+msgid "Lowered sound mark"
+msgstr "Позначка зниженого тону"
+
+#: ../data/ipa.xml.in.h:227
+msgid "Combining raised sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:228
+msgid "Combining lowered sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:229
+msgid "Combining tongue root advancement mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:230
+msgid "Combining tongue root retraction mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:231
+msgid "Combining strong articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:232
+msgid "Combining weak articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:233
+msgid "Combining whistled articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:234
+msgid "Combining sliding articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:235
+msgid "Egression mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:236
+msgid "Ingression mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:237
+msgid "Combining ligature tie"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:238
 msgid "Combining ligature undertie"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:216
+#: ../data/ipa.xml.in.h:239
+msgid "Elongation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in.h:240
+msgid "Weak elongation mark"
+msgstr "Позначки слабкої протяжності"
+
+#: ../data/ipa.xml.in.h:241
+#, fuzzy
+msgid "Combining extra-short duration mark"
+msgstr "Поєднальна позначка підвищення тону"
+
+#: ../data/ipa.xml.in.h:242
+#, fuzzy
+msgid "Liaison mark"
+msgstr "Позначка придихання"
+
+#: ../data/ipa.xml.in.h:243
 msgid "Stress mark"
 msgstr "Позначка наголосу"
 
-#: ../data/ipa.xml.in.h:217
+#: ../data/ipa.xml.in.h:244
 msgid "Weak stress mark"
 msgstr "Позначка слабкого наголосу"
 
-#: ../data/ipa.xml.in.h:218
+#: ../data/ipa.xml.in.h:245
 msgid "Syllable break"
 msgstr "Кінець складу"
 
-#: ../data/ipa.xml.in.h:219
+#: ../data/ipa.xml.in.h:246
 msgid "Opening orthographic bracket"
 msgstr "Початкова орфографічна дужка"
 
-#: ../data/ipa.xml.in.h:220
+#: ../data/ipa.xml.in.h:247
 msgid "Closing orthographic bracket"
 msgstr "Завершальна орфографічна дужка"
 
@@ -1392,6 +1682,10 @@ msgstr "Додаткові Latin-1"
 #: ../data/latin.xml.in.h:3 ../input-pad/unicode_block.h:39
 msgid "Latin Extended-A"
 msgstr "Латинь розширена-A"
+
+#: ../data/latin.xml.in.h:4
+msgid "Old and Middle English"
+msgstr ""
 
 #: ../data/runr.xml.in.h:1
 msgid "Runes (Unicode Block)"
