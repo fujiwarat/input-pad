@@ -86,12 +86,12 @@ PKG_CHECK_MODULES(GMODULE2,
 dnl - check gtk
 AC_ARG_WITH([gtk],
     [AS_HELP_STRING([--with-gtk=2.0|3.0],
-                    [Select GTK+ version. The default is 2.0])],
+                    [Select GTK+ version. The default is 3.0])],
     [case "$with_gtk" in
         2.0|3.0) ;;
         *) AC_MSG_ERROR([invalid gtk version specified]) ;;
      esac],
-    [with_gtk=2.0]
+    [with_gtk=3.0]
 )
 
 case "$with_gtk" in
