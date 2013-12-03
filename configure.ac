@@ -221,9 +221,9 @@ dnl - check XTest module
 AC_MSG_CHECKING([whether you enable xtest module])
 AC_ARG_ENABLE(xtest,
               AS_HELP_STRING([--enable-xtest=no/yes],
-                             [Send keyboard event with xtest. default=no]),
+                             [Send keyboard event with xtest. default=yes]),
               [],
-              enable_xtest=no)
+              enable_xtest=yes)
 AC_MSG_RESULT($enable_xtest)
 AM_CONDITIONAL(HAVE_XTEST, false)
 
