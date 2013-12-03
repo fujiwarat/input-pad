@@ -1,7 +1,7 @@
 /* vim:set et sts=4: */
 /* input-pad - The input pad
- * Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
- * Copyright (C) 2010-2012 Red Hat, Inc.
+ * Copyright (C) 2010-2013 Takao Fujiwara <takao.fujiwara1@gmail.com>
+ * Copyright (C) 2010-2013 Red Hat, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -581,7 +581,7 @@ debug_print_key_list (InputPadXKBKeyList *xkb_key_list)
         }
         line = g_string_free (string, FALSE);
         if (line) {
-            g_debug (line);
+            g_debug ("%s", line);
             g_free (line);
         }
         list = list->next;
