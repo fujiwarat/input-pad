@@ -1,21 +1,21 @@
 # Hungarian translations for input-pad
-# Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (C) 2010-2013 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
 #
 # Translators:
-# Zoltan Hoppár <hopparz@gmail.com>, 2012.
+# Zoltan Hoppár <hopparz@gmail.com>, 2012-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: input-pad\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
 "POT-Creation-Date: 2012-12-17 04:12+0900\n"
-"PO-Revision-Date: 2012-12-03 15:19+0000\n"
+"PO-Revision-Date: 2013-11-20 10:40+0000\n"
 "Last-Translator: Zoltan Hoppár <hopparz@gmail.com>\n"
 "Language-Team: Hungarian <trans-hu@lists.fedoraproject.org>\n"
-"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/alphabet.xml.in.in.h:1
@@ -364,16 +364,12 @@ msgstr ""
 #, no-c-format
 msgid ""
 "\n"
-"This application can be run either as a stand-alone program or under an "
-"input method application.\n"
-"If you wish to send multi-byte characters, this application needs to be run "
-"under an input method application.\n"
-"If you wish to send characters to X11 applications, those applications needs "
-"to allow send events. e.g.\n"
+"This application can be run either as a stand-alone program or under an input method application.\n"
+"If you wish to send multi-byte characters, this application needs to be run under an input method application.\n"
+"If you wish to send characters to X11 applications, those applications needs to allow send events. e.g.\n"
 "% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
 "\n"
-"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/"
-"pad to customize those in \"Custom Character\" pane."
+"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad to customize those in \"Custom Character\" pane."
 msgstr ""
 
 #: ../data/input-pad.ui.h:42
@@ -1568,15 +1564,15 @@ msgstr ""
 
 #: ../data/ja.xml.in.h:1
 msgid "Japanese"
-msgstr ""
+msgstr "Japán"
 
 #: ../data/ja.xml.in.h:2 ../input-pad/unicode_block.h:136
 msgid "Hiragana"
-msgstr ""
+msgstr "Hiragana"
 
 #: ../data/ja.xml.in.h:3 ../input-pad/unicode_block.h:137
 msgid "Katakana"
-msgstr ""
+msgstr "Katakana"
 
 #: ../data/ja.xml.in.h:4 ../data/zh.xml.in.h:3
 msgid "Radicals"
@@ -1592,11 +1588,11 @@ msgstr ""
 
 #: ../data/keyboard.xml.in.h:2
 msgid "Function Key"
-msgstr ""
+msgstr "Funkció billentyű"
 
 #: ../data/keyboard.xml.in.h:3
 msgid "Key Pad"
-msgstr ""
+msgstr "Billentyűzet"
 
 #: ../data/latin.xml.in.h:1
 msgid "ASCII"
@@ -2789,22 +2785,22 @@ msgstr ""
 #. "modify it under the terms of the GNU Lesser General Public "
 #. "License as published by the Free Software Foundation; either "
 #. "version 2 of the License, or (at your option) any later version.");
-#.
+#. 
 #. license2 = _(""
 #. "This library is distributed in the hope that it will be useful, "
 #. "but WITHOUT ANY WARRANTY; without even the implied warranty of "
 #. "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU "
 #. "Lesser General Public License for more details.");
-#.
+#. 
 #. license3 = _(""
 #. "You should have received a copy of the GNU Lesser General Public "
 #. "License along with this library; if not, write to the Free Software "
 #. "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, "
 #. "MA  02110-1301  USA");
-#.
+#. 
 #. license = g_strdup_printf ("%s\n\n%s\n\n%s",
 #. license1, license2, license3);
-#.
+#. 
 #. This format has been used since gtk 2.20.
 #: ../input-pad/window-gtk.c:3239
 #, c-format
