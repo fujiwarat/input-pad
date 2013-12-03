@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad
 #
-# Copyright (c) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010-2012 Red Hat, Inc.
+# Copyright (c) 2010-2013 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2013 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -56,14 +56,13 @@ AC_MSG_NOTICE([library version $LT_VERSION_INFO])
 
 dnl - define PACKAGE_VERSION_* variables
 AM_SANITY_CHECK
-AM_MAINTAINER_MODE
-AM_DISABLE_STATIC
+AM_MAINTAINER_MODE(enable)
+AC_DISABLE_STATIC
 AC_PROG_CC
 AM_PROG_CC_C_O
 AC_PROG_CXX
-AC_ISC_POSIX
 AC_HEADER_STDC
-AM_PROG_LIBTOOL
+AC_PROG_LIBTOOL
 IT_PROG_INTLTOOL([0.35.0])
 
 dnl - For dislpay Date
@@ -141,7 +140,7 @@ AC_MSG_CHECKING([whether you enable libeek])
 AC_ARG_ENABLE(eek,
               AS_HELP_STRING([--enable-eek=no/yes],
                              [Draw keyboard using libeek default=no]),
-              enable_eek=yes,
+              [],
               enable_eek=no)
 AC_MSG_RESULT($enable_eek)
 
@@ -177,7 +176,8 @@ dnl - check pygobject2
 AC_MSG_CHECKING([where you enable pygobject2])
 AC_ARG_ENABLE(pygobject2,
               AS_HELP_STRING([--enable-pygobject2=no/yes],
-                             [Enable PyGObject2 default=no]),,
+                             [Enable PyGObject2 default=no]),
+              [],
               enable_pygobject2=no)
 AC_MSG_RESULT($enable_pygobject2)
 
@@ -222,7 +222,7 @@ AC_MSG_CHECKING([whether you enable xtest module])
 AC_ARG_ENABLE(xtest,
               AS_HELP_STRING([--enable-xtest=no/yes],
                              [Send keyboard event with xtest. default=no]),
-              enable_xtest=yes,
+              [],
               enable_xtest=no)
 AC_MSG_RESULT($enable_xtest)
 AM_CONDITIONAL(HAVE_XTEST, false)

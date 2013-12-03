@@ -11,4 +11,4 @@ automake --add-missing --copy --force || exit 1
 autoconf --force || exit 1
 export CFLAGS=${CFLAGS:-"-Wall -g -O0 -Wl,--no-undefined"}
 export CXXFLAGS="$CFLAGS"
-./configure --enable-maintainer-mode $* || exit 1
+./configure "$@" || exit 1
