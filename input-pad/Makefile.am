@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad
 #
-# Copyright (c) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010-2012 Red Hat, Inc.
+# Copyright (c) 2010-2013 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2013 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -37,7 +37,7 @@ MODULE_DIR = $(libdir)/$(PACKAGE)-$(libinput_pad_VERSION)/modules
 MODULE_KBDUI_DIR = $(MODULE_DIR)/kbdui
 MODULE_XKEYSEND_DIR = $(MODULE_DIR)/xkeysend
 
-INCLUDES = \
+AM_CPPFLAGS = \
 	-I$(top_srcdir)                                                    \
 	-DINPUT_PAD_PAD_SYSTEM_DIR=\""$(pkgdatadir)/pad"\"                 \
 	-DINPUT_PAD_UI_GTK_DIR=\""$(pkgdatadir)/ui/gtk"\"                  \
@@ -121,7 +121,7 @@ input-pad-marshal.c: input-pad-marshal.list
 if HAVE_XTEST
 MODULE_XTEST_GDK_BASE = input-pad-xtest-gdk
 
-INCLUDES += \
+AM_CPPFLAGS += \
 	-DMODULE_XTEST_GDK_BASE=\""$(MODULE_XTEST_GDK_BASE)"\"  \
 	-DMODULE_XTEST_GDK_DIR=\""$(MODULE_XKEYSEND_DIR)"\"     \
 	$(NULL)
@@ -162,7 +162,7 @@ endif
 if HAVE_EEK
 MODULE_EEK_GTK_BASE = eek-gtk
 
-INCLUDES += \
+AM_CPPFLAGS += \
 	-DMODULE_EEK_GTK_BASE=\""$(MODULE_EEK_GTK_BASE)"\"      \
 	$(NULL)
 

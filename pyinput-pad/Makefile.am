@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad
 #
-# Copyright (c) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010-2012 Red Hat, Inc.
+# Copyright (c) 2010-2013 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2013 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -23,7 +23,7 @@
 noinst_DIST = \
 	$(NULL)
 
-INCLUDES = \
+AM_CPPFLAGS = \
 	-I$(top_srcdir)                                                    \
 	-I$(top_srcdir)/input-pad                                          \
 	$(NULL)
