@@ -235,11 +235,25 @@ typelibs_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
 CLEANFILES += $(dist_gir_DATA) $(typelibs_DATA)
 endif
 
+man_one_in_files = input-pad.1.in
+man_one_files = $(man_one_in_files:.1.in=.1)
+man_one_DATA =$(man_one_files:.1=.1.gz)
+man_onedir = $(mandir)/man1
+%.1: %.1.in
+	$(AM_V_GEN) sed \
+	    -e 's|@VERSION[@]|$(VERSION)|g' $< > $@.tmp && \
+	    mv $@.tmp $@
+%.1.gz: %.1
+	$(AM_V_GEN) gzip -c $< > $@.tmp && mv $@.tmp $@
+
 CLEANFILES += \
 	$(BUILT_SOURCES)                                        \
+	$(man_one_files)                                        \
+	$(man_one_DATA)                                         \
 	$(NULL)
 
 EXTRA_DIST = \
+	$(man_one_in_files)                                     \
 	input-pad-marshal.list                                  \
 	unicode_block.sh                                        \
 	$(NULL)
