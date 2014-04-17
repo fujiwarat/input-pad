@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad
 #
-# Copyright (c) 2010-2013 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010-2013 Red Hat, Inc.
+# Copyright (c) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2014 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -55,10 +55,12 @@ nodist__input_pad_la_SOURCES = \
 
 _input_pad_la_CFLAGS = \
 	$(PYTHON_CFLAGS)                                        \
+	$(GTK3_CFLAGS)                                          \
 	$(NULL)
 
 _input_pad_la_LDFLAGS = \
 	$(PYTHON_LIBS)                                          \
+	$(GTK3_LIBS)                                            \
 	-avoid-version                                          \
 	-module                                                 \
 	$(NULL)
@@ -66,14 +68,6 @@ _input_pad_la_LDFLAGS = \
 _input_pad_la_LIBADD = \
 	$(top_builddir)/input-pad/libinput-pad.la               \
 	$(NULL)
-
-if HAVE_GTK3
-    _input_pad_la_CFLAGS += $(GTK3_CFLAGS)
-    _input_pad_la_LDFLAGS += $(GTK3_LIBS)
-else
-    _input_pad_la_CFLAGS += $(GTK2_CFLAGS)
-    _input_pad_la_LDFLAGS += $(GTK2_LIBS)
-endif
 
 _input_pad_group_la_SOURCES = \
 	$(NULL)
@@ -105,10 +99,12 @@ nodist__input_pad_window_gtk_la_SOURCES = \
 
 _input_pad_window_gtk_la_CFLAGS = \
 	$(PYTHON_CFLAGS)                                        \
+	$(GTK3_CFLAGS)                                          \
 	$(NULL)
 
 _input_pad_window_gtk_la_LDFLAGS = \
 	$(PYTHON_LIBS)                                          \
+	$(GTK3_LIBS)                                            \
 	-avoid-version                                          \
 	-module                                                 \
 	$(NULL)
@@ -116,14 +112,6 @@ _input_pad_window_gtk_la_LDFLAGS = \
 _input_pad_window_gtk_la_LIBADD = \
 	$(top_builddir)/input-pad/libinput-pad.la               \
 	$(NULL)
-
-if HAVE_GTK3
-    _input_pad_window_gtk_la_CFLAGS += $(GTK3_CFLAGS)
-    _input_pad_window_gtk_la_LDFLAGS += $(GTK3_LIBS)
-else
-    _input_pad_window_gtk_la_CFLAGS += $(GTK2_CFLAGS)
-    _input_pad_window_gtk_la_LDFLAGS += $(GTK2_LIBS)
-endif
 
 %.py %_wrap.c: %.i
 	@f=`basename "$<"`;                                     \

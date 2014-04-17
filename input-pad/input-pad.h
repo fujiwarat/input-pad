@@ -1,7 +1,7 @@
 /* vim:set et sts=4: */
 /* input-pad - The input pad
- * Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
- * Copyright (C) 2010-2012 Red Hat, Inc.
+ * Copyright (C) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+ * Copyright (C) 2010-2014 Red Hat, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -49,9 +49,16 @@ struct _InputPadWindowKbduiName {
 };
 
 const char *        input_pad_get_version (void);
+
+/**
+ * input_pad_window_init:
+ * @argc: (inout): Address of the argc
+ * @argv: (array length=argc) (inout) (allow-none): Address of the argv
+ * @type: type
+ */
 void                input_pad_window_init (int *argc, char ***argv,
                                            InputPadWindowType type);
-void *              input_pad_window_new (unsigned int child);
+void *              input_pad_window_new (void);
 void                input_pad_window_show (void *window_data);
 void                input_pad_window_hide (void *window_data);
 unsigned int        input_pad_window_get_visible (void *window_data);
@@ -86,7 +93,9 @@ void                input_pad_window_set_show_table
 void                input_pad_window_set_show_layout
                                         (void           *window_data,
                                          InputPadWindowShowLayoutType type);
-void                input_pad_window_main (void *window_data);
+void *              input_pad_window_get_window (void *window_data);
+void                input_pad_window_activate (void *window_data);
+int                 input_pad_window_main (void *window_data);
 void                input_pad_window_destroy (void *window_data);
 
 #endif

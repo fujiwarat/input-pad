@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad
 #
-# Copyright (c) 2010-2013 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010-2013 Red Hat, Inc.
+# Copyright (c) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2014 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -72,9 +72,9 @@ DATE_DISPLAY="pad_datedisplay"
 AC_SUBST(DATE_DISPLAY)
 
 dnl - pkgconfig
-AM_PATH_GLIB_2_0
+AM_PATH_GLIB_2_0(2.37.0)
 PKG_CHECK_MODULES(GLIB2, [
-    glib-2.0 >= 2.8
+    glib-2.0 >= 2.37
 ])
 
 PKG_CHECK_MODULES(GMODULE2,
@@ -83,35 +83,10 @@ PKG_CHECK_MODULES(GMODULE2,
     [AC_MSG_NOTICE([gmodule-2.0 is required by glib-2.0 >= 2.30])]
 )
 
-dnl - check gtk
-AC_ARG_WITH([gtk],
-    [AS_HELP_STRING([--with-gtk=2.0|3.0],
-                    [Select GTK+ version. The default is 3.0])],
-    [case "$with_gtk" in
-        2.0|3.0) ;;
-        *) AC_MSG_ERROR([invalid gtk version specified]) ;;
-     esac],
-    [with_gtk=3.0]
-)
-
-case "$with_gtk" in
-    2.0)
-        PKG_CHECK_MODULES(GTK2, [
-            gtk+-2.0
-        ])
-        AM_CONDITIONAL(HAVE_GTK3, false)
-        AM_CONDITIONAL(HAVE_GTK2, true)
-        GTK_API_VERSION=2.0
-        ;;
-    3.0)
-        PKG_CHECK_MODULES(GTK3, [
-            gtk+-3.0
-        ])
-        AM_CONDITIONAL(HAVE_GTK3, true)
-        AM_CONDITIONAL(HAVE_GTK2, false)
-        GTK_API_VERSION=3.0
-    ;;
-esac
+PKG_CHECK_MODULES(GTK3, [
+    gtk+-3.0 >= 3.10
+])
+GTK_API_VERSION=3.0
 AC_SUBST(GTK_API_VERSION)
 
 PKG_CHECK_MODULES(LIBXML2, [
@@ -172,51 +147,6 @@ if test x"$found_introspection" = x"yes" ; then
 fi
 AC_SUBST(IBUS_GIR_SCANNERFLAGS)
 
-dnl - check pygobject2
-AC_MSG_CHECKING([where you enable pygobject2])
-AC_ARG_ENABLE(pygobject2,
-              AS_HELP_STRING([--enable-pygobject2=no/yes],
-                             [Enable PyGObject2 default=no]),
-              [],
-              enable_pygobject2=no)
-AC_MSG_RESULT($enable_pygobject2)
-
-if test x"$enable_pygobject2" = xyes; then
-    AM_CONDITIONAL(HAVE_PYTHON, true)
-    AM_CONDITIONAL(HAVE_PYGOBJECT2, true)
-    AM_PATH_PYTHON([2.5], [], [])
-
-    AC_PATH_PROG(PYTHON_CONFIG, python$PYTHON_VERSION-config)
-    if test x"$PYTHON_CONFIG" = x""; then
-        AC_PATH_PROG(PYTHON_CONFIG, python-config-$PYTHON_VERSION)
-    fi
-    if test x"$PYTHON_CONFIG" != x""; then
-        PYTHON_CFLAGS=`$PYTHON_CONFIG --includes`
-        PYTHON_LIBS=`$PYTHON_CONFIG --libs`
-    fi
-    AC_MSG_NOTICE([PYTHON_CFLAGS=\"$PYTHON_CFLAGS\"])
-    AC_MSG_NOTICE([PYTHON_LIBS=\"$PYTHON_LIBS\"])
-    if test x"$PYTHON_CFLAGS" = x -o x"$PYTHON_LIBS" = x ; then
-        AC_MSG_ERROR([Could not find PYTHON_CFLAGS or PYTHON_LIBS])
-    fi
-
-    AC_PATH_PROG(SWIG, swig)
-    if test x"$SWIG" = x""; then
-        AC_MSG_ERROR([Could not find swig])
-    fi
-
-    AC_SUBST(PYTHON_CFLAGS)
-    AC_SUBST(PYTHON_LIBS)
-    AC_SUBST(SWIG)
-else
-    if test x"$found_introspection" = x"yes" ; then
-        AM_CONDITIONAL(HAVE_PYTHON, true)
-    else
-        AM_CONDITIONAL(HAVE_PYTHON, false)
-    fi
-    AM_CONDITIONAL(HAVE_PYGOBJECT2, false)
-fi
-
 dnl - check XTest module
 AC_MSG_CHECKING([whether you enable xtest module])
 AC_ARG_ENABLE(xtest,
@@ -257,8 +187,6 @@ input-pad.pc
 input-pad.spec
 data/Makefile
 input-pad/Makefile
-pyinput-pad/Makefile
-pyinput-pad/pyinput_pad.pth
 ])
 
 AC_OUTPUT
@@ -270,7 +198,6 @@ libinput_pad version:    $libinput_pad_VERSION
 GTK+ version:            $GTK_API_VERSION
 Have libxklavier:        $have_libxklavier
 Enable EEK               $enable_eek
-Enable PyGObject2        $enable_pygobject2
 Enable PyGObject3        $found_introspection
 GIR scannerflags         "$INPUT_PAD_GIR_SCANNERFLAGS"
 Enable XTEST             $enable_xtest

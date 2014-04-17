@@ -1,7 +1,7 @@
 /* vim:set et sts=4: */
 /* input-pad - The input pad
- * Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
- * Copyright (C) 2010-2012 Red Hat, Inc.
+ * Copyright (C) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+ * Copyright (C) 2010-2014 Red Hat, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -27,6 +27,10 @@
 
 G_BEGIN_DECLS
 
+#define INPUT_PAD_TYPE_GTK_APPLICATION          (input_pad_gtk_application_get_type ())
+#define INPUT_PAD_GTK_APPLICATION(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), INPUT_PAD_TYPE_GTK_APPLICATION, InputPadGtkApplication))
+#define INPUT_PAD_IS_GTK_APPLICATION(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), INPUT_PAD_TYPE_GTK_APPLICATION))
+
 #define INPUT_PAD_TYPE_GTK_WINDOW               (input_pad_gtk_window_get_type ())
 #define INPUT_PAD_GTK_WINDOW(o)                 (G_TYPE_CHECK_INSTANCE_CAST ((o), INPUT_PAD_TYPE_GTK_WINDOW, InputPadGtkWindow))
 #define INPUT_PAD_GTK_WINDOW_CLASS(k)           (G_TYPE_CHECK_CLASS_CAST ((k), INPUT_PAD_TYPE_GTK_WINDOW, InputPadGtkWindowClass))
@@ -34,19 +38,21 @@ G_BEGIN_DECLS
 #define INPUT_PAD_IS_GTK_WINDOW_CLASS(k)        (G_TYPE_CHECK_CLASS_TYPE ((k), INPUT_PAD_TYPE_GTK_WINDOW))
 #define INPUT_PAD_GTK_WINDOW_GET_CLASS(o)       (G_TYPE_INSTANCE_GET_CLASS ((o), INPUT_PAD_TYPE_GTK_WINDOW, InputPadGtkWindowClass))
 
+typedef struct _InputPadGtkApplication InputPadGtkApplication;
+typedef struct _InputPadGtkApplicationClass InputPadGtkApplicationClass;
 typedef struct _InputPadGtkWindowPrivate InputPadGtkWindowPrivate;
 typedef struct _InputPadGtkWindow InputPadGtkWindow;
 typedef struct _InputPadGtkWindowClass InputPadGtkWindowClass;
 
 struct _InputPadGtkWindow {
-    GtkWindow                           parent;
+    GtkApplicationWindow                parent;
     guint                               child;
 
     InputPadGtkWindowPrivate           *priv;
 };
 
 struct _InputPadGtkWindowClass {
-    GtkWindowClass              parent_class;
+    GtkApplicationWindowClass   parent_class;
 
     gboolean (* button_pressed)        (InputPadGtkWindow      *window,
                                         const gchar            *str,
@@ -79,9 +85,24 @@ struct _InputPadGtkWindowClass {
 };
 
 G_MODULE_EXPORT
+GType               input_pad_gtk_application_get_type (void);
+InputPadGtkApplication *
+                    input_pad_gtk_application_new (void);
+/**
+ * input_pad_gtk_application_get_window:
+ * @app: #InputPadGtkApplication
+ * return value: (transfer none): #InputPadGtkWindow
+ */
+InputPadGtkWindow * input_pad_gtk_application_get_window
+                                       (InputPadGtkApplication *app);
+
 GType               input_pad_gtk_window_get_type (void);
-GtkWidget *         input_pad_gtk_window_new (GtkWindowType     type,
-                                              unsigned int      child);
+InputPadGtkWindow * input_pad_gtk_window_new
+                                       (InputPadGtkApplication *app);
+InputPadGtkWindow * input_pad_gtk_window_new_with_child
+                                       (InputPadGtkApplication *app,
+                                        GtkWindowType           type,
+                                        unsigned int            child);
 void                input_pad_gtk_window_set_paddir
                                        (InputPadGtkWindow      *window,
                                         const gchar            *paddir,

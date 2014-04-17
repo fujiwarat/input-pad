@@ -1,14 +1,14 @@
 # Source translations for input-pad
-# Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (C) 2010-2013 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
 #
 # Translators:
-# Takao Fujiwara <takao.fujiwara1@gmail.com>, 2010-2012.
+# Takao Fujiwara <takao.fujiwara1@gmail.com>, 2010-2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
-"POT-Creation-Date: 2012-12-17 04:12+0900\n"
+"POT-Creation-Date: 2014-03-28 19:47+0900\n"
 "PO-Revision-Date: 2012-06-22 17:50+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Source\n"
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Box Drawing"
 msgstr ""
 
-#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3937
+#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:4035
 msgid "Block"
 msgstr ""
 
@@ -231,135 +231,136 @@ msgid "Gothic"
 msgstr ""
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:50
-#: ../input-pad/window-gtk.c:5320 ../input-pad/window-gtk.c:5321
+#: ../input-pad/dialog.ui.h:38 ../input-pad/window-gtk.c:5539
+#: ../input-pad/window-gtk.c:5540 ../input-pad/window-gtk.ui.h:1
 msgid "Input Pad"
 msgstr ""
 
-#: ../data/input-pad.ui.h:1
+#: ../data/input-pad.ui.h:1 ../input-pad/app-menu.ui.h:1
 msgid "_File"
 msgstr ""
 
-#: ../data/input-pad.ui.h:2
+#: ../data/input-pad.ui.h:2 ../input-pad/app-menu.ui.h:3
 msgid "Close the program"
 msgstr ""
 
-#: ../data/input-pad.ui.h:3
+#: ../data/input-pad.ui.h:3 ../input-pad/app-menu.ui.h:2
 msgid "_Close"
 msgstr ""
 
-#: ../data/input-pad.ui.h:4
+#: ../data/input-pad.ui.h:4 ../input-pad/app-menu.ui.h:4
 msgid "_Pad"
 msgstr ""
 
-#: ../data/input-pad.ui.h:5
+#: ../data/input-pad.ui.h:5 ../input-pad/app-menu.ui.h:5
 msgid "_Code Point"
 msgstr ""
 
-#: ../data/input-pad.ui.h:6
+#: ../data/input-pad.ui.h:6 ../input-pad/app-menu.ui.h:6
 msgid "_Show Pad"
 msgstr ""
 
-#: ../data/input-pad.ui.h:7
+#: ../data/input-pad.ui.h:7 ../input-pad/app-menu.ui.h:7
 msgid "Show _All Characters"
 msgstr ""
 
-#: ../data/input-pad.ui.h:8
+#: ../data/input-pad.ui.h:8 ../input-pad/app-menu.ui.h:8
 msgid "Show _Custom Characters"
 msgstr ""
 
-#: ../data/input-pad.ui.h:9
+#: ../data/input-pad.ui.h:9 ../input-pad/app-menu.ui.h:9
 msgid "Show _Nothing"
 msgstr ""
 
-#: ../data/input-pad.ui.h:10
+#: ../data/input-pad.ui.h:10 ../input-pad/app-menu.ui.h:10
 msgid "Show _Keyboard Layout"
 msgstr ""
 
-#: ../data/input-pad.ui.h:11
+#: ../data/input-pad.ui.h:11 ../input-pad/app-menu.ui.h:11
 msgid "_Help"
 msgstr ""
 
-#: ../data/input-pad.ui.h:12
+#: ../data/input-pad.ui.h:12 ../input-pad/app-menu.ui.h:12
 msgid "_Troubleshoot"
 msgstr ""
 
-#: ../data/input-pad.ui.h:13
+#: ../data/input-pad.ui.h:13 ../input-pad/dialog.ui.h:1
 msgid "Code Point Dialog"
 msgstr ""
 
-#: ../data/input-pad.ui.h:14
+#: ../data/input-pad.ui.h:14 ../input-pad/dialog.ui.h:2
 msgid "Unicode"
 msgstr ""
 
-#: ../data/input-pad.ui.h:15
+#: ../data/input-pad.ui.h:15 ../input-pad/dialog.ui.h:3
 msgid "You can choose encoding type"
 msgstr ""
 
-#: ../data/input-pad.ui.h:16
+#: ../data/input-pad.ui.h:16 ../input-pad/dialog.ui.h:4
 msgid "Current Encoding"
 msgstr ""
 
-#: ../data/input-pad.ui.h:17
+#: ../data/input-pad.ui.h:17 ../input-pad/dialog.ui.h:5
 msgid "Copy Buffer"
 msgstr ""
 
-#: ../data/input-pad.ui.h:18
+#: ../data/input-pad.ui.h:18 ../input-pad/dialog.ui.h:6
 msgid ""
 "Base 16\n"
 "Hex"
 msgstr ""
 
-#: ../data/input-pad.ui.h:20
+#: ../data/input-pad.ui.h:20 ../input-pad/dialog.ui.h:8
 msgid "Set number case to hexadecimal"
 msgstr ""
 
-#: ../data/input-pad.ui.h:21
+#: ../data/input-pad.ui.h:21 ../input-pad/dialog.ui.h:9
 msgid ""
 "Base 10\n"
 "Dec"
 msgstr ""
 
-#: ../data/input-pad.ui.h:23
+#: ../data/input-pad.ui.h:23 ../input-pad/dialog.ui.h:11
 msgid "Set number case to decimal"
 msgstr ""
 
-#: ../data/input-pad.ui.h:24
+#: ../data/input-pad.ui.h:24 ../input-pad/dialog.ui.h:12
 msgid ""
 "Base 8\n"
 "Oct"
 msgstr ""
 
-#: ../data/input-pad.ui.h:26
+#: ../data/input-pad.ui.h:26 ../input-pad/dialog.ui.h:14
 msgid "Set number case to octal"
 msgstr ""
 
-#: ../data/input-pad.ui.h:27
+#: ../data/input-pad.ui.h:27 ../input-pad/dialog.ui.h:15
 msgid ""
 "Base 2\n"
 "Bin"
 msgstr ""
 
-#: ../data/input-pad.ui.h:29
+#: ../data/input-pad.ui.h:29 ../input-pad/dialog.ui.h:17
 msgid "Set number case to binary"
 msgstr ""
 
-#: ../data/input-pad.ui.h:30
+#: ../data/input-pad.ui.h:30 ../input-pad/dialog.ui.h:18
 msgid "Code Point:"
 msgstr ""
 
-#: ../data/input-pad.ui.h:31
+#: ../data/input-pad.ui.h:31 ../input-pad/dialog.ui.h:19
 msgid "Character:"
 msgstr ""
 
-#: ../data/input-pad.ui.h:32
+#: ../data/input-pad.ui.h:32 ../input-pad/dialog.ui.h:20
 msgid "_Send"
 msgstr ""
 
-#: ../data/input-pad.ui.h:33
+#: ../data/input-pad.ui.h:33 ../input-pad/dialog.ui.h:21
 msgid "Input Pad Troubleshoot"
 msgstr ""
 
-#: ../data/input-pad.ui.h:35
+#: ../data/input-pad.ui.h:35 ../input-pad/dialog.ui.h:23
 #, no-c-format
 msgid ""
 "\n"
@@ -375,43 +376,43 @@ msgid ""
 "pad to customize those in \"Custom Character\" pane."
 msgstr ""
 
-#: ../data/input-pad.ui.h:42
+#: ../data/input-pad.ui.h:42 ../input-pad/dialog.ui.h:30
 msgid "Configure Keyboard Layouts"
 msgstr ""
 
-#: ../data/input-pad.ui.h:43
+#: ../data/input-pad.ui.h:43 ../input-pad/dialog.ui.h:31
 msgid "A_vailable layouts:"
 msgstr ""
 
-#: ../data/input-pad.ui.h:44
+#: ../data/input-pad.ui.h:44 ../input-pad/dialog.ui.h:32
 msgid "_Layouts shown in the list:"
 msgstr ""
 
-#: ../data/input-pad.ui.h:45
+#: ../data/input-pad.ui.h:45 ../input-pad/dialog.ui.h:33
 msgid "_Options"
 msgstr ""
 
-#: ../data/input-pad.ui.h:46
+#: ../data/input-pad.ui.h:46 ../input-pad/dialog.ui.h:34
 msgid "Configure Keyboard Options"
 msgstr ""
 
-#: ../data/input-pad.ui.h:47
+#: ../data/input-pad.ui.h:47 ../input-pad/dialog.ui.h:35
 msgid "_Use the default keyboard option"
 msgstr ""
 
-#: ../data/input-pad.ui.h:48
+#: ../data/input-pad.ui.h:48 ../input-pad/dialog.ui.h:36
 msgid "Use the defualt XKB option"
 msgstr ""
 
-#: ../data/input-pad.ui.h:49
+#: ../data/input-pad.ui.h:49 ../input-pad/dialog.ui.h:37
 msgid "<b>Keyboard Option</b>"
 msgstr ""
 
-#: ../data/input-pad.ui.h:51
+#: ../data/input-pad.ui.h:51 ../input-pad/dialog.ui.h:39
 msgid "The input pad is a tool to send a character on button."
 msgstr ""
 
-#: ../data/input-pad.ui.h:52
+#: ../data/input-pad.ui.h:52 ../input-pad/dialog.ui.h:40
 msgid "translator_credits"
 msgstr ""
 
@@ -1974,6 +1975,10 @@ msgstr ""
 msgid "Bopomofo"
 msgstr ""
 
+#: ../input-pad/app-menu.ui.h:13
+msgid "_About"
+msgstr ""
+
 #: ../input-pad/eek-gtk.c:62
 msgid "Use libeek to draw keyboard"
 msgstr ""
@@ -2734,50 +2739,50 @@ msgstr ""
 msgid "Supplementary Private Use Area-B"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:172
+#: ../input-pad/window-gtk.c:196
 msgid "Display version"
 msgstr ""
 
 #. Translators: the word 'KBDUI' is not translated.
-#: ../input-pad/window-gtk.c:175
+#: ../input-pad/window-gtk.c:199
 msgid "Use KBDUI to draw keyboard"
 msgstr ""
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:178
+#: ../input-pad/window-gtk.c:202
 msgid "Use TYPE of char table. The available TYPE=0, 1, 2"
 msgstr ""
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:181
+#: ../input-pad/window-gtk.c:205
 msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:188
+#: ../input-pad/window-gtk.c:212
 msgid "Use XTEST module to send key events"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:193
+#: ../input-pad/window-gtk.c:217
 msgid "Use XSendEvent to send key events"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1301
+#: ../input-pad/window-gtk.c:1339
 msgid "Fold layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1306 ../input-pad/window-gtk.c:2695
+#: ../input-pad/window-gtk.c:1344 ../input-pad/window-gtk.c:2733
 msgid "Extend layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2895
+#: ../input-pad/window-gtk.c:2933
 msgid "Layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:3170
+#: ../input-pad/window-gtk.c:3208
 msgid "_Layout:"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:3200
+#: ../input-pad/window-gtk.c:3238
 msgid "_Configure Layouts"
 msgstr ""
 
@@ -2805,15 +2810,15 @@ msgstr ""
 #. license1, license2, license3);
 #.
 #. This format has been used since gtk 2.20.
-#: ../input-pad/window-gtk.c:3239
+#: ../input-pad/window-gtk.c:3277
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:3707
+#: ../input-pad/window-gtk.c:3776
 msgid "Group"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:3715
+#: ../input-pad/window-gtk.c:3784
 msgid "Subgroup"
 msgstr ""

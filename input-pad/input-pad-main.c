@@ -1,7 +1,7 @@
 /* vim:set et sts=4: */
 /* input-pad - The input pad
- * Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
- * Copyright (C) 2010-2012 Red Hat, Inc.
+ * Copyright (C) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+ * Copyright (C) 2010-2014 Red Hat, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -32,9 +32,7 @@ main (int argc, char *argv[])
 
     input_pad_window_init (&argc, &argv, 0);
 
-    data = input_pad_window_new (0);
-    input_pad_window_show (data);
+    data = input_pad_window_new ();
 
-    input_pad_window_main (data);
-    return 0;
+    return input_pad_window_main (data);
 }

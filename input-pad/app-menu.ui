@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: xml -*-->
+<interface domain="input-pad">
+  <menu id="menubar">
+    <submenu>
+      <attribute name="label" translatable="yes">_File</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Close</attribute>
+          <attribute name="tooltip" translatable="yes">Close the program</attribute>
+          <attribute name="action">app.Close</attribute>
+        </item>
+      </section>
+    </submenu>
+    <submenu>
+      <attribute name="label" translatable="yes">_Pad</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Code Point</attribute>
+          <attribute name="action">app.CodePoint</attribute>
+        </item>
+        <submenu>
+          <attribute name="label" translatable="yes">_Show Pad</attribute>
+          <section>
+            <item>
+              <attribute name="label" translatable="yes">Show _All Characters</attribute>
+              <attribute name="action">app.ShowAllChars</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">Show _Custom Characters</attribute>
+              <attribute name="action">app.ShowCustomChars</attribute>
+              <attribute name="group">app.ShowAllChars</attribute>
+              <attribute name="active">True</attribute>
+            </item>
+            <item>
+              <attribute name="label" translatable="yes">Show _Nothing</attribute>
+              <attribute name="action">app.ShowNothing</attribute>
+              <attribute name="group">app.ShowAllChars</attribute>
+            </item>
+          </section>
+        </submenu>
+        <item>
+          <attribute name="label" translatable="yes">Show _Keyboard Layout</attribute>
+          <attribute name="action">app.ShowLayout</attribute>
+          <attribute name="active">True</attribute>
+        </item>
+      </section>
+    </submenu>
+    <submenu>
+      <attribute name="label" translatable="yes">_Help</attribute>
+      <section>
+        <item>
+          <attribute name="label" translatable="yes">_Troubleshoot</attribute>
+          <attribute name="action">app.Contents</attribute>
+        </item>
+        <item>
+          <attribute name="label" translatable="yes">_About</attribute>
+          <attribute name="action">app.About</attribute>
+        </item>
+      </section>
+    </submenu>
+  </menu>
+</interface>

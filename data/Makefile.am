@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad
 #
-# Copyright (c) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010-2012 Red Hat, Inc.
+# Copyright (c) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2014 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -19,9 +19,6 @@
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA  02110-1301  USA
-
-ui_gtk_DATA = input-pad.ui
-ui_gtkdir = $(pkgdatadir)/ui/gtk
 
 icon_DATA = input-pad.png
 icondir = $(datarootdir)/pixmaps
@@ -138,7 +135,6 @@ EXTRA_DIST = \
 	$(icon_DATA)                                            \
 	$(pad_in_in_files)                                      \
 	$(pad_in_files)                                         \
-	$(ui_gtk_DATA)                                          \
 	char2hexstr.py                                          \
 	keyboard.xml.in                                         \
 	w3ctostr.py                                             \

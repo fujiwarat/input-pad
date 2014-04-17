@@ -1,17 +1,11 @@
 %{!?have_pygobject3_devel: %define have_pygobject3_devel %(rpm -q --quiet gobject-introspection-devel && echo 1 || echo 0)}
-%{!?have_pygobject2_devel: %define have_pygobject2_devel %(rpm -q --quiet python-devel && echo 1 || echo 0)}
 %{!?have_xtest_devel:  %define have_xtest_devel  %(rpm -q --quiet libXtst-devel && echo 1 || echo 0)}
 %{!?have_eek_devel:    %define have_eek_devel    %(rpm -q --quiet eekboard-devel && echo 1 || echo 0)}
-
-%if %have_pygobject2_devel
-  %if ! (0%{?fedora} > 12 || 0%{?rhel} > 5)
-  %{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
-  %endif
-%endif
 
 %define sub_version             @libinput_pad_VERSION@
 %define libxklavier_version     4.0
 %define libxml2_version         2.0
+%define gtk3_version            3.10
 
 %define libinput_paddir %{_libdir}/%{name}-%sub_version
 %define moduledir       %{_libdir}/%{name}-%sub_version/modules
@@ -31,7 +25,7 @@ Source0:    http://input-pad.googlecode.com/files/%{name}-%{version}.tar.gz
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  gettext-devel
-BuildRequires:  gtk2-devel
+BuildRequires:  gtk3-devel              >= %gtk3_version
 BuildRequires:  libtool
 BuildRequires:  libxkbfile-devel
 BuildRequires:  libxklavier-devel       >= %libxklavier_version
@@ -43,10 +37,6 @@ BuildRequires:  libXtst-devel
 %endif
 %if %have_pygobject3_devel
 BuildRequires:  gobject-introspection-devel
-%endif
-%if %have_pygobject2_devel
-BuildRequires:  python2-devel
-BuildRequires:  swig
 %endif
 %if %have_eek_devel
 BuildRequires:  eekboard-devel
@@ -66,17 +56,6 @@ Requires:   %{name} = %{version}-%{release}
 
 %description devel
 The input-pad-devel package contains the header files.
-
-%if %have_pygobject2_devel
-%package pygobject2
-Summary:    Input Pad for Python GObject2
-Group:      System Environment/Libraries
-Requires:   %{name} = %{version}-%{release}
-Requires:   pygtk2
-
-%description pygobject2
-The input-pad-pygobject2 package contains the python wrapper files.
-%endif
 
 %if %have_xtest_devel
 %package xtest
@@ -103,9 +82,6 @@ The input-pad-eek package contains eekboard extension module
 
 %build
 %configure \
-%if %have_pygobject2_devel
-    --enable-pygobject2         \
-%endif
 %if %have_eek_devel
     --enable-eek                \
 %endif
@@ -135,10 +111,6 @@ rm -f $RPM_BUILD_ROOT%xkeysenddir/*.a
 %if %have_eek_devel
 rm -f $RPM_BUILD_ROOT%kbduidir/*.la
 rm -f $RPM_BUILD_ROOT%kbduidir/*.a
-%endif
-%if %have_pygobject2_devel
-rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.la
-rm -f $RPM_BUILD_ROOT%python_sitearch/%{name}-%sub_version/*.a
 %endif
 
 %find_lang %{name}
@@ -172,13 +144,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/pkgconfig/*.pc
 %if %have_pygobject3_devel
 %{_datadir}/gir-1.0/InputPad-1.0.gir
-%endif
-
-%if %have_pygobject2_devel
-%files pygobject2
-%defattr(-,root,root,-)
-%python_sitearch/%{name}-%sub_version
-%python_sitearch/pyinput_pad.pth
 %endif
 
 %if %have_xtest_devel

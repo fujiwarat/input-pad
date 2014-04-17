@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad
 #
-# Copyright (c) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010-2012 Red Hat, Inc.
+# Copyright (c) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2014 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -25,10 +25,6 @@ SUBDIRS = \
 	data \
 	input-pad \
 	$(NULL)
-
-if HAVE_PYGOBJECT2
-SUBDIRS += pyinput-pad
-endif
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = input-pad.pc

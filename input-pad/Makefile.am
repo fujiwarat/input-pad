@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad
 #
-# Copyright (c) 2010-2013 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010-2013 Red Hat, Inc.
+# Copyright (c) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2014 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -50,6 +50,8 @@ BUILT_SOURCES = \
 	input-pad-marshal.h                                     \
 	$(NULL)
 
+MAINTAINERCLEANFILES = resources.c
+
 libinput_pad_publicdir = $(includedir)/$(PACKAGE)-$(libinput_pad_VERSION)
 libinput_pad_public_HEADERS = \
 	input-pad-group.h                                       \
@@ -75,11 +77,13 @@ libinput_pad_la_SOURCES = \
 	input-pad-private.h                                     \
 	kbdui-gtk.c                                             \
 	parse-pad.c                                             \
+	resources.c                                             \
 	unicode_block.h                                         \
 	window-gtk.c                                            \
 	$(NULL)
 
 libinput_pad_la_CFLAGS = \
+	$(GTK3_CFLAGS)                                          \
 	$(GMODULE2_CFLAGS)                                      \
 	$(LIBXML2_CFLAGS)                                       \
 	$(X11_CFLAGS)                                           \
@@ -88,6 +92,7 @@ libinput_pad_la_CFLAGS = \
 	$(NULL)
 
 libinput_pad_la_LIBADD = \
+	$(GTK3_LIBS)                                            \
 	$(GMODULE2_LIBS)                                        \
 	$(LIBXML2_LIBS)                                         \
 	$(X11_LIBS)                                             \
@@ -101,13 +106,8 @@ libinput_pad_la_LDFLAGS = \
 	$(no_undefined)                                         \
 	$(NULL)
 
-if HAVE_GTK3
-    libinput_pad_la_CFLAGS += $(GTK3_CFLAGS)
-    libinput_pad_la_LIBADD += $(GTK3_LIBS)
-else
-    libinput_pad_la_CFLAGS += $(GTK2_CFLAGS)
-    libinput_pad_la_LIBADD += $(GTK2_LIBS)
-endif
+resources.c: input-pad.gresource.xml
+	$(GLIB_COMPILE_RESOURCES) $< --target=$@ --generate-source
 
 input-pad-marshal.h: input-pad-marshal.list
 	@$(GLIB_GENMARSHAL) $< --prefix=INPUT_PAD --header > $@ \
@@ -134,11 +134,13 @@ libinput_pad_xtest_gdk_la_SOURCES = \
 	$(NULL)
 
 libinput_pad_xtest_gdk_la_CFLAGS = \
+	$(GTK3_CFLAGS)                                          \
 	$(X11_CFLAGS)                                           \
 	$(NULL)
 
 libinput_pad_xtest_gdk_la_LIBADD = \
 	$(builddir)/libinput-pad.la                             \
+	$(GTK3_LIBS)                                            \
 	$(X11_LIBS)                                             \
 	$(XTEST_LIBS)                                           \
 	$(NULL)
@@ -148,15 +150,6 @@ libinput_pad_xtest_gdk_la_LDFLAGS = \
 	-avoid-version                                          \
 	$(no_undefined)                                         \
 	$(NULL)
-
-if HAVE_GTK3
-    libinput_pad_xtest_gdk_la_CFLAGS += $(GTK3_CFLAGS)
-    libinput_pad_xtest_gdk_la_LIBADD += $(GTK3_LIBS)
-else
-    libinput_pad_xtest_gdk_la_CFLAGS += $(GTK2_CFLAGS)
-    libinput_pad_xtest_gdk_la_LIBADD += $(GTK2_LIBS)
-endif
-
 endif
 
 if HAVE_EEK
@@ -214,13 +207,7 @@ InputPad_1_0_gir_SCANNERFLAGS = \
     --pkg-export=input-pad                                      \
     --warn-all                                                  \
     $(INPUT_PAD_GIR_SCANNERFLAGS)
-InputPad_1_0_gir_INCLUDES = GLib-2.0 GObject-2.0 Gio-2.0
-if HAVE_GTK3
-InputPad_1_0_gir_INCLUDES += Gtk-3.0
-else
-InputPad_1_0_gir_INCLUDES += Gtk-2.0
-InputPad_1_0_gir_SCANNERFLAGS += --pkg=gtk+-2.0
-endif
+InputPad_1_0_gir_INCLUDES = GLib-2.0 GObject-2.0 Gio-2.0 Gtk-3.0
 InputPad_1_0_gir_LIBS = $(libinput_pad_LTLIBRARIES)
 InputPad_1_0_gir_FILES = $(addprefix $(srcdir)/,$(introspection_files))
 InputPad_1_0_gir_CFLAGS = -DIBUS_COMPILATION
@@ -254,6 +241,10 @@ CLEANFILES += \
 
 EXTRA_DIST = \
 	$(man_one_in_files)                                     \
+	app-menu.ui                                             \
+	dialog.ui                                               \
+	input-pad.gresource.xml                                 \
 	input-pad-marshal.list                                  \
 	unicode_block.sh                                        \
+	window-gtk.ui                                           \
 	$(NULL)
