@@ -177,7 +177,7 @@ static gboolean                 use_module_xtest = FALSE;
 static gchar                   *kbdui_name = NULL;
 static gboolean                 ask_version = FALSE;
 static guint                    set_show_table_type = 1;
-static guint                    set_show_layout_type = 1;
+static guint                    set_show_layout_type = 0;
 
 #ifdef USE_GLOBAL_GMODULE
 /* module_table: global GModule hash table
@@ -3303,7 +3303,7 @@ create_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
     gtk_tree_view_set_show_expanders (GTK_TREE_VIEW (sub_tv), FALSE);
 
     scrolled = gtk_scrolled_window_new (NULL, NULL);
-    gtk_widget_set_size_request (scrolled, 470, 200);
+    gtk_widget_set_size_request (scrolled, 350, 200);
     gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
                                     GTK_POLICY_AUTOMATIC,
                                     GTK_POLICY_ALWAYS);
