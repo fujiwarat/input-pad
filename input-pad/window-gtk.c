@@ -5222,13 +5222,25 @@ input_pad_gtk_application_class_init (InputPadGtkApplicationClass *class)
                       0);
 }
 
+void
+on_is_registered (GObject *object, gpointer data)
+{
+    if (g_application_get_is_remote (G_APPLICATION (object))) {
+        g_warning ("Another application executes input-pad.");
+    }
+}
+
 InputPadGtkApplication *
 input_pad_gtk_application_new (void)
 {
-    return g_object_new (INPUT_PAD_TYPE_GTK_APPLICATION,
-                         "application-id", "com.github.fujiwarat.input-pad",
-                         "flags", G_APPLICATION_FLAGS_NONE,
-                         NULL);
+    GObject *object = g_object_new (INPUT_PAD_TYPE_GTK_APPLICATION,
+                                    "application-id", "com.github.fujiwarat.input-pad",
+                                    "flags", G_APPLICATION_NON_UNIQUE,
+                                    NULL);
+
+   g_signal_connect (object, "notify::is-registered", G_CALLBACK (on_is_registered), NULL);
+
+  return INPUT_PAD_GTK_APPLICATION (object);
 }
 
 InputPadGtkWindow *
