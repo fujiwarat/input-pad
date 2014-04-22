@@ -1,15 +1,15 @@
 # Ukrainian translations for input-pad
-# Copyright (C) 2010-2013 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (C) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
 #
 # Translators:
-# Yuri Chornoivan <yurchor@ukr.net>, 2012
+# Yuri Chornoivan <yurchor@ukr.net>, 2012,2014
 msgid ""
 msgstr ""
 "Project-Id-Version: input-pad\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
-"POT-Creation-Date: 2012-12-17 04:12+0900\n"
-"PO-Revision-Date: 2013-11-20 10:40+0000\n"
+"POT-Creation-Date: 2014-04-22 13:09+0900\n"
+"PO-Revision-Date: 2014-04-22 04:45+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
@@ -115,7 +115,7 @@ msgstr "Стрілка"
 msgid "Box Drawing"
 msgstr "Для малювання рамок"
 
-#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3937
+#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3551
 msgid "Block"
 msgstr "Блоки"
 
@@ -232,135 +232,137 @@ msgid "Gothic"
 msgstr "Готичні"
 
 #: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:50
-#: ../input-pad/window-gtk.c:5320 ../input-pad/window-gtk.c:5321
+#: ../input-pad/dialog.ui.h:42 ../input-pad/window-gtk.c:4936
+#: ../input-pad/window-gtk.c:4937 ../input-pad/window-gtk.ui.h:1
 msgid "Input Pad"
 msgstr "Панель введення"
 
-#: ../data/input-pad.ui.h:1
+#: ../data/input-pad.ui.h:1 ../input-pad/app-menu.ui.h:1
 msgid "_File"
 msgstr "_Файл"
 
-#: ../data/input-pad.ui.h:2
+#: ../data/input-pad.ui.h:2 ../input-pad/app-menu.ui.h:3
 msgid "Close the program"
 msgstr "Закрити вікно програми"
 
-#: ../data/input-pad.ui.h:3
+#: ../data/input-pad.ui.h:3 ../input-pad/app-menu.ui.h:2
+#: ../input-pad/dialog.ui.h:21
 msgid "_Close"
 msgstr "_Закрити"
 
-#: ../data/input-pad.ui.h:4
+#: ../data/input-pad.ui.h:4 ../input-pad/app-menu.ui.h:4
 msgid "_Pad"
 msgstr "_Панель"
 
-#: ../data/input-pad.ui.h:5
+#: ../data/input-pad.ui.h:5 ../input-pad/app-menu.ui.h:5
 msgid "_Code Point"
 msgstr "_Точка кодування"
 
-#: ../data/input-pad.ui.h:6
+#: ../data/input-pad.ui.h:6 ../input-pad/app-menu.ui.h:6
 msgid "_Show Pad"
 msgstr "_Показ панелі"
 
-#: ../data/input-pad.ui.h:7
+#: ../data/input-pad.ui.h:7 ../input-pad/app-menu.ui.h:7
 msgid "Show _All Characters"
 msgstr "Показати _всі символи"
 
-#: ../data/input-pad.ui.h:8
+#: ../data/input-pad.ui.h:8 ../input-pad/app-menu.ui.h:8
 msgid "Show _Custom Characters"
 msgstr "Показати _нетипові символи"
 
-#: ../data/input-pad.ui.h:9
+#: ../data/input-pad.ui.h:9 ../input-pad/app-menu.ui.h:9
 msgid "Show _Nothing"
 msgstr "_Нічого не показувати"
 
-#: ../data/input-pad.ui.h:10
+#: ../data/input-pad.ui.h:10 ../input-pad/app-menu.ui.h:10
 msgid "Show _Keyboard Layout"
 msgstr "Показати _розкладку клавіатури"
 
-#: ../data/input-pad.ui.h:11
+#: ../data/input-pad.ui.h:11 ../input-pad/app-menu.ui.h:11
 msgid "_Help"
 msgstr "_Довідка"
 
-#: ../data/input-pad.ui.h:12
+#: ../data/input-pad.ui.h:12 ../input-pad/app-menu.ui.h:12
 msgid "_Troubleshoot"
 msgstr "_Усування вад"
 
-#: ../data/input-pad.ui.h:13
+#: ../data/input-pad.ui.h:13 ../input-pad/dialog.ui.h:1
 msgid "Code Point Dialog"
 msgstr "Діалогове вікно точки кодування"
 
-#: ../data/input-pad.ui.h:14
+#: ../data/input-pad.ui.h:14 ../input-pad/dialog.ui.h:2
 msgid "Unicode"
 msgstr "Unicode"
 
-#: ../data/input-pad.ui.h:15
+#: ../data/input-pad.ui.h:15 ../input-pad/dialog.ui.h:3
 msgid "You can choose encoding type"
 msgstr "Ви можете вибрати тип кодування"
 
-#: ../data/input-pad.ui.h:16
+#: ../data/input-pad.ui.h:16 ../input-pad/dialog.ui.h:4
 msgid "Current Encoding"
 msgstr "Поточне кодування"
 
-#: ../data/input-pad.ui.h:17
+#: ../data/input-pad.ui.h:17 ../input-pad/dialog.ui.h:5
 msgid "Copy Buffer"
 msgstr "Буфер копіювання"
 
-#: ../data/input-pad.ui.h:18
+#: ../data/input-pad.ui.h:18 ../input-pad/dialog.ui.h:6
 msgid ""
 "Base 16\n"
 "Hex"
 msgstr "За основою\n16"
 
-#: ../data/input-pad.ui.h:20
+#: ../data/input-pad.ui.h:20 ../input-pad/dialog.ui.h:8
 msgid "Set number case to hexadecimal"
 msgstr "Використати шістнадцятковий запис"
 
-#: ../data/input-pad.ui.h:21
+#: ../data/input-pad.ui.h:21 ../input-pad/dialog.ui.h:9
 msgid ""
 "Base 10\n"
 "Dec"
 msgstr "За основою\n10"
 
-#: ../data/input-pad.ui.h:23
+#: ../data/input-pad.ui.h:23 ../input-pad/dialog.ui.h:11
 msgid "Set number case to decimal"
 msgstr "Використати десятковий запис"
 
-#: ../data/input-pad.ui.h:24
+#: ../data/input-pad.ui.h:24 ../input-pad/dialog.ui.h:12
 msgid ""
 "Base 8\n"
 "Oct"
 msgstr "За основою\n8"
 
-#: ../data/input-pad.ui.h:26
+#: ../data/input-pad.ui.h:26 ../input-pad/dialog.ui.h:14
 msgid "Set number case to octal"
 msgstr "Використати вісімковий запис"
 
-#: ../data/input-pad.ui.h:27
+#: ../data/input-pad.ui.h:27 ../input-pad/dialog.ui.h:15
 msgid ""
 "Base 2\n"
 "Bin"
 msgstr "За основою\n2"
 
-#: ../data/input-pad.ui.h:29
+#: ../data/input-pad.ui.h:29 ../input-pad/dialog.ui.h:17
 msgid "Set number case to binary"
 msgstr "Використати двійковий запис"
 
-#: ../data/input-pad.ui.h:30
+#: ../data/input-pad.ui.h:30 ../input-pad/dialog.ui.h:18
 msgid "Code Point:"
 msgstr "Точка кодування:"
 
-#: ../data/input-pad.ui.h:31
+#: ../data/input-pad.ui.h:31 ../input-pad/dialog.ui.h:19
 msgid "Character:"
 msgstr "Символ:"
 
-#: ../data/input-pad.ui.h:32
+#: ../data/input-pad.ui.h:32 ../input-pad/dialog.ui.h:20
 msgid "_Send"
 msgstr "_Надіслати"
 
-#: ../data/input-pad.ui.h:33
+#: ../data/input-pad.ui.h:33 ../input-pad/dialog.ui.h:22
 msgid "Input Pad Troubleshoot"
 msgstr "Діагностування панелі введення"
 
-#: ../data/input-pad.ui.h:35
+#: ../data/input-pad.ui.h:35 ../input-pad/dialog.ui.h:24
 #, no-c-format
 msgid ""
 "\n"
@@ -372,43 +374,43 @@ msgid ""
 "You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad to customize those in \"Custom Character\" pane."
 msgstr "\nЦю програму можна запустити окремо або з програми керування способами введення даних.\nЯкщо вам потрібно вводити мультибайтові символи, цю програму слід запустити з програми керування способами введення.\nЯкщо вам потрібно передавати символи графічним програмам, слід увімкнути події надсилання даних для таких програм, наприклад\n% xterm -xrm \"XTerm*allowSendEvents: true\"\n\nВам також слід скопіювати файли наборів з /usr/share/input-pad/pad до $HOME/.config/pad, щоб змінити ті з них, які належать до групи «Нетипові символи»."
 
-#: ../data/input-pad.ui.h:42
+#: ../data/input-pad.ui.h:42 ../input-pad/dialog.ui.h:32
 msgid "Configure Keyboard Layouts"
 msgstr "Налаштувати клавіатурні скорочення"
 
-#: ../data/input-pad.ui.h:43
+#: ../data/input-pad.ui.h:43 ../input-pad/dialog.ui.h:33
 msgid "A_vailable layouts:"
 msgstr "Д_оступні розкладки:"
 
-#: ../data/input-pad.ui.h:44
+#: ../data/input-pad.ui.h:44 ../input-pad/dialog.ui.h:35
 msgid "_Layouts shown in the list:"
 msgstr "_Розкладки, показані у списку:"
 
-#: ../data/input-pad.ui.h:45
+#: ../data/input-pad.ui.h:45 ../input-pad/dialog.ui.h:37
 msgid "_Options"
 msgstr "П_араметри"
 
-#: ../data/input-pad.ui.h:46
+#: ../data/input-pad.ui.h:46 ../input-pad/dialog.ui.h:38
 msgid "Configure Keyboard Options"
 msgstr "Налаштувати параметри клавіатури"
 
-#: ../data/input-pad.ui.h:47
+#: ../data/input-pad.ui.h:47 ../input-pad/dialog.ui.h:39
 msgid "_Use the default keyboard option"
 msgstr "В_икористовувати типовий варіант клавіатури"
 
-#: ../data/input-pad.ui.h:48
+#: ../data/input-pad.ui.h:48 ../input-pad/dialog.ui.h:40
 msgid "Use the defualt XKB option"
 msgstr "Використовувати типовий параметр XKB"
 
-#: ../data/input-pad.ui.h:49
+#: ../data/input-pad.ui.h:49 ../input-pad/dialog.ui.h:41
 msgid "<b>Keyboard Option</b>"
 msgstr "<b>Варіант клавіатури</b>"
 
-#: ../data/input-pad.ui.h:51
+#: ../data/input-pad.ui.h:51 ../input-pad/dialog.ui.h:43
 msgid "The input pad is a tool to send a character on button."
 msgstr "Панель введення — це програма для надсилання символів, намальованих на кнопках."
 
-#: ../data/input-pad.ui.h:52
+#: ../data/input-pad.ui.h:52 ../input-pad/dialog.ui.h:44
 msgid "translator_credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>"
 
@@ -1971,6 +1973,22 @@ msgstr "Китайська"
 msgid "Bopomofo"
 msgstr "Бопомофо"
 
+#: ../input-pad/app-menu.ui.h:13
+msgid "_About"
+msgstr "_Про програму"
+
+#: ../input-pad/dialog.ui.h:31
+msgid "_OK"
+msgstr "_Гаразд"
+
+#: ../input-pad/dialog.ui.h:34
+msgid "_Add"
+msgstr "_Додати"
+
+#: ../input-pad/dialog.ui.h:36
+msgid "_Remove"
+msgstr "Ви_лучити"
+
 #: ../input-pad/eek-gtk.c:62
 msgid "Use libeek to draw keyboard"
 msgstr "Використовувати libeek для малювання клавіатури"
@@ -2731,50 +2749,50 @@ msgstr "Додаткова область приватного використ�
 msgid "Supplementary Private Use Area-B"
 msgstr "Додаткова область приватного використання B"
 
-#: ../input-pad/window-gtk.c:172
+#: ../input-pad/window-gtk.c:198
 msgid "Display version"
 msgstr "Показати дані щодо версії"
 
 #. Translators: the word 'KBDUI' is not translated.
-#: ../input-pad/window-gtk.c:175
+#: ../input-pad/window-gtk.c:201
 msgid "Use KBDUI to draw keyboard"
 msgstr "Використовувати KBDUI для малювання клавіатури"
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:178
+#: ../input-pad/window-gtk.c:204
 msgid "Use TYPE of char table. The available TYPE=0, 1, 2"
 msgstr "Використовувати тип TYPE таблиці символів. Доступні значення: TYPE=0, 1, 2"
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:181
+#: ../input-pad/window-gtk.c:207
 msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
 msgstr "Використовувати тип TYPE розкладки клавіатури. Доступні значення: TYPE=0, 1"
 
-#: ../input-pad/window-gtk.c:188
+#: ../input-pad/window-gtk.c:214
 msgid "Use XTEST module to send key events"
 msgstr "Використовувати модуль XTEST для надсилання натискань клавіш"
 
-#: ../input-pad/window-gtk.c:193
+#: ../input-pad/window-gtk.c:219
 msgid "Use XSendEvent to send key events"
 msgstr "Використовувати XSendEvent для надсилання натискань клавіш"
 
-#: ../input-pad/window-gtk.c:1301
+#: ../input-pad/window-gtk.c:1153
 msgid "Fold layout"
 msgstr "Згорнути розкладку"
 
-#: ../input-pad/window-gtk.c:1306 ../input-pad/window-gtk.c:2695
+#: ../input-pad/window-gtk.c:1158 ../input-pad/window-gtk.c:2467
 msgid "Extend layout"
 msgstr "Розгорнути розкладку"
 
-#: ../input-pad/window-gtk.c:2895
+#: ../input-pad/window-gtk.c:2668
 msgid "Layout"
 msgstr "Розкладка"
 
-#: ../input-pad/window-gtk.c:3170
+#: ../input-pad/window-gtk.c:2943
 msgid "_Layout:"
 msgstr "_Розкладка:"
 
-#: ../input-pad/window-gtk.c:3200
+#: ../input-pad/window-gtk.c:2973
 msgid "_Configure Layouts"
 msgstr "_Налаштувати розкладки"
 
@@ -2785,32 +2803,28 @@ msgstr "_Налаштувати розкладки"
 #. "modify it under the terms of the GNU Lesser General Public "
 #. "License as published by the Free Software Foundation; either "
 #. "version 2 of the License, or (at your option) any later version.");
-#. 
 #. license2 = _(""
 #. "This library is distributed in the hope that it will be useful, "
 #. "but WITHOUT ANY WARRANTY; without even the implied warranty of "
 #. "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU "
 #. "Lesser General Public License for more details.");
-#. 
 #. license3 = _(""
 #. "You should have received a copy of the GNU Lesser General Public "
 #. "License along with this library; if not, write to the Free Software "
 #. "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, "
 #. "MA  02110-1301  USA");
-#. 
 #. license = g_strdup_printf ("%s\n\n%s\n\n%s",
 #. license1, license2, license3);
-#. 
 #. This format has been used since gtk 2.20.
-#: ../input-pad/window-gtk.c:3239
+#: ../input-pad/window-gtk.c:3012
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
 msgstr "Вам не надається жодних гарантій щодо роботи цієї програми. Щоб дізнатися більше, відвідайте %s"
 
-#: ../input-pad/window-gtk.c:3707
+#: ../input-pad/window-gtk.c:3290
 msgid "Group"
 msgstr "Група"
 
-#: ../input-pad/window-gtk.c:3715
+#: ../input-pad/window-gtk.c:3298
 msgid "Subgroup"
 msgstr "Підгрупа"
