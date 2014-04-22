@@ -51,7 +51,8 @@
           </packing>
         </child>
         <child>
-          <object class="GtkVBox" id="top_keyboard_layout_vbox">
+          <object class="GtkBox" id="top_keyboard_layout_vbox">
+            <property name="orientation">vertical</property>
             <property name="visible">True</property>
             <property name="border-width">10</property>
             <property name="spacing">10</property>

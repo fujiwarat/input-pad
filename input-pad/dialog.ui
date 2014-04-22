@@ -226,7 +226,8 @@ Bin</property>
           </packing>
         </child>
         <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="hbuttonbox1">
+          <object class="GtkButtonBox" id="hbuttonbox1">
+            <property name="orientation">horizontal</property>
             <property name="border-width">20</property>
             <child>
               <object class="GtkButton" id="CodePointSendButton">
@@ -238,8 +239,7 @@ Bin</property>
             <child>
               <object class="GtkButton" id="CodePointCloseButton">
                 <property name="visible">True</property>
-                <property name="label">gtk-close</property>
-                <property name="use-stock">TRUE</property>
+                <property name="label" translatable="yes">_Close</property>
                 <property name="use-underline">TRUE</property>
               </object>
             </child>
@@ -279,13 +279,14 @@ You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad t
           </packing>
         </child>
         <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="hbuttonbox2">
+          <object class="GtkButtonBox" id="hbuttonbox2">
+            <property name="orientation">horizontal</property>
             <property name="border-width">20</property>
             <child>
               <object class="GtkButton" id="ContentsOKButton">
                 <property name="visible">True</property>
-                <property name="label">gtk-ok</property>
-                <property name="use-stock">TRUE</property>
+                <property name="label" translatable="yes">_OK</property>
+                <property name="use-underline">TRUE</property>
               </object>
             </child>
           </object>
@@ -375,8 +376,8 @@ You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad t
                   <object class="GtkButton" id="ConfigLayoutsAddButton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="label">gtk-add</property>
-                    <property name="use_stock">True</property>
+                    <property name="label" translatable="yes">_Add</property>
+                    <property name="use-underline">TRUE</property>
                     <property name="relief">GTK_RELIEF_NORMAL</property>
                   </object>
                   <packing>
@@ -453,8 +454,8 @@ You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad t
                   <object class="GtkButton" id="ConfigLayoutsRemoveButton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="label">gtk-remove</property>
-                    <property name="use_stock">True</property>
+                    <property name="label" translatable="yes">_Remove</property>
+                    <property name="use-underline">True</property>
                     <property name="relief">GTK_RELIEF_NORMAL</property>
                   </object>
                   <packing>
@@ -481,7 +482,8 @@ You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad t
           </packing>
         </child>
         <child>
-          <object class="GtkHButtonBox" id="hbuttonbox3">
+          <object class="GtkButtonBox" id="hbuttonbox3">
+            <property name="orientation">horizontal</property>
             <property name="visible">True</property>
             <property name="border-width">5</property>
             <property name="layout_style">end</property>
@@ -509,13 +511,14 @@ You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad t
           </packing>
         </child>
         <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="hbuttonbox4">
+          <object class="GtkButtonBox" id="hbuttonbox4">
+            <property name="orientation">horizontal</property>
             <property name="border-width">20</property>
             <child>
               <object class="GtkButton" id="ConfigLayoutsCloseButton">
                 <property name="visible">True</property>
-                <property name="label">gtk-close</property>
-                <property name="use-stock">TRUE</property>
+                <property name="label" translatable="yes">_Close</property>
+                <property name="use-underline">True</property>
               </object>
               <packing>
                 <property name="padding">0</property>
@@ -625,15 +628,16 @@ You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad t
           </packing>
         </child>
         <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="hbuttonbox40">
+          <object class="GtkButtonBox" id="hbuttonbox40">
+            <property name="orientation">horizontal</property>
             <property name="visible">True</property>
             <property name="homogeneous">True</property>
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="ConfigOptionsCloseButton">
-                <property name="label">gtk-close</property>
+                <property name="label" translatable="yes">_Close</property>
                 <property name="visible">True</property>
-                <property name="use_stock">True</property>
+                <property name="use-underline">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
