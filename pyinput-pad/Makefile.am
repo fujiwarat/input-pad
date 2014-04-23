@@ -66,7 +66,7 @@ _input_pad_la_LDFLAGS = \
 	$(NULL)
 
 _input_pad_la_LIBADD = \
-	$(top_builddir)/input-pad/libinput-pad.la               \
+	$(top_builddir)/input-pad/libinput-pad-$(libinput_pad_API_VERSION).la \
 	$(NULL)
 
 _input_pad_group_la_SOURCES = \
@@ -87,7 +87,7 @@ _input_pad_group_la_LDFLAGS = \
 	$(NULL)
 
 _input_pad_group_la_LIBADD = \
-	$(top_builddir)/input-pad/libinput-pad.la               \
+	$(top_builddir)/input-pad/libinput-pad-$(libinput_pad_API_VERSION).la \
 	$(NULL)
 
 _input_pad_window_gtk_la_SOURCES = \
@@ -110,7 +110,7 @@ _input_pad_window_gtk_la_LDFLAGS = \
 	$(NULL)
 
 _input_pad_window_gtk_la_LIBADD = \
-	$(top_builddir)/input-pad/libinput-pad.la               \
+	$(top_builddir)/input-pad/libinput-pad-$(libinput_pad_API_VERSION).la \
 	$(NULL)
 
 %.py %_wrap.c: %.i

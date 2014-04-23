@@ -10,4 +10,4 @@ Description: Input Pad
 Version: @VERSION@
 Requires: gio-2.0 glib-2.0 gtk+-@GTK_API_VERSION@
 Cflags: -I${includedir}
-Libs: -L${libdir} -linput-pad
+Libs: -L${libdir} -linput-pad-@libinput_pad_API_VERSION@

@@ -130,9 +130,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %moduledir
 %dir %xkeysenddir
 %dir %kbduidir
-%{_libdir}/libinput-pad.so.*
+%{_libdir}/libinput-pad-*.so.*
 %if %have_pygobject3_devel
-%{_libdir}/girepository-1.0/InputPad-1.0.typelib
+%{_libdir}/girepository-1.0/InputPad-%{sub_version}.typelib
 %endif
 %{_datadir}/%name
 %{_datadir}/pixmaps/input-pad.png
@@ -140,10 +140,10 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(-,root,root,-)
 %{_includedir}/%{name}-%sub_version
-%{_libdir}/libinput-pad.so
+%{_libdir}/libinput-pad-*.so
 %{_libdir}/pkgconfig/*.pc
 %if %have_pygobject3_devel
-%{_datadir}/gir-1.0/InputPad-1.0.gir
+%{_datadir}/gir-1.0/InputPad-%{sub_version}.gir
 %endif
 
 %if %have_xtest_devel

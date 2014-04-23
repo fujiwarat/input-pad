@@ -22,9 +22,9 @@ override_dh_install:
 	 rm -rf usr/share; \
 	 rm -rf usr/include; \
 	 rm -rf usr/bin; \
-	 rm -f  usr/lib/libinput-pad.a ; \
-	 rm -f  usr/lib/libinput-pad.la ; \
-	 rm -f  usr/lib/libinput-pad.so* ; \
+	 rm -f  usr/lib/libinput-pad-1.0.a ; \
+	 rm -f  usr/lib/libinput-pad-1.0.la ; \
+	 rm -f  usr/lib/libinput-pad-1.0.so* ; \
 	 rm -rf usr/lib/pkgconfig ; \
 	 rm -rf usr/lib/python2.6 ; \
 	 rm -rf usr/lib/input-pad-1.0/modules/xkeysend ; \

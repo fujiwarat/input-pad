@@ -1,7 +1,7 @@
 usr/include/input-pad-1.0
 usr/lib/input-pad-1.0/modules/xkeysend/*.a
 usr/lib/input-pad-1.0/modules/xkeysend/*.la
-usr/lib/libinput-pad.a
-usr/lib/libinput-pad.la
-usr/lib/libinput-pad.so
+usr/lib/libinput-pad-1.0.a
+usr/lib/libinput-pad-1.0.la
+usr/lib/libinput-pad-1.0.so
 usr/lib/pkgconfig/*.pc

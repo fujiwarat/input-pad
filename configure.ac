@@ -21,10 +21,14 @@
 # MA  02110-1301  USA
 
 dnl - if not 1, append datestamp to the version number.
-m4_define([pad_released], [1])
+m4_define([pad_released], [0])
 m4_define([pad_major_version], [1])
 m4_define([pad_minor_version], [0])
-m4_define([pad_micro_version], [3])
+m4_define([pad_micro_version], [99])
+m4_define([pad_abi_current], [1])
+m4_define([pad_abi_revision],
+          [m4_eval(100 * pad_minor_version + pad_micro_version)])
+m4_define([pad_abi_age], [0])
 m4_define(pad_maybe_datestamp,
     m4_esyscmd([if test x]pad_released[ != x1; then date +.%Y%m%d | tr -d '\n\r'; fi]))
 
@@ -39,17 +43,23 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
 dnl - VERSION
-libinput_pad_VERSION="pad_major_version.pad_minor_version"
+libinput_pad_VERSION="pad_major_version.pad_abi_current"
 AC_SUBST(libinput_pad_VERSION)
 AC_MSG_NOTICE([$PACKAGE sub version $libinput_pad_VERSION])
+libinput_pad_API_VERSION="pad_major_version.0"
+AC_SUBST(libinput_pad_API_VERSION)
 
-dnl If only source code changed, lt_revision + 1
-dnl If any interface added, lt_age + 1
-dnl If any interfaces changed or removed, lt_current + 1, lt_revision = 0, lt_age = 0
-dnl libtool versionstring == [lt_current - lt_age].[lt_age].[lt_revision]
-m4_define([lt_current], [pad_major_version])
-m4_define([lt_revision], [pad_minor_version])
-m4_define([lt_age], [0])
+dnl libtool versioning
+dnl
+dnl If LT_VERSION_INFO="lt_current:lt_revision:lt_age", libinputpad is
+dnl libinputpad-API_VERSION.so.(lt_current - lt_age).lt_age.lt_revision
+dnl If the abi is changed, but it is compatible with last version,
+dnl pad_abi_current++, pad_abi_age++;
+dnl If the abi is not compatible with last version,
+dnl pad_abi_current++, pad_abi_age = 0;
+m4_define([lt_current], [pad_abi_current])
+m4_define([lt_revision], [pad_abi_revision])
+m4_define([lt_age], [pad_abi_age])
 LT_VERSION_INFO="lt_current:lt_revision:lt_age"
 AC_SUBST(LT_VERSION_INFO)
 AC_MSG_NOTICE([library version $LT_VERSION_INFO])

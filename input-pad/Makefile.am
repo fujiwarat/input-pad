@@ -60,10 +60,11 @@ libinput_pad_public_HEADERS = \
 	input-pad.h                                             \
 	$(NULL)
 
-libinput_pad_LTLIBRARIES = libinput-pad.la
+#libinput_pad_LTLIBRARIES = libinput-pad-$(libinput_pad_API_VERSION).la
+libinput_pad_LTLIBRARIES = libinput-pad-1.0.la
 libinput_paddir = $(libdir)
 
-libinput_pad_la_SOURCES = \
+libinput_pad_1_0_la_SOURCES = \
 	$(BUILT_SOURCES)                                        \
 	$(libinput_pad_public_HEADERS)                          \
 	button-gtk.c                                            \
@@ -82,7 +83,7 @@ libinput_pad_la_SOURCES = \
 	window-gtk.c                                            \
 	$(NULL)
 
-libinput_pad_la_CFLAGS = \
+libinput_pad_1_0_la_CFLAGS = \
 	$(GTK3_CFLAGS)                                          \
 	$(GMODULE2_CFLAGS)                                      \
 	$(LIBXML2_CFLAGS)                                       \
@@ -91,7 +92,7 @@ libinput_pad_la_CFLAGS = \
 	$(LIBXKLAVIER_CFLAGS)                                   \
 	$(NULL)
 
-libinput_pad_la_LIBADD = \
+libinput_pad_1_0_la_LIBADD = \
 	$(GTK3_LIBS)                                            \
 	$(GMODULE2_LIBS)                                        \
 	$(LIBXML2_LIBS)                                         \
@@ -100,7 +101,7 @@ libinput_pad_la_LIBADD = \
 	$(LIBXKLAVIER_LIBS)                                     \
 	$(NULL)
 
-libinput_pad_la_LDFLAGS = \
+libinput_pad_1_0_la_LDFLAGS = \
 	-export-dynamic                                         \
 	-version-info $(LT_VERSION_INFO)                        \
 	$(no_undefined)                                         \
@@ -139,7 +140,7 @@ libinput_pad_xtest_gdk_la_CFLAGS = \
 	$(NULL)
 
 libinput_pad_xtest_gdk_la_LIBADD = \
-	$(builddir)/libinput-pad.la                             \
+	$(builddir)/libinput-pad-$(libinput_pad_API_VERSION).la \
 	$(GTK3_LIBS)                                            \
 	$(X11_LIBS)                                             \
 	$(XTEST_LIBS)                                           \
@@ -172,7 +173,7 @@ libinput_pad_eek_gtk_la_CFLAGS = \
 	$(NULL)
 
 libinput_pad_eek_gtk_la_LIBADD = \
-	$(builddir)/libinput-pad.la                             \
+	$(builddir)/libinput-pad-$(libinput_pad_API_VERSION).la \
 	$(EEK_LIBS)                                             \
 	$(NULL)
 
@@ -195,23 +196,23 @@ input_pad_CFLAGS = \
 	$(NULL)
 
 input_pad_LDADD = \
-	$(builddir)/libinput-pad.la                             \
+	$(builddir)/libinput-pad-$(libinput_pad_API_VERSION).la \
 	$(NULL)
 
 if HAVE_INTROSPECTION
 introspection_files = \
-    $(libinput_pad_la_SOURCES)                                  \
+    $(libinput_pad_1_0_la_SOURCES)                                  \
     $(NULL)
-InputPad-1.0.gir: $(libinput_pad_LTLIBRARIES) Makefile
-InputPad_1_0_gir_SCANNERFLAGS = \
+InputPad-$(libinput_pad_VERSION).gir: $(libinput_pad_LTLIBRARIES) Makefile
+InputPad_1_1_gir_SCANNERFLAGS = \
     --pkg-export=input-pad                                      \
     --warn-all                                                  \
     $(INPUT_PAD_GIR_SCANNERFLAGS)
-InputPad_1_0_gir_INCLUDES = GLib-2.0 GObject-2.0 Gio-2.0 Gtk-3.0
-InputPad_1_0_gir_LIBS = $(libinput_pad_LTLIBRARIES)
-InputPad_1_0_gir_FILES = $(addprefix $(srcdir)/,$(introspection_files))
-InputPad_1_0_gir_CFLAGS = -DIBUS_COMPILATION
-INTROSPECTION_GIRS += InputPad-1.0.gir
+InputPad_1_1_gir_INCLUDES = GLib-2.0 GObject-2.0 Gio-2.0 Gtk-3.0
+InputPad_1_1_gir_LIBS = $(libinput_pad_LTLIBRARIES)
+InputPad_1_1_gir_FILES = $(addprefix $(srcdir)/,$(introspection_files))
+InputPad_1_1_gir_CFLAGS = -DIBUS_COMPILATION
+INTROSPECTION_GIRS += InputPad-$(libinput_pad_VERSION).gir
 
 girdir = $(datadir)/gir-1.0
 dist_gir_DATA = $(INTROSPECTION_GIRS)
