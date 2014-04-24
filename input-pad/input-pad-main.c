@@ -24,13 +24,20 @@
 #endif
 
 #include "input-pad.h"
+#include <stdlib.h> /* exit */
 
 int
 main (int argc, char *argv[])
 {
     void *data;
+    int do_exit = 0;
+    int retval;
 
-    input_pad_window_init (&argc, &argv, 0);
+    retval = input_pad_window_init (&argc, &argv, 0, &do_exit);
+
+    if (do_exit) {
+        exit (retval);
+    }
 
     data = input_pad_window_new ();
 

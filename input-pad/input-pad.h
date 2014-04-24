@@ -54,10 +54,15 @@ const char *        input_pad_get_version (void);
  * input_pad_window_init:
  * @argc: (inout): Address of the argc
  * @argv: (array length=argc) (inout) (allow-none): Address of the argv
- * @type: type
+ * @type: currently it's ignored.
+ * @do_exit: (out): If this is %TRUE, can call exit.
+ *
+ * Returns: the exit value.
  */
-void                input_pad_window_init (int *argc, char ***argv,
-                                           InputPadWindowType type);
+int                 input_pad_window_init (int         *argc,
+                                           char      ***argv,
+                                           InputPadWindowType type,
+                                           int         *do_exit);
 void *              input_pad_window_new (void);
 void                input_pad_window_show (void *window_data);
 void                input_pad_window_hide (void *window_data);

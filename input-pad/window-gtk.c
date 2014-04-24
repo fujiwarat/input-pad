@@ -29,7 +29,6 @@
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 #include <string.h> /* strlen */
-#include <stdlib.h> /* exit */
 
 #ifdef ENABLE_NLS
 #include <locale.h>
@@ -4909,8 +4908,11 @@ input_pad_gtk_application_init (InputPadGtkApplication *app)
     app->show = TRUE;
 }
 
-void
-input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
+int
+input_pad_window_init (int                     *argc,
+                       char                  ***argv,
+                       InputPadWindowType       type,
+                       int                     *do_exit)
 {
     GOptionContext *context;
 #ifdef MODULE_XTEST_GDK_BASE
@@ -4921,6 +4923,10 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
     GError *error = NULL;
     GList *list = NULL;
     const gchar *name;
+
+    if (do_exit) {
+        *do_exit = FALSE;
+    }
 
 #ifdef ENABLE_NLS
     bindtextdomain (GETTEXT_PACKAGE, INPUT_PAD_LOCALEDIR);
@@ -4966,7 +4972,10 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
         g_print ("%s %s version %s\n", g_get_prgname (),
                                        g_get_application_name (),
                                        input_pad_get_version ());
-        exit (0);
+        if (do_exit) {
+            *do_exit = TRUE;
+        }
+        return 0;
     }
 
 #ifdef MODULE_XTEST_GDK_BASE
@@ -4987,6 +4996,8 @@ input_pad_window_init (int *argc, char ***argv, InputPadWindowType type)
         }
     }
     input_pad_gtk_kbdui_context_destroy (kbdui_context);
+
+    return 0;
 }
 
 static void
