@@ -588,6 +588,7 @@ debug_print_key_list (InputPadXKBKeyList *xkb_key_list)
     }
 }
 
+#ifdef HAVE_LIBXKLAVIER
 static void
 debug_print_layout_list (InputPadXKBLayoutList *xkb_layout_list)
 {
@@ -639,6 +640,7 @@ debug_print_option_group_list (InputPadXKBOptionGroupList *xkb_group_list)
         list = list->next;
     }
 }
+#endif
 
 static void
 debug_print_group_layout_list (gchar **names)
@@ -1375,7 +1377,7 @@ input_pad_gdk_xkb_set_layout (InputPadGtkWindow        *window,
                           INPUT_PAD_IS_GTK_WINDOW (window), NULL);
     g_return_val_if_fail (layouts != NULL, FALSE);
 
-    xdisplay = GDK_WINDOW_XDISPLAY (GTK_WIDGET(window)->window);
+    xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET(window)));
     group = xkb_get_current_group (window);
     group_layouts = input_pad_gdk_xkb_get_group_layouts (window, 
                                                          xkb_key_list);
