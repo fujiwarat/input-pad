@@ -68,7 +68,7 @@ def get_kbdui_name_list():
 /* workaround */
 extern void*
 _input_pad_window_new_with_gtype (unsigned int  child,
-                                  unsigned int  gtype);
+                                  int           gtype);
 
 PyObject *
 _input_pad_window_get_kbdui_name_list_wrapper (void)
