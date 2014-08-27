@@ -28,6 +28,9 @@
 
 G_BEGIN_DECLS
 
+#define DEFAULT_ICON_SIZE 24
+#define KEYBOARD_ICON_SIZE 14
+
 #define INPUT_PAD_TYPE_GTK_BUTTON               (input_pad_gtk_button_get_type ())
 #define INPUT_PAD_GTK_BUTTON(o)                 (G_TYPE_CHECK_INSTANCE_CAST ((o), INPUT_PAD_TYPE_GTK_BUTTON, InputPadGtkButton))
 #define INPUT_PAD_GTK_BUTTON_CLASS(k)           (G_TYPE_CHECK_CLASS_CAST ((k), INPUT_PAD_TYPE_GTK_BUTTON, InputPadGtkButtonClass))
@@ -59,6 +62,9 @@ struct _InputPadGtkButtonClass {
 
 GType               input_pad_gtk_button_get_type (void);
 GtkWidget *         input_pad_gtk_button_new_with_label (const gchar *label);
+GtkWidget *         input_pad_gtk_button_new_with_label_size
+                                       (const gchar           *label,
+                                        int                    icon_size);
 GtkWidget *         input_pad_gtk_button_new_with_unicode (guint code);
 guint               input_pad_gtk_button_get_keycode
                                        (InputPadGtkButton      *button);
@@ -95,6 +101,13 @@ const gchar *       input_pad_gtk_button_get_rawtext
 void                input_pad_gtk_button_set_rawtext
                                        (InputPadGtkButton      *button,
                                         const gchar            *rawtext);
+void                input_pad_gtk_button_set_label
+                                       (InputPadGtkButton      *button,
+                                        const gchar            *label);
+void                input_pad_gtk_button_set_label_size
+                                       (InputPadGtkButton      *button,
+                                        const gchar            *label,
+                                        int                     icon_size);
 
 G_END_DECLS
 

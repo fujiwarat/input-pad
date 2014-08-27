@@ -333,7 +333,8 @@ on_window_keyboard_changed (InputPadGtkWindow *window,
     input_pad_gtk_button_set_keysym (button, keysyms[group][0]);
     display_name = get_keysym_display_name (keysyms[group][0],
                                             GTK_WIDGET (window), &tooltip);
-    gtk_button_set_label (GTK_BUTTON (button), display_name);
+    input_pad_gtk_button_set_label_size (button, display_name,
+                                         KEYBOARD_ICON_SIZE);
     gtk_widget_set_tooltip_text (GTK_WIDGET (button), tooltip);
     g_free (display_name);
 }
@@ -536,7 +537,8 @@ on_button_shift_clicked (GtkButton *button, gpointer data)
                                                 GTK_WIDGET (button),
                                                 &tooltip);
         input_pad_gtk_button_set_keysym (gen_button, new_keysym);
-        gtk_button_set_label (GTK_BUTTON (gen_button), display_name);
+        input_pad_gtk_button_set_label_size (gen_button, display_name,
+                                             KEYBOARD_ICON_SIZE);
         g_free (display_name);
         gtk_widget_set_tooltip_text (GTK_WIDGET (gen_button), tooltip);
     }
@@ -2375,7 +2377,8 @@ create_keyboard_layout_ui_real_default (GtkWidget *vbox, InputPadGtkWindow *wind
             display_name = get_keysym_display_name (key_row->keysym[0][0],
                                                     GTK_WIDGET (window),
                                                     &tooltip);
-            button = input_pad_gtk_button_new_with_label (display_name);
+            button = input_pad_gtk_button_new_with_label_size (display_name,
+                                                               KEYBOARD_ICON_SIZE);
             gtk_widget_set_tooltip_text (button, tooltip);
             g_free (display_name);
             input_pad_gtk_button_set_keycode (INPUT_PAD_GTK_BUTTON (button),

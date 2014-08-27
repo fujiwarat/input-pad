@@ -1,7 +1,7 @@
 /* vim:set et sts=4: */
 /* input-pad - The input pad
- * Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
- * Copyright (C) 2010-2012 Red Hat, Inc.
+ * Copyright (C) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+ * Copyright (C) 2010-2014 Red Hat, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -217,10 +217,96 @@ input_pad_gtk_button_release_real (GtkWidget      *widget,
     return GTK_WIDGET_CLASS (input_pad_gtk_button_parent_class)->button_release_event (widget, event);
 }
 
+static int
+context_render_string (cairo_t *cr, const gchar *label, int width, int height)
+{
+    PangoFontDescription *desc;
+    PangoLayout *layout;
+    int lwidth = 0;
+    int lheight = 0;
+
+    if (height > 14)
+        desc = pango_font_description_from_string ("Monospace 10");
+    else
+        desc = pango_font_description_from_string ("Monospace 8");
+    layout = pango_cairo_create_layout (cr);
+    pango_layout_set_text (layout, label, -1);
+    pango_layout_get_size (layout, &lwidth, &lheight);
+
+#if 0
+    g_print ("test %d %d %d %d\n",
+             lwidth / PANGO_SCALE, lheight / PANGO_SCALE, width, height);
+#endif
+
+    cairo_move_to (cr,
+                   (gdouble)(width - lwidth / PANGO_SCALE) / 2,
+                   (gdouble)(height - lheight / PANGO_SCALE) / 2);
+    cairo_set_source_rgba (cr, 0., 0., 0., 1.);
+    pango_cairo_show_layout (cr, layout);
+    g_object_unref (layout);
+    pango_font_description_free (desc);
+
+    return lwidth / PANGO_SCALE;
+}
+
+static GdkPixbuf *
+create_pixbuf(const gchar *label, int icon_height)
+{
+    cairo_surface_t *image;
+    cairo_t *cr;
+    int width, height, lwidth;
+    GdkPixbuf *pixbuf = NULL;
+
+    if (icon_height <= 0)
+        icon_height = DEFAULT_ICON_SIZE;
+
+    image = cairo_image_surface_create (CAIRO_FORMAT_ARGB32,
+                                        icon_height, icon_height);
+    cr = cairo_create (image);
+    width = cairo_image_surface_get_width (image);
+    height = cairo_image_surface_get_width (image);
+    cairo_set_source_rgba (cr, 0., 0., 0., 0.);
+    cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+    cairo_paint (cr);
+    cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
+    lwidth = context_render_string (cr, label, width, height);
+
+    /* If label is more than two chars. */
+    if (lwidth > icon_height && lwidth < 1000) {
+        cairo_destroy (cr);
+        cairo_surface_destroy (image);
+
+        image = cairo_image_surface_create (CAIRO_FORMAT_ARGB32,
+                                            lwidth, icon_height);
+        cr = cairo_create (image);
+        width = cairo_image_surface_get_width (image);
+        height = cairo_image_surface_get_width (image);
+        cairo_set_source_rgba (cr, 0., 0., 0., 0.);
+        cairo_set_operator (cr, CAIRO_OPERATOR_SOURCE);
+        cairo_paint (cr);
+        cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
+        width = context_render_string (cr, label, width, icon_height);
+    }
+
+    pixbuf = gdk_pixbuf_get_from_surface (image, 0, 0, width, icon_height);
+    cairo_destroy (cr);
+    cairo_surface_destroy (image);
+    return pixbuf;
+}
+
+
 GtkWidget *
 input_pad_gtk_button_new_with_label (const gchar *label)
 {
-    return g_object_new (INPUT_PAD_TYPE_GTK_BUTTON, "label", label, NULL); 
+    return input_pad_gtk_button_new_with_label_size (label, 0);
+}
+
+GtkWidget *
+input_pad_gtk_button_new_with_label_size (const gchar *label, int icon_size)
+{
+    GdkPixbuf *pixbuf = create_pixbuf(label, icon_size);
+    GtkWidget *image = gtk_image_new_from_pixbuf (pixbuf);
+    return g_object_new (INPUT_PAD_TYPE_GTK_BUTTON, "image", image, NULL);
 }
 
 GtkWidget *
@@ -399,4 +485,24 @@ input_pad_gtk_button_set_rawtext (InputPadGtkButton *button,
     }
 
     button->priv->rawtext = g_strdup (rawtext);
+}
+
+void
+input_pad_gtk_button_set_label (InputPadGtkButton *button,
+                                const gchar       *label)
+{
+    input_pad_gtk_button_set_label_size (button, label, 0);
+}
+
+void
+input_pad_gtk_button_set_label_size (InputPadGtkButton *button,
+                                     const gchar       *label,
+                                     int                icon_size)
+{
+    g_return_if_fail (button != NULL &&
+                      INPUT_PAD_IS_GTK_BUTTON (button));
+
+    GdkPixbuf *pixbuf = create_pixbuf(label, icon_size);
+    GtkWidget *image = gtk_image_new_from_pixbuf (pixbuf);
+    gtk_button_set_image (GTK_BUTTON (button), image);
 }
