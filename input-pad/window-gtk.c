@@ -985,6 +985,7 @@ static void
 on_button_config_options_close_clicked (GtkButton *button, gpointer data)
 {
     InputPadGtkWindow *window;
+    GList *orig_list, *orig_list_button;
     GList *list = NULL;
     GList *list_button = NULL;
     GtkWidget *expander;
@@ -1007,11 +1008,22 @@ on_button_config_options_close_clicked (GtkButton *button, gpointer data)
     gtk_widget_hide (window->priv->config_options_dialog);
 
     list = gtk_container_get_children (GTK_CONTAINER (window->priv->config_options_vbox));
+    orig_list = list;
     while (list) {
+        GList *tmp_list;
+
         expander = GTK_WIDGET (list->data);
-        alignment = GTK_WIDGET (gtk_container_get_children (GTK_CONTAINER (expander))->data);
-        vbox = GTK_WIDGET (gtk_container_get_children (GTK_CONTAINER (alignment))->data);
+
+        tmp_list = gtk_container_get_children (GTK_CONTAINER (expander));
+        alignment = GTK_WIDGET (tmp_list->data);
+        g_list_free (tmp_list);
+
+        tmp_list = gtk_container_get_children (GTK_CONTAINER (alignment));
+        vbox = GTK_WIDGET (tmp_list->data);
+        g_list_free (tmp_list);
+
         list_button = gtk_container_get_children (GTK_CONTAINER (vbox));
+        orig_list_button = list_button;
         while (list_button) {
             checkbutton = GTK_WIDGET (list_button->data);
             text = (gchar *) g_object_get_data (G_OBJECT (checkbutton), "option");
@@ -1026,8 +1038,10 @@ on_button_config_options_close_clicked (GtkButton *button, gpointer data)
             }
             list_button = list_button->next;
         }
+        g_list_free (orig_list_button);
         list = list->next;
     }
+    g_list_free (orig_list);
 
     combobox = window->priv->config_layouts_combobox;
     if (!gtk_combo_box_get_active_iter (GTK_COMBO_BOX (combobox), &iter)) {
@@ -1427,7 +1441,8 @@ get_nth_pad_table (InputPadTable *table, int nth)
 static guint
 digit_hbox_get_code_point (GtkWidget *digit_hbox)
 {
-    GList *list;
+    GList *orig_list;
+    GList *list = NULL;
     GtkComboBox *combobox;
     GtkTreeModel *model;
     GtkTreeIter iter;
@@ -1436,7 +1451,7 @@ digit_hbox_get_code_point (GtkWidget *digit_hbox)
     guint base = 0;
     guint code;
 
-    list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
+    orig_list = list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
     string = g_string_new (NULL);
 
     while (list) {
@@ -1458,6 +1473,7 @@ digit_hbox_get_code_point (GtkWidget *digit_hbox)
         g_free (line);
         list = list->next;
     }
+    g_list_free (orig_list);
     line = g_string_free (string, FALSE);
     g_return_val_if_fail (line != NULL && base > 0, 0);
 
@@ -1541,6 +1557,7 @@ digit_hbox_set_code_point (GtkWidget *digit_hbox, guint code)
     }
 end_set_code_point:
     g_free (line);
+    g_list_free (orig_list);
 }
 
 static void
@@ -1680,7 +1697,8 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
     int i, n_digit, created_num, prev_base;
     guint code = 0;
     gboolean do_resize = FALSE;
-    GList *list;
+    GList *orig_list;
+    GList *list = NULL;
     GtkWidget *digit_hbox;
     GtkWidget *char_label;
     GtkWidget *combobox;
@@ -1700,7 +1718,7 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
     if ((n_digit = get_max_digits_from_base (n_encoding)) == 0) {
         return;
     }
-    list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
+    orig_list = list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
     created_num = g_list_length (list);
     if (created_num > 0) {
         code = digit_hbox_get_code_point (digit_hbox);
@@ -1773,7 +1791,8 @@ set_code_point_base (CodePointData *cp_data, int n_encoding)
                           G_CALLBACK (on_combobox_changed), cp_data);
     }
 end_configure_combobox:
-    list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
+    g_list_free (orig_list);
+    orig_list = list = gtk_container_get_children (GTK_CONTAINER (digit_hbox));
     combobox = GTK_WIDGET (g_list_nth (list, n_digit - 1)->data);
     toplevel = gtk_widget_get_toplevel (digit_hbox);
     gtk_widget_get_allocation (combobox, &combobox_allocation);
@@ -1787,6 +1806,7 @@ end_configure_combobox:
     }
     digit_hbox_set_code_point (digit_hbox, code);
     char_label_set_code_point (char_label, code);
+    g_list_free (orig_list);
 }
 
 #if 0
@@ -2029,6 +2049,8 @@ destroy_char_view_table_common (GtkWidget *scrolled, InputPadGtkWindow *window)
     foreach_data.window = window;
     gtk_container_foreach (GTK_CONTAINER (table),
                            table_element_remove, &foreach_data);
+    g_list_free (viewport_list);
+    g_list_free (scrolled_list);
     gtk_container_remove (GTK_CONTAINER (viewport), table);
     gtk_container_remove (GTK_CONTAINER (scrolled), viewport);
 }
@@ -2308,7 +2330,7 @@ create_keyboard_layout_ui_real_default (GtkWidget *vbox, InputPadGtkWindow *wind
     GtkWidget *button_shift_r = NULL;
     GtkWidget *button_num_lock = NULL;
     GError *error = NULL;
-    GList *children;
+    GList *orig_children, *children = NULL;
     char *tooltip;
     char *display_name;
 
@@ -2467,6 +2489,7 @@ create_keyboard_layout_ui_real_default (GtkWidget *vbox, InputPadGtkWindow *wind
     }
 
     children = gtk_container_get_children (GTK_CONTAINER (table_data[0].table));
+    orig_children = children;
     while (children) {
         if (!GTK_IS_BUTTON (children->data)) {
             children = children->next;
@@ -2484,7 +2507,9 @@ create_keyboard_layout_ui_real_default (GtkWidget *vbox, InputPadGtkWindow *wind
         }
         children = children->next;
     }
+    g_list_free (orig_children);
     children = gtk_container_get_children (GTK_CONTAINER (table_data[2].table));
+    orig_children = children;
     while (children) {
         if (!GTK_IS_BUTTON (children->data)) {
             children = children->next;
@@ -2497,6 +2522,7 @@ create_keyboard_layout_ui_real_default (GtkWidget *vbox, InputPadGtkWindow *wind
         }
         children = children->next;
     }
+    g_list_free (orig_children);
 
     button = gtk_button_new_with_label ("->");
     gtk_widget_set_tooltip_text (button, _("Extend layout"));
@@ -2528,34 +2554,48 @@ create_keyboard_layout_ui_real (GtkWidget         *vbox,
 }
 
 static void
+keyboard_element_remove (GtkWidget *button, gpointer data)
+{
+    TableForEachData *foreach_data = (TableForEachData *) data;
+    GtkWidget *table = foreach_data->table;
+    InputPadGtkWindow *window = foreach_data->window;
+
+    g_signal_handlers_disconnect_by_func (G_OBJECT (window),
+                                          G_CALLBACK (on_window_keyboard_changed),
+                                          (gpointer) button);
+    gtk_container_remove (GTK_CONTAINER (table), button);
+}
+
+static void
+keyboard_box_remove (GtkWidget *table, gpointer data)
+{
+    TableForEachData *parent_foreach_data = (TableForEachData *) data;
+    static TableForEachData foreach_data = { NULL, };
+    GtkWidget *hbox = parent_foreach_data->table;
+    InputPadGtkWindow *window = parent_foreach_data->window;
+
+    foreach_data.table = table;
+    foreach_data.window = window;
+    gtk_container_foreach (GTK_CONTAINER (table),
+                           keyboard_element_remove, &foreach_data);
+    gtk_container_remove (GTK_CONTAINER (hbox), table);
+}
+
+static void
 destroy_prev_keyboard_layout_default (GtkWidget *vbox, InputPadGtkWindow *window)
 {
-    GList *children, *buttons;
+    GList *children = NULL;
     GtkWidget *hbox;
-    GtkWidget *table;
-    GtkWidget *button;
+    static TableForEachData foreach_data = { NULL, };
 
     children = gtk_container_get_children (GTK_CONTAINER (vbox));
     hbox = GTK_WIDGET (children->data);
-    children = gtk_container_get_children (GTK_CONTAINER (hbox));
-    while (children) {
-        table = GTK_WIDGET (children->data);
-        buttons = gtk_container_get_children (GTK_CONTAINER (table));
-        while (buttons) {
-            button = GTK_WIDGET (buttons->data);
-            buttons = buttons->next;
-            g_signal_handlers_disconnect_by_func (G_OBJECT (window),
-                                                  G_CALLBACK (on_window_keyboard_changed),
-                                                  (gpointer) button);
-            gtk_widget_hide (button);
-            gtk_widget_destroy (button);
-        }
-        children = children->next;
-        gtk_widget_hide (table);
-        gtk_widget_destroy (table);
-    }
-    gtk_widget_hide (hbox);
-    gtk_widget_destroy (hbox);
+    g_list_free (children);
+    foreach_data.table = hbox;
+    foreach_data.window = window;
+    gtk_container_foreach (GTK_CONTAINER (hbox),
+                           keyboard_box_remove, &foreach_data);
+    gtk_container_remove (GTK_CONTAINER (vbox), hbox);
 }
 
 G_INLINE_FUNC void
@@ -2656,12 +2696,11 @@ config_layouts_list_append_layout (GtkListStore *list,
     gtk_list_store_append (list, &iter);
     gtk_list_store_set (list, &iter,
                         LAYOUT_LAYOUT_NAME_COL,
-                        g_strdup (layout_name),
+                        layout_name,
                         LAYOUT_LAYOUT_DESC_COL,
-                        variant_desc ? g_strdup (variant_desc) :
-                            g_strdup (layout_desc),
+                        variant_desc ? variant_desc : layout_desc,
                         LAYOUT_VARIANT_NAME_COL,
-                        g_strdup (variant_name),
+                        variant_name,
                         LAYOUT_VARIANT_DESC_COL, NULL,
                         LAYOUT_VISIBLE_COL, TRUE, -1);
 }
@@ -2927,12 +2966,12 @@ layout_model_new (InputPadGtkWindow            *input_pad,
         gtk_tree_store_append (store, &iter, NULL);
         gtk_tree_store_set (store, &iter,
                             LAYOUT_LAYOUT_NAME_COL,
-                            g_strdup (layout_name),
+                            layout_name,
                             LAYOUT_LAYOUT_DESC_COL,
-                            variant_desc ? g_strdup (variant_desc) :
-                                g_strdup (layout_desc),
+                            variant_desc ? variant_desc :
+                                layout_desc,
                             LAYOUT_VARIANT_NAME_COL,
-                            g_strdup (variant_name),
+                            variant_name,
                             LAYOUT_VARIANT_DESC_COL, NULL,
                             LAYOUT_VISIBLE_COL, TRUE, -1);
     }
@@ -3214,7 +3253,8 @@ create_code_point_dialog_ui (GtkBuilder *builder, GtkWidget *window)
     GtkWidget *up_button;
     GtkWidget *send_button;
     GtkWidget *close_button;
-    GList *list;
+    GList *orig_list;
+    GList *list = NULL;
     static CodePointData cp_data = {NULL, NULL};
 
     cp_dlg = GTK_WIDGET (gtk_builder_get_object (builder, "CodePointDialog"));
@@ -3230,6 +3270,7 @@ create_code_point_dialog_ui (GtkBuilder *builder, GtkWidget *window)
     cp_data.up_button = up_button;
     encoding_hbox = GTK_WIDGET (gtk_builder_get_object (builder, "EncodingHBox"));
     list = gtk_container_get_children (GTK_CONTAINER (encoding_hbox));
+    orig_list = list;
     while (list) {
         if (GTK_IS_RADIO_BUTTON (list->data)) {
             g_signal_connect (G_OBJECT (list->data), "clicked",
@@ -3238,9 +3279,11 @@ create_code_point_dialog_ui (GtkBuilder *builder, GtkWidget *window)
         }
         list = list->next;
     }
+    g_list_free (orig_list);
 
     base_hbox = GTK_WIDGET (gtk_builder_get_object (builder, "BaseHBox"));
     list = gtk_container_get_children (GTK_CONTAINER (base_hbox));
+    orig_list = list;
     while (list) {
         if (GTK_IS_RADIO_BUTTON (list->data)) {
             g_signal_connect (G_OBJECT (list->data), "clicked",
@@ -3249,6 +3292,7 @@ create_code_point_dialog_ui (GtkBuilder *builder, GtkWidget *window)
         }
         list = list->next;
     }
+    g_list_free (orig_list);
 
     init_spin_button (down_button, up_button, &cp_data);
 
@@ -3369,7 +3413,7 @@ create_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
 static void
 destroy_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
 {
-    GList *hbox_list;
+    GList *hbox_list = NULL;
     GList *scrolled_list;
     GList *viewport_list;
     GtkWidget *scrolled;
@@ -3384,12 +3428,18 @@ destroy_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
         hbox_list = gtk_container_get_children (GTK_CONTAINER (hbox));
         g_return_if_fail (GTK_IS_SCROLLED_WINDOW (hbox_list->data));
         scrolled = GTK_WIDGET (hbox_list->data);
+        g_list_free (hbox_list);
+
         scrolled_list = gtk_container_get_children (GTK_CONTAINER (scrolled));
         g_return_if_fail (GTK_IS_VIEWPORT (scrolled_list->data));
         viewport = GTK_WIDGET (scrolled_list->data);
+        g_list_free (scrolled_list);
+
         viewport_list = gtk_container_get_children (GTK_CONTAINER (viewport));
         g_return_if_fail (GTK_IS_TREE_VIEW (viewport_list->data));
         tv = GTK_WIDGET (viewport_list->data);
+        g_list_free (viewport_list);
+
         column = gtk_tree_view_get_column (GTK_TREE_VIEW (tv), 0);
         gtk_tree_view_remove_column (GTK_TREE_VIEW (tv), column);
         gtk_container_remove (GTK_CONTAINER (viewport), tv);
@@ -3400,10 +3450,14 @@ destroy_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
     hbox_list = gtk_container_get_children (GTK_CONTAINER (hbox));
     g_return_if_fail (GTK_IS_SCROLLED_WINDOW (hbox_list->data));
     scrolled = GTK_WIDGET (hbox_list->data);
+    g_list_free (hbox_list);
+
     scrolled_list = gtk_container_get_children (GTK_CONTAINER (scrolled));
     g_return_if_fail (GTK_IS_VIEWPORT (scrolled_list->data));
     viewport = GTK_WIDGET (scrolled_list->data);
-    destroy_custom_char_view_table (viewport, window);
+    g_list_free (scrolled_list);
+
+    destroy_custom_char_view_table (scrolled, window);
     gtk_container_remove (GTK_CONTAINER (scrolled), viewport);
     gtk_container_remove (GTK_CONTAINER (hbox), scrolled);
 }

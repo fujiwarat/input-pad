@@ -1044,6 +1044,7 @@ xkb_get_group_layouts_from_key (InputPadGtkWindow      *window,
     Atom xkb_rules_name, type;
     int format;
     unsigned long l, nitems, bytes_after;
+    unsigned char *orig_prop;
     unsigned char *prop = NULL;
 
     xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET (window)));
@@ -1060,8 +1061,11 @@ xkb_get_group_layouts_from_key (InputPadGtkWindow      *window,
         g_warning ("Could not get X property");
         return NULL;
     }
+    orig_prop = prop;
     if (nitems < 3) {
         g_warning ("Could not get group layout from X property");
+        if (orig_prop != NULL)
+            XFree (orig_prop);
         return NULL;
     }
     for (l = 0; l < 2; l++) {
@@ -1069,38 +1073,46 @@ xkb_get_group_layouts_from_key (InputPadGtkWindow      *window,
     }
     if (prop == NULL || *prop == '\0') {
         g_warning ("No layouts form X property");
+        if (orig_prop != NULL)
+            XFree (orig_prop);
         return NULL;
     }
     if (get_key == XKB_GET_LAYOUTS_KEY) {
         names = g_strsplit ((gchar *) prop, ",", -1);
         debug_print_group_layout_list (names);
+        XFree (orig_prop);
 
         return names;
     }
     prop += strlen ((const char *) prop) + 1;
     if (prop == NULL) {
         g_warning ("No variants form X property");
+        XFree (orig_prop);
         return NULL;
     }
     if (get_key == XKB_GET_VARIANTS_KEY) {
         names = g_strsplit ((gchar *) prop, ",", -1);
         debug_print_group_layout_list (names);
+        XFree (orig_prop);
 
         return names;
     }
     prop += strlen ((const char *) prop) + 1;
     if (prop == NULL) {
         g_warning ("No options form X property");
+        XFree (orig_prop);
         return NULL;
     }
     if (get_key == XKB_GET_OPTIONS_KEY) {
         names = g_strsplit ((gchar *) prop, ",", -1);
         debug_print_group_layout_list (names);
+        XFree (orig_prop);
 
         return names;
     }
 
     g_assert_not_reached ();
+    XFree (orig_prop);
     return NULL;
 }
 
