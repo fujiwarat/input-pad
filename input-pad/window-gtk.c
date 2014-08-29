@@ -823,7 +823,9 @@ static void
 on_button_config_layouts_clicked (GtkButton *button, gpointer data)
 {
     GtkWidget *dlg = GTK_WIDGET (data);
+    GtkWidget *top_window = gtk_widget_get_toplevel (GTK_WIDGET (button));
 
+    gtk_window_set_transient_for (GTK_WINDOW (dlg), GTK_WINDOW (top_window));
     gtk_dialog_run (GTK_DIALOG (dlg));
     gtk_widget_hide (dlg);
 }
@@ -5105,6 +5107,7 @@ on_code_point_activate (GSimpleAction *action,
     GtkBuilder *builder = app->builder;
     GtkWidget *dlg = GTK_WIDGET (gtk_builder_get_object (builder,
                                                          "CodePointDialog"));
+    gtk_window_set_transient_for (GTK_WINDOW (dlg), GTK_WINDOW (app->window));
 
     gtk_dialog_run (GTK_DIALOG (dlg));
     gtk_widget_hide (dlg);
@@ -5217,6 +5220,7 @@ on_contents_activate (GSimpleAction *action,
     GtkBuilder *builder = app->builder;
     GtkWidget *dlg = GTK_WIDGET (gtk_builder_get_object (builder,
                                                          "ContentsDialog"));
+    gtk_window_set_transient_for (GTK_WINDOW (dlg), GTK_WINDOW (app->window));
 
     gtk_dialog_run (GTK_DIALOG (dlg));
     gtk_widget_hide (dlg);
@@ -5231,6 +5235,7 @@ on_about_activate (GSimpleAction *action,
     GtkBuilder *builder = app->builder;
     GtkWidget *dlg = GTK_WIDGET (gtk_builder_get_object (builder,
                                                          "AboutDialog"));
+    gtk_window_set_transient_for (GTK_WINDOW (dlg), GTK_WINDOW (app->window));
 
     /* Do not use GtkBuilder because gtk_about_dialog_set_logo_icon_name()
      * sets the best_size as 0 for pixmaps dir.
