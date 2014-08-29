@@ -57,6 +57,7 @@
 typedef struct _CodePointData CodePointData;
 typedef struct _KeyboardLayoutPart KeyboardLayoutPart;
 typedef struct _CharTreeViewData CharTreeViewData;
+typedef struct _TableForEachData TableForEachData;
 typedef struct _InputPadGtkApplicationClass InputPadGtkApplicationClass;
 
 enum {
@@ -153,6 +154,11 @@ struct _CodePointData {
     guint                       codepoint;
 };
 
+struct _TableForEachData {
+    GtkWidget                  *table;
+    InputPadGtkWindow          *window;
+};
+
 struct _KeyboardLayoutPart {
     int                         key_row_id;
     int                         row;
@@ -161,7 +167,7 @@ struct _KeyboardLayoutPart {
 };
 
 struct _CharTreeViewData {
-    GtkWidget                  *viewport;
+    GtkWidget                  *scrolled;
     GtkWidget                  *window;
     GtkWidget                  *main_tv;
     GtkWidget                  *sub_tv;
@@ -238,10 +244,10 @@ static InputPadTable *  get_nth_pad_table       (InputPadTable     *table,
 static void             run_command             (const gchar       *command,
                                                  gchar            **command_output);
 static void             append_custom_char_view_table
-                                                (GtkWidget         *viewport,
+                                                (GtkWidget         *scrolled,
                                                  InputPadTable     *table_data);
 static void             destroy_custom_char_view_table
-                                                (GtkWidget         *viewport,
+                                                (GtkWidget         *scrolled,
                                                  InputPadGtkWindow *window);
 static char *           get_keysym_display_name (guint              keysym,
                                                  GtkWidget         *widget,
@@ -286,12 +292,12 @@ static void             destroy_custom_char_views
                                                 (GtkWidget         *hbox,
                                                  InputPadGtkWindow *window);
 static void             append_all_char_view_table 
-                                                (GtkWidget         *viewport,
+                                                (GtkWidget         *scrolled,
                                                  unsigned int       start,
                                                  unsigned int       end,
                                                  GtkWidget         *window);
 static void             destroy_all_char_view_table
-                                                (GtkWidget         *viewport,
+                                                (GtkWidget         *scrolled,
                                                  InputPadGtkWindow *window);
 static void             input_pad_gtk_window_real_destroy
                                                 (GtkWidget         *widget);
@@ -1050,7 +1056,7 @@ on_button_pressed (GtkButton *button, gpointer data)
     InputPadGtkWindow *window;
     InputPadGtkButton *ibutton;
     InputPadTableType  type;
-    const char *str = gtk_button_get_label (button);
+    const char *str;
     const char *rawtext;
     char *command_output = NULL;
     guint keycode;
@@ -1066,6 +1072,7 @@ on_button_pressed (GtkButton *button, gpointer data)
 
     window = INPUT_PAD_GTK_WINDOW (data);
     ibutton = INPUT_PAD_GTK_BUTTON (button);
+    str = input_pad_gtk_button_get_label (ibutton);
     rawtext = input_pad_gtk_button_get_rawtext (ibutton);
     type = input_pad_gtk_button_get_table_type (ibutton);
     keycode  = input_pad_gtk_button_get_keycode (ibutton);
@@ -1270,7 +1277,7 @@ on_tree_view_select_custom_char_table (GtkTreeSelection     *selection,
     InputPadGroup *group;
     InputPadTable *table;
     GtkWidget *main_tv;
-    GtkWidget *viewport;
+    GtkWidget *scrolled;
     GtkTreeSelection *main_selection;
     GtkTreeModel *main_model;
     GtkTreeModel *sub_model;
@@ -1282,11 +1289,11 @@ on_tree_view_select_custom_char_table (GtkTreeSelection     *selection,
     window = INPUT_PAD_GTK_WINDOW (tv_data->window);
     g_return_if_fail (window->priv != NULL && window->priv->group != NULL);
     g_return_if_fail (GTK_IS_TREE_VIEW (tv_data->main_tv));
-    g_return_if_fail (GTK_IS_VIEWPORT (tv_data->viewport));
+    g_return_if_fail (GTK_IS_SCROLLED_WINDOW (tv_data->scrolled));
 
     group = window->priv->group;
     main_tv = GTK_WIDGET (tv_data->main_tv);
-    viewport = GTK_WIDGET (tv_data->viewport);
+    scrolled = GTK_WIDGET (tv_data->scrolled);
     main_selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (main_tv));
 
     if (!gtk_tree_selection_get_selected (main_selection, &main_model, &main_iter)) {
@@ -1306,8 +1313,8 @@ on_tree_view_select_custom_char_table (GtkTreeSelection     *selection,
     table = get_nth_pad_table (group->table, n);
     g_return_if_fail (table != NULL && table->priv != NULL);
     table->priv->signal_window = window;
-    destroy_custom_char_view_table (viewport, window);
-    append_custom_char_view_table (viewport, table);
+    destroy_custom_char_view_table (scrolled, window);
+    append_custom_char_view_table (scrolled, table);
 }
 
 static void
@@ -1315,7 +1322,7 @@ on_tree_view_select_all_char (GtkTreeSelection     *selection,
                               gpointer              data)
 {
     CharTreeViewData *tv_data = (CharTreeViewData*) data;
-    GtkWidget *viewport;
+    GtkWidget *scrolled;
     GtkWidget *window;
     GtkTreeModel *model;
     GtkTreeIter iter;
@@ -1323,7 +1330,7 @@ on_tree_view_select_all_char (GtkTreeSelection     *selection,
 
     g_return_if_fail (data != NULL);
 
-    viewport = GTK_WIDGET (tv_data->viewport);
+    scrolled = GTK_WIDGET (tv_data->scrolled);
     window = GTK_WIDGET (tv_data->window);
     if (!gtk_tree_selection_get_selected (selection, &model, &iter)) {
         return;
@@ -1331,8 +1338,8 @@ on_tree_view_select_all_char (GtkTreeSelection     *selection,
     gtk_tree_model_get (model, &iter,
                         CHAR_BLOCK_START_COL, &start,
                         CHAR_BLOCK_END_COL, &end, -1);
-    destroy_all_char_view_table (viewport, INPUT_PAD_GTK_WINDOW (window));
-    append_all_char_view_table (viewport, start, end, window);
+    destroy_all_char_view_table (scrolled, INPUT_PAD_GTK_WINDOW (window));
+    append_all_char_view_table (scrolled, start, end, window);
 }
 
 
@@ -1980,33 +1987,54 @@ run_command (const gchar *command, gchar **command_output)
 }
 
 static void
-destroy_char_view_table_common (GtkWidget *viewport, InputPadGtkWindow *window)
+table_element_remove (GtkWidget *button, gpointer data)
 {
-    GList *list, *buttons;
-    GtkWidget *table;
-    GtkWidget *button;
+    TableForEachData *foreach_data = (TableForEachData*) data;
+    GtkWidget *table = foreach_data->table;
+    InputPadGtkWindow *window = foreach_data->window;
 
-    list = gtk_container_get_children (GTK_CONTAINER (viewport));
-    if (list == NULL) {
-        return;
-    }
-    table = list->data;
-    g_return_if_fail (GTK_IS_GRID (table));
-    buttons = gtk_container_get_children (GTK_CONTAINER (table));
-    while (buttons) {
-        button = GTK_WIDGET (buttons->data);
-        gtk_widget_hide (button);
-        g_signal_handlers_disconnect_by_func (G_OBJECT (window),
-                                              G_CALLBACK (on_window_char_button_sensitive),
-                                              (gpointer) button);
-        gtk_widget_destroy (button);
-        buttons = buttons->next;
-    }
-    gtk_container_remove (GTK_CONTAINER (viewport), table);
+    g_signal_handlers_disconnect_by_func (G_OBJECT (window),
+                                          G_CALLBACK (on_window_char_button_sensitive),
+                                          (gpointer) button);
+    g_signal_handlers_disconnect_by_func (G_OBJECT (button),
+                                          G_CALLBACK (on_button_pressed),
+                                          (gpointer) window);
+    g_signal_handlers_disconnect_by_func (G_OBJECT (button),
+                                          G_CALLBACK (on_button_pressed_repeat),
+                                          (gpointer) window);
+    gtk_container_remove (GTK_CONTAINER (table), button);
 }
 
 static void
-append_custom_char_view_table (GtkWidget *viewport, InputPadTable *table_data)
+destroy_char_view_table_common (GtkWidget *scrolled, InputPadGtkWindow *window)
+{
+    GList *scrolled_list, *viewport_list;
+    GtkWidget *viewport;
+    GtkWidget *table;
+    static TableForEachData foreach_data = { NULL, };
+
+    scrolled_list = gtk_container_get_children (GTK_CONTAINER (scrolled));
+    if (scrolled_list == NULL) {
+        return;
+    }
+    viewport = scrolled_list->data;
+    g_return_if_fail (GTK_IS_VIEWPORT (viewport));
+    viewport_list = gtk_container_get_children (GTK_CONTAINER (viewport));
+    if (viewport_list == NULL) {
+        return;
+    }
+    table = viewport_list->data;
+    g_return_if_fail (GTK_IS_GRID (table));
+    foreach_data.table = table;
+    foreach_data.window = window;
+    gtk_container_foreach (GTK_CONTAINER (table),
+                           table_element_remove, &foreach_data);
+    gtk_container_remove (GTK_CONTAINER (viewport), table);
+    gtk_container_remove (GTK_CONTAINER (scrolled), viewport);
+}
+
+static void
+append_custom_char_view_table (GtkWidget *scrolled, InputPadTable *table_data)
 {
     InputPadGtkWindow *input_pad;
     GtkCssProvider *css_provider;
@@ -2087,7 +2115,12 @@ append_custom_char_view_table (GtkWidget *viewport, InputPadTable *table_data)
                   "row-homogeneous", TRUE,
                   "column-homogeneous", TRUE,
                   NULL);
-    gtk_container_add (GTK_CONTAINER (viewport), table);
+#if GTK_CHECK_VERSION (3, 8, 0)
+    gtk_container_add (GTK_CONTAINER (scrolled), table);
+#else
+    gtk_scrolled_window_add_with_viewport (GTK_SCROLLED_WINDOW (scrolled),
+                                           table);
+#endif
     gtk_widget_show (table);
 
     for (i = 0, num = 0; char_table[i]; i++) {
@@ -2187,10 +2220,10 @@ append_custom_char_view_table (GtkWidget *viewport, InputPadTable *table_data)
 }
 
 static void
-destroy_custom_char_view_table (GtkWidget *viewport, InputPadGtkWindow *window)
+destroy_custom_char_view_table (GtkWidget *scrolled, InputPadGtkWindow *window)
 {
     /* Currently same contents. */
-    destroy_char_view_table_common (viewport, window);
+    destroy_char_view_table_common (scrolled, window);
 }
 
 gchar *
@@ -3245,7 +3278,6 @@ static void
 create_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
 {
     GtkWidget *scrolled;
-    GtkWidget *viewport;
     GtkWidget *main_tv;
     GtkWidget *sub_tv;
     GtkTreeModel *model;
@@ -3312,9 +3344,6 @@ create_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
     gtk_box_pack_start (GTK_BOX (hbox), scrolled, FALSE, FALSE, 0);
     gtk_widget_show (scrolled);
 
-    viewport = gtk_viewport_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), viewport);
-    gtk_widget_show (viewport);
     selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (main_tv));
     tv_data.window = GTK_WIDGET (window);
     tv_data.sub_tv = sub_tv;
@@ -3323,7 +3352,7 @@ create_custom_char_views (GtkWidget *hbox, InputPadGtkWindow *window)
                       &tv_data);
 
     selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (sub_tv));
-    tv_data.viewport = viewport;
+    tv_data.scrolled = scrolled;
     tv_data.window = GTK_WIDGET (window);
     tv_data.main_tv = main_tv;
     g_signal_connect (G_OBJECT (selection), "changed",
@@ -3414,7 +3443,7 @@ create_custom_char_view_ui (GtkBuilder *builder,
 }
 
 static void
-append_all_char_view_table (GtkWidget      *viewport,
+append_all_char_view_table (GtkWidget      *scrolled,
                             unsigned int    start,
                             unsigned int    end,
                             GtkWidget      *window)
@@ -3466,7 +3495,12 @@ append_all_char_view_table (GtkWidget      *viewport,
                   "row-homogeneous", TRUE,
                   "column-homogeneous", TRUE,
                   NULL);
-    gtk_container_add (GTK_CONTAINER (viewport), table);
+#if GTK_CHECK_VERSION (3, 8, 0)
+    gtk_container_add (GTK_CONTAINER (scrolled), table);
+#else
+    gtk_scrolled_window_add_with_viewport (GTK_SCROLLED_WINDOW (scrolled),
+                                           table);
+#endif
     gtk_widget_show (table);
 
     for (num = start; num <= end; num++) {
@@ -3505,10 +3539,10 @@ append_all_char_view_table (GtkWidget      *viewport,
 }
 
 static void
-destroy_all_char_view_table (GtkWidget *viewport, InputPadGtkWindow *window)
+destroy_all_char_view_table (GtkWidget *scrolled, InputPadGtkWindow *window)
 {
     /* Currently same contents. */
-    destroy_char_view_table_common (viewport, window);
+    destroy_char_view_table_common (scrolled, window);
 }
 
 static void
@@ -3519,7 +3553,6 @@ create_all_char_view_ui (GtkBuilder    *builder,
     InputPadGtkWindowPrivate *priv;
     GtkWidget *hbox;
     GtkWidget *scrolled;
-    GtkWidget *viewport;
     GtkWidget *tv;
     GtkTreeModel *model;
     GtkCellRenderer *renderer;
@@ -3578,11 +3611,8 @@ create_all_char_view_ui (GtkBuilder    *builder,
     gtk_box_pack_start (GTK_BOX (hbox), scrolled, FALSE, FALSE, 0);
     gtk_widget_show (scrolled);
 
-    viewport = gtk_viewport_new (NULL, NULL);
-    gtk_container_add (GTK_CONTAINER (scrolled), viewport);
-    gtk_widget_show (viewport);
     selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tv));
-    tv_data.viewport = viewport;
+    tv_data.scrolled = scrolled;
     tv_data.window = window;
     g_signal_connect (G_OBJECT (selection), "changed",
                       G_CALLBACK (on_tree_view_select_all_char), &tv_data);

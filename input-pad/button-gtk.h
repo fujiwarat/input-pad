@@ -101,6 +101,8 @@ const gchar *       input_pad_gtk_button_get_rawtext
 void                input_pad_gtk_button_set_rawtext
                                        (InputPadGtkButton      *button,
                                         const gchar            *rawtext);
+const gchar *       input_pad_gtk_button_get_label
+                                       (InputPadGtkButton      *button);
 void                input_pad_gtk_button_set_label
                                        (InputPadGtkButton      *button,
                                         const gchar            *label);

@@ -43,7 +43,8 @@ struct _InputPadGtkButtonPrivate {
     guint                     **keysyms;
     int                         keysym_group;
     guint                       state;
-    gchar *                     rawtext;
+    gchar                      *label;
+    gchar                      *rawtext;
     InputPadTableType           type;
     guint32                     timer;
     guint                       timeout_repeat;
@@ -187,6 +188,8 @@ input_pad_gtk_button_destroy_real (GtkObject *widget)
             end_timer (ibutton);
             g_free (ibutton->priv->rawtext);
             ibutton->priv->rawtext = NULL;
+            g_free (ibutton->priv->label);
+            ibutton->priv->label = NULL;
             ibutton->priv = NULL;
         }
     }
@@ -306,7 +309,14 @@ input_pad_gtk_button_new_with_label_size (const gchar *label, int icon_size)
 {
     GdkPixbuf *pixbuf = create_pixbuf(label, icon_size);
     GtkWidget *image = gtk_image_new_from_pixbuf (pixbuf);
-    return g_object_new (INPUT_PAD_TYPE_GTK_BUTTON, "image", image, NULL);
+    GtkWidget *button;
+    InputPadGtkButton *ibutton;
+
+    g_object_unref (pixbuf);
+    button = g_object_new (INPUT_PAD_TYPE_GTK_BUTTON, "image", image, NULL);
+    ibutton = INPUT_PAD_GTK_BUTTON (button);
+    ibutton->priv->label = g_strdup (label);
+    return button;
 }
 
 GtkWidget *
@@ -487,6 +497,15 @@ input_pad_gtk_button_set_rawtext (InputPadGtkButton *button,
     button->priv->rawtext = g_strdup (rawtext);
 }
 
+const gchar *
+input_pad_gtk_button_get_label (InputPadGtkButton *button)
+{
+    g_return_val_if_fail (button != NULL &&
+                          INPUT_PAD_IS_GTK_BUTTON (button), NULL);
+
+    return button->priv->label;
+}
+
 void
 input_pad_gtk_button_set_label (InputPadGtkButton *button,
                                 const gchar       *label)
@@ -504,5 +523,8 @@ input_pad_gtk_button_set_label_size (InputPadGtkButton *button,
 
     GdkPixbuf *pixbuf = create_pixbuf(label, icon_size);
     GtkWidget *image = gtk_image_new_from_pixbuf (pixbuf);
+    g_object_unref (pixbuf);
     gtk_button_set_image (GTK_BUTTON (button), image);
+    g_free (button->priv->label);
+    button->priv->label = g_strdup (label);
 }
