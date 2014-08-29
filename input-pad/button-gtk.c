@@ -29,7 +29,8 @@
 #include "button-gtk.h"
 #include "i18n.h"
 
-#define TIMEOUT_REPEAT 300
+#define TIMEOUT_INITIAL 500
+#define TIMEOUT_REPEAT  300
 #define INPUT_PAD_GTK_BUTTON_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_BUTTON, InputPadGtkButtonPrivate))
 
 enum {
@@ -47,7 +48,6 @@ struct _InputPadGtkButtonPrivate {
     gchar                      *rawtext;
     InputPadTableType           type;
     guint32                     timer;
-    guint                       timeout_repeat;
 };
 
 static guint                    signals[LAST_SIGNAL] = { 0 };
@@ -73,7 +73,6 @@ static void
 input_pad_gtk_button_init (InputPadGtkButton *button)
 {
     InputPadGtkButtonPrivate *priv = INPUT_PAD_GTK_BUTTON_GET_PRIVATE (button);
-    priv->timeout_repeat = TIMEOUT_REPEAT;
     button->priv = priv;
 }
 
@@ -116,27 +115,13 @@ input_pad_gtk_button_class_init (InputPadGtkButtonClass *klass)
 static gint
 button_timer_cb (InputPadGtkButton *button)
 {
-#if 0
-    GtkSettings *settings;
-#endif
-    guint timeout;
-
     g_return_val_if_fail (button->priv != NULL, FALSE);
 
     if (button->priv->timer == 0) {
         return FALSE;
     }
 
-    timeout = button->priv->timeout_repeat;
-
-    /* "gtk-timeout-repeat" is too fast? */
-#if 0
-    settings = gtk_widget_get_settings (GTK_WIDGET (button));
-    g_object_get (settings, "gtk-timeout-repeat", &timeout, NULL);
-    //g_object_get (settings, "gtk-timeout-expand", &timeout, NULL);
-#endif
-
-    button->priv->timer = gdk_threads_add_timeout (timeout,
+    button->priv->timer = gdk_threads_add_timeout (TIMEOUT_REPEAT,
                                                    (GSourceFunc) button_timer_cb,
                                                    (gpointer) button);
 
@@ -147,17 +132,12 @@ button_timer_cb (InputPadGtkButton *button)
 static void
 start_timer (InputPadGtkButton *button)
 {
-    GtkSettings *settings;
-    guint timeout;
-
     g_return_if_fail (button->priv != NULL);
 
     if (button->priv->timer != 0) {
         return;
     }
-    settings = gtk_widget_get_settings (GTK_WIDGET (button));
-    g_object_get (settings, "gtk-timeout-initial", &timeout, NULL);
-    button->priv->timer = gdk_threads_add_timeout (timeout,
+    button->priv->timer = gdk_threads_add_timeout (TIMEOUT_INITIAL,
                                                    (GSourceFunc) button_timer_cb,
                                                    (gpointer) button);
 }
