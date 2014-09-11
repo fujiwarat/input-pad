@@ -80,6 +80,8 @@ libinput_pad_1_0_la_SOURCES = \
 	parse-pad.c                                             \
 	resources.c                                             \
 	unicode_block.h                                         \
+	viewport-gtk.c                                          \
+	viewport-gtk.h                                          \
 	window-gtk.c                                            \
 	$(NULL)
 

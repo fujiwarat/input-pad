@@ -66,6 +66,11 @@ GtkWidget *         input_pad_gtk_button_new_with_label_size
                                        (const gchar           *label,
                                         int                    icon_size);
 GtkWidget *         input_pad_gtk_button_new_with_unicode (guint code);
+void                input_pad_gtk_button_set_unicode
+                                       (InputPadGtkButton      *button,
+                                        guint                   code);
+guint               input_pad_gtk_button_get_unicode
+                                       (InputPadGtkButton      *button);
 guint               input_pad_gtk_button_get_keycode
                                        (InputPadGtkButton      *button);
 void                input_pad_gtk_button_set_keycode

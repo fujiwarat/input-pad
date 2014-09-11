@@ -45,6 +45,7 @@
 #include "input-pad-private.h"
 #include "input-pad-window-gtk.h"
 #include "unicode_block.h"
+#include "viewport-gtk.h"
 
 #define N_KEYBOARD_LAYOUT_PART 3
 #define INPUT_PAD_UI_FILE INPUT_PAD_UI_GTK_DIR "/input-pad.ui"
@@ -2009,6 +2010,68 @@ run_command (const gchar *command, gchar **command_output)
 }
 
 static void
+append_unicode_table (GtkWidget         *table,
+                      unsigned           int min,
+                      unsigned           int start,
+                      unsigned           int end,
+                      InputPadGtkWindow *input_pad)
+{
+    GtkCssProvider *css_provider;
+    GtkStyleContext *style_context;
+    GtkWidget *button;
+    GError *error = NULL;
+    unsigned int num;
+    int row, col;
+
+    css_provider = gtk_css_provider_new ();
+    gtk_css_provider_load_from_data (css_provider,
+                                     "GtkButton { padding-left: 1px;" \
+                                     "            padding-right: 1px;" \
+                                     "            padding-top: 1px;" \
+                                     "            padding-bottom: 1px;" \
+                                     "            border-top-width: 0px;" \
+                                     "            border-left-width: 0px;" \
+                                     "            border-bottom-width: 0px;" \
+                                     "            border-right-width: 0px; }",
+                                     -1,
+                                     &error);
+
+    for (num = start; num <= end; num++) {
+        button = input_pad_gtk_button_new_with_unicode (num);
+        row = (num - min) / INPUT_PAD_MAX_COLUMN;
+        col = (num - min) % INPUT_PAD_MAX_COLUMN;
+        style_context = gtk_widget_get_style_context (button);
+        gtk_style_context_add_provider (style_context,
+                                        GTK_STYLE_PROVIDER (css_provider),
+                                        GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+        gtk_grid_attach (GTK_GRID (table), button,
+                         col, row, 1, 1);
+        gtk_widget_show (button);
+        if (input_pad->child) {
+            gtk_widget_set_sensitive (button,
+                                      input_pad->priv->char_button_sensitive);
+        } else if (input_pad->priv->color_gray) {
+            /* char button is stdout only */
+            /* FIXME: cannot change background in GTK3 button. */
+            gtk_widget_override_background_color (button, GTK_STATE_NORMAL,
+                                                  input_pad->priv->color_gray);
+        }
+        g_signal_connect (G_OBJECT (button), "pressed",
+                          G_CALLBACK (on_button_pressed),
+                          input_pad);
+        g_signal_connect (G_OBJECT (button), "pressed-repeat",
+                          G_CALLBACK (on_button_pressed_repeat),
+                          input_pad);
+        g_signal_connect (G_OBJECT (input_pad),
+                          "char-button-sensitive",
+                          G_CALLBACK (on_window_char_button_sensitive),
+                          (gpointer) button);
+    }
+
+    g_object_unref (css_provider);
+}
+
+static void
 table_element_remove (GtkWidget *button, gpointer data)
 {
     TableForEachData *foreach_data = (TableForEachData*) data;
@@ -2040,7 +2103,8 @@ destroy_char_view_table_common (GtkWidget *scrolled, InputPadGtkWindow *window)
         return;
     }
     viewport = scrolled_list->data;
-    g_return_if_fail (GTK_IS_VIEWPORT (viewport));
+    g_return_if_fail (GTK_IS_VIEWPORT (viewport) ||
+                      INPUT_PAD_IS_GTK_VIEWPORT (viewport));
     viewport_list = gtk_container_get_children (GTK_CONTAINER (viewport));
     if (viewport_list == NULL) {
         return;
@@ -2068,7 +2132,7 @@ append_custom_char_view_table (GtkWidget *scrolled, InputPadTable *table_data)
     GError *error = NULL;
     gchar **char_table;
     gchar *str;
-    const int TABLE_COLUMN = table_data->column;
+    const int max_column = table_data->column;
     int i, num, row, col, len, code;
     guint keysym;
 #if 0
@@ -2100,7 +2164,7 @@ append_custom_char_view_table (GtkWidget *scrolled, InputPadTable *table_data)
             num++;
         }
     }
-    col = TABLE_COLUMN;
+    col = max_column;
     row = num / col;
     if (num % col) {
         row++;
@@ -2205,8 +2269,8 @@ append_custom_char_view_table (GtkWidget *scrolled, InputPadTable *table_data)
             }
             input_pad_gtk_button_set_table_type (INPUT_PAD_GTK_BUTTON (button),
                                                  table_data->type);
-            row = num / TABLE_COLUMN;
-            col = num % TABLE_COLUMN;
+            row = num / max_column;
+            col = num % max_column;
             style_context = gtk_widget_get_style_context (button);
             gtk_style_context_add_provider (style_context,
                                             GTK_STYLE_PROVIDER (css_provider),
@@ -3505,41 +3569,23 @@ append_all_char_view_table (GtkWidget      *scrolled,
                             GtkWidget      *window)
 {
     InputPadGtkWindow *input_pad;
-    unsigned int num;
-    int col, row;
-    const int TABLE_COLUMN = 15;
-    GtkCssProvider *css_provider;
-    GtkStyleContext *style_context;
+    unsigned int table_code_min = start;
+    unsigned int table_code_max = end;
     GtkWidget *table;
-    GtkWidget *button;
-    GError *error = NULL;
 
     g_return_if_fail (INPUT_PAD_IS_GTK_WINDOW (window));
 
-    if ((end - start) > 1000) {
-        g_warning ("Too many chars");
-        end = start + 1000;
-    }
-    col = TABLE_COLUMN;
-    row = (end - start + 1) / col;
-    if ((end - start + 1) % col) {
-        row++;
-    }
-
-    css_provider = gtk_css_provider_new ();
-    gtk_css_provider_load_from_data (css_provider,
-                                     "GtkButton { padding-left: 1px;" \
-                                     "            padding-right: 1px;" \
-                                     "            padding-top: 1px;" \
-                                     "            padding-bottom: 1px;" \
-                                     "            border-top-width: 0px;" \
-                                     "            border-left-width: 0px;" \
-                                     "            border-bottom-width: 0px;" \
-                                     "            border-right-width: 0px; }",
-                                     -1,
-                                     &error);
-
     input_pad = INPUT_PAD_GTK_WINDOW (window);
+
+    if ((end - start + 1) > INPUT_PAD_MAX_COLUMN * INPUT_PAD_MAX_ROW) {
+#if 0
+        g_warning ("Too many chars %ud > %ud",
+                   end - start + 1,
+                   INPUT_PAD_MAX_COLUMN * INPUT_PAD_MAX_ROW);
+#endif
+        end = start + INPUT_PAD_MAX_COLUMN * INPUT_PAD_MAX_WINDOW_ROW - 1;
+    }
+
     table = gtk_grid_new ();
     g_object_set (table,
                   "halign", GTK_ALIGN_START,
@@ -3551,47 +3597,28 @@ append_all_char_view_table (GtkWidget      *scrolled,
                   "row-homogeneous", TRUE,
                   "column-homogeneous", TRUE,
                   NULL);
-#if GTK_CHECK_VERSION (3, 8, 0)
-    gtk_container_add (GTK_CONTAINER (scrolled), table);
-#else
-    gtk_scrolled_window_add_with_viewport (GTK_SCROLLED_WINDOW (scrolled),
-                                           table);
-#endif
-    gtk_widget_show (table);
 
-    for (num = start; num <= end; num++) {
-        button = input_pad_gtk_button_new_with_unicode (num);
-        row = (num - start) / TABLE_COLUMN;
-        col = (num - start) % TABLE_COLUMN;
-        style_context = gtk_widget_get_style_context (button);
-        gtk_style_context_add_provider (style_context,
-                                        GTK_STYLE_PROVIDER (css_provider),
-                                        GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-        gtk_grid_attach (GTK_GRID (table), button,
-                         col, row, 1, 1);
-        gtk_widget_show (button);
-        if (input_pad->child) {
-            gtk_widget_set_sensitive (button,
-                                      input_pad->priv->char_button_sensitive);
-        } else if (input_pad->priv->color_gray) {
-            /* char button is stdout only */
-            /* FIXME: cannot change background in GTK3 button. */
-            gtk_widget_override_background_color (button, GTK_STATE_NORMAL,
-                                                  input_pad->priv->color_gray);
-        }
-        g_signal_connect (G_OBJECT (button), "pressed",
-                          G_CALLBACK (on_button_pressed),
-                          window);
-        g_signal_connect (G_OBJECT (button), "pressed-repeat",
-                          G_CALLBACK (on_button_pressed_repeat),
-                          window);
-        g_signal_connect (G_OBJECT (window),
-                          "char-button-sensitive",
-                          G_CALLBACK (on_window_char_button_sensitive),
-                          (gpointer) button);
+    append_unicode_table (table, start, start, end, input_pad);
+
+    if (end < table_code_max) {
+        GtkWidget *viewport = input_pad_gtk_viewport_new ();
+        gtk_container_add (GTK_CONTAINER (scrolled), viewport);
+        gtk_container_add (GTK_CONTAINER (viewport), table);
+        input_pad_gtk_viewport_table_configure (INPUT_PAD_GTK_VIEWPORT (viewport),
+                                                table,
+                                                table_code_min,
+                                                table_code_max);
+        gtk_widget_show (viewport);
+    } else {
+#if GTK_CHECK_VERSION (3, 8, 0)
+        gtk_container_add (GTK_CONTAINER (scrolled), table);
+#else
+        gtk_scrolled_window_add_with_viewport (GTK_SCROLLED_WINDOW (scrolled),
+                                               table);
+#endif
     }
 
-    g_object_unref (css_provider);
+    gtk_widget_show (table);
 }
 
 static void
@@ -3609,14 +3636,18 @@ create_all_char_view_ui (GtkBuilder    *builder,
     InputPadGtkWindowPrivate *priv;
     GtkWidget *hbox;
     GtkWidget *scrolled;
+    GtkWidget *scrollbar;
     GtkWidget *tv;
     GtkTreeModel *model;
     GtkCellRenderer *renderer;
     GtkTreeViewColumn *column;
     GtkTreeSelection *selection;
     GtkTreeIter iter;
+    GtkCssProvider *css_provider;
+    GtkStyleContext *style_context;
     static CharTreeViewData tv_data;
     GAction *action;
+    GError *error = NULL;
 
     priv = input_pad_gtk_window_get_instance_private (INPUT_PAD_GTK_WINDOW (window));
     hbox = priv->top_char_view_hbox;
@@ -3665,6 +3696,26 @@ create_all_char_view_ui (GtkBuilder    *builder,
                                     GTK_POLICY_AUTOMATIC,
                                     GTK_POLICY_ALWAYS);
     gtk_box_pack_start (GTK_BOX (hbox), scrolled, FALSE, FALSE, 0);
+
+    /* Disable multiple updated GtkAdjustment with value-changed signal. */
+    g_object_set (gtk_widget_get_settings (scrolled),
+                  "gtk-enable-animations", FALSE, NULL);
+
+    scrollbar = gtk_scrolled_window_get_vscrollbar (GTK_SCROLLED_WINDOW (scrolled));
+    css_provider = gtk_css_provider_new ();
+    gtk_css_provider_load_from_data (css_provider,
+                                     "GtkScrollbar { " \
+                                     "    -GtkScrollbar-has-backward-stepper: true;" \
+                                     "    -GtkScrollbar-has-forward-stepper: true;" \
+                                     "              }",
+                                     -1,
+                                     &error);
+    style_context = gtk_widget_get_style_context (scrollbar);
+    gtk_style_context_add_provider (style_context,
+                                    GTK_STYLE_PROVIDER (css_provider),
+                                    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+    g_object_unref (css_provider);
+
     gtk_widget_show (scrolled);
 
     selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tv));
