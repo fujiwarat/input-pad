@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: input-pad\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
-"POT-Creation-Date: 2014-09-12 18:38+0900\n"
-"PO-Revision-Date: 2014-09-12 13:05+0000\n"
+"POT-Creation-Date: 2014-09-15 22:18+0900\n"
+"PO-Revision-Date: 2014-09-15 13:26+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
@@ -2136,7 +2136,7 @@ msgid "Ski"
 msgstr "Лижі"
 
 #: ../data/str.xml.in.h:171
-msgid "Bascketball"
+msgid "Basketball"
 msgstr "Баскетбол"
 
 #: ../data/str.xml.in.h:172
@@ -2688,7 +2688,7 @@ msgid "Crystal"
 msgstr "Кристал"
 
 #: ../data/str.xml.in.h:309
-msgid "David Start"
+msgid "David Star"
 msgstr "Зірка Давида"
 
 #: ../data/str.xml.in.h:310
@@ -2824,279 +2824,275 @@ msgid "Medical Mask"
 msgstr "Медична маска"
 
 #: ../data/str.xml.in.h:343
-msgid "Disappinted"
-msgstr "Розчарований"
-
-#: ../data/str.xml.in.h:344
 msgid "OK"
 msgstr "Гаразд"
 
-#: ../data/str.xml.in.h:345
+#: ../data/str.xml.in.h:344
 msgid "Bow"
 msgstr "Лук"
 
-#: ../data/str.xml.in.h:346
+#: ../data/str.xml.in.h:345
 msgid "See-No-Evil"
 msgstr "Не бачу зла"
 
-#: ../data/str.xml.in.h:347
+#: ../data/str.xml.in.h:346
 msgid "Hear-No-Evil"
 msgstr "Не чую зла"
 
-#: ../data/str.xml.in.h:348
+#: ../data/str.xml.in.h:347
 msgid "Speak-No-Evil"
 msgstr "Не кажу злого"
 
-#: ../data/str.xml.in.h:349
+#: ../data/str.xml.in.h:348
 msgid "Banzai"
 msgstr "Банзай!"
 
-#: ../data/str.xml.in.h:350
+#: ../data/str.xml.in.h:349
 msgid "Pleading"
 msgstr "Захист"
 
-#: ../data/str.xml.in.h:351
+#: ../data/str.xml.in.h:350
 msgid "Smileys"
 msgstr "Емоційки"
 
-#: ../data/str.xml.in.h:352
+#: ../data/str.xml.in.h:351
 msgid "Smile Big"
 msgstr "Посмішка до вух"
 
-#: ../data/str.xml.in.h:353
+#: ../data/str.xml.in.h:352
 msgid "Sad"
 msgstr "Сумний"
 
-#: ../data/str.xml.in.h:354
+#: ../data/str.xml.in.h:353
 msgid "Wink"
 msgstr "Підморгує"
 
-#: ../data/str.xml.in.h:355
+#: ../data/str.xml.in.h:354
 msgid "Shock"
 msgstr "Шок"
 
-#: ../data/str.xml.in.h:356
+#: ../data/str.xml.in.h:355
 msgid "Kiss | Secret"
 msgstr "Цілунок | Потайки"
 
-#: ../data/str.xml.in.h:357
+#: ../data/str.xml.in.h:356
 msgid "Glasses Cool | Eyeroll"
 msgstr "Крутий в окулярах або вирячені очі"
 
-#: ../data/str.xml.in.h:358
+#: ../data/str.xml.in.h:357
 msgid "Glasses Cool"
 msgstr "Крутий в окулярах"
 
-#: ../data/str.xml.in.h:359
+#: ../data/str.xml.in.h:358
 msgid "Embarrassed"
 msgstr "Стурбований"
 
-#: ../data/str.xml.in.h:360
+#: ../data/str.xml.in.h:359
 msgid "Crying"
 msgstr "Ридаючий"
 
-#: ../data/str.xml.in.h:361
+#: ../data/str.xml.in.h:360
 msgid "Thinking"
 msgstr "Думає"
 
-#: ../data/str.xml.in.h:362
+#: ../data/str.xml.in.h:361
 msgid "Don't Know"
 msgstr "Не знаю"
 
-#: ../data/str.xml.in.h:363
+#: ../data/str.xml.in.h:362
 msgid "Party"
 msgstr "Вечірка"
 
-#: ../data/str.xml.in.h:364
+#: ../data/str.xml.in.h:363
 msgid "Yawn"
 msgstr "Позіхає"
 
-#: ../data/str.xml.in.h:365
+#: ../data/str.xml.in.h:364
 msgid "Bunny"
 msgstr "Кролик"
 
-#: ../data/str.xml.in.h:366
+#: ../data/str.xml.in.h:365
 msgid "Sick"
 msgstr "Хворий"
 
-#: ../data/str.xml.in.h:367
+#: ../data/str.xml.in.h:366
 msgid "Devil"
 msgstr "Знавіснілий"
 
-#: ../data/str.xml.in.h:368
+#: ../data/str.xml.in.h:367
 msgid "Angel"
 msgstr "Ангел"
 
-#: ../data/str.xml.in.h:369
+#: ../data/str.xml.in.h:368
 msgid "Love"
 msgstr "Любов"
 
-#: ../data/str.xml.in.h:370
+#: ../data/str.xml.in.h:369
 msgid "Love Over"
 msgstr "Кінець кохання"
 
-#: ../data/str.xml.in.h:371
+#: ../data/str.xml.in.h:370
 msgid "Film"
 msgstr "Кінострічка"
 
-#: ../data/str.xml.in.h:372
+#: ../data/str.xml.in.h:371
 msgid "Clock"
 msgstr "Годинник"
 
-#: ../data/str.xml.in.h:373
+#: ../data/str.xml.in.h:372
 msgid "Coffee"
 msgstr "Кава"
 
-#: ../data/str.xml.in.h:374
+#: ../data/str.xml.in.h:373
 msgid "Phone"
 msgstr "Телефон"
 
-#: ../data/str.xml.in.h:375
+#: ../data/str.xml.in.h:374
 msgid "Hug Left"
 msgstr "Обнімає ліворуч"
 
-#: ../data/str.xml.in.h:376
+#: ../data/str.xml.in.h:375
 msgid "Hug Right"
 msgstr "Обнімає праворуч"
 
-#: ../data/str.xml.in.h:377
+#: ../data/str.xml.in.h:376
 msgid "Yes"
 msgstr "Так"
 
-#: ../data/str.xml.in.h:378
+#: ../data/str.xml.in.h:377
 msgid "No"
 msgstr "Ні"
 
-#: ../data/str.xml.in.h:379
+#: ../data/str.xml.in.h:378
 msgid "Shut Mouth"
 msgstr "Закритий рот"
 
-#: ../data/str.xml.in.h:380
+#: ../data/str.xml.in.h:379
 msgid "Money Mouth"
 msgstr "Гроші тримаю при собі"
 
-#: ../data/str.xml.in.h:381
+#: ../data/str.xml.in.h:380
 msgid "Foot in Mouth"
 msgstr "Не варто було цього казати"
 
-#: ../data/str.xml.in.h:382
+#: ../data/str.xml.in.h:381
 msgid "Shout"
 msgstr "Крик"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:384
+#: ../data/str.xml.in.h:383
 msgid "Smileys (Japanese)"
 msgstr "Емоційки (японські)"
 
-#: ../data/str.xml.in.h:385
+#: ../data/str.xml.in.h:384
 msgid "Smoking"
 msgstr "Курить"
 
-#: ../data/str.xml.in.h:386
+#: ../data/str.xml.in.h:385
 msgid "Sorry"
 msgstr "Вибач"
 
-#: ../data/str.xml.in.h:387
+#: ../data/str.xml.in.h:386
 msgid "Hug"
 msgstr "Обнімає"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:389
+#: ../data/str.xml.in.h:388
 msgid "Smileys (Japanese 2ch)"
 msgstr "Емоційки (японські, 2ch)"
 
-#: ../data/str.xml.in.h:390
+#: ../data/str.xml.in.h:389
 msgid "Hey"
 msgstr "Гей"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:392
+#: ../data/str.xml.in.h:391
 msgid "Smileys (Chinese)"
 msgstr "Емоційки (китайські)"
 
-#: ../data/str.xml.in.h:393
+#: ../data/str.xml.in.h:392
 msgid "Crow"
 msgstr "Ворона"
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:395
+#: ../data/str.xml.in.h:394
 msgid "Acronym"
 msgstr "Абревіатури"
 
-#: ../data/str.xml.in.h:396
+#: ../data/str.xml.in.h:395
 msgid "Acronym (Computer)"
 msgstr "Абревіатури (комп’ютерні)"
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:398
+#: ../data/str.xml.in.h:397
 msgid "Acronym (Japanese)"
 msgstr "Абревіатури (японські)"
 
-#: ../data/str.xml.in.h:399
+#: ../data/str.xml.in.h:398
 msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
 msgstr "Не хочу читати між рядками"
 
-#: ../data/str.xml.in.h:400
+#: ../data/str.xml.in.h:399
 msgid "Can't get together (Guda Guda)"
 msgstr "Не можу розібратися"
 
-#: ../data/str.xml.in.h:401
+#: ../data/str.xml.in.h:400
 msgid "Say whatever one feels (Iitaidake)"
 msgstr "Точно сказано (ітайдаке)"
 
-#: ../data/str.xml.in.h:402
+#: ../data/str.xml.in.h:401
 msgid "Excited (Kitakore)"
 msgstr "Захоплення (кітакоре)"
 
-#: ../data/str.xml.in.h:403
+#: ../data/str.xml.in.h:402
 msgid "Detail (Kuwashiku)"
 msgstr "Докладніше"
 
-#: ../data/str.xml.in.h:404
+#: ../data/str.xml.in.h:403
 msgid "Cannot read between lines (Kuuki Ga Yomenai)"
 msgstr "Не можу читати між рядками"
 
-#: ../data/str.xml.in.h:405
+#: ../data/str.xml.in.h:404
 msgid "Omission (Shouryaku)"
 msgstr "Недогляд (сьоряку)"
 
-#: ../data/str.xml.in.h:406
+#: ../data/str.xml.in.h:405
 msgid "Excited (Waku Waku Teka Teka)"
 msgstr "Захоплення (ваку-ваку тека-тека)"
 
-#: ../data/str.xml.in.h:407
+#: ../data/str.xml.in.h:406
 msgid "Laugh"
 msgstr "Гигикає"
 
-#: ../data/str.xml.in.h:408
+#: ../data/str.xml.in.h:407
 msgid "Dude (Oi!)"
 msgstr "Чувак"
 
-#: ../data/str.xml.in.h:409
+#: ../data/str.xml.in.h:408
 msgid "In The Meantime (Toriaezu, Ma)"
 msgstr "Між тим (торіецу, ма)"
 
-#: ../data/str.xml.in.h:410
+#: ../data/str.xml.in.h:409
 msgid "Bye"
 msgstr "Па"
 
-#: ../data/str.xml.in.h:411
+#: ../data/str.xml.in.h:410
 msgid "False Start (Flying Get)"
 msgstr "Фальстарт"
 
-#: ../data/str.xml.in.h:412
+#: ../data/str.xml.in.h:411
 msgid "Fulfilling Life (Real life is Zyujitsu)"
 msgstr "Переповнений життям (життя — джіу-джітсу)"
 
-#: ../data/str.xml.in.h:413
+#: ../data/str.xml.in.h:412
 msgid "Laugh (Warau)"
 msgstr "Гигикає (варо)"
 
-#: ../data/str.xml.in.h:414
+#: ../data/str.xml.in.h:413
 msgid "Good job (Otsukare)"
 msgstr "Чудова робота (отсукаре)"
 
-#: ../data/str.xml.in.h:415
+#: ../data/str.xml.in.h:414
 msgid "He (Yatsu &lt;- Yashi)"
 msgstr "Він (яцу &lt;- яцу)"
 
