@@ -1,7 +1,7 @@
 #labels Featured
 == Stable Sources ==
-http://github.com/fujiwarat/input-pad/releases <br />
-http://github.com/fujiwarat/ibus-input-pad/releases <br \>
+http://github.com/fujiwarat/input-pad/releases<br />
+http://github.com/fujiwarat/ibus-input-pad/releases<br />
 (old http://code.google.com/p/input-pad/downloads/list)
 
 _Note: ibus-input-pad 1.4.x requires ibus 1.4 (currently 1.3.99.xx). If you use ibus 1.3.x, please use ibus-input-pad 0.1.x . You could also find README file in the tarball:_<br />
