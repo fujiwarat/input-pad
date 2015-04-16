@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad
 #
-# Copyright (c) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010-2014 Red Hat, Inc.
+# Copyright (c) 2010-2015 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2015 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -94,7 +94,7 @@ PKG_CHECK_MODULES(GMODULE2,
 )
 
 PKG_CHECK_MODULES(GTK3, [
-    gtk+-3.0 >= 3.10
+    gtk+-3.0 >= 3.12
 ])
 GTK_API_VERSION=3.0
 AC_SUBST(GTK_API_VERSION)

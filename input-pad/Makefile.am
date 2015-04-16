@@ -109,7 +109,7 @@ libinput_pad_1_0_la_LDFLAGS = \
 	$(no_undefined)                                         \
 	$(NULL)
 
-resources.c: input-pad.gresource.xml
+resources.c: input-pad.gresource.xml app-menu.ui dialog.ui window-gtk.ui
 	$(GLIB_COMPILE_RESOURCES) $< --target=$@ --generate-source
 
 input-pad-marshal.h: input-pad-marshal.list

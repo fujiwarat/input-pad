@@ -1,7 +1,7 @@
 /* vim:set et sts=4: */
 /* input-pad - The input pad
- * Copyright (C) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
- * Copyright (C) 2010-2014 Red Hat, Inc.
+ * Copyright (C) 2010-2015 Takao Fujiwara <takao.fujiwara1@gmail.com>
+ * Copyright (C) 2010-2015 Red Hat, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -129,7 +129,6 @@ struct _InputPadGtkWindowPrivate {
     gchar                     **group_variants;
     gchar                     **group_options;
     guint                       char_button_sensitive : 1;
-    GdkRGBA                    *color_gray;
     /* The kbdui_name is used for each window instance. */
     gchar                      *kbdui_name;
     InputPadGtkKbdui           *kbdui;
@@ -992,7 +991,6 @@ on_button_config_options_close_clicked (GtkButton *button, gpointer data)
     GList *list = NULL;
     GList *list_button = NULL;
     GtkWidget *expander;
-    GtkWidget *alignment;
     GtkWidget *vbox;
     GtkWidget *checkbutton;
     GtkWidget *combobox;
@@ -1018,10 +1016,6 @@ on_button_config_options_close_clicked (GtkButton *button, gpointer data)
         expander = GTK_WIDGET (list->data);
 
         tmp_list = gtk_container_get_children (GTK_CONTAINER (expander));
-        alignment = GTK_WIDGET (tmp_list->data);
-        g_list_free (tmp_list);
-
-        tmp_list = gtk_container_get_children (GTK_CONTAINER (alignment));
         vbox = GTK_WIDGET (tmp_list->data);
         g_list_free (tmp_list);
 
@@ -2024,17 +2018,34 @@ append_unicode_table (GtkWidget         *table,
     int row, col;
 
     css_provider = gtk_css_provider_new ();
-    gtk_css_provider_load_from_data (css_provider,
-                                     "GtkButton { padding-left: 1px;" \
-                                     "            padding-right: 1px;" \
-                                     "            padding-top: 1px;" \
-                                     "            padding-bottom: 1px;" \
-                                     "            border-top-width: 0px;" \
-                                     "            border-left-width: 0px;" \
-                                     "            border-bottom-width: 0px;" \
-                                     "            border-right-width: 0px; }",
-                                     -1,
-                                     &error);
+    if (input_pad->child)
+        gtk_css_provider_load_from_data (
+                css_provider,
+                "GtkButton { padding-left: 1px;" \
+                "            padding-right: 1px;" \
+                "            padding-top: 1px;" \
+                "            padding-bottom: 1px;" \
+                "            border-top-width: 0px;" \
+                "            border-left-width: 0px;" \
+                "            border-bottom-width: 0px;" \
+                "            border-right-width: 0px; }",
+                -1,
+                &error);
+    else
+        /* FIXME: cannot change background in GTK3 button. */
+        gtk_css_provider_load_from_data (
+                css_provider,
+                "GtkButton { padding-left: 1px;" \
+                "            padding-right: 1px;" \
+                "            padding-top: 1px;" \
+                "            padding-bottom: 1px;" \
+                "            border-top-width: 0px;" \
+                "            border-left-width: 0px;" \
+                "            border-bottom-width: 0px;" \
+                "            border-right-width: 0px;" \
+                "            background-color: LightGray; }",
+                -1,
+                &error);
 
     for (num = start; num <= end; num++) {
         button = input_pad_gtk_button_new_with_unicode (num);
@@ -2047,15 +2058,9 @@ append_unicode_table (GtkWidget         *table,
         gtk_grid_attach (GTK_GRID (table), button,
                          col, row, 1, 1);
         gtk_widget_show (button);
-        if (input_pad->child) {
+        if (input_pad->child)
             gtk_widget_set_sensitive (button,
                                       input_pad->priv->char_button_sensitive);
-        } else if (input_pad->priv->color_gray) {
-            /* char button is stdout only */
-            /* FIXME: cannot change background in GTK3 button. */
-            gtk_widget_override_background_color (button, GTK_STATE_NORMAL,
-                                                  input_pad->priv->color_gray);
-        }
         g_signal_connect (G_OBJECT (button), "pressed",
                           G_CALLBACK (on_button_pressed),
                           input_pad);
@@ -2178,17 +2183,34 @@ append_custom_char_view_table (GtkWidget *scrolled, InputPadTable *table_data)
 #endif
 
     css_provider = gtk_css_provider_new ();
-    gtk_css_provider_load_from_data (css_provider,
-                                     "GtkButton { padding-left: 1px;" \
-                                     "            padding-right: 1px;" \
-                                     "            padding-top: 1px;" \
-                                     "            padding-bottom: 1px;" \
-                                     "            border-top-width: 0px;" \
-                                     "            border-left-width: 0px;" \
-                                     "            border-bottom-width: 0px;" \
-                                     "            border-right-width: 0px; }",
-                                     -1,
-                                     &error);
+    if (input_pad->child)
+        gtk_css_provider_load_from_data (
+                css_provider,
+                "GtkButton { padding-left: 1px;" \
+                "            padding-right: 1px;" \
+                "            padding-top: 1px;" \
+                "            padding-bottom: 1px;" \
+                "            border-top-width: 0px;" \
+                "            border-left-width: 0px;" \
+                "            border-bottom-width: 0px;" \
+                "            border-right-width: 0px; }",
+                -1,
+                &error);
+    else
+        /* FIXME: cannot change background in GTK3 button. */
+        gtk_css_provider_load_from_data (
+                css_provider,
+                "GtkButton { padding-left: 1px;" \
+                "            padding-right: 1px;" \
+                "            padding-top: 1px;" \
+                "            padding-bottom: 1px;" \
+                "            border-top-width: 0px;" \
+                "            border-left-width: 0px;" \
+                "            border-bottom-width: 0px;" \
+                "            border-right-width: 0px;" \
+                "            background-color: LightGray; }",
+                -1,
+                &error);
 
     table = gtk_grid_new ();
     /* gtk_table_attach_defaults assigns GTK_EXPAND and
@@ -2279,15 +2301,9 @@ append_custom_char_view_table (GtkWidget *scrolled, InputPadTable *table_data)
                              col, row, 1, 1);
 
             gtk_widget_show (button);
-            if (input_pad->child) {
+            if (input_pad->child)
                 gtk_widget_set_sensitive (button,
                                           input_pad->priv->char_button_sensitive);
-            } else if (input_pad->priv->color_gray) {
-                /* char button is stdout only */
-                /* FIXME: cannot change background in GTK3 button. */
-                gtk_widget_override_background_color (button, GTK_STATE_NORMAL,
-                                                      input_pad->priv->color_gray);
-            }
             g_signal_connect (G_OBJECT (button), "pressed",
                               G_CALLBACK (on_button_pressed),
                               (gpointer) table_data->priv->signal_window);
@@ -2919,7 +2935,6 @@ config_options_treeview_set (InputPadGtkWindow                 *input_pad,
 {
     InputPadXKBOptionGroupList *groups = NULL;
     GtkWidget *expander;
-    GtkWidget *alignment;
     GtkWidget *vbox;
     GtkWidget *checkbutton;
     GtkWidget *label;
@@ -2937,12 +2952,9 @@ config_options_treeview_set (InputPadGtkWindow                 *input_pad,
                            (gpointer) groups->option_group);
         g_object_set_data (G_OBJECT (expander), "checked",
                            GINT_TO_POINTER (checked));
-        alignment = gtk_alignment_new (0, 0, 1, 0);
-        gtk_alignment_set_padding (GTK_ALIGNMENT (alignment), 6, 0, 18, 0);
-        gtk_container_add (GTK_CONTAINER (expander), alignment);
-        gtk_widget_show (alignment);
         vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-        gtk_container_add (GTK_CONTAINER (alignment), vbox);
+        gtk_widget_set_margin_start (vbox, 18);
+        gtk_container_add (GTK_CONTAINER (expander), vbox);
         gtk_widget_show (vbox);
 
         InputPadXKBOptionList *options = groups->options;
@@ -4424,18 +4436,12 @@ static void
 input_pad_gtk_window_set_priv (InputPadGtkWindow *window)
 {
     InputPadGtkWindowPrivate *priv = input_pad_gtk_window_get_instance_private (window);
-    GdkRGBA color;
 
     if (priv->group == NULL) {
         priv->group = input_pad_group_parse_all_files (NULL, NULL);
     }
     priv->char_button_sensitive = TRUE;
 
-    if (!gdk_rgba_parse (&color, "gray")) {
-        color.red = color.green = color.blue = 1.;
-        color.alpha = 1.;
-    }
-    priv->color_gray = gdk_rgba_copy (&color);
     if (kbdui_name) {
         priv->kbdui_name = g_strdup (kbdui_name);
     }
@@ -4467,10 +4473,6 @@ input_pad_gtk_window_real_destroy (GtkWidget *widget)
         if (window->priv->group) {
             input_pad_group_destroy (window->priv->group);
             window->priv->group = NULL;
-        }
-        if (window->priv->color_gray) {
-            gdk_rgba_free (window->priv->color_gray);
-            window->priv->color_gray = NULL;
         }
 #ifdef MODULE_XTEST_GDK_BASE
         if (use_module_xtest) {
