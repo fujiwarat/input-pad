@@ -31,6 +31,9 @@
 
 #include "eek-gtk.h"
 #include "geometry-xkb.h"
+#ifdef I_    /* eek-gtk.h calls eek-types.h */
+#undef I_
+#endif
 #include "i18n.h"
 #include "input-pad-group.h"
 #include "input-pad-kbdui-gtk.h"
