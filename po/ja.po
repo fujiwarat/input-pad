@@ -1,5 +1,5 @@
 # Japanese translations for input-pad
-# Copyright (C) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (C) 2010-2015 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
 #
 # Translators:
@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
 "POT-Creation-Date: 2014-09-15 22:18+0900\n"
-"PO-Revision-Date: 2014-09-15 13:26+0000\n"
-"Last-Translator: fujiwara <tfujiwar@redhat.com>\n"
-"Language-Team: Japanese <trans-ja@lists.fedoraproject.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-09-15 09:26-0400\n"
+"Last-Translator: fujiwara <tfujiwar@redhat.com>\n"
+"Language-Team: Japanese <trans-ja@lists.fedoraproject.org>\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.6.2\n"
 
 #: ../data/alphabet.xml.in.in.h:1
 msgid "Alphabets"
@@ -3158,7 +3159,7 @@ msgstr "トラブルシュート(_T)"
 
 #: ../input-pad/app-menu.ui.h:13
 msgid "_About"
-msgstr ""
+msgstr "情報(_A)"
 
 #: ../input-pad/dialog.ui.h:1
 msgid "Code Point Dialog"
@@ -3181,40 +3182,40 @@ msgid "Copy Buffer"
 msgstr "バッファをコピー"
 
 #: ../input-pad/dialog.ui.h:6
-msgid ""
-"Base 16\n"
+msgid "Base 16\n"
 "Hex"
-msgstr "16 進数\nHex"
+msgstr "16 進数\n"
+"Hex"
 
 #: ../input-pad/dialog.ui.h:8
 msgid "Set number case to hexadecimal"
 msgstr "16 進数に設定します"
 
 #: ../input-pad/dialog.ui.h:9
-msgid ""
-"Base 10\n"
+msgid "Base 10\n"
 "Dec"
-msgstr "10 進数\nDec"
+msgstr "10 進数\n"
+"Dec"
 
 #: ../input-pad/dialog.ui.h:11
 msgid "Set number case to decimal"
 msgstr "10 進数に設定します"
 
 #: ../input-pad/dialog.ui.h:12
-msgid ""
-"Base 8\n"
+msgid "Base 8\n"
 "Oct"
-msgstr "8 進数\nOct"
+msgstr "8 進数\n"
+"Oct"
 
 #: ../input-pad/dialog.ui.h:14
 msgid "Set number case to octal"
 msgstr "8 進数に設定します"
 
 #: ../input-pad/dialog.ui.h:15
-msgid ""
-"Base 2\n"
+msgid "Base 2\n"
 "Bin"
-msgstr "2 進数\nBin"
+msgstr "2 進数\n"
+"Bin"
 
 #: ../input-pad/dialog.ui.h:17
 msgid "Set number case to binary"
@@ -3240,13 +3241,25 @@ msgstr "インプットパッドトラブルシュート"
 #, no-c-format
 msgid ""
 "\n"
-"This application can be run either as a stand-alone program or under an input method application.\n"
-"If you wish to send multi-byte characters, this application needs to be run under an input method application.\n"
-"If you wish to send characters to X11 applications, those applications needs to allow send events. e.g.\n"
+"This application can be run either as a stand-alone program or under an "
+"input method application.\n"
+"If you wish to send multi-byte characters, this application needs to be run "
+"under an input method application.\n"
+"If you wish to send characters to X11 applications, those applications needs "
+"to allow send events. e.g.\n"
 "% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
 "\n"
-"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad to customize those in \"Custom Character\" pane."
-msgstr "\nこのアプリケーションは、スタンドアロンプログラムとして、もしくは IM アプリケーションの元で実行可能です。\nマルチバイト文字を送る場合、このアプリケーションを IM アプリケーションの元で実行する必要があります。\nX11 アプリケーションに文字を送る場合、送信イベントを許可する必要があります。例:\n% xterm -xrm \"XTerm*allowSendEvents: true\"\n\n\"カスタム文字\" ペインにおけるパッドファイルをカスタマイズするために /usr/share/input-pad/pad から $HOME/.config/pad にパッドファイルをコピーすることが可能です。"
+"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/"
+"pad to customize those in \"Custom Character\" pane."
+msgstr ""
+"\n"
+"このアプリケーションは、スタンドアロンプログラムとして、もしくは IM アプリケーションの元で実行可能です。\n"
+"マルチバイト文字を送る場合、このアプリケーションを IM アプリケーションの元で実行する必要があります。\n"
+"X11 アプリケーションに文字を送る場合、送信イベントを許可する必要があります。例:\n"
+"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
+"\n"
+"\"カスタム文字\" ペインにおけるパッドファイルをカスタマイズするために /usr/share/input-pad/pad から $HOME/."
+"config/pad にパッドファイルをコピーすることが可能です。"
 
 #: ../input-pad/dialog.ui.h:31
 msgid "_OK"
@@ -4114,18 +4127,22 @@ msgstr "レイアウトを構成する(_C)"
 #. "modify it under the terms of the GNU Lesser General Public "
 #. "License as published by the Free Software Foundation; either "
 #. "version 2 of the License, or (at your option) any later version.");
+#. 
 #. license2 = _(""
 #. "This library is distributed in the hope that it will be useful, "
 #. "but WITHOUT ANY WARRANTY; without even the implied warranty of "
 #. "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU "
 #. "Lesser General Public License for more details.");
+#. 
 #. license3 = _(""
 #. "You should have received a copy of the GNU Lesser General Public "
 #. "License along with this library; if not, write to the Free Software "
 #. "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, "
 #. "MA  02110-1301  USA");
+#. 
 #. license = g_strdup_printf ("%s\n\n%s\n\n%s",
 #. license1, license2, license3);
+#. 
 #. This format has been used since gtk 2.20.
 #: ../input-pad/window-gtk.c:3152
 #, c-format
