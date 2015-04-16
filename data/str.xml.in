@@ -1948,10 +1948,6 @@
           <_comment>Japan</_comment>
         </string>
         <string>
-          <label>🗾</label>
-          <_comment>Japan</_comment>
-        </string>
-        <string>
           <label>☹</label>
           <_comment>Anguish</_comment>
         </string>
@@ -3118,6 +3114,10 @@
         <string>
           <label>rotfl</label>
           <comment>rolling on the floor, laughing</comment>
+        </string>
+        <string>
+          <label>SGTM</label>
+          <comment>Sounds good to me</comment>
         </string>
         <string>
           <label>thx</label>
