@@ -1,0 +1,74 @@
+/usr/bin/input-pad is a standalone application to show the input-pad GUI and all characters on character table are output on stdout. To send the characters other text applications, you need to use an input method. Currently IBus supports input-pad, which is one of the most major input methods, and ibus-input-pad is the IBus engine. ibus-input-pad requires input-pad.
+
+Please refer http://code.google.com/p/ibus/ for IBus topics.
+You might need to restart ibus-daemon to enable ibus-input-pad .
+
+usage:
+```
+% input-pad --help
+```
+
+# Fedora #
+Fedora provides the official packages.
+## Fedora 12 or later ##
+
+```
+# yum install input-pad
+# yum install ibus-input-pad
+```
+
+devel package:
+```
+# yum install input-pad-devel
+```
+
+python package:
+```
+# yum install input-pad-python
+```
+
+  * input-pad-xtest is available to use X11 XTEST extension but it is provided for the test purpose only at present.
+
+### eekboard extension ###
+
+Fedora 13 or later also provide eekboard GUI extension [1](1.md)
+```
+# yum install input-pad eekboard-libs eekboard input-pad-eek ibus-input-pad
+% input-pad --help
+```
+
+# Ubuntu #
+Non-official packages are available for Ubuntu.
+## Ubuntu 10.10 (maverick) ##
+
+```
+% sudo add-apt-repository ppa:takao-fujiwara/ppa
+% sudo apt-get update
+% sudo apt-get install libinput-pad1
+% sudo apt-get install input-pad
+% sudo apt-get install ibus-input-pad
+```
+
+devel package:
+```
+% sudo apt-get install libinput-pad-dev
+```
+
+python package:
+```
+% sudo apt-get install python-input-pad
+```
+
+  * If you wish to install packages by manual, please refer https://launchpad.net/~takao-fujiwara/+archive/ppa
+  * libinput-pad-xtest is available to use X11 XTEST extension but it is provided for the test purpose only at present.
+
+libinput-pad-eek is the eekboard GUI extension [1](1.md)
+```
+% sudo apt-get install libeek0
+% sudo apt-get install eekboard
+% sudo apt-get install libinput-pad-eek
+% input-pad --help
+```
+
+[1](1.md) eekboard is a virtual keyboard for GNOME
+http://github.com/ueno/eekboard

@@ -1,0 +1,25 @@
+## Stable Sources ##
+http://github.com/fujiwarat/input-pad/releases<br />
+http://github.com/fujiwarat/ibus-input-pad/releases<br />
+(old http://code.google.com/p/input-pad/downloads/list)
+
+_Note: ibus-input-pad 1.4.x requires ibus 1.4 (currently 1.3.99.xx). If you use ibus 1.3.x, please use ibus-input-pad 0.1.x . You could also find README file in the tarball:_<br />
+https://github.com/fujiwarat/ibus-input-pad/blob/master/README<br />
+You also could find labels, 1.2, 1.3, 1.4, on the downloads page, which means the supported ibus version.
+
+## Development Sources ##
+#summary Input Pad Source Repository for Developers
+
+```
+git clone git://github.com/fujiwarat/input-pad.git
+```
+
+
+Currently IBus can work with Input Pad. <br />
+http://code.google.com/p/ibus
+
+```
+git clone git://github.com/phuang/ibus.git
+git clone git://github.com/fujiwarat/ibus-input-pad.git
+git clone git://github.com/fujiwarat/ibus-anthy.git
+```
