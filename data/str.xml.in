@@ -23,10 +23,6 @@
           <_comment>Comet</_comment>
         </string>
         <string>
-          <label>☠</label>
-          <_comment>Skull</_comment>
-        </string>
-        <string>
           <label>☤</label>
           <_comment>Cross</_comment>
         </string>
@@ -421,6 +417,22 @@
         <string>
           <label>🌊</label>
           <_comment>Wave</_comment>
+        </string>
+        <string>
+          <label>🌍</label>
+          <_comment>Earth</_comment>
+        </string>
+        <string>
+          <label>🌎</label>
+          <_comment>Earth</_comment>
+        </string>
+        <string>
+          <label>🌏</label>
+          <_comment>Earth</_comment>
+        </string>
+        <string>
+          <label>🌐</label>
+          <_comment>Earth</_comment>
         </string>
         <string>
           <label>●</label>
@@ -853,6 +865,10 @@
         <string>
           <label>🎂</label>
           <_comment>Cake</_comment>
+        </string>
+        <string>
+          <label>🎃</label>
+          <_comment>Hallowe'en</_comment>
         </string>
         <string>
           <label>🎄</label>
@@ -1460,6 +1476,58 @@
           <_comment>Restroom</_comment>
         </string>
         <string>
+          <label>👸</label>
+          <_comment>Princess</_comment>
+        </string>
+        <string>
+          <label>👹</label>
+          <_comment>Japanese Ogre</_comment>
+        </string>
+        <string>
+          <label>👺</label>
+          <_comment>Japanese Goblin</_comment>
+        </string>
+        <string>
+          <label>👻</label>
+          <_comment>Ghost</_comment>
+        </string>
+        <string>
+          <label>👼</label>
+          <_comment>Baby Angel</_comment>
+        </string>
+        <string>
+          <label>👽</label>
+          <_comment>Extraterrestrial Alien</_comment>
+        </string>
+        <string>
+          <label>👾</label>
+          <_comment>Alien Monster</_comment>
+        </string>
+        <string>
+          <label>👿</label>
+          <_comment>IMP</_comment>
+        </string>
+        <string>
+          <label>💀</label>
+          <_comment>Skull</_comment>
+        </string>
+        <string>
+          <label>☠</label>
+          <_comment>Skull</_comment>
+        </string>
+        <string>
+          <label>💁</label>
+          <_comment>Information Desk Person</_comment>
+        </string>
+        <string>
+          <label>💂</label>
+          <_comment>Guardsman</_comment>
+        </string>
+        <string>
+          <label>💃</label>
+          <_comment>Dancer</_comment>
+        </string>
+        <string>
           <label>💄</label>
           <_comment>Lipstick</_comment>
         </string>
@@ -1496,8 +1564,24 @@
           <_comment>Kiss</_comment>
         </string>
         <string>
+          <label>💌</label>
+          <_comment>Love Letter</_comment>
+        </string>
+        <string>
           <label>💍</label>
           <_comment>Ring</_comment>
+        </string>
+        <string>
+          <label>💎</label>
+          <_comment>Gem Stone</_comment>
+        </string>
+        <string>
+          <label>⚭</label>
+          <_comment>Gem Stone</_comment>
+        </string>
+        <string>
+          <label>💒</label>
+          <_comment>Wedding</_comment>
         </string>
         <string>
           <label>💏</label>
@@ -3254,7 +3338,7 @@
         </string>
       </table>
       <table>
-        <column>8</column>
+        <column>4</column>
         <!-- http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0 -->
         <_name>Acronym (Japanese)</_name>
         <string>
@@ -3310,12 +3394,36 @@
           <_comment>Dude (Oi!)</_comment>
         </string>
         <string>
+          <label>乙</label>
+          <_comment>Good job (Otsukare)</_comment>
+        </string>
+        <string>
+          <label>クレメンス</label>
+          <_comment>Want (Kure, E.g. pics クレメンス)</_comment>
+        </string>
+        <string>
+          <label>つ</label>
+          <_comment>ASCII art of a hand (✊, E.g. つAttention)</_comment>
+        </string>
+        <string>
           <label>とりま</label>
-          <_comment>In The Meantime (Toriaezu, Ma)</_comment>
+          <_comment>In The Meantime (Toriaezu, Maa)</_comment>
+        </string>
+        <string>
+          <label>ニキ</label>
+          <_comment>Self-confidence (Aniki, E.g. tennis ニキ)</_comment>
         </string>
         <string>
           <label>ノシ</label>
           <_comment>Bye</_comment>
+        </string>
+        <string>
+          <label>ハラデイ</label>
+          <_comment>Want (Hattekure, E.g. pics ハラデイ)</_comment>
+        </string>
+        <string>
+          <label>微レ存</label>
+          <_comment>Exist as microparticles (Biryushi Level De Sonzaisuru)</_comment>
         </string>
         <string>
           <label>フラゲ</label>
@@ -3328,10 +3436,6 @@
         <string>
           <label>ワラ</label>
           <_comment>Laugh (Warau)</_comment>
-        </string>
-        <string>
-          <label>乙</label>
-          <_comment>Good job (Otsukare)</_comment>
         </string>
         <string>
           <label>香具師</label>
