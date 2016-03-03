@@ -3223,6 +3223,11 @@
           <label>WT</label>
           <comment>Without Thinking</comment>
         </string>
+        <string>
+          <!-- http://en.wikipedia.org/wiki/WYSIWYG -->
+          <label>WYSIWHG</label>
+          <comment>What You See Is What You Get</comment>
+        </string>
       </table>
       <table>
         <column>8</column>
@@ -3330,11 +3335,6 @@
         <string>
           <label>SCM</label>
           <comment>Source Codes Management</comment>
-        </string>
-        <string>
-          <!-- http://en.wikipedia.org/wiki/WYSIWYG -->
-          <label>WYSIWHG</label>
-          <comment>What You See Is What You Get</comment>
         </string>
       </table>
       <table>

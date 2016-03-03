@@ -1,0 +1,5 @@
+# Files with translatable strings.
+# Please keep this file in alphabetical order.
+# Files under ui/gtk2/ are not shipped in the distribution, but kept
+# in the git repository for reference.
+data/input-pad.ui

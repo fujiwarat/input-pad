@@ -1,12 +1,12 @@
 # Source translations for input-pad
-# Copyright (C) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (C) 2010-2016 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
-"POT-Creation-Date: 2014-09-15 22:18+0900\n"
+"POT-Creation-Date: 2016-03-03 13:05+0900\n"
 "PO-Revision-Date: 2012-06-22 17:50+0900\n"
 "Last-Translator: Takao Fujiwara <takao.fujiwara1@gmail.com>\n"
 "Language-Team: Source\n"
@@ -112,7 +112,7 @@ msgstr ""
 msgid "Box Drawing"
 msgstr ""
 
-#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3673
+#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3685
 msgid "Block"
 msgstr ""
 
@@ -229,7 +229,7 @@ msgid "Gothic"
 msgstr ""
 
 #: ../data/input-pad.desktop.in.h:1 ../input-pad/dialog.ui.h:42
-#: ../input-pad/window-gtk.c:5082 ../input-pad/window-gtk.c:5083
+#: ../input-pad/window-gtk.c:5084 ../input-pad/window-gtk.c:5085
 #: ../input-pad/window-gtk.ui.h:1
 msgid "Input Pad"
 msgstr ""
@@ -1469,615 +1469,615 @@ msgid "Comet"
 msgstr ""
 
 #: ../data/str.xml.in.h:5
-msgid "Skull"
-msgstr ""
-
-#: ../data/str.xml.in.h:6
 msgid "Cross"
 msgstr ""
 
-#: ../data/str.xml.in.h:7
+#: ../data/str.xml.in.h:6
 msgid "Solar"
 msgstr ""
 
-#: ../data/str.xml.in.h:8
+#: ../data/str.xml.in.h:7
 msgid "Mercury"
 msgstr ""
 
-#: ../data/str.xml.in.h:9
+#: ../data/str.xml.in.h:8
 msgid "Venus"
 msgstr ""
 
-#: ../data/str.xml.in.h:10
+#: ../data/str.xml.in.h:9
 msgid "Earth"
 msgstr ""
 
-#: ../data/str.xml.in.h:11
+#: ../data/str.xml.in.h:10
 msgid "Mars"
 msgstr ""
 
-#: ../data/str.xml.in.h:12
+#: ../data/str.xml.in.h:11
 msgid "Jupiter"
 msgstr ""
 
-#: ../data/str.xml.in.h:13
+#: ../data/str.xml.in.h:12
 msgid "Saturn"
 msgstr ""
 
-#: ../data/str.xml.in.h:14
+#: ../data/str.xml.in.h:13
 msgid "Uranus"
 msgstr ""
 
-#: ../data/str.xml.in.h:15
+#: ../data/str.xml.in.h:14
 msgid "Neptune"
 msgstr ""
 
-#: ../data/str.xml.in.h:16
+#: ../data/str.xml.in.h:15
 msgid "Pluto"
 msgstr ""
 
-#: ../data/str.xml.in.h:17
+#: ../data/str.xml.in.h:16
 msgid "Aries"
 msgstr ""
 
-#: ../data/str.xml.in.h:18
+#: ../data/str.xml.in.h:17
 msgid "Taurus"
 msgstr ""
 
-#: ../data/str.xml.in.h:19
+#: ../data/str.xml.in.h:18
 msgid "Gemini"
 msgstr ""
 
-#: ../data/str.xml.in.h:20
+#: ../data/str.xml.in.h:19
 msgid "Cancer"
 msgstr ""
 
-#: ../data/str.xml.in.h:21
+#: ../data/str.xml.in.h:20
 msgid "Leo"
 msgstr ""
 
-#: ../data/str.xml.in.h:22
+#: ../data/str.xml.in.h:21
 msgid "Virgo"
 msgstr ""
 
-#: ../data/str.xml.in.h:23
+#: ../data/str.xml.in.h:22
 msgid "Libra"
 msgstr ""
 
-#: ../data/str.xml.in.h:24
+#: ../data/str.xml.in.h:23
 msgid "Scorpius"
 msgstr ""
 
-#: ../data/str.xml.in.h:25
+#: ../data/str.xml.in.h:24
 msgid "Sagittarius"
 msgstr ""
 
-#: ../data/str.xml.in.h:26
+#: ../data/str.xml.in.h:25
 msgid "Capricorn"
 msgstr ""
 
-#: ../data/str.xml.in.h:27
+#: ../data/str.xml.in.h:26
 msgid "Aquarius"
 msgstr ""
 
-#: ../data/str.xml.in.h:28
+#: ../data/str.xml.in.h:27
 msgid "Pisces"
 msgstr ""
 
-#: ../data/str.xml.in.h:29
+#: ../data/str.xml.in.h:28
 msgid "Dice 1"
 msgstr ""
 
-#: ../data/str.xml.in.h:30
+#: ../data/str.xml.in.h:29
 msgid "Dice 2"
 msgstr ""
 
-#: ../data/str.xml.in.h:31
+#: ../data/str.xml.in.h:30
 msgid "Dice 3"
 msgstr ""
 
-#: ../data/str.xml.in.h:32
+#: ../data/str.xml.in.h:31
 msgid "Dice 4"
 msgstr ""
 
-#: ../data/str.xml.in.h:33
+#: ../data/str.xml.in.h:32
 msgid "Dice 5"
 msgstr ""
 
-#: ../data/str.xml.in.h:34
+#: ../data/str.xml.in.h:33
 msgid "Dice 6"
 msgstr ""
 
-#: ../data/str.xml.in.h:35
+#: ../data/str.xml.in.h:34
 msgid "Anchor"
 msgstr ""
 
-#: ../data/str.xml.in.h:36
+#: ../data/str.xml.in.h:35
 msgid "Sword"
 msgstr ""
 
-#: ../data/str.xml.in.h:37
+#: ../data/str.xml.in.h:36
 msgid "Scales"
 msgstr ""
 
-#: ../data/str.xml.in.h:38
+#: ../data/str.xml.in.h:37
 msgid "Conversation"
 msgstr ""
 
-#: ../data/str.xml.in.h:39
+#: ../data/str.xml.in.h:38
 msgid "Warning"
 msgstr ""
 
-#: ../data/str.xml.in.h:40
+#: ../data/str.xml.in.h:39
 msgid "Thunder"
 msgstr ""
 
-#: ../data/str.xml.in.h:41
+#: ../data/str.xml.in.h:40
 msgid "Coffin"
 msgstr ""
 
-#: ../data/str.xml.in.h:42
+#: ../data/str.xml.in.h:41
 msgid "Gender"
 msgstr ""
 
-#: ../data/str.xml.in.h:43
+#: ../data/str.xml.in.h:42
 msgid "Soccer"
 msgstr ""
 
-#: ../data/str.xml.in.h:44
+#: ../data/str.xml.in.h:43
 msgid "Baseball"
 msgstr ""
 
-#: ../data/str.xml.in.h:45
+#: ../data/str.xml.in.h:44
 msgid "Snowman"
 msgstr ""
 
-#: ../data/str.xml.in.h:46
+#: ../data/str.xml.in.h:45
 msgid "Shoji"
 msgstr ""
 
-#: ../data/str.xml.in.h:47
+#: ../data/str.xml.in.h:46
 msgid "Maintenance"
 msgstr ""
 
-#: ../data/str.xml.in.h:48
+#: ../data/str.xml.in.h:47
 msgid "Roadblock"
 msgstr ""
 
-#: ../data/str.xml.in.h:49
+#: ../data/str.xml.in.h:48
 msgid "No entry"
 msgstr ""
 
-#: ../data/str.xml.in.h:50
+#: ../data/str.xml.in.h:49
 msgid "Truck"
 msgstr ""
 
-#: ../data/str.xml.in.h:51
+#: ../data/str.xml.in.h:50
 msgid "Torii"
 msgstr ""
 
-#: ../data/str.xml.in.h:52
+#: ../data/str.xml.in.h:51
 msgid "Church"
 msgstr ""
 
-#: ../data/str.xml.in.h:53
+#: ../data/str.xml.in.h:52
 msgid "Castle"
 msgstr ""
 
-#: ../data/str.xml.in.h:54
+#: ../data/str.xml.in.h:53
 msgid "Historic site"
 msgstr ""
 
-#: ../data/str.xml.in.h:55
+#: ../data/str.xml.in.h:54
 msgid "Power station"
 msgstr ""
 
-#: ../data/str.xml.in.h:56
+#: ../data/str.xml.in.h:55
 msgid "Lighthouse"
 msgstr ""
 
-#: ../data/str.xml.in.h:57
+#: ../data/str.xml.in.h:56
 msgid "Mountain"
 msgstr ""
 
-#: ../data/str.xml.in.h:58
+#: ../data/str.xml.in.h:57
 msgid "Beach"
 msgstr ""
 
-#: ../data/str.xml.in.h:59
+#: ../data/str.xml.in.h:58
 msgid "Park"
 msgstr ""
 
-#: ../data/str.xml.in.h:60
+#: ../data/str.xml.in.h:59
 msgid "Ferry"
 msgstr ""
 
-#: ../data/str.xml.in.h:61
+#: ../data/str.xml.in.h:60
 msgid "Sailboat"
 msgstr ""
 
-#: ../data/str.xml.in.h:62
+#: ../data/str.xml.in.h:61
 msgid "Ice rink"
 msgstr ""
 
-#: ../data/str.xml.in.h:63
+#: ../data/str.xml.in.h:62
 msgid "Scissors"
 msgstr ""
 
-#: ../data/str.xml.in.h:64
+#: ../data/str.xml.in.h:63
 msgid "Airplane"
 msgstr ""
 
-#: ../data/str.xml.in.h:65
+#: ../data/str.xml.in.h:64
 msgid "Clenched Fist"
 msgstr ""
 
-#: ../data/str.xml.in.h:66
+#: ../data/str.xml.in.h:65
 msgid "Hand"
 msgstr ""
 
-#: ../data/str.xml.in.h:67
+#: ../data/str.xml.in.h:66
 msgid "V Sign"
 msgstr ""
 
-#: ../data/str.xml.in.h:68
+#: ../data/str.xml.in.h:67
 msgid "Writing"
 msgstr ""
 
-#: ../data/str.xml.in.h:69
+#: ../data/str.xml.in.h:68
 msgid "Pencil"
 msgstr ""
 
-#: ../data/str.xml.in.h:70
+#: ../data/str.xml.in.h:69
 msgid "Pen"
 msgstr ""
 
-#: ../data/str.xml.in.h:71
+#: ../data/str.xml.in.h:70
 msgid "Star"
 msgstr ""
 
-#: ../data/str.xml.in.h:72
+#: ../data/str.xml.in.h:71
 msgid "Typhoon"
 msgstr ""
 
-#: ../data/str.xml.in.h:73
+#: ../data/str.xml.in.h:72
 msgid "Fog"
 msgstr ""
 
-#: ../data/str.xml.in.h:74
+#: ../data/str.xml.in.h:73
 msgid "Umbrella"
 msgstr ""
 
-#: ../data/str.xml.in.h:75
+#: ../data/str.xml.in.h:74
 msgid "Night sky"
 msgstr ""
 
-#: ../data/str.xml.in.h:76
+#: ../data/str.xml.in.h:75
 msgid "Sunrise"
 msgstr ""
 
-#: ../data/str.xml.in.h:77
+#: ../data/str.xml.in.h:76
 msgid "Sunset"
 msgstr ""
 
-#: ../data/str.xml.in.h:78
+#: ../data/str.xml.in.h:77
 msgid "Bridge"
 msgstr ""
 
-#: ../data/str.xml.in.h:79
+#: ../data/str.xml.in.h:78
 msgid "Wave"
 msgstr ""
 
-#: ../data/str.xml.in.h:80
+#: ../data/str.xml.in.h:79
 msgid "New Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:81
+#: ../data/str.xml.in.h:80
 msgid "Crescent Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:82
+#: ../data/str.xml.in.h:81
 msgid "Quarter Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:83
+#: ../data/str.xml.in.h:82
 msgid "Gibbous Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:84
+#: ../data/str.xml.in.h:83
 msgid "Full Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:85
+#: ../data/str.xml.in.h:84
 msgid "Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:86
+#: ../data/str.xml.in.h:85
 msgid "Sun"
 msgstr ""
 
-#: ../data/str.xml.in.h:87
+#: ../data/str.xml.in.h:86
 msgid "Cloud"
 msgstr ""
 
-#: ../data/str.xml.in.h:88
+#: ../data/str.xml.in.h:87
 msgid "Palm"
 msgstr ""
 
-#: ../data/str.xml.in.h:89
+#: ../data/str.xml.in.h:88
 msgid "Hot Pepper"
 msgstr ""
 
-#: ../data/str.xml.in.h:90
+#: ../data/str.xml.in.h:89
 msgid "Flower"
 msgstr ""
 
-#: ../data/str.xml.in.h:91
+#: ../data/str.xml.in.h:90
 msgid "Tulip"
 msgstr ""
 
-#: ../data/str.xml.in.h:92
+#: ../data/str.xml.in.h:91
 msgid "Cherry"
 msgstr ""
 
-#: ../data/str.xml.in.h:93
+#: ../data/str.xml.in.h:92
 msgid "Rose"
 msgstr ""
 
-#: ../data/str.xml.in.h:94
+#: ../data/str.xml.in.h:93
 msgid "Hibiscus"
 msgstr ""
 
-#: ../data/str.xml.in.h:95
+#: ../data/str.xml.in.h:94
 msgid "Sunflower"
 msgstr ""
 
-#: ../data/str.xml.in.h:96
+#: ../data/str.xml.in.h:95
 msgid "Blossom"
 msgstr ""
 
-#: ../data/str.xml.in.h:97
+#: ../data/str.xml.in.h:96
 msgid "Clover"
 msgstr ""
 
-#: ../data/str.xml.in.h:98
+#: ../data/str.xml.in.h:97
 msgid "Maple"
 msgstr ""
 
-#: ../data/str.xml.in.h:99
+#: ../data/str.xml.in.h:98
 msgid "Fallen Leaf"
 msgstr ""
 
-#: ../data/str.xml.in.h:100
+#: ../data/str.xml.in.h:99
 msgid "Leaf"
 msgstr ""
 
-#: ../data/str.xml.in.h:101
+#: ../data/str.xml.in.h:100
 msgid "Mushroom"
 msgstr ""
 
-#: ../data/str.xml.in.h:102
+#: ../data/str.xml.in.h:101
 msgid "Tomato"
 msgstr ""
 
-#: ../data/str.xml.in.h:103
+#: ../data/str.xml.in.h:102
 msgid "Eggplant"
 msgstr ""
 
-#: ../data/str.xml.in.h:104
+#: ../data/str.xml.in.h:103
 msgid "Grape"
 msgstr ""
 
-#: ../data/str.xml.in.h:105
+#: ../data/str.xml.in.h:104
 msgid "Melon"
 msgstr ""
 
-#: ../data/str.xml.in.h:106
+#: ../data/str.xml.in.h:105
 msgid "Watermelon"
 msgstr ""
 
-#: ../data/str.xml.in.h:107
+#: ../data/str.xml.in.h:106
 msgid "Tangerine"
 msgstr ""
 
-#: ../data/str.xml.in.h:108
+#: ../data/str.xml.in.h:107
 msgid "Lemon"
 msgstr ""
 
-#: ../data/str.xml.in.h:109
+#: ../data/str.xml.in.h:108
 msgid "Banana"
 msgstr ""
 
-#: ../data/str.xml.in.h:110
+#: ../data/str.xml.in.h:109
 msgid "Pineapple"
 msgstr ""
 
-#: ../data/str.xml.in.h:111
+#: ../data/str.xml.in.h:110
 msgid "Apple"
 msgstr ""
 
-#: ../data/str.xml.in.h:112
+#: ../data/str.xml.in.h:111
 msgid "Pear"
 msgstr ""
 
-#: ../data/str.xml.in.h:113
+#: ../data/str.xml.in.h:112
 msgid "Peach"
 msgstr ""
 
-#: ../data/str.xml.in.h:114
+#: ../data/str.xml.in.h:113
 msgid "Strawberry"
 msgstr ""
 
-#: ../data/str.xml.in.h:115
+#: ../data/str.xml.in.h:114
 msgid "Hamburger"
 msgstr ""
 
-#: ../data/str.xml.in.h:116
+#: ../data/str.xml.in.h:115
 msgid "Pizza"
 msgstr ""
 
-#: ../data/str.xml.in.h:117
+#: ../data/str.xml.in.h:116
 msgid "Meat"
 msgstr ""
 
-#: ../data/str.xml.in.h:118
+#: ../data/str.xml.in.h:117
 msgid "Poultry"
 msgstr ""
 
-#: ../data/str.xml.in.h:119
+#: ../data/str.xml.in.h:118
 msgid "Rice Cracker"
 msgstr ""
 
-#: ../data/str.xml.in.h:120
+#: ../data/str.xml.in.h:119
 msgid "Rice Ball"
 msgstr ""
 
-#: ../data/str.xml.in.h:121
+#: ../data/str.xml.in.h:120
 msgid "Rice"
 msgstr ""
 
-#: ../data/str.xml.in.h:122
+#: ../data/str.xml.in.h:121
 msgid "Curry"
 msgstr ""
 
-#: ../data/str.xml.in.h:123
+#: ../data/str.xml.in.h:122
 msgid "Ramen"
 msgstr ""
 
-#: ../data/str.xml.in.h:124
+#: ../data/str.xml.in.h:123
 msgid "Spaghetti"
 msgstr ""
 
-#: ../data/str.xml.in.h:125
+#: ../data/str.xml.in.h:124
 msgid "Bread"
 msgstr ""
 
-#: ../data/str.xml.in.h:126
+#: ../data/str.xml.in.h:125
 msgid "Fried Potato"
 msgstr ""
 
-#: ../data/str.xml.in.h:127
+#: ../data/str.xml.in.h:126
 msgid "Roasted Sweet Potato"
 msgstr ""
 
-#: ../data/str.xml.in.h:128
+#: ../data/str.xml.in.h:127
 msgid "Dango"
 msgstr ""
 
-#: ../data/str.xml.in.h:129
+#: ../data/str.xml.in.h:128
 msgid "Oden"
 msgstr ""
 
-#: ../data/str.xml.in.h:130
+#: ../data/str.xml.in.h:129
 msgid "Sushi"
 msgstr ""
 
-#: ../data/str.xml.in.h:131
+#: ../data/str.xml.in.h:130
 msgid "Fried Shrimp"
 msgstr ""
 
-#: ../data/str.xml.in.h:132
+#: ../data/str.xml.in.h:131
 msgid "Fish Cake"
 msgstr ""
 
-#: ../data/str.xml.in.h:133
+#: ../data/str.xml.in.h:132
 msgid "Soft Ice Cream"
 msgstr ""
 
-#: ../data/str.xml.in.h:134
+#: ../data/str.xml.in.h:133
 msgid "Shaved Ice"
 msgstr ""
 
-#: ../data/str.xml.in.h:135
+#: ../data/str.xml.in.h:134
 msgid "Ice Cream"
 msgstr ""
 
-#: ../data/str.xml.in.h:136
+#: ../data/str.xml.in.h:135
 msgid "Doughnut"
 msgstr ""
 
-#: ../data/str.xml.in.h:137
+#: ../data/str.xml.in.h:136
 msgid "Cookie"
 msgstr ""
 
-#: ../data/str.xml.in.h:138
+#: ../data/str.xml.in.h:137
 msgid "Chocolate"
 msgstr ""
 
-#: ../data/str.xml.in.h:139
+#: ../data/str.xml.in.h:138
 msgid "Candy"
 msgstr ""
 
-#: ../data/str.xml.in.h:140
+#: ../data/str.xml.in.h:139
 msgid "Custard"
 msgstr ""
 
-#: ../data/str.xml.in.h:141
+#: ../data/str.xml.in.h:140
 msgid "Honey"
 msgstr ""
 
-#: ../data/str.xml.in.h:142
+#: ../data/str.xml.in.h:141
 msgid "Shortcake"
 msgstr ""
 
-#: ../data/str.xml.in.h:143
+#: ../data/str.xml.in.h:142
 msgid "Bento"
 msgstr ""
 
-#: ../data/str.xml.in.h:144
+#: ../data/str.xml.in.h:143
 msgid "Pot of Food"
 msgstr ""
 
-#: ../data/str.xml.in.h:145
+#: ../data/str.xml.in.h:144
 msgid "Cooking"
 msgstr ""
 
-#: ../data/str.xml.in.h:146
+#: ../data/str.xml.in.h:145
 msgid "Meal"
 msgstr ""
 
-#: ../data/str.xml.in.h:147
+#: ../data/str.xml.in.h:146
 msgid "Cup"
 msgstr ""
 
-#: ../data/str.xml.in.h:148
+#: ../data/str.xml.in.h:147
 msgid "Sake"
 msgstr ""
 
-#: ../data/str.xml.in.h:149
+#: ../data/str.xml.in.h:148
 msgid "Wine"
 msgstr ""
 
-#: ../data/str.xml.in.h:150
+#: ../data/str.xml.in.h:149
 msgid "Cocktail"
 msgstr ""
 
-#: ../data/str.xml.in.h:151
+#: ../data/str.xml.in.h:150
 msgid "Drink"
 msgstr ""
 
-#: ../data/str.xml.in.h:152
+#: ../data/str.xml.in.h:151
 msgid "Beer"
 msgstr ""
 
-#: ../data/str.xml.in.h:153
+#: ../data/str.xml.in.h:152
 msgid "Cheers"
 msgstr ""
 
-#: ../data/str.xml.in.h:154
+#: ../data/str.xml.in.h:153
 msgid "Baby Bottle"
 msgstr ""
 
-#: ../data/str.xml.in.h:155
+#: ../data/str.xml.in.h:154
 msgid "Ribbon"
 msgstr ""
 
-#: ../data/str.xml.in.h:156
+#: ../data/str.xml.in.h:155
 msgid "Present"
 msgstr ""
 
-#: ../data/str.xml.in.h:157
+#: ../data/str.xml.in.h:156
 msgid "Cake"
+msgstr ""
+
+#: ../data/str.xml.in.h:157
+msgid "Hallowe'en"
 msgstr ""
 
 #: ../data/str.xml.in.h:158
@@ -2489,607 +2489,687 @@ msgid "Women"
 msgstr ""
 
 #: ../data/str.xml.in.h:260
-msgid "Lipstick"
+msgid "Princess"
 msgstr ""
 
 #: ../data/str.xml.in.h:261
-msgid "Nail"
+msgid "Japanese Ogre"
 msgstr ""
 
 #: ../data/str.xml.in.h:262
-msgid "Face"
+msgid "Japanese Goblin"
 msgstr ""
 
 #: ../data/str.xml.in.h:263
-msgid "Haircut"
+msgid "Ghost"
 msgstr ""
 
 #: ../data/str.xml.in.h:264
-msgid "Syringe"
+msgid "Baby Angel"
 msgstr ""
 
 #: ../data/str.xml.in.h:265
-msgid "Medicine"
+msgid "Extraterrestrial Alien"
 msgstr ""
 
 #: ../data/str.xml.in.h:266
-msgid "Kiss"
+msgid "Alien Monster"
 msgstr ""
 
 #: ../data/str.xml.in.h:267
-msgid "Ring"
+msgid "IMP"
 msgstr ""
 
 #: ../data/str.xml.in.h:268
-msgid "Heart"
+msgid "Skull"
 msgstr ""
 
 #: ../data/str.xml.in.h:269
-msgid "Idea"
+msgid "Information Desk Person"
 msgstr ""
 
 #: ../data/str.xml.in.h:270
-msgid "Anger"
+msgid "Guardsman"
 msgstr ""
 
 #: ../data/str.xml.in.h:271
-msgid "Bomb"
+msgid "Dancer"
 msgstr ""
 
 #: ../data/str.xml.in.h:272
-msgid "Sleeping"
+msgid "Lipstick"
 msgstr ""
 
 #: ../data/str.xml.in.h:273
-msgid "Collision"
+msgid "Nail"
 msgstr ""
 
 #: ../data/str.xml.in.h:274
-msgid "Sweat"
+msgid "Face"
 msgstr ""
 
 #: ../data/str.xml.in.h:275
-msgid "Droplet"
+msgid "Haircut"
 msgstr ""
 
 #: ../data/str.xml.in.h:276
-msgid "Dash"
+msgid "Syringe"
 msgstr ""
 
 #: ../data/str.xml.in.h:277
-msgid "Poo"
+msgid "Medicine"
 msgstr ""
 
 #: ../data/str.xml.in.h:278
-msgid "Muscle"
+msgid "Kiss"
 msgstr ""
 
 #: ../data/str.xml.in.h:279
-msgid "Dizzy"
+msgid "Love Letter"
 msgstr ""
 
 #: ../data/str.xml.in.h:280
-msgid "Speech"
+msgid "Ring"
 msgstr ""
 
 #: ../data/str.xml.in.h:281
-msgid "Thought"
+msgid "Gem Stone"
 msgstr ""
 
 #: ../data/str.xml.in.h:282
-msgid "Perfect Score"
+msgid "Wedding"
 msgstr ""
 
 #: ../data/str.xml.in.h:283
-msgid "Pushpin"
+msgid "Heart"
 msgstr ""
 
 #: ../data/str.xml.in.h:284
-msgid "Clip"
+msgid "Idea"
 msgstr ""
 
 #: ../data/str.xml.in.h:285
-msgid "Speaker"
+msgid "Anger"
 msgstr ""
 
 #: ../data/str.xml.in.h:286
-msgid "Battery"
+msgid "Bomb"
 msgstr ""
 
 #: ../data/str.xml.in.h:287
-msgid "Plug"
+msgid "Sleeping"
 msgstr ""
 
 #: ../data/str.xml.in.h:288
-msgid "Search"
+msgid "Collision"
 msgstr ""
 
 #: ../data/str.xml.in.h:289
-msgid "Bookmark"
+msgid "Sweat"
 msgstr ""
 
 #: ../data/str.xml.in.h:290
-msgid "Book"
+msgid "Droplet"
 msgstr ""
 
 #: ../data/str.xml.in.h:291
-msgid "Memo"
+msgid "Dash"
 msgstr ""
 
 #: ../data/str.xml.in.h:292
-msgid "Mail"
+msgid "Poo"
 msgstr ""
 
 #: ../data/str.xml.in.h:293
-msgid "Mobile Phone"
+msgid "Muscle"
 msgstr ""
 
 #: ../data/str.xml.in.h:294
-msgid "Camera"
+msgid "Dizzy"
 msgstr ""
 
 #: ../data/str.xml.in.h:295
-msgid "Video"
+msgid "Speech"
 msgstr ""
 
 #: ../data/str.xml.in.h:296
-msgid "Television"
+msgid "Thought"
 msgstr ""
 
 #: ../data/str.xml.in.h:297
-msgid "Radio"
+msgid "Perfect Score"
 msgstr ""
 
 #: ../data/str.xml.in.h:298
-msgid "Key"
+msgid "Pushpin"
 msgstr ""
 
 #: ../data/str.xml.in.h:299
-msgid "Lock"
+msgid "Clip"
 msgstr ""
 
 #: ../data/str.xml.in.h:300
-msgid "Fire"
+msgid "Speaker"
 msgstr ""
 
 #: ../data/str.xml.in.h:301
-msgid "Wrench"
+msgid "Battery"
 msgstr ""
 
 #: ../data/str.xml.in.h:302
-msgid "Hammer"
+msgid "Plug"
 msgstr ""
 
 #: ../data/str.xml.in.h:303
-msgid "Bolt"
+msgid "Search"
 msgstr ""
 
 #: ../data/str.xml.in.h:304
-msgid "Hocho"
+msgid "Bookmark"
 msgstr ""
 
 #: ../data/str.xml.in.h:305
-msgid "Pistol"
+msgid "Book"
 msgstr ""
 
 #: ../data/str.xml.in.h:306
-msgid "Microscope"
+msgid "Memo"
 msgstr ""
 
 #: ../data/str.xml.in.h:307
-msgid "Telescope"
+msgid "Mail"
 msgstr ""
 
 #: ../data/str.xml.in.h:308
-msgid "Crystal"
+msgid "Mobile Phone"
 msgstr ""
 
 #: ../data/str.xml.in.h:309
-msgid "David Star"
+msgid "Camera"
 msgstr ""
 
 #: ../data/str.xml.in.h:310
-msgid "Beginner"
+msgid "Video"
 msgstr ""
 
 #: ../data/str.xml.in.h:311
-msgid "Candle"
+msgid "Television"
 msgstr ""
 
 #: ../data/str.xml.in.h:312
-msgid "Hole"
+msgid "Radio"
 msgstr ""
 
 #: ../data/str.xml.in.h:313
-msgid "Personal Computer"
+msgid "Key"
 msgstr ""
 
 #: ../data/str.xml.in.h:314
-msgid "keyboard"
+msgid "Lock"
 msgstr ""
 
 #: ../data/str.xml.in.h:315
-msgid "Printer"
+msgid "Fire"
 msgstr ""
 
 #: ../data/str.xml.in.h:316
-msgid "Calculator"
+msgid "Wrench"
 msgstr ""
 
 #: ../data/str.xml.in.h:317
-msgid "Minimize"
+msgid "Hammer"
 msgstr ""
 
 #: ../data/str.xml.in.h:318
-msgid "Maximize"
+msgid "Bolt"
 msgstr ""
 
 #: ../data/str.xml.in.h:319
-msgid "Refresh"
+msgid "Hocho"
 msgstr ""
 
 #: ../data/str.xml.in.h:320
-msgid "Close"
+msgid "Pistol"
 msgstr ""
 
 #: ../data/str.xml.in.h:321
-msgid "World"
+msgid "Microscope"
 msgstr ""
 
 #: ../data/str.xml.in.h:322
-msgid "Mt. Fuji"
+msgid "Telescope"
 msgstr ""
 
 #: ../data/str.xml.in.h:323
-msgid "Tokyo Tower"
+msgid "Crystal"
 msgstr ""
 
 #: ../data/str.xml.in.h:324
-msgid "Japan"
+msgid "David Star"
 msgstr ""
 
 #: ../data/str.xml.in.h:325
-msgid "Anguish"
+msgid "Beginner"
 msgstr ""
 
 #: ../data/str.xml.in.h:326
-msgid "Smile"
+msgid "Candle"
 msgstr ""
 
 #: ../data/str.xml.in.h:327
-msgid "Smirk"
+msgid "Hole"
 msgstr ""
 
 #: ../data/str.xml.in.h:328
-msgid "Neutral"
+msgid "Personal Computer"
 msgstr ""
 
 #: ../data/str.xml.in.h:329
-msgid "Expressionless"
+msgid "keyboard"
 msgstr ""
 
 #: ../data/str.xml.in.h:330
-msgid "Unamused"
+msgid "Printer"
 msgstr ""
 
 #: ../data/str.xml.in.h:331
-msgid "Pensive"
+msgid "Calculator"
 msgstr ""
 
 #: ../data/str.xml.in.h:332
-msgid "Confused"
+msgid "Minimize"
 msgstr ""
 
 #: ../data/str.xml.in.h:333
-msgid "Confounded"
+msgid "Maximize"
 msgstr ""
 
 #: ../data/str.xml.in.h:334
-msgid "Disappointed"
+msgid "Refresh"
 msgstr ""
 
 #: ../data/str.xml.in.h:335
-msgid "Angry"
+msgid "Close"
 msgstr ""
 
 #: ../data/str.xml.in.h:336
-msgid "Cry"
+msgid "World"
 msgstr ""
 
 #: ../data/str.xml.in.h:337
-msgid "Sleeply"
+msgid "Mt. Fuji"
 msgstr ""
 
 #: ../data/str.xml.in.h:338
-msgid "Tired"
+msgid "Tokyo Tower"
 msgstr ""
 
 #: ../data/str.xml.in.h:339
-msgid "Surprise"
+msgid "Japan"
 msgstr ""
 
 #: ../data/str.xml.in.h:340
-msgid "Scream"
+msgid "Anguish"
 msgstr ""
 
 #: ../data/str.xml.in.h:341
-msgid "Flushed"
+msgid "Smile"
 msgstr ""
 
 #: ../data/str.xml.in.h:342
-msgid "Medical Mask"
+msgid "Smirk"
 msgstr ""
 
 #: ../data/str.xml.in.h:343
-msgid "OK"
+msgid "Neutral"
 msgstr ""
 
 #: ../data/str.xml.in.h:344
-msgid "Bow"
+msgid "Expressionless"
 msgstr ""
 
 #: ../data/str.xml.in.h:345
-msgid "See-No-Evil"
+msgid "Unamused"
 msgstr ""
 
 #: ../data/str.xml.in.h:346
-msgid "Hear-No-Evil"
+msgid "Pensive"
 msgstr ""
 
 #: ../data/str.xml.in.h:347
-msgid "Speak-No-Evil"
+msgid "Confused"
 msgstr ""
 
 #: ../data/str.xml.in.h:348
-msgid "Banzai"
+msgid "Confounded"
 msgstr ""
 
 #: ../data/str.xml.in.h:349
-msgid "Pleading"
+msgid "Disappointed"
 msgstr ""
 
 #: ../data/str.xml.in.h:350
-msgid "Smileys"
+msgid "Angry"
 msgstr ""
 
 #: ../data/str.xml.in.h:351
-msgid "Smile Big"
+msgid "Cry"
 msgstr ""
 
 #: ../data/str.xml.in.h:352
-msgid "Sad"
+msgid "Sleeply"
 msgstr ""
 
 #: ../data/str.xml.in.h:353
-msgid "Wink"
+msgid "Tired"
 msgstr ""
 
 #: ../data/str.xml.in.h:354
-msgid "Shock"
+msgid "Surprise"
 msgstr ""
 
 #: ../data/str.xml.in.h:355
-msgid "Kiss | Secret"
+msgid "Scream"
 msgstr ""
 
 #: ../data/str.xml.in.h:356
-msgid "Glasses Cool | Eyeroll"
+msgid "Flushed"
 msgstr ""
 
 #: ../data/str.xml.in.h:357
-msgid "Glasses Cool"
+msgid "Medical Mask"
 msgstr ""
 
 #: ../data/str.xml.in.h:358
-msgid "Embarrassed"
+msgid "OK"
 msgstr ""
 
 #: ../data/str.xml.in.h:359
-msgid "Crying"
+msgid "Bow"
 msgstr ""
 
 #: ../data/str.xml.in.h:360
-msgid "Thinking"
+msgid "See-No-Evil"
 msgstr ""
 
 #: ../data/str.xml.in.h:361
-msgid "Don't Know"
+msgid "Hear-No-Evil"
 msgstr ""
 
 #: ../data/str.xml.in.h:362
-msgid "Party"
+msgid "Speak-No-Evil"
 msgstr ""
 
 #: ../data/str.xml.in.h:363
-msgid "Yawn"
+msgid "Banzai"
 msgstr ""
 
 #: ../data/str.xml.in.h:364
-msgid "Bunny"
+msgid "Pleading"
 msgstr ""
 
 #: ../data/str.xml.in.h:365
-msgid "Sick"
+msgid "Smileys"
 msgstr ""
 
 #: ../data/str.xml.in.h:366
-msgid "Devil"
+msgid "Smile Big"
 msgstr ""
 
 #: ../data/str.xml.in.h:367
-msgid "Angel"
+msgid "Sad"
 msgstr ""
 
 #: ../data/str.xml.in.h:368
-msgid "Love"
+msgid "Wink"
 msgstr ""
 
 #: ../data/str.xml.in.h:369
-msgid "Love Over"
+msgid "Shock"
 msgstr ""
 
 #: ../data/str.xml.in.h:370
-msgid "Film"
+msgid "Kiss | Secret"
 msgstr ""
 
 #: ../data/str.xml.in.h:371
-msgid "Clock"
+msgid "Glasses Cool | Eyeroll"
 msgstr ""
 
 #: ../data/str.xml.in.h:372
-msgid "Coffee"
+msgid "Glasses Cool"
 msgstr ""
 
 #: ../data/str.xml.in.h:373
-msgid "Phone"
+msgid "Embarrassed"
 msgstr ""
 
 #: ../data/str.xml.in.h:374
-msgid "Hug Left"
+msgid "Crying"
 msgstr ""
 
 #: ../data/str.xml.in.h:375
-msgid "Hug Right"
+msgid "Thinking"
 msgstr ""
 
 #: ../data/str.xml.in.h:376
-msgid "Yes"
+msgid "Don't Know"
 msgstr ""
 
 #: ../data/str.xml.in.h:377
-msgid "No"
+msgid "Party"
 msgstr ""
 
 #: ../data/str.xml.in.h:378
-msgid "Shut Mouth"
+msgid "Yawn"
 msgstr ""
 
 #: ../data/str.xml.in.h:379
-msgid "Money Mouth"
+msgid "Bunny"
 msgstr ""
 
 #: ../data/str.xml.in.h:380
-msgid "Foot in Mouth"
+msgid "Sick"
 msgstr ""
 
 #: ../data/str.xml.in.h:381
+msgid "Devil"
+msgstr ""
+
+#: ../data/str.xml.in.h:382
+msgid "Angel"
+msgstr ""
+
+#: ../data/str.xml.in.h:383
+msgid "Love"
+msgstr ""
+
+#: ../data/str.xml.in.h:384
+msgid "Love Over"
+msgstr ""
+
+#: ../data/str.xml.in.h:385
+msgid "Film"
+msgstr ""
+
+#: ../data/str.xml.in.h:386
+msgid "Clock"
+msgstr ""
+
+#: ../data/str.xml.in.h:387
+msgid "Coffee"
+msgstr ""
+
+#: ../data/str.xml.in.h:388
+msgid "Phone"
+msgstr ""
+
+#: ../data/str.xml.in.h:389
+msgid "Hug Left"
+msgstr ""
+
+#: ../data/str.xml.in.h:390
+msgid "Hug Right"
+msgstr ""
+
+#: ../data/str.xml.in.h:391
+msgid "Yes"
+msgstr ""
+
+#: ../data/str.xml.in.h:392
+msgid "No"
+msgstr ""
+
+#: ../data/str.xml.in.h:393
+msgid "Shut Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:394
+msgid "Money Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:395
+msgid "Foot in Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:396
 msgid "Shout"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:383
+#: ../data/str.xml.in.h:398
 msgid "Smileys (Japanese)"
 msgstr ""
 
-#: ../data/str.xml.in.h:384
+#: ../data/str.xml.in.h:399
 msgid "Smoking"
 msgstr ""
 
-#: ../data/str.xml.in.h:385
+#: ../data/str.xml.in.h:400
 msgid "Sorry"
 msgstr ""
 
-#: ../data/str.xml.in.h:386
+#: ../data/str.xml.in.h:401
 msgid "Hug"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:388
+#: ../data/str.xml.in.h:403
 msgid "Smileys (Japanese 2ch)"
 msgstr ""
 
-#: ../data/str.xml.in.h:389
+#: ../data/str.xml.in.h:404
 msgid "Hey"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:391
+#: ../data/str.xml.in.h:406
 msgid "Smileys (Chinese)"
 msgstr ""
 
-#: ../data/str.xml.in.h:392
+#: ../data/str.xml.in.h:407
 msgid "Crow"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:394
+#: ../data/str.xml.in.h:409
 msgid "Acronym"
 msgstr ""
 
-#: ../data/str.xml.in.h:395
+#: ../data/str.xml.in.h:410
 msgid "Acronym (Computer)"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:397
+#: ../data/str.xml.in.h:412
 msgid "Acronym (Japanese)"
 msgstr ""
 
-#: ../data/str.xml.in.h:398
+#: ../data/str.xml.in.h:413
 msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
 msgstr ""
 
-#: ../data/str.xml.in.h:399
+#: ../data/str.xml.in.h:414
 msgid "Can't get together (Guda Guda)"
 msgstr ""
 
-#: ../data/str.xml.in.h:400
+#: ../data/str.xml.in.h:415
 msgid "Say whatever one feels (Iitaidake)"
 msgstr ""
 
-#: ../data/str.xml.in.h:401
+#: ../data/str.xml.in.h:416
 msgid "Excited (Kitakore)"
 msgstr ""
 
-#: ../data/str.xml.in.h:402
+#: ../data/str.xml.in.h:417
 msgid "Detail (Kuwashiku)"
 msgstr ""
 
-#: ../data/str.xml.in.h:403
+#: ../data/str.xml.in.h:418
 msgid "Cannot read between lines (Kuuki Ga Yomenai)"
 msgstr ""
 
-#: ../data/str.xml.in.h:404
+#: ../data/str.xml.in.h:419
 msgid "Omission (Shouryaku)"
 msgstr ""
 
-#: ../data/str.xml.in.h:405
+#: ../data/str.xml.in.h:420
 msgid "Excited (Waku Waku Teka Teka)"
 msgstr ""
 
-#: ../data/str.xml.in.h:406
+#: ../data/str.xml.in.h:421
 msgid "Laugh"
 msgstr ""
 
-#: ../data/str.xml.in.h:407
+#: ../data/str.xml.in.h:422
 msgid "Dude (Oi!)"
 msgstr ""
 
-#: ../data/str.xml.in.h:408
-msgid "In The Meantime (Toriaezu, Ma)"
-msgstr ""
-
-#: ../data/str.xml.in.h:409
-msgid "Bye"
-msgstr ""
-
-#: ../data/str.xml.in.h:410
-msgid "False Start (Flying Get)"
-msgstr ""
-
-#: ../data/str.xml.in.h:411
-msgid "Fulfilling Life (Real life is Zyujitsu)"
-msgstr ""
-
-#: ../data/str.xml.in.h:412
-msgid "Laugh (Warau)"
-msgstr ""
-
-#: ../data/str.xml.in.h:413
+#: ../data/str.xml.in.h:423
 msgid "Good job (Otsukare)"
 msgstr ""
 
-#: ../data/str.xml.in.h:414
+#: ../data/str.xml.in.h:424
+msgid "Want (Kure, E.g. pics クレメンス)"
+msgstr ""
+
+#: ../data/str.xml.in.h:425
+msgid "ASCII art of a hand (✊, E.g. つAttention)"
+msgstr ""
+
+#: ../data/str.xml.in.h:426
+msgid "In The Meantime (Toriaezu, Maa)"
+msgstr ""
+
+#: ../data/str.xml.in.h:427
+msgid "Self-confidence (Aniki, E.g. tennis ニキ)"
+msgstr ""
+
+#: ../data/str.xml.in.h:428
+msgid "Bye"
+msgstr ""
+
+#: ../data/str.xml.in.h:429
+msgid "Want (Hattekure, E.g. pics ハラデイ)"
+msgstr ""
+
+#: ../data/str.xml.in.h:430
+msgid "Exist as microparticles (Biryushi Level De Sonzaisuru)"
+msgstr ""
+
+#: ../data/str.xml.in.h:431
+msgid "False Start (Flying Get)"
+msgstr ""
+
+#: ../data/str.xml.in.h:432
+msgid "Fulfilling Life (Real life is Zyujitsu)"
+msgstr ""
+
+#: ../data/str.xml.in.h:433
+msgid "Laugh (Warau)"
+msgstr ""
+
+#: ../data/str.xml.in.h:434
 msgid "He (Yatsu &lt;- Yashi)"
 msgstr ""
 
@@ -3301,19 +3381,19 @@ msgstr ""
 msgid "translator_credits"
 msgstr ""
 
-#: ../input-pad/eek-gtk.c:62
+#: ../input-pad/eek-gtk.c:65
 msgid "Use libeek to draw keyboard"
 msgstr ""
 
-#: ../input-pad/eek-gtk.c:234
+#: ../input-pad/eek-gtk.c:237
 msgid "eekboard layout"
 msgstr ""
 
-#: ../input-pad/eek-gtk.c:246
+#: ../input-pad/eek-gtk.c:249
 msgid "eekboard Options"
 msgstr ""
 
-#: ../input-pad/eek-gtk.c:246
+#: ../input-pad/eek-gtk.c:249
 msgid "Show eekboard Options"
 msgstr ""
 
@@ -4061,50 +4141,50 @@ msgstr ""
 msgid "Supplementary Private Use Area-B"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:204
+#: ../input-pad/window-gtk.c:203
 msgid "Display version"
 msgstr ""
 
 #. Translators: the word 'KBDUI' is not translated.
-#: ../input-pad/window-gtk.c:207
+#: ../input-pad/window-gtk.c:206
 msgid "Use KBDUI to draw keyboard"
 msgstr ""
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:210
+#: ../input-pad/window-gtk.c:209
 msgid "Use TYPE of char table. The available TYPE=0, 1, 2"
 msgstr ""
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:213
+#: ../input-pad/window-gtk.c:212
 msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:220
+#: ../input-pad/window-gtk.c:219
 msgid "Use XTEST module to send key events"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:225
+#: ../input-pad/window-gtk.c:224
 msgid "Use XSendEvent to send key events"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1178
+#: ../input-pad/window-gtk.c:1172
 msgid "Fold layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1183 ../input-pad/window-gtk.c:2594
+#: ../input-pad/window-gtk.c:1177 ../input-pad/window-gtk.c:2610
 msgid "Extend layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:2808
+#: ../input-pad/window-gtk.c:2824
 msgid "Layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:3083
+#: ../input-pad/window-gtk.c:3095
 msgid "_Layout:"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:3113
+#: ../input-pad/window-gtk.c:3125
 msgid "_Configure Layouts"
 msgstr ""
 
@@ -4132,15 +4212,15 @@ msgstr ""
 #. license1, license2, license3);
 #.
 #. This format has been used since gtk 2.20.
-#: ../input-pad/window-gtk.c:3152
+#: ../input-pad/window-gtk.c:3164
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:3434
+#: ../input-pad/window-gtk.c:3446
 msgid "Group"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:3442
+#: ../input-pad/window-gtk.c:3454
 msgid "Subgroup"
 msgstr ""
