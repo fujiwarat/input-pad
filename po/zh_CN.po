@@ -1,5 +1,5 @@
 # Chinese (China) translations for input-pad
-# Copyright (C) 2010-2012 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (C) 2010-2016 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
 #
 # Translators:
@@ -7,17 +7,18 @@
 # Tommy He <lovenemesis@gmail.com>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: input-pad\n"
+"Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
-"POT-Creation-Date: 2012-12-17 04:12+0900\n"
-"PO-Revision-Date: 2013-11-20 10:40+0000\n"
-"Last-Translator: Christopher Meng <cickumqt@gmail.com>\n"
-"Language-Team: Chinese (China) <trans-zh_cn@lists.fedoraproject.org>\n"
+"POT-Creation-Date: 2016-03-02 18:45+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2013-11-20 05:40-0500\n"
+"Last-Translator: Christopher Meng <cickumqt@gmail.com>\n"
+"Language-Team: Chinese (China) <trans-zh_cn@lists.fedoraproject.org>\n"
+"Language: zh-CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Zanata 3.8.2\n"
 
 #: ../data/alphabet.xml.in.in.h:1
 msgid "Alphabets"
@@ -116,7 +117,7 @@ msgstr ""
 msgid "Box Drawing"
 msgstr ""
 
-#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3937
+#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3685
 msgid "Block"
 msgstr ""
 
@@ -232,186 +233,11 @@ msgstr ""
 msgid "Gothic"
 msgstr ""
 
-#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:50
-#: ../input-pad/window-gtk.c:5320 ../input-pad/window-gtk.c:5321
+#: ../data/input-pad.desktop.in.h:1 ../input-pad/dialog.ui.h:42
+#: ../input-pad/window-gtk.c:5084 ../input-pad/window-gtk.c:5085
+#: ../input-pad/window-gtk.ui.h:1
 msgid "Input Pad"
 msgstr "输入面板"
-
-#: ../data/input-pad.ui.h:1
-msgid "_File"
-msgstr "文件(_F)"
-
-#: ../data/input-pad.ui.h:2
-msgid "Close the program"
-msgstr "关闭程序"
-
-#: ../data/input-pad.ui.h:3
-msgid "_Close"
-msgstr "关闭(_C)"
-
-#: ../data/input-pad.ui.h:4
-msgid "_Pad"
-msgstr "面板(_P)"
-
-#: ../data/input-pad.ui.h:5
-msgid "_Code Point"
-msgstr "码点(_C)"
-
-#: ../data/input-pad.ui.h:6
-msgid "_Show Pad"
-msgstr "显示面板(_S)"
-
-#: ../data/input-pad.ui.h:7
-msgid "Show _All Characters"
-msgstr "显示所有字符(_A)"
-
-#: ../data/input-pad.ui.h:8
-msgid "Show _Custom Characters"
-msgstr "显示自定义字符(_C)"
-
-#: ../data/input-pad.ui.h:9
-msgid "Show _Nothing"
-msgstr "不显示(_N)"
-
-#: ../data/input-pad.ui.h:10
-msgid "Show _Keyboard Layout"
-msgstr "显示键盘布局(_K)"
-
-#: ../data/input-pad.ui.h:11
-msgid "_Help"
-msgstr "帮助(_H)"
-
-#: ../data/input-pad.ui.h:12
-msgid "_Troubleshoot"
-msgstr "错误诊断(_T)"
-
-#: ../data/input-pad.ui.h:13
-msgid "Code Point Dialog"
-msgstr ""
-
-#: ../data/input-pad.ui.h:14
-msgid "Unicode"
-msgstr "Unicode"
-
-#: ../data/input-pad.ui.h:15
-msgid "You can choose encoding type"
-msgstr "您可以选择编码类型"
-
-#: ../data/input-pad.ui.h:16
-msgid "Current Encoding"
-msgstr "当前编码"
-
-#: ../data/input-pad.ui.h:17
-msgid "Copy Buffer"
-msgstr "复制缓存"
-
-#: ../data/input-pad.ui.h:18
-msgid ""
-"Base 16\n"
-"Hex"
-msgstr ""
-
-#: ../data/input-pad.ui.h:20
-msgid "Set number case to hexadecimal"
-msgstr "设定数字为十六进制"
-
-#: ../data/input-pad.ui.h:21
-msgid ""
-"Base 10\n"
-"Dec"
-msgstr ""
-
-#: ../data/input-pad.ui.h:23
-msgid "Set number case to decimal"
-msgstr "设定数字为十进制"
-
-#: ../data/input-pad.ui.h:24
-msgid ""
-"Base 8\n"
-"Oct"
-msgstr ""
-
-#: ../data/input-pad.ui.h:26
-msgid "Set number case to octal"
-msgstr "设定数字为八进制"
-
-#: ../data/input-pad.ui.h:27
-msgid ""
-"Base 2\n"
-"Bin"
-msgstr ""
-
-#: ../data/input-pad.ui.h:29
-msgid "Set number case to binary"
-msgstr "设定数字为二进制"
-
-#: ../data/input-pad.ui.h:30
-msgid "Code Point:"
-msgstr ""
-
-#: ../data/input-pad.ui.h:31
-msgid "Character:"
-msgstr ""
-
-#: ../data/input-pad.ui.h:32
-msgid "_Send"
-msgstr "发送(_S)"
-
-#: ../data/input-pad.ui.h:33
-msgid "Input Pad Troubleshoot"
-msgstr "输入面板除错程序"
-
-#: ../data/input-pad.ui.h:35
-#, no-c-format
-msgid ""
-"\n"
-"This application can be run either as a stand-alone program or under an input method application.\n"
-"If you wish to send multi-byte characters, this application needs to be run under an input method application.\n"
-"If you wish to send characters to X11 applications, those applications needs to allow send events. e.g.\n"
-"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
-"\n"
-"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad to customize those in \"Custom Character\" pane."
-msgstr ""
-
-#: ../data/input-pad.ui.h:42
-msgid "Configure Keyboard Layouts"
-msgstr "配置键盘布局"
-
-#: ../data/input-pad.ui.h:43
-msgid "A_vailable layouts:"
-msgstr "可用的布局(_V)："
-
-#: ../data/input-pad.ui.h:44
-msgid "_Layouts shown in the list:"
-msgstr "列表中显示的布局(_L)："
-
-#: ../data/input-pad.ui.h:45
-msgid "_Options"
-msgstr "选项(_O)"
-
-#: ../data/input-pad.ui.h:46
-msgid "Configure Keyboard Options"
-msgstr "配置键盘选项"
-
-#: ../data/input-pad.ui.h:47
-msgid "_Use the default keyboard option"
-msgstr "使用默认键盘选项(_U)"
-
-#: ../data/input-pad.ui.h:48
-msgid "Use the defualt XKB option"
-msgstr "使用默认 XKB 选项"
-
-#: ../data/input-pad.ui.h:49
-msgid "<b>Keyboard Option</b>"
-msgstr "<b>键盘选项</b>"
-
-#: ../data/input-pad.ui.h:51
-msgid "The input pad is a tool to send a character on button."
-msgstr "输入面板是用来将字符发送至按键的工具。"
-
-#: ../data/input-pad.ui.h:52
-msgid "translator_credits"
-msgstr "Tommy He <tommy.he@linux.com>, 2012"
 
 #. "IPA" stands for "International Phonetic Alphabet"
 #: ../data/ipa-obsolete.xml.in.h:2
@@ -1636,327 +1462,1719 @@ msgid "Chat"
 msgstr "聊天"
 
 #: ../data/str.xml.in.h:2
-msgid "Smileys"
-msgstr "表情"
+msgid "Emoji"
+msgstr ""
 
 #: ../data/str.xml.in.h:3
-msgid "Smile"
-msgstr "微笑"
+msgid "Rain"
+msgstr ""
 
 #: ../data/str.xml.in.h:4
-msgid "Smile Big"
-msgstr "大笑"
+msgid "Comet"
+msgstr ""
 
 #: ../data/str.xml.in.h:5
-msgid "Sad"
-msgstr "悲伤"
+msgid "Cross"
+msgstr ""
 
 #: ../data/str.xml.in.h:6
-msgid "Wink"
-msgstr "眨眼"
+msgid "Solar"
+msgstr ""
 
 #: ../data/str.xml.in.h:7
-msgid "Tongue"
-msgstr "吐舌"
+msgid "Mercury"
+msgstr ""
 
 #: ../data/str.xml.in.h:8
-msgid "Shock"
-msgstr "震惊"
+msgid "Venus"
+msgstr ""
 
 #: ../data/str.xml.in.h:9
-msgid "Kiss | Secret"
+msgid "Earth"
 msgstr ""
 
 #: ../data/str.xml.in.h:10
-msgid "Glasses Cool | Eyeroll"
+msgid "Mars"
 msgstr ""
 
 #: ../data/str.xml.in.h:11
-msgid "Glasses Cool"
+msgid "Jupiter"
 msgstr ""
 
 #: ../data/str.xml.in.h:12
-msgid "Angry"
-msgstr "生气"
+msgid "Saturn"
+msgstr ""
 
 #: ../data/str.xml.in.h:13
-msgid "Embarrassed"
+msgid "Uranus"
 msgstr ""
 
 #: ../data/str.xml.in.h:14
-msgid "Confused"
+msgid "Neptune"
 msgstr ""
 
 #: ../data/str.xml.in.h:15
-msgid "Crying"
+msgid "Pluto"
 msgstr ""
 
 #: ../data/str.xml.in.h:16
-msgid "Neutral"
+msgid "Aries"
 msgstr ""
 
 #: ../data/str.xml.in.h:17
-msgid "Thinking"
-msgstr "思考"
+msgid "Taurus"
+msgstr ""
 
 #: ../data/str.xml.in.h:18
-msgid "Don't Know"
+msgid "Gemini"
 msgstr ""
 
 #: ../data/str.xml.in.h:19
-msgid "Party"
-msgstr "派对"
+msgid "Cancer"
+msgstr ""
 
 #: ../data/str.xml.in.h:20
-msgid "Yawn"
-msgstr "呵欠"
+msgid "Leo"
+msgstr ""
 
 #: ../data/str.xml.in.h:21
-msgid "Bunny"
-msgstr "兔子"
+msgid "Virgo"
+msgstr ""
 
 #: ../data/str.xml.in.h:22
-msgid "Sick"
-msgstr "生病"
+msgid "Libra"
+msgstr ""
 
 #: ../data/str.xml.in.h:23
-msgid "Devil"
+msgid "Scorpius"
 msgstr ""
 
 #: ../data/str.xml.in.h:24
-msgid "Angel"
-msgstr "天使"
+msgid "Sagittarius"
+msgstr ""
 
 #: ../data/str.xml.in.h:25
-msgid "Love"
+msgid "Capricorn"
 msgstr ""
 
 #: ../data/str.xml.in.h:26
-msgid "Love Over"
+msgid "Aquarius"
 msgstr ""
 
 #: ../data/str.xml.in.h:27
-msgid "Cat"
-msgstr "猫"
+msgid "Pisces"
+msgstr ""
 
 #: ../data/str.xml.in.h:28
-msgid "Dog"
+msgid "Dice 1"
 msgstr ""
 
 #: ../data/str.xml.in.h:29
-msgid "Moon"
-msgstr "月亮"
+msgid "Dice 2"
+msgstr ""
 
 #: ../data/str.xml.in.h:30
-msgid "Star"
-msgstr "星星"
+msgid "Dice 3"
+msgstr ""
 
 #: ../data/str.xml.in.h:31
-msgid "Film"
+msgid "Dice 4"
 msgstr ""
 
 #: ../data/str.xml.in.h:32
-msgid "Musical Note"
-msgstr "乐符"
+msgid "Dice 5"
+msgstr ""
 
 #: ../data/str.xml.in.h:33
-msgid "Mail"
+msgid "Dice 6"
 msgstr ""
 
 #: ../data/str.xml.in.h:34
-msgid "Clock"
+msgid "Anchor"
 msgstr ""
 
 #: ../data/str.xml.in.h:35
-msgid "Kiss"
+msgid "Sword"
 msgstr ""
 
 #: ../data/str.xml.in.h:36
-msgid "Present"
-msgstr "礼物"
+msgid "Scales"
+msgstr ""
 
 #: ../data/str.xml.in.h:37
-msgid "Cake"
-msgstr "蛋糕"
+msgid "Conversation"
+msgstr ""
 
 #: ../data/str.xml.in.h:38
-msgid "Coffee"
+msgid "Warning"
 msgstr ""
 
 #: ../data/str.xml.in.h:39
-msgid "Phone"
-msgstr "电话"
+msgid "Thunder"
+msgstr ""
 
 #: ../data/str.xml.in.h:40
-msgid "Hug Left"
+msgid "Coffin"
 msgstr ""
 
 #: ../data/str.xml.in.h:41
-msgid "Hug Right"
+msgid "Gender"
 msgstr ""
 
 #: ../data/str.xml.in.h:42
-msgid "Beer"
-msgstr "啤酒"
+msgid "Soccer"
+msgstr ""
 
 #: ../data/str.xml.in.h:43
-msgid "Drink"
+msgid "Baseball"
 msgstr ""
 
 #: ../data/str.xml.in.h:44
-msgid "Boy"
-msgstr "男孩"
+msgid "Snowman"
+msgstr ""
 
 #: ../data/str.xml.in.h:45
-msgid "Girl"
+msgid "Shoji"
 msgstr ""
 
 #: ../data/str.xml.in.h:46
-msgid "Yes"
-msgstr "Yes"
+msgid "Maintenance"
+msgstr ""
 
 #: ../data/str.xml.in.h:47
-msgid "No"
-msgstr "No"
+msgid "Roadblock"
+msgstr ""
 
 #: ../data/str.xml.in.h:48
-msgid "Shut Mouth"
-msgstr "闭嘴"
+msgid "No entry"
+msgstr ""
 
 #: ../data/str.xml.in.h:49
-msgid "Money Mouth"
+msgid "Truck"
 msgstr ""
 
 #: ../data/str.xml.in.h:50
-msgid "Foot in Mouth"
+msgid "Torii"
 msgstr ""
 
 #: ../data/str.xml.in.h:51
-msgid "Shout"
-msgstr "大叫"
+msgid "Church"
+msgstr ""
 
 #: ../data/str.xml.in.h:52
-msgid "Monkey"
-msgstr "猴子"
+msgid "Castle"
+msgstr ""
 
-#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:53
+msgid "Historic site"
+msgstr ""
+
 #: ../data/str.xml.in.h:54
-msgid "Smileys (Japanese)"
+msgid "Power station"
 msgstr ""
 
 #: ../data/str.xml.in.h:55
+msgid "Lighthouse"
+msgstr ""
+
+#: ../data/str.xml.in.h:56
+msgid "Mountain"
+msgstr ""
+
+#: ../data/str.xml.in.h:57
+msgid "Beach"
+msgstr ""
+
+#: ../data/str.xml.in.h:58
+msgid "Park"
+msgstr ""
+
+#: ../data/str.xml.in.h:59
+msgid "Ferry"
+msgstr ""
+
+#: ../data/str.xml.in.h:60
+msgid "Sailboat"
+msgstr ""
+
+#: ../data/str.xml.in.h:61
+msgid "Ice rink"
+msgstr ""
+
+#: ../data/str.xml.in.h:62
+msgid "Scissors"
+msgstr ""
+
+#: ../data/str.xml.in.h:63
+msgid "Airplane"
+msgstr ""
+
+#: ../data/str.xml.in.h:64
+msgid "Clenched Fist"
+msgstr ""
+
+#: ../data/str.xml.in.h:65
+msgid "Hand"
+msgstr ""
+
+#: ../data/str.xml.in.h:66
+msgid "V Sign"
+msgstr ""
+
+#: ../data/str.xml.in.h:67
+msgid "Writing"
+msgstr ""
+
+#: ../data/str.xml.in.h:68
+msgid "Pencil"
+msgstr ""
+
+#: ../data/str.xml.in.h:69
+msgid "Pen"
+msgstr ""
+
+#: ../data/str.xml.in.h:70
+msgid "Star"
+msgstr "星星"
+
+#: ../data/str.xml.in.h:71
+msgid "Typhoon"
+msgstr ""
+
+#: ../data/str.xml.in.h:72
+msgid "Fog"
+msgstr ""
+
+#: ../data/str.xml.in.h:73
+msgid "Umbrella"
+msgstr ""
+
+#: ../data/str.xml.in.h:74
+msgid "Night sky"
+msgstr ""
+
+#: ../data/str.xml.in.h:75
+msgid "Sunrise"
+msgstr ""
+
+#: ../data/str.xml.in.h:76
+msgid "Sunset"
+msgstr ""
+
+#: ../data/str.xml.in.h:77
+msgid "Bridge"
+msgstr ""
+
+#: ../data/str.xml.in.h:78
+msgid "Wave"
+msgstr ""
+
+#: ../data/str.xml.in.h:79
+msgid "New Moon"
+msgstr ""
+
+#: ../data/str.xml.in.h:80
+msgid "Crescent Moon"
+msgstr ""
+
+#: ../data/str.xml.in.h:81
+msgid "Quarter Moon"
+msgstr ""
+
+#: ../data/str.xml.in.h:82
+msgid "Gibbous Moon"
+msgstr ""
+
+#: ../data/str.xml.in.h:83
+msgid "Full Moon"
+msgstr ""
+
+#: ../data/str.xml.in.h:84
+msgid "Moon"
+msgstr "月亮"
+
+#: ../data/str.xml.in.h:85
+msgid "Sun"
+msgstr ""
+
+#: ../data/str.xml.in.h:86
+msgid "Cloud"
+msgstr ""
+
+#: ../data/str.xml.in.h:87
+msgid "Palm"
+msgstr ""
+
+#: ../data/str.xml.in.h:88
+msgid "Hot Pepper"
+msgstr ""
+
+#: ../data/str.xml.in.h:89
+msgid "Flower"
+msgstr ""
+
+#: ../data/str.xml.in.h:90
+msgid "Tulip"
+msgstr ""
+
+#: ../data/str.xml.in.h:91
+msgid "Cherry"
+msgstr ""
+
+#: ../data/str.xml.in.h:92
+msgid "Rose"
+msgstr ""
+
+#: ../data/str.xml.in.h:93
+msgid "Hibiscus"
+msgstr ""
+
+#: ../data/str.xml.in.h:94
+msgid "Sunflower"
+msgstr ""
+
+#: ../data/str.xml.in.h:95
+msgid "Blossom"
+msgstr ""
+
+#: ../data/str.xml.in.h:96
+msgid "Clover"
+msgstr ""
+
+#: ../data/str.xml.in.h:97
+msgid "Maple"
+msgstr ""
+
+#: ../data/str.xml.in.h:98
+msgid "Fallen Leaf"
+msgstr ""
+
+#: ../data/str.xml.in.h:99
+msgid "Leaf"
+msgstr ""
+
+#: ../data/str.xml.in.h:100
+msgid "Mushroom"
+msgstr ""
+
+#: ../data/str.xml.in.h:101
+msgid "Tomato"
+msgstr ""
+
+#: ../data/str.xml.in.h:102
+msgid "Eggplant"
+msgstr ""
+
+#: ../data/str.xml.in.h:103
+msgid "Grape"
+msgstr ""
+
+#: ../data/str.xml.in.h:104
+msgid "Melon"
+msgstr ""
+
+#: ../data/str.xml.in.h:105
+msgid "Watermelon"
+msgstr ""
+
+#: ../data/str.xml.in.h:106
+msgid "Tangerine"
+msgstr ""
+
+#: ../data/str.xml.in.h:107
+msgid "Lemon"
+msgstr ""
+
+#: ../data/str.xml.in.h:108
+msgid "Banana"
+msgstr ""
+
+#: ../data/str.xml.in.h:109
+msgid "Pineapple"
+msgstr ""
+
+#: ../data/str.xml.in.h:110
+msgid "Apple"
+msgstr ""
+
+#: ../data/str.xml.in.h:111
+msgid "Pear"
+msgstr ""
+
+#: ../data/str.xml.in.h:112
+msgid "Peach"
+msgstr ""
+
+#: ../data/str.xml.in.h:113
+msgid "Strawberry"
+msgstr ""
+
+#: ../data/str.xml.in.h:114
+msgid "Hamburger"
+msgstr ""
+
+#: ../data/str.xml.in.h:115
+msgid "Pizza"
+msgstr ""
+
+#: ../data/str.xml.in.h:116
+msgid "Meat"
+msgstr ""
+
+#: ../data/str.xml.in.h:117
+msgid "Poultry"
+msgstr ""
+
+#: ../data/str.xml.in.h:118
+msgid "Rice Cracker"
+msgstr ""
+
+#: ../data/str.xml.in.h:119
+msgid "Rice Ball"
+msgstr ""
+
+#: ../data/str.xml.in.h:120
+msgid "Rice"
+msgstr ""
+
+#: ../data/str.xml.in.h:121
+msgid "Curry"
+msgstr ""
+
+#: ../data/str.xml.in.h:122
+msgid "Ramen"
+msgstr ""
+
+#: ../data/str.xml.in.h:123
+msgid "Spaghetti"
+msgstr ""
+
+#: ../data/str.xml.in.h:124
+msgid "Bread"
+msgstr ""
+
+#: ../data/str.xml.in.h:125
+msgid "Fried Potato"
+msgstr ""
+
+#: ../data/str.xml.in.h:126
+msgid "Roasted Sweet Potato"
+msgstr ""
+
+#: ../data/str.xml.in.h:127
+msgid "Dango"
+msgstr ""
+
+#: ../data/str.xml.in.h:128
+msgid "Oden"
+msgstr ""
+
+#: ../data/str.xml.in.h:129
+msgid "Sushi"
+msgstr ""
+
+#: ../data/str.xml.in.h:130
+msgid "Fried Shrimp"
+msgstr ""
+
+#: ../data/str.xml.in.h:131
+msgid "Fish Cake"
+msgstr ""
+
+#: ../data/str.xml.in.h:132
+msgid "Soft Ice Cream"
+msgstr ""
+
+#: ../data/str.xml.in.h:133
+msgid "Shaved Ice"
+msgstr ""
+
+#: ../data/str.xml.in.h:134
+msgid "Ice Cream"
+msgstr ""
+
+#: ../data/str.xml.in.h:135
+msgid "Doughnut"
+msgstr ""
+
+#: ../data/str.xml.in.h:136
+msgid "Cookie"
+msgstr ""
+
+#: ../data/str.xml.in.h:137
+msgid "Chocolate"
+msgstr ""
+
+#: ../data/str.xml.in.h:138
+msgid "Candy"
+msgstr ""
+
+#: ../data/str.xml.in.h:139
+msgid "Custard"
+msgstr ""
+
+#: ../data/str.xml.in.h:140
+msgid "Honey"
+msgstr ""
+
+#: ../data/str.xml.in.h:141
+msgid "Shortcake"
+msgstr ""
+
+#: ../data/str.xml.in.h:142
+msgid "Bento"
+msgstr ""
+
+#: ../data/str.xml.in.h:143
+msgid "Pot of Food"
+msgstr ""
+
+#: ../data/str.xml.in.h:144
+msgid "Cooking"
+msgstr ""
+
+#: ../data/str.xml.in.h:145
+msgid "Meal"
+msgstr ""
+
+#: ../data/str.xml.in.h:146
+msgid "Cup"
+msgstr ""
+
+#: ../data/str.xml.in.h:147
+msgid "Sake"
+msgstr ""
+
+#: ../data/str.xml.in.h:148
+msgid "Wine"
+msgstr ""
+
+#: ../data/str.xml.in.h:149
+msgid "Cocktail"
+msgstr ""
+
+#: ../data/str.xml.in.h:150
+msgid "Drink"
+msgstr ""
+
+#: ../data/str.xml.in.h:151
+msgid "Beer"
+msgstr "啤酒"
+
+#: ../data/str.xml.in.h:152
+msgid "Cheers"
+msgstr ""
+
+#: ../data/str.xml.in.h:153
+msgid "Baby Bottle"
+msgstr ""
+
+#: ../data/str.xml.in.h:154
+msgid "Ribbon"
+msgstr ""
+
+#: ../data/str.xml.in.h:155
+msgid "Present"
+msgstr "礼物"
+
+#: ../data/str.xml.in.h:156
+msgid "Cake"
+msgstr "蛋糕"
+
+#: ../data/str.xml.in.h:157
+msgid "Hallowe'en"
+msgstr ""
+
+#: ../data/str.xml.in.h:158
+msgid "Christmas"
+msgstr ""
+
+#: ../data/str.xml.in.h:159
+msgid "Piano"
+msgstr ""
+
+#: ../data/str.xml.in.h:160
+msgid "Microphone"
+msgstr ""
+
+#: ../data/str.xml.in.h:161
+msgid "Headphone"
+msgstr ""
+
+#: ../data/str.xml.in.h:162
+msgid "Hat"
+msgstr ""
+
+#: ../data/str.xml.in.h:163
+msgid "Musical Note"
+msgstr "乐符"
+
+#: ../data/str.xml.in.h:164
+msgid "Saxophone"
+msgstr ""
+
+#: ../data/str.xml.in.h:165
+msgid "Guiter"
+msgstr ""
+
+#: ../data/str.xml.in.h:166
+msgid "Trumpet"
+msgstr ""
+
+#: ../data/str.xml.in.h:167
+msgid "Violin"
+msgstr ""
+
+#: ../data/str.xml.in.h:168
+msgid "Musical Score"
+msgstr ""
+
+#: ../data/str.xml.in.h:169
+msgid "Tennis"
+msgstr ""
+
+#: ../data/str.xml.in.h:170
+msgid "Ski"
+msgstr ""
+
+#: ../data/str.xml.in.h:171
+msgid "Basketball"
+msgstr ""
+
+#: ../data/str.xml.in.h:172
+msgid "Flag"
+msgstr ""
+
+#: ../data/str.xml.in.h:173
+msgid "Show Board"
+msgstr ""
+
+#: ../data/str.xml.in.h:174
+msgid "Running"
+msgstr ""
+
+#: ../data/str.xml.in.h:175
+msgid "Surfer"
+msgstr ""
+
+#: ../data/str.xml.in.h:176
+msgid "Medal"
+msgstr ""
+
+#: ../data/str.xml.in.h:177
+msgid "Trophy"
+msgstr ""
+
+#: ../data/str.xml.in.h:178
+msgid "Horse Racing"
+msgstr ""
+
+#: ../data/str.xml.in.h:179
+msgid "American Football"
+msgstr ""
+
+#: ../data/str.xml.in.h:180
+msgid "Rugby"
+msgstr ""
+
+#: ../data/str.xml.in.h:181
+msgid "Swimmer"
+msgstr ""
+
+#: ../data/str.xml.in.h:182
+msgid "Weight Lifting"
+msgstr ""
+
+#: ../data/str.xml.in.h:183
+msgid "Golf"
+msgstr ""
+
+#: ../data/str.xml.in.h:184
+msgid "Motorcycle"
+msgstr ""
+
+#: ../data/str.xml.in.h:185
+msgid "Race"
+msgstr ""
+
+#: ../data/str.xml.in.h:186
+msgid "House"
+msgstr ""
+
+#: ../data/str.xml.in.h:187
+msgid "Office"
+msgstr ""
+
+#: ../data/str.xml.in.h:188
+msgid "Hospital"
+msgstr ""
+
+#: ../data/str.xml.in.h:189
+msgid "Bank"
+msgstr ""
+
+#: ../data/str.xml.in.h:190
+msgid "Hotel"
+msgstr ""
+
+#: ../data/str.xml.in.h:191
+msgid "School"
+msgstr ""
+
+#: ../data/str.xml.in.h:192
+msgid "Factory"
+msgstr ""
+
+#: ../data/str.xml.in.h:193
+msgid "Rat"
+msgstr ""
+
+#: ../data/str.xml.in.h:194
+msgid "Mouse"
+msgstr ""
+
+#: ../data/str.xml.in.h:195
+msgid "Cow"
+msgstr ""
+
+#: ../data/str.xml.in.h:196
+msgid "Tiger"
+msgstr ""
+
+#: ../data/str.xml.in.h:197
+msgid "Leopard"
+msgstr ""
+
+#: ../data/str.xml.in.h:198
+msgid "Rabbit"
+msgstr ""
+
+#: ../data/str.xml.in.h:199
+msgid "Cat"
+msgstr "猫"
+
+#: ../data/str.xml.in.h:200
+msgid "Dragon"
+msgstr ""
+
+#: ../data/str.xml.in.h:201
+msgid "Crocodile"
+msgstr ""
+
+#: ../data/str.xml.in.h:202
+msgid "Whale"
+msgstr ""
+
+#: ../data/str.xml.in.h:203
+msgid "Snail"
+msgstr ""
+
+#: ../data/str.xml.in.h:204
+msgid "Snake"
+msgstr ""
+
+#: ../data/str.xml.in.h:205
+msgid "Horse"
+msgstr ""
+
+#: ../data/str.xml.in.h:206
+msgid "Sheep"
+msgstr ""
+
+#: ../data/str.xml.in.h:207
+msgid "Goat"
+msgstr ""
+
+#: ../data/str.xml.in.h:208
+msgid "Monkey"
+msgstr "猴子"
+
+#: ../data/str.xml.in.h:209
+msgid "Chicken"
+msgstr ""
+
+#: ../data/str.xml.in.h:210
+msgid "Dog"
+msgstr ""
+
+#: ../data/str.xml.in.h:211
+msgid "Pig"
+msgstr ""
+
+#: ../data/str.xml.in.h:212
+msgid "Elephant"
+msgstr ""
+
+#: ../data/str.xml.in.h:213
+msgid "Octopus"
+msgstr ""
+
+#: ../data/str.xml.in.h:214
+msgid "Spiral Shell"
+msgstr ""
+
+#: ../data/str.xml.in.h:215
+msgid "Bug"
+msgstr ""
+
+#: ../data/str.xml.in.h:216
+msgid "Ant"
+msgstr ""
+
+#: ../data/str.xml.in.h:217
+msgid "Lady Beetle"
+msgstr ""
+
+#: ../data/str.xml.in.h:218
+msgid "Fish"
+msgstr ""
+
+#: ../data/str.xml.in.h:219
+msgid "Tropical Fish"
+msgstr ""
+
+#: ../data/str.xml.in.h:220
+msgid "Blowfish"
+msgstr ""
+
+#: ../data/str.xml.in.h:221
+msgid "Bird"
+msgstr ""
+
+#: ../data/str.xml.in.h:222
+msgid "Penguin"
+msgstr ""
+
+#: ../data/str.xml.in.h:223
+msgid "Koala"
+msgstr ""
+
+#: ../data/str.xml.in.h:224
+msgid "Poodle"
+msgstr ""
+
+#: ../data/str.xml.in.h:225
+msgid "Camel"
+msgstr ""
+
+#: ../data/str.xml.in.h:226
+msgid "Dolphin"
+msgstr ""
+
+#: ../data/str.xml.in.h:227
+msgid "Frog"
+msgstr ""
+
+#: ../data/str.xml.in.h:228
+msgid "Hamster"
+msgstr ""
+
+#: ../data/str.xml.in.h:229
+msgid "Wolf"
+msgstr ""
+
+#: ../data/str.xml.in.h:230
+msgid "Bear"
+msgstr "熊"
+
+#: ../data/str.xml.in.h:231
+msgid "Panda"
+msgstr ""
+
+#: ../data/str.xml.in.h:232
+msgid "Eye"
+msgstr ""
+
+#: ../data/str.xml.in.h:233
+msgid "Ear"
+msgstr ""
+
+#: ../data/str.xml.in.h:234
+msgid "Nose"
+msgstr ""
+
+#: ../data/str.xml.in.h:235
+msgid "Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:236
+msgid "Tongue"
+msgstr "吐舌"
+
+#: ../data/str.xml.in.h:237
+msgid "Crown"
+msgstr ""
+
+#: ../data/str.xml.in.h:238
+msgid "Glasses"
+msgstr ""
+
+#: ../data/str.xml.in.h:239
+msgid "Necktie"
+msgstr ""
+
+#: ../data/str.xml.in.h:240
+msgid "T-Shirt"
+msgstr ""
+
+#: ../data/str.xml.in.h:241
+msgid "Jeans"
+msgstr ""
+
+#: ../data/str.xml.in.h:242
+msgid "Dress"
+msgstr ""
+
+#: ../data/str.xml.in.h:243
+msgid "Kimono"
+msgstr ""
+
+#: ../data/str.xml.in.h:244
+msgid "Bikini"
+msgstr ""
+
+#: ../data/str.xml.in.h:245
+msgid "Clothes"
+msgstr ""
+
+#: ../data/str.xml.in.h:246
+msgid "Purse"
+msgstr ""
+
+#: ../data/str.xml.in.h:247
+msgid "Handbag"
+msgstr ""
+
+#: ../data/str.xml.in.h:248
+msgid "Pouch"
+msgstr ""
+
+#: ../data/str.xml.in.h:249
+msgid "Shoe"
+msgstr ""
+
+#: ../data/str.xml.in.h:250
+msgid "Footprint"
+msgstr ""
+
+#: ../data/str.xml.in.h:251
+msgid "Account"
+msgstr ""
+
+#: ../data/str.xml.in.h:252
+msgid "Boy"
+msgstr "男孩"
+
+#: ../data/str.xml.in.h:253
+msgid "Girl"
+msgstr ""
+
+#: ../data/str.xml.in.h:254
+msgid "Man"
+msgstr ""
+
+#: ../data/str.xml.in.h:255
+msgid "Woman"
+msgstr ""
+
+#: ../data/str.xml.in.h:256
+msgid "Family"
+msgstr ""
+
+#: ../data/str.xml.in.h:257
+msgid "Restroom"
+msgstr ""
+
+#: ../data/str.xml.in.h:258
+msgid "Men"
+msgstr ""
+
+#: ../data/str.xml.in.h:259
+msgid "Women"
+msgstr ""
+
+#: ../data/str.xml.in.h:260
+msgid "Princess"
+msgstr ""
+
+#: ../data/str.xml.in.h:261
+msgid "Japanese Ogre"
+msgstr ""
+
+#: ../data/str.xml.in.h:262
+msgid "Japanese Goblin"
+msgstr ""
+
+#: ../data/str.xml.in.h:263
+msgid "Ghost"
+msgstr ""
+
+#: ../data/str.xml.in.h:264
+msgid "Baby Angel"
+msgstr ""
+
+#: ../data/str.xml.in.h:265
+msgid "Extraterrestrial Alien"
+msgstr ""
+
+#: ../data/str.xml.in.h:266
+msgid "Alien Monster"
+msgstr ""
+
+#: ../data/str.xml.in.h:267
+msgid "IMP"
+msgstr ""
+
+#: ../data/str.xml.in.h:268
+msgid "Skull"
+msgstr ""
+
+#: ../data/str.xml.in.h:269
+msgid "Information Desk Person"
+msgstr ""
+
+#: ../data/str.xml.in.h:270
+msgid "Guardsman"
+msgstr ""
+
+#: ../data/str.xml.in.h:271
+msgid "Dancer"
+msgstr ""
+
+#: ../data/str.xml.in.h:272
+msgid "Lipstick"
+msgstr ""
+
+#: ../data/str.xml.in.h:273
+msgid "Nail"
+msgstr ""
+
+#: ../data/str.xml.in.h:274
+msgid "Face"
+msgstr ""
+
+#: ../data/str.xml.in.h:275
+msgid "Haircut"
+msgstr ""
+
+#: ../data/str.xml.in.h:276
+msgid "Syringe"
+msgstr ""
+
+#: ../data/str.xml.in.h:277
+msgid "Medicine"
+msgstr ""
+
+#: ../data/str.xml.in.h:278
+msgid "Kiss"
+msgstr ""
+
+#: ../data/str.xml.in.h:279
+msgid "Love Letter"
+msgstr ""
+
+#: ../data/str.xml.in.h:280
+msgid "Ring"
+msgstr ""
+
+#: ../data/str.xml.in.h:281
+msgid "Gem Stone"
+msgstr ""
+
+#: ../data/str.xml.in.h:282
+msgid "Wedding"
+msgstr ""
+
+#: ../data/str.xml.in.h:283
+msgid "Heart"
+msgstr ""
+
+#: ../data/str.xml.in.h:284
+msgid "Idea"
+msgstr ""
+
+#: ../data/str.xml.in.h:285
+msgid "Anger"
+msgstr ""
+
+#: ../data/str.xml.in.h:286
+msgid "Bomb"
+msgstr ""
+
+#: ../data/str.xml.in.h:287
+msgid "Sleeping"
+msgstr ""
+
+#: ../data/str.xml.in.h:288
+msgid "Collision"
+msgstr ""
+
+#: ../data/str.xml.in.h:289
+msgid "Sweat"
+msgstr ""
+
+#: ../data/str.xml.in.h:290
+msgid "Droplet"
+msgstr ""
+
+#: ../data/str.xml.in.h:291
+msgid "Dash"
+msgstr ""
+
+#: ../data/str.xml.in.h:292
+msgid "Poo"
+msgstr ""
+
+#: ../data/str.xml.in.h:293
+msgid "Muscle"
+msgstr ""
+
+#: ../data/str.xml.in.h:294
+msgid "Dizzy"
+msgstr ""
+
+#: ../data/str.xml.in.h:295
+msgid "Speech"
+msgstr ""
+
+#: ../data/str.xml.in.h:296
+msgid "Thought"
+msgstr ""
+
+#: ../data/str.xml.in.h:297
+msgid "Perfect Score"
+msgstr ""
+
+#: ../data/str.xml.in.h:298
+msgid "Pushpin"
+msgstr ""
+
+#: ../data/str.xml.in.h:299
+msgid "Clip"
+msgstr ""
+
+#: ../data/str.xml.in.h:300
+msgid "Speaker"
+msgstr ""
+
+#: ../data/str.xml.in.h:301
+msgid "Battery"
+msgstr ""
+
+#: ../data/str.xml.in.h:302
+msgid "Plug"
+msgstr ""
+
+#: ../data/str.xml.in.h:303
+msgid "Search"
+msgstr ""
+
+#: ../data/str.xml.in.h:304
+msgid "Bookmark"
+msgstr ""
+
+#: ../data/str.xml.in.h:305
+msgid "Book"
+msgstr ""
+
+#: ../data/str.xml.in.h:306
+msgid "Memo"
+msgstr ""
+
+#: ../data/str.xml.in.h:307
+msgid "Mail"
+msgstr ""
+
+#: ../data/str.xml.in.h:308
+msgid "Mobile Phone"
+msgstr ""
+
+#: ../data/str.xml.in.h:309
+msgid "Camera"
+msgstr ""
+
+#: ../data/str.xml.in.h:310
+msgid "Video"
+msgstr ""
+
+#: ../data/str.xml.in.h:311
+msgid "Television"
+msgstr ""
+
+#: ../data/str.xml.in.h:312
+msgid "Radio"
+msgstr ""
+
+#: ../data/str.xml.in.h:313
+msgid "Key"
+msgstr ""
+
+#: ../data/str.xml.in.h:314
+msgid "Lock"
+msgstr ""
+
+#: ../data/str.xml.in.h:315
+msgid "Fire"
+msgstr ""
+
+#: ../data/str.xml.in.h:316
+msgid "Wrench"
+msgstr ""
+
+#: ../data/str.xml.in.h:317
+msgid "Hammer"
+msgstr ""
+
+#: ../data/str.xml.in.h:318
+msgid "Bolt"
+msgstr ""
+
+#: ../data/str.xml.in.h:319
+msgid "Hocho"
+msgstr ""
+
+#: ../data/str.xml.in.h:320
+msgid "Pistol"
+msgstr ""
+
+#: ../data/str.xml.in.h:321
+msgid "Microscope"
+msgstr ""
+
+#: ../data/str.xml.in.h:322
+msgid "Telescope"
+msgstr ""
+
+#: ../data/str.xml.in.h:323
+msgid "Crystal"
+msgstr ""
+
+#: ../data/str.xml.in.h:324
+msgid "David Star"
+msgstr ""
+
+#: ../data/str.xml.in.h:325
+msgid "Beginner"
+msgstr ""
+
+#: ../data/str.xml.in.h:326
+msgid "Candle"
+msgstr ""
+
+#: ../data/str.xml.in.h:327
+msgid "Hole"
+msgstr ""
+
+#: ../data/str.xml.in.h:328
+msgid "Personal Computer"
+msgstr ""
+
+#: ../data/str.xml.in.h:329
+msgid "keyboard"
+msgstr ""
+
+#: ../data/str.xml.in.h:330
+msgid "Printer"
+msgstr ""
+
+#: ../data/str.xml.in.h:331
+msgid "Calculator"
+msgstr ""
+
+#: ../data/str.xml.in.h:332
+msgid "Minimize"
+msgstr ""
+
+#: ../data/str.xml.in.h:333
+msgid "Maximize"
+msgstr ""
+
+#: ../data/str.xml.in.h:334
+msgid "Refresh"
+msgstr ""
+
+#: ../data/str.xml.in.h:335
+msgid "Close"
+msgstr ""
+
+#: ../data/str.xml.in.h:336
+msgid "World"
+msgstr ""
+
+#: ../data/str.xml.in.h:337
+msgid "Mt. Fuji"
+msgstr ""
+
+#: ../data/str.xml.in.h:338
+msgid "Tokyo Tower"
+msgstr ""
+
+#: ../data/str.xml.in.h:339
+msgid "Japan"
+msgstr ""
+
+#: ../data/str.xml.in.h:340
+msgid "Anguish"
+msgstr ""
+
+#: ../data/str.xml.in.h:341
+msgid "Smile"
+msgstr "微笑"
+
+#: ../data/str.xml.in.h:342
+msgid "Smirk"
+msgstr ""
+
+#: ../data/str.xml.in.h:343
+msgid "Neutral"
+msgstr ""
+
+#: ../data/str.xml.in.h:344
+msgid "Expressionless"
+msgstr ""
+
+#: ../data/str.xml.in.h:345
+msgid "Unamused"
+msgstr ""
+
+#: ../data/str.xml.in.h:346
+msgid "Pensive"
+msgstr ""
+
+#: ../data/str.xml.in.h:347
+msgid "Confused"
+msgstr ""
+
+#: ../data/str.xml.in.h:348
+msgid "Confounded"
+msgstr ""
+
+#: ../data/str.xml.in.h:349
+msgid "Disappointed"
+msgstr ""
+
+#: ../data/str.xml.in.h:350
+msgid "Angry"
+msgstr "生气"
+
+#: ../data/str.xml.in.h:351
+msgid "Cry"
+msgstr ""
+
+#: ../data/str.xml.in.h:352
+msgid "Sleeply"
+msgstr ""
+
+#: ../data/str.xml.in.h:353
+msgid "Tired"
+msgstr ""
+
+#: ../data/str.xml.in.h:354
+msgid "Surprise"
+msgstr ""
+
+#: ../data/str.xml.in.h:355
+msgid "Scream"
+msgstr ""
+
+#: ../data/str.xml.in.h:356
+msgid "Flushed"
+msgstr ""
+
+#: ../data/str.xml.in.h:357
+msgid "Medical Mask"
+msgstr ""
+
+#: ../data/str.xml.in.h:358
+msgid "OK"
+msgstr ""
+
+#: ../data/str.xml.in.h:359
+msgid "Bow"
+msgstr ""
+
+#: ../data/str.xml.in.h:360
+msgid "See-No-Evil"
+msgstr ""
+
+#: ../data/str.xml.in.h:361
+msgid "Hear-No-Evil"
+msgstr ""
+
+#: ../data/str.xml.in.h:362
+msgid "Speak-No-Evil"
+msgstr ""
+
+#: ../data/str.xml.in.h:363
+msgid "Banzai"
+msgstr ""
+
+#: ../data/str.xml.in.h:364
+msgid "Pleading"
+msgstr ""
+
+#: ../data/str.xml.in.h:365
+msgid "Smileys"
+msgstr "表情"
+
+#: ../data/str.xml.in.h:366
+msgid "Smile Big"
+msgstr "大笑"
+
+#: ../data/str.xml.in.h:367
+msgid "Sad"
+msgstr "悲伤"
+
+#: ../data/str.xml.in.h:368
+msgid "Wink"
+msgstr "眨眼"
+
+#: ../data/str.xml.in.h:369
+msgid "Shock"
+msgstr "震惊"
+
+#: ../data/str.xml.in.h:370
+msgid "Kiss | Secret"
+msgstr ""
+
+#: ../data/str.xml.in.h:371
+msgid "Glasses Cool | Eyeroll"
+msgstr ""
+
+#: ../data/str.xml.in.h:372
+msgid "Glasses Cool"
+msgstr ""
+
+#: ../data/str.xml.in.h:373
+msgid "Embarrassed"
+msgstr ""
+
+#: ../data/str.xml.in.h:374
+msgid "Crying"
+msgstr ""
+
+#: ../data/str.xml.in.h:375
+msgid "Thinking"
+msgstr "思考"
+
+#: ../data/str.xml.in.h:376
+msgid "Don't Know"
+msgstr ""
+
+#: ../data/str.xml.in.h:377
+msgid "Party"
+msgstr "派对"
+
+#: ../data/str.xml.in.h:378
+msgid "Yawn"
+msgstr "呵欠"
+
+#: ../data/str.xml.in.h:379
+msgid "Bunny"
+msgstr "兔子"
+
+#: ../data/str.xml.in.h:380
+msgid "Sick"
+msgstr "生病"
+
+#: ../data/str.xml.in.h:381
+msgid "Devil"
+msgstr ""
+
+#: ../data/str.xml.in.h:382
+msgid "Angel"
+msgstr "天使"
+
+#: ../data/str.xml.in.h:383
+msgid "Love"
+msgstr ""
+
+#: ../data/str.xml.in.h:384
+msgid "Love Over"
+msgstr ""
+
+#: ../data/str.xml.in.h:385
+msgid "Film"
+msgstr ""
+
+#: ../data/str.xml.in.h:386
+msgid "Clock"
+msgstr ""
+
+#: ../data/str.xml.in.h:387
+msgid "Coffee"
+msgstr ""
+
+#: ../data/str.xml.in.h:388
+msgid "Phone"
+msgstr "电话"
+
+#: ../data/str.xml.in.h:389
+msgid "Hug Left"
+msgstr ""
+
+#: ../data/str.xml.in.h:390
+msgid "Hug Right"
+msgstr ""
+
+#: ../data/str.xml.in.h:391
+msgid "Yes"
+msgstr "Yes"
+
+#: ../data/str.xml.in.h:392
+msgid "No"
+msgstr "No"
+
+#: ../data/str.xml.in.h:393
+msgid "Shut Mouth"
+msgstr "闭嘴"
+
+#: ../data/str.xml.in.h:394
+msgid "Money Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:395
+msgid "Foot in Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:396
+msgid "Shout"
+msgstr "大叫"
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in.h:398
+msgid "Smileys (Japanese)"
+msgstr ""
+
+#: ../data/str.xml.in.h:399
 msgid "Smoking"
 msgstr "抽烟"
 
-#: ../data/str.xml.in.h:56
+#: ../data/str.xml.in.h:400
 msgid "Sorry"
 msgstr "抱歉"
 
-#: ../data/str.xml.in.h:57
+#: ../data/str.xml.in.h:401
 msgid "Hug"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:59
+#: ../data/str.xml.in.h:403
 msgid "Smileys (Japanese 2ch)"
 msgstr ""
 
-#: ../data/str.xml.in.h:60
+#: ../data/str.xml.in.h:404
 msgid "Hey"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:62
+#: ../data/str.xml.in.h:406
 msgid "Smileys (Chinese)"
 msgstr ""
 
-#: ../data/str.xml.in.h:63
+#: ../data/str.xml.in.h:407
 msgid "Crow"
 msgstr ""
 
-#: ../data/str.xml.in.h:64
-msgid "Bear"
-msgstr "熊"
-
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:66
+#: ../data/str.xml.in.h:409
 msgid "Acronym"
 msgstr ""
 
-#: ../data/str.xml.in.h:67
+#: ../data/str.xml.in.h:410
 msgid "Acronym (Computer)"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:69
+#: ../data/str.xml.in.h:412
 msgid "Acronym (Japanese)"
 msgstr ""
 
-#: ../data/str.xml.in.h:70
+#: ../data/str.xml.in.h:413
 msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
 msgstr ""
 
-#: ../data/str.xml.in.h:71
+#: ../data/str.xml.in.h:414
 msgid "Can't get together (Guda Guda)"
 msgstr ""
 
-#: ../data/str.xml.in.h:72
+#: ../data/str.xml.in.h:415
 msgid "Say whatever one feels (Iitaidake)"
 msgstr ""
 
-#: ../data/str.xml.in.h:73
+#: ../data/str.xml.in.h:416
 msgid "Excited (Kitakore)"
 msgstr ""
 
-#: ../data/str.xml.in.h:74
+#: ../data/str.xml.in.h:417
 msgid "Detail (Kuwashiku)"
 msgstr ""
 
-#: ../data/str.xml.in.h:75
+#: ../data/str.xml.in.h:418
 msgid "Cannot read between lines (Kuuki Ga Yomenai)"
 msgstr ""
 
-#: ../data/str.xml.in.h:76
+#: ../data/str.xml.in.h:419
 msgid "Omission (Shouryaku)"
 msgstr ""
 
-#: ../data/str.xml.in.h:77
+#: ../data/str.xml.in.h:420
 msgid "Excited (Waku Waku Teka Teka)"
 msgstr ""
 
-#: ../data/str.xml.in.h:78
+#: ../data/str.xml.in.h:421
 msgid "Laugh"
 msgstr ""
 
-#: ../data/str.xml.in.h:79
+#: ../data/str.xml.in.h:422
 msgid "Dude (Oi!)"
 msgstr ""
 
-#: ../data/str.xml.in.h:80
-msgid "In The Meantime (Toriaezu, Ma)"
-msgstr ""
-
-#: ../data/str.xml.in.h:81
-msgid "Bye"
-msgstr "拜拜"
-
-#: ../data/str.xml.in.h:82
-msgid "False Start (Flying Get)"
-msgstr ""
-
-#: ../data/str.xml.in.h:83
-msgid "Fulfilling Life (Real life is Zyujitsu)"
-msgstr ""
-
-#: ../data/str.xml.in.h:84
-msgid "Laugh (Warau)"
-msgstr ""
-
-#: ../data/str.xml.in.h:85
+#: ../data/str.xml.in.h:423
 msgid "Good job (Otsukare)"
 msgstr ""
 
-#: ../data/str.xml.in.h:86
+#: ../data/str.xml.in.h:424
+msgid "Want (Kure, E.g. pics クレメンス)"
+msgstr ""
+
+#: ../data/str.xml.in.h:425
+msgid "ASCII art of a hand (✊, E.g. つAttention)"
+msgstr ""
+
+#: ../data/str.xml.in.h:426
+msgid "In The Meantime (Toriaezu, Maa)"
+msgstr ""
+
+#: ../data/str.xml.in.h:427
+msgid "Self-confidence (Aniki, E.g. tennis ニキ)"
+msgstr ""
+
+#: ../data/str.xml.in.h:428
+msgid "Bye"
+msgstr "拜拜"
+
+#: ../data/str.xml.in.h:429
+msgid "Want (Hattekure, E.g. pics ハラデイ)"
+msgstr ""
+
+#: ../data/str.xml.in.h:430
+msgid "Exist as microparticles (Biryushi Level De Sonzaisuru)"
+msgstr ""
+
+#: ../data/str.xml.in.h:431
+msgid "False Start (Flying Get)"
+msgstr ""
+
+#: ../data/str.xml.in.h:432
+msgid "Fulfilling Life (Real life is Zyujitsu)"
+msgstr ""
+
+#: ../data/str.xml.in.h:433
+msgid "Laugh (Warau)"
+msgstr ""
+
+#: ../data/str.xml.in.h:434
 msgid "He (Yatsu &lt;- Yashi)"
 msgstr ""
 
@@ -1972,19 +3190,211 @@ msgstr "中文"
 msgid "Bopomofo"
 msgstr ""
 
-#: ../input-pad/eek-gtk.c:62
+#: ../input-pad/app-menu.ui.h:1
+msgid "_File"
+msgstr "文件(_F)"
+
+#: ../input-pad/app-menu.ui.h:2 ../input-pad/dialog.ui.h:21
+msgid "_Close"
+msgstr "关闭(_C)"
+
+#: ../input-pad/app-menu.ui.h:3
+msgid "Close the program"
+msgstr "关闭程序"
+
+#: ../input-pad/app-menu.ui.h:4
+msgid "_Pad"
+msgstr "面板(_P)"
+
+#: ../input-pad/app-menu.ui.h:5
+msgid "_Code Point"
+msgstr "码点(_C)"
+
+#: ../input-pad/app-menu.ui.h:6
+msgid "_Show Pad"
+msgstr "显示面板(_S)"
+
+#: ../input-pad/app-menu.ui.h:7
+msgid "Show _All Characters"
+msgstr "显示所有字符(_A)"
+
+#: ../input-pad/app-menu.ui.h:8
+msgid "Show _Custom Characters"
+msgstr "显示自定义字符(_C)"
+
+#: ../input-pad/app-menu.ui.h:9
+msgid "Show _Nothing"
+msgstr "不显示(_N)"
+
+#: ../input-pad/app-menu.ui.h:10
+msgid "Show _Keyboard Layout"
+msgstr "显示键盘布局(_K)"
+
+#: ../input-pad/app-menu.ui.h:11
+msgid "_Help"
+msgstr "帮助(_H)"
+
+#: ../input-pad/app-menu.ui.h:12
+msgid "_Troubleshoot"
+msgstr "错误诊断(_T)"
+
+#: ../input-pad/app-menu.ui.h:13
+msgid "_About"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:1
+msgid "Code Point Dialog"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:2
+msgid "Unicode"
+msgstr "Unicode"
+
+#: ../input-pad/dialog.ui.h:3
+msgid "You can choose encoding type"
+msgstr "您可以选择编码类型"
+
+#: ../input-pad/dialog.ui.h:4
+msgid "Current Encoding"
+msgstr "当前编码"
+
+#: ../input-pad/dialog.ui.h:5
+msgid "Copy Buffer"
+msgstr "复制缓存"
+
+#: ../input-pad/dialog.ui.h:6
+msgid "Base 16\n"
+"Hex"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:8
+msgid "Set number case to hexadecimal"
+msgstr "设定数字为十六进制"
+
+#: ../input-pad/dialog.ui.h:9
+msgid "Base 10\n"
+"Dec"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:11
+msgid "Set number case to decimal"
+msgstr "设定数字为十进制"
+
+#: ../input-pad/dialog.ui.h:12
+msgid "Base 8\n"
+"Oct"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:14
+msgid "Set number case to octal"
+msgstr "设定数字为八进制"
+
+#: ../input-pad/dialog.ui.h:15
+msgid "Base 2\n"
+"Bin"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:17
+msgid "Set number case to binary"
+msgstr "设定数字为二进制"
+
+#: ../input-pad/dialog.ui.h:18
+msgid "Code Point:"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:19
+msgid "Character:"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:20
+msgid "_Send"
+msgstr "发送(_S)"
+
+#: ../input-pad/dialog.ui.h:22
+msgid "Input Pad Troubleshoot"
+msgstr "输入面板除错程序"
+
+#: ../input-pad/dialog.ui.h:24
+#, no-c-format
+msgid ""
+"\n"
+"This application can be run either as a stand-alone program or under an "
+"input method application.\n"
+"If you wish to send multi-byte characters, this application needs to be run "
+"under an input method application.\n"
+"If you wish to send characters to X11 applications, those applications needs "
+"to allow send events. e.g.\n"
+"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
+"\n"
+"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/"
+"pad to customize those in \"Custom Character\" pane."
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:31
+msgid "_OK"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:32
+msgid "Configure Keyboard Layouts"
+msgstr "配置键盘布局"
+
+#: ../input-pad/dialog.ui.h:33
+msgid "A_vailable layouts:"
+msgstr "可用的布局(_V)："
+
+#: ../input-pad/dialog.ui.h:34
+msgid "_Add"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:35
+msgid "_Layouts shown in the list:"
+msgstr "列表中显示的布局(_L)："
+
+#: ../input-pad/dialog.ui.h:36
+msgid "_Remove"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:37
+msgid "_Options"
+msgstr "选项(_O)"
+
+#: ../input-pad/dialog.ui.h:38
+msgid "Configure Keyboard Options"
+msgstr "配置键盘选项"
+
+#: ../input-pad/dialog.ui.h:39
+msgid "_Use the default keyboard option"
+msgstr "使用默认键盘选项(_U)"
+
+#: ../input-pad/dialog.ui.h:40
+msgid "Use the defualt XKB option"
+msgstr "使用默认 XKB 选项"
+
+#: ../input-pad/dialog.ui.h:41
+msgid "<b>Keyboard Option</b>"
+msgstr "<b>键盘选项</b>"
+
+#: ../input-pad/dialog.ui.h:43
+msgid "The input pad is a tool to send a character on button."
+msgstr "输入面板是用来将字符发送至按键的工具。"
+
+#: ../input-pad/dialog.ui.h:44
+msgid "translator_credits"
+msgstr "Tommy He <tommy.he@linux.com>, 2012"
+
+#: ../input-pad/eek-gtk.c:65
 msgid "Use libeek to draw keyboard"
 msgstr ""
 
-#: ../input-pad/eek-gtk.c:234
+#: ../input-pad/eek-gtk.c:237
 msgid "eekboard layout"
 msgstr "eekboard 布局"
 
-#: ../input-pad/eek-gtk.c:246
+#: ../input-pad/eek-gtk.c:249
 msgid "eekboard Options"
 msgstr "eekboard 选项"
 
-#: ../input-pad/eek-gtk.c:246
+#: ../input-pad/eek-gtk.c:249
 msgid "Show eekboard Options"
 msgstr "显示 eekboard 选项"
 
@@ -2732,50 +4142,50 @@ msgstr ""
 msgid "Supplementary Private Use Area-B"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:172
+#: ../input-pad/window-gtk.c:203
 msgid "Display version"
 msgstr "显示版本"
 
 #. Translators: the word 'KBDUI' is not translated.
-#: ../input-pad/window-gtk.c:175
+#: ../input-pad/window-gtk.c:206
 msgid "Use KBDUI to draw keyboard"
 msgstr ""
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:178
+#: ../input-pad/window-gtk.c:209
 msgid "Use TYPE of char table. The available TYPE=0, 1, 2"
 msgstr ""
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:181
+#: ../input-pad/window-gtk.c:212
 msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:188
+#: ../input-pad/window-gtk.c:219
 msgid "Use XTEST module to send key events"
 msgstr "使用 XTEST 模块发送按键事件"
 
-#: ../input-pad/window-gtk.c:193
+#: ../input-pad/window-gtk.c:224
 msgid "Use XSendEvent to send key events"
 msgstr "使用 XSendEvent 发送按键事件"
 
-#: ../input-pad/window-gtk.c:1301
+#: ../input-pad/window-gtk.c:1172
 msgid "Fold layout"
 msgstr ""
 
-#: ../input-pad/window-gtk.c:1306 ../input-pad/window-gtk.c:2695
+#: ../input-pad/window-gtk.c:1177 ../input-pad/window-gtk.c:2610
 msgid "Extend layout"
 msgstr "扩展布局"
 
-#: ../input-pad/window-gtk.c:2895
+#: ../input-pad/window-gtk.c:2824
 msgid "Layout"
 msgstr "布局"
 
-#: ../input-pad/window-gtk.c:3170
+#: ../input-pad/window-gtk.c:3095
 msgid "_Layout:"
 msgstr "布局(_L)："
 
-#: ../input-pad/window-gtk.c:3200
+#: ../input-pad/window-gtk.c:3125
 msgid "_Configure Layouts"
 msgstr "配置布局(_C)"
 
@@ -2803,15 +4213,15 @@ msgstr "配置布局(_C)"
 #. license1, license2, license3);
 #. 
 #. This format has been used since gtk 2.20.
-#: ../input-pad/window-gtk.c:3239
+#: ../input-pad/window-gtk.c:3164
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
 msgstr "该程序不具有任何担保；欲知详情请访问 %s"
 
-#: ../input-pad/window-gtk.c:3707
+#: ../input-pad/window-gtk.c:3446
 msgid "Group"
 msgstr "分组"
 
-#: ../input-pad/window-gtk.c:3715
+#: ../input-pad/window-gtk.c:3454
 msgid "Subgroup"
 msgstr ""

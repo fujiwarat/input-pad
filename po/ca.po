@@ -1,26 +1,28 @@
 # Catalan translations for input-pad
-# Copyright (C) 2010-2013 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (C) 2010-2016 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
 #
 # Translators:
 # jordimash <jmas@softcatala.org>, 2013
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: input-pad\n"
+"Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
-"POT-Creation-Date: 2012-12-17 04:12+0900\n"
-"PO-Revision-Date: 2013-11-20 10:40+0000\n"
-"Last-Translator: jordimash <jmas@softcatala.org>\n"
-"Language-Team: Catalan <fedora@llistes.softcatala.org>\n"
+"POT-Creation-Date: 2016-03-02 18:45+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-10-03 08:46-0400\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"Language-Team: Catalan <fedora@llistes.softcatala.org>\n"
 "Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Zanata 3.8.2\n"
 
 #: ../data/alphabet.xml.in.in.h:1
 msgid "Alphabets"
-msgstr ""
+msgstr "Alfabets"
 
 #: ../data/base.xml.in.h:1
 msgid "Symbols"
@@ -32,7 +34,7 @@ msgstr "Moneda"
 
 #: ../data/base.xml.in.h:3
 msgid "Letterlike"
-msgstr ""
+msgstr "Similars a lletres"
 
 #: ../data/base.xml.in.h:4
 msgid "Miscellaneous"
@@ -45,7 +47,7 @@ msgstr "Dibuixos"
 #. Translators: Superscripts and Subscripts
 #: ../data/base.xml.in.h:7
 msgid "Super and Sub"
-msgstr ""
+msgstr "Super i sub"
 
 #: ../data/base.xml.in.h:8
 msgid "Bold"
@@ -57,7 +59,7 @@ msgstr "Cursiva"
 
 #: ../data/base.xml.in.h:10
 msgid "Script"
-msgstr ""
+msgstr "Cal·ligrafia"
 
 #: ../data/base.xml.in.h:11
 msgid "Double Struck"
@@ -73,15 +75,15 @@ msgstr "Números"
 
 #: ../data/base.xml.in.h:14
 msgid "Roman"
-msgstr ""
+msgstr "Romans"
 
 #: ../data/base.xml.in.h:15
 msgid "Enclosed"
-msgstr ""
+msgstr "Tancats"
 
 #: ../data/base.xml.in.h:16
 msgid "Fraction"
-msgstr "Fracció"
+msgstr "Fraccions"
 
 #: ../data/base.xml.in.h:17
 msgid "Technical"
@@ -89,11 +91,11 @@ msgstr "Tècnic"
 
 #: ../data/base.xml.in.h:18
 msgid "Unit"
-msgstr "Unitat"
+msgstr "Unitats"
 
 #: ../data/base.xml.in.h:19
 msgid "Mathematical"
-msgstr ""
+msgstr "Matemàtic"
 
 #: ../data/base.xml.in.h:20
 msgid "Controls"
@@ -101,7 +103,7 @@ msgstr "Controls"
 
 #: ../data/base.xml.in.h:21
 msgid "OCR"
-msgstr ""
+msgstr "OCR"
 
 #: ../data/base.xml.in.h:22
 msgid "Graphics"
@@ -115,7 +117,7 @@ msgstr "Fletxa"
 msgid "Box Drawing"
 msgstr "Dibuix de caixes"
 
-#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3937
+#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3685
 msgid "Block"
 msgstr "Bloc"
 
@@ -129,7 +131,7 @@ msgstr "Braille"
 
 #: ../data/base.xml.in.h:28
 msgid "Punctuations"
-msgstr ""
+msgstr "Puntuació"
 
 #: ../data/base.xml.in.h:29
 msgid "General"
@@ -137,7 +139,7 @@ msgstr "General"
 
 #: ../data/base.xml.in.h:30
 msgid "CJK"
-msgstr ""
+msgstr "CJK"
 
 #: ../data/base.xml.in.h:31 ../input-pad/unicode_block.h:145
 msgid "CJK Compatibility"
@@ -157,7 +159,7 @@ msgstr "Data"
 
 #: ../data/cmd.xml.in.h:3
 msgid "Normal Date"
-msgstr ""
+msgstr "Data comú"
 
 #: ../data/cmd.xml.in.h:4
 msgid "Date and Time"
@@ -165,35 +167,35 @@ msgstr "Data i hora"
 
 #: ../data/cmd.xml.in.h:5
 msgid "ChangeLog date"
-msgstr ""
+msgstr "Data ChangeLog"
 
 #: ../data/cmd.xml.in.h:6
 msgid "USA English date"
-msgstr ""
+msgstr "Data en anglès EUA"
 
 #: ../data/cmd.xml.in.h:7
 msgid "UK English date"
-msgstr ""
+msgstr "Data en anglès RU"
 
 #: ../data/cmd.xml.in.h:8
 msgid "ISO 8601 date"
-msgstr ""
+msgstr "Data ISO 8601"
 
 #: ../data/cmd.xml.in.h:9
 msgid "Era"
-msgstr ""
+msgstr "Era"
 
 #: ../data/cmd.xml.in.h:10
 msgid "Century Year"
-msgstr ""
+msgstr "Segle"
 
 #: ../data/cmd.xml.in.h:11
 msgid "Normal Time"
-msgstr ""
+msgstr "Hora normal"
 
 #: ../data/cmd.xml.in.h:12
 msgid "English Time"
-msgstr ""
+msgstr "Hora en anglès"
 
 #: ../data/cmd.xml.in.h:13
 msgid "Month"
@@ -201,233 +203,58 @@ msgstr "Mes"
 
 #: ../data/cmd.xml.in.h:14
 msgid "English Month"
-msgstr ""
+msgstr "Mes en anglès"
 
 #: ../data/cmd.xml.in.h:15
 msgid "Short Month"
-msgstr ""
+msgstr "Mes curt"
 
 #: ../data/cmd.xml.in.h:16
 msgid "English Short Month"
-msgstr ""
+msgstr "Mes curt en anglès"
 
 #: ../data/cmd.xml.in.h:17
 msgid "Weekday"
-msgstr "Dia laborable"
+msgstr "Dia de la setmana"
 
 #: ../data/cmd.xml.in.h:18
 msgid "English Weekday"
-msgstr ""
+msgstr "Dia de la setmana en anglès"
 
 #: ../data/cmd.xml.in.h:19
 msgid "Short Weekday"
-msgstr ""
+msgstr "Dia curt de la setmana"
 
 #: ../data/cmd.xml.in.h:20
 msgid "English Short Weekday"
-msgstr ""
+msgstr "Dia curt de la setmana en anglès"
 
 #: ../data/goth.xml.in.h:1 ../input-pad/unicode_block.h:196
 msgid "Gothic"
 msgstr "Gòtic"
 
-#: ../data/input-pad.desktop.in.h:1 ../data/input-pad.ui.h:50
-#: ../input-pad/window-gtk.c:5320 ../input-pad/window-gtk.c:5321
+#: ../data/input-pad.desktop.in.h:1 ../input-pad/dialog.ui.h:42
+#: ../input-pad/window-gtk.c:5084 ../input-pad/window-gtk.c:5085
+#: ../input-pad/window-gtk.ui.h:1
 msgid "Input Pad"
-msgstr ""
-
-#: ../data/input-pad.ui.h:1
-msgid "_File"
-msgstr "_Fitxer"
-
-#: ../data/input-pad.ui.h:2
-msgid "Close the program"
-msgstr ""
-
-#: ../data/input-pad.ui.h:3
-msgid "_Close"
-msgstr "_Tanca"
-
-#: ../data/input-pad.ui.h:4
-msgid "_Pad"
-msgstr ""
-
-#: ../data/input-pad.ui.h:5
-msgid "_Code Point"
-msgstr ""
-
-#: ../data/input-pad.ui.h:6
-msgid "_Show Pad"
-msgstr ""
-
-#: ../data/input-pad.ui.h:7
-msgid "Show _All Characters"
-msgstr ""
-
-#: ../data/input-pad.ui.h:8
-msgid "Show _Custom Characters"
-msgstr ""
-
-#: ../data/input-pad.ui.h:9
-msgid "Show _Nothing"
-msgstr ""
-
-#: ../data/input-pad.ui.h:10
-msgid "Show _Keyboard Layout"
-msgstr ""
-
-#: ../data/input-pad.ui.h:11
-msgid "_Help"
-msgstr "A_juda"
-
-#: ../data/input-pad.ui.h:12
-msgid "_Troubleshoot"
-msgstr ""
-
-#: ../data/input-pad.ui.h:13
-msgid "Code Point Dialog"
-msgstr ""
-
-#: ../data/input-pad.ui.h:14
-msgid "Unicode"
-msgstr "Unicode"
-
-#: ../data/input-pad.ui.h:15
-msgid "You can choose encoding type"
-msgstr ""
-
-#: ../data/input-pad.ui.h:16
-msgid "Current Encoding"
-msgstr ""
-
-#: ../data/input-pad.ui.h:17
-msgid "Copy Buffer"
-msgstr ""
-
-#: ../data/input-pad.ui.h:18
-msgid ""
-"Base 16\n"
-"Hex"
-msgstr ""
-
-#: ../data/input-pad.ui.h:20
-msgid "Set number case to hexadecimal"
-msgstr ""
-
-#: ../data/input-pad.ui.h:21
-msgid ""
-"Base 10\n"
-"Dec"
-msgstr ""
-
-#: ../data/input-pad.ui.h:23
-msgid "Set number case to decimal"
-msgstr ""
-
-#: ../data/input-pad.ui.h:24
-msgid ""
-"Base 8\n"
-"Oct"
-msgstr ""
-
-#: ../data/input-pad.ui.h:26
-msgid "Set number case to octal"
-msgstr ""
-
-#: ../data/input-pad.ui.h:27
-msgid ""
-"Base 2\n"
-"Bin"
-msgstr ""
-
-#: ../data/input-pad.ui.h:29
-msgid "Set number case to binary"
-msgstr ""
-
-#: ../data/input-pad.ui.h:30
-msgid "Code Point:"
-msgstr ""
-
-#: ../data/input-pad.ui.h:31
-msgid "Character:"
-msgstr ""
-
-#: ../data/input-pad.ui.h:32
-msgid "_Send"
-msgstr "En_via"
-
-#: ../data/input-pad.ui.h:33
-msgid "Input Pad Troubleshoot"
-msgstr ""
-
-#: ../data/input-pad.ui.h:35
-#, no-c-format
-msgid ""
-"\n"
-"This application can be run either as a stand-alone program or under an input method application.\n"
-"If you wish to send multi-byte characters, this application needs to be run under an input method application.\n"
-"If you wish to send characters to X11 applications, those applications needs to allow send events. e.g.\n"
-"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
-"\n"
-"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad to customize those in \"Custom Character\" pane."
-msgstr ""
-
-#: ../data/input-pad.ui.h:42
-msgid "Configure Keyboard Layouts"
-msgstr ""
-
-#: ../data/input-pad.ui.h:43
-msgid "A_vailable layouts:"
-msgstr ""
-
-#: ../data/input-pad.ui.h:44
-msgid "_Layouts shown in the list:"
-msgstr ""
-
-#: ../data/input-pad.ui.h:45
-msgid "_Options"
-msgstr "_Opcions"
-
-#: ../data/input-pad.ui.h:46
-msgid "Configure Keyboard Options"
-msgstr ""
-
-#: ../data/input-pad.ui.h:47
-msgid "_Use the default keyboard option"
-msgstr ""
-
-#: ../data/input-pad.ui.h:48
-msgid "Use the defualt XKB option"
-msgstr ""
-
-#: ../data/input-pad.ui.h:49
-msgid "<b>Keyboard Option</b>"
-msgstr ""
-
-#: ../data/input-pad.ui.h:51
-msgid "The input pad is a tool to send a character on button."
-msgstr ""
-
-#: ../data/input-pad.ui.h:52
-msgid "translator_credits"
-msgstr "Jordi Mas Hernàndez <jmas@softcatala.org>"
+msgstr "Coixinet d'entrada"
 
 #. "IPA" stands for "International Phonetic Alphabet"
 #: ../data/ipa-obsolete.xml.in.h:2
 msgid "IPA (Obsolete)"
-msgstr ""
+msgstr "IPA (obsolet)"
 
 #: ../data/ipa-obsolete.xml.in.h:3 ../data/ipa.xml.in.h:6
 msgid "Open back unrounded vowel"
-msgstr ""
+msgstr "Vocal oberta posterior no arrodonida"
 
 #: ../data/ipa-obsolete.xml.in.h:4
 msgid "Palatalized voiced bilabial plosive"
-msgstr ""
+msgstr "Palatalització oclusiva bilabial sonora"
 
 #: ../data/ipa-obsolete.xml.in.h:5
 msgid "Voiceless palatal implosive"
-msgstr ""
+msgstr "Implosiva bilabial sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:6 ../data/ipa.xml.in.h:138
 msgid "Alveolar click"
@@ -435,47 +262,47 @@ msgstr ""
 
 #: ../data/ipa-obsolete.xml.in.h:7
 msgid "Palatalized voiced alveolar plosive"
-msgstr ""
+msgstr "Palatalització oclusiva alveolar sonora"
 
 #: ../data/ipa-obsolete.xml.in.h:8 ../data/ipa.xml.in.h:25
 msgid "Voiced alveolar affricate"
-msgstr ""
+msgstr "Africada alveolar sonora"
 
 #: ../data/ipa-obsolete.xml.in.h:9 ../data/ipa.xml.in.h:27
 msgid "Voiced alveopalatal affricate"
-msgstr ""
+msgstr "Africada alveo-palatal sonora"
 
 #: ../data/ipa-obsolete.xml.in.h:10 ../data/ipa.xml.in.h:26
 msgid "Voiced palato-alveolar affricate"
-msgstr ""
+msgstr "Africada postalveolar sonora"
 
 #: ../data/ipa-obsolete.xml.in.h:11
 msgid "Palatalized voiceless labiodental fricative"
-msgstr ""
+msgstr "Palatalització fricativa labiodental sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:12
 msgid "Palatalized voiced velar plosive"
-msgstr ""
+msgstr "Palatalització oclusiva velar sonora"
 
 #: ../data/ipa-obsolete.xml.in.h:13
 msgid "Palatalized voiceless velar plosive"
-msgstr ""
+msgstr "Palatalització oclusiva velar sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:14
 msgid "Voiceless velar implosive"
-msgstr ""
+msgstr "Implosiva velar sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:15
 msgid "Palatalized alveolar lateral approximant"
-msgstr ""
+msgstr "Palatalització lateral aproximant alveolar"
 
 #: ../data/ipa-obsolete.xml.in.h:16
 msgid "Palatalized bilabial nasal"
-msgstr ""
+msgstr "Palatalització nasal bilabial"
 
 #: ../data/ipa-obsolete.xml.in.h:17
 msgid "Palatalized alveolar nasal"
-msgstr ""
+msgstr "Palatalització nasal alveolar"
 
 #: ../data/ipa-obsolete.xml.in.h:18
 msgid "Syllabic alveolar nasal"
@@ -483,15 +310,15 @@ msgstr ""
 
 #: ../data/ipa-obsolete.xml.in.h:19
 msgid "Palatalized voiceless bilabial plosive"
-msgstr ""
+msgstr "Palatalització oclusiva bilabial sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:20
 msgid "Voiceless bilabial implosive"
-msgstr ""
+msgstr "Implosiva bilabial sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:21
 msgid "Palatalized alveolar trill"
-msgstr ""
+msgstr "Palatalització vibrant alveolar"
 
 #: ../data/ipa-obsolete.xml.in.h:22
 msgid "Voiced strident apico-alveolar trill"
@@ -499,35 +326,35 @@ msgstr ""
 
 #: ../data/ipa-obsolete.xml.in.h:23
 msgid "Palatalized voiceless alveolar fricative"
-msgstr ""
+msgstr "Palatalització fricativa alveolar sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:24 ../data/ipa.xml.in.h:19
 msgid "Voiceless alveopalatal fricative"
-msgstr ""
+msgstr "Fricativa alveo-palatal sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:25
 msgid "Labialized voiceless palato-alveolar fricative"
-msgstr ""
+msgstr "Labialització fricativa postalveolar sonora"
 
 #: ../data/ipa-obsolete.xml.in.h:26 ../data/ipa.xml.in.h:103
 msgid "Voiceless alveopalatal affricate"
-msgstr ""
+msgstr "Africada alveo-palatal sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:27 ../data/ipa.xml.in.h:101
 msgid "Voiceless alveolar affricate"
-msgstr ""
+msgstr "Africada alveolar sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:28 ../data/ipa.xml.in.h:102
 msgid "Voiceless palato-alveolar affricate"
-msgstr ""
+msgstr "Africada postalveolar sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:29
 msgid "Palatalized voiceless alveolar plosive"
-msgstr ""
+msgstr "Palatalització oclusiva alveolar sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:30
 msgid "Voiceless alveolar implosive"
-msgstr ""
+msgstr "Implosiva alveolar sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:31 ../data/ipa.xml.in.h:137
 msgid "Dental click"
@@ -535,31 +362,31 @@ msgstr ""
 
 #: ../data/ipa-obsolete.xml.in.h:32
 msgid "Voiceless uvular implosive"
-msgstr ""
+msgstr "Implosiva uvular sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:33
 msgid "Palatalized voiced labiodental fricative"
-msgstr ""
+msgstr "Palatalització fricativa labiodental sonora"
 
 #: ../data/ipa-obsolete.xml.in.h:34
 msgid "Palatalized voiceless velar fricative"
-msgstr ""
+msgstr "Palatalització fricativa velar sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:35
 msgid "Palatalized voiced alveolar fricative"
-msgstr ""
+msgstr "Palatalització fricativa alveolar sonora"
 
 #: ../data/ipa-obsolete.xml.in.h:36
 msgid "Labialized voiced palato-alveolar fricative"
-msgstr ""
+msgstr "Labialització fricativa postalveolar sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:37 ../data/ipa.xml.in.h:128
 msgid "Voiced alveopalatal fricative"
-msgstr ""
+msgstr "Fricativa alveo-palatal sonora"
 
 #: ../data/ipa-obsolete.xml.in.h:38 ../data/ipa.xml.in.h:106
 msgid "Near-close near-back vowel"
-msgstr ""
+msgstr "Vocal quasitancada quasianterior"
 
 #: ../data/ipa-obsolete.xml.in.h:39 ../data/ipa.xml.in.h:140
 msgid "Alveolar lateral click"
@@ -567,11 +394,11 @@ msgstr ""
 
 #: ../data/ipa-obsolete.xml.in.h:40
 msgid "Labialized voiceless alveolar or dental fricative"
-msgstr ""
+msgstr "Labialització alveolar sorda o labialització fricativa dental sorda"
 
 #: ../data/ipa-obsolete.xml.in.h:41
 msgid "Labialized voiced alveolar or dental fricative"
-msgstr ""
+msgstr "Labialització alveolar sonora o labialització fricativa dental sonora"
 
 #: ../data/ipa-obsolete.xml.in.h:42
 msgid "Combining labialization mark"
@@ -584,65 +411,65 @@ msgstr ""
 #. "IPA" stands for "International Phonetic Alphabet"
 #: ../data/ipa-unofficial.xml.in.h:2
 msgid "IPA (Unofficial)"
-msgstr ""
+msgstr "IPA (no oficial)"
 
 #: ../data/ipa-unofficial.xml.in.h:3
 msgid "Voiced labiodental plosive"
-msgstr ""
+msgstr "Oclusiva labiodental sonora"
 
 #: ../data/ipa-unofficial.xml.in.h:4 ../data/ipa.xml.in.h:18
 msgid "Voiceless palatal lateral affricate"
-msgstr ""
+msgstr "Lateral africada palatal sorda"
 
 #: ../data/ipa-unofficial.xml.in.h:5
 msgid "Voiced retroflex implosive"
-msgstr ""
+msgstr "Implosiva retroflexa sonora"
 
 #: ../data/ipa-unofficial.xml.in.h:6 ../data/ipa.xml.in.h:88
 msgid "Alveolar flap"
-msgstr ""
+msgstr "Bategant alveolar"
 
 #: ../data/ipa-unofficial.xml.in.h:7 ../data/ipa.xml.in.h:125
 msgid "Voiceless palatal lateral fricative"
-msgstr ""
+msgstr "Lateral fricativa palatal sorda"
 
 #: ../data/ipa-unofficial.xml.in.h:8 ../data/ipa.xml.in.h:91
 msgid "Retroflex flap"
-msgstr ""
+msgstr "Bategant retroflexa"
 
 #: ../data/ipa-unofficial.xml.in.h:9
 msgid "Voiceless retroflex lateral fricative"
-msgstr ""
+msgstr "Lateral fricativa retroflexa sorda"
 
 #. "PUA" stands for "Private Use Area"
 #: ../data/ipa-unofficial.xml.in.h:11
 msgid "Voiceless retroflex lateral fricative (PUA)"
-msgstr ""
+msgstr "Lateral fricativa retroflexa sorda (PUA)"
 
 #: ../data/ipa-unofficial.xml.in.h:12 ../data/ipa.xml.in.h:59
 msgid "Voiceless velar lateral affricate"
-msgstr ""
+msgstr "Lateral africada velar sorda"
 
 #: ../data/ipa-unofficial.xml.in.h:13 ../data/ipa.xml.in.h:68
 msgid "Voiceless velar lateral fricative"
-msgstr ""
+msgstr "Lateral fricativa velar sorda"
 
 #: ../data/ipa-unofficial.xml.in.h:14
 msgid "Epiglottal trill"
-msgstr ""
+msgstr "Vibrant epiglotal"
 
 #: ../data/ipa-unofficial.xml.in.h:15
 msgid "Voiceless labiodental plosive"
-msgstr ""
+msgstr "Oclusiva labiodental sorda"
 
 #: ../data/ipa-unofficial.xml.in.h:16
 msgid "Voiceless retroflex lateral affricate"
-msgstr ""
+msgstr "Lateral africada retroflexa sorda"
 
 #. "PUA" stands for "Private Use Area"
 #: ../data/ipa-unofficial.xml.in.h:18
 msgid "Voiceless retroflex lateral affricate (PUA)"
-msgstr ""
+msgstr "Lateral africada retroflexa sorda (PUA)"
 
 #: ../data/ipa-unofficial.xml.in.h:19
 msgid "Combining stridency mark"
@@ -660,119 +487,119 @@ msgstr "IPA"
 
 #: ../data/ipa.xml.in.h:3
 msgid "Open front unrounded vowel"
-msgstr ""
+msgstr "Vocal oberta anterior no arrodonida"
 
 #: ../data/ipa.xml.in.h:4
 msgid "Open central unrounded vowel"
-msgstr ""
+msgstr "Vocal oberta central no arrodonida"
 
 #: ../data/ipa.xml.in.h:5
 msgid "Near-open central vowel"
-msgstr ""
+msgstr "Vocal quasioberta central"
 
 #: ../data/ipa.xml.in.h:7
 msgid "Open back rounded vowel"
-msgstr ""
+msgstr "Vocal oberta posterior arrodonida"
 
 #: ../data/ipa.xml.in.h:8
 msgid "Open-mid back unrounded vowel"
-msgstr ""
+msgstr "Vocal semioberta posterior no arrodonida"
 
 #: ../data/ipa.xml.in.h:9
 msgid "Near-open front unrounded vowel"
-msgstr ""
+msgstr "Vocal quasioberta anterior no arrodonida"
 
 #: ../data/ipa.xml.in.h:10
 msgid "Voiced bilabial plosive"
-msgstr ""
+msgstr "Oclusiva bilabial sonora"
 
 #: ../data/ipa.xml.in.h:11
 msgid "Voiced labiodental affricate"
-msgstr ""
+msgstr "Africada labiodental sonora"
 
 #: ../data/ipa.xml.in.h:12
 msgid "Voiced bilabial implosive"
-msgstr ""
+msgstr "Implosiva bilabial sonora"
 
 #: ../data/ipa.xml.in.h:13
 msgid "Bilabial trill"
-msgstr ""
+msgstr "Vibrant bilabial"
 
 #: ../data/ipa.xml.in.h:14
 msgid "Voiced bilabial fricative"
-msgstr ""
+msgstr "Fricativa bilabial sonora"
 
 #: ../data/ipa.xml.in.h:15
 msgid "Voiceless palatal plosive"
-msgstr ""
+msgstr "Oclusiva palatal sorda"
 
 #: ../data/ipa.xml.in.h:16
 msgid "Voiceless palatal fricative"
-msgstr ""
+msgstr "Fricativa palatal sorda"
 
 #: ../data/ipa.xml.in.h:17
 msgid "Voiceless palatal affricate"
-msgstr ""
+msgstr "Africada palatal sorda"
 
 #: ../data/ipa.xml.in.h:20
 msgid "Voiced alveolar plosive"
-msgstr ""
+msgstr "Oclusiva alveolar sonora"
 
 #: ../data/ipa.xml.in.h:21
 msgid "Voiced alveolar implosive"
-msgstr ""
+msgstr "Implosiva alveolar sonora"
 
 #: ../data/ipa.xml.in.h:22
 msgid "Voiced retroflex plosive"
-msgstr ""
+msgstr "Oclusiva retroflexa sonora"
 
 #: ../data/ipa.xml.in.h:23
 msgid "Voiced dental fricative"
-msgstr ""
+msgstr "Fricativa dental sonora"
 
 #: ../data/ipa.xml.in.h:24
 msgid "Voiced alveolar lateral affricate"
-msgstr ""
+msgstr "Lateral africada alveolar sonora"
 
 #: ../data/ipa.xml.in.h:28
 msgid "Voiced retroflex affricate"
-msgstr ""
+msgstr "Africada retroflexa sonora"
 
 #: ../data/ipa.xml.in.h:29
 msgid "Close-mid front unrounded vowel"
-msgstr ""
+msgstr "Vocal semitancada anterior no arrodonida"
 
 #: ../data/ipa.xml.in.h:30
 msgid "Close-mid central unrounded vowel"
-msgstr ""
+msgstr "Vocal semitancada cental no arrodonida"
 
 #: ../data/ipa.xml.in.h:31
 msgid "Mid-central vowel"
-msgstr ""
+msgstr "Vocal neutra"
 
 #: ../data/ipa.xml.in.h:32
 msgid "Rhotacized mid-central vowel"
-msgstr ""
+msgstr "Rotacisme vocal neutra"
 
 #: ../data/ipa.xml.in.h:33
 msgid "Open-mid front unrounded vowel"
-msgstr ""
+msgstr "Vocal semioberta anterior no arrodonida"
 
 #: ../data/ipa.xml.in.h:34
 msgid "Open-mid central rounded vowel"
-msgstr ""
+msgstr "Vocal semioberta central arrodonida"
 
 #: ../data/ipa.xml.in.h:35
 msgid "Open-mid central unrounded vowel"
-msgstr ""
+msgstr "Vocal semioberta central no arrodonida"
 
 #: ../data/ipa.xml.in.h:36
 msgid "Rhotacized open-mid central unrounded vowel"
-msgstr ""
+msgstr "Rotacisme rocal semioberta central no arrodonida"
 
 #: ../data/ipa.xml.in.h:37
 msgid "Voiceless labiodental fricative"
-msgstr ""
+msgstr "Fricativa labiodental sorda"
 
 #: ../data/ipa.xml.in.h:38
 msgid "Velopharyngeal fricative"
@@ -780,167 +607,167 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:39
 msgid "Voiced velar plosive"
-msgstr ""
+msgstr "Oclusiva velar sonora"
 
 #: ../data/ipa.xml.in.h:40
 msgid "Voiced labial-velar plosive"
-msgstr ""
+msgstr "Oclusiva labiovelar sonora"
 
 #: ../data/ipa.xml.in.h:41
 msgid "Voiced velar implosive"
-msgstr ""
+msgstr "Implosiva velar sonora"
 
 #: ../data/ipa.xml.in.h:42
 msgid "Voiced uvular plosive"
-msgstr ""
+msgstr "Oclusiva uvular sonora"
 
 #: ../data/ipa.xml.in.h:43
 msgid "Voiced uvular implosive"
-msgstr ""
+msgstr "Implosiva uvular sonora"
 
 #: ../data/ipa.xml.in.h:44
 msgid "Voiceless glottal fricative"
-msgstr ""
+msgstr "Fricativa glotal sorda"
 
 #: ../data/ipa.xml.in.h:45
 msgid "Voiced glottal fricative"
-msgstr ""
+msgstr "Fricativa glotal sonora"
 
 #: ../data/ipa.xml.in.h:46
 msgid "Voiceless pharyngeal fricative"
-msgstr ""
+msgstr "Fricativa faríngia sorda"
 
 #: ../data/ipa.xml.in.h:47
 msgid "Voiceless coarticulated velar and palato-alveolar fricative"
-msgstr ""
+msgstr "Coarticulació fricativa velar i postalveolar sorda"
 
 #: ../data/ipa.xml.in.h:48
 msgid "Voiceless epiglottal fricative"
-msgstr ""
+msgstr "Fricativa epiglotal sorda"
 
 #: ../data/ipa.xml.in.h:49
 msgid "Close front unrounded vowel"
-msgstr ""
+msgstr "Vocal tancada anterior no arrodonida"
 
 #: ../data/ipa.xml.in.h:50
 msgid "Near-close near-front unrounded vowel"
-msgstr ""
+msgstr "Vocal quasitancada anterior no arrodonida"
 
 #: ../data/ipa.xml.in.h:51
 msgid "Near-close central unrounded vowel"
-msgstr ""
+msgstr "Vocal quasitancada central no arrodonida"
 
 #: ../data/ipa.xml.in.h:52
 msgid "Close central unrounded vowel"
-msgstr ""
+msgstr "Vocal tancada central no arrodonida"
 
 #: ../data/ipa.xml.in.h:53
 msgid "Palatal approximant"
-msgstr ""
+msgstr "Aproximant palatal"
 
 #: ../data/ipa.xml.in.h:54
 msgid "Voiced palatal fricative"
-msgstr ""
+msgstr "Fricativa palatal sonora"
 
 #: ../data/ipa.xml.in.h:55
 msgid "Voiced palatal plosive"
-msgstr ""
+msgstr "Oclusiva palatal sonora"
 
 #: ../data/ipa.xml.in.h:56
 msgid "Voiced palatal affricate"
-msgstr ""
+msgstr "Africada palatal sonora"
 
 #: ../data/ipa.xml.in.h:57
 msgid "Voiced palatal implosive"
-msgstr ""
+msgstr "Implosiva palatal sonora"
 
 #: ../data/ipa.xml.in.h:58
 msgid "Voiceless velar plosive"
-msgstr ""
+msgstr "Oclusiva velar sorda"
 
 #: ../data/ipa.xml.in.h:60
 msgid "Voiceless labial-velar plosive"
-msgstr ""
+msgstr "Oclusiva labiovelar sorda"
 
 #: ../data/ipa.xml.in.h:61
 msgid "Voiceless velar affricate"
-msgstr ""
+msgstr "Africada velar sorda"
 
 #: ../data/ipa.xml.in.h:62
 msgid "Alveolar lateral approximant"
-msgstr ""
+msgstr "Lateral aproximant alveolar"
 
 #: ../data/ipa.xml.in.h:63
 msgid "Velarized alveolar lateral approximant"
-msgstr ""
+msgstr "Lateral aproximant alveolar sonora"
 
 #: ../data/ipa.xml.in.h:64
 msgid "Voiceless alveolar lateral fricative"
-msgstr ""
+msgstr "Lateral fricativa alveolar sorda"
 
 #: ../data/ipa.xml.in.h:65
 msgid "Retroflex lateral approximant"
-msgstr ""
+msgstr "Lateral aproximant retroflexa"
 
 #: ../data/ipa.xml.in.h:66
 msgid "Voiced alveolar lateral fricative"
-msgstr ""
+msgstr "Lateral fricativa alveolar sonora"
 
 #: ../data/ipa.xml.in.h:67
 msgid "Velar lateral approximant"
-msgstr ""
+msgstr "Lateral aproximant velar"
 
 #: ../data/ipa.xml.in.h:69
 msgid "Bilabial nasal"
-msgstr ""
+msgstr "Nasal bilabial"
 
 #: ../data/ipa.xml.in.h:70
 msgid "Labiodental nasal"
-msgstr ""
+msgstr "Nasal labiodental"
 
 #: ../data/ipa.xml.in.h:71
 msgid "Alveolar nasal"
-msgstr ""
+msgstr "Nasal alveolar"
 
 #: ../data/ipa.xml.in.h:72
 msgid "Velar nasal"
-msgstr ""
+msgstr "Nasal velar"
 
 #: ../data/ipa.xml.in.h:73
 msgid "Labial-velar nasal"
-msgstr ""
+msgstr "Nasal labiovelar"
 
 #: ../data/ipa.xml.in.h:74
 msgid "Palatal nasal"
-msgstr ""
+msgstr "Nasal palatal"
 
 #: ../data/ipa.xml.in.h:75
 msgid "Retroflex nasal"
-msgstr ""
+msgstr "Nasal retroflexa"
 
 #: ../data/ipa.xml.in.h:76
 msgid "Uvular nasal"
-msgstr ""
+msgstr "Nasal uvular"
 
 #: ../data/ipa.xml.in.h:77
 msgid "Close-mid back rounded vowel"
-msgstr ""
+msgstr "Vocal semitancada posterior arrodonida"
 
 #: ../data/ipa.xml.in.h:78
 msgid "Close-mid front rounded vowel"
-msgstr ""
+msgstr "Vocal semitancada anterior arrodonida"
 
 #: ../data/ipa.xml.in.h:79
 msgid "Close-mid central rounded vowel"
-msgstr ""
+msgstr "Vocal semitancada cental arrodonida"
 
 #: ../data/ipa.xml.in.h:80
 msgid "Open-mid front rounded vowel"
-msgstr ""
+msgstr "Vocal semioberta anterior arrodonida"
 
 #: ../data/ipa.xml.in.h:81
 msgid "Open front rounded vowel"
-msgstr ""
+msgstr "Vocal oberta anterior arrodonida"
 
 #: ../data/ipa.xml.in.h:82
 msgid "Voiceless bilabial plosive"
@@ -952,7 +779,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:84
 msgid "Voiceless bilabial affricate"
-msgstr ""
+msgstr "Africada bilabial sorda"
 
 #: ../data/ipa.xml.in.h:85
 msgid "Voiceless labiodental affricate"
@@ -964,15 +791,15 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:87
 msgid "Alveolar trill"
-msgstr ""
+msgstr "Vibrant alveolar"
 
 #: ../data/ipa.xml.in.h:89
 msgid "Alveolar lateral flap"
-msgstr ""
+msgstr "Lateral bategant alveolar"
 
 #: ../data/ipa.xml.in.h:90
 msgid "Uvular trill"
-msgstr ""
+msgstr "Vibrant uvular"
 
 #: ../data/ipa.xml.in.h:92
 msgid "Alveolar approximant"
@@ -992,7 +819,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:96
 msgid "Voiceless palato-alveolar fricative"
-msgstr ""
+msgstr "Fricativa postalveolar sorda"
 
 #: ../data/ipa.xml.in.h:97
 msgid "Voiceless retroflex fricative"
@@ -1004,27 +831,27 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:99
 msgid "Voiceless retroflex plosive"
-msgstr ""
+msgstr "Oclusiva retroflexa sorda"
 
 #: ../data/ipa.xml.in.h:100
 msgid "Voiceless alveolar lateral affricate"
-msgstr ""
+msgstr "Lateral africada alveolar sorda"
 
 #: ../data/ipa.xml.in.h:104
 msgid "Voiceless retroflex affricate"
-msgstr ""
+msgstr "Africada retroflexa sorda"
 
 #: ../data/ipa.xml.in.h:105
 msgid "Close back rounded vowel"
-msgstr ""
+msgstr "Vocal tancada posterior arrodonida"
 
 #: ../data/ipa.xml.in.h:107
 msgid "Near-close central vowel"
-msgstr ""
+msgstr "Vocal quasitancada central"
 
 #: ../data/ipa.xml.in.h:108
 msgid "Close central rounded vowel"
-msgstr ""
+msgstr "Vocal tancada central arrodonida"
 
 #: ../data/ipa.xml.in.h:109
 msgid "Labial-palatal approximant"
@@ -1032,39 +859,39 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:110
 msgid "Close back unrounded vowel"
-msgstr ""
+msgstr "Vocal tancada posterior no arrodonida"
 
 #: ../data/ipa.xml.in.h:111
 msgid "Voiced labiodental fricative"
-msgstr ""
+msgstr "Fricativa labiodental sonora"
 
 #: ../data/ipa.xml.in.h:112
 msgid "Labiodental flap"
-msgstr ""
+msgstr "Bategant labiodental"
 
 #: ../data/ipa.xml.in.h:113
 msgid "Labiodental approximant"
-msgstr ""
+msgstr "Aproximant labiodental"
 
 #: ../data/ipa.xml.in.h:114
 msgid "Voiced velar fricative"
-msgstr ""
+msgstr "Fricativa velar sonora"
 
 #: ../data/ipa.xml.in.h:115
 msgid "Close-mid back unrounded vowel"
-msgstr ""
+msgstr "Vocal semitancada posterior no arrodonida"
 
 #: ../data/ipa.xml.in.h:116
 msgid "Voiced labiovelar approximant"
-msgstr ""
+msgstr "Aproximant labiovelar sonora"
 
 #: ../data/ipa.xml.in.h:117
 msgid "Voiceless labiovelar approximant"
-msgstr ""
+msgstr "Aproximant labiovelar sorda"
 
 #: ../data/ipa.xml.in.h:118
 msgid "Velar approximant"
-msgstr ""
+msgstr "Aproximant velar"
 
 #: ../data/ipa.xml.in.h:119
 msgid "Bilabial percussive"
@@ -1072,43 +899,43 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:120
 msgid "Voiceless velar fricative"
-msgstr ""
+msgstr "Fricativa velar sorda"
 
 #: ../data/ipa.xml.in.h:121
 msgid "Voiceless uvular fricative"
-msgstr ""
+msgstr "Fricativa uvular sorda"
 
 #: ../data/ipa.xml.in.h:122
 msgid "Close front rounded vowel"
-msgstr ""
+msgstr "Vocal tancada anterior arrodonida"
 
 #: ../data/ipa.xml.in.h:123
 msgid "Near-close near-front rounded vowel"
-msgstr ""
+msgstr "Vocal quasitancada quasianterior no arrodonida"
 
 #: ../data/ipa.xml.in.h:124
 msgid "Palatal lateral approximant"
-msgstr ""
+msgstr "Lateral aproximant palatal"
 
 #: ../data/ipa.xml.in.h:126
 msgid "Voiced alveolar fricative"
-msgstr ""
+msgstr "Fricativa alveolar sonora"
 
 #: ../data/ipa.xml.in.h:127
 msgid "Voiced palato-alveolar fricative"
-msgstr ""
+msgstr "Fricativa postalveolar sonora"
 
 #: ../data/ipa.xml.in.h:129
 msgid "Voiced retroflex fricative"
-msgstr ""
+msgstr "Fricativa retroflexa sonora"
 
 #: ../data/ipa.xml.in.h:130
 msgid "Voiceless dental fricative"
-msgstr ""
+msgstr "Fricativa dental sorda"
 
 #: ../data/ipa.xml.in.h:131
 msgid "Voiceless bilabial fricative"
-msgstr ""
+msgstr "Fricativa bilabial sorda"
 
 #: ../data/ipa.xml.in.h:132
 msgid "Glottal stop"
@@ -1192,7 +1019,7 @@ msgstr ""
 
 #: ../data/ipa.xml.in.h:155
 msgid "Labialization mark"
-msgstr ""
+msgstr "Marca de labialització"
 
 #: ../data/ipa.xml.in.h:156
 msgid "Velarization mark"
@@ -1635,333 +1462,1725 @@ msgid "Chat"
 msgstr "Xat"
 
 #: ../data/str.xml.in.h:2
-msgid "Smileys"
-msgstr ""
+msgid "Emoji"
+msgstr "Emoji"
 
 #: ../data/str.xml.in.h:3
-msgid "Smile"
-msgstr "Somriure"
+msgid "Rain"
+msgstr ""
 
 #: ../data/str.xml.in.h:4
-msgid "Smile Big"
+msgid "Comet"
 msgstr ""
 
 #: ../data/str.xml.in.h:5
-msgid "Sad"
-msgstr "Trist"
+msgid "Cross"
+msgstr ""
 
 #: ../data/str.xml.in.h:6
-msgid "Wink"
-msgstr "Fer l'ullet"
+msgid "Solar"
+msgstr "Solar"
 
 #: ../data/str.xml.in.h:7
-msgid "Tongue"
-msgstr ""
+msgid "Mercury"
+msgstr "Mercuri"
 
 #: ../data/str.xml.in.h:8
-msgid "Shock"
-msgstr ""
+msgid "Venus"
+msgstr "Venus"
 
 #: ../data/str.xml.in.h:9
-msgid "Kiss | Secret"
-msgstr ""
+msgid "Earth"
+msgstr "Terra"
 
 #: ../data/str.xml.in.h:10
-msgid "Glasses Cool | Eyeroll"
-msgstr ""
+msgid "Mars"
+msgstr "Mart"
 
 #: ../data/str.xml.in.h:11
-msgid "Glasses Cool"
-msgstr ""
+msgid "Jupiter"
+msgstr "Júpiter"
 
 #: ../data/str.xml.in.h:12
-msgid "Angry"
-msgstr "Enfadat"
+msgid "Saturn"
+msgstr "Saturn"
 
 #: ../data/str.xml.in.h:13
-msgid "Embarrassed"
-msgstr "Avergonyit"
+msgid "Uranus"
+msgstr "Urà"
 
 #: ../data/str.xml.in.h:14
-msgid "Confused"
-msgstr ""
+msgid "Neptune"
+msgstr "Neptú"
 
 #: ../data/str.xml.in.h:15
-msgid "Crying"
+msgid "Pluto"
 msgstr ""
 
 #: ../data/str.xml.in.h:16
-msgid "Neutral"
+msgid "Aries"
 msgstr ""
 
 #: ../data/str.xml.in.h:17
-msgid "Thinking"
+msgid "Taurus"
 msgstr ""
 
 #: ../data/str.xml.in.h:18
-msgid "Don't Know"
-msgstr ""
+msgid "Gemini"
+msgstr "Gèminis (o Bessons)"
 
 #: ../data/str.xml.in.h:19
-msgid "Party"
-msgstr "Festa"
+msgid "Cancer"
+msgstr "Càncer (o Cranc)"
 
 #: ../data/str.xml.in.h:20
-msgid "Yawn"
-msgstr ""
+msgid "Leo"
+msgstr "Lleó"
 
 #: ../data/str.xml.in.h:21
-msgid "Bunny"
-msgstr ""
+msgid "Virgo"
+msgstr "Verge"
 
 #: ../data/str.xml.in.h:22
-msgid "Sick"
-msgstr ""
+msgid "Libra"
+msgstr "Balança"
 
 #: ../data/str.xml.in.h:23
-msgid "Devil"
-msgstr ""
+msgid "Scorpius"
+msgstr "Escorpió (o Escorpí)"
 
 #: ../data/str.xml.in.h:24
-msgid "Angel"
-msgstr ""
+msgid "Sagittarius"
+msgstr "Sagitari"
 
 #: ../data/str.xml.in.h:25
-msgid "Love"
-msgstr "Preferida"
+msgid "Capricorn"
+msgstr "Capricorn"
 
 #: ../data/str.xml.in.h:26
-msgid "Love Over"
-msgstr ""
+msgid "Aquarius"
+msgstr "Aquari"
 
 #: ../data/str.xml.in.h:27
-msgid "Cat"
-msgstr ""
+msgid "Pisces"
+msgstr "Pisces (o Peixos)"
 
 #: ../data/str.xml.in.h:28
-msgid "Dog"
-msgstr ""
+msgid "Dice 1"
+msgstr "Dau 1"
 
 #: ../data/str.xml.in.h:29
-msgid "Moon"
-msgstr ""
+msgid "Dice 2"
+msgstr "Dau 2"
 
 #: ../data/str.xml.in.h:30
-msgid "Star"
-msgstr "Destaca"
+msgid "Dice 3"
+msgstr "Dau 3"
 
 #: ../data/str.xml.in.h:31
-msgid "Film"
-msgstr ""
+msgid "Dice 4"
+msgstr "Dau 4"
 
 #: ../data/str.xml.in.h:32
-msgid "Musical Note"
-msgstr ""
+msgid "Dice 5"
+msgstr "Dau 5"
 
 #: ../data/str.xml.in.h:33
-msgid "Mail"
-msgstr "Correu"
+msgid "Dice 6"
+msgstr "Dau 6"
 
 #: ../data/str.xml.in.h:34
-msgid "Clock"
-msgstr "Rellotge"
+msgid "Anchor"
+msgstr ""
 
 #: ../data/str.xml.in.h:35
-msgid "Kiss"
-msgstr "Petó"
+msgid "Sword"
+msgstr ""
 
 #: ../data/str.xml.in.h:36
-msgid "Present"
-msgstr "Present"
+msgid "Scales"
+msgstr ""
 
 #: ../data/str.xml.in.h:37
-msgid "Cake"
-msgstr ""
+msgid "Conversation"
+msgstr "Conversació"
 
 #: ../data/str.xml.in.h:38
-msgid "Coffee"
-msgstr ""
+msgid "Warning"
+msgstr "Advertència"
 
 #: ../data/str.xml.in.h:39
-msgid "Phone"
-msgstr "Telèfon"
+msgid "Thunder"
+msgstr "Tro"
 
 #: ../data/str.xml.in.h:40
-msgid "Hug Left"
-msgstr ""
+msgid "Coffin"
+msgstr "Taüt"
 
 #: ../data/str.xml.in.h:41
-msgid "Hug Right"
+msgid "Gender"
 msgstr ""
 
 #: ../data/str.xml.in.h:42
-msgid "Beer"
-msgstr ""
+msgid "Soccer"
+msgstr "Fútbol"
 
 #: ../data/str.xml.in.h:43
-msgid "Drink"
-msgstr ""
+msgid "Baseball"
+msgstr "Beisbol"
 
 #: ../data/str.xml.in.h:44
-msgid "Boy"
-msgstr ""
+msgid "Snowman"
+msgstr "Ninot de neu"
 
 #: ../data/str.xml.in.h:45
-msgid "Girl"
-msgstr ""
+msgid "Shoji"
+msgstr "Shoji"
 
 #: ../data/str.xml.in.h:46
-msgid "Yes"
-msgstr "Sí"
+msgid "Maintenance"
+msgstr "Manteniment"
 
 #: ../data/str.xml.in.h:47
-msgid "No"
-msgstr "No"
+msgid "Roadblock"
+msgstr "Tanca"
 
 #: ../data/str.xml.in.h:48
-msgid "Shut Mouth"
+msgid "No entry"
 msgstr ""
 
 #: ../data/str.xml.in.h:49
-msgid "Money Mouth"
+msgid "Truck"
 msgstr ""
 
 #: ../data/str.xml.in.h:50
-msgid "Foot in Mouth"
+msgid "Torii"
 msgstr ""
 
 #: ../data/str.xml.in.h:51
+msgid "Church"
+msgstr "Església"
+
+#: ../data/str.xml.in.h:52
+msgid "Castle"
+msgstr "Castell"
+
+#: ../data/str.xml.in.h:53
+msgid "Historic site"
+msgstr "Lloc històric"
+
+#: ../data/str.xml.in.h:54
+msgid "Power station"
+msgstr "Central elèctrica"
+
+#: ../data/str.xml.in.h:55
+msgid "Lighthouse"
+msgstr "Far"
+
+#: ../data/str.xml.in.h:56
+msgid "Mountain"
+msgstr "Muntanya"
+
+#: ../data/str.xml.in.h:57
+msgid "Beach"
+msgstr "Platja"
+
+#: ../data/str.xml.in.h:58
+msgid "Park"
+msgstr "Parc"
+
+#: ../data/str.xml.in.h:59
+msgid "Ferry"
+msgstr "Transbordador"
+
+#: ../data/str.xml.in.h:60
+msgid "Sailboat"
+msgstr "Veler"
+
+#: ../data/str.xml.in.h:61
+msgid "Ice rink"
+msgstr "Pista de gel"
+
+#: ../data/str.xml.in.h:62
+msgid "Scissors"
+msgstr "Estisores"
+
+#: ../data/str.xml.in.h:63
+msgid "Airplane"
+msgstr "Avió"
+
+#: ../data/str.xml.in.h:64
+msgid "Clenched Fist"
+msgstr "Punt tancat"
+
+#: ../data/str.xml.in.h:65
+msgid "Hand"
+msgstr "Mà"
+
+#: ../data/str.xml.in.h:66
+msgid "V Sign"
+msgstr "Signe de victòria"
+
+#: ../data/str.xml.in.h:67
+msgid "Writing"
+msgstr "Escriptura"
+
+#: ../data/str.xml.in.h:68
+msgid "Pencil"
+msgstr "Llapis"
+
+#: ../data/str.xml.in.h:69
+msgid "Pen"
+msgstr "Ploma"
+
+#: ../data/str.xml.in.h:70
+msgid "Star"
+msgstr "Estrella"
+
+#: ../data/str.xml.in.h:71
+msgid "Typhoon"
+msgstr "Tifó"
+
+#: ../data/str.xml.in.h:72
+msgid "Fog"
+msgstr "Boira"
+
+#: ../data/str.xml.in.h:73
+msgid "Umbrella"
+msgstr "Paraigua"
+
+#: ../data/str.xml.in.h:74
+msgid "Night sky"
+msgstr "Cel nocturn"
+
+#: ../data/str.xml.in.h:75
+msgid "Sunrise"
+msgstr "Alba"
+
+#: ../data/str.xml.in.h:76
+msgid "Sunset"
+msgstr "Ocàs"
+
+#: ../data/str.xml.in.h:77
+msgid "Bridge"
+msgstr "Pont"
+
+#: ../data/str.xml.in.h:78
+msgid "Wave"
+msgstr "Ona"
+
+#: ../data/str.xml.in.h:79
+msgid "New Moon"
+msgstr "Lluna nova"
+
+#: ../data/str.xml.in.h:80
+msgid "Crescent Moon"
+msgstr "Quart creixent"
+
+#: ../data/str.xml.in.h:81
+msgid "Quarter Moon"
+msgstr "Quart minvant"
+
+#: ../data/str.xml.in.h:82
+msgid "Gibbous Moon"
+msgstr "Lluna gibosa"
+
+#: ../data/str.xml.in.h:83
+msgid "Full Moon"
+msgstr "Lluna plena"
+
+#: ../data/str.xml.in.h:84
+msgid "Moon"
+msgstr "Lluna"
+
+#: ../data/str.xml.in.h:85
+msgid "Sun"
+msgstr "Sol"
+
+#: ../data/str.xml.in.h:86
+msgid "Cloud"
+msgstr "Núvol"
+
+#: ../data/str.xml.in.h:87
+msgid "Palm"
+msgstr "Palma"
+
+#: ../data/str.xml.in.h:88
+msgid "Hot Pepper"
+msgstr "Bitxo"
+
+#: ../data/str.xml.in.h:89
+msgid "Flower"
+msgstr "Flor"
+
+#: ../data/str.xml.in.h:90
+msgid "Tulip"
+msgstr "Tulipa"
+
+#: ../data/str.xml.in.h:91
+msgid "Cherry"
+msgstr "Cirera"
+
+#: ../data/str.xml.in.h:92
+msgid "Rose"
+msgstr "Rosa"
+
+#: ../data/str.xml.in.h:93
+msgid "Hibiscus"
+msgstr "Hibiscus"
+
+#: ../data/str.xml.in.h:94
+msgid "Sunflower"
+msgstr "Gira-sol"
+
+#: ../data/str.xml.in.h:95
+msgid "Blossom"
+msgstr "Frescor"
+
+#: ../data/str.xml.in.h:96
+msgid "Clover"
+msgstr "Trèvol"
+
+#: ../data/str.xml.in.h:97
+msgid "Maple"
+msgstr "Auró"
+
+#: ../data/str.xml.in.h:98
+msgid "Fallen Leaf"
+msgstr "Fulla caiguda"
+
+#: ../data/str.xml.in.h:99
+msgid "Leaf"
+msgstr "Fulla"
+
+#: ../data/str.xml.in.h:100
+msgid "Mushroom"
+msgstr "Bolet"
+
+#: ../data/str.xml.in.h:101
+msgid "Tomato"
+msgstr "Tomàquet"
+
+#: ../data/str.xml.in.h:102
+msgid "Eggplant"
+msgstr "Albergínia"
+
+#: ../data/str.xml.in.h:103
+msgid "Grape"
+msgstr "Raïm"
+
+#: ../data/str.xml.in.h:104
+msgid "Melon"
+msgstr "Meló"
+
+#: ../data/str.xml.in.h:105
+msgid "Watermelon"
+msgstr "Síndria"
+
+#: ../data/str.xml.in.h:106
+msgid "Tangerine"
+msgstr "Mandarina"
+
+#: ../data/str.xml.in.h:107
+msgid "Lemon"
+msgstr "Llimó"
+
+#: ../data/str.xml.in.h:108
+msgid "Banana"
+msgstr "Plàtan"
+
+#: ../data/str.xml.in.h:109
+msgid "Pineapple"
+msgstr "Pinya"
+
+#: ../data/str.xml.in.h:110
+msgid "Apple"
+msgstr "Poma"
+
+#: ../data/str.xml.in.h:111
+msgid "Pear"
+msgstr "Pera"
+
+#: ../data/str.xml.in.h:112
+msgid "Peach"
+msgstr "Préssec"
+
+#: ../data/str.xml.in.h:113
+msgid "Strawberry"
+msgstr "Maduixa"
+
+#: ../data/str.xml.in.h:114
+msgid "Hamburger"
+msgstr "Hamburguesa"
+
+#: ../data/str.xml.in.h:115
+msgid "Pizza"
+msgstr "Pizza"
+
+#: ../data/str.xml.in.h:116
+msgid "Meat"
+msgstr "Carn"
+
+#: ../data/str.xml.in.h:117
+msgid "Poultry"
+msgstr "Aviram"
+
+#: ../data/str.xml.in.h:118
+msgid "Rice Cracker"
+msgstr "Galeta d'arròs"
+
+#: ../data/str.xml.in.h:119
+msgid "Rice Ball"
+msgstr "Bola d'arròs"
+
+#: ../data/str.xml.in.h:120
+msgid "Rice"
+msgstr "Arròs"
+
+#: ../data/str.xml.in.h:121
+msgid "Curry"
+msgstr "Curri"
+
+#: ../data/str.xml.in.h:122
+msgid "Ramen"
+msgstr "Ramen"
+
+#: ../data/str.xml.in.h:123
+msgid "Spaghetti"
+msgstr "Espaguetis"
+
+#: ../data/str.xml.in.h:124
+msgid "Bread"
+msgstr "Pa"
+
+#: ../data/str.xml.in.h:125
+msgid "Fried Potato"
+msgstr "Tomàquet fregit"
+
+#: ../data/str.xml.in.h:126
+msgid "Roasted Sweet Potato"
+msgstr "Moniato rostit"
+
+#: ../data/str.xml.in.h:127
+msgid "Dango"
+msgstr "Dango"
+
+#: ../data/str.xml.in.h:128
+msgid "Oden"
+msgstr "Oden"
+
+#: ../data/str.xml.in.h:129
+msgid "Sushi"
+msgstr "Sushi"
+
+#: ../data/str.xml.in.h:130
+msgid "Fried Shrimp"
+msgstr "Gamba fregida"
+
+#: ../data/str.xml.in.h:131
+msgid "Fish Cake"
+msgstr "Pastís de peix"
+
+#: ../data/str.xml.in.h:132
+msgid "Soft Ice Cream"
+msgstr "Gelat suau"
+
+#: ../data/str.xml.in.h:133
+msgid "Shaved Ice"
+msgstr "Gel picat"
+
+#: ../data/str.xml.in.h:134
+msgid "Ice Cream"
+msgstr "Gelat"
+
+#: ../data/str.xml.in.h:135
+msgid "Doughnut"
+msgstr "Rosquilla"
+
+#: ../data/str.xml.in.h:136
+msgid "Cookie"
+msgstr "Galeta"
+
+#: ../data/str.xml.in.h:137
+msgid "Chocolate"
+msgstr "Xocolata"
+
+#: ../data/str.xml.in.h:138
+msgid "Candy"
+msgstr "Caramel"
+
+#: ../data/str.xml.in.h:139
+msgid "Custard"
+msgstr "Natilles"
+
+#: ../data/str.xml.in.h:140
+msgid "Honey"
+msgstr "Mel"
+
+#: ../data/str.xml.in.h:141
+msgid "Shortcake"
+msgstr "Coca de fruites"
+
+#: ../data/str.xml.in.h:142
+msgid "Bento"
+msgstr "Bento"
+
+#: ../data/str.xml.in.h:143
+msgid "Pot of Food"
+msgstr "Pot d'aliments"
+
+#: ../data/str.xml.in.h:144
+msgid "Cooking"
+msgstr "Cuina"
+
+#: ../data/str.xml.in.h:145
+msgid "Meal"
+msgstr "Menjar"
+
+#: ../data/str.xml.in.h:146
+msgid "Cup"
+msgstr "Tassa"
+
+#: ../data/str.xml.in.h:147
+msgid "Sake"
+msgstr "Corder"
+
+#: ../data/str.xml.in.h:148
+msgid "Wine"
+msgstr "Vi"
+
+#: ../data/str.xml.in.h:149
+msgid "Cocktail"
+msgstr "Còctel"
+
+#: ../data/str.xml.in.h:150
+msgid "Drink"
+msgstr "Beguda"
+
+#: ../data/str.xml.in.h:151
+msgid "Beer"
+msgstr "Cervesa"
+
+#: ../data/str.xml.in.h:152
+msgid "Cheers"
+msgstr "Brindis"
+
+#: ../data/str.xml.in.h:153
+msgid "Baby Bottle"
+msgstr "Biberó"
+
+#: ../data/str.xml.in.h:154
+msgid "Ribbon"
+msgstr "Cinta"
+
+#: ../data/str.xml.in.h:155
+msgid "Present"
+msgstr "Present"
+
+#: ../data/str.xml.in.h:156
+msgid "Cake"
+msgstr "Pastis"
+
+#: ../data/str.xml.in.h:157
+msgid "Hallowe'en"
+msgstr ""
+
+#: ../data/str.xml.in.h:158
+msgid "Christmas"
+msgstr "Felicitació de nadal"
+
+#: ../data/str.xml.in.h:159
+msgid "Piano"
+msgstr "Piano"
+
+#: ../data/str.xml.in.h:160
+msgid "Microphone"
+msgstr "Micròfon"
+
+#: ../data/str.xml.in.h:161
+msgid "Headphone"
+msgstr "Auriculars"
+
+#: ../data/str.xml.in.h:162
+msgid "Hat"
+msgstr "Barret"
+
+#: ../data/str.xml.in.h:163
+msgid "Musical Note"
+msgstr "Nota musical"
+
+#: ../data/str.xml.in.h:164
+msgid "Saxophone"
+msgstr "Saxòfon"
+
+#: ../data/str.xml.in.h:165
+msgid "Guiter"
+msgstr "Guitarra"
+
+#: ../data/str.xml.in.h:166
+msgid "Trumpet"
+msgstr "Trompeta"
+
+#: ../data/str.xml.in.h:167
+msgid "Violin"
+msgstr "Violí"
+
+#: ../data/str.xml.in.h:168
+msgid "Musical Score"
+msgstr "Puntuació musical"
+
+#: ../data/str.xml.in.h:169
+msgid "Tennis"
+msgstr "Tenis"
+
+#: ../data/str.xml.in.h:170
+msgid "Ski"
+msgstr "Esquí"
+
+#: ../data/str.xml.in.h:171
+msgid "Basketball"
+msgstr "Bàsquet"
+
+#: ../data/str.xml.in.h:172
+msgid "Flag"
+msgstr "Bandera"
+
+#: ../data/str.xml.in.h:173
+msgid "Show Board"
+msgstr ""
+
+#: ../data/str.xml.in.h:174
+msgid "Running"
+msgstr ""
+
+#: ../data/str.xml.in.h:175
+msgid "Surfer"
+msgstr "Surfista"
+
+#: ../data/str.xml.in.h:176
+msgid "Medal"
+msgstr "Medalla"
+
+#: ../data/str.xml.in.h:177
+msgid "Trophy"
+msgstr "Trofeu"
+
+#: ../data/str.xml.in.h:178
+msgid "Horse Racing"
+msgstr "Cursa de cavalls"
+
+#: ../data/str.xml.in.h:179
+msgid "American Football"
+msgstr "Futbol americà"
+
+#: ../data/str.xml.in.h:180
+msgid "Rugby"
+msgstr "Rugbi"
+
+#: ../data/str.xml.in.h:181
+msgid "Swimmer"
+msgstr "Natació"
+
+#: ../data/str.xml.in.h:182
+msgid "Weight Lifting"
+msgstr ""
+
+#: ../data/str.xml.in.h:183
+msgid "Golf"
+msgstr "Golf"
+
+#: ../data/str.xml.in.h:184
+msgid "Motorcycle"
+msgstr "Moto"
+
+#: ../data/str.xml.in.h:185
+msgid "Race"
+msgstr "Cursa"
+
+#: ../data/str.xml.in.h:186
+msgid "House"
+msgstr "Casa"
+
+#: ../data/str.xml.in.h:187
+msgid "Office"
+msgstr "Oficina"
+
+#: ../data/str.xml.in.h:188
+msgid "Hospital"
+msgstr "Hospital"
+
+#: ../data/str.xml.in.h:189
+msgid "Bank"
+msgstr "Banc"
+
+#: ../data/str.xml.in.h:190
+msgid "Hotel"
+msgstr "Hotel"
+
+#: ../data/str.xml.in.h:191
+msgid "School"
+msgstr "Escola"
+
+#: ../data/str.xml.in.h:192
+msgid "Factory"
+msgstr "Fàbrica"
+
+#: ../data/str.xml.in.h:193
+msgid "Rat"
+msgstr "Rata"
+
+#: ../data/str.xml.in.h:194
+msgid "Mouse"
+msgstr "Ratolí"
+
+#: ../data/str.xml.in.h:195
+msgid "Cow"
+msgstr "Vaca"
+
+#: ../data/str.xml.in.h:196
+msgid "Tiger"
+msgstr "Tigre"
+
+#: ../data/str.xml.in.h:197
+msgid "Leopard"
+msgstr "Lleopard"
+
+#: ../data/str.xml.in.h:198
+msgid "Rabbit"
+msgstr "Conill"
+
+#: ../data/str.xml.in.h:199
+msgid "Cat"
+msgstr "Gat"
+
+#: ../data/str.xml.in.h:200
+msgid "Dragon"
+msgstr "Drac"
+
+#: ../data/str.xml.in.h:201
+msgid "Crocodile"
+msgstr "Cocodril"
+
+#: ../data/str.xml.in.h:202
+msgid "Whale"
+msgstr "Balena"
+
+#: ../data/str.xml.in.h:203
+msgid "Snail"
+msgstr "Caragol"
+
+#: ../data/str.xml.in.h:204
+msgid "Snake"
+msgstr "Serp"
+
+#: ../data/str.xml.in.h:205
+msgid "Horse"
+msgstr "Cavall"
+
+#: ../data/str.xml.in.h:206
+msgid "Sheep"
+msgstr "Ovella"
+
+#: ../data/str.xml.in.h:207
+msgid "Goat"
+msgstr "Cabra"
+
+#: ../data/str.xml.in.h:208
+msgid "Monkey"
+msgstr "Mono"
+
+#: ../data/str.xml.in.h:209
+msgid "Chicken"
+msgstr "Pollastre"
+
+#: ../data/str.xml.in.h:210
+msgid "Dog"
+msgstr "Gos"
+
+#: ../data/str.xml.in.h:211
+msgid "Pig"
+msgstr "Porc"
+
+#: ../data/str.xml.in.h:212
+msgid "Elephant"
+msgstr "Elefant"
+
+#: ../data/str.xml.in.h:213
+msgid "Octopus"
+msgstr "Pop"
+
+#: ../data/str.xml.in.h:214
+msgid "Spiral Shell"
+msgstr "Closca espiral"
+
+#: ../data/str.xml.in.h:215
+msgid "Bug"
+msgstr "Insecte"
+
+#: ../data/str.xml.in.h:216
+msgid "Ant"
+msgstr "Formiga"
+
+#: ../data/str.xml.in.h:217
+msgid "Lady Beetle"
+msgstr "Marieta"
+
+#: ../data/str.xml.in.h:218
+msgid "Fish"
+msgstr "Peix"
+
+#: ../data/str.xml.in.h:219
+msgid "Tropical Fish"
+msgstr "Peix tropical"
+
+#: ../data/str.xml.in.h:220
+msgid "Blowfish"
+msgstr "Peix globus"
+
+#: ../data/str.xml.in.h:221
+msgid "Bird"
+msgstr "Ocell"
+
+#: ../data/str.xml.in.h:222
+msgid "Penguin"
+msgstr "Pingüí"
+
+#: ../data/str.xml.in.h:223
+msgid "Koala"
+msgstr "Coala"
+
+#: ../data/str.xml.in.h:224
+msgid "Poodle"
+msgstr "Canitx"
+
+#: ../data/str.xml.in.h:225
+msgid "Camel"
+msgstr "Camell"
+
+#: ../data/str.xml.in.h:226
+msgid "Dolphin"
+msgstr "Dofí"
+
+#: ../data/str.xml.in.h:227
+msgid "Frog"
+msgstr "Granota"
+
+#: ../data/str.xml.in.h:228
+msgid "Hamster"
+msgstr "Hàmster"
+
+#: ../data/str.xml.in.h:229
+msgid "Wolf"
+msgstr "Llop"
+
+#: ../data/str.xml.in.h:230
+msgid "Bear"
+msgstr "Ós"
+
+#: ../data/str.xml.in.h:231
+msgid "Panda"
+msgstr "Panda"
+
+#: ../data/str.xml.in.h:232
+msgid "Eye"
+msgstr "Ull"
+
+#: ../data/str.xml.in.h:233
+msgid "Ear"
+msgstr "Orella"
+
+#: ../data/str.xml.in.h:234
+msgid "Nose"
+msgstr "Nas"
+
+#: ../data/str.xml.in.h:235
+msgid "Mouth"
+msgstr "Boca"
+
+#: ../data/str.xml.in.h:236
+msgid "Tongue"
+msgstr "Llengua"
+
+#: ../data/str.xml.in.h:237
+msgid "Crown"
+msgstr "Corona"
+
+#: ../data/str.xml.in.h:238
+msgid "Glasses"
+msgstr "Ulleres"
+
+#: ../data/str.xml.in.h:239
+msgid "Necktie"
+msgstr "Corbata"
+
+#: ../data/str.xml.in.h:240
+msgid "T-Shirt"
+msgstr ""
+
+#: ../data/str.xml.in.h:241
+msgid "Jeans"
+msgstr ""
+
+#: ../data/str.xml.in.h:242
+msgid "Dress"
+msgstr ""
+
+#: ../data/str.xml.in.h:243
+msgid "Kimono"
+msgstr "Quimono"
+
+#: ../data/str.xml.in.h:244
+msgid "Bikini"
+msgstr "Biquini"
+
+#: ../data/str.xml.in.h:245
+msgid "Clothes"
+msgstr ""
+
+#: ../data/str.xml.in.h:246
+msgid "Purse"
+msgstr ""
+
+#: ../data/str.xml.in.h:247
+msgid "Handbag"
+msgstr ""
+
+#: ../data/str.xml.in.h:248
+msgid "Pouch"
+msgstr ""
+
+#: ../data/str.xml.in.h:249
+msgid "Shoe"
+msgstr ""
+
+#: ../data/str.xml.in.h:250
+msgid "Footprint"
+msgstr ""
+
+#: ../data/str.xml.in.h:251
+msgid "Account"
+msgstr ""
+
+#: ../data/str.xml.in.h:252
+msgid "Boy"
+msgstr "Noi"
+
+#: ../data/str.xml.in.h:253
+msgid "Girl"
+msgstr "Noia"
+
+#: ../data/str.xml.in.h:254
+msgid "Man"
+msgstr "Home"
+
+#: ../data/str.xml.in.h:255
+msgid "Woman"
+msgstr "Dona"
+
+#: ../data/str.xml.in.h:256
+msgid "Family"
+msgstr "Família"
+
+#: ../data/str.xml.in.h:257
+msgid "Restroom"
+msgstr "Lavabos"
+
+#: ../data/str.xml.in.h:258
+msgid "Men"
+msgstr "Homes"
+
+#: ../data/str.xml.in.h:259
+msgid "Women"
+msgstr "Dones"
+
+#: ../data/str.xml.in.h:260
+msgid "Princess"
+msgstr ""
+
+#: ../data/str.xml.in.h:261
+msgid "Japanese Ogre"
+msgstr ""
+
+#: ../data/str.xml.in.h:262
+msgid "Japanese Goblin"
+msgstr ""
+
+#: ../data/str.xml.in.h:263
+msgid "Ghost"
+msgstr ""
+
+#: ../data/str.xml.in.h:264
+msgid "Baby Angel"
+msgstr ""
+
+#: ../data/str.xml.in.h:265
+msgid "Extraterrestrial Alien"
+msgstr ""
+
+#: ../data/str.xml.in.h:266
+msgid "Alien Monster"
+msgstr ""
+
+#: ../data/str.xml.in.h:267
+msgid "IMP"
+msgstr ""
+
+#: ../data/str.xml.in.h:268
+msgid "Skull"
+msgstr ""
+
+#: ../data/str.xml.in.h:269
+msgid "Information Desk Person"
+msgstr ""
+
+#: ../data/str.xml.in.h:270
+msgid "Guardsman"
+msgstr ""
+
+#: ../data/str.xml.in.h:271
+msgid "Dancer"
+msgstr ""
+
+#: ../data/str.xml.in.h:272
+msgid "Lipstick"
+msgstr "Barra de llavis"
+
+#: ../data/str.xml.in.h:273
+msgid "Nail"
+msgstr "Ungla"
+
+#: ../data/str.xml.in.h:274
+msgid "Face"
+msgstr "Cara"
+
+#: ../data/str.xml.in.h:275
+msgid "Haircut"
+msgstr "Pentinat"
+
+#: ../data/str.xml.in.h:276
+msgid "Syringe"
+msgstr "Xeringa"
+
+#: ../data/str.xml.in.h:277
+msgid "Medicine"
+msgstr "Medicina"
+
+#: ../data/str.xml.in.h:278
+msgid "Kiss"
+msgstr "Petó"
+
+#: ../data/str.xml.in.h:279
+msgid "Love Letter"
+msgstr ""
+
+#: ../data/str.xml.in.h:280
+msgid "Ring"
+msgstr "Anell"
+
+#: ../data/str.xml.in.h:281
+msgid "Gem Stone"
+msgstr ""
+
+#: ../data/str.xml.in.h:282
+msgid "Wedding"
+msgstr ""
+
+#: ../data/str.xml.in.h:283
+msgid "Heart"
+msgstr "Cor"
+
+#: ../data/str.xml.in.h:284
+msgid "Idea"
+msgstr "Idea"
+
+#: ../data/str.xml.in.h:285
+msgid "Anger"
+msgstr ""
+
+#: ../data/str.xml.in.h:286
+msgid "Bomb"
+msgstr "Bomba"
+
+#: ../data/str.xml.in.h:287
+msgid "Sleeping"
+msgstr ""
+
+#: ../data/str.xml.in.h:288
+msgid "Collision"
+msgstr ""
+
+#: ../data/str.xml.in.h:289
+msgid "Sweat"
+msgstr ""
+
+#: ../data/str.xml.in.h:290
+msgid "Droplet"
+msgstr ""
+
+#: ../data/str.xml.in.h:291
+msgid "Dash"
+msgstr ""
+
+#: ../data/str.xml.in.h:292
+msgid "Poo"
+msgstr ""
+
+#: ../data/str.xml.in.h:293
+msgid "Muscle"
+msgstr ""
+
+#: ../data/str.xml.in.h:294
+msgid "Dizzy"
+msgstr ""
+
+#: ../data/str.xml.in.h:295
+msgid "Speech"
+msgstr ""
+
+#: ../data/str.xml.in.h:296
+msgid "Thought"
+msgstr ""
+
+#: ../data/str.xml.in.h:297
+msgid "Perfect Score"
+msgstr ""
+
+#: ../data/str.xml.in.h:298
+msgid "Pushpin"
+msgstr ""
+
+#: ../data/str.xml.in.h:299
+msgid "Clip"
+msgstr ""
+
+#: ../data/str.xml.in.h:300
+msgid "Speaker"
+msgstr ""
+
+#: ../data/str.xml.in.h:301
+msgid "Battery"
+msgstr ""
+
+#: ../data/str.xml.in.h:302
+msgid "Plug"
+msgstr ""
+
+#: ../data/str.xml.in.h:303
+msgid "Search"
+msgstr ""
+
+#: ../data/str.xml.in.h:304
+msgid "Bookmark"
+msgstr "Punt de llibre"
+
+#: ../data/str.xml.in.h:305
+msgid "Book"
+msgstr "Llibre"
+
+#: ../data/str.xml.in.h:306
+msgid "Memo"
+msgstr ""
+
+#: ../data/str.xml.in.h:307
+msgid "Mail"
+msgstr "Correu"
+
+#: ../data/str.xml.in.h:308
+msgid "Mobile Phone"
+msgstr "Telèfon mòbil"
+
+#: ../data/str.xml.in.h:309
+msgid "Camera"
+msgstr "Càmera"
+
+#: ../data/str.xml.in.h:310
+msgid "Video"
+msgstr "Vídeo"
+
+#: ../data/str.xml.in.h:311
+msgid "Television"
+msgstr "Televisió"
+
+#: ../data/str.xml.in.h:312
+msgid "Radio"
+msgstr "Ràdio"
+
+#: ../data/str.xml.in.h:313
+msgid "Key"
+msgstr "Clau"
+
+#: ../data/str.xml.in.h:314
+msgid "Lock"
+msgstr ""
+
+#: ../data/str.xml.in.h:315
+msgid "Fire"
+msgstr "Foc"
+
+#: ../data/str.xml.in.h:316
+msgid "Wrench"
+msgstr ""
+
+#: ../data/str.xml.in.h:317
+msgid "Hammer"
+msgstr ""
+
+#: ../data/str.xml.in.h:318
+msgid "Bolt"
+msgstr ""
+
+#: ../data/str.xml.in.h:319
+msgid "Hocho"
+msgstr ""
+
+#: ../data/str.xml.in.h:320
+msgid "Pistol"
+msgstr ""
+
+#: ../data/str.xml.in.h:321
+msgid "Microscope"
+msgstr "Microscopi"
+
+#: ../data/str.xml.in.h:322
+msgid "Telescope"
+msgstr "Telescopi"
+
+#: ../data/str.xml.in.h:323
+msgid "Crystal"
+msgstr ""
+
+#: ../data/str.xml.in.h:324
+msgid "David Star"
+msgstr "Estrella de David"
+
+#: ../data/str.xml.in.h:325
+msgid "Beginner"
+msgstr ""
+
+#: ../data/str.xml.in.h:326
+msgid "Candle"
+msgstr "Espelma"
+
+#: ../data/str.xml.in.h:327
+msgid "Hole"
+msgstr ""
+
+#: ../data/str.xml.in.h:328
+msgid "Personal Computer"
+msgstr "Ordinador personal"
+
+#: ../data/str.xml.in.h:329
+msgid "keyboard"
+msgstr "Teclat"
+
+#: ../data/str.xml.in.h:330
+msgid "Printer"
+msgstr "Impressora"
+
+#: ../data/str.xml.in.h:331
+msgid "Calculator"
+msgstr "Calculadora"
+
+#: ../data/str.xml.in.h:332
+msgid "Minimize"
+msgstr "Minimitza"
+
+#: ../data/str.xml.in.h:333
+msgid "Maximize"
+msgstr "Maximitza"
+
+#: ../data/str.xml.in.h:334
+msgid "Refresh"
+msgstr "Refresca"
+
+#: ../data/str.xml.in.h:335
+msgid "Close"
+msgstr "Tanca"
+
+#: ../data/str.xml.in.h:336
+msgid "World"
+msgstr "Món"
+
+#: ../data/str.xml.in.h:337
+msgid "Mt. Fuji"
+msgstr "Mt. Fuji"
+
+#: ../data/str.xml.in.h:338
+msgid "Tokyo Tower"
+msgstr "Torre de Tòquio"
+
+#: ../data/str.xml.in.h:339
+msgid "Japan"
+msgstr "Japó"
+
+#: ../data/str.xml.in.h:340
+msgid "Anguish"
+msgstr "Angoixa"
+
+#: ../data/str.xml.in.h:341
+msgid "Smile"
+msgstr "Somriure"
+
+#: ../data/str.xml.in.h:342
+msgid "Smirk"
+msgstr "Somriure torçat"
+
+#: ../data/str.xml.in.h:343
+msgid "Neutral"
+msgstr "Neutral"
+
+#: ../data/str.xml.in.h:344
+msgid "Expressionless"
+msgstr ""
+
+#: ../data/str.xml.in.h:345
+msgid "Unamused"
+msgstr ""
+
+#: ../data/str.xml.in.h:346
+msgid "Pensive"
+msgstr "Pensatiu"
+
+#: ../data/str.xml.in.h:347
+msgid "Confused"
+msgstr "Confós"
+
+#: ../data/str.xml.in.h:348
+msgid "Confounded"
+msgstr ""
+
+#: ../data/str.xml.in.h:349
+msgid "Disappointed"
+msgstr "Desacord"
+
+#: ../data/str.xml.in.h:350
+msgid "Angry"
+msgstr "Enfadat"
+
+#: ../data/str.xml.in.h:351
+msgid "Cry"
+msgstr "Plorar"
+
+#: ../data/str.xml.in.h:352
+msgid "Sleeply"
+msgstr ""
+
+#: ../data/str.xml.in.h:353
+msgid "Tired"
+msgstr "Cansat"
+
+#: ../data/str.xml.in.h:354
+msgid "Surprise"
+msgstr "Sorprès"
+
+#: ../data/str.xml.in.h:355
+msgid "Scream"
+msgstr "Cridar"
+
+#: ../data/str.xml.in.h:356
+msgid "Flushed"
+msgstr ""
+
+#: ../data/str.xml.in.h:357
+msgid "Medical Mask"
+msgstr "Màscara mèdica"
+
+#: ../data/str.xml.in.h:358
+msgid "OK"
+msgstr "D'acord"
+
+#: ../data/str.xml.in.h:359
+msgid "Bow"
+msgstr ""
+
+#: ../data/str.xml.in.h:360
+msgid "See-No-Evil"
+msgstr ""
+
+#: ../data/str.xml.in.h:361
+msgid "Hear-No-Evil"
+msgstr ""
+
+#: ../data/str.xml.in.h:362
+msgid "Speak-No-Evil"
+msgstr ""
+
+#: ../data/str.xml.in.h:363
+msgid "Banzai"
+msgstr ""
+
+#: ../data/str.xml.in.h:364
+msgid "Pleading"
+msgstr ""
+
+#: ../data/str.xml.in.h:365
+msgid "Smileys"
+msgstr "Emoticones"
+
+#: ../data/str.xml.in.h:366
+msgid "Smile Big"
+msgstr ""
+
+#: ../data/str.xml.in.h:367
+msgid "Sad"
+msgstr "Trist"
+
+#: ../data/str.xml.in.h:368
+msgid "Wink"
+msgstr "Fer l'ullet"
+
+#: ../data/str.xml.in.h:369
+msgid "Shock"
+msgstr ""
+
+#: ../data/str.xml.in.h:370
+msgid "Kiss | Secret"
+msgstr ""
+
+#: ../data/str.xml.in.h:371
+msgid "Glasses Cool | Eyeroll"
+msgstr ""
+
+#: ../data/str.xml.in.h:372
+msgid "Glasses Cool"
+msgstr ""
+
+#: ../data/str.xml.in.h:373
+msgid "Embarrassed"
+msgstr "Avergonyit"
+
+#: ../data/str.xml.in.h:374
+msgid "Crying"
+msgstr "Plorant"
+
+#: ../data/str.xml.in.h:375
+msgid "Thinking"
+msgstr "Pensant"
+
+#: ../data/str.xml.in.h:376
+msgid "Don't Know"
+msgstr "No ho sé"
+
+#: ../data/str.xml.in.h:377
+msgid "Party"
+msgstr "Festa"
+
+#: ../data/str.xml.in.h:378
+msgid "Yawn"
+msgstr ""
+
+#: ../data/str.xml.in.h:379
+msgid "Bunny"
+msgstr ""
+
+#: ../data/str.xml.in.h:380
+msgid "Sick"
+msgstr ""
+
+#: ../data/str.xml.in.h:381
+msgid "Devil"
+msgstr "Dimoni"
+
+#: ../data/str.xml.in.h:382
+msgid "Angel"
+msgstr "Àngel"
+
+#: ../data/str.xml.in.h:383
+msgid "Love"
+msgstr "Amor"
+
+#: ../data/str.xml.in.h:384
+msgid "Love Over"
+msgstr ""
+
+#: ../data/str.xml.in.h:385
+msgid "Film"
+msgstr "Film"
+
+#: ../data/str.xml.in.h:386
+msgid "Clock"
+msgstr "Rellotge"
+
+#: ../data/str.xml.in.h:387
+msgid "Coffee"
+msgstr "Cafè"
+
+#: ../data/str.xml.in.h:388
+msgid "Phone"
+msgstr "Telèfon"
+
+#: ../data/str.xml.in.h:389
+msgid "Hug Left"
+msgstr ""
+
+#: ../data/str.xml.in.h:390
+msgid "Hug Right"
+msgstr ""
+
+#: ../data/str.xml.in.h:391
+msgid "Yes"
+msgstr "Sí"
+
+#: ../data/str.xml.in.h:392
+msgid "No"
+msgstr "No"
+
+#: ../data/str.xml.in.h:393
+msgid "Shut Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:394
+msgid "Money Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:395
+msgid "Foot in Mouth"
+msgstr ""
+
+#: ../data/str.xml.in.h:396
 msgid "Shout"
 msgstr ""
 
-#: ../data/str.xml.in.h:52
-msgid "Monkey"
-msgstr ""
-
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:54
+#: ../data/str.xml.in.h:398
 msgid "Smileys (Japanese)"
-msgstr ""
+msgstr "Emoticones (japonès)"
 
-#: ../data/str.xml.in.h:55
+#: ../data/str.xml.in.h:399
 msgid "Smoking"
-msgstr ""
+msgstr "Fumar"
 
-#: ../data/str.xml.in.h:56
+#: ../data/str.xml.in.h:400
 msgid "Sorry"
 msgstr ""
 
-#: ../data/str.xml.in.h:57
+#: ../data/str.xml.in.h:401
 msgid "Hug"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:59
+#: ../data/str.xml.in.h:403
 msgid "Smileys (Japanese 2ch)"
-msgstr ""
+msgstr "Emoticones (japonès 2c)"
 
-#: ../data/str.xml.in.h:60
+#: ../data/str.xml.in.h:404
 msgid "Hey"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:62
+#: ../data/str.xml.in.h:406
 msgid "Smileys (Chinese)"
-msgstr ""
+msgstr "Emoticones (xinès)"
 
-#: ../data/str.xml.in.h:63
+#: ../data/str.xml.in.h:407
 msgid "Crow"
 msgstr ""
 
-#: ../data/str.xml.in.h:64
-msgid "Bear"
-msgstr ""
-
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:66
+#: ../data/str.xml.in.h:409
 msgid "Acronym"
 msgstr "Acrònim"
 
-#: ../data/str.xml.in.h:67
+#: ../data/str.xml.in.h:410
 msgid "Acronym (Computer)"
-msgstr ""
+msgstr "Acrònim (informàtica)"
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:69
+#: ../data/str.xml.in.h:412
 msgid "Acronym (Japanese)"
-msgstr ""
+msgstr "Acrònim (japonès)"
 
-#: ../data/str.xml.in.h:70
+#: ../data/str.xml.in.h:413
 msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
-msgstr ""
+msgstr "No vull llegir entre línies (Aete Kuuki Wo Yomanai)"
 
-#: ../data/str.xml.in.h:71
+#: ../data/str.xml.in.h:414
 msgid "Can't get together (Guda Guda)"
 msgstr ""
 
-#: ../data/str.xml.in.h:72
+#: ../data/str.xml.in.h:415
 msgid "Say whatever one feels (Iitaidake)"
 msgstr ""
 
-#: ../data/str.xml.in.h:73
+#: ../data/str.xml.in.h:416
 msgid "Excited (Kitakore)"
 msgstr ""
 
-#: ../data/str.xml.in.h:74
+#: ../data/str.xml.in.h:417
 msgid "Detail (Kuwashiku)"
 msgstr ""
 
-#: ../data/str.xml.in.h:75
+#: ../data/str.xml.in.h:418
 msgid "Cannot read between lines (Kuuki Ga Yomenai)"
 msgstr ""
 
-#: ../data/str.xml.in.h:76
+#: ../data/str.xml.in.h:419
 msgid "Omission (Shouryaku)"
 msgstr ""
 
-#: ../data/str.xml.in.h:77
+#: ../data/str.xml.in.h:420
 msgid "Excited (Waku Waku Teka Teka)"
 msgstr ""
 
-#: ../data/str.xml.in.h:78
+#: ../data/str.xml.in.h:421
 msgid "Laugh"
 msgstr ""
 
-#: ../data/str.xml.in.h:79
+#: ../data/str.xml.in.h:422
 msgid "Dude (Oi!)"
 msgstr ""
 
-#: ../data/str.xml.in.h:80
-msgid "In The Meantime (Toriaezu, Ma)"
-msgstr ""
-
-#: ../data/str.xml.in.h:81
-msgid "Bye"
-msgstr ""
-
-#: ../data/str.xml.in.h:82
-msgid "False Start (Flying Get)"
-msgstr ""
-
-#: ../data/str.xml.in.h:83
-msgid "Fulfilling Life (Real life is Zyujitsu)"
-msgstr ""
-
-#: ../data/str.xml.in.h:84
-msgid "Laugh (Warau)"
-msgstr ""
-
-#: ../data/str.xml.in.h:85
+#: ../data/str.xml.in.h:423
 msgid "Good job (Otsukare)"
 msgstr ""
 
-#: ../data/str.xml.in.h:86
+#: ../data/str.xml.in.h:424
+msgid "Want (Kure, E.g. pics クレメンス)"
+msgstr ""
+
+#: ../data/str.xml.in.h:425
+msgid "ASCII art of a hand (✊, E.g. つAttention)"
+msgstr ""
+
+#: ../data/str.xml.in.h:426
+msgid "In The Meantime (Toriaezu, Maa)"
+msgstr ""
+
+#: ../data/str.xml.in.h:427
+msgid "Self-confidence (Aniki, E.g. tennis ニキ)"
+msgstr ""
+
+#: ../data/str.xml.in.h:428
+msgid "Bye"
+msgstr "Adéu"
+
+#: ../data/str.xml.in.h:429
+msgid "Want (Hattekure, E.g. pics ハラデイ)"
+msgstr ""
+
+#: ../data/str.xml.in.h:430
+msgid "Exist as microparticles (Biryushi Level De Sonzaisuru)"
+msgstr ""
+
+#: ../data/str.xml.in.h:431
+msgid "False Start (Flying Get)"
+msgstr ""
+
+#: ../data/str.xml.in.h:432
+msgid "Fulfilling Life (Real life is Zyujitsu)"
+msgstr ""
+
+#: ../data/str.xml.in.h:433
+msgid "Laugh (Warau)"
+msgstr ""
+
+#: ../data/str.xml.in.h:434
 msgid "He (Yatsu &lt;- Yashi)"
 msgstr ""
 
 #: ../data/w3c.xml.in.h:1
 msgid "Char References"
-msgstr ""
+msgstr "Referències de caràcters"
 
 #: ../data/zh.xml.in.h:1
 msgid "Chinese"
@@ -1971,21 +3190,233 @@ msgstr "Xinès"
 msgid "Bopomofo"
 msgstr "Bopomofo"
 
-#: ../input-pad/eek-gtk.c:62
+#: ../input-pad/app-menu.ui.h:1
+msgid "_File"
+msgstr "_Fitxer"
+
+#: ../input-pad/app-menu.ui.h:2 ../input-pad/dialog.ui.h:21
+msgid "_Close"
+msgstr "_Tanca"
+
+#: ../input-pad/app-menu.ui.h:3
+msgid "Close the program"
+msgstr "Tanca el programa"
+
+#: ../input-pad/app-menu.ui.h:4
+msgid "_Pad"
+msgstr "C_oixinet"
+
+#: ../input-pad/app-menu.ui.h:5
+msgid "_Code Point"
+msgstr "Posició del _codi"
+
+#: ../input-pad/app-menu.ui.h:6
+msgid "_Show Pad"
+msgstr "Mo_stra el coixinet"
+
+#: ../input-pad/app-menu.ui.h:7
+msgid "Show _All Characters"
+msgstr "Mostra tots els c_aràcters"
+
+#: ../input-pad/app-menu.ui.h:8
+msgid "Show _Custom Characters"
+msgstr "Mostra els _caràcters personalitzats"
+
+#: ../input-pad/app-menu.ui.h:9
+msgid "Show _Nothing"
+msgstr "No mostris res"
+
+#: ../input-pad/app-menu.ui.h:10
+msgid "Show _Keyboard Layout"
+msgstr "Mostra la disposició de _teclat"
+
+#: ../input-pad/app-menu.ui.h:11
+msgid "_Help"
+msgstr "A_juda"
+
+#: ../input-pad/app-menu.ui.h:12
+msgid "_Troubleshoot"
+msgstr "_Soluciona els problemes"
+
+#: ../input-pad/app-menu.ui.h:13
+msgid "_About"
+msgstr "_Quant a"
+
+#: ../input-pad/dialog.ui.h:1
+msgid "Code Point Dialog"
+msgstr "Diàleg de la posició del codi"
+
+#: ../input-pad/dialog.ui.h:2
+msgid "Unicode"
+msgstr "Unicode"
+
+#: ../input-pad/dialog.ui.h:3
+msgid "You can choose encoding type"
+msgstr "Podeu triar el tipus de codificació"
+
+#: ../input-pad/dialog.ui.h:4
+msgid "Current Encoding"
+msgstr "Codificació actual"
+
+#: ../input-pad/dialog.ui.h:5
+msgid "Copy Buffer"
+msgstr "Copis la memòria intermèdia"
+
+#: ../input-pad/dialog.ui.h:6
+msgid "Base 16\n"
+"Hex"
+msgstr "Base 16\n"
+"Hex"
+
+#: ../input-pad/dialog.ui.h:8
+msgid "Set number case to hexadecimal"
+msgstr "Estableix les caselles del número al sistema de numeració hexadecimal"
+
+#: ../input-pad/dialog.ui.h:9
+msgid "Base 10\n"
+"Dec"
+msgstr "Base 10\n"
+"Dec"
+
+#: ../input-pad/dialog.ui.h:11
+msgid "Set number case to decimal"
+msgstr "Estableix les caselles del número al sistema de numeració decimal"
+
+#: ../input-pad/dialog.ui.h:12
+msgid "Base 8\n"
+"Oct"
+msgstr "Base 8\n"
+"Oct"
+
+#: ../input-pad/dialog.ui.h:14
+msgid "Set number case to octal"
+msgstr "Estableix les caselles del número al sistema de numeració octal"
+
+#: ../input-pad/dialog.ui.h:15
+msgid "Base 2\n"
+"Bin"
+msgstr "Base 2\n"
+"Bin"
+
+#: ../input-pad/dialog.ui.h:17
+msgid "Set number case to binary"
+msgstr "Estableix les caselles del número al sistema de numeració binari"
+
+#: ../input-pad/dialog.ui.h:18
+msgid "Code Point:"
+msgstr "Posició del codi:"
+
+#: ../input-pad/dialog.ui.h:19
+msgid "Character:"
+msgstr "Caràcter:"
+
+#: ../input-pad/dialog.ui.h:20
+msgid "_Send"
+msgstr "En_via"
+
+#: ../input-pad/dialog.ui.h:22
+msgid "Input Pad Troubleshoot"
+msgstr "Soluciona problemes del coixinet d'entada"
+
+#: ../input-pad/dialog.ui.h:24
+#, no-c-format
+msgid ""
+"\n"
+"This application can be run either as a stand-alone program or under an "
+"input method application.\n"
+"If you wish to send multi-byte characters, this application needs to be run "
+"under an input method application.\n"
+"If you wish to send characters to X11 applications, those applications needs "
+"to allow send events. e.g.\n"
+"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
+"\n"
+"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/"
+"pad to customize those in \"Custom Character\" pane."
+msgstr ""
+"\n"
+"Aquesta aplicació es pot executar com un programa independent o sota una "
+"aplicació de mètode d'entrada.\n"
+"Si voleu enviar caràcters de diversos bytes, aquesta aplicació s'ha "
+"d'executar sota una aplicació de mètode d'entrada.\n"
+"Si voleu enviar caràcters a les aplicacions d'X11, aquestes aplicacions han "
+"de deixar que s'enviïn esdeveniments. p. ex.\n"
+"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
+"\n"
+"També podeu copiar els fitxers de coixinet de /usr/share/input-pad/pad a "
+"$HOME/.config/pad per personalitzar-los al panell \"Caràcter personalitzat\"."
+""
+
+#: ../input-pad/dialog.ui.h:31
+msgid "_OK"
+msgstr "D'ac_ord"
+
+#: ../input-pad/dialog.ui.h:32
+msgid "Configure Keyboard Layouts"
+msgstr "Configura les disposicions de teclat"
+
+#: ../input-pad/dialog.ui.h:33
+msgid "A_vailable layouts:"
+msgstr "Disposicions disponibles:"
+
+#: ../input-pad/dialog.ui.h:34
+msgid "_Add"
+msgstr "_Afegeix"
+
+#: ../input-pad/dialog.ui.h:35
+msgid "_Layouts shown in the list:"
+msgstr "Disposicions mostrades en la _llista:"
+
+#: ../input-pad/dialog.ui.h:36
+msgid "_Remove"
+msgstr "Sup_rimeix"
+
+#: ../input-pad/dialog.ui.h:37
+msgid "_Options"
+msgstr "_Opcions"
+
+#: ../input-pad/dialog.ui.h:38
+msgid "Configure Keyboard Options"
+msgstr "Configura les opcions del teclat"
+
+#: ../input-pad/dialog.ui.h:39
+msgid "_Use the default keyboard option"
+msgstr "_Utilitza l'opció de teclat per defecte"
+
+#: ../input-pad/dialog.ui.h:40
+msgid "Use the defualt XKB option"
+msgstr "_Utilitza l'opció d'XKB per defecte"
+
+#: ../input-pad/dialog.ui.h:41
+msgid "<b>Keyboard Option</b>"
+msgstr "<b>Opcions del teclat</b>"
+
+#: ../input-pad/dialog.ui.h:43
+msgid "The input pad is a tool to send a character on button."
+msgstr ""
+"El coixinet d'entrada és una eina per enviar un caràcter amb un clic de botó."
+""
+
+#: ../input-pad/dialog.ui.h:44
+msgid "translator_credits"
+msgstr ""
+"Jordi Mas Hernàndez <jmas@softcatala.org>\n"
+"Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>"
+
+#: ../input-pad/eek-gtk.c:65
 msgid "Use libeek to draw keyboard"
-msgstr ""
+msgstr "Utilitza libeek per dibuixar el teclat"
 
-#: ../input-pad/eek-gtk.c:234
+#: ../input-pad/eek-gtk.c:237
 msgid "eekboard layout"
-msgstr ""
+msgstr "Disposició eekboard"
 
-#: ../input-pad/eek-gtk.c:246
+#: ../input-pad/eek-gtk.c:249
 msgid "eekboard Options"
-msgstr ""
+msgstr "Opcions de l'eekboard"
 
-#: ../input-pad/eek-gtk.c:246
+#: ../input-pad/eek-gtk.c:249
 msgid "Show eekboard Options"
-msgstr ""
+msgstr "Mostra les opcions de l'eekboard"
 
 #: ../input-pad/unicode_block.h:37
 msgid "Basic Latin"
@@ -2033,7 +3464,7 @@ msgstr "Àrab"
 
 #: ../input-pad/unicode_block.h:50
 msgid "Syriac"
-msgstr "Siri"
+msgstr "Siríac"
 
 #: ../input-pad/unicode_block.h:51
 msgid "Arabic Supplement"
@@ -2081,15 +3512,15 @@ msgstr "Telugu"
 
 #: ../input-pad/unicode_block.h:62
 msgid "Kannada"
-msgstr "Kannarès"
+msgstr "Kanarès"
 
 #: ../input-pad/unicode_block.h:63
 msgid "Malayalam"
-msgstr "Malayalam"
+msgstr "Malaiàlam"
 
 #: ../input-pad/unicode_block.h:64
 msgid "Sinhala"
-msgstr "Sinhala"
+msgstr "Singalès"
 
 #: ../input-pad/unicode_block.h:65
 msgid "Thai"
@@ -2197,7 +3628,7 @@ msgstr "Balinès"
 
 #: ../input-pad/unicode_block.h:91
 msgid "Sundanese"
-msgstr "Sudanès"
+msgstr "Sundanès"
 
 #: ../input-pad/unicode_block.h:92
 msgid "Lepcha"
@@ -2277,7 +3708,7 @@ msgstr "Reconeixement òptic de caràcters"
 
 #: ../input-pad/unicode_block.h:111
 msgid "Enclosed Alphanumerics"
-msgstr "Alfanumèrics inclosos"
+msgstr "Alfanumèrics tancats"
 
 #: ../input-pad/unicode_block.h:113
 msgid "Block Elements"
@@ -2357,7 +3788,7 @@ msgstr "Radicals kangxi"
 
 #: ../input-pad/unicode_block.h:134
 msgid "Ideographic Description Characters"
-msgstr "Caràcters de descripció basat en ideogrames"
+msgstr "Caràcters de descripció basats en ideogrames"
 
 #: ../input-pad/unicode_block.h:135
 msgid "CJK Symbols and Punctuation"
@@ -2385,7 +3816,7 @@ msgstr "Extensions fonètiques katakana"
 
 #: ../input-pad/unicode_block.h:144
 msgid "Enclosed CJK Letters and Months"
-msgstr "Mesos i lletres CJK inclosos"
+msgstr "Mesos i lletres CJK tancats"
 
 #: ../input-pad/unicode_block.h:146
 msgid "CJK Unified Ideographs Extension A"
@@ -2545,7 +3976,7 @@ msgstr "Formes de presentació àrab - B"
 
 #: ../input-pad/unicode_block.h:185
 msgid "Halfwidth and Fullwidth Forms"
-msgstr "Formes d'amplada mitja i total"
+msgstr "Formes d'amplada mitjana i completa"
 
 #: ../input-pad/unicode_block.h:186
 msgid "Specials"
@@ -2697,11 +4128,11 @@ msgstr "Fitxes del dòmino"
 
 #: ../input-pad/unicode_block.h:225
 msgid "Enclosed Alphanumeric Supplement"
-msgstr "Suplement alfanumèric inclòs"
+msgstr "Suplement alfanumèric tancat"
 
 #: ../input-pad/unicode_block.h:226
 msgid "Enclosed Ideographic Supplement"
-msgstr "Suplement ideogràfic inclòs"
+msgstr "Suplement ideogràfic tancat"
 
 #: ../input-pad/unicode_block.h:227
 msgid "CJK Unified Ideographs Extension B"
@@ -2725,58 +4156,62 @@ msgstr "Suplement de selectors de variació"
 
 #: ../input-pad/unicode_block.h:232
 msgid "Supplementary Private Use Area-A"
-msgstr "Àrea d'ús privat suplementari - A"
+msgstr "Àrea A d'ús privat suplementari"
 
 #: ../input-pad/unicode_block.h:233
 msgid "Supplementary Private Use Area-B"
-msgstr "Àrea d'ús privat suplementari - B"
+msgstr "Àrea B d'ús privat suplementari"
 
-#: ../input-pad/window-gtk.c:172
+#: ../input-pad/window-gtk.c:203
 msgid "Display version"
-msgstr ""
+msgstr "Mostra la versió"
 
 #. Translators: the word 'KBDUI' is not translated.
-#: ../input-pad/window-gtk.c:175
+#: ../input-pad/window-gtk.c:206
 msgid "Use KBDUI to draw keyboard"
-msgstr ""
+msgstr "Utilitza KBDUI per dibuixar el teclat"
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:178
+#: ../input-pad/window-gtk.c:209
 msgid "Use TYPE of char table. The available TYPE=0, 1, 2"
 msgstr ""
+"Utilitza el TYPE de la taula de caràcters. Els valors disponibles són TYPE="
+"0, 1, 2"
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:181
+#: ../input-pad/window-gtk.c:212
 msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
 msgstr ""
+"Utilitza el TYPE de la disposició de teclat. Els valors disponibles són TYPE="
+"0, 1"
 
-#: ../input-pad/window-gtk.c:188
+#: ../input-pad/window-gtk.c:219
 msgid "Use XTEST module to send key events"
-msgstr ""
+msgstr "Utilitza el mòdul XTEST per enviar esdeveniments de tecla"
 
-#: ../input-pad/window-gtk.c:193
+#: ../input-pad/window-gtk.c:224
 msgid "Use XSendEvent to send key events"
-msgstr ""
+msgstr "Utilitza XSendEvent per enviar esdeveniments de tecla"
 
-#: ../input-pad/window-gtk.c:1301
+#: ../input-pad/window-gtk.c:1172
 msgid "Fold layout"
-msgstr ""
+msgstr "Replega la disposició"
 
-#: ../input-pad/window-gtk.c:1306 ../input-pad/window-gtk.c:2695
+#: ../input-pad/window-gtk.c:1177 ../input-pad/window-gtk.c:2610
 msgid "Extend layout"
-msgstr ""
+msgstr "Desplega la disposició"
 
-#: ../input-pad/window-gtk.c:2895
+#: ../input-pad/window-gtk.c:2824
 msgid "Layout"
-msgstr "Format"
+msgstr "Disposició"
 
-#: ../input-pad/window-gtk.c:3170
+#: ../input-pad/window-gtk.c:3095
 msgid "_Layout:"
-msgstr ""
+msgstr "_Disposició:"
 
-#: ../input-pad/window-gtk.c:3200
+#: ../input-pad/window-gtk.c:3125
 msgid "_Configure Layouts"
-msgstr ""
+msgstr "_Configura les disposicions"
 
 #. No longer used in gtk 2.20
 #. gchar *license1, *license2, *license3;
@@ -2802,15 +4237,17 @@ msgstr ""
 #. license1, license2, license3);
 #. 
 #. This format has been used since gtk 2.20.
-#: ../input-pad/window-gtk.c:3239
+#: ../input-pad/window-gtk.c:3164
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
 msgstr ""
+"Aquest programa SOBRETOT NO INCLOU CAP GARANTIA; per a més detalls, visiteu "
+"%s"
 
-#: ../input-pad/window-gtk.c:3707
+#: ../input-pad/window-gtk.c:3446
 msgid "Group"
 msgstr "Grup"
 
-#: ../input-pad/window-gtk.c:3715
+#: ../input-pad/window-gtk.c:3454
 msgid "Subgroup"
-msgstr ""
+msgstr "Subgroup"

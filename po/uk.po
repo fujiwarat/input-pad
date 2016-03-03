@@ -1,22 +1,25 @@
 # Ukrainian translations for input-pad
-# Copyright (C) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (C) 2010-2016 Takao Fujiwara <takao.fujiwara1@gmail.com>
 # This file is distributed under the same license as the input-pad package.
 #
 # Translators:
 # Yuri Chornoivan <yurchor@ukr.net>, 2012,2014
+# Yuri Chornoivan <yurchor@ukr.net>, 2016. #zanata
 msgid ""
 msgstr ""
-"Project-Id-Version: input-pad\n"
+"Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
-"POT-Creation-Date: 2014-09-15 22:18+0900\n"
-"PO-Revision-Date: 2014-09-15 13:26+0000\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"POT-Creation-Date: 2016-03-02 18:45+0900\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-03-02 12:41-0500\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Zanata 3.8.2\n"
 
 #: ../data/alphabet.xml.in.in.h:1
 msgid "Alphabets"
@@ -115,7 +118,7 @@ msgstr "Стрілка"
 msgid "Box Drawing"
 msgstr "Для малювання рамок"
 
-#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3673
+#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3685
 msgid "Block"
 msgstr "Блоки"
 
@@ -232,7 +235,7 @@ msgid "Gothic"
 msgstr "Готичні"
 
 #: ../data/input-pad.desktop.in.h:1 ../input-pad/dialog.ui.h:42
-#: ../input-pad/window-gtk.c:5082 ../input-pad/window-gtk.c:5083
+#: ../input-pad/window-gtk.c:5084 ../input-pad/window-gtk.c:5085
 #: ../input-pad/window-gtk.ui.h:1
 msgid "Input Pad"
 msgstr "Панель введення"
@@ -593,7 +596,9 @@ msgstr "Неогублений голосний середньо-централ�
 
 #: ../data/ipa.xml.in.h:36
 msgid "Rhotacized open-mid central unrounded vowel"
-msgstr "Ротацизований неогублений голосний середньо-центрального ряду низького піднесення"
+msgstr ""
+"Ротацизований неогублений голосний середньо-центрального ряду низького "
+"піднесення"
 
 #: ../data/ipa.xml.in.h:37
 msgid "Voiceless labiodental fricative"
@@ -1472,616 +1477,616 @@ msgid "Comet"
 msgstr "Комета"
 
 #: ../data/str.xml.in.h:5
-msgid "Skull"
-msgstr "Череп"
-
-#: ../data/str.xml.in.h:6
 msgid "Cross"
 msgstr "Хрест"
 
-#: ../data/str.xml.in.h:7
+#: ../data/str.xml.in.h:6
 msgid "Solar"
 msgstr "Сонце"
 
-#: ../data/str.xml.in.h:8
+#: ../data/str.xml.in.h:7
 msgid "Mercury"
 msgstr "Меркурій"
 
-#: ../data/str.xml.in.h:9
+#: ../data/str.xml.in.h:8
 msgid "Venus"
 msgstr "Венера"
 
-#: ../data/str.xml.in.h:10
+#: ../data/str.xml.in.h:9
 msgid "Earth"
 msgstr "Земля"
 
-#: ../data/str.xml.in.h:11
+#: ../data/str.xml.in.h:10
 msgid "Mars"
 msgstr "Марс"
 
-#: ../data/str.xml.in.h:12
+#: ../data/str.xml.in.h:11
 msgid "Jupiter"
 msgstr "Юпітер"
 
-#: ../data/str.xml.in.h:13
+#: ../data/str.xml.in.h:12
 msgid "Saturn"
 msgstr "Сатурн"
 
-#: ../data/str.xml.in.h:14
+#: ../data/str.xml.in.h:13
 msgid "Uranus"
 msgstr "Уран"
 
-#: ../data/str.xml.in.h:15
+#: ../data/str.xml.in.h:14
 msgid "Neptune"
 msgstr "Нептун"
 
-#: ../data/str.xml.in.h:16
+#: ../data/str.xml.in.h:15
 msgid "Pluto"
 msgstr "Плутон"
 
-#: ../data/str.xml.in.h:17
+#: ../data/str.xml.in.h:16
 msgid "Aries"
 msgstr "Овен"
 
-#: ../data/str.xml.in.h:18
+#: ../data/str.xml.in.h:17
 msgid "Taurus"
 msgstr "Телець"
 
-#: ../data/str.xml.in.h:19
+#: ../data/str.xml.in.h:18
 msgid "Gemini"
 msgstr "Близнюки"
 
-#: ../data/str.xml.in.h:20
+#: ../data/str.xml.in.h:19
 msgid "Cancer"
 msgstr "Рак"
 
-#: ../data/str.xml.in.h:21
+#: ../data/str.xml.in.h:20
 msgid "Leo"
 msgstr "Лев"
 
-#: ../data/str.xml.in.h:22
+#: ../data/str.xml.in.h:21
 msgid "Virgo"
 msgstr "Діва"
 
-#: ../data/str.xml.in.h:23
+#: ../data/str.xml.in.h:22
 msgid "Libra"
 msgstr "Терези"
 
-#: ../data/str.xml.in.h:24
+#: ../data/str.xml.in.h:23
 msgid "Scorpius"
 msgstr "Скорпіон"
 
-#: ../data/str.xml.in.h:25
+#: ../data/str.xml.in.h:24
 msgid "Sagittarius"
 msgstr "Стрілець"
 
-#: ../data/str.xml.in.h:26
+#: ../data/str.xml.in.h:25
 msgid "Capricorn"
 msgstr "Козоріг"
 
-#: ../data/str.xml.in.h:27
+#: ../data/str.xml.in.h:26
 msgid "Aquarius"
 msgstr "Водолій"
 
-#: ../data/str.xml.in.h:28
+#: ../data/str.xml.in.h:27
 msgid "Pisces"
 msgstr "Риби"
 
-#: ../data/str.xml.in.h:29
+#: ../data/str.xml.in.h:28
 msgid "Dice 1"
 msgstr "Кістка 1"
 
-#: ../data/str.xml.in.h:30
+#: ../data/str.xml.in.h:29
 msgid "Dice 2"
 msgstr "Кістка 2"
 
-#: ../data/str.xml.in.h:31
+#: ../data/str.xml.in.h:30
 msgid "Dice 3"
 msgstr "Кістка 3"
 
-#: ../data/str.xml.in.h:32
+#: ../data/str.xml.in.h:31
 msgid "Dice 4"
 msgstr "Кістка 4"
 
-#: ../data/str.xml.in.h:33
+#: ../data/str.xml.in.h:32
 msgid "Dice 5"
 msgstr "Кістка 5"
 
-#: ../data/str.xml.in.h:34
+#: ../data/str.xml.in.h:33
 msgid "Dice 6"
 msgstr "Кістка 6"
 
-#: ../data/str.xml.in.h:35
+#: ../data/str.xml.in.h:34
 msgid "Anchor"
 msgstr "Якір"
 
-#: ../data/str.xml.in.h:36
+#: ../data/str.xml.in.h:35
 msgid "Sword"
 msgstr "Меч"
 
-#: ../data/str.xml.in.h:37
+#: ../data/str.xml.in.h:36
 msgid "Scales"
 msgstr "Ваги"
 
-#: ../data/str.xml.in.h:38
+#: ../data/str.xml.in.h:37
 msgid "Conversation"
 msgstr "Спілкування"
 
-#: ../data/str.xml.in.h:39
+#: ../data/str.xml.in.h:38
 msgid "Warning"
 msgstr "Попередження"
 
-#: ../data/str.xml.in.h:40
+#: ../data/str.xml.in.h:39
 msgid "Thunder"
 msgstr "Грім"
 
-#: ../data/str.xml.in.h:41
+#: ../data/str.xml.in.h:40
 msgid "Coffin"
 msgstr "Труна"
 
-#: ../data/str.xml.in.h:42
+#: ../data/str.xml.in.h:41
 msgid "Gender"
 msgstr "Стать"
 
-#: ../data/str.xml.in.h:43
+#: ../data/str.xml.in.h:42
 msgid "Soccer"
 msgstr "Футбол"
 
-#: ../data/str.xml.in.h:44
+#: ../data/str.xml.in.h:43
 msgid "Baseball"
 msgstr "Бейсбол"
 
-#: ../data/str.xml.in.h:45
+#: ../data/str.xml.in.h:44
 msgid "Snowman"
 msgstr "Сніговик"
 
-#: ../data/str.xml.in.h:46
+#: ../data/str.xml.in.h:45
 msgid "Shoji"
 msgstr "Сьодзі"
 
-#: ../data/str.xml.in.h:47
+#: ../data/str.xml.in.h:46
 msgid "Maintenance"
 msgstr "Супровід"
 
-#: ../data/str.xml.in.h:48
+#: ../data/str.xml.in.h:47
 msgid "Roadblock"
 msgstr "Блок-пост"
 
-#: ../data/str.xml.in.h:49
+#: ../data/str.xml.in.h:48
 msgid "No entry"
 msgstr "Вхід заборонено"
 
-#: ../data/str.xml.in.h:50
+#: ../data/str.xml.in.h:49
 msgid "Truck"
 msgstr "Вантажівка"
 
-#: ../data/str.xml.in.h:51
+#: ../data/str.xml.in.h:50
 msgid "Torii"
 msgstr "Торіі"
 
-#: ../data/str.xml.in.h:52
+#: ../data/str.xml.in.h:51
 msgid "Church"
 msgstr "Церква"
 
-#: ../data/str.xml.in.h:53
+#: ../data/str.xml.in.h:52
 msgid "Castle"
 msgstr "Замок"
 
-#: ../data/str.xml.in.h:54
+#: ../data/str.xml.in.h:53
 msgid "Historic site"
 msgstr "Історичне місце"
 
-#: ../data/str.xml.in.h:55
+#: ../data/str.xml.in.h:54
 msgid "Power station"
 msgstr "Електростанція"
 
-#: ../data/str.xml.in.h:56
+#: ../data/str.xml.in.h:55
 msgid "Lighthouse"
 msgstr "Маяк"
 
-#: ../data/str.xml.in.h:57
+#: ../data/str.xml.in.h:56
 msgid "Mountain"
 msgstr "Гора"
 
-#: ../data/str.xml.in.h:58
+#: ../data/str.xml.in.h:57
 msgid "Beach"
 msgstr "Пляж"
 
-#: ../data/str.xml.in.h:59
+#: ../data/str.xml.in.h:58
 msgid "Park"
 msgstr "Парк"
 
-#: ../data/str.xml.in.h:60
+#: ../data/str.xml.in.h:59
 msgid "Ferry"
 msgstr "Пором"
 
-#: ../data/str.xml.in.h:61
+#: ../data/str.xml.in.h:60
 msgid "Sailboat"
 msgstr "Човен"
 
-#: ../data/str.xml.in.h:62
+#: ../data/str.xml.in.h:61
 msgid "Ice rink"
 msgstr "Коток"
 
-#: ../data/str.xml.in.h:63
+#: ../data/str.xml.in.h:62
 msgid "Scissors"
 msgstr "Ножиці"
 
-#: ../data/str.xml.in.h:64
+#: ../data/str.xml.in.h:63
 msgid "Airplane"
 msgstr "Літак"
 
-#: ../data/str.xml.in.h:65
+#: ../data/str.xml.in.h:64
 msgid "Clenched Fist"
 msgstr "Стиснутий кулак"
 
-#: ../data/str.xml.in.h:66
+#: ../data/str.xml.in.h:65
 msgid "Hand"
 msgstr "Рука"
 
-#: ../data/str.xml.in.h:67
+#: ../data/str.xml.in.h:66
 msgid "V Sign"
 msgstr "Символ перемоги"
 
-#: ../data/str.xml.in.h:68
+#: ../data/str.xml.in.h:67
 msgid "Writing"
 msgstr "Записування"
 
-#: ../data/str.xml.in.h:69
+#: ../data/str.xml.in.h:68
 msgid "Pencil"
 msgstr "Олівець"
 
-#: ../data/str.xml.in.h:70
+#: ../data/str.xml.in.h:69
 msgid "Pen"
 msgstr "Ручка"
 
-#: ../data/str.xml.in.h:71
+#: ../data/str.xml.in.h:70
 msgid "Star"
 msgstr "Зірка"
 
-#: ../data/str.xml.in.h:72
+#: ../data/str.xml.in.h:71
 msgid "Typhoon"
 msgstr "Тайфун"
 
-#: ../data/str.xml.in.h:73
+#: ../data/str.xml.in.h:72
 msgid "Fog"
 msgstr "Туман"
 
-#: ../data/str.xml.in.h:74
+#: ../data/str.xml.in.h:73
 msgid "Umbrella"
 msgstr "Парасолька"
 
-#: ../data/str.xml.in.h:75
+#: ../data/str.xml.in.h:74
 msgid "Night sky"
 msgstr "Нічне небо"
 
-#: ../data/str.xml.in.h:76
+#: ../data/str.xml.in.h:75
 msgid "Sunrise"
 msgstr "Схід сонця"
 
-#: ../data/str.xml.in.h:77
+#: ../data/str.xml.in.h:76
 msgid "Sunset"
 msgstr "Захід сонця"
 
-#: ../data/str.xml.in.h:78
+#: ../data/str.xml.in.h:77
 msgid "Bridge"
 msgstr "Міст"
 
-#: ../data/str.xml.in.h:79
+#: ../data/str.xml.in.h:78
 msgid "Wave"
 msgstr "Хвиля"
 
-#: ../data/str.xml.in.h:80
+#: ../data/str.xml.in.h:79
 msgid "New Moon"
 msgstr "Новий місяць"
 
-#: ../data/str.xml.in.h:81
+#: ../data/str.xml.in.h:80
 msgid "Crescent Moon"
 msgstr "Молодий місяць"
 
-#: ../data/str.xml.in.h:82
+#: ../data/str.xml.in.h:81
 msgid "Quarter Moon"
 msgstr "Перша чверть місяця"
 
-#: ../data/str.xml.in.h:83
+#: ../data/str.xml.in.h:82
 msgid "Gibbous Moon"
 msgstr "Горбатий місяць"
 
-#: ../data/str.xml.in.h:84
+#: ../data/str.xml.in.h:83
 msgid "Full Moon"
 msgstr "Повний місяць"
 
-#: ../data/str.xml.in.h:85
+#: ../data/str.xml.in.h:84
 msgid "Moon"
 msgstr "Місяць"
 
-#: ../data/str.xml.in.h:86
+#: ../data/str.xml.in.h:85
 msgid "Sun"
 msgstr "Сонце"
 
-#: ../data/str.xml.in.h:87
+#: ../data/str.xml.in.h:86
 msgid "Cloud"
 msgstr "Хмара"
 
-#: ../data/str.xml.in.h:88
+#: ../data/str.xml.in.h:87
 msgid "Palm"
 msgstr "Долоня"
 
-#: ../data/str.xml.in.h:89
+#: ../data/str.xml.in.h:88
 msgid "Hot Pepper"
 msgstr "Пекучий перець"
 
-#: ../data/str.xml.in.h:90
+#: ../data/str.xml.in.h:89
 msgid "Flower"
 msgstr "Квітка"
 
-#: ../data/str.xml.in.h:91
+#: ../data/str.xml.in.h:90
 msgid "Tulip"
 msgstr "Тюльпан"
 
-#: ../data/str.xml.in.h:92
+#: ../data/str.xml.in.h:91
 msgid "Cherry"
 msgstr "Вишня"
 
-#: ../data/str.xml.in.h:93
+#: ../data/str.xml.in.h:92
 msgid "Rose"
 msgstr "Троянда"
 
-#: ../data/str.xml.in.h:94
+#: ../data/str.xml.in.h:93
 msgid "Hibiscus"
 msgstr "Гібіскус"
 
-#: ../data/str.xml.in.h:95
+#: ../data/str.xml.in.h:94
 msgid "Sunflower"
 msgstr "Соняшник"
 
-#: ../data/str.xml.in.h:96
+#: ../data/str.xml.in.h:95
 msgid "Blossom"
 msgstr "Цвітіння"
 
-#: ../data/str.xml.in.h:97
+#: ../data/str.xml.in.h:96
 msgid "Clover"
 msgstr "Конюшина"
 
-#: ../data/str.xml.in.h:98
+#: ../data/str.xml.in.h:97
 msgid "Maple"
 msgstr "Клен"
 
-#: ../data/str.xml.in.h:99
+#: ../data/str.xml.in.h:98
 msgid "Fallen Leaf"
 msgstr "Опалий листок"
 
-#: ../data/str.xml.in.h:100
+#: ../data/str.xml.in.h:99
 msgid "Leaf"
 msgstr "Листок"
 
-#: ../data/str.xml.in.h:101
+#: ../data/str.xml.in.h:100
 msgid "Mushroom"
 msgstr "Гриб"
 
-#: ../data/str.xml.in.h:102
+#: ../data/str.xml.in.h:101
 msgid "Tomato"
 msgstr "Помідор"
 
-#: ../data/str.xml.in.h:103
+#: ../data/str.xml.in.h:102
 msgid "Eggplant"
 msgstr "Баклажан"
 
-#: ../data/str.xml.in.h:104
+#: ../data/str.xml.in.h:103
 msgid "Grape"
 msgstr "Виноград"
 
-#: ../data/str.xml.in.h:105
+#: ../data/str.xml.in.h:104
 msgid "Melon"
 msgstr "Диня"
 
-#: ../data/str.xml.in.h:106
+#: ../data/str.xml.in.h:105
 msgid "Watermelon"
 msgstr "Кавун"
 
-#: ../data/str.xml.in.h:107
+#: ../data/str.xml.in.h:106
 msgid "Tangerine"
 msgstr "Мандарин"
 
-#: ../data/str.xml.in.h:108
+#: ../data/str.xml.in.h:107
 msgid "Lemon"
 msgstr "Лимон"
 
-#: ../data/str.xml.in.h:109
+#: ../data/str.xml.in.h:108
 msgid "Banana"
 msgstr "Банан"
 
-#: ../data/str.xml.in.h:110
+#: ../data/str.xml.in.h:109
 msgid "Pineapple"
 msgstr "Ананас"
 
-#: ../data/str.xml.in.h:111
+#: ../data/str.xml.in.h:110
 msgid "Apple"
 msgstr "Яблуко"
 
-#: ../data/str.xml.in.h:112
+#: ../data/str.xml.in.h:111
 msgid "Pear"
 msgstr "Груша"
 
-#: ../data/str.xml.in.h:113
+#: ../data/str.xml.in.h:112
 msgid "Peach"
 msgstr "Персик"
 
-#: ../data/str.xml.in.h:114
+#: ../data/str.xml.in.h:113
 msgid "Strawberry"
 msgstr "Полуниця"
 
-#: ../data/str.xml.in.h:115
+#: ../data/str.xml.in.h:114
 msgid "Hamburger"
 msgstr "Гамбургер"
 
-#: ../data/str.xml.in.h:116
+#: ../data/str.xml.in.h:115
 msgid "Pizza"
 msgstr "Піца"
 
-#: ../data/str.xml.in.h:117
+#: ../data/str.xml.in.h:116
 msgid "Meat"
 msgstr "М’ясо"
 
-#: ../data/str.xml.in.h:118
+#: ../data/str.xml.in.h:117
 msgid "Poultry"
 msgstr "Курятина"
 
-#: ../data/str.xml.in.h:119
+#: ../data/str.xml.in.h:118
 msgid "Rice Cracker"
 msgstr "Крекер"
 
-#: ../data/str.xml.in.h:120
+#: ../data/str.xml.in.h:119
 msgid "Rice Ball"
 msgstr "Рисова кулька"
 
-#: ../data/str.xml.in.h:121
+#: ../data/str.xml.in.h:120
 msgid "Rice"
 msgstr "Рис"
 
-#: ../data/str.xml.in.h:122
+#: ../data/str.xml.in.h:121
 msgid "Curry"
 msgstr "Каррі"
 
-#: ../data/str.xml.in.h:123
+#: ../data/str.xml.in.h:122
 msgid "Ramen"
 msgstr "Рамен"
 
-#: ../data/str.xml.in.h:124
+#: ../data/str.xml.in.h:123
 msgid "Spaghetti"
 msgstr "Спагетті"
 
-#: ../data/str.xml.in.h:125
+#: ../data/str.xml.in.h:124
 msgid "Bread"
 msgstr "Хліб"
 
-#: ../data/str.xml.in.h:126
+#: ../data/str.xml.in.h:125
 msgid "Fried Potato"
 msgstr "Смажена картопля"
 
-#: ../data/str.xml.in.h:127
+#: ../data/str.xml.in.h:126
 msgid "Roasted Sweet Potato"
 msgstr "Смажена солодка картопля"
 
-#: ../data/str.xml.in.h:128
+#: ../data/str.xml.in.h:127
 msgid "Dango"
 msgstr "Данґо"
 
-#: ../data/str.xml.in.h:129
+#: ../data/str.xml.in.h:128
 msgid "Oden"
 msgstr "Оден"
 
-#: ../data/str.xml.in.h:130
+#: ../data/str.xml.in.h:129
 msgid "Sushi"
 msgstr "Суші"
 
-#: ../data/str.xml.in.h:131
+#: ../data/str.xml.in.h:130
 msgid "Fried Shrimp"
 msgstr "Смажена креветка"
 
-#: ../data/str.xml.in.h:132
+#: ../data/str.xml.in.h:131
 msgid "Fish Cake"
 msgstr "Рибне печиво"
 
-#: ../data/str.xml.in.h:133
+#: ../data/str.xml.in.h:132
 msgid "Soft Ice Cream"
 msgstr "М’яке морозиво"
 
-#: ../data/str.xml.in.h:134
+#: ../data/str.xml.in.h:133
 msgid "Shaved Ice"
 msgstr "Тертий лід"
 
-#: ../data/str.xml.in.h:135
+#: ../data/str.xml.in.h:134
 msgid "Ice Cream"
 msgstr "Морозиво"
 
-#: ../data/str.xml.in.h:136
+#: ../data/str.xml.in.h:135
 msgid "Doughnut"
 msgstr "Пончик"
 
-#: ../data/str.xml.in.h:137
+#: ../data/str.xml.in.h:136
 msgid "Cookie"
 msgstr "Печиво"
 
-#: ../data/str.xml.in.h:138
+#: ../data/str.xml.in.h:137
 msgid "Chocolate"
 msgstr "Шоколад"
 
-#: ../data/str.xml.in.h:139
+#: ../data/str.xml.in.h:138
 msgid "Candy"
 msgstr "Цукерка"
 
-#: ../data/str.xml.in.h:140
+#: ../data/str.xml.in.h:139
 msgid "Custard"
 msgstr "Солодкий крем"
 
-#: ../data/str.xml.in.h:141
+#: ../data/str.xml.in.h:140
 msgid "Honey"
 msgstr "Мед"
 
-#: ../data/str.xml.in.h:142
+#: ../data/str.xml.in.h:141
 msgid "Shortcake"
 msgstr "Пісочний коржик"
 
-#: ../data/str.xml.in.h:143
+#: ../data/str.xml.in.h:142
 msgid "Bento"
 msgstr "Бенто"
 
-#: ../data/str.xml.in.h:144
+#: ../data/str.xml.in.h:143
 msgid "Pot of Food"
 msgstr "Казанок із їжею"
 
-#: ../data/str.xml.in.h:145
+#: ../data/str.xml.in.h:144
 msgid "Cooking"
 msgstr "Куховарення"
 
-#: ../data/str.xml.in.h:146
+#: ../data/str.xml.in.h:145
 msgid "Meal"
 msgstr "Їжа"
 
-#: ../data/str.xml.in.h:147
+#: ../data/str.xml.in.h:146
 msgid "Cup"
 msgstr "Чашка"
 
-#: ../data/str.xml.in.h:148
+#: ../data/str.xml.in.h:147
 msgid "Sake"
 msgstr "Саке"
 
-#: ../data/str.xml.in.h:149
+#: ../data/str.xml.in.h:148
 msgid "Wine"
 msgstr "Вино"
 
-#: ../data/str.xml.in.h:150
+#: ../data/str.xml.in.h:149
 msgid "Cocktail"
 msgstr "Коктель"
 
-#: ../data/str.xml.in.h:151
+#: ../data/str.xml.in.h:150
 msgid "Drink"
 msgstr "Напій"
 
-#: ../data/str.xml.in.h:152
+#: ../data/str.xml.in.h:151
 msgid "Beer"
 msgstr "Пиво"
 
-#: ../data/str.xml.in.h:153
+#: ../data/str.xml.in.h:152
 msgid "Cheers"
 msgstr "Тост"
 
-#: ../data/str.xml.in.h:154
+#: ../data/str.xml.in.h:153
 msgid "Baby Bottle"
 msgstr "Мала пляшечка"
 
-#: ../data/str.xml.in.h:155
+#: ../data/str.xml.in.h:154
 msgid "Ribbon"
 msgstr "Стрічка"
 
-#: ../data/str.xml.in.h:156
+#: ../data/str.xml.in.h:155
 msgid "Present"
 msgstr "Подарунок"
 
-#: ../data/str.xml.in.h:157
+#: ../data/str.xml.in.h:156
 msgid "Cake"
 msgstr "Торт"
+
+#: ../data/str.xml.in.h:157
+msgid "Hallowe'en"
+msgstr "Геловін"
 
 #: ../data/str.xml.in.h:158
 msgid "Christmas"
@@ -2492,607 +2497,687 @@ msgid "Women"
 msgstr "Жінки"
 
 #: ../data/str.xml.in.h:260
+msgid "Princess"
+msgstr "Принцеса"
+
+#: ../data/str.xml.in.h:261
+msgid "Japanese Ogre"
+msgstr "Японський людожер"
+
+#: ../data/str.xml.in.h:262
+msgid "Japanese Goblin"
+msgstr "Японський гоблін"
+
+#: ../data/str.xml.in.h:263
+msgid "Ghost"
+msgstr "Привид"
+
+#: ../data/str.xml.in.h:264
+msgid "Baby Angel"
+msgstr "Ангел-малятко"
+
+#: ../data/str.xml.in.h:265
+msgid "Extraterrestrial Alien"
+msgstr "Прибулець з інших планет"
+
+#: ../data/str.xml.in.h:266
+msgid "Alien Monster"
+msgstr "Іншопланетний монстр"
+
+#: ../data/str.xml.in.h:267
+msgid "IMP"
+msgstr "Чортеня"
+
+#: ../data/str.xml.in.h:268
+msgid "Skull"
+msgstr "Череп"
+
+#: ../data/str.xml.in.h:269
+msgid "Information Desk Person"
+msgstr "Працівник служби інформації"
+
+#: ../data/str.xml.in.h:270
+msgid "Guardsman"
+msgstr "Охоронець"
+
+#: ../data/str.xml.in.h:271
+msgid "Dancer"
+msgstr "Танцівник"
+
+#: ../data/str.xml.in.h:272
 msgid "Lipstick"
 msgstr "Губна помада"
 
-#: ../data/str.xml.in.h:261
+#: ../data/str.xml.in.h:273
 msgid "Nail"
 msgstr "Ніготь"
 
-#: ../data/str.xml.in.h:262
+#: ../data/str.xml.in.h:274
 msgid "Face"
 msgstr "Лице"
 
-#: ../data/str.xml.in.h:263
+#: ../data/str.xml.in.h:275
 msgid "Haircut"
 msgstr "Зачіска"
 
-#: ../data/str.xml.in.h:264
+#: ../data/str.xml.in.h:276
 msgid "Syringe"
 msgstr "Шпринц"
 
-#: ../data/str.xml.in.h:265
+#: ../data/str.xml.in.h:277
 msgid "Medicine"
 msgstr "Ліки"
 
-#: ../data/str.xml.in.h:266
+#: ../data/str.xml.in.h:278
 msgid "Kiss"
 msgstr "Цілунок"
 
-#: ../data/str.xml.in.h:267
+#: ../data/str.xml.in.h:279
+msgid "Love Letter"
+msgstr "Любовний лист"
+
+#: ../data/str.xml.in.h:280
 msgid "Ring"
 msgstr "Перстень"
 
-#: ../data/str.xml.in.h:268
+#: ../data/str.xml.in.h:281
+msgid "Gem Stone"
+msgstr "Дорогоцінний камінь"
+
+#: ../data/str.xml.in.h:282
+msgid "Wedding"
+msgstr "Весілля"
+
+#: ../data/str.xml.in.h:283
 msgid "Heart"
 msgstr "Серце"
 
-#: ../data/str.xml.in.h:269
+#: ../data/str.xml.in.h:284
 msgid "Idea"
 msgstr "Ідея"
 
-#: ../data/str.xml.in.h:270
+#: ../data/str.xml.in.h:285
 msgid "Anger"
 msgstr "Лють"
 
-#: ../data/str.xml.in.h:271
+#: ../data/str.xml.in.h:286
 msgid "Bomb"
 msgstr "Бомба"
 
-#: ../data/str.xml.in.h:272
+#: ../data/str.xml.in.h:287
 msgid "Sleeping"
 msgstr "Сон"
 
-#: ../data/str.xml.in.h:273
+#: ../data/str.xml.in.h:288
 msgid "Collision"
 msgstr "Зіткнення"
 
-#: ../data/str.xml.in.h:274
+#: ../data/str.xml.in.h:289
 msgid "Sweat"
 msgstr "Піт"
 
-#: ../data/str.xml.in.h:275
+#: ../data/str.xml.in.h:290
 msgid "Droplet"
 msgstr "Крапля"
 
-#: ../data/str.xml.in.h:276
+#: ../data/str.xml.in.h:291
 msgid "Dash"
 msgstr "Сплеск"
 
-#: ../data/str.xml.in.h:277
+#: ../data/str.xml.in.h:292
 msgid "Poo"
 msgstr "Лайно"
 
-#: ../data/str.xml.in.h:278
+#: ../data/str.xml.in.h:293
 msgid "Muscle"
 msgstr "Мускул"
 
-#: ../data/str.xml.in.h:279
+#: ../data/str.xml.in.h:294
 msgid "Dizzy"
 msgstr "Запаморочення"
 
-#: ../data/str.xml.in.h:280
+#: ../data/str.xml.in.h:295
 msgid "Speech"
 msgstr "Розмова"
 
-#: ../data/str.xml.in.h:281
+#: ../data/str.xml.in.h:296
 msgid "Thought"
 msgstr "Думка"
 
-#: ../data/str.xml.in.h:282
+#: ../data/str.xml.in.h:297
 msgid "Perfect Score"
 msgstr "Чудовий результат"
 
-#: ../data/str.xml.in.h:283
+#: ../data/str.xml.in.h:298
 msgid "Pushpin"
 msgstr "Кнопка"
 
-#: ../data/str.xml.in.h:284
+#: ../data/str.xml.in.h:299
 msgid "Clip"
 msgstr "Скріпка"
 
-#: ../data/str.xml.in.h:285
+#: ../data/str.xml.in.h:300
 msgid "Speaker"
 msgstr "Промовець"
 
-#: ../data/str.xml.in.h:286
+#: ../data/str.xml.in.h:301
 msgid "Battery"
 msgstr "Батарея"
 
-#: ../data/str.xml.in.h:287
+#: ../data/str.xml.in.h:302
 msgid "Plug"
 msgstr "Пробка"
 
-#: ../data/str.xml.in.h:288
+#: ../data/str.xml.in.h:303
 msgid "Search"
 msgstr "Пошук"
 
-#: ../data/str.xml.in.h:289
+#: ../data/str.xml.in.h:304
 msgid "Bookmark"
 msgstr "Закладка"
 
-#: ../data/str.xml.in.h:290
+#: ../data/str.xml.in.h:305
 msgid "Book"
 msgstr "Книга"
 
-#: ../data/str.xml.in.h:291
+#: ../data/str.xml.in.h:306
 msgid "Memo"
 msgstr "Нотатка"
 
-#: ../data/str.xml.in.h:292
+#: ../data/str.xml.in.h:307
 msgid "Mail"
 msgstr "Пошта"
 
-#: ../data/str.xml.in.h:293
+#: ../data/str.xml.in.h:308
 msgid "Mobile Phone"
 msgstr "Мобільний телефон"
 
-#: ../data/str.xml.in.h:294
+#: ../data/str.xml.in.h:309
 msgid "Camera"
 msgstr "Фотоапарат"
 
-#: ../data/str.xml.in.h:295
+#: ../data/str.xml.in.h:310
 msgid "Video"
 msgstr "Відео"
 
-#: ../data/str.xml.in.h:296
+#: ../data/str.xml.in.h:311
 msgid "Television"
 msgstr "Телевізор"
 
-#: ../data/str.xml.in.h:297
+#: ../data/str.xml.in.h:312
 msgid "Radio"
 msgstr "Радіо"
 
-#: ../data/str.xml.in.h:298
+#: ../data/str.xml.in.h:313
 msgid "Key"
 msgstr "Ключ"
 
-#: ../data/str.xml.in.h:299
+#: ../data/str.xml.in.h:314
 msgid "Lock"
 msgstr "Замок"
 
-#: ../data/str.xml.in.h:300
+#: ../data/str.xml.in.h:315
 msgid "Fire"
 msgstr "Вогонь"
 
-#: ../data/str.xml.in.h:301
+#: ../data/str.xml.in.h:316
 msgid "Wrench"
 msgstr "Гайковий ключ"
 
-#: ../data/str.xml.in.h:302
+#: ../data/str.xml.in.h:317
 msgid "Hammer"
 msgstr "Молоток"
 
-#: ../data/str.xml.in.h:303
+#: ../data/str.xml.in.h:318
 msgid "Bolt"
 msgstr "Ґвинт"
 
-#: ../data/str.xml.in.h:304
+#: ../data/str.xml.in.h:319
 msgid "Hocho"
 msgstr "Гочо"
 
-#: ../data/str.xml.in.h:305
+#: ../data/str.xml.in.h:320
 msgid "Pistol"
 msgstr "Пістолет"
 
-#: ../data/str.xml.in.h:306
+#: ../data/str.xml.in.h:321
 msgid "Microscope"
 msgstr "Мікроскоп"
 
-#: ../data/str.xml.in.h:307
+#: ../data/str.xml.in.h:322
 msgid "Telescope"
 msgstr "Телескоп"
 
-#: ../data/str.xml.in.h:308
+#: ../data/str.xml.in.h:323
 msgid "Crystal"
 msgstr "Кристал"
 
-#: ../data/str.xml.in.h:309
+#: ../data/str.xml.in.h:324
 msgid "David Star"
 msgstr "Зірка Давида"
 
-#: ../data/str.xml.in.h:310
+#: ../data/str.xml.in.h:325
 msgid "Beginner"
 msgstr "Початківець"
 
-#: ../data/str.xml.in.h:311
+#: ../data/str.xml.in.h:326
 msgid "Candle"
 msgstr "Свічка"
 
-#: ../data/str.xml.in.h:312
+#: ../data/str.xml.in.h:327
 msgid "Hole"
 msgstr "Дірка"
 
-#: ../data/str.xml.in.h:313
+#: ../data/str.xml.in.h:328
 msgid "Personal Computer"
 msgstr "Персональний комп’ютер"
 
-#: ../data/str.xml.in.h:314
+#: ../data/str.xml.in.h:329
 msgid "keyboard"
 msgstr "Клавіатура"
 
-#: ../data/str.xml.in.h:315
+#: ../data/str.xml.in.h:330
 msgid "Printer"
 msgstr "Принтер"
 
-#: ../data/str.xml.in.h:316
+#: ../data/str.xml.in.h:331
 msgid "Calculator"
 msgstr "Калькулятор"
 
-#: ../data/str.xml.in.h:317
+#: ../data/str.xml.in.h:332
 msgid "Minimize"
 msgstr "Мінімізувати"
 
-#: ../data/str.xml.in.h:318
+#: ../data/str.xml.in.h:333
 msgid "Maximize"
 msgstr "Максимізувати"
 
-#: ../data/str.xml.in.h:319
+#: ../data/str.xml.in.h:334
 msgid "Refresh"
 msgstr "Оновити"
 
-#: ../data/str.xml.in.h:320
+#: ../data/str.xml.in.h:335
 msgid "Close"
 msgstr "Закрити"
 
-#: ../data/str.xml.in.h:321
+#: ../data/str.xml.in.h:336
 msgid "World"
 msgstr "Світ"
 
-#: ../data/str.xml.in.h:322
+#: ../data/str.xml.in.h:337
 msgid "Mt. Fuji"
 msgstr "Гора Фудзі"
 
-#: ../data/str.xml.in.h:323
+#: ../data/str.xml.in.h:338
 msgid "Tokyo Tower"
 msgstr "Токійська вежа"
 
-#: ../data/str.xml.in.h:324
+#: ../data/str.xml.in.h:339
 msgid "Japan"
 msgstr "Японія"
 
-#: ../data/str.xml.in.h:325
+#: ../data/str.xml.in.h:340
 msgid "Anguish"
 msgstr "Страждання"
 
-#: ../data/str.xml.in.h:326
+#: ../data/str.xml.in.h:341
 msgid "Smile"
 msgstr "Посмішка"
 
-#: ../data/str.xml.in.h:327
+#: ../data/str.xml.in.h:342
 msgid "Smirk"
 msgstr "Усмішка"
 
-#: ../data/str.xml.in.h:328
+#: ../data/str.xml.in.h:343
 msgid "Neutral"
 msgstr "Нейтральний"
 
-#: ../data/str.xml.in.h:329
+#: ../data/str.xml.in.h:344
 msgid "Expressionless"
 msgstr "Невиразний"
 
-#: ../data/str.xml.in.h:330
+#: ../data/str.xml.in.h:345
 msgid "Unamused"
 msgstr "Нерозважений"
 
-#: ../data/str.xml.in.h:331
+#: ../data/str.xml.in.h:346
 msgid "Pensive"
 msgstr "Задумливий"
 
-#: ../data/str.xml.in.h:332
+#: ../data/str.xml.in.h:347
 msgid "Confused"
 msgstr "Збитий з пантелику"
 
-#: ../data/str.xml.in.h:333
+#: ../data/str.xml.in.h:348
 msgid "Confounded"
 msgstr "Збентежений"
 
-#: ../data/str.xml.in.h:334
+#: ../data/str.xml.in.h:349
 msgid "Disappointed"
 msgstr "Розчарований"
 
-#: ../data/str.xml.in.h:335
+#: ../data/str.xml.in.h:350
 msgid "Angry"
 msgstr "Злий"
 
-#: ../data/str.xml.in.h:336
+#: ../data/str.xml.in.h:351
 msgid "Cry"
 msgstr "Плач"
 
-#: ../data/str.xml.in.h:337
+#: ../data/str.xml.in.h:352
 msgid "Sleeply"
 msgstr "Сонний"
 
-#: ../data/str.xml.in.h:338
+#: ../data/str.xml.in.h:353
 msgid "Tired"
 msgstr "Втомлений"
 
-#: ../data/str.xml.in.h:339
+#: ../data/str.xml.in.h:354
 msgid "Surprise"
 msgstr "Здивований"
 
-#: ../data/str.xml.in.h:340
+#: ../data/str.xml.in.h:355
 msgid "Scream"
 msgstr "Крик"
 
-#: ../data/str.xml.in.h:341
+#: ../data/str.xml.in.h:356
 msgid "Flushed"
 msgstr "Засоромлений"
 
-#: ../data/str.xml.in.h:342
+#: ../data/str.xml.in.h:357
 msgid "Medical Mask"
 msgstr "Медична маска"
 
-#: ../data/str.xml.in.h:343
+#: ../data/str.xml.in.h:358
 msgid "OK"
 msgstr "Гаразд"
 
-#: ../data/str.xml.in.h:344
+#: ../data/str.xml.in.h:359
 msgid "Bow"
 msgstr "Лук"
 
-#: ../data/str.xml.in.h:345
+#: ../data/str.xml.in.h:360
 msgid "See-No-Evil"
 msgstr "Не бачу зла"
 
-#: ../data/str.xml.in.h:346
+#: ../data/str.xml.in.h:361
 msgid "Hear-No-Evil"
 msgstr "Не чую зла"
 
-#: ../data/str.xml.in.h:347
+#: ../data/str.xml.in.h:362
 msgid "Speak-No-Evil"
 msgstr "Не кажу злого"
 
-#: ../data/str.xml.in.h:348
+#: ../data/str.xml.in.h:363
 msgid "Banzai"
 msgstr "Банзай!"
 
-#: ../data/str.xml.in.h:349
+#: ../data/str.xml.in.h:364
 msgid "Pleading"
 msgstr "Захист"
 
-#: ../data/str.xml.in.h:350
+#: ../data/str.xml.in.h:365
 msgid "Smileys"
 msgstr "Емоційки"
 
-#: ../data/str.xml.in.h:351
+#: ../data/str.xml.in.h:366
 msgid "Smile Big"
 msgstr "Посмішка до вух"
 
-#: ../data/str.xml.in.h:352
+#: ../data/str.xml.in.h:367
 msgid "Sad"
 msgstr "Сумний"
 
-#: ../data/str.xml.in.h:353
+#: ../data/str.xml.in.h:368
 msgid "Wink"
 msgstr "Підморгує"
 
-#: ../data/str.xml.in.h:354
+#: ../data/str.xml.in.h:369
 msgid "Shock"
 msgstr "Шок"
 
-#: ../data/str.xml.in.h:355
+#: ../data/str.xml.in.h:370
 msgid "Kiss | Secret"
 msgstr "Цілунок | Потайки"
 
-#: ../data/str.xml.in.h:356
+#: ../data/str.xml.in.h:371
 msgid "Glasses Cool | Eyeroll"
 msgstr "Крутий в окулярах або вирячені очі"
 
-#: ../data/str.xml.in.h:357
+#: ../data/str.xml.in.h:372
 msgid "Glasses Cool"
 msgstr "Крутий в окулярах"
 
-#: ../data/str.xml.in.h:358
+#: ../data/str.xml.in.h:373
 msgid "Embarrassed"
 msgstr "Стурбований"
 
-#: ../data/str.xml.in.h:359
+#: ../data/str.xml.in.h:374
 msgid "Crying"
 msgstr "Ридаючий"
 
-#: ../data/str.xml.in.h:360
+#: ../data/str.xml.in.h:375
 msgid "Thinking"
 msgstr "Думає"
 
-#: ../data/str.xml.in.h:361
+#: ../data/str.xml.in.h:376
 msgid "Don't Know"
 msgstr "Не знаю"
 
-#: ../data/str.xml.in.h:362
+#: ../data/str.xml.in.h:377
 msgid "Party"
 msgstr "Вечірка"
 
-#: ../data/str.xml.in.h:363
+#: ../data/str.xml.in.h:378
 msgid "Yawn"
 msgstr "Позіхає"
 
-#: ../data/str.xml.in.h:364
+#: ../data/str.xml.in.h:379
 msgid "Bunny"
 msgstr "Кролик"
 
-#: ../data/str.xml.in.h:365
+#: ../data/str.xml.in.h:380
 msgid "Sick"
 msgstr "Хворий"
 
-#: ../data/str.xml.in.h:366
+#: ../data/str.xml.in.h:381
 msgid "Devil"
 msgstr "Знавіснілий"
 
-#: ../data/str.xml.in.h:367
+#: ../data/str.xml.in.h:382
 msgid "Angel"
 msgstr "Ангел"
 
-#: ../data/str.xml.in.h:368
+#: ../data/str.xml.in.h:383
 msgid "Love"
 msgstr "Любов"
 
-#: ../data/str.xml.in.h:369
+#: ../data/str.xml.in.h:384
 msgid "Love Over"
 msgstr "Кінець кохання"
 
-#: ../data/str.xml.in.h:370
+#: ../data/str.xml.in.h:385
 msgid "Film"
 msgstr "Кінострічка"
 
-#: ../data/str.xml.in.h:371
+#: ../data/str.xml.in.h:386
 msgid "Clock"
 msgstr "Годинник"
 
-#: ../data/str.xml.in.h:372
+#: ../data/str.xml.in.h:387
 msgid "Coffee"
 msgstr "Кава"
 
-#: ../data/str.xml.in.h:373
+#: ../data/str.xml.in.h:388
 msgid "Phone"
 msgstr "Телефон"
 
-#: ../data/str.xml.in.h:374
+#: ../data/str.xml.in.h:389
 msgid "Hug Left"
 msgstr "Обнімає ліворуч"
 
-#: ../data/str.xml.in.h:375
+#: ../data/str.xml.in.h:390
 msgid "Hug Right"
 msgstr "Обнімає праворуч"
 
-#: ../data/str.xml.in.h:376
+#: ../data/str.xml.in.h:391
 msgid "Yes"
 msgstr "Так"
 
-#: ../data/str.xml.in.h:377
+#: ../data/str.xml.in.h:392
 msgid "No"
 msgstr "Ні"
 
-#: ../data/str.xml.in.h:378
+#: ../data/str.xml.in.h:393
 msgid "Shut Mouth"
 msgstr "Закритий рот"
 
-#: ../data/str.xml.in.h:379
+#: ../data/str.xml.in.h:394
 msgid "Money Mouth"
 msgstr "Гроші тримаю при собі"
 
-#: ../data/str.xml.in.h:380
+#: ../data/str.xml.in.h:395
 msgid "Foot in Mouth"
 msgstr "Не варто було цього казати"
 
-#: ../data/str.xml.in.h:381
+#: ../data/str.xml.in.h:396
 msgid "Shout"
 msgstr "Крик"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:383
+#: ../data/str.xml.in.h:398
 msgid "Smileys (Japanese)"
 msgstr "Емоційки (японські)"
 
-#: ../data/str.xml.in.h:384
+#: ../data/str.xml.in.h:399
 msgid "Smoking"
 msgstr "Курить"
 
-#: ../data/str.xml.in.h:385
+#: ../data/str.xml.in.h:400
 msgid "Sorry"
 msgstr "Вибач"
 
-#: ../data/str.xml.in.h:386
+#: ../data/str.xml.in.h:401
 msgid "Hug"
 msgstr "Обнімає"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:388
+#: ../data/str.xml.in.h:403
 msgid "Smileys (Japanese 2ch)"
 msgstr "Емоційки (японські, 2ch)"
 
-#: ../data/str.xml.in.h:389
+#: ../data/str.xml.in.h:404
 msgid "Hey"
 msgstr "Гей"
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:391
+#: ../data/str.xml.in.h:406
 msgid "Smileys (Chinese)"
 msgstr "Емоційки (китайські)"
 
-#: ../data/str.xml.in.h:392
+#: ../data/str.xml.in.h:407
 msgid "Crow"
 msgstr "Ворона"
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:394
+#: ../data/str.xml.in.h:409
 msgid "Acronym"
 msgstr "Абревіатури"
 
-#: ../data/str.xml.in.h:395
+#: ../data/str.xml.in.h:410
 msgid "Acronym (Computer)"
 msgstr "Абревіатури (комп’ютерні)"
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:397
+#: ../data/str.xml.in.h:412
 msgid "Acronym (Japanese)"
 msgstr "Абревіатури (японські)"
 
-#: ../data/str.xml.in.h:398
+#: ../data/str.xml.in.h:413
 msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
 msgstr "Не хочу читати між рядками"
 
-#: ../data/str.xml.in.h:399
+#: ../data/str.xml.in.h:414
 msgid "Can't get together (Guda Guda)"
 msgstr "Не можу розібратися"
 
-#: ../data/str.xml.in.h:400
+#: ../data/str.xml.in.h:415
 msgid "Say whatever one feels (Iitaidake)"
 msgstr "Точно сказано (ітайдаке)"
 
-#: ../data/str.xml.in.h:401
+#: ../data/str.xml.in.h:416
 msgid "Excited (Kitakore)"
 msgstr "Захоплення (кітакоре)"
 
-#: ../data/str.xml.in.h:402
+#: ../data/str.xml.in.h:417
 msgid "Detail (Kuwashiku)"
 msgstr "Докладніше"
 
-#: ../data/str.xml.in.h:403
+#: ../data/str.xml.in.h:418
 msgid "Cannot read between lines (Kuuki Ga Yomenai)"
 msgstr "Не можу читати між рядками"
 
-#: ../data/str.xml.in.h:404
+#: ../data/str.xml.in.h:419
 msgid "Omission (Shouryaku)"
 msgstr "Недогляд (сьоряку)"
 
-#: ../data/str.xml.in.h:405
+#: ../data/str.xml.in.h:420
 msgid "Excited (Waku Waku Teka Teka)"
 msgstr "Захоплення (ваку-ваку тека-тека)"
 
-#: ../data/str.xml.in.h:406
+#: ../data/str.xml.in.h:421
 msgid "Laugh"
 msgstr "Гигикає"
 
-#: ../data/str.xml.in.h:407
+#: ../data/str.xml.in.h:422
 msgid "Dude (Oi!)"
 msgstr "Чувак"
 
-#: ../data/str.xml.in.h:408
-msgid "In The Meantime (Toriaezu, Ma)"
-msgstr "Між тим (торіецу, ма)"
-
-#: ../data/str.xml.in.h:409
-msgid "Bye"
-msgstr "Па"
-
-#: ../data/str.xml.in.h:410
-msgid "False Start (Flying Get)"
-msgstr "Фальстарт"
-
-#: ../data/str.xml.in.h:411
-msgid "Fulfilling Life (Real life is Zyujitsu)"
-msgstr "Переповнений життям (життя — джіу-джітсу)"
-
-#: ../data/str.xml.in.h:412
-msgid "Laugh (Warau)"
-msgstr "Гигикає (варо)"
-
-#: ../data/str.xml.in.h:413
+#: ../data/str.xml.in.h:423
 msgid "Good job (Otsukare)"
 msgstr "Чудова робота (отсукаре)"
 
-#: ../data/str.xml.in.h:414
+#: ../data/str.xml.in.h:424
+msgid "Want (Kure, E.g. pics クレメンス)"
+msgstr "Хочу (Куре, наприклад クレメンス картинок)"
+
+#: ../data/str.xml.in.h:425
+msgid "ASCII art of a hand (✊, E.g. つAttention)"
+msgstr "ASCII-зображення руки (✊, наприклад увага つ)"
+
+#: ../data/str.xml.in.h:426
+msgid "In The Meantime (Toriaezu, Maa)"
+msgstr "Тим часом (Toriaezu, Maa)"
+
+#: ../data/str.xml.in.h:427
+msgid "Self-confidence (Aniki, E.g. tennis ニキ)"
+msgstr "Впевненість у собі (Анікі, наприклад ニキ у тенісі)"
+
+#: ../data/str.xml.in.h:428
+msgid "Bye"
+msgstr "Па"
+
+#: ../data/str.xml.in.h:429
+msgid "Want (Hattekure, E.g. pics ハラデイ)"
+msgstr "Хочу (Хаттекуре, наприклад ハラデイ картинок)"
+
+#: ../data/str.xml.in.h:430
+msgid "Exist as microparticles (Biryushi Level De Sonzaisuru)"
+msgstr "Існувати як мікрочастинки"
+
+#: ../data/str.xml.in.h:431
+msgid "False Start (Flying Get)"
+msgstr "Фальстарт"
+
+#: ../data/str.xml.in.h:432
+msgid "Fulfilling Life (Real life is Zyujitsu)"
+msgstr "Переповнений життям (життя — джіу-джітсу)"
+
+#: ../data/str.xml.in.h:433
+msgid "Laugh (Warau)"
+msgstr "Гигикає (варо)"
+
+#: ../data/str.xml.in.h:434
 msgid "He (Yatsu &lt;- Yashi)"
 msgstr "Він (яцу &lt;- яцу)"
 
@@ -3181,40 +3266,40 @@ msgid "Copy Buffer"
 msgstr "Буфер копіювання"
 
 #: ../input-pad/dialog.ui.h:6
-msgid ""
-"Base 16\n"
+msgid "Base 16\n"
 "Hex"
-msgstr "За основою\n16"
+msgstr "За основою\n"
+"16"
 
 #: ../input-pad/dialog.ui.h:8
 msgid "Set number case to hexadecimal"
 msgstr "Використати шістнадцятковий запис"
 
 #: ../input-pad/dialog.ui.h:9
-msgid ""
-"Base 10\n"
+msgid "Base 10\n"
 "Dec"
-msgstr "За основою\n10"
+msgstr "За основою\n"
+"10"
 
 #: ../input-pad/dialog.ui.h:11
 msgid "Set number case to decimal"
 msgstr "Використати десятковий запис"
 
 #: ../input-pad/dialog.ui.h:12
-msgid ""
-"Base 8\n"
+msgid "Base 8\n"
 "Oct"
-msgstr "За основою\n8"
+msgstr "За основою\n"
+"8"
 
 #: ../input-pad/dialog.ui.h:14
 msgid "Set number case to octal"
 msgstr "Використати вісімковий запис"
 
 #: ../input-pad/dialog.ui.h:15
-msgid ""
-"Base 2\n"
+msgid "Base 2\n"
 "Bin"
-msgstr "За основою\n2"
+msgstr "За основою\n"
+"2"
 
 #: ../input-pad/dialog.ui.h:17
 msgid "Set number case to binary"
@@ -3240,13 +3325,28 @@ msgstr "Діагностування панелі введення"
 #, no-c-format
 msgid ""
 "\n"
-"This application can be run either as a stand-alone program or under an input method application.\n"
-"If you wish to send multi-byte characters, this application needs to be run under an input method application.\n"
-"If you wish to send characters to X11 applications, those applications needs to allow send events. e.g.\n"
+"This application can be run either as a stand-alone program or under an "
+"input method application.\n"
+"If you wish to send multi-byte characters, this application needs to be run "
+"under an input method application.\n"
+"If you wish to send characters to X11 applications, those applications needs "
+"to allow send events. e.g.\n"
 "% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
 "\n"
-"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad to customize those in \"Custom Character\" pane."
-msgstr "\nЦю програму можна запустити окремо або з програми керування способами введення даних.\nЯкщо вам потрібно вводити мультибайтові символи, цю програму слід запустити з програми керування способами введення.\nЯкщо вам потрібно передавати символи графічним програмам, слід увімкнути події надсилання даних для таких програм, наприклад\n% xterm -xrm \"XTerm*allowSendEvents: true\"\n\nВам також слід скопіювати файли наборів з /usr/share/input-pad/pad до $HOME/.config/pad, щоб змінити ті з них, які належать до групи «Нетипові символи»."
+"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/"
+"pad to customize those in \"Custom Character\" pane."
+msgstr ""
+"\n"
+"Цю програму можна запустити окремо або з програми керування способами "
+"введення даних.\n"
+"Якщо вам потрібно вводити мультибайтові символи, цю програму слід запустити "
+"з програми керування способами введення.\n"
+"Якщо вам потрібно передавати символи графічним програмам, слід увімкнути "
+"події надсилання даних для таких програм, наприклад\n"
+"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
+"\n"
+"Вам також слід скопіювати файли наборів з /usr/share/input-pad/pad до $HOME/."
+"config/pad, щоб змінити ті з них, які належать до групи «Нетипові символи»."
 
 #: ../input-pad/dialog.ui.h:31
 msgid "_OK"
@@ -3294,25 +3394,27 @@ msgstr "<b>Варіант клавіатури</b>"
 
 #: ../input-pad/dialog.ui.h:43
 msgid "The input pad is a tool to send a character on button."
-msgstr "Панель введення — це програма для надсилання символів, намальованих на кнопках."
+msgstr ""
+"Панель введення — це програма для надсилання символів, намальованих на "
+"кнопках."
 
 #: ../input-pad/dialog.ui.h:44
 msgid "translator_credits"
 msgstr "Юрій Чорноіван <yurchor@ukr.net>"
 
-#: ../input-pad/eek-gtk.c:62
+#: ../input-pad/eek-gtk.c:65
 msgid "Use libeek to draw keyboard"
 msgstr "Використовувати libeek для малювання клавіатури"
 
-#: ../input-pad/eek-gtk.c:234
+#: ../input-pad/eek-gtk.c:237
 msgid "eekboard layout"
 msgstr "Розкладка eekboard"
 
-#: ../input-pad/eek-gtk.c:246
+#: ../input-pad/eek-gtk.c:249
 msgid "eekboard Options"
 msgstr "Параметри eekboard"
 
-#: ../input-pad/eek-gtk.c:246
+#: ../input-pad/eek-gtk.c:249
 msgid "Show eekboard Options"
 msgstr "Показати параметри eekboard"
 
@@ -4060,50 +4162,52 @@ msgstr "Додаткова область приватного використ�
 msgid "Supplementary Private Use Area-B"
 msgstr "Додаткова область приватного використання B"
 
-#: ../input-pad/window-gtk.c:204
+#: ../input-pad/window-gtk.c:203
 msgid "Display version"
 msgstr "Показати дані щодо версії"
 
 #. Translators: the word 'KBDUI' is not translated.
-#: ../input-pad/window-gtk.c:207
+#: ../input-pad/window-gtk.c:206
 msgid "Use KBDUI to draw keyboard"
 msgstr "Використовувати KBDUI для малювання клавіатури"
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:210
+#: ../input-pad/window-gtk.c:209
 msgid "Use TYPE of char table. The available TYPE=0, 1, 2"
-msgstr "Використовувати тип TYPE таблиці символів. Доступні значення: TYPE=0, 1, 2"
+msgstr ""
+"Використовувати тип TYPE таблиці символів. Доступні значення: TYPE=0, 1, 2"
 
 #. Translators: the word 'TYPE' is not translated.
-#: ../input-pad/window-gtk.c:213
+#: ../input-pad/window-gtk.c:212
 msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
-msgstr "Використовувати тип TYPE розкладки клавіатури. Доступні значення: TYPE=0, 1"
+msgstr ""
+"Використовувати тип TYPE розкладки клавіатури. Доступні значення: TYPE=0, 1"
 
-#: ../input-pad/window-gtk.c:220
+#: ../input-pad/window-gtk.c:219
 msgid "Use XTEST module to send key events"
 msgstr "Використовувати модуль XTEST для надсилання натискань клавіш"
 
-#: ../input-pad/window-gtk.c:225
+#: ../input-pad/window-gtk.c:224
 msgid "Use XSendEvent to send key events"
 msgstr "Використовувати XSendEvent для надсилання натискань клавіш"
 
-#: ../input-pad/window-gtk.c:1178
+#: ../input-pad/window-gtk.c:1172
 msgid "Fold layout"
 msgstr "Згорнути розкладку"
 
-#: ../input-pad/window-gtk.c:1183 ../input-pad/window-gtk.c:2594
+#: ../input-pad/window-gtk.c:1177 ../input-pad/window-gtk.c:2610
 msgid "Extend layout"
 msgstr "Розгорнути розкладку"
 
-#: ../input-pad/window-gtk.c:2808
+#: ../input-pad/window-gtk.c:2824
 msgid "Layout"
 msgstr "Розкладка"
 
-#: ../input-pad/window-gtk.c:3083
+#: ../input-pad/window-gtk.c:3095
 msgid "_Layout:"
 msgstr "_Розкладка:"
 
-#: ../input-pad/window-gtk.c:3113
+#: ../input-pad/window-gtk.c:3125
 msgid "_Configure Layouts"
 msgstr "_Налаштувати розкладки"
 
@@ -4114,28 +4218,34 @@ msgstr "_Налаштувати розкладки"
 #. "modify it under the terms of the GNU Lesser General Public "
 #. "License as published by the Free Software Foundation; either "
 #. "version 2 of the License, or (at your option) any later version.");
+#. 
 #. license2 = _(""
 #. "This library is distributed in the hope that it will be useful, "
 #. "but WITHOUT ANY WARRANTY; without even the implied warranty of "
 #. "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU "
 #. "Lesser General Public License for more details.");
+#. 
 #. license3 = _(""
 #. "You should have received a copy of the GNU Lesser General Public "
 #. "License along with this library; if not, write to the Free Software "
 #. "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, "
 #. "MA  02110-1301  USA");
+#. 
 #. license = g_strdup_printf ("%s\n\n%s\n\n%s",
 #. license1, license2, license3);
+#. 
 #. This format has been used since gtk 2.20.
-#: ../input-pad/window-gtk.c:3152
+#: ../input-pad/window-gtk.c:3164
 #, c-format
 msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
-msgstr "Вам не надається жодних гарантій щодо роботи цієї програми. Щоб дізнатися більше, відвідайте %s"
+msgstr ""
+"Вам не надається жодних гарантій щодо роботи цієї програми. Щоб дізнатися "
+"більше, відвідайте %s"
 
-#: ../input-pad/window-gtk.c:3434
+#: ../input-pad/window-gtk.c:3446
 msgid "Group"
 msgstr "Група"
 
-#: ../input-pad/window-gtk.c:3442
+#: ../input-pad/window-gtk.c:3454
 msgid "Subgroup"
 msgstr "Підгрупа"
