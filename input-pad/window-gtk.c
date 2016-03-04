@@ -1,7 +1,7 @@
 /* vim:set et sts=4: */
 /* input-pad - The input pad
- * Copyright (C) 2010-2015 Takao Fujiwara <takao.fujiwara1@gmail.com>
- * Copyright (C) 2010-2015 Red Hat, Inc.
+ * Copyright (C) 2010-2016 Takao Fujiwara <takao.fujiwara1@gmail.com>
+ * Copyright (C) 2010-2016 Red Hat, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -52,6 +52,50 @@
 #define MAX_UCODE 0x10ffff
 #define MODULE_NAME_PREFIX "input-pad-"
 #define USE_GLOBAL_GMODULE 1
+
+#if GTK_CHECK_VERSION (3, 19, 10)
+#  define CSS_DATA_NARROW_BUTTON \
+    "button    { padding-left: 1px;" \
+    "            padding-right: 1px;" \
+    "            padding-top: 1px;" \
+    "            padding-bottom: 1px;" \
+    "            border-top-width: 0px;" \
+    "            border-left-width: 0px;" \
+    "            border-bottom-width: 0px;" \
+    "            border-right-width: 0px; " \
+    "            min-width: 0px; }"
+#  define CSS_DATA_GRAY_NARROW_BUTTON \
+    "button    { padding-left: 1px;" \
+    "            padding-right: 1px;" \
+    "            padding-top: 1px;" \
+    "            padding-bottom: 1px;" \
+    "            border-top-width: 0px;" \
+    "            border-left-width: 0px;" \
+    "            border-bottom-width: 0px;" \
+    "            border-right-width: 0px;" \
+    "            background-color: LightGray; " \
+    "            min-width: 0px; }"
+#else
+#  define CSS_DATA_NARROW_BUTTON \
+    "GtkButton { padding-left: 1px;" \
+    "            padding-right: 1px;" \
+    "            padding-top: 1px;" \
+    "            padding-bottom: 1px;" \
+    "            border-top-width: 0px;" \
+    "            border-left-width: 0px;" \
+    "            border-bottom-width: 0px;" \
+    "            border-right-width: 0px; }"
+#  define CSS_DATA_GRAY_NARROW_BUTTON \
+    "GtkButton { padding-left: 1px;" \
+    "            padding-right: 1px;" \
+    "            padding-top: 1px;" \
+    "            padding-bottom: 1px;" \
+    "            border-top-width: 0px;" \
+    "            border-left-width: 0px;" \
+    "            border-bottom-width: 0px;" \
+    "            border-right-width: 0px;" \
+    "            background-color: LightGray; }"
+#endif
 
 #define INPUT_PAD_GTK_WINDOW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), INPUT_PAD_TYPE_GTK_WINDOW, InputPadGtkWindowPrivate))
 
@@ -2018,34 +2062,20 @@ append_unicode_table (GtkWidget         *table,
     int row, col;
 
     css_provider = gtk_css_provider_new ();
-    if (input_pad->child)
+    if (input_pad->child) {
         gtk_css_provider_load_from_data (
                 css_provider,
-                "GtkButton { padding-left: 1px;" \
-                "            padding-right: 1px;" \
-                "            padding-top: 1px;" \
-                "            padding-bottom: 1px;" \
-                "            border-top-width: 0px;" \
-                "            border-left-width: 0px;" \
-                "            border-bottom-width: 0px;" \
-                "            border-right-width: 0px; }",
+                CSS_DATA_NARROW_BUTTON,
                 -1,
                 &error);
-    else
+    } else {
         /* FIXME: cannot change background in GTK3 button. */
         gtk_css_provider_load_from_data (
                 css_provider,
-                "GtkButton { padding-left: 1px;" \
-                "            padding-right: 1px;" \
-                "            padding-top: 1px;" \
-                "            padding-bottom: 1px;" \
-                "            border-top-width: 0px;" \
-                "            border-left-width: 0px;" \
-                "            border-bottom-width: 0px;" \
-                "            border-right-width: 0px;" \
-                "            background-color: LightGray; }",
+                CSS_DATA_GRAY_NARROW_BUTTON,
                 -1,
                 &error);
+    }
 
     for (num = start; num <= end; num++) {
         button = input_pad_gtk_button_new_with_unicode (num);
@@ -2183,34 +2213,20 @@ append_custom_char_view_table (GtkWidget *scrolled, InputPadTable *table_data)
 #endif
 
     css_provider = gtk_css_provider_new ();
-    if (input_pad->child)
+    if (input_pad->child) {
         gtk_css_provider_load_from_data (
                 css_provider,
-                "GtkButton { padding-left: 1px;" \
-                "            padding-right: 1px;" \
-                "            padding-top: 1px;" \
-                "            padding-bottom: 1px;" \
-                "            border-top-width: 0px;" \
-                "            border-left-width: 0px;" \
-                "            border-bottom-width: 0px;" \
-                "            border-right-width: 0px; }",
+                CSS_DATA_NARROW_BUTTON,
                 -1,
                 &error);
-    else
+    } else {
         /* FIXME: cannot change background in GTK3 button. */
         gtk_css_provider_load_from_data (
                 css_provider,
-                "GtkButton { padding-left: 1px;" \
-                "            padding-right: 1px;" \
-                "            padding-top: 1px;" \
-                "            padding-bottom: 1px;" \
-                "            border-top-width: 0px;" \
-                "            border-left-width: 0px;" \
-                "            border-bottom-width: 0px;" \
-                "            border-right-width: 0px;" \
-                "            background-color: LightGray; }",
+                CSS_DATA_GRAY_NARROW_BUTTON,
                 -1,
                 &error);
+    }
 
     table = gtk_grid_new ();
     /* gtk_table_attach_defaults assigns GTK_EXPAND and
@@ -2425,14 +2441,7 @@ create_keyboard_layout_ui_real_default (GtkWidget *vbox, InputPadGtkWindow *wind
 
     css_provider = gtk_css_provider_new ();
     gtk_css_provider_load_from_data (css_provider,
-                                     "GtkButton { padding-left: 1px;" \
-                                     "            padding-right: 1px;" \
-                                     "            padding-top: 1px;" \
-                                     "            padding-bottom: 1px;" \
-                                     "            border-top-width: 0px;" \
-                                     "            border-left-width: 0px;" \
-                                     "            border-bottom-width: 0px;" \
-                                     "            border-right-width: 0px; }",
+                                     CSS_DATA_NARROW_BUTTON,
                                      -1,
                                      &error);
 
@@ -5464,7 +5473,7 @@ input_pad_window_get_visible (void *window_data)
 
     app = INPUT_PAD_GTK_APPLICATION (window_data);
 
-    g_return_if_fail (app->window != NULL);
+    g_return_val_if_fail (app->window != NULL, 0);
 
     return gtk_widget_get_visible (GTK_WIDGET (app->window));
 }
@@ -5663,8 +5672,9 @@ input_pad_window_main (void *window_data)
 {
     InputPadGtkApplication *app;
 
-    g_return_if_fail (window_data != NULL &&
-                      INPUT_PAD_IS_GTK_APPLICATION (window_data));
+    g_return_val_if_fail (window_data != NULL &&
+                          INPUT_PAD_IS_GTK_APPLICATION (window_data),
+                          -1);
 
     app = INPUT_PAD_GTK_APPLICATION (window_data);
 
