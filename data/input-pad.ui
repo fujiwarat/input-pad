@@ -654,7 +654,7 @@ You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/pad t
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
-                            <property name="tooltip_text" translatable="yes">Use the defualt XKB option</property>
+                            <property name="tooltip_text" translatable="yes">Use the default XKB option</property>
                             <property name="draw_indicator">True</property>
                           </object>
                           <packing>

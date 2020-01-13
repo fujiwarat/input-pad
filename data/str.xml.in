@@ -212,7 +212,7 @@
         </string>
         <string>
           <label>⛉</label>
-          <_comment>Shoji</_comment>
+          <_comment>Shogi</_comment>
         </string>
         <string>
           <label>⛊</label>
@@ -916,7 +916,7 @@
         </string>
         <string>
           <label>🎸</label>
-          <_comment>Guiter</_comment>
+          <_comment>Guitar</_comment>
         </string>
         <string>
           <label>🎺</label>
@@ -1421,11 +1421,11 @@
         </string>
         <string>
           <label>👤</label>
-          <_comment>Account</_comment>
+          <_comment>Bust in silhouette</_comment>
         </string>
         <string>
           <label>👥</label>
-          <_comment>Account</_comment>
+          <_comment>Busts in silhouette</_comment>
         </string>
         <string>
           <label>👦</label>
@@ -1449,23 +1449,23 @@
         </string>
         <string>
           <label>👫</label>
-          <_comment>Restroom</_comment>
+          <_comment>Man and woman holding hands</_comment>
         </string>
         <string>
           <label>👬</label>
-          <_comment>Men</_comment>
+          <_comment>Men holding hands</_comment>
         </string>
         <string>
           <label>👭</label>
-          <_comment>Women</_comment>
+          <_comment>Women holding hands</_comment>
         </string>
         <string>
           <label>🚹</label>
-          <_comment>Men</_comment>
+          <_comment>Men's room</_comment>
         </string>
         <string>
           <label>🚺</label>
-          <_comment>Women</_comment>
+          <_comment>Women's room</_comment>
         </string>
         <string>
           <label>🚻</label>
@@ -1505,7 +1505,7 @@
         </string>
         <string>
           <label>👿</label>
-          <_comment>IMP</_comment>
+          <_comment>Imp</_comment>
         </string>
         <string>
           <label>💀</label>
@@ -1533,7 +1533,7 @@
         </string>
         <string>
           <label>💅</label>
-          <_comment>Nail</_comment>
+          <_comment>Nail polish</_comment>
         </string>
         <string>
           <label>💆</label>
@@ -1553,7 +1553,7 @@
         </string>
         <string>
           <label>💊</label>
-          <_comment>Medicine</_comment>
+          <_comment>Pill</_comment>
         </string>
         <string>
           <label>💋</label>
@@ -1741,23 +1741,23 @@
         </string>
         <string>
           <label>📎</label>
-          <_comment>Clip</_comment>
+          <_comment>Paperclip</_comment>
         </string>
         <string>
           <label>🔇</label>
-          <_comment>Speaker</_comment>
+          <_comment>Speaker with cancellation stroke</_comment>
         </string>
         <string>
           <label>🔈</label>
-          <_comment>Speaker</_comment>
+          <_comment>Speaker low volume</_comment>
         </string>
         <string>
           <label>🔉</label>
-          <_comment>Speaker</_comment>
+          <_comment>Speaker medium volume</_comment>
         </string>
         <string>
           <label>🔊</label>
-          <_comment>Speaker</_comment>
+          <_comment>Speaker high volume</_comment>
         </string>
         <string>
           <label>🔋</label>
@@ -1769,11 +1769,11 @@
         </string>
         <string>
           <label>🔍</label>
-          <_comment>Search</_comment>
+          <_comment>Magnifying glass tilted left</_comment>
         </string>
         <string>
           <label>🔎</label>
-          <_comment>Search</_comment>
+          <_comment>Magnifying glass tilted right</_comment>
         </string>
         <string>
           <label>📑</label>
@@ -1837,11 +1837,11 @@
         </string>
         <string>
           <label>📨</label>
-          <_comment>Mail</_comment>
+          <_comment>Incoming envelope</_comment>
         </string>
         <string>
           <label>📮</label>
-          <_comment>Mail</_comment>
+          <_comment>Postbox</_comment>
         </string>
         <string>
           <label>📱</label>
@@ -1849,7 +1849,7 @@
         </string>
         <string>
           <label>📶</label>
-          <_comment>Mobile Phone</_comment>
+          <_comment>Antenna with bars</_comment>
         </string>
         <string>
           <label>📷</label>
@@ -1877,11 +1877,11 @@
         </string>
         <string>
           <label>🔒</label>
-          <_comment>Lock</_comment>
+          <_comment>Lock, locked</_comment>
         </string>
         <string>
           <label>🔓</label>
-          <_comment>Lock</_comment>
+          <_comment>Lock, unlocked</_comment>
         </string>
         <string>
           <label>🔖</label>
@@ -1892,7 +1892,7 @@
           <_comment>Fire</_comment>
         </string>
         <string>
-          <label>🔧 </label>
+          <label>🔧</label>
           <_comment>Wrench</_comment>
         </string>
         <string>
@@ -1909,7 +1909,7 @@
         </string>
         <string>
           <label>🔩</label>
-          <_comment>Bolt</_comment>
+          <_comment>Nut and bolt</_comment>
         </string>
         <string>
           <label>🔪</label>
@@ -1969,11 +1969,11 @@
         </string>
         <string>
           <label>💻</label>
-          <_comment>Personal Computer</_comment>
+          <_comment>Laptop Computer</_comment>
         </string>
         <string>
           <label>🖥</label>
-          <_comment>Personal Computer</_comment>
+          <_comment>Desktop Computer</_comment>
         </string>
         <string>
           <label>⌨</label>
@@ -2201,7 +2201,7 @@
         </string>
         <string>
           <label>😪</label>
-          <_comment>Sleeply</_comment>
+          <_comment>Sleepy</_comment>
         </string>
         <string>
           <label>😫</label>
@@ -2308,7 +2308,7 @@
           <_comment>OK</_comment>
         </string>
         <string>
-          <label>🙇 </label>
+          <label>🙇</label>
           <_comment>Bow</_comment>
         </string>
         <string>
