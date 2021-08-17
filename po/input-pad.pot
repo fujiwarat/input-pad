@@ -15,3229 +15,3229 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/alphabet.xml.in.in.h:1
+#: ../data/alphabet.xml.in.in:1
 msgid "Alphabets"
 msgstr ""
 
-#: ../data/base.xml.in.h:1
+#: ../data/base.xml.in:1
 msgid "Symbols"
 msgstr ""
 
-#: ../data/base.xml.in.h:2
+#: ../data/base.xml.in:2
 msgid "Currency"
 msgstr ""
 
-#: ../data/base.xml.in.h:3
+#: ../data/base.xml.in:3
 msgid "Letterlike"
 msgstr ""
 
-#: ../data/base.xml.in.h:4
+#: ../data/base.xml.in:4
 msgid "Miscellaneous"
 msgstr ""
 
-#: ../data/base.xml.in.h:5 ../input-pad/unicode_block.h:116
+#: ../data/base.xml.in:5 ../input-pad/unicode_block.h:116
 msgid "Dingbats"
 msgstr ""
 
 #. Translators: Superscripts and Subscripts
-#: ../data/base.xml.in.h:7
+#: ../data/base.xml.in:7
 msgid "Super and Sub"
 msgstr ""
 
-#: ../data/base.xml.in.h:8
+#: ../data/base.xml.in:8
 msgid "Bold"
 msgstr ""
 
-#: ../data/base.xml.in.h:9
+#: ../data/base.xml.in:9
 msgid "Italic"
 msgstr ""
 
-#: ../data/base.xml.in.h:10
+#: ../data/base.xml.in:10
 msgid "Script"
 msgstr ""
 
-#: ../data/base.xml.in.h:11
+#: ../data/base.xml.in:11
 msgid "Double Struck"
 msgstr ""
 
-#: ../data/base.xml.in.h:12
+#: ../data/base.xml.in:12
 msgid "All"
 msgstr ""
 
-#: ../data/base.xml.in.h:13 ../data/zh.xml.in.h:2
+#: ../data/base.xml.in:13 ../data/zh.xml.in.h:2
 msgid "Numbers"
 msgstr ""
 
-#: ../data/base.xml.in.h:14
+#: ../data/base.xml.in:14
 msgid "Roman"
 msgstr ""
 
-#: ../data/base.xml.in.h:15
+#: ../data/base.xml.in:15
 msgid "Enclosed"
 msgstr ""
 
-#: ../data/base.xml.in.h:16
+#: ../data/base.xml.in:16
 msgid "Fraction"
 msgstr ""
 
-#: ../data/base.xml.in.h:17
+#: ../data/base.xml.in:17
 msgid "Technical"
 msgstr ""
 
-#: ../data/base.xml.in.h:18
+#: ../data/base.xml.in:18
 msgid "Unit"
 msgstr ""
 
-#: ../data/base.xml.in.h:19
+#: ../data/base.xml.in:19
 msgid "Mathematical"
 msgstr ""
 
-#: ../data/base.xml.in.h:20
+#: ../data/base.xml.in:20
 msgid "Controls"
 msgstr ""
 
-#: ../data/base.xml.in.h:21
+#: ../data/base.xml.in:21
 msgid "OCR"
 msgstr ""
 
-#: ../data/base.xml.in.h:22
+#: ../data/base.xml.in:22
 msgid "Graphics"
 msgstr ""
 
-#: ../data/base.xml.in.h:23
+#: ../data/base.xml.in:23
 msgid "Arrow"
 msgstr ""
 
-#: ../data/base.xml.in.h:24 ../input-pad/unicode_block.h:112
+#: ../data/base.xml.in:24 ../input-pad/unicode_block.h:112
 msgid "Box Drawing"
 msgstr ""
 
-#: ../data/base.xml.in.h:25 ../input-pad/window-gtk.c:3694
+#: ../data/base.xml.in:25 ../input-pad/window-gtk.c:3694
 msgid "Block"
 msgstr ""
 
-#: ../data/base.xml.in.h:26
+#: ../data/base.xml.in:26
 msgid "Geometric"
 msgstr ""
 
-#: ../data/base.xml.in.h:27
+#: ../data/base.xml.in:27
 msgid "Braille"
 msgstr ""
 
-#: ../data/base.xml.in.h:28
+#: ../data/base.xml.in:28
 msgid "Punctuations"
 msgstr ""
 
-#: ../data/base.xml.in.h:29
+#: ../data/base.xml.in:29
 msgid "General"
 msgstr ""
 
-#: ../data/base.xml.in.h:30
+#: ../data/base.xml.in:30
 msgid "CJK"
 msgstr ""
 
-#: ../data/base.xml.in.h:31 ../input-pad/unicode_block.h:145
+#: ../data/base.xml.in:31 ../input-pad/unicode_block.h:145
 msgid "CJK Compatibility"
 msgstr ""
 
-#: ../data/base.xml.in.h:32
+#: ../data/base.xml.in:32
 msgid "Small Form"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:1
+#: ../data/cmd.xml.in:1
 msgid "Command"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:2
+#: ../data/cmd.xml.in:2
 msgid "Date"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:3
+#: ../data/cmd.xml.in:3
 msgid "Normal Date"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:4
+#: ../data/cmd.xml.in:4
 msgid "Date and Time"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:5
+#: ../data/cmd.xml.in:5
 msgid "ChangeLog date"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:6
+#: ../data/cmd.xml.in:6
 msgid "USA English date"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:7
+#: ../data/cmd.xml.in:7
 msgid "UK English date"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:8
+#: ../data/cmd.xml.in:8
 msgid "ISO 8601 date"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:9
+#: ../data/cmd.xml.in:9
 msgid "Era"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:10
+#: ../data/cmd.xml.in:10
 msgid "Century Year"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:11
+#: ../data/cmd.xml.in:11
 msgid "Normal Time"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:12
+#: ../data/cmd.xml.in:12
 msgid "English Time"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:13
+#: ../data/cmd.xml.in:13
 msgid "Month"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:14
+#: ../data/cmd.xml.in:14
 msgid "English Month"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:15
+#: ../data/cmd.xml.in:15
 msgid "Short Month"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:16
+#: ../data/cmd.xml.in:16
 msgid "English Short Month"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:17
+#: ../data/cmd.xml.in:17
 msgid "Weekday"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:18
+#: ../data/cmd.xml.in:18
 msgid "English Weekday"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:19
+#: ../data/cmd.xml.in:19
 msgid "Short Weekday"
 msgstr ""
 
-#: ../data/cmd.xml.in.h:20
+#: ../data/cmd.xml.in:20
 msgid "English Short Weekday"
 msgstr ""
 
-#: ../data/goth.xml.in.h:1 ../input-pad/unicode_block.h:196
+#: ../data/goth.xml.in:1 ../input-pad/unicode_block.h:196
 msgid "Gothic"
 msgstr ""
 
-#: ../data/input-pad.desktop.in.h:1 ../input-pad/dialog.ui.h:42
+#: ../data/input-pad.desktop.in:1 ../input-pad/dialog.ui.h:42
 #: ../input-pad/window-gtk.c:5093 ../input-pad/window-gtk.c:5094
 #: ../input-pad/window-gtk.ui.h:1
 msgid "Input Pad"
 msgstr ""
 
 #. "IPA" stands for "International Phonetic Alphabet"
-#: ../data/ipa-obsolete.xml.in.h:2
+#: ../data/ipa-obsolete.xml.in:2
 msgid "IPA (Obsolete)"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:3 ../data/ipa.xml.in.h:6
+#: ../data/ipa-obsolete.xml.in:3 ../data/ipa.xml.in.h:6
 msgid "Open back unrounded vowel"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:4
+#: ../data/ipa-obsolete.xml.in:4
 msgid "Palatalized voiced bilabial plosive"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:5
+#: ../data/ipa-obsolete.xml.in:5
 msgid "Voiceless palatal implosive"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:6 ../data/ipa.xml.in.h:138
+#: ../data/ipa-obsolete.xml.in:6 ../data/ipa.xml.in.h:138
 msgid "Alveolar click"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:7
+#: ../data/ipa-obsolete.xml.in:7
 msgid "Palatalized voiced alveolar plosive"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:8 ../data/ipa.xml.in.h:25
+#: ../data/ipa-obsolete.xml.in:8 ../data/ipa.xml.in.h:25
 msgid "Voiced alveolar affricate"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:9 ../data/ipa.xml.in.h:27
+#: ../data/ipa-obsolete.xml.in:9 ../data/ipa.xml.in.h:27
 msgid "Voiced alveopalatal affricate"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:10 ../data/ipa.xml.in.h:26
+#: ../data/ipa-obsolete.xml.in:10 ../data/ipa.xml.in.h:26
 msgid "Voiced palato-alveolar affricate"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:11
+#: ../data/ipa-obsolete.xml.in:11
 msgid "Palatalized voiceless labiodental fricative"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:12
+#: ../data/ipa-obsolete.xml.in:12
 msgid "Palatalized voiced velar plosive"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:13
+#: ../data/ipa-obsolete.xml.in:13
 msgid "Palatalized voiceless velar plosive"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:14
+#: ../data/ipa-obsolete.xml.in:14
 msgid "Voiceless velar implosive"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:15
+#: ../data/ipa-obsolete.xml.in:15
 msgid "Palatalized alveolar lateral approximant"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:16
+#: ../data/ipa-obsolete.xml.in:16
 msgid "Palatalized bilabial nasal"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:17
+#: ../data/ipa-obsolete.xml.in:17
 msgid "Palatalized alveolar nasal"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:18
+#: ../data/ipa-obsolete.xml.in:18
 msgid "Syllabic alveolar nasal"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:19
+#: ../data/ipa-obsolete.xml.in:19
 msgid "Palatalized voiceless bilabial plosive"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:20
+#: ../data/ipa-obsolete.xml.in:20
 msgid "Voiceless bilabial implosive"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:21
+#: ../data/ipa-obsolete.xml.in:21
 msgid "Palatalized alveolar trill"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:22
+#: ../data/ipa-obsolete.xml.in:22
 msgid "Voiced strident apico-alveolar trill"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:23
+#: ../data/ipa-obsolete.xml.in:23
 msgid "Palatalized voiceless alveolar fricative"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:24 ../data/ipa.xml.in.h:19
+#: ../data/ipa-obsolete.xml.in:24 ../data/ipa.xml.in.h:19
 msgid "Voiceless alveopalatal fricative"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:25
+#: ../data/ipa-obsolete.xml.in:25
 msgid "Labialized voiceless palato-alveolar fricative"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:26 ../data/ipa.xml.in.h:103
+#: ../data/ipa-obsolete.xml.in:26 ../data/ipa.xml.in.h:103
 msgid "Voiceless alveopalatal affricate"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:27 ../data/ipa.xml.in.h:101
+#: ../data/ipa-obsolete.xml.in:27 ../data/ipa.xml.in.h:101
 msgid "Voiceless alveolar affricate"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:28 ../data/ipa.xml.in.h:102
+#: ../data/ipa-obsolete.xml.in:28 ../data/ipa.xml.in.h:102
 msgid "Voiceless palato-alveolar affricate"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:29
+#: ../data/ipa-obsolete.xml.in:29
 msgid "Palatalized voiceless alveolar plosive"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:30
+#: ../data/ipa-obsolete.xml.in:30
 msgid "Voiceless alveolar implosive"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:31 ../data/ipa.xml.in.h:137
+#: ../data/ipa-obsolete.xml.in:31 ../data/ipa.xml.in.h:137
 msgid "Dental click"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:32
+#: ../data/ipa-obsolete.xml.in:32
 msgid "Voiceless uvular implosive"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:33
+#: ../data/ipa-obsolete.xml.in:33
 msgid "Palatalized voiced labiodental fricative"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:34
+#: ../data/ipa-obsolete.xml.in:34
 msgid "Palatalized voiceless velar fricative"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:35
+#: ../data/ipa-obsolete.xml.in:35
 msgid "Palatalized voiced alveolar fricative"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:36
+#: ../data/ipa-obsolete.xml.in:36
 msgid "Labialized voiced palato-alveolar fricative"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:37 ../data/ipa.xml.in.h:128
+#: ../data/ipa-obsolete.xml.in:37 ../data/ipa.xml.in.h:128
 msgid "Voiced alveopalatal fricative"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:38 ../data/ipa.xml.in.h:106
+#: ../data/ipa-obsolete.xml.in:38 ../data/ipa.xml.in.h:106
 msgid "Near-close near-back vowel"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:39 ../data/ipa.xml.in.h:140
+#: ../data/ipa-obsolete.xml.in:39 ../data/ipa.xml.in.h:140
 msgid "Alveolar lateral click"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:40
+#: ../data/ipa-obsolete.xml.in:40
 msgid "Labialized voiceless alveolar or dental fricative"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:41
+#: ../data/ipa-obsolete.xml.in:41
 msgid "Labialized voiced alveolar or dental fricative"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:42
+#: ../data/ipa-obsolete.xml.in:42
 msgid "Combining labialization mark"
 msgstr ""
 
-#: ../data/ipa-obsolete.xml.in.h:43
+#: ../data/ipa-obsolete.xml.in:43
 msgid "Combining palatalization mark"
 msgstr ""
 
 #. "IPA" stands for "International Phonetic Alphabet"
-#: ../data/ipa-unofficial.xml.in.h:2
+#: ../data/ipa-unofficial.xml.in:2
 msgid "IPA (Unofficial)"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:3
+#: ../data/ipa-unofficial.xml.in:3
 msgid "Voiced labiodental plosive"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:4 ../data/ipa.xml.in.h:18
+#: ../data/ipa-unofficial.xml.in:4 ../data/ipa.xml.in.h:18
 msgid "Voiceless palatal lateral affricate"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:5
+#: ../data/ipa-unofficial.xml.in:5
 msgid "Voiced retroflex implosive"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:6 ../data/ipa.xml.in.h:88
+#: ../data/ipa-unofficial.xml.in:6 ../data/ipa.xml.in.h:88
 msgid "Alveolar flap"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:7 ../data/ipa.xml.in.h:125
+#: ../data/ipa-unofficial.xml.in:7 ../data/ipa.xml.in.h:125
 msgid "Voiceless palatal lateral fricative"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:8 ../data/ipa.xml.in.h:91
+#: ../data/ipa-unofficial.xml.in:8 ../data/ipa.xml.in.h:91
 msgid "Retroflex flap"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:9
+#: ../data/ipa-unofficial.xml.in:9
 msgid "Voiceless retroflex lateral fricative"
 msgstr ""
 
 #. "PUA" stands for "Private Use Area"
-#: ../data/ipa-unofficial.xml.in.h:11
+#: ../data/ipa-unofficial.xml.in:11
 msgid "Voiceless retroflex lateral fricative (PUA)"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:12 ../data/ipa.xml.in.h:59
+#: ../data/ipa-unofficial.xml.in:12 ../data/ipa.xml.in.h:59
 msgid "Voiceless velar lateral affricate"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:13 ../data/ipa.xml.in.h:68
+#: ../data/ipa-unofficial.xml.in:13 ../data/ipa.xml.in.h:68
 msgid "Voiceless velar lateral fricative"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:14
+#: ../data/ipa-unofficial.xml.in:14
 msgid "Epiglottal trill"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:15
+#: ../data/ipa-unofficial.xml.in:15
 msgid "Voiceless labiodental plosive"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:16
+#: ../data/ipa-unofficial.xml.in:16
 msgid "Voiceless retroflex lateral affricate"
 msgstr ""
 
 #. "PUA" stands for "Private Use Area"
-#: ../data/ipa-unofficial.xml.in.h:18
+#: ../data/ipa-unofficial.xml.in:18
 msgid "Voiceless retroflex lateral affricate (PUA)"
 msgstr ""
 
-#: ../data/ipa-unofficial.xml.in.h:19
+#: ../data/ipa-unofficial.xml.in:19
 msgid "Combining stridency mark"
 msgstr ""
 
 #. "PUA" stands for "Private Use Area"
-#: ../data/ipa-unofficial.xml.in.h:21
+#: ../data/ipa-unofficial.xml.in:21
 msgid "Combining stridency mark (PUA)"
 msgstr ""
 
 #. "IPA" stands for "International Phonetic Alphabet"
-#: ../data/ipa.xml.in.h:2
+#: ../data/ipa.xml.in:2
 msgid "IPA"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:3
+#: ../data/ipa.xml.in:3
 msgid "Open front unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:4
+#: ../data/ipa.xml.in:4
 msgid "Open central unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:5
+#: ../data/ipa.xml.in:5
 msgid "Near-open central vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:7
+#: ../data/ipa.xml.in:7
 msgid "Open back rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:8
+#: ../data/ipa.xml.in:8
 msgid "Open-mid back unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:9
+#: ../data/ipa.xml.in:9
 msgid "Near-open front unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:10
+#: ../data/ipa.xml.in:10
 msgid "Voiced bilabial plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:11
+#: ../data/ipa.xml.in:11
 msgid "Voiced labiodental affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:12
+#: ../data/ipa.xml.in:12
 msgid "Voiced bilabial implosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:13
+#: ../data/ipa.xml.in:13
 msgid "Bilabial trill"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:14
+#: ../data/ipa.xml.in:14
 msgid "Voiced bilabial fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:15
+#: ../data/ipa.xml.in:15
 msgid "Voiceless palatal plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:16
+#: ../data/ipa.xml.in:16
 msgid "Voiceless palatal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:17
+#: ../data/ipa.xml.in:17
 msgid "Voiceless palatal affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:20
+#: ../data/ipa.xml.in:20
 msgid "Voiced alveolar plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:21
+#: ../data/ipa.xml.in:21
 msgid "Voiced alveolar implosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:22
+#: ../data/ipa.xml.in:22
 msgid "Voiced retroflex plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:23
+#: ../data/ipa.xml.in:23
 msgid "Voiced dental fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:24
+#: ../data/ipa.xml.in:24
 msgid "Voiced alveolar lateral affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:28
+#: ../data/ipa.xml.in:28
 msgid "Voiced retroflex affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:29
+#: ../data/ipa.xml.in:29
 msgid "Close-mid front unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:30
+#: ../data/ipa.xml.in:30
 msgid "Close-mid central unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:31
+#: ../data/ipa.xml.in:31
 msgid "Mid-central vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:32
+#: ../data/ipa.xml.in:32
 msgid "Rhotacized mid-central vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:33
+#: ../data/ipa.xml.in:33
 msgid "Open-mid front unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:34
+#: ../data/ipa.xml.in:34
 msgid "Open-mid central rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:35
+#: ../data/ipa.xml.in:35
 msgid "Open-mid central unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:36
+#: ../data/ipa.xml.in:36
 msgid "Rhotacized open-mid central unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:37
+#: ../data/ipa.xml.in:37
 msgid "Voiceless labiodental fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:38
+#: ../data/ipa.xml.in:38
 msgid "Velopharyngeal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:39
+#: ../data/ipa.xml.in:39
 msgid "Voiced velar plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:40
+#: ../data/ipa.xml.in:40
 msgid "Voiced labial-velar plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:41
+#: ../data/ipa.xml.in:41
 msgid "Voiced velar implosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:42
+#: ../data/ipa.xml.in:42
 msgid "Voiced uvular plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:43
+#: ../data/ipa.xml.in:43
 msgid "Voiced uvular implosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:44
+#: ../data/ipa.xml.in:44
 msgid "Voiceless glottal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:45
+#: ../data/ipa.xml.in:45
 msgid "Voiced glottal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:46
+#: ../data/ipa.xml.in:46
 msgid "Voiceless pharyngeal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:47
+#: ../data/ipa.xml.in:47
 msgid "Voiceless coarticulated velar and palato-alveolar fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:48
+#: ../data/ipa.xml.in:48
 msgid "Voiceless epiglottal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:49
+#: ../data/ipa.xml.in:49
 msgid "Close front unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:50
+#: ../data/ipa.xml.in:50
 msgid "Near-close near-front unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:51
+#: ../data/ipa.xml.in:51
 msgid "Near-close central unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:52
+#: ../data/ipa.xml.in:52
 msgid "Close central unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:53
+#: ../data/ipa.xml.in:53
 msgid "Palatal approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:54
+#: ../data/ipa.xml.in:54
 msgid "Voiced palatal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:55
+#: ../data/ipa.xml.in:55
 msgid "Voiced palatal plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:56
+#: ../data/ipa.xml.in:56
 msgid "Voiced palatal affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:57
+#: ../data/ipa.xml.in:57
 msgid "Voiced palatal implosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:58
+#: ../data/ipa.xml.in:58
 msgid "Voiceless velar plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:60
+#: ../data/ipa.xml.in:60
 msgid "Voiceless labial-velar plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:61
+#: ../data/ipa.xml.in:61
 msgid "Voiceless velar affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:62
+#: ../data/ipa.xml.in:62
 msgid "Alveolar lateral approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:63
+#: ../data/ipa.xml.in:63
 msgid "Velarized alveolar lateral approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:64
+#: ../data/ipa.xml.in:64
 msgid "Voiceless alveolar lateral fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:65
+#: ../data/ipa.xml.in:65
 msgid "Retroflex lateral approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:66
+#: ../data/ipa.xml.in:66
 msgid "Voiced alveolar lateral fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:67
+#: ../data/ipa.xml.in:67
 msgid "Velar lateral approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:69
+#: ../data/ipa.xml.in:69
 msgid "Bilabial nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:70
+#: ../data/ipa.xml.in:70
 msgid "Labiodental nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:71
+#: ../data/ipa.xml.in:71
 msgid "Alveolar nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:72
+#: ../data/ipa.xml.in:72
 msgid "Velar nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:73
+#: ../data/ipa.xml.in:73
 msgid "Labial-velar nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:74
+#: ../data/ipa.xml.in:74
 msgid "Palatal nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:75
+#: ../data/ipa.xml.in:75
 msgid "Retroflex nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:76
+#: ../data/ipa.xml.in:76
 msgid "Uvular nasal"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:77
+#: ../data/ipa.xml.in:77
 msgid "Close-mid back rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:78
+#: ../data/ipa.xml.in:78
 msgid "Close-mid front rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:79
+#: ../data/ipa.xml.in:79
 msgid "Close-mid central rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:80
+#: ../data/ipa.xml.in:80
 msgid "Open-mid front rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:81
+#: ../data/ipa.xml.in:81
 msgid "Open front rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:82
+#: ../data/ipa.xml.in:82
 msgid "Voiceless bilabial plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:83
+#: ../data/ipa.xml.in:83
 msgid "Voiceless bilabial-labiodental affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:84
+#: ../data/ipa.xml.in:84
 msgid "Voiceless bilabial affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:85
+#: ../data/ipa.xml.in:85
 msgid "Voiceless labiodental affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:86
+#: ../data/ipa.xml.in:86
 msgid "Voiceless uvular plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:87
+#: ../data/ipa.xml.in:87
 msgid "Alveolar trill"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:89
+#: ../data/ipa.xml.in:89
 msgid "Alveolar lateral flap"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:90
+#: ../data/ipa.xml.in:90
 msgid "Uvular trill"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:92
+#: ../data/ipa.xml.in:92
 msgid "Alveolar approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:93
+#: ../data/ipa.xml.in:93
 msgid "Retroflex approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:94
+#: ../data/ipa.xml.in:94
 msgid "Voiced uvular fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:95
+#: ../data/ipa.xml.in:95
 msgid "Voiceless alveolar fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:96
+#: ../data/ipa.xml.in:96
 msgid "Voiceless palato-alveolar fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:97
+#: ../data/ipa.xml.in:97
 msgid "Voiceless retroflex fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:98
+#: ../data/ipa.xml.in:98
 msgid "Voiceless alveolar plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:99
+#: ../data/ipa.xml.in:99
 msgid "Voiceless retroflex plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:100
+#: ../data/ipa.xml.in:100
 msgid "Voiceless alveolar lateral affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:104
+#: ../data/ipa.xml.in:104
 msgid "Voiceless retroflex affricate"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:105
+#: ../data/ipa.xml.in:105
 msgid "Close back rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:107
+#: ../data/ipa.xml.in:107
 msgid "Near-close central vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:108
+#: ../data/ipa.xml.in:108
 msgid "Close central rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:109
+#: ../data/ipa.xml.in:109
 msgid "Labial-palatal approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:110
+#: ../data/ipa.xml.in:110
 msgid "Close back unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:111
+#: ../data/ipa.xml.in:111
 msgid "Voiced labiodental fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:112
+#: ../data/ipa.xml.in:112
 msgid "Labiodental flap"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:113
+#: ../data/ipa.xml.in:113
 msgid "Labiodental approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:114
+#: ../data/ipa.xml.in:114
 msgid "Voiced velar fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:115
+#: ../data/ipa.xml.in:115
 msgid "Close-mid back unrounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:116
+#: ../data/ipa.xml.in:116
 msgid "Voiced labiovelar approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:117
+#: ../data/ipa.xml.in:117
 msgid "Voiceless labiovelar approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:118
+#: ../data/ipa.xml.in:118
 msgid "Velar approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:119
+#: ../data/ipa.xml.in:119
 msgid "Bilabial percussive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:120
+#: ../data/ipa.xml.in:120
 msgid "Voiceless velar fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:121
+#: ../data/ipa.xml.in:121
 msgid "Voiceless uvular fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:122
+#: ../data/ipa.xml.in:122
 msgid "Close front rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:123
+#: ../data/ipa.xml.in:123
 msgid "Near-close near-front rounded vowel"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:124
+#: ../data/ipa.xml.in:124
 msgid "Palatal lateral approximant"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:126
+#: ../data/ipa.xml.in:126
 msgid "Voiced alveolar fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:127
+#: ../data/ipa.xml.in:127
 msgid "Voiced palato-alveolar fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:129
+#: ../data/ipa.xml.in:129
 msgid "Voiced retroflex fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:130
+#: ../data/ipa.xml.in:130
 msgid "Voiceless dental fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:131
+#: ../data/ipa.xml.in:131
 msgid "Voiceless bilabial fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:132
+#: ../data/ipa.xml.in:132
 msgid "Glottal stop"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:133
+#: ../data/ipa.xml.in:133
 msgid "Epiglottal plosive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:134
+#: ../data/ipa.xml.in:134
 msgid "Voiced pharyngeal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:135
+#: ../data/ipa.xml.in:135
 msgid "Voiced epiglottal fricative"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:136
+#: ../data/ipa.xml.in:136
 msgid "Bilabial click"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:139
+#: ../data/ipa.xml.in:139
 msgid "Palatal click"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:141
+#: ../data/ipa.xml.in:141
 msgid "Bidental percussive"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:142
+#: ../data/ipa.xml.in:142
 msgid "Aspiration mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:143
+#: ../data/ipa.xml.in:143
 msgid "Non-aspiration mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:144
+#: ../data/ipa.xml.in:144
 msgid "Breathy voice mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:145
+#: ../data/ipa.xml.in:145
 msgid "Palatalization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:146
+#: ../data/ipa.xml.in:146
 msgid "Lateral release mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:147
+#: ../data/ipa.xml.in:147
 msgid "Bilabial nasal release mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:148
+#: ../data/ipa.xml.in:148
 msgid "Labiodental nasal release mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:149
+#: ../data/ipa.xml.in:149
 msgid "Alveolar nasal release mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:150
+#: ../data/ipa.xml.in:150
 msgid "Palatal nasal release mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:151
+#: ../data/ipa.xml.in:151
 msgid "Retroflex nasal release mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:152
+#: ../data/ipa.xml.in:152
 msgid "Uvular nasal release mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:153
+#: ../data/ipa.xml.in:153
 msgid "Labio-palatalization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:154
+#: ../data/ipa.xml.in:154
 msgid "Labiodentalization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:155
+#: ../data/ipa.xml.in:155
 msgid "Labialization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:156
+#: ../data/ipa.xml.in:156
 msgid "Velarization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:157
+#: ../data/ipa.xml.in:157
 msgid "Glottalization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:158
+#: ../data/ipa.xml.in:158
 msgid "Pharyngealization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:159
+#: ../data/ipa.xml.in:159
 msgid "Combining velarization/pharyngealization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:160
+#: ../data/ipa.xml.in:160
 msgid "Combining laryngealization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:161
+#: ../data/ipa.xml.in:161
 msgid "Combining retroflexion mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:162
+#: ../data/ipa.xml.in:162
 msgid "Ejection mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:163
+#: ../data/ipa.xml.in:163
 msgid "Rhotacization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:164
+#: ../data/ipa.xml.in:164
 msgid "Combining dentalization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:165
+#: ../data/ipa.xml.in:165
 msgid "Combining dentolabialization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:166
+#: ../data/ipa.xml.in:166
 msgid "Combining alveolarization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:167
+#: ../data/ipa.xml.in:167
 msgid "Combining linguolabialization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:168
+#: ../data/ipa.xml.in:168
 msgid "Combining apicalization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:169
+#: ../data/ipa.xml.in:169
 msgid "Combining laminalization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:170
+#: ../data/ipa.xml.in:170
 msgid "Combining centralization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:171
+#: ../data/ipa.xml.in:171
 msgid "Combining mid-centralization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:172
+#: ../data/ipa.xml.in:172
 msgid "Combining nasalization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:173
+#: ../data/ipa.xml.in:173
 msgid "Combining nasalization mark below"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:174
+#: ../data/ipa.xml.in:174
 msgid "Combining denasalization mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:175
+#: ../data/ipa.xml.in:175
 msgid "Combining nasal friction mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:176
+#: ../data/ipa.xml.in:176
 msgid "Combining velopharyngeal friction mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:177
+#: ../data/ipa.xml.in:177
 msgid "Combining voiced mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:178
+#: ../data/ipa.xml.in:178
 msgid "Combining voiceless mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:179
+#: ../data/ipa.xml.in:179
 msgid "Combining voiceless mark above"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:180
+#: ../data/ipa.xml.in:180
 msgid "Pre-voicing/post-voicing mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:181
+#: ../data/ipa.xml.in:181
 msgid "Combining breathy voice mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:182
+#: ../data/ipa.xml.in:182
 msgid "Combining unreleased stop mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:183
+#: ../data/ipa.xml.in:183
 msgid "Combining more rounded mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:184
+#: ../data/ipa.xml.in:184
 msgid "Combining less rounded mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:185
+#: ../data/ipa.xml.in:185
 msgid "Combining labial spreading mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:186
+#: ../data/ipa.xml.in:186
 msgid "Combining syllabic mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:187
+#: ../data/ipa.xml.in:187
 msgid "Combining syllabic mark above"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:188
+#: ../data/ipa.xml.in:188
 msgid "Combining non-syllabic mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:189
+#: ../data/ipa.xml.in:189
 msgid "Combining non-syllabic mark above"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:190
+#: ../data/ipa.xml.in:190
 msgid "Combining top tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:191
+#: ../data/ipa.xml.in:191
 msgid "Combining high tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:192
+#: ../data/ipa.xml.in:192
 msgid "Combining mid tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:193
+#: ../data/ipa.xml.in:193
 msgid "Combining low tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:194
+#: ../data/ipa.xml.in:194
 msgid "Combining bottom tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:195
+#: ../data/ipa.xml.in:195
 msgid "Combining falling tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:196
+#: ../data/ipa.xml.in:196
 msgid "Combining high falling tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:197
+#: ../data/ipa.xml.in:197
 msgid "Combining low falling tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:198
+#: ../data/ipa.xml.in:198
 msgid "Combining rising tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:199
+#: ../data/ipa.xml.in:199
 msgid "Combining high rising tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:200
+#: ../data/ipa.xml.in:200
 msgid "Combining low rising tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:201
+#: ../data/ipa.xml.in:201
 msgid "Combining dipping tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:202
+#: ../data/ipa.xml.in:202
 msgid "Combining peaking tone mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:203
+#: ../data/ipa.xml.in:203
 msgid "Top tone letter"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:204
+#: ../data/ipa.xml.in:204
 msgid "High tone letter"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:205
+#: ../data/ipa.xml.in:205
 msgid "Mid tone letter"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:206
+#: ../data/ipa.xml.in:206
 msgid "Low tone letter"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:207
+#: ../data/ipa.xml.in:207
 msgid "Bottom tone letter"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:208
+#: ../data/ipa.xml.in:208
 msgid "Falling tone digraph"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:209
+#: ../data/ipa.xml.in:209
 msgid "High falling tone digraph"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:210
+#: ../data/ipa.xml.in:210
 msgid "Rising tone digraph"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:211
+#: ../data/ipa.xml.in:211
 msgid "High rising tone digraph"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:212
+#: ../data/ipa.xml.in:212
 msgid "Low rising tone digraph"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:213
+#: ../data/ipa.xml.in:213
 msgid "Dipping tone trigraph"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:214
+#: ../data/ipa.xml.in:214
 msgid "Peaking tone trigraph"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:215
+#: ../data/ipa.xml.in:215
 msgid "Upstep mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:216
+#: ../data/ipa.xml.in:216
 msgid "Downstep mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:217
+#: ../data/ipa.xml.in:217
 msgid "Minor break"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:218
+#: ../data/ipa.xml.in:218
 msgid "Major break"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:219
+#: ../data/ipa.xml.in:219
 msgid "Rising intonation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:220
+#: ../data/ipa.xml.in:220
 msgid "Falling intonation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:221
+#: ../data/ipa.xml.in:221
 msgid "Advanced articulation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:222
+#: ../data/ipa.xml.in:222
 msgid "Retracted articulation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:223
+#: ../data/ipa.xml.in:223
 msgid "Combining advanced articulation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:224
+#: ../data/ipa.xml.in:224
 msgid "Combining retracted articulation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:225
+#: ../data/ipa.xml.in:225
 msgid "Raised sound mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:226
+#: ../data/ipa.xml.in:226
 msgid "Lowered sound mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:227
+#: ../data/ipa.xml.in:227
 msgid "Combining raised sound mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:228
+#: ../data/ipa.xml.in:228
 msgid "Combining lowered sound mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:229
+#: ../data/ipa.xml.in:229
 msgid "Combining tongue root advancement mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:230
+#: ../data/ipa.xml.in:230
 msgid "Combining tongue root retraction mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:231
+#: ../data/ipa.xml.in:231
 msgid "Combining strong articulation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:232
+#: ../data/ipa.xml.in:232
 msgid "Combining weak articulation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:233
+#: ../data/ipa.xml.in:233
 msgid "Combining whistled articulation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:234
+#: ../data/ipa.xml.in:234
 msgid "Combining sliding articulation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:235
+#: ../data/ipa.xml.in:235
 msgid "Egression mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:236
+#: ../data/ipa.xml.in:236
 msgid "Ingression mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:237
+#: ../data/ipa.xml.in:237
 msgid "Combining ligature tie"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:238
+#: ../data/ipa.xml.in:238
 msgid "Combining ligature undertie"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:239
+#: ../data/ipa.xml.in:239
 msgid "Elongation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:240
+#: ../data/ipa.xml.in:240
 msgid "Weak elongation mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:241
+#: ../data/ipa.xml.in:241
 msgid "Combining extra-short duration mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:242
+#: ../data/ipa.xml.in:242
 msgid "Liaison mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:243
+#: ../data/ipa.xml.in:243
 msgid "Stress mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:244
+#: ../data/ipa.xml.in:244
 msgid "Weak stress mark"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:245
+#: ../data/ipa.xml.in:245
 msgid "Syllable break"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:246
+#: ../data/ipa.xml.in:246
 msgid "Opening orthographic bracket"
 msgstr ""
 
-#: ../data/ipa.xml.in.h:247
+#: ../data/ipa.xml.in:247
 msgid "Closing orthographic bracket"
 msgstr ""
 
-#: ../data/ja.xml.in.h:1
+#: ../data/ja.xml.in:1
 msgid "Japanese"
 msgstr ""
 
-#: ../data/ja.xml.in.h:2 ../input-pad/unicode_block.h:136
+#: ../data/ja.xml.in:2 ../input-pad/unicode_block.h:136
 msgid "Hiragana"
 msgstr ""
 
-#: ../data/ja.xml.in.h:3 ../input-pad/unicode_block.h:137
+#: ../data/ja.xml.in:3 ../input-pad/unicode_block.h:137
 msgid "Katakana"
 msgstr ""
 
-#: ../data/ja.xml.in.h:4 ../data/zh.xml.in.h:3
+#: ../data/ja.xml.in:4 ../data/zh.xml.in.h:3
 msgid "Radicals"
 msgstr ""
 
-#: ../data/ja.xml.in.h:5 ../input-pad/unicode_block.h:132
+#: ../data/ja.xml.in:5 ../input-pad/unicode_block.h:132
 msgid "CJK Radicals Supplement"
 msgstr ""
 
-#: ../data/keyboard.xml.in.h:1
+#: ../data/keyboard.xml.in:1
 msgid "Keyboard"
 msgstr ""
 
-#: ../data/keyboard.xml.in.h:2
+#: ../data/keyboard.xml.in:2
 msgid "Function Key"
 msgstr ""
 
-#: ../data/keyboard.xml.in.h:3
+#: ../data/keyboard.xml.in:3
 msgid "Key Pad"
 msgstr ""
 
-#: ../data/latin.xml.in.h:1
+#: ../data/latin.xml.in:1
 msgid "ASCII"
 msgstr ""
 
-#: ../data/latin.xml.in.h:2 ../input-pad/unicode_block.h:38
+#: ../data/latin.xml.in:2 ../input-pad/unicode_block.h:38
 msgid "Latin-1 Supplement"
 msgstr ""
 
-#: ../data/latin.xml.in.h:3 ../input-pad/unicode_block.h:39
+#: ../data/latin.xml.in:3 ../input-pad/unicode_block.h:39
 msgid "Latin Extended-A"
 msgstr ""
 
-#: ../data/latin.xml.in.h:4
+#: ../data/latin.xml.in:4
 msgid "Old and Middle English"
 msgstr ""
 
-#: ../data/runr.xml.in.h:1
+#: ../data/runr.xml.in:1
 msgid "Runes (Unicode Block)"
 msgstr ""
 
-#: ../data/runr.xml.in.h:2
+#: ../data/runr.xml.in:2
 msgid "Runes (Elder Fuþark)"
 msgstr ""
 
-#: ../data/runr.xml.in.h:3
+#: ../data/runr.xml.in:3
 msgid "Runes (Younger Fuþark)"
 msgstr ""
 
-#: ../data/runr.xml.in.h:4
+#: ../data/runr.xml.in:4
 msgid "Runes (Fuþorc)"
 msgstr ""
 
-#: ../data/shaw.xml.in.h:1 ../input-pad/unicode_block.h:200
+#: ../data/shaw.xml.in:1 ../input-pad/unicode_block.h:200
 msgid "Shavian"
 msgstr ""
 
-#: ../data/str.xml.in.h:1
+#: ../data/str.xml.in:1
 msgid "Chat"
 msgstr ""
 
-#: ../data/str.xml.in.h:2
+#: ../data/str.xml.in:2
 msgid "Emoji"
 msgstr ""
 
-#: ../data/str.xml.in.h:3
+#: ../data/str.xml.in:3
 msgid "Rain"
 msgstr ""
 
-#: ../data/str.xml.in.h:4
+#: ../data/str.xml.in:4
 msgid "Comet"
 msgstr ""
 
-#: ../data/str.xml.in.h:5
+#: ../data/str.xml.in:5
 msgid "Cross"
 msgstr ""
 
-#: ../data/str.xml.in.h:6
+#: ../data/str.xml.in:6
 msgid "Solar"
 msgstr ""
 
-#: ../data/str.xml.in.h:7
+#: ../data/str.xml.in:7
 msgid "Mercury"
 msgstr ""
 
-#: ../data/str.xml.in.h:8
+#: ../data/str.xml.in:8
 msgid "Venus"
 msgstr ""
 
-#: ../data/str.xml.in.h:9
+#: ../data/str.xml.in:9
 msgid "Earth"
 msgstr ""
 
-#: ../data/str.xml.in.h:10
+#: ../data/str.xml.in:10
 msgid "Mars"
 msgstr ""
 
-#: ../data/str.xml.in.h:11
+#: ../data/str.xml.in:11
 msgid "Jupiter"
 msgstr ""
 
-#: ../data/str.xml.in.h:12
+#: ../data/str.xml.in:12
 msgid "Saturn"
 msgstr ""
 
-#: ../data/str.xml.in.h:13
+#: ../data/str.xml.in:13
 msgid "Uranus"
 msgstr ""
 
-#: ../data/str.xml.in.h:14
+#: ../data/str.xml.in:14
 msgid "Neptune"
 msgstr ""
 
-#: ../data/str.xml.in.h:15
+#: ../data/str.xml.in:15
 msgid "Pluto"
 msgstr ""
 
-#: ../data/str.xml.in.h:16
+#: ../data/str.xml.in:16
 msgid "Aries"
 msgstr ""
 
-#: ../data/str.xml.in.h:17
+#: ../data/str.xml.in:17
 msgid "Taurus"
 msgstr ""
 
-#: ../data/str.xml.in.h:18
+#: ../data/str.xml.in:18
 msgid "Gemini"
 msgstr ""
 
-#: ../data/str.xml.in.h:19
+#: ../data/str.xml.in:19
 msgid "Cancer"
 msgstr ""
 
-#: ../data/str.xml.in.h:20
+#: ../data/str.xml.in:20
 msgid "Leo"
 msgstr ""
 
-#: ../data/str.xml.in.h:21
+#: ../data/str.xml.in:21
 msgid "Virgo"
 msgstr ""
 
-#: ../data/str.xml.in.h:22
+#: ../data/str.xml.in:22
 msgid "Libra"
 msgstr ""
 
-#: ../data/str.xml.in.h:23
+#: ../data/str.xml.in:23
 msgid "Scorpius"
 msgstr ""
 
-#: ../data/str.xml.in.h:24
+#: ../data/str.xml.in:24
 msgid "Sagittarius"
 msgstr ""
 
-#: ../data/str.xml.in.h:25
+#: ../data/str.xml.in:25
 msgid "Capricorn"
 msgstr ""
 
-#: ../data/str.xml.in.h:26
+#: ../data/str.xml.in:26
 msgid "Aquarius"
 msgstr ""
 
-#: ../data/str.xml.in.h:27
+#: ../data/str.xml.in:27
 msgid "Pisces"
 msgstr ""
 
-#: ../data/str.xml.in.h:28
+#: ../data/str.xml.in:28
 msgid "Dice 1"
 msgstr ""
 
-#: ../data/str.xml.in.h:29
+#: ../data/str.xml.in:29
 msgid "Dice 2"
 msgstr ""
 
-#: ../data/str.xml.in.h:30
+#: ../data/str.xml.in:30
 msgid "Dice 3"
 msgstr ""
 
-#: ../data/str.xml.in.h:31
+#: ../data/str.xml.in:31
 msgid "Dice 4"
 msgstr ""
 
-#: ../data/str.xml.in.h:32
+#: ../data/str.xml.in:32
 msgid "Dice 5"
 msgstr ""
 
-#: ../data/str.xml.in.h:33
+#: ../data/str.xml.in:33
 msgid "Dice 6"
 msgstr ""
 
-#: ../data/str.xml.in.h:34
+#: ../data/str.xml.in:34
 msgid "Anchor"
 msgstr ""
 
-#: ../data/str.xml.in.h:35
+#: ../data/str.xml.in:35
 msgid "Sword"
 msgstr ""
 
-#: ../data/str.xml.in.h:36
+#: ../data/str.xml.in:36
 msgid "Scales"
 msgstr ""
 
-#: ../data/str.xml.in.h:37
+#: ../data/str.xml.in:37
 msgid "Conversation"
 msgstr ""
 
-#: ../data/str.xml.in.h:38
+#: ../data/str.xml.in:38
 msgid "Warning"
 msgstr ""
 
-#: ../data/str.xml.in.h:39
+#: ../data/str.xml.in:39
 msgid "Thunder"
 msgstr ""
 
-#: ../data/str.xml.in.h:40
+#: ../data/str.xml.in:40
 msgid "Coffin"
 msgstr ""
 
-#: ../data/str.xml.in.h:41
+#: ../data/str.xml.in:41
 msgid "Gender"
 msgstr ""
 
-#: ../data/str.xml.in.h:42
+#: ../data/str.xml.in:42
 msgid "Soccer"
 msgstr ""
 
-#: ../data/str.xml.in.h:43
+#: ../data/str.xml.in:43
 msgid "Baseball"
 msgstr ""
 
-#: ../data/str.xml.in.h:44
+#: ../data/str.xml.in:44
 msgid "Snowman"
 msgstr ""
 
-#: ../data/str.xml.in.h:45
+#: ../data/str.xml.in:45
 msgid "Shogi"
 msgstr ""
 
-#: ../data/str.xml.in.h:46
+#: ../data/str.xml.in:46
 msgid "Shoji"
 msgstr ""
 
-#: ../data/str.xml.in.h:47
+#: ../data/str.xml.in:47
 msgid "Maintenance"
 msgstr ""
 
-#: ../data/str.xml.in.h:48
+#: ../data/str.xml.in:48
 msgid "Roadblock"
 msgstr ""
 
-#: ../data/str.xml.in.h:49
+#: ../data/str.xml.in:49
 msgid "No entry"
 msgstr ""
 
-#: ../data/str.xml.in.h:50
+#: ../data/str.xml.in:50
 msgid "Truck"
 msgstr ""
 
-#: ../data/str.xml.in.h:51
+#: ../data/str.xml.in:51
 msgid "Torii"
 msgstr ""
 
-#: ../data/str.xml.in.h:52
+#: ../data/str.xml.in:52
 msgid "Church"
 msgstr ""
 
-#: ../data/str.xml.in.h:53
+#: ../data/str.xml.in:53
 msgid "Castle"
 msgstr ""
 
-#: ../data/str.xml.in.h:54
+#: ../data/str.xml.in:54
 msgid "Historic site"
 msgstr ""
 
-#: ../data/str.xml.in.h:55
+#: ../data/str.xml.in:55
 msgid "Power station"
 msgstr ""
 
-#: ../data/str.xml.in.h:56
+#: ../data/str.xml.in:56
 msgid "Lighthouse"
 msgstr ""
 
-#: ../data/str.xml.in.h:57
+#: ../data/str.xml.in:57
 msgid "Mountain"
 msgstr ""
 
-#: ../data/str.xml.in.h:58
+#: ../data/str.xml.in:58
 msgid "Beach"
 msgstr ""
 
-#: ../data/str.xml.in.h:59
+#: ../data/str.xml.in:59
 msgid "Park"
 msgstr ""
 
-#: ../data/str.xml.in.h:60
+#: ../data/str.xml.in:60
 msgid "Ferry"
 msgstr ""
 
-#: ../data/str.xml.in.h:61
+#: ../data/str.xml.in:61
 msgid "Sailboat"
 msgstr ""
 
-#: ../data/str.xml.in.h:62
+#: ../data/str.xml.in:62
 msgid "Ice rink"
 msgstr ""
 
-#: ../data/str.xml.in.h:63
+#: ../data/str.xml.in:63
 msgid "Scissors"
 msgstr ""
 
-#: ../data/str.xml.in.h:64
+#: ../data/str.xml.in:64
 msgid "Airplane"
 msgstr ""
 
-#: ../data/str.xml.in.h:65
+#: ../data/str.xml.in:65
 msgid "Clenched Fist"
 msgstr ""
 
-#: ../data/str.xml.in.h:66
+#: ../data/str.xml.in:66
 msgid "Hand"
 msgstr ""
 
-#: ../data/str.xml.in.h:67
+#: ../data/str.xml.in:67
 msgid "V Sign"
 msgstr ""
 
-#: ../data/str.xml.in.h:68
+#: ../data/str.xml.in:68
 msgid "Writing"
 msgstr ""
 
-#: ../data/str.xml.in.h:69
+#: ../data/str.xml.in:69
 msgid "Pencil"
 msgstr ""
 
-#: ../data/str.xml.in.h:70
+#: ../data/str.xml.in:70
 msgid "Pen"
 msgstr ""
 
-#: ../data/str.xml.in.h:71
+#: ../data/str.xml.in:71
 msgid "Star"
 msgstr ""
 
-#: ../data/str.xml.in.h:72
+#: ../data/str.xml.in:72
 msgid "Typhoon"
 msgstr ""
 
-#: ../data/str.xml.in.h:73
+#: ../data/str.xml.in:73
 msgid "Fog"
 msgstr ""
 
-#: ../data/str.xml.in.h:74
+#: ../data/str.xml.in:74
 msgid "Umbrella"
 msgstr ""
 
-#: ../data/str.xml.in.h:75
+#: ../data/str.xml.in:75
 msgid "Night sky"
 msgstr ""
 
-#: ../data/str.xml.in.h:76
+#: ../data/str.xml.in:76
 msgid "Sunrise"
 msgstr ""
 
-#: ../data/str.xml.in.h:77
+#: ../data/str.xml.in:77
 msgid "Sunset"
 msgstr ""
 
-#: ../data/str.xml.in.h:78
+#: ../data/str.xml.in:78
 msgid "Bridge"
 msgstr ""
 
-#: ../data/str.xml.in.h:79
+#: ../data/str.xml.in:79
 msgid "Wave"
 msgstr ""
 
-#: ../data/str.xml.in.h:80
+#: ../data/str.xml.in:80
 msgid "New Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:81
+#: ../data/str.xml.in:81
 msgid "Crescent Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:82
+#: ../data/str.xml.in:82
 msgid "Quarter Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:83
+#: ../data/str.xml.in:83
 msgid "Gibbous Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:84
+#: ../data/str.xml.in:84
 msgid "Full Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:85
+#: ../data/str.xml.in:85
 msgid "Moon"
 msgstr ""
 
-#: ../data/str.xml.in.h:86
+#: ../data/str.xml.in:86
 msgid "Sun"
 msgstr ""
 
-#: ../data/str.xml.in.h:87
+#: ../data/str.xml.in:87
 msgid "Cloud"
 msgstr ""
 
-#: ../data/str.xml.in.h:88
+#: ../data/str.xml.in:88
 msgid "Palm"
 msgstr ""
 
-#: ../data/str.xml.in.h:89
+#: ../data/str.xml.in:89
 msgid "Hot Pepper"
 msgstr ""
 
-#: ../data/str.xml.in.h:90
+#: ../data/str.xml.in:90
 msgid "Flower"
 msgstr ""
 
-#: ../data/str.xml.in.h:91
+#: ../data/str.xml.in:91
 msgid "Tulip"
 msgstr ""
 
-#: ../data/str.xml.in.h:92
+#: ../data/str.xml.in:92
 msgid "Cherry"
 msgstr ""
 
-#: ../data/str.xml.in.h:93
+#: ../data/str.xml.in:93
 msgid "Rose"
 msgstr ""
 
-#: ../data/str.xml.in.h:94
+#: ../data/str.xml.in:94
 msgid "Hibiscus"
 msgstr ""
 
-#: ../data/str.xml.in.h:95
+#: ../data/str.xml.in:95
 msgid "Sunflower"
 msgstr ""
 
-#: ../data/str.xml.in.h:96
+#: ../data/str.xml.in:96
 msgid "Blossom"
 msgstr ""
 
-#: ../data/str.xml.in.h:97
+#: ../data/str.xml.in:97
 msgid "Clover"
 msgstr ""
 
-#: ../data/str.xml.in.h:98
+#: ../data/str.xml.in:98
 msgid "Maple"
 msgstr ""
 
-#: ../data/str.xml.in.h:99
+#: ../data/str.xml.in:99
 msgid "Fallen Leaf"
 msgstr ""
 
-#: ../data/str.xml.in.h:100
+#: ../data/str.xml.in:100
 msgid "Leaf"
 msgstr ""
 
-#: ../data/str.xml.in.h:101
+#: ../data/str.xml.in:101
 msgid "Mushroom"
 msgstr ""
 
-#: ../data/str.xml.in.h:102
+#: ../data/str.xml.in:102
 msgid "Tomato"
 msgstr ""
 
-#: ../data/str.xml.in.h:103
+#: ../data/str.xml.in:103
 msgid "Eggplant"
 msgstr ""
 
-#: ../data/str.xml.in.h:104
+#: ../data/str.xml.in:104
 msgid "Grape"
 msgstr ""
 
-#: ../data/str.xml.in.h:105
+#: ../data/str.xml.in:105
 msgid "Melon"
 msgstr ""
 
-#: ../data/str.xml.in.h:106
+#: ../data/str.xml.in:106
 msgid "Watermelon"
 msgstr ""
 
-#: ../data/str.xml.in.h:107
+#: ../data/str.xml.in:107
 msgid "Tangerine"
 msgstr ""
 
-#: ../data/str.xml.in.h:108
+#: ../data/str.xml.in:108
 msgid "Lemon"
 msgstr ""
 
-#: ../data/str.xml.in.h:109
+#: ../data/str.xml.in:109
 msgid "Banana"
 msgstr ""
 
-#: ../data/str.xml.in.h:110
+#: ../data/str.xml.in:110
 msgid "Pineapple"
 msgstr ""
 
-#: ../data/str.xml.in.h:111
+#: ../data/str.xml.in:111
 msgid "Apple"
 msgstr ""
 
-#: ../data/str.xml.in.h:112
+#: ../data/str.xml.in:112
 msgid "Pear"
 msgstr ""
 
-#: ../data/str.xml.in.h:113
+#: ../data/str.xml.in:113
 msgid "Peach"
 msgstr ""
 
-#: ../data/str.xml.in.h:114
+#: ../data/str.xml.in:114
 msgid "Strawberry"
 msgstr ""
 
-#: ../data/str.xml.in.h:115
+#: ../data/str.xml.in:115
 msgid "Hamburger"
 msgstr ""
 
-#: ../data/str.xml.in.h:116
+#: ../data/str.xml.in:116
 msgid "Pizza"
 msgstr ""
 
-#: ../data/str.xml.in.h:117
+#: ../data/str.xml.in:117
 msgid "Meat"
 msgstr ""
 
-#: ../data/str.xml.in.h:118
+#: ../data/str.xml.in:118
 msgid "Poultry"
 msgstr ""
 
-#: ../data/str.xml.in.h:119
+#: ../data/str.xml.in:119
 msgid "Rice Cracker"
 msgstr ""
 
-#: ../data/str.xml.in.h:120
+#: ../data/str.xml.in:120
 msgid "Rice Ball"
 msgstr ""
 
-#: ../data/str.xml.in.h:121
+#: ../data/str.xml.in:121
 msgid "Rice"
 msgstr ""
 
-#: ../data/str.xml.in.h:122
+#: ../data/str.xml.in:122
 msgid "Curry"
 msgstr ""
 
-#: ../data/str.xml.in.h:123
+#: ../data/str.xml.in:123
 msgid "Ramen"
 msgstr ""
 
-#: ../data/str.xml.in.h:124
+#: ../data/str.xml.in:124
 msgid "Spaghetti"
 msgstr ""
 
-#: ../data/str.xml.in.h:125
+#: ../data/str.xml.in:125
 msgid "Bread"
 msgstr ""
 
-#: ../data/str.xml.in.h:126
+#: ../data/str.xml.in:126
 msgid "Fried Potato"
 msgstr ""
 
-#: ../data/str.xml.in.h:127
+#: ../data/str.xml.in:127
 msgid "Roasted Sweet Potato"
 msgstr ""
 
-#: ../data/str.xml.in.h:128
+#: ../data/str.xml.in:128
 msgid "Dango"
 msgstr ""
 
-#: ../data/str.xml.in.h:129
+#: ../data/str.xml.in:129
 msgid "Oden"
 msgstr ""
 
-#: ../data/str.xml.in.h:130
+#: ../data/str.xml.in:130
 msgid "Sushi"
 msgstr ""
 
-#: ../data/str.xml.in.h:131
+#: ../data/str.xml.in:131
 msgid "Fried Shrimp"
 msgstr ""
 
-#: ../data/str.xml.in.h:132
+#: ../data/str.xml.in:132
 msgid "Fish Cake"
 msgstr ""
 
-#: ../data/str.xml.in.h:133
+#: ../data/str.xml.in:133
 msgid "Soft Ice Cream"
 msgstr ""
 
-#: ../data/str.xml.in.h:134
+#: ../data/str.xml.in:134
 msgid "Shaved Ice"
 msgstr ""
 
-#: ../data/str.xml.in.h:135
+#: ../data/str.xml.in:135
 msgid "Ice Cream"
 msgstr ""
 
-#: ../data/str.xml.in.h:136
+#: ../data/str.xml.in:136
 msgid "Doughnut"
 msgstr ""
 
-#: ../data/str.xml.in.h:137
+#: ../data/str.xml.in:137
 msgid "Cookie"
 msgstr ""
 
-#: ../data/str.xml.in.h:138
+#: ../data/str.xml.in:138
 msgid "Chocolate"
 msgstr ""
 
-#: ../data/str.xml.in.h:139
+#: ../data/str.xml.in:139
 msgid "Candy"
 msgstr ""
 
-#: ../data/str.xml.in.h:140
+#: ../data/str.xml.in:140
 msgid "Custard"
 msgstr ""
 
-#: ../data/str.xml.in.h:141
+#: ../data/str.xml.in:141
 msgid "Honey"
 msgstr ""
 
-#: ../data/str.xml.in.h:142
+#: ../data/str.xml.in:142
 msgid "Shortcake"
 msgstr ""
 
-#: ../data/str.xml.in.h:143
+#: ../data/str.xml.in:143
 msgid "Bento"
 msgstr ""
 
-#: ../data/str.xml.in.h:144
+#: ../data/str.xml.in:144
 msgid "Pot of Food"
 msgstr ""
 
-#: ../data/str.xml.in.h:145
+#: ../data/str.xml.in:145
 msgid "Cooking"
 msgstr ""
 
-#: ../data/str.xml.in.h:146
+#: ../data/str.xml.in:146
 msgid "Meal"
 msgstr ""
 
-#: ../data/str.xml.in.h:147
+#: ../data/str.xml.in:147
 msgid "Cup"
 msgstr ""
 
-#: ../data/str.xml.in.h:148
+#: ../data/str.xml.in:148
 msgid "Sake"
 msgstr ""
 
-#: ../data/str.xml.in.h:149
+#: ../data/str.xml.in:149
 msgid "Wine"
 msgstr ""
 
-#: ../data/str.xml.in.h:150
+#: ../data/str.xml.in:150
 msgid "Cocktail"
 msgstr ""
 
-#: ../data/str.xml.in.h:151
+#: ../data/str.xml.in:151
 msgid "Drink"
 msgstr ""
 
-#: ../data/str.xml.in.h:152
+#: ../data/str.xml.in:152
 msgid "Beer"
 msgstr ""
 
-#: ../data/str.xml.in.h:153
+#: ../data/str.xml.in:153
 msgid "Cheers"
 msgstr ""
 
-#: ../data/str.xml.in.h:154
+#: ../data/str.xml.in:154
 msgid "Baby Bottle"
 msgstr ""
 
-#: ../data/str.xml.in.h:155
+#: ../data/str.xml.in:155
 msgid "Ribbon"
 msgstr ""
 
-#: ../data/str.xml.in.h:156
+#: ../data/str.xml.in:156
 msgid "Present"
 msgstr ""
 
-#: ../data/str.xml.in.h:157
+#: ../data/str.xml.in:157
 msgid "Cake"
 msgstr ""
 
-#: ../data/str.xml.in.h:158
+#: ../data/str.xml.in:158
 msgid "Hallowe'en"
 msgstr ""
 
-#: ../data/str.xml.in.h:159
+#: ../data/str.xml.in:159
 msgid "Christmas"
 msgstr ""
 
-#: ../data/str.xml.in.h:160
+#: ../data/str.xml.in:160
 msgid "Piano"
 msgstr ""
 
-#: ../data/str.xml.in.h:161
+#: ../data/str.xml.in:161
 msgid "Microphone"
 msgstr ""
 
-#: ../data/str.xml.in.h:162
+#: ../data/str.xml.in:162
 msgid "Headphone"
 msgstr ""
 
-#: ../data/str.xml.in.h:163
+#: ../data/str.xml.in:163
 msgid "Hat"
 msgstr ""
 
-#: ../data/str.xml.in.h:164
+#: ../data/str.xml.in:164
 msgid "Musical Note"
 msgstr ""
 
-#: ../data/str.xml.in.h:165
+#: ../data/str.xml.in:165
 msgid "Saxophone"
 msgstr ""
 
-#: ../data/str.xml.in.h:166
+#: ../data/str.xml.in:166
 msgid "Guitar"
 msgstr ""
 
-#: ../data/str.xml.in.h:167
+#: ../data/str.xml.in:167
 msgid "Trumpet"
 msgstr ""
 
-#: ../data/str.xml.in.h:168
+#: ../data/str.xml.in:168
 msgid "Violin"
 msgstr ""
 
-#: ../data/str.xml.in.h:169
+#: ../data/str.xml.in:169
 msgid "Musical Score"
 msgstr ""
 
-#: ../data/str.xml.in.h:170
+#: ../data/str.xml.in:170
 msgid "Tennis"
 msgstr ""
 
-#: ../data/str.xml.in.h:171
+#: ../data/str.xml.in:171
 msgid "Ski"
 msgstr ""
 
-#: ../data/str.xml.in.h:172
+#: ../data/str.xml.in:172
 msgid "Basketball"
 msgstr ""
 
-#: ../data/str.xml.in.h:173
+#: ../data/str.xml.in:173
 msgid "Flag"
 msgstr ""
 
-#: ../data/str.xml.in.h:174
+#: ../data/str.xml.in:174
 msgid "Show Board"
 msgstr ""
 
-#: ../data/str.xml.in.h:175
+#: ../data/str.xml.in:175
 msgid "Running"
 msgstr ""
 
-#: ../data/str.xml.in.h:176
+#: ../data/str.xml.in:176
 msgid "Surfer"
 msgstr ""
 
-#: ../data/str.xml.in.h:177
+#: ../data/str.xml.in:177
 msgid "Medal"
 msgstr ""
 
-#: ../data/str.xml.in.h:178
+#: ../data/str.xml.in:178
 msgid "Trophy"
 msgstr ""
 
-#: ../data/str.xml.in.h:179
+#: ../data/str.xml.in:179
 msgid "Horse Racing"
 msgstr ""
 
-#: ../data/str.xml.in.h:180
+#: ../data/str.xml.in:180
 msgid "American Football"
 msgstr ""
 
-#: ../data/str.xml.in.h:181
+#: ../data/str.xml.in:181
 msgid "Rugby"
 msgstr ""
 
-#: ../data/str.xml.in.h:182
+#: ../data/str.xml.in:182
 msgid "Swimmer"
 msgstr ""
 
-#: ../data/str.xml.in.h:183
+#: ../data/str.xml.in:183
 msgid "Weight Lifting"
 msgstr ""
 
-#: ../data/str.xml.in.h:184
+#: ../data/str.xml.in:184
 msgid "Golf"
 msgstr ""
 
-#: ../data/str.xml.in.h:185
+#: ../data/str.xml.in:185
 msgid "Motorcycle"
 msgstr ""
 
-#: ../data/str.xml.in.h:186
+#: ../data/str.xml.in:186
 msgid "Race"
 msgstr ""
 
-#: ../data/str.xml.in.h:187
+#: ../data/str.xml.in:187
 msgid "House"
 msgstr ""
 
-#: ../data/str.xml.in.h:188
+#: ../data/str.xml.in:188
 msgid "Office"
 msgstr ""
 
-#: ../data/str.xml.in.h:189
+#: ../data/str.xml.in:189
 msgid "Hospital"
 msgstr ""
 
-#: ../data/str.xml.in.h:190
+#: ../data/str.xml.in:190
 msgid "Bank"
 msgstr ""
 
-#: ../data/str.xml.in.h:191
+#: ../data/str.xml.in:191
 msgid "Hotel"
 msgstr ""
 
-#: ../data/str.xml.in.h:192
+#: ../data/str.xml.in:192
 msgid "School"
 msgstr ""
 
-#: ../data/str.xml.in.h:193
+#: ../data/str.xml.in:193
 msgid "Factory"
 msgstr ""
 
-#: ../data/str.xml.in.h:194
+#: ../data/str.xml.in:194
 msgid "Rat"
 msgstr ""
 
-#: ../data/str.xml.in.h:195
+#: ../data/str.xml.in:195
 msgid "Mouse"
 msgstr ""
 
-#: ../data/str.xml.in.h:196
+#: ../data/str.xml.in:196
 msgid "Cow"
 msgstr ""
 
-#: ../data/str.xml.in.h:197
+#: ../data/str.xml.in:197
 msgid "Tiger"
 msgstr ""
 
-#: ../data/str.xml.in.h:198
+#: ../data/str.xml.in:198
 msgid "Leopard"
 msgstr ""
 
-#: ../data/str.xml.in.h:199
+#: ../data/str.xml.in:199
 msgid "Rabbit"
 msgstr ""
 
-#: ../data/str.xml.in.h:200
+#: ../data/str.xml.in:200
 msgid "Cat"
 msgstr ""
 
-#: ../data/str.xml.in.h:201
+#: ../data/str.xml.in:201
 msgid "Dragon"
 msgstr ""
 
-#: ../data/str.xml.in.h:202
+#: ../data/str.xml.in:202
 msgid "Crocodile"
 msgstr ""
 
-#: ../data/str.xml.in.h:203
+#: ../data/str.xml.in:203
 msgid "Whale"
 msgstr ""
 
-#: ../data/str.xml.in.h:204
+#: ../data/str.xml.in:204
 msgid "Snail"
 msgstr ""
 
-#: ../data/str.xml.in.h:205
+#: ../data/str.xml.in:205
 msgid "Snake"
 msgstr ""
 
-#: ../data/str.xml.in.h:206
+#: ../data/str.xml.in:206
 msgid "Horse"
 msgstr ""
 
-#: ../data/str.xml.in.h:207
+#: ../data/str.xml.in:207
 msgid "Sheep"
 msgstr ""
 
-#: ../data/str.xml.in.h:208
+#: ../data/str.xml.in:208
 msgid "Goat"
 msgstr ""
 
-#: ../data/str.xml.in.h:209
+#: ../data/str.xml.in:209
 msgid "Monkey"
 msgstr ""
 
-#: ../data/str.xml.in.h:210
+#: ../data/str.xml.in:210
 msgid "Chicken"
 msgstr ""
 
-#: ../data/str.xml.in.h:211
+#: ../data/str.xml.in:211
 msgid "Dog"
 msgstr ""
 
-#: ../data/str.xml.in.h:212
+#: ../data/str.xml.in:212
 msgid "Pig"
 msgstr ""
 
-#: ../data/str.xml.in.h:213
+#: ../data/str.xml.in:213
 msgid "Elephant"
 msgstr ""
 
-#: ../data/str.xml.in.h:214
+#: ../data/str.xml.in:214
 msgid "Octopus"
 msgstr ""
 
-#: ../data/str.xml.in.h:215
+#: ../data/str.xml.in:215
 msgid "Spiral Shell"
 msgstr ""
 
-#: ../data/str.xml.in.h:216
+#: ../data/str.xml.in:216
 msgid "Bug"
 msgstr ""
 
-#: ../data/str.xml.in.h:217
+#: ../data/str.xml.in:217
 msgid "Ant"
 msgstr ""
 
-#: ../data/str.xml.in.h:218
+#: ../data/str.xml.in:218
 msgid "Lady Beetle"
 msgstr ""
 
-#: ../data/str.xml.in.h:219
+#: ../data/str.xml.in:219
 msgid "Fish"
 msgstr ""
 
-#: ../data/str.xml.in.h:220
+#: ../data/str.xml.in:220
 msgid "Tropical Fish"
 msgstr ""
 
-#: ../data/str.xml.in.h:221
+#: ../data/str.xml.in:221
 msgid "Blowfish"
 msgstr ""
 
-#: ../data/str.xml.in.h:222
+#: ../data/str.xml.in:222
 msgid "Bird"
 msgstr ""
 
-#: ../data/str.xml.in.h:223
+#: ../data/str.xml.in:223
 msgid "Penguin"
 msgstr ""
 
-#: ../data/str.xml.in.h:224
+#: ../data/str.xml.in:224
 msgid "Koala"
 msgstr ""
 
-#: ../data/str.xml.in.h:225
+#: ../data/str.xml.in:225
 msgid "Poodle"
 msgstr ""
 
-#: ../data/str.xml.in.h:226
+#: ../data/str.xml.in:226
 msgid "Camel"
 msgstr ""
 
-#: ../data/str.xml.in.h:227
+#: ../data/str.xml.in:227
 msgid "Dolphin"
 msgstr ""
 
-#: ../data/str.xml.in.h:228
+#: ../data/str.xml.in:228
 msgid "Frog"
 msgstr ""
 
-#: ../data/str.xml.in.h:229
+#: ../data/str.xml.in:229
 msgid "Hamster"
 msgstr ""
 
-#: ../data/str.xml.in.h:230
+#: ../data/str.xml.in:230
 msgid "Wolf"
 msgstr ""
 
-#: ../data/str.xml.in.h:231
+#: ../data/str.xml.in:231
 msgid "Bear"
 msgstr ""
 
-#: ../data/str.xml.in.h:232
+#: ../data/str.xml.in:232
 msgid "Panda"
 msgstr ""
 
-#: ../data/str.xml.in.h:233
+#: ../data/str.xml.in:233
 msgid "Eye"
 msgstr ""
 
-#: ../data/str.xml.in.h:234
+#: ../data/str.xml.in:234
 msgid "Ear"
 msgstr ""
 
-#: ../data/str.xml.in.h:235
+#: ../data/str.xml.in:235
 msgid "Nose"
 msgstr ""
 
-#: ../data/str.xml.in.h:236
+#: ../data/str.xml.in:236
 msgid "Mouth"
 msgstr ""
 
-#: ../data/str.xml.in.h:237
+#: ../data/str.xml.in:237
 msgid "Tongue"
 msgstr ""
 
-#: ../data/str.xml.in.h:238
+#: ../data/str.xml.in:238
 msgid "Crown"
 msgstr ""
 
-#: ../data/str.xml.in.h:239
+#: ../data/str.xml.in:239
 msgid "Glasses"
 msgstr ""
 
-#: ../data/str.xml.in.h:240
+#: ../data/str.xml.in:240
 msgid "Necktie"
 msgstr ""
 
-#: ../data/str.xml.in.h:241
+#: ../data/str.xml.in:241
 msgid "T-Shirt"
 msgstr ""
 
-#: ../data/str.xml.in.h:242
+#: ../data/str.xml.in:242
 msgid "Jeans"
 msgstr ""
 
-#: ../data/str.xml.in.h:243
+#: ../data/str.xml.in:243
 msgid "Dress"
 msgstr ""
 
-#: ../data/str.xml.in.h:244
+#: ../data/str.xml.in:244
 msgid "Kimono"
 msgstr ""
 
-#: ../data/str.xml.in.h:245
+#: ../data/str.xml.in:245
 msgid "Bikini"
 msgstr ""
 
-#: ../data/str.xml.in.h:246
+#: ../data/str.xml.in:246
 msgid "Clothes"
 msgstr ""
 
-#: ../data/str.xml.in.h:247
+#: ../data/str.xml.in:247
 msgid "Purse"
 msgstr ""
 
-#: ../data/str.xml.in.h:248
+#: ../data/str.xml.in:248
 msgid "Handbag"
 msgstr ""
 
-#: ../data/str.xml.in.h:249
+#: ../data/str.xml.in:249
 msgid "Pouch"
 msgstr ""
 
-#: ../data/str.xml.in.h:250
+#: ../data/str.xml.in:250
 msgid "Shoe"
 msgstr ""
 
-#: ../data/str.xml.in.h:251
+#: ../data/str.xml.in:251
 msgid "Footprint"
 msgstr ""
 
-#: ../data/str.xml.in.h:252
+#: ../data/str.xml.in:252
 msgid "Bust in silhouette"
 msgstr ""
 
-#: ../data/str.xml.in.h:253
+#: ../data/str.xml.in:253
 msgid "Busts in silhouette"
 msgstr ""
 
-#: ../data/str.xml.in.h:254
+#: ../data/str.xml.in:254
 msgid "Boy"
 msgstr ""
 
-#: ../data/str.xml.in.h:255
+#: ../data/str.xml.in:255
 msgid "Girl"
 msgstr ""
 
-#: ../data/str.xml.in.h:256
+#: ../data/str.xml.in:256
 msgid "Man"
 msgstr ""
 
-#: ../data/str.xml.in.h:257
+#: ../data/str.xml.in:257
 msgid "Woman"
 msgstr ""
 
-#: ../data/str.xml.in.h:258
+#: ../data/str.xml.in:258
 msgid "Family"
 msgstr ""
 
-#: ../data/str.xml.in.h:259
+#: ../data/str.xml.in:259
 msgid "Man and woman holding hands"
 msgstr ""
 
-#: ../data/str.xml.in.h:260
+#: ../data/str.xml.in:260
 msgid "Men holding hands"
 msgstr ""
 
-#: ../data/str.xml.in.h:261
+#: ../data/str.xml.in:261
 msgid "Women holding hands"
 msgstr ""
 
-#: ../data/str.xml.in.h:262
+#: ../data/str.xml.in:262
 msgid "Men's room"
 msgstr ""
 
-#: ../data/str.xml.in.h:263
+#: ../data/str.xml.in:263
 msgid "Women's room"
 msgstr ""
 
-#: ../data/str.xml.in.h:264
+#: ../data/str.xml.in:264
 msgid "Restroom"
 msgstr ""
 
-#: ../data/str.xml.in.h:265
+#: ../data/str.xml.in:265
 msgid "Princess"
 msgstr ""
 
-#: ../data/str.xml.in.h:266
+#: ../data/str.xml.in:266
 msgid "Japanese Ogre"
 msgstr ""
 
-#: ../data/str.xml.in.h:267
+#: ../data/str.xml.in:267
 msgid "Japanese Goblin"
 msgstr ""
 
-#: ../data/str.xml.in.h:268
+#: ../data/str.xml.in:268
 msgid "Ghost"
 msgstr ""
 
-#: ../data/str.xml.in.h:269
+#: ../data/str.xml.in:269
 msgid "Baby Angel"
 msgstr ""
 
-#: ../data/str.xml.in.h:270
+#: ../data/str.xml.in:270
 msgid "Extraterrestrial Alien"
 msgstr ""
 
-#: ../data/str.xml.in.h:271
+#: ../data/str.xml.in:271
 msgid "Alien Monster"
 msgstr ""
 
-#: ../data/str.xml.in.h:272
+#: ../data/str.xml.in:272
 msgid "Imp"
 msgstr ""
 
-#: ../data/str.xml.in.h:273
+#: ../data/str.xml.in:273
 msgid "Skull"
 msgstr ""
 
-#: ../data/str.xml.in.h:274
+#: ../data/str.xml.in:274
 msgid "Information Desk Person"
 msgstr ""
 
-#: ../data/str.xml.in.h:275
+#: ../data/str.xml.in:275
 msgid "Guardsman"
 msgstr ""
 
-#: ../data/str.xml.in.h:276
+#: ../data/str.xml.in:276
 msgid "Dancer"
 msgstr ""
 
-#: ../data/str.xml.in.h:277
+#: ../data/str.xml.in:277
 msgid "Lipstick"
 msgstr ""
 
-#: ../data/str.xml.in.h:278
+#: ../data/str.xml.in:278
 msgid "Nail polish"
 msgstr ""
 
-#: ../data/str.xml.in.h:279
+#: ../data/str.xml.in:279
 msgid "Face"
 msgstr ""
 
-#: ../data/str.xml.in.h:280
+#: ../data/str.xml.in:280
 msgid "Haircut"
 msgstr ""
 
-#: ../data/str.xml.in.h:281
+#: ../data/str.xml.in:281
 msgid "Syringe"
 msgstr ""
 
-#: ../data/str.xml.in.h:282
+#: ../data/str.xml.in:282
 msgid "Pill"
 msgstr ""
 
-#: ../data/str.xml.in.h:283
+#: ../data/str.xml.in:283
 msgid "Kiss"
 msgstr ""
 
-#: ../data/str.xml.in.h:284
+#: ../data/str.xml.in:284
 msgid "Love Letter"
 msgstr ""
 
-#: ../data/str.xml.in.h:285
+#: ../data/str.xml.in:285
 msgid "Ring"
 msgstr ""
 
-#: ../data/str.xml.in.h:286
+#: ../data/str.xml.in:286
 msgid "Gem Stone"
 msgstr ""
 
-#: ../data/str.xml.in.h:287
+#: ../data/str.xml.in:287
 msgid "Wedding"
 msgstr ""
 
-#: ../data/str.xml.in.h:288
+#: ../data/str.xml.in:288
 msgid "Heart"
 msgstr ""
 
-#: ../data/str.xml.in.h:289
+#: ../data/str.xml.in:289
 msgid "Idea"
 msgstr ""
 
-#: ../data/str.xml.in.h:290
+#: ../data/str.xml.in:290
 msgid "Anger"
 msgstr ""
 
-#: ../data/str.xml.in.h:291
+#: ../data/str.xml.in:291
 msgid "Bomb"
 msgstr ""
 
-#: ../data/str.xml.in.h:292
+#: ../data/str.xml.in:292
 msgid "Sleeping"
 msgstr ""
 
-#: ../data/str.xml.in.h:293
+#: ../data/str.xml.in:293
 msgid "Collision"
 msgstr ""
 
-#: ../data/str.xml.in.h:294
+#: ../data/str.xml.in:294
 msgid "Sweat"
 msgstr ""
 
-#: ../data/str.xml.in.h:295
+#: ../data/str.xml.in:295
 msgid "Droplet"
 msgstr ""
 
-#: ../data/str.xml.in.h:296
+#: ../data/str.xml.in:296
 msgid "Dash"
 msgstr ""
 
-#: ../data/str.xml.in.h:297
+#: ../data/str.xml.in:297
 msgid "Poo"
 msgstr ""
 
-#: ../data/str.xml.in.h:298
+#: ../data/str.xml.in:298
 msgid "Muscle"
 msgstr ""
 
-#: ../data/str.xml.in.h:299
+#: ../data/str.xml.in:299
 msgid "Dizzy"
 msgstr ""
 
-#: ../data/str.xml.in.h:300
+#: ../data/str.xml.in:300
 msgid "Speech"
 msgstr ""
 
-#: ../data/str.xml.in.h:301
+#: ../data/str.xml.in:301
 msgid "Thought"
 msgstr ""
 
-#: ../data/str.xml.in.h:302
+#: ../data/str.xml.in:302
 msgid "Perfect Score"
 msgstr ""
 
-#: ../data/str.xml.in.h:303
+#: ../data/str.xml.in:303
 msgid "Pushpin"
 msgstr ""
 
-#: ../data/str.xml.in.h:304
+#: ../data/str.xml.in:304
 msgid "Paperclip"
 msgstr ""
 
-#: ../data/str.xml.in.h:305
+#: ../data/str.xml.in:305
 msgid "Speaker with cancellation stroke"
 msgstr ""
 
-#: ../data/str.xml.in.h:306
+#: ../data/str.xml.in:306
 msgid "Speaker low volume"
 msgstr ""
 
-#: ../data/str.xml.in.h:307
+#: ../data/str.xml.in:307
 msgid "Speaker medium volume"
 msgstr ""
 
-#: ../data/str.xml.in.h:308
+#: ../data/str.xml.in:308
 msgid "Speaker high volume"
 msgstr ""
 
-#: ../data/str.xml.in.h:309
+#: ../data/str.xml.in:309
 msgid "Battery"
 msgstr ""
 
-#: ../data/str.xml.in.h:310
+#: ../data/str.xml.in:310
 msgid "Plug"
 msgstr ""
 
-#: ../data/str.xml.in.h:311
+#: ../data/str.xml.in:311
 msgid "Magnifying glass tilted left"
 msgstr ""
 
-#: ../data/str.xml.in.h:312
+#: ../data/str.xml.in:312
 msgid "Magnifying glass tilted right"
 msgstr ""
 
-#: ../data/str.xml.in.h:313
+#: ../data/str.xml.in:313
 msgid "Bookmark"
 msgstr ""
 
-#: ../data/str.xml.in.h:314
+#: ../data/str.xml.in:314
 msgid "Book"
 msgstr ""
 
-#: ../data/str.xml.in.h:315
+#: ../data/str.xml.in:315
 msgid "Memo"
 msgstr ""
 
-#: ../data/str.xml.in.h:316
+#: ../data/str.xml.in:316
 msgid "Mail"
 msgstr ""
 
-#: ../data/str.xml.in.h:317
+#: ../data/str.xml.in:317
 msgid "Incoming envelope"
 msgstr ""
 
-#: ../data/str.xml.in.h:318
+#: ../data/str.xml.in:318
 msgid "Postbox"
 msgstr ""
 
-#: ../data/str.xml.in.h:319
+#: ../data/str.xml.in:319
 msgid "Mobile Phone"
 msgstr ""
 
-#: ../data/str.xml.in.h:320
+#: ../data/str.xml.in:320
 msgid "Antenna with bars"
 msgstr ""
 
-#: ../data/str.xml.in.h:321
+#: ../data/str.xml.in:321
 msgid "Camera"
 msgstr ""
 
-#: ../data/str.xml.in.h:322
+#: ../data/str.xml.in:322
 msgid "Video"
 msgstr ""
 
-#: ../data/str.xml.in.h:323
+#: ../data/str.xml.in:323
 msgid "Television"
 msgstr ""
 
-#: ../data/str.xml.in.h:324
+#: ../data/str.xml.in:324
 msgid "Radio"
 msgstr ""
 
-#: ../data/str.xml.in.h:325
+#: ../data/str.xml.in:325
 msgid "Key"
 msgstr ""
 
-#: ../data/str.xml.in.h:326
+#: ../data/str.xml.in:326
 msgid "Lock, locked"
 msgstr ""
 
-#: ../data/str.xml.in.h:327
+#: ../data/str.xml.in:327
 msgid "Lock, unlocked"
 msgstr ""
 
-#: ../data/str.xml.in.h:328
+#: ../data/str.xml.in:328
 msgid "Fire"
 msgstr ""
 
-#: ../data/str.xml.in.h:329
+#: ../data/str.xml.in:329
 msgid "Wrench"
 msgstr ""
 
-#: ../data/str.xml.in.h:330
+#: ../data/str.xml.in:330
 msgid "Hammer"
 msgstr ""
 
-#: ../data/str.xml.in.h:331
+#: ../data/str.xml.in:331
 msgid "Nut and bolt"
 msgstr ""
 
-#: ../data/str.xml.in.h:332
+#: ../data/str.xml.in:332
 msgid "Hocho"
 msgstr ""
 
-#: ../data/str.xml.in.h:333
+#: ../data/str.xml.in:333
 msgid "Pistol"
 msgstr ""
 
-#: ../data/str.xml.in.h:334
+#: ../data/str.xml.in:334
 msgid "Microscope"
 msgstr ""
 
-#: ../data/str.xml.in.h:335
+#: ../data/str.xml.in:335
 msgid "Telescope"
 msgstr ""
 
-#: ../data/str.xml.in.h:336
+#: ../data/str.xml.in:336
 msgid "Crystal"
 msgstr ""
 
-#: ../data/str.xml.in.h:337
+#: ../data/str.xml.in:337
 msgid "David Star"
 msgstr ""
 
-#: ../data/str.xml.in.h:338
+#: ../data/str.xml.in:338
 msgid "Beginner"
 msgstr ""
 
-#: ../data/str.xml.in.h:339
+#: ../data/str.xml.in:339
 msgid "Candle"
 msgstr ""
 
-#: ../data/str.xml.in.h:340
+#: ../data/str.xml.in:340
 msgid "Hole"
 msgstr ""
 
-#: ../data/str.xml.in.h:341
+#: ../data/str.xml.in:341
 msgid "Laptop Computer"
 msgstr ""
 
-#: ../data/str.xml.in.h:342
+#: ../data/str.xml.in:342
 msgid "Desktop Computer"
 msgstr ""
 
-#: ../data/str.xml.in.h:343
+#: ../data/str.xml.in:343
 msgid "keyboard"
 msgstr ""
 
-#: ../data/str.xml.in.h:344
+#: ../data/str.xml.in:344
 msgid "Printer"
 msgstr ""
 
-#: ../data/str.xml.in.h:345
+#: ../data/str.xml.in:345
 msgid "Calculator"
 msgstr ""
 
-#: ../data/str.xml.in.h:346
+#: ../data/str.xml.in:346
 msgid "Minimize"
 msgstr ""
 
-#: ../data/str.xml.in.h:347
+#: ../data/str.xml.in:347
 msgid "Maximize"
 msgstr ""
 
-#: ../data/str.xml.in.h:348
+#: ../data/str.xml.in:348
 msgid "Refresh"
 msgstr ""
 
-#: ../data/str.xml.in.h:349
+#: ../data/str.xml.in:349
 msgid "Close"
 msgstr ""
 
-#: ../data/str.xml.in.h:350
+#: ../data/str.xml.in:350
 msgid "World"
 msgstr ""
 
-#: ../data/str.xml.in.h:351
+#: ../data/str.xml.in:351
 msgid "Mt. Fuji"
 msgstr ""
 
-#: ../data/str.xml.in.h:352
+#: ../data/str.xml.in:352
 msgid "Tokyo Tower"
 msgstr ""
 
-#: ../data/str.xml.in.h:353
+#: ../data/str.xml.in:353
 msgid "Japan"
 msgstr ""
 
-#: ../data/str.xml.in.h:354
+#: ../data/str.xml.in:354
 msgid "Anguish"
 msgstr ""
 
-#: ../data/str.xml.in.h:355
+#: ../data/str.xml.in:355
 msgid "Smile"
 msgstr ""
 
-#: ../data/str.xml.in.h:356
+#: ../data/str.xml.in:356
 msgid "Smirk"
 msgstr ""
 
-#: ../data/str.xml.in.h:357
+#: ../data/str.xml.in:357
 msgid "Neutral"
 msgstr ""
 
-#: ../data/str.xml.in.h:358
+#: ../data/str.xml.in:358
 msgid "Expressionless"
 msgstr ""
 
-#: ../data/str.xml.in.h:359
+#: ../data/str.xml.in:359
 msgid "Unamused"
 msgstr ""
 
-#: ../data/str.xml.in.h:360
+#: ../data/str.xml.in:360
 msgid "Pensive"
 msgstr ""
 
-#: ../data/str.xml.in.h:361
+#: ../data/str.xml.in:361
 msgid "Confused"
 msgstr ""
 
-#: ../data/str.xml.in.h:362
+#: ../data/str.xml.in:362
 msgid "Confounded"
 msgstr ""
 
-#: ../data/str.xml.in.h:363
+#: ../data/str.xml.in:363
 msgid "Disappointed"
 msgstr ""
 
-#: ../data/str.xml.in.h:364
+#: ../data/str.xml.in:364
 msgid "Angry"
 msgstr ""
 
-#: ../data/str.xml.in.h:365
+#: ../data/str.xml.in:365
 msgid "Cry"
 msgstr ""
 
-#: ../data/str.xml.in.h:366
+#: ../data/str.xml.in:366
 msgid "Sleepy"
 msgstr ""
 
-#: ../data/str.xml.in.h:367
+#: ../data/str.xml.in:367
 msgid "Tired"
 msgstr ""
 
-#: ../data/str.xml.in.h:368
+#: ../data/str.xml.in:368
 msgid "Surprise"
 msgstr ""
 
-#: ../data/str.xml.in.h:369
+#: ../data/str.xml.in:369
 msgid "Scream"
 msgstr ""
 
-#: ../data/str.xml.in.h:370
+#: ../data/str.xml.in:370
 msgid "Flushed"
 msgstr ""
 
-#: ../data/str.xml.in.h:371
+#: ../data/str.xml.in:371
 msgid "Medical Mask"
 msgstr ""
 
-#: ../data/str.xml.in.h:372
+#: ../data/str.xml.in:372
 msgid "OK"
 msgstr ""
 
-#: ../data/str.xml.in.h:373
+#: ../data/str.xml.in:373
 msgid "Bow"
 msgstr ""
 
-#: ../data/str.xml.in.h:374
+#: ../data/str.xml.in:374
 msgid "See-No-Evil"
 msgstr ""
 
-#: ../data/str.xml.in.h:375
+#: ../data/str.xml.in:375
 msgid "Hear-No-Evil"
 msgstr ""
 
-#: ../data/str.xml.in.h:376
+#: ../data/str.xml.in:376
 msgid "Speak-No-Evil"
 msgstr ""
 
-#: ../data/str.xml.in.h:377
+#: ../data/str.xml.in:377
 msgid "Banzai"
 msgstr ""
 
-#: ../data/str.xml.in.h:378
+#: ../data/str.xml.in:378
 msgid "Pleading"
 msgstr ""
 
-#: ../data/str.xml.in.h:379
+#: ../data/str.xml.in:379
 msgid "Smileys"
 msgstr ""
 
-#: ../data/str.xml.in.h:380
+#: ../data/str.xml.in:380
 msgid "Smile Big"
 msgstr ""
 
-#: ../data/str.xml.in.h:381
+#: ../data/str.xml.in:381
 msgid "Sad"
 msgstr ""
 
-#: ../data/str.xml.in.h:382
+#: ../data/str.xml.in:382
 msgid "Wink"
 msgstr ""
 
-#: ../data/str.xml.in.h:383
+#: ../data/str.xml.in:383
 msgid "Shock"
 msgstr ""
 
-#: ../data/str.xml.in.h:384
+#: ../data/str.xml.in:384
 msgid "Kiss | Secret"
 msgstr ""
 
-#: ../data/str.xml.in.h:385
+#: ../data/str.xml.in:385
 msgid "Glasses Cool | Eyeroll"
 msgstr ""
 
-#: ../data/str.xml.in.h:386
+#: ../data/str.xml.in:386
 msgid "Glasses Cool"
 msgstr ""
 
-#: ../data/str.xml.in.h:387
+#: ../data/str.xml.in:387
 msgid "Embarrassed"
 msgstr ""
 
-#: ../data/str.xml.in.h:388
+#: ../data/str.xml.in:388
 msgid "Crying"
 msgstr ""
 
-#: ../data/str.xml.in.h:389
+#: ../data/str.xml.in:389
 msgid "Thinking"
 msgstr ""
 
-#: ../data/str.xml.in.h:390
+#: ../data/str.xml.in:390
 msgid "Don't Know"
 msgstr ""
 
-#: ../data/str.xml.in.h:391
+#: ../data/str.xml.in:391
 msgid "Party"
 msgstr ""
 
-#: ../data/str.xml.in.h:392
+#: ../data/str.xml.in:392
 msgid "Yawn"
 msgstr ""
 
-#: ../data/str.xml.in.h:393
+#: ../data/str.xml.in:393
 msgid "Bunny"
 msgstr ""
 
-#: ../data/str.xml.in.h:394
+#: ../data/str.xml.in:394
 msgid "Sick"
 msgstr ""
 
-#: ../data/str.xml.in.h:395
+#: ../data/str.xml.in:395
 msgid "Devil"
 msgstr ""
 
-#: ../data/str.xml.in.h:396
+#: ../data/str.xml.in:396
 msgid "Angel"
 msgstr ""
 
-#: ../data/str.xml.in.h:397
+#: ../data/str.xml.in:397
 msgid "Love"
 msgstr ""
 
-#: ../data/str.xml.in.h:398
+#: ../data/str.xml.in:398
 msgid "Love Over"
 msgstr ""
 
-#: ../data/str.xml.in.h:399
+#: ../data/str.xml.in:399
 msgid "Film"
 msgstr ""
 
-#: ../data/str.xml.in.h:400
+#: ../data/str.xml.in:400
 msgid "Clock"
 msgstr ""
 
-#: ../data/str.xml.in.h:401
+#: ../data/str.xml.in:401
 msgid "Coffee"
 msgstr ""
 
-#: ../data/str.xml.in.h:402
+#: ../data/str.xml.in:402
 msgid "Phone"
 msgstr ""
 
-#: ../data/str.xml.in.h:403
+#: ../data/str.xml.in:403
 msgid "Hug Left"
 msgstr ""
 
-#: ../data/str.xml.in.h:404
+#: ../data/str.xml.in:404
 msgid "Hug Right"
 msgstr ""
 
-#: ../data/str.xml.in.h:405
+#: ../data/str.xml.in:405
 msgid "Yes"
 msgstr ""
 
-#: ../data/str.xml.in.h:406
+#: ../data/str.xml.in:406
 msgid "No"
 msgstr ""
 
-#: ../data/str.xml.in.h:407
+#: ../data/str.xml.in:407
 msgid "Shut Mouth"
 msgstr ""
 
-#: ../data/str.xml.in.h:408
+#: ../data/str.xml.in:408
 msgid "Money Mouth"
 msgstr ""
 
-#: ../data/str.xml.in.h:409
+#: ../data/str.xml.in:409
 msgid "Foot in Mouth"
 msgstr ""
 
-#: ../data/str.xml.in.h:410
+#: ../data/str.xml.in:410
 msgid "Shout"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:412
+#: ../data/str.xml.in:412
 msgid "Smileys (Japanese)"
 msgstr ""
 
-#: ../data/str.xml.in.h:413
+#: ../data/str.xml.in:413
 msgid "Smoking"
 msgstr ""
 
-#: ../data/str.xml.in.h:414
+#: ../data/str.xml.in:414
 msgid "Sorry"
 msgstr ""
 
-#: ../data/str.xml.in.h:415
+#: ../data/str.xml.in:415
 msgid "Hug"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:417
+#: ../data/str.xml.in:417
 msgid "Smileys (Japanese 2ch)"
 msgstr ""
 
-#: ../data/str.xml.in.h:418
+#: ../data/str.xml.in:418
 msgid "Hey"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
-#: ../data/str.xml.in.h:420
+#: ../data/str.xml.in:420
 msgid "Smileys (Chinese)"
 msgstr ""
 
-#: ../data/str.xml.in.h:421
+#: ../data/str.xml.in:421
 msgid "Crow"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:423
+#: ../data/str.xml.in:423
 msgid "Acronym"
 msgstr ""
 
-#: ../data/str.xml.in.h:424
+#: ../data/str.xml.in:424
 msgid "Acronym (Computer)"
 msgstr ""
 
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
-#: ../data/str.xml.in.h:426
+#: ../data/str.xml.in:426
 msgid "Acronym (Japanese)"
 msgstr ""
 
-#: ../data/str.xml.in.h:427
+#: ../data/str.xml.in:427
 msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
 msgstr ""
 
-#: ../data/str.xml.in.h:428
+#: ../data/str.xml.in:428
 msgid "Can't get together (Guda Guda)"
 msgstr ""
 
-#: ../data/str.xml.in.h:429
+#: ../data/str.xml.in:429
 msgid "Say whatever one feels (Iitaidake)"
 msgstr ""
 
-#: ../data/str.xml.in.h:430
+#: ../data/str.xml.in:430
 msgid "Excited (Kitakore)"
 msgstr ""
 
-#: ../data/str.xml.in.h:431
+#: ../data/str.xml.in:431
 msgid "Detail (Kuwashiku)"
 msgstr ""
 
-#: ../data/str.xml.in.h:432
+#: ../data/str.xml.in:432
 msgid "Cannot read between lines (Kuuki Ga Yomenai)"
 msgstr ""
 
-#: ../data/str.xml.in.h:433
+#: ../data/str.xml.in:433
 msgid "Omission (Shouryaku)"
 msgstr ""
 
-#: ../data/str.xml.in.h:434
+#: ../data/str.xml.in:434
 msgid "Excited (Waku Waku Teka Teka)"
 msgstr ""
 
-#: ../data/str.xml.in.h:435
+#: ../data/str.xml.in:435
 msgid "Laugh"
 msgstr ""
 
-#: ../data/str.xml.in.h:436
+#: ../data/str.xml.in:436
 msgid "Dude (Oi!)"
 msgstr ""
 
-#: ../data/str.xml.in.h:437
+#: ../data/str.xml.in:437
 msgid "Good job (Otsukare)"
 msgstr ""
 
-#: ../data/str.xml.in.h:438
+#: ../data/str.xml.in:438
 msgid "Want (Kure, E.g. pics クレメンス)"
 msgstr ""
 
-#: ../data/str.xml.in.h:439
+#: ../data/str.xml.in:439
 msgid "ASCII art of a hand (✊, E.g. つAttention)"
 msgstr ""
 
-#: ../data/str.xml.in.h:440
+#: ../data/str.xml.in:440
 msgid "In The Meantime (Toriaezu, Maa)"
 msgstr ""
 
-#: ../data/str.xml.in.h:441
+#: ../data/str.xml.in:441
 msgid "Self-confidence (Aniki, E.g. tennis ニキ)"
 msgstr ""
 
-#: ../data/str.xml.in.h:442
+#: ../data/str.xml.in:442
 msgid "Bye"
 msgstr ""
 
-#: ../data/str.xml.in.h:443
+#: ../data/str.xml.in:443
 msgid "Want (Hattekure, E.g. pics ハラデイ)"
 msgstr ""
 
-#: ../data/str.xml.in.h:444
+#: ../data/str.xml.in:444
 msgid "Exist as microparticles (Biryushi Level De Sonzaisuru)"
 msgstr ""
 
-#: ../data/str.xml.in.h:445
+#: ../data/str.xml.in:445
 msgid "False Start (Flying Get)"
 msgstr ""
 
-#: ../data/str.xml.in.h:446
+#: ../data/str.xml.in:446
 msgid "Fulfilling Life (Real life is Zyujitsu)"
 msgstr ""
 
-#: ../data/str.xml.in.h:447
+#: ../data/str.xml.in:447
 msgid "Laugh (Warau)"
 msgstr ""
 
-#: ../data/str.xml.in.h:448
+#: ../data/str.xml.in:448
 msgid "He (Yatsu &lt;- Yashi)"
 msgstr ""
 
-#: ../data/w3c.xml.in.h:1
+#: ../data/w3c.xml.in:1
 msgid "Char References"
 msgstr ""
 
-#: ../data/zh.xml.in.h:1
+#: ../data/zh.xml.in:1
 msgid "Chinese"
 msgstr ""
 
-#: ../data/zh.xml.in.h:4 ../input-pad/unicode_block.h:138
+#: ../data/zh.xml.in:4 ../input-pad/unicode_block.h:138
 msgid "Bopomofo"
 msgstr ""
 
