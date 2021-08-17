@@ -1,6 +1,6 @@
 /* vim:set et sts=4: */
 /* input-pad - The input pad
- * Copyright (C) 2010-2016 Takao Fujiwara <takao.fujiwara1@gmail.com>
+ * Copyright (C) 2010-2021 Takao Fujiwara <takao.fujiwara1@gmail.com>
  * Copyright (C) 2010-2016 Red Hat, Inc.
  *
  * This library is free software; you can redistribute it and/or
@@ -5115,6 +5115,7 @@ input_pad_window_init (int                     *argc,
     kbdui_context->context = context;
     list = input_pad_gtk_window_parse_kbdui_modules (argc, argv, kbdui_context);
 
+    gdk_set_allowed_backends ("x11");
     g_option_context_parse (context, argc, argv, &error);
     g_option_context_free (context);
     kbdui_context->context = NULL;
