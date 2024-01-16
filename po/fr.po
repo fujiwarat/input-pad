@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
 "POT-Creation-Date: 2016-03-02 18:45+0900\n"
-"PO-Revision-Date: 2024-01-15 13:37+0000\n"
+"PO-Revision-Date: 2024-01-17 12:37+0000\n"
 "Last-Translator: Damien Pou <dampato+linux@ik.me>\n"
 "Language-Team: French <https://translate.fedoraproject.org/projects/"
 "input-pad/master/fr/>\n"
@@ -1683,59 +1683,59 @@ msgstr ""
 
 #: ../data/str.xml.in.h:56
 msgid "Mountain"
-msgstr ""
+msgstr "Montagne"
 
 #: ../data/str.xml.in.h:57
 msgid "Beach"
-msgstr ""
+msgstr "Plage"
 
 #: ../data/str.xml.in.h:58
 msgid "Park"
-msgstr ""
+msgstr "Parking"
 
 #: ../data/str.xml.in.h:59
 msgid "Ferry"
-msgstr ""
+msgstr "Ferry"
 
 #: ../data/str.xml.in.h:60
 msgid "Sailboat"
-msgstr ""
+msgstr "Voilier"
 
 #: ../data/str.xml.in.h:61
 msgid "Ice rink"
-msgstr ""
+msgstr "Patinoire"
 
 #: ../data/str.xml.in.h:62
 msgid "Scissors"
-msgstr ""
+msgstr "Ciseaux"
 
 #: ../data/str.xml.in.h:63
 msgid "Airplane"
-msgstr ""
+msgstr "Avion"
 
 #: ../data/str.xml.in.h:64
 msgid "Clenched Fist"
-msgstr ""
+msgstr "Poing fermé"
 
 #: ../data/str.xml.in.h:65
 msgid "Hand"
-msgstr ""
+msgstr "Main"
 
 #: ../data/str.xml.in.h:66
 msgid "V Sign"
-msgstr ""
+msgstr "Signe V"
 
 #: ../data/str.xml.in.h:67
 msgid "Writing"
-msgstr ""
+msgstr "écrire"
 
 #: ../data/str.xml.in.h:68
 msgid "Pencil"
-msgstr ""
+msgstr "Stylo"
 
 #: ../data/str.xml.in.h:69
 msgid "Pen"
-msgstr ""
+msgstr "Crayon"
 
 #: ../data/str.xml.in.h:70
 msgid "Star"
@@ -1743,55 +1743,55 @@ msgstr "Étoile"
 
 #: ../data/str.xml.in.h:71
 msgid "Typhoon"
-msgstr ""
+msgstr "Typhon"
 
 #: ../data/str.xml.in.h:72
 msgid "Fog"
-msgstr ""
+msgstr "Brouillard"
 
 #: ../data/str.xml.in.h:73
 msgid "Umbrella"
-msgstr ""
+msgstr "Parapluie"
 
 #: ../data/str.xml.in.h:74
 msgid "Night sky"
-msgstr ""
+msgstr "Nuit étoilée"
 
 #: ../data/str.xml.in.h:75
 msgid "Sunrise"
-msgstr ""
+msgstr "Lever de soleil"
 
 #: ../data/str.xml.in.h:76
 msgid "Sunset"
-msgstr ""
+msgstr "Coucher de soleil"
 
 #: ../data/str.xml.in.h:77
 msgid "Bridge"
-msgstr ""
+msgstr "Pont"
 
 #: ../data/str.xml.in.h:78
 msgid "Wave"
-msgstr ""
+msgstr "Vague"
 
 #: ../data/str.xml.in.h:79
 msgid "New Moon"
-msgstr ""
+msgstr "Nouvelle lune"
 
 #: ../data/str.xml.in.h:80
 msgid "Crescent Moon"
-msgstr ""
+msgstr "Croissant de lune"
 
 #: ../data/str.xml.in.h:81
 msgid "Quarter Moon"
-msgstr ""
+msgstr "Quartier de lune"
 
 #: ../data/str.xml.in.h:82
 msgid "Gibbous Moon"
-msgstr ""
+msgstr "Lune gibbeuse"
 
 #: ../data/str.xml.in.h:83
 msgid "Full Moon"
-msgstr ""
+msgstr "Pleine lune"
 
 #: ../data/str.xml.in.h:84
 msgid "Moon"
@@ -1799,263 +1799,264 @@ msgstr "Lune"
 
 #: ../data/str.xml.in.h:85
 msgid "Sun"
-msgstr ""
+msgstr "Soleil"
 
 #: ../data/str.xml.in.h:86
 msgid "Cloud"
-msgstr ""
+msgstr "Nuage"
 
 #: ../data/str.xml.in.h:87
 msgid "Palm"
-msgstr ""
+msgstr "Palmier"
 
 #: ../data/str.xml.in.h:88
 msgid "Hot Pepper"
-msgstr ""
+msgstr "Piment"
 
 #: ../data/str.xml.in.h:89
 msgid "Flower"
-msgstr ""
+msgstr "Fleur"
 
 #: ../data/str.xml.in.h:90
 msgid "Tulip"
-msgstr ""
+msgstr "Tulipe"
 
 #: ../data/str.xml.in.h:91
 msgid "Cherry"
-msgstr ""
+msgstr "Cerise"
 
 #: ../data/str.xml.in.h:92
 msgid "Rose"
-msgstr ""
+msgstr "Rose"
 
 #: ../data/str.xml.in.h:93
 msgid "Hibiscus"
-msgstr ""
+msgstr "Hibiscus"
 
 #: ../data/str.xml.in.h:94
 msgid "Sunflower"
-msgstr ""
+msgstr "Tournesol"
 
 #: ../data/str.xml.in.h:95
 msgid "Blossom"
-msgstr ""
+msgstr "Germer"
 
 #: ../data/str.xml.in.h:96
 msgid "Clover"
-msgstr ""
+msgstr "Trèfle"
 
 #: ../data/str.xml.in.h:97
 msgid "Maple"
-msgstr ""
+msgstr "érable"
 
 #: ../data/str.xml.in.h:98
 msgid "Fallen Leaf"
-msgstr ""
+msgstr "Feuille tomber"
 
 #: ../data/str.xml.in.h:99
 msgid "Leaf"
-msgstr ""
+msgstr "Feuille"
 
 #: ../data/str.xml.in.h:100
 msgid "Mushroom"
-msgstr ""
+msgstr "Champignon"
 
 #: ../data/str.xml.in.h:101
 msgid "Tomato"
-msgstr ""
+msgstr "Tomate"
 
 #: ../data/str.xml.in.h:102
 msgid "Eggplant"
-msgstr ""
+msgstr "Aubergine"
 
 #: ../data/str.xml.in.h:103
 msgid "Grape"
-msgstr ""
+msgstr "Grappe"
 
 #: ../data/str.xml.in.h:104
 msgid "Melon"
-msgstr ""
+msgstr "Melon"
 
 #: ../data/str.xml.in.h:105
 msgid "Watermelon"
-msgstr ""
+msgstr "Pastèque"
 
 #: ../data/str.xml.in.h:106
 msgid "Tangerine"
-msgstr ""
+msgstr "Clémentine"
 
 #: ../data/str.xml.in.h:107
 msgid "Lemon"
-msgstr ""
+msgstr "Citron"
 
 #: ../data/str.xml.in.h:108
 msgid "Banana"
-msgstr ""
+msgstr "Banane"
 
 #: ../data/str.xml.in.h:109
 msgid "Pineapple"
-msgstr ""
+msgstr "Ananas"
 
 #: ../data/str.xml.in.h:110
 msgid "Apple"
-msgstr ""
+msgstr "Pomme"
 
 #: ../data/str.xml.in.h:111
 msgid "Pear"
-msgstr ""
+msgstr "Poire"
 
 #: ../data/str.xml.in.h:112
 msgid "Peach"
-msgstr ""
+msgstr "Pèche"
 
 #: ../data/str.xml.in.h:113
 msgid "Strawberry"
-msgstr ""
+msgstr "Fraise"
 
 #: ../data/str.xml.in.h:114
 msgid "Hamburger"
-msgstr ""
+msgstr "Hamburger"
 
 #: ../data/str.xml.in.h:115
 msgid "Pizza"
-msgstr ""
+msgstr "Pizza"
 
 #: ../data/str.xml.in.h:116
 msgid "Meat"
-msgstr ""
+msgstr "Viande"
 
 #: ../data/str.xml.in.h:117
 msgid "Poultry"
-msgstr ""
+msgstr "Volaille"
 
 #: ../data/str.xml.in.h:118
 msgid "Rice Cracker"
-msgstr ""
+msgstr "Gateau de riz"
 
 #: ../data/str.xml.in.h:119
 msgid "Rice Ball"
-msgstr ""
+msgstr "Boulette de riz"
 
 #: ../data/str.xml.in.h:120
 msgid "Rice"
-msgstr ""
+msgstr "Riz"
 
 #: ../data/str.xml.in.h:121
 msgid "Curry"
-msgstr ""
+msgstr "Curry"
 
 #: ../data/str.xml.in.h:122
 msgid "Ramen"
-msgstr ""
+msgstr "Ramen"
 
 #: ../data/str.xml.in.h:123
 msgid "Spaghetti"
-msgstr ""
+msgstr "Spaghetti"
 
 #: ../data/str.xml.in.h:124
 msgid "Bread"
-msgstr ""
+msgstr "Pain"
 
 #: ../data/str.xml.in.h:125
 msgid "Fried Potato"
-msgstr ""
+msgstr "Pomme de terre fris"
 
 #: ../data/str.xml.in.h:126
 msgid "Roasted Sweet Potato"
-msgstr ""
+msgstr "Pomme de terre douce fris"
 
 #: ../data/str.xml.in.h:127
 msgid "Dango"
-msgstr ""
+msgstr "Dango"
 
 #: ../data/str.xml.in.h:128
 msgid "Oden"
-msgstr ""
+msgstr "Oden"
 
 #: ../data/str.xml.in.h:129
 msgid "Sushi"
-msgstr ""
+msgstr "Sushi"
 
 #: ../data/str.xml.in.h:130
 msgid "Fried Shrimp"
-msgstr ""
+msgstr "Crevette fris"
 
 #: ../data/str.xml.in.h:131
 msgid "Fish Cake"
-msgstr ""
+msgstr "Croquette de poisson"
 
 #: ../data/str.xml.in.h:132
 msgid "Soft Ice Cream"
-msgstr ""
+msgstr "Glace à l'italienne"
 
 #: ../data/str.xml.in.h:133
 msgid "Shaved Ice"
-msgstr ""
+msgstr "Shaved Ice"
 
 #: ../data/str.xml.in.h:134
 msgid "Ice Cream"
-msgstr ""
+msgstr "Crème glacée"
 
 #: ../data/str.xml.in.h:135
+#, fuzzy
 msgid "Doughnut"
-msgstr ""
+msgstr "Beignet glacé"
 
 #: ../data/str.xml.in.h:136
 msgid "Cookie"
-msgstr ""
+msgstr "Cookie"
 
 #: ../data/str.xml.in.h:137
 msgid "Chocolate"
-msgstr ""
+msgstr "Chocolat"
 
 #: ../data/str.xml.in.h:138
 msgid "Candy"
-msgstr ""
+msgstr "Bonbon"
 
 #: ../data/str.xml.in.h:139
 msgid "Custard"
-msgstr ""
+msgstr "Crème pâtissière"
 
 #: ../data/str.xml.in.h:140
 msgid "Honey"
-msgstr ""
+msgstr "Miel"
 
 #: ../data/str.xml.in.h:141
 msgid "Shortcake"
-msgstr ""
+msgstr "Gâteau court"
 
 #: ../data/str.xml.in.h:142
 msgid "Bento"
-msgstr ""
+msgstr "Bento"
 
 #: ../data/str.xml.in.h:143
 msgid "Pot of Food"
-msgstr ""
+msgstr "Pot de nourriture"
 
 #: ../data/str.xml.in.h:144
 msgid "Cooking"
-msgstr ""
+msgstr "Cuisine"
 
 #: ../data/str.xml.in.h:145
 msgid "Meal"
-msgstr ""
+msgstr "Repas"
 
 #: ../data/str.xml.in.h:146
 msgid "Cup"
-msgstr ""
+msgstr "Tasse"
 
 #: ../data/str.xml.in.h:147
 msgid "Sake"
-msgstr ""
+msgstr "Saké"
 
 #: ../data/str.xml.in.h:148
 msgid "Wine"
-msgstr ""
+msgstr "Vin"
 
 #: ../data/str.xml.in.h:149
 msgid "Cocktail"
-msgstr ""
+msgstr "Cocktail"
 
 #: ../data/str.xml.in.h:150
 msgid "Drink"
@@ -2067,15 +2068,15 @@ msgstr "Bière"
 
 #: ../data/str.xml.in.h:152
 msgid "Cheers"
-msgstr ""
+msgstr "Santé"
 
 #: ../data/str.xml.in.h:153
 msgid "Baby Bottle"
-msgstr ""
+msgstr "Biberon"
 
 #: ../data/str.xml.in.h:154
 msgid "Ribbon"
-msgstr ""
+msgstr "Ruban"
 
 #: ../data/str.xml.in.h:155
 msgid "Present"
@@ -2087,27 +2088,27 @@ msgstr "Gâteau"
 
 #: ../data/str.xml.in.h:157
 msgid "Hallowe'en"
-msgstr ""
+msgstr "Hallowen"
 
 #: ../data/str.xml.in.h:158
 msgid "Christmas"
-msgstr ""
+msgstr "Noël"
 
 #: ../data/str.xml.in.h:159
 msgid "Piano"
-msgstr ""
+msgstr "Piano"
 
 #: ../data/str.xml.in.h:160
 msgid "Microphone"
-msgstr ""
+msgstr "Microphone"
 
 #: ../data/str.xml.in.h:161
 msgid "Headphone"
-msgstr ""
+msgstr "Casque audio"
 
 #: ../data/str.xml.in.h:162
 msgid "Hat"
-msgstr ""
+msgstr "Chapeau"
 
 #: ../data/str.xml.in.h:163
 msgid "Musical Note"
@@ -2115,143 +2116,143 @@ msgstr "Note musicale"
 
 #: ../data/str.xml.in.h:164
 msgid "Saxophone"
-msgstr ""
+msgstr "Saxophone"
 
 #: ../data/str.xml.in.h:165
 msgid "Guiter"
-msgstr ""
+msgstr "Guitar"
 
 #: ../data/str.xml.in.h:166
 msgid "Trumpet"
-msgstr ""
+msgstr "Trompette"
 
 #: ../data/str.xml.in.h:167
 msgid "Violin"
-msgstr ""
+msgstr "Violon"
 
 #: ../data/str.xml.in.h:168
 msgid "Musical Score"
-msgstr ""
+msgstr "Partition musicale"
 
 #: ../data/str.xml.in.h:169
 msgid "Tennis"
-msgstr ""
+msgstr "Tennis"
 
 #: ../data/str.xml.in.h:170
 msgid "Ski"
-msgstr ""
+msgstr "Ski"
 
 #: ../data/str.xml.in.h:171
 msgid "Basketball"
-msgstr ""
+msgstr "BasketBall"
 
 #: ../data/str.xml.in.h:172
 msgid "Flag"
-msgstr ""
+msgstr "Drapeau"
 
 #: ../data/str.xml.in.h:173
 msgid "Show Board"
-msgstr ""
+msgstr "Tableau d'affichage"
 
 #: ../data/str.xml.in.h:174
 msgid "Running"
-msgstr ""
+msgstr "Course à pied"
 
 #: ../data/str.xml.in.h:175
 msgid "Surfer"
-msgstr ""
+msgstr "Surfeur"
 
 #: ../data/str.xml.in.h:176
 msgid "Medal"
-msgstr ""
+msgstr "Médaille"
 
 #: ../data/str.xml.in.h:177
 msgid "Trophy"
-msgstr ""
+msgstr "Trophée"
 
 #: ../data/str.xml.in.h:178
 msgid "Horse Racing"
-msgstr ""
+msgstr "Course de chevaux"
 
 #: ../data/str.xml.in.h:179
 msgid "American Football"
-msgstr ""
+msgstr "Football américain"
 
 #: ../data/str.xml.in.h:180
 msgid "Rugby"
-msgstr ""
+msgstr "Rugby"
 
 #: ../data/str.xml.in.h:181
 msgid "Swimmer"
-msgstr ""
+msgstr "Nageur"
 
 #: ../data/str.xml.in.h:182
 msgid "Weight Lifting"
-msgstr ""
+msgstr "Levage de poids"
 
 #: ../data/str.xml.in.h:183
 msgid "Golf"
-msgstr ""
+msgstr "Golf"
 
 #: ../data/str.xml.in.h:184
 msgid "Motorcycle"
-msgstr ""
+msgstr "Moto"
 
 #: ../data/str.xml.in.h:185
 msgid "Race"
-msgstr ""
+msgstr "Course"
 
 #: ../data/str.xml.in.h:186
 msgid "House"
-msgstr ""
+msgstr "Maison"
 
 #: ../data/str.xml.in.h:187
 msgid "Office"
-msgstr ""
+msgstr "Bureau"
 
 #: ../data/str.xml.in.h:188
 msgid "Hospital"
-msgstr ""
+msgstr "Hôpital"
 
 #: ../data/str.xml.in.h:189
 msgid "Bank"
-msgstr ""
+msgstr "Banque"
 
 #: ../data/str.xml.in.h:190
 msgid "Hotel"
-msgstr ""
+msgstr "Hôtel"
 
 #: ../data/str.xml.in.h:191
 msgid "School"
-msgstr ""
+msgstr "École"
 
 #: ../data/str.xml.in.h:192
 msgid "Factory"
-msgstr ""
+msgstr "Usine"
 
 #: ../data/str.xml.in.h:193
 msgid "Rat"
-msgstr ""
+msgstr "Rat"
 
 #: ../data/str.xml.in.h:194
 msgid "Mouse"
-msgstr ""
+msgstr "Souris"
 
 #: ../data/str.xml.in.h:195
 msgid "Cow"
-msgstr ""
+msgstr "Vache"
 
 #: ../data/str.xml.in.h:196
 msgid "Tiger"
-msgstr ""
+msgstr "Tigre"
 
 #: ../data/str.xml.in.h:197
 msgid "Leopard"
-msgstr ""
+msgstr "Léopard"
 
 #: ../data/str.xml.in.h:198
 msgid "Rabbit"
-msgstr ""
+msgstr "Lapin"
 
 #: ../data/str.xml.in.h:199
 msgid "Cat"
@@ -2259,35 +2260,35 @@ msgstr "Chat"
 
 #: ../data/str.xml.in.h:200
 msgid "Dragon"
-msgstr ""
+msgstr "Dragon"
 
 #: ../data/str.xml.in.h:201
 msgid "Crocodile"
-msgstr ""
+msgstr "Crocodile"
 
 #: ../data/str.xml.in.h:202
 msgid "Whale"
-msgstr ""
+msgstr "Baleine"
 
 #: ../data/str.xml.in.h:203
 msgid "Snail"
-msgstr ""
+msgstr "Escargot"
 
 #: ../data/str.xml.in.h:204
 msgid "Snake"
-msgstr ""
+msgstr "Serpent"
 
 #: ../data/str.xml.in.h:205
 msgid "Horse"
-msgstr ""
+msgstr "Cheval"
 
 #: ../data/str.xml.in.h:206
 msgid "Sheep"
-msgstr ""
+msgstr "Mouton"
 
 #: ../data/str.xml.in.h:207
 msgid "Goat"
-msgstr ""
+msgstr "Chèvre"
 
 #: ../data/str.xml.in.h:208
 msgid "Monkey"
@@ -2295,7 +2296,7 @@ msgstr "Singe"
 
 #: ../data/str.xml.in.h:209
 msgid "Chicken"
-msgstr ""
+msgstr "Poulet"
 
 #: ../data/str.xml.in.h:210
 msgid "Dog"
@@ -2303,79 +2304,79 @@ msgstr "Chien"
 
 #: ../data/str.xml.in.h:211
 msgid "Pig"
-msgstr ""
+msgstr "Cochon"
 
 #: ../data/str.xml.in.h:212
 msgid "Elephant"
-msgstr ""
+msgstr "Éléphant"
 
 #: ../data/str.xml.in.h:213
 msgid "Octopus"
-msgstr ""
+msgstr "Pieuvre"
 
 #: ../data/str.xml.in.h:214
 msgid "Spiral Shell"
-msgstr ""
+msgstr "Coquille spirale"
 
 #: ../data/str.xml.in.h:215
 msgid "Bug"
-msgstr ""
+msgstr "Insecte"
 
 #: ../data/str.xml.in.h:216
 msgid "Ant"
-msgstr ""
+msgstr "Fourmis"
 
 #: ../data/str.xml.in.h:217
 msgid "Lady Beetle"
-msgstr ""
+msgstr "Coccinelle"
 
 #: ../data/str.xml.in.h:218
 msgid "Fish"
-msgstr ""
+msgstr "Poisson"
 
 #: ../data/str.xml.in.h:219
 msgid "Tropical Fish"
-msgstr ""
+msgstr "Poisson tropicale"
 
 #: ../data/str.xml.in.h:220
 msgid "Blowfish"
-msgstr ""
+msgstr "Poisson-globe"
 
 #: ../data/str.xml.in.h:221
 msgid "Bird"
-msgstr ""
+msgstr "Oiseau"
 
 #: ../data/str.xml.in.h:222
 msgid "Penguin"
-msgstr ""
+msgstr "Pingouin"
 
 #: ../data/str.xml.in.h:223
 msgid "Koala"
-msgstr ""
+msgstr "Koala"
 
 #: ../data/str.xml.in.h:224
 msgid "Poodle"
-msgstr ""
+msgstr "Caniche"
 
 #: ../data/str.xml.in.h:225
 msgid "Camel"
-msgstr ""
+msgstr "Chameau"
 
 #: ../data/str.xml.in.h:226
 msgid "Dolphin"
-msgstr ""
+msgstr "Dauphin"
 
 #: ../data/str.xml.in.h:227
 msgid "Frog"
-msgstr ""
+msgstr "Grenouille"
 
 #: ../data/str.xml.in.h:228
 msgid "Hamster"
-msgstr ""
+msgstr "Hamster"
 
 #: ../data/str.xml.in.h:229
 msgid "Wolf"
-msgstr ""
+msgstr "Loup"
 
 #: ../data/str.xml.in.h:230
 msgid "Bear"
@@ -2383,23 +2384,23 @@ msgstr "Ours"
 
 #: ../data/str.xml.in.h:231
 msgid "Panda"
-msgstr ""
+msgstr "Panda"
 
 #: ../data/str.xml.in.h:232
 msgid "Eye"
-msgstr ""
+msgstr "Œil"
 
 #: ../data/str.xml.in.h:233
 msgid "Ear"
-msgstr ""
+msgstr "Oreille"
 
 #: ../data/str.xml.in.h:234
 msgid "Nose"
-msgstr ""
+msgstr "Nez"
 
 #: ../data/str.xml.in.h:235
 msgid "Mouth"
-msgstr ""
+msgstr "Menton"
 
 #: ../data/str.xml.in.h:236
 msgid "Tongue"
@@ -2407,63 +2408,63 @@ msgstr "Langue"
 
 #: ../data/str.xml.in.h:237
 msgid "Crown"
-msgstr ""
+msgstr "Couronne"
 
 #: ../data/str.xml.in.h:238
 msgid "Glasses"
-msgstr ""
+msgstr "Lunettes"
 
 #: ../data/str.xml.in.h:239
 msgid "Necktie"
-msgstr ""
+msgstr "Cravate"
 
 #: ../data/str.xml.in.h:240
 msgid "T-Shirt"
-msgstr ""
+msgstr "T-Shirt"
 
 #: ../data/str.xml.in.h:241
 msgid "Jeans"
-msgstr ""
+msgstr "Jeans"
 
 #: ../data/str.xml.in.h:242
 msgid "Dress"
-msgstr ""
+msgstr "Robe"
 
 #: ../data/str.xml.in.h:243
 msgid "Kimono"
-msgstr ""
+msgstr "Kimono"
 
 #: ../data/str.xml.in.h:244
 msgid "Bikini"
-msgstr ""
+msgstr "Bikini"
 
 #: ../data/str.xml.in.h:245
 msgid "Clothes"
-msgstr ""
+msgstr "Vêtements"
 
 #: ../data/str.xml.in.h:246
 msgid "Purse"
-msgstr ""
+msgstr "Porte-monnaie"
 
 #: ../data/str.xml.in.h:247
 msgid "Handbag"
-msgstr ""
+msgstr "Sac à main"
 
 #: ../data/str.xml.in.h:248
 msgid "Pouch"
-msgstr ""
+msgstr "Sac"
 
 #: ../data/str.xml.in.h:249
 msgid "Shoe"
-msgstr ""
+msgstr "Chaussure"
 
 #: ../data/str.xml.in.h:250
 msgid "Footprint"
-msgstr ""
+msgstr "Empreinte"
 
 #: ../data/str.xml.in.h:251
 msgid "Account"
-msgstr ""
+msgstr "Compte"
 
 #: ../data/str.xml.in.h:252
 msgid "Boy"
@@ -2475,47 +2476,47 @@ msgstr "Fille"
 
 #: ../data/str.xml.in.h:254
 msgid "Man"
-msgstr ""
+msgstr "Homme"
 
 #: ../data/str.xml.in.h:255
 msgid "Woman"
-msgstr ""
+msgstr "Femme"
 
 #: ../data/str.xml.in.h:256
 msgid "Family"
-msgstr ""
+msgstr "Famille"
 
 #: ../data/str.xml.in.h:257
 msgid "Restroom"
-msgstr ""
+msgstr "Toilettes"
 
 #: ../data/str.xml.in.h:258
 msgid "Men"
-msgstr ""
+msgstr "Homme"
 
 #: ../data/str.xml.in.h:259
 msgid "Women"
-msgstr ""
+msgstr "Femme"
 
 #: ../data/str.xml.in.h:260
 msgid "Princess"
-msgstr ""
+msgstr "Princesse"
 
 #: ../data/str.xml.in.h:261
 msgid "Japanese Ogre"
-msgstr ""
+msgstr "Ogre japonaise"
 
 #: ../data/str.xml.in.h:262
 msgid "Japanese Goblin"
-msgstr ""
+msgstr "Gobelin japonais"
 
 #: ../data/str.xml.in.h:263
 msgid "Ghost"
-msgstr ""
+msgstr "Fantôme"
 
 #: ../data/str.xml.in.h:264
 msgid "Baby Angel"
-msgstr ""
+msgstr "Ange bébé"
 
 #: ../data/str.xml.in.h:265
 msgid "Extraterrestrial Alien"
@@ -2523,51 +2524,51 @@ msgstr ""
 
 #: ../data/str.xml.in.h:266
 msgid "Alien Monster"
-msgstr ""
+msgstr "Monstre alien"
 
 #: ../data/str.xml.in.h:267
 msgid "IMP"
-msgstr ""
+msgstr "IMP"
 
 #: ../data/str.xml.in.h:268
 msgid "Skull"
-msgstr ""
+msgstr "Crâne"
 
 #: ../data/str.xml.in.h:269
 msgid "Information Desk Person"
-msgstr ""
+msgstr "Personne du bureau d'information"
 
 #: ../data/str.xml.in.h:270
 msgid "Guardsman"
-msgstr ""
+msgstr "Homme de garde"
 
 #: ../data/str.xml.in.h:271
 msgid "Dancer"
-msgstr ""
+msgstr "Danseur"
 
 #: ../data/str.xml.in.h:272
 msgid "Lipstick"
-msgstr ""
+msgstr "Rouge à lèvre."
 
 #: ../data/str.xml.in.h:273
 msgid "Nail"
-msgstr ""
+msgstr "Ongle"
 
 #: ../data/str.xml.in.h:274
 msgid "Face"
-msgstr ""
+msgstr "Visage"
 
 #: ../data/str.xml.in.h:275
 msgid "Haircut"
-msgstr ""
+msgstr "Coupe de cheveux"
 
 #: ../data/str.xml.in.h:276
 msgid "Syringe"
-msgstr ""
+msgstr "Seringue"
 
 #: ../data/str.xml.in.h:277
 msgid "Medicine"
-msgstr ""
+msgstr "Médecin"
 
 #: ../data/str.xml.in.h:278
 msgid "Kiss"
@@ -2575,51 +2576,51 @@ msgstr "Embrasser"
 
 #: ../data/str.xml.in.h:279
 msgid "Love Letter"
-msgstr ""
+msgstr "Lettre d'amour"
 
 #: ../data/str.xml.in.h:280
 msgid "Ring"
-msgstr ""
+msgstr "Anneau"
 
 #: ../data/str.xml.in.h:281
 msgid "Gem Stone"
-msgstr ""
+msgstr "Pierre précieuse"
 
 #: ../data/str.xml.in.h:282
 msgid "Wedding"
-msgstr ""
+msgstr "Mariage"
 
 #: ../data/str.xml.in.h:283
 msgid "Heart"
-msgstr ""
+msgstr "Cœur"
 
 #: ../data/str.xml.in.h:284
 msgid "Idea"
-msgstr ""
+msgstr "Idée"
 
 #: ../data/str.xml.in.h:285
 msgid "Anger"
-msgstr ""
+msgstr "Colère"
 
 #: ../data/str.xml.in.h:286
 msgid "Bomb"
-msgstr ""
+msgstr "Bombe"
 
 #: ../data/str.xml.in.h:287
 msgid "Sleeping"
-msgstr ""
+msgstr "endormis"
 
 #: ../data/str.xml.in.h:288
 msgid "Collision"
-msgstr ""
+msgstr "Collision"
 
 #: ../data/str.xml.in.h:289
 msgid "Sweat"
-msgstr ""
+msgstr "Sueur"
 
 #: ../data/str.xml.in.h:290
 msgid "Droplet"
-msgstr ""
+msgstr "Gouttelettes"
 
 #: ../data/str.xml.in.h:291
 msgid "Dash"
@@ -2627,63 +2628,63 @@ msgstr ""
 
 #: ../data/str.xml.in.h:292
 msgid "Poo"
-msgstr ""
+msgstr "Caca"
 
 #: ../data/str.xml.in.h:293
 msgid "Muscle"
-msgstr ""
+msgstr "Muscle"
 
 #: ../data/str.xml.in.h:294
 msgid "Dizzy"
-msgstr ""
+msgstr "Étourdi"
 
 #: ../data/str.xml.in.h:295
 msgid "Speech"
-msgstr ""
+msgstr "Discours"
 
 #: ../data/str.xml.in.h:296
 msgid "Thought"
-msgstr ""
+msgstr "Pensée"
 
 #: ../data/str.xml.in.h:297
 msgid "Perfect Score"
-msgstr ""
+msgstr "Score parfait"
 
 #: ../data/str.xml.in.h:298
 msgid "Pushpin"
-msgstr ""
+msgstr "Punaise"
 
 #: ../data/str.xml.in.h:299
 msgid "Clip"
-msgstr ""
+msgstr "Pince"
 
 #: ../data/str.xml.in.h:300
 msgid "Speaker"
-msgstr ""
+msgstr "Enceinte"
 
 #: ../data/str.xml.in.h:301
 msgid "Battery"
-msgstr ""
+msgstr "Batterie"
 
 #: ../data/str.xml.in.h:302
 msgid "Plug"
-msgstr ""
+msgstr "Prise"
 
 #: ../data/str.xml.in.h:303
 msgid "Search"
-msgstr ""
+msgstr "Recherche"
 
 #: ../data/str.xml.in.h:304
 msgid "Bookmark"
-msgstr ""
+msgstr "Marque-page"
 
 #: ../data/str.xml.in.h:305
 msgid "Book"
-msgstr ""
+msgstr "Livre"
 
 #: ../data/str.xml.in.h:306
 msgid "Memo"
-msgstr ""
+msgstr "Notes"
 
 #: ../data/str.xml.in.h:307
 msgid "Mail"
@@ -2691,135 +2692,135 @@ msgstr "Message"
 
 #: ../data/str.xml.in.h:308
 msgid "Mobile Phone"
-msgstr ""
+msgstr "Appareil mobile"
 
 #: ../data/str.xml.in.h:309
 msgid "Camera"
-msgstr ""
+msgstr "Camera"
 
 #: ../data/str.xml.in.h:310
 msgid "Video"
-msgstr ""
+msgstr "Vidéo"
 
 #: ../data/str.xml.in.h:311
 msgid "Television"
-msgstr ""
+msgstr "Téléviseur"
 
 #: ../data/str.xml.in.h:312
 msgid "Radio"
-msgstr ""
+msgstr "Radio"
 
 #: ../data/str.xml.in.h:313
 msgid "Key"
-msgstr ""
+msgstr "Clé"
 
 #: ../data/str.xml.in.h:314
 msgid "Lock"
-msgstr ""
+msgstr "Serrure"
 
 #: ../data/str.xml.in.h:315
 msgid "Fire"
-msgstr ""
+msgstr "Feu"
 
 #: ../data/str.xml.in.h:316
 msgid "Wrench"
-msgstr ""
+msgstr "Clé à molette"
 
 #: ../data/str.xml.in.h:317
 msgid "Hammer"
-msgstr ""
+msgstr "Marteau"
 
 #: ../data/str.xml.in.h:318
 msgid "Bolt"
-msgstr ""
+msgstr "Boulon"
 
 #: ../data/str.xml.in.h:319
 msgid "Hocho"
-msgstr ""
+msgstr "Hocho"
 
 #: ../data/str.xml.in.h:320
 msgid "Pistol"
-msgstr ""
+msgstr "Pistolet"
 
 #: ../data/str.xml.in.h:321
 msgid "Microscope"
-msgstr ""
+msgstr "Microscope"
 
 #: ../data/str.xml.in.h:322
 msgid "Telescope"
-msgstr ""
+msgstr "Télescope"
 
 #: ../data/str.xml.in.h:323
 msgid "Crystal"
-msgstr ""
+msgstr "Cristal"
 
 #: ../data/str.xml.in.h:324
 msgid "David Star"
-msgstr ""
+msgstr "étoile de David"
 
 #: ../data/str.xml.in.h:325
 msgid "Beginner"
-msgstr ""
+msgstr "Débutant"
 
 #: ../data/str.xml.in.h:326
 msgid "Candle"
-msgstr ""
+msgstr "Bougie"
 
 #: ../data/str.xml.in.h:327
 msgid "Hole"
-msgstr ""
+msgstr "Trou"
 
 #: ../data/str.xml.in.h:328
 msgid "Personal Computer"
-msgstr ""
+msgstr "Ordinateur"
 
 #: ../data/str.xml.in.h:329
 msgid "keyboard"
-msgstr ""
+msgstr "Clavier"
 
 #: ../data/str.xml.in.h:330
 msgid "Printer"
-msgstr ""
+msgstr "Imprimante"
 
 #: ../data/str.xml.in.h:331
 msgid "Calculator"
-msgstr ""
+msgstr "Calculatrice"
 
 #: ../data/str.xml.in.h:332
 msgid "Minimize"
-msgstr ""
+msgstr "Minimisé"
 
 #: ../data/str.xml.in.h:333
 msgid "Maximize"
-msgstr ""
+msgstr "Maximisé"
 
 #: ../data/str.xml.in.h:334
 msgid "Refresh"
-msgstr ""
+msgstr "Rafraichir"
 
 #: ../data/str.xml.in.h:335
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: ../data/str.xml.in.h:336
 msgid "World"
-msgstr ""
+msgstr "Monde"
 
 #: ../data/str.xml.in.h:337
 msgid "Mt. Fuji"
-msgstr ""
+msgstr "Mont Fuji"
 
 #: ../data/str.xml.in.h:338
 msgid "Tokyo Tower"
-msgstr ""
+msgstr "Tour de Tokyo"
 
 #: ../data/str.xml.in.h:339
 msgid "Japan"
-msgstr ""
+msgstr "Japon"
 
 #: ../data/str.xml.in.h:340
 msgid "Anguish"
-msgstr ""
+msgstr "Angoisse"
 
 #: ../data/str.xml.in.h:341
 msgid "Smile"
@@ -2827,7 +2828,7 @@ msgstr "Sourire"
 
 #: ../data/str.xml.in.h:342
 msgid "Smirk"
-msgstr ""
+msgstr "Insolent"
 
 #: ../data/str.xml.in.h:343
 msgid "Neutral"
@@ -2835,15 +2836,15 @@ msgstr "Neutres"
 
 #: ../data/str.xml.in.h:344
 msgid "Expressionless"
-msgstr ""
+msgstr "Sans expression"
 
 #: ../data/str.xml.in.h:345
 msgid "Unamused"
-msgstr ""
+msgstr "Sans amusement"
 
 #: ../data/str.xml.in.h:346
 msgid "Pensive"
-msgstr ""
+msgstr "Pensif"
 
 #: ../data/str.xml.in.h:347
 msgid "Confused"
@@ -2851,11 +2852,11 @@ msgstr "Confus"
 
 #: ../data/str.xml.in.h:348
 msgid "Confounded"
-msgstr ""
+msgstr "Confondu"
 
 #: ../data/str.xml.in.h:349
 msgid "Disappointed"
-msgstr ""
+msgstr "Déçu"
 
 #: ../data/str.xml.in.h:350
 msgid "Angry"
@@ -2863,11 +2864,11 @@ msgstr "Fâché"
 
 #: ../data/str.xml.in.h:351
 msgid "Cry"
-msgstr ""
+msgstr "Cris"
 
 #: ../data/str.xml.in.h:352
 msgid "Sleeply"
-msgstr ""
+msgstr "Endormis"
 
 #: ../data/str.xml.in.h:353
 msgid "Tired"
@@ -4162,7 +4163,7 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:233
 msgid "Supplementary Private Use Area-B"
-msgstr ""
+msgstr "Area-B Zone à usage privé supplémentaire"
 
 #: ../input-pad/window-gtk.c:203
 msgid "Display version"
