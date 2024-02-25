@@ -8,25 +8,28 @@ msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
 "POT-Creation-Date: 2020-01-15 19:08+0900\n"
-"PO-Revision-Date: 2012-06-22 17:50+0900\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-02-25 12:15+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://translate.fedoraproject.org/projects/"
+"input-pad/master/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.4\n"
 
 #: ../data/alphabet.xml.in.in:1
 msgid "Alphabets"
-msgstr ""
+msgstr "ანბანები"
 
 #: ../data/base.xml.in:1
 msgid "Symbols"
-msgstr ""
+msgstr "სიმბოლოები"
 
 #: ../data/base.xml.in:2
 msgid "Currency"
-msgstr ""
+msgstr "ფული"
 
 #: ../data/base.xml.in:3
 msgid "Letterlike"
@@ -34,11 +37,11 @@ msgstr ""
 
 #: ../data/base.xml.in:4
 msgid "Miscellaneous"
-msgstr ""
+msgstr "სხვადასხვა"
 
 #: ../data/base.xml.in:5 ../input-pad/unicode_block.h:116
 msgid "Dingbats"
-msgstr ""
+msgstr "სისულელეები"
 
 #. Translators: Superscripts and Subscripts
 #: ../data/base.xml.in:7
@@ -47,15 +50,15 @@ msgstr ""
 
 #: ../data/base.xml.in:8
 msgid "Bold"
-msgstr ""
+msgstr "სქელი"
 
 #: ../data/base.xml.in:9
 msgid "Italic"
-msgstr ""
+msgstr "დახრა"
 
 #: ../data/base.xml.in:10
 msgid "Script"
-msgstr ""
+msgstr "სკრიპტი"
 
 #: ../data/base.xml.in:11
 msgid "Double Struck"
@@ -63,107 +66,107 @@ msgstr ""
 
 #: ../data/base.xml.in:12
 msgid "All"
-msgstr ""
+msgstr "ყველა"
 
 #: ../data/base.xml.in:13 ../data/zh.xml.in.h:2
 msgid "Numbers"
-msgstr ""
+msgstr "რიცხვები"
 
 #: ../data/base.xml.in:14
 msgid "Roman"
-msgstr ""
+msgstr "რომანული"
 
 #: ../data/base.xml.in:15
 msgid "Enclosed"
-msgstr ""
+msgstr "ჩასმული"
 
 #: ../data/base.xml.in:16
 msgid "Fraction"
-msgstr ""
+msgstr "ნაწილი"
 
 #: ../data/base.xml.in:17
 msgid "Technical"
-msgstr ""
+msgstr "ტექნიკური"
 
 #: ../data/base.xml.in:18
 msgid "Unit"
-msgstr ""
+msgstr "საზომი ერთეულები"
 
 #: ../data/base.xml.in:19
 msgid "Mathematical"
-msgstr ""
+msgstr "მათემატიკური"
 
 #: ../data/base.xml.in:20
 msgid "Controls"
-msgstr ""
+msgstr "მმართველები"
 
 #: ../data/base.xml.in:21
 msgid "OCR"
-msgstr ""
+msgstr "OCR"
 
 #: ../data/base.xml.in:22
 msgid "Graphics"
-msgstr ""
+msgstr "გრაფიკა"
 
 #: ../data/base.xml.in:23
 msgid "Arrow"
-msgstr ""
+msgstr "ისარი"
 
 #: ../data/base.xml.in:24 ../input-pad/unicode_block.h:112
 msgid "Box Drawing"
-msgstr ""
+msgstr "ყუთის ნახატი"
 
 #: ../data/base.xml.in:25 ../input-pad/window-gtk.c:3694
 msgid "Block"
-msgstr ""
+msgstr "ბლოკი"
 
 #: ../data/base.xml.in:26
 msgid "Geometric"
-msgstr ""
+msgstr "გეომეტრიული"
 
 #: ../data/base.xml.in:27
 msgid "Braille"
-msgstr ""
+msgstr "ბრაილური"
 
 #: ../data/base.xml.in:28
 msgid "Punctuations"
-msgstr ""
+msgstr "პუნქტუაცია"
 
 #: ../data/base.xml.in:29
 msgid "General"
-msgstr ""
+msgstr "ზოგადი"
 
 #: ../data/base.xml.in:30
 msgid "CJK"
-msgstr ""
+msgstr "CJK"
 
 #: ../data/base.xml.in:31 ../input-pad/unicode_block.h:145
 msgid "CJK Compatibility"
-msgstr ""
+msgstr "CJK-სთან თავსებადობა"
 
 #: ../data/base.xml.in:32
 msgid "Small Form"
-msgstr ""
+msgstr "პატარა ფორმა"
 
 #: ../data/cmd.xml.in:1
 msgid "Command"
-msgstr ""
+msgstr "ბრძანება"
 
 #: ../data/cmd.xml.in:2
 msgid "Date"
-msgstr ""
+msgstr "თარიღი"
 
 #: ../data/cmd.xml.in:3
 msgid "Normal Date"
-msgstr ""
+msgstr "ნორმალური თარიღი"
 
 #: ../data/cmd.xml.in:4
 msgid "Date and Time"
-msgstr ""
+msgstr "თარიღი და დრო"
 
 #: ../data/cmd.xml.in:5
 msgid "ChangeLog date"
-msgstr ""
+msgstr "ცვლილებების ჟურნალის თარიღი"
 
 #: ../data/cmd.xml.in:6
 msgid "USA English date"
@@ -175,11 +178,11 @@ msgstr ""
 
 #: ../data/cmd.xml.in:8
 msgid "ISO 8601 date"
-msgstr ""
+msgstr "ISO 8601 თარიღი"
 
 #: ../data/cmd.xml.in:9
 msgid "Era"
-msgstr ""
+msgstr "ერა"
 
 #: ../data/cmd.xml.in:10
 msgid "Century Year"
@@ -195,7 +198,7 @@ msgstr ""
 
 #: ../data/cmd.xml.in:13
 msgid "Month"
-msgstr ""
+msgstr "თვე"
 
 #: ../data/cmd.xml.in:14
 msgid "English Month"
@@ -211,7 +214,7 @@ msgstr ""
 
 #: ../data/cmd.xml.in:17
 msgid "Weekday"
-msgstr ""
+msgstr "კვირის დღე"
 
 #: ../data/cmd.xml.in:18
 msgid "English Weekday"
@@ -227,7 +230,7 @@ msgstr ""
 
 #: ../data/goth.xml.in:1 ../input-pad/unicode_block.h:196
 msgid "Gothic"
-msgstr ""
+msgstr "გოთური"
 
 #: ../data/input-pad.desktop.in:1 ../input-pad/dialog.ui.h:42
 #: ../input-pad/window-gtk.c:5093 ../input-pad/window-gtk.c:5094
@@ -479,7 +482,7 @@ msgstr ""
 #. "IPA" stands for "International Phonetic Alphabet"
 #: ../data/ipa.xml.in:2
 msgid "IPA"
-msgstr ""
+msgstr "IPA"
 
 #: ../data/ipa.xml.in:3
 msgid "Open front unrounded vowel"
@@ -1387,15 +1390,15 @@ msgstr ""
 
 #: ../data/ja.xml.in:1
 msgid "Japanese"
-msgstr ""
+msgstr "იაპონური"
 
 #: ../data/ja.xml.in:2 ../input-pad/unicode_block.h:136
 msgid "Hiragana"
-msgstr ""
+msgstr "ჰირაგანა"
 
 #: ../data/ja.xml.in:3 ../input-pad/unicode_block.h:137
 msgid "Katakana"
-msgstr ""
+msgstr "კატაკანა"
 
 #: ../data/ja.xml.in:4 ../data/zh.xml.in.h:3
 msgid "Radicals"
@@ -1403,11 +1406,11 @@ msgstr ""
 
 #: ../data/ja.xml.in:5 ../input-pad/unicode_block.h:132
 msgid "CJK Radicals Supplement"
-msgstr ""
+msgstr "CJK რადიკალების დამატებები"
 
 #: ../data/keyboard.xml.in:1
 msgid "Keyboard"
-msgstr ""
+msgstr "კლავიატურა"
 
 #: ../data/keyboard.xml.in:2
 msgid "Function Key"
@@ -1419,15 +1422,15 @@ msgstr ""
 
 #: ../data/latin.xml.in:1
 msgid "ASCII"
-msgstr ""
+msgstr "ASCII"
 
 #: ../data/latin.xml.in:2 ../input-pad/unicode_block.h:38
 msgid "Latin-1 Supplement"
-msgstr ""
+msgstr "Latin-1 დამატებებით"
 
 #: ../data/latin.xml.in:3 ../input-pad/unicode_block.h:39
 msgid "Latin Extended-A"
-msgstr ""
+msgstr "ლათინური გაფართოებული-A"
 
 #: ../data/latin.xml.in:4
 msgid "Old and Middle English"
@@ -1451,115 +1454,115 @@ msgstr ""
 
 #: ../data/shaw.xml.in:1 ../input-pad/unicode_block.h:200
 msgid "Shavian"
-msgstr ""
+msgstr "შავიური"
 
 #: ../data/str.xml.in:1
 msgid "Chat"
-msgstr ""
+msgstr "ჩატი"
 
 #: ../data/str.xml.in:2
 msgid "Emoji"
-msgstr ""
+msgstr "ემოჯი"
 
 #: ../data/str.xml.in:3
 msgid "Rain"
-msgstr ""
+msgstr "წვიმა"
 
 #: ../data/str.xml.in:4
 msgid "Comet"
-msgstr ""
+msgstr "კომეტა"
 
 #: ../data/str.xml.in:5
 msgid "Cross"
-msgstr ""
+msgstr "ჯვარი"
 
 #: ../data/str.xml.in:6
 msgid "Solar"
-msgstr ""
+msgstr "მზის"
 
 #: ../data/str.xml.in:7
 msgid "Mercury"
-msgstr ""
+msgstr "მერკური"
 
 #: ../data/str.xml.in:8
 msgid "Venus"
-msgstr ""
+msgstr "ვენერა"
 
 #: ../data/str.xml.in:9
 msgid "Earth"
-msgstr ""
+msgstr "დედამიწა"
 
 #: ../data/str.xml.in:10
 msgid "Mars"
-msgstr ""
+msgstr "მარსი"
 
 #: ../data/str.xml.in:11
 msgid "Jupiter"
-msgstr ""
+msgstr "იუპიტერი"
 
 #: ../data/str.xml.in:12
 msgid "Saturn"
-msgstr ""
+msgstr "სატურნი"
 
 #: ../data/str.xml.in:13
 msgid "Uranus"
-msgstr ""
+msgstr "ურანი"
 
 #: ../data/str.xml.in:14
 msgid "Neptune"
-msgstr ""
+msgstr "ნეპტუნი"
 
 #: ../data/str.xml.in:15
 msgid "Pluto"
-msgstr ""
+msgstr "პლუტონი"
 
 #: ../data/str.xml.in:16
 msgid "Aries"
-msgstr ""
+msgstr "ვერძი"
 
 #: ../data/str.xml.in:17
 msgid "Taurus"
-msgstr ""
+msgstr "კურო"
 
 #: ../data/str.xml.in:18
 msgid "Gemini"
-msgstr ""
+msgstr "მარჩბივი"
 
 #: ../data/str.xml.in:19
 msgid "Cancer"
-msgstr ""
+msgstr "კიბო"
 
 #: ../data/str.xml.in:20
 msgid "Leo"
-msgstr ""
+msgstr "ლომი"
 
 #: ../data/str.xml.in:21
 msgid "Virgo"
-msgstr ""
+msgstr "ქალწული"
 
 #: ../data/str.xml.in:22
 msgid "Libra"
-msgstr ""
+msgstr "სასწორი"
 
 #: ../data/str.xml.in:23
 msgid "Scorpius"
-msgstr ""
+msgstr "ღრიანკალი"
 
 #: ../data/str.xml.in:24
 msgid "Sagittarius"
-msgstr ""
+msgstr "მშვილდოსანი"
 
 #: ../data/str.xml.in:25
 msgid "Capricorn"
-msgstr ""
+msgstr "თხის რქა"
 
 #: ../data/str.xml.in:26
 msgid "Aquarius"
-msgstr ""
+msgstr "მერწყული"
 
 #: ../data/str.xml.in:27
 msgid "Pisces"
-msgstr ""
+msgstr "თევზები"
 
 #: ../data/str.xml.in:28
 msgid "Dice 1"
@@ -1587,19 +1590,19 @@ msgstr ""
 
 #: ../data/str.xml.in:34
 msgid "Anchor"
-msgstr ""
+msgstr "ბმული"
 
 #: ../data/str.xml.in:35
 msgid "Sword"
-msgstr ""
+msgstr "ხმალი"
 
 #: ../data/str.xml.in:36
 msgid "Scales"
-msgstr ""
+msgstr "ფარფლები"
 
 #: ../data/str.xml.in:37
 msgid "Conversation"
-msgstr ""
+msgstr "საუბარი"
 
 #: ../data/str.xml.in:38
 msgid "Warning"
@@ -1615,11 +1618,11 @@ msgstr ""
 
 #: ../data/str.xml.in:41
 msgid "Gender"
-msgstr ""
+msgstr "სქესი"
 
 #: ../data/str.xml.in:42
 msgid "Soccer"
-msgstr ""
+msgstr "სოკერი"
 
 #: ../data/str.xml.in:43
 msgid "Baseball"
@@ -1639,7 +1642,7 @@ msgstr ""
 
 #: ../data/str.xml.in:47
 msgid "Maintenance"
-msgstr ""
+msgstr "შეკეთება"
 
 #: ../data/str.xml.in:48
 msgid "Roadblock"
@@ -1659,11 +1662,11 @@ msgstr ""
 
 #: ../data/str.xml.in:52
 msgid "Church"
-msgstr ""
+msgstr "ტაძარი"
 
 #: ../data/str.xml.in:53
 msgid "Castle"
-msgstr ""
+msgstr "სასახლე"
 
 #: ../data/str.xml.in:54
 msgid "Historic site"
@@ -1675,19 +1678,19 @@ msgstr ""
 
 #: ../data/str.xml.in:56
 msgid "Lighthouse"
-msgstr ""
+msgstr "შუქურა"
 
 #: ../data/str.xml.in:57
 msgid "Mountain"
-msgstr ""
+msgstr "მთა"
 
 #: ../data/str.xml.in:58
 msgid "Beach"
-msgstr ""
+msgstr "ბიჩი"
 
 #: ../data/str.xml.in:59
 msgid "Park"
-msgstr ""
+msgstr "პარკი"
 
 #: ../data/str.xml.in:60
 msgid "Ferry"
@@ -1703,7 +1706,7 @@ msgstr ""
 
 #: ../data/str.xml.in:63
 msgid "Scissors"
-msgstr ""
+msgstr "მაკრატლები"
 
 #: ../data/str.xml.in:64
 msgid "Airplane"
@@ -1715,7 +1718,7 @@ msgstr ""
 
 #: ../data/str.xml.in:66
 msgid "Hand"
-msgstr ""
+msgstr "ხელი"
 
 #: ../data/str.xml.in:67
 msgid "V Sign"
@@ -1723,19 +1726,19 @@ msgstr ""
 
 #: ../data/str.xml.in:68
 msgid "Writing"
-msgstr ""
+msgstr "ჩაწერა"
 
 #: ../data/str.xml.in:69
 msgid "Pencil"
-msgstr ""
+msgstr "ფანქარი"
 
 #: ../data/str.xml.in:70
 msgid "Pen"
-msgstr ""
+msgstr "კალამi"
 
 #: ../data/str.xml.in:71
 msgid "Star"
-msgstr ""
+msgstr "ვარსკვლავი"
 
 #: ../data/str.xml.in:72
 msgid "Typhoon"
@@ -1743,7 +1746,7 @@ msgstr ""
 
 #: ../data/str.xml.in:73
 msgid "Fog"
-msgstr ""
+msgstr "ნისლი"
 
 #: ../data/str.xml.in:74
 msgid "Umbrella"
@@ -1755,23 +1758,23 @@ msgstr ""
 
 #: ../data/str.xml.in:76
 msgid "Sunrise"
-msgstr ""
+msgstr "აისი"
 
 #: ../data/str.xml.in:77
 msgid "Sunset"
-msgstr ""
+msgstr "მზის ჩასვლა"
 
 #: ../data/str.xml.in:78
 msgid "Bridge"
-msgstr ""
+msgstr "ხიდი"
 
 #: ../data/str.xml.in:79
 msgid "Wave"
-msgstr ""
+msgstr "ტალღა"
 
 #: ../data/str.xml.in:80
 msgid "New Moon"
-msgstr ""
+msgstr "ახალი მთვარე"
 
 #: ../data/str.xml.in:81
 msgid "Crescent Moon"
@@ -1779,7 +1782,7 @@ msgstr ""
 
 #: ../data/str.xml.in:82
 msgid "Quarter Moon"
-msgstr ""
+msgstr "მეოთხედი მთვარე"
 
 #: ../data/str.xml.in:83
 msgid "Gibbous Moon"
@@ -1787,19 +1790,19 @@ msgstr ""
 
 #: ../data/str.xml.in:84
 msgid "Full Moon"
-msgstr ""
+msgstr "სრული მთვარე"
 
 #: ../data/str.xml.in:85
 msgid "Moon"
-msgstr ""
+msgstr "მთვარის"
 
 #: ../data/str.xml.in:86
 msgid "Sun"
-msgstr ""
+msgstr "მზე"
 
 #: ../data/str.xml.in:87
 msgid "Cloud"
-msgstr ""
+msgstr "ღრუბელი"
 
 #: ../data/str.xml.in:88
 msgid "Palm"
@@ -1811,7 +1814,7 @@ msgstr ""
 
 #: ../data/str.xml.in:90
 msgid "Flower"
-msgstr ""
+msgstr "ყვავილი"
 
 #: ../data/str.xml.in:91
 msgid "Tulip"
@@ -1847,11 +1850,11 @@ msgstr ""
 
 #: ../data/str.xml.in:99
 msgid "Fallen Leaf"
-msgstr ""
+msgstr "ჩამოვარდნილი ფოთოლი"
 
 #: ../data/str.xml.in:100
 msgid "Leaf"
-msgstr ""
+msgstr "ფოთოლი"
 
 #: ../data/str.xml.in:101
 msgid "Mushroom"
@@ -1859,7 +1862,7 @@ msgstr ""
 
 #: ../data/str.xml.in:102
 msgid "Tomato"
-msgstr ""
+msgstr "პომიდორი"
 
 #: ../data/str.xml.in:103
 msgid "Eggplant"
@@ -1867,7 +1870,7 @@ msgstr ""
 
 #: ../data/str.xml.in:104
 msgid "Grape"
-msgstr ""
+msgstr "ყურძენი"
 
 #: ../data/str.xml.in:105
 msgid "Melon"
@@ -1879,15 +1882,15 @@ msgstr ""
 
 #: ../data/str.xml.in:107
 msgid "Tangerine"
-msgstr ""
+msgstr "მანდარინი"
 
 #: ../data/str.xml.in:108
 msgid "Lemon"
-msgstr ""
+msgstr "ლიმონი"
 
 #: ../data/str.xml.in:109
 msgid "Banana"
-msgstr ""
+msgstr "ბანანი"
 
 #: ../data/str.xml.in:110
 msgid "Pineapple"
@@ -1895,7 +1898,7 @@ msgstr ""
 
 #: ../data/str.xml.in:111
 msgid "Apple"
-msgstr ""
+msgstr "გამოყენება"
 
 #: ../data/str.xml.in:112
 msgid "Pear"
@@ -1907,7 +1910,7 @@ msgstr ""
 
 #: ../data/str.xml.in:114
 msgid "Strawberry"
-msgstr ""
+msgstr "მარწყვი"
 
 #: ../data/str.xml.in:115
 msgid "Hamburger"
@@ -1915,11 +1918,11 @@ msgstr ""
 
 #: ../data/str.xml.in:116
 msgid "Pizza"
-msgstr ""
+msgstr "პიცა"
 
 #: ../data/str.xml.in:117
 msgid "Meat"
-msgstr ""
+msgstr "ხორცი"
 
 #: ../data/str.xml.in:118
 msgid "Poultry"
@@ -1935,15 +1938,15 @@ msgstr ""
 
 #: ../data/str.xml.in:121
 msgid "Rice"
-msgstr ""
+msgstr "ბრინჯი"
 
 #: ../data/str.xml.in:122
 msgid "Curry"
-msgstr ""
+msgstr "ქარი"
 
 #: ../data/str.xml.in:123
 msgid "Ramen"
-msgstr ""
+msgstr "რამენი"
 
 #: ../data/str.xml.in:124
 msgid "Spaghetti"
@@ -1951,7 +1954,7 @@ msgstr ""
 
 #: ../data/str.xml.in:125
 msgid "Bread"
-msgstr ""
+msgstr "პური"
 
 #: ../data/str.xml.in:126
 msgid "Fried Potato"
@@ -1971,7 +1974,7 @@ msgstr ""
 
 #: ../data/str.xml.in:130
 msgid "Sushi"
-msgstr ""
+msgstr "სუში"
 
 #: ../data/str.xml.in:131
 msgid "Fried Shrimp"
@@ -1991,7 +1994,7 @@ msgstr ""
 
 #: ../data/str.xml.in:135
 msgid "Ice Cream"
-msgstr ""
+msgstr "ნაყინი"
 
 #: ../data/str.xml.in:136
 msgid "Doughnut"
@@ -1999,11 +2002,11 @@ msgstr ""
 
 #: ../data/str.xml.in:137
 msgid "Cookie"
-msgstr ""
+msgstr "ქუქი"
 
 #: ../data/str.xml.in:138
 msgid "Chocolate"
-msgstr ""
+msgstr "შოკოლადი"
 
 #: ../data/str.xml.in:139
 msgid "Candy"
@@ -2031,7 +2034,7 @@ msgstr ""
 
 #: ../data/str.xml.in:145
 msgid "Cooking"
-msgstr ""
+msgstr "კულინარია"
 
 #: ../data/str.xml.in:146
 msgid "Meal"
@@ -2039,7 +2042,7 @@ msgstr ""
 
 #: ../data/str.xml.in:147
 msgid "Cup"
-msgstr ""
+msgstr "ჭიქა"
 
 #: ../data/str.xml.in:148
 msgid "Sake"
@@ -2047,7 +2050,7 @@ msgstr ""
 
 #: ../data/str.xml.in:149
 msgid "Wine"
-msgstr ""
+msgstr "ღვინო"
 
 #: ../data/str.xml.in:150
 msgid "Cocktail"
@@ -2055,11 +2058,11 @@ msgstr ""
 
 #: ../data/str.xml.in:151
 msgid "Drink"
-msgstr ""
+msgstr "სასმელი"
 
 #: ../data/str.xml.in:152
 msgid "Beer"
-msgstr ""
+msgstr "ლუდი"
 
 #: ../data/str.xml.in:153
 msgid "Cheers"
@@ -2071,15 +2074,15 @@ msgstr ""
 
 #: ../data/str.xml.in:155
 msgid "Ribbon"
-msgstr ""
+msgstr "ლენტა"
 
 #: ../data/str.xml.in:156
 msgid "Present"
-msgstr ""
+msgstr "წარმოდგენილია"
 
 #: ../data/str.xml.in:157
 msgid "Cake"
-msgstr ""
+msgstr "ნამცხვარი"
 
 #: ../data/str.xml.in:158
 msgid "Hallowe'en"
@@ -2087,19 +2090,19 @@ msgstr ""
 
 #: ../data/str.xml.in:159
 msgid "Christmas"
-msgstr ""
+msgstr "შობა"
 
 #: ../data/str.xml.in:160
 msgid "Piano"
-msgstr ""
+msgstr "პიანინო"
 
 #: ../data/str.xml.in:161
 msgid "Microphone"
-msgstr ""
+msgstr "მიკროფონი"
 
 #: ../data/str.xml.in:162
 msgid "Headphone"
-msgstr ""
+msgstr "ყურსაცვამი"
 
 #: ../data/str.xml.in:163
 msgid "Hat"
@@ -2111,19 +2114,19 @@ msgstr ""
 
 #: ../data/str.xml.in:165
 msgid "Saxophone"
-msgstr ""
+msgstr "საქსოფონი"
 
 #: ../data/str.xml.in:166
 msgid "Guitar"
-msgstr ""
+msgstr "გიტარა"
 
 #: ../data/str.xml.in:167
 msgid "Trumpet"
-msgstr ""
+msgstr "ბუკი"
 
 #: ../data/str.xml.in:168
 msgid "Violin"
-msgstr ""
+msgstr "ვიოლინო"
 
 #: ../data/str.xml.in:169
 msgid "Musical Score"
@@ -2131,7 +2134,7 @@ msgstr ""
 
 #: ../data/str.xml.in:170
 msgid "Tennis"
-msgstr ""
+msgstr "ტენისი"
 
 #: ../data/str.xml.in:171
 msgid "Ski"
@@ -2139,11 +2142,11 @@ msgstr ""
 
 #: ../data/str.xml.in:172
 msgid "Basketball"
-msgstr ""
+msgstr "კალათბურთი"
 
 #: ../data/str.xml.in:173
 msgid "Flag"
-msgstr ""
+msgstr "ალამი"
 
 #: ../data/str.xml.in:174
 msgid "Show Board"
@@ -2175,7 +2178,7 @@ msgstr ""
 
 #: ../data/str.xml.in:181
 msgid "Rugby"
-msgstr ""
+msgstr "რაგბი"
 
 #: ../data/str.xml.in:182
 msgid "Swimmer"
@@ -2187,7 +2190,7 @@ msgstr ""
 
 #: ../data/str.xml.in:184
 msgid "Golf"
-msgstr ""
+msgstr "გოლფი"
 
 #: ../data/str.xml.in:185
 msgid "Motorcycle"
@@ -2199,67 +2202,67 @@ msgstr ""
 
 #: ../data/str.xml.in:187
 msgid "House"
-msgstr ""
+msgstr "ჰაუსი"
 
 #: ../data/str.xml.in:188
 msgid "Office"
-msgstr ""
+msgstr "ოფისი"
 
 #: ../data/str.xml.in:189
 msgid "Hospital"
-msgstr ""
+msgstr "საავადმყოფო"
 
 #: ../data/str.xml.in:190
 msgid "Bank"
-msgstr ""
+msgstr "ბანკი"
 
 #: ../data/str.xml.in:191
 msgid "Hotel"
-msgstr ""
+msgstr "სასტუმრო"
 
 #: ../data/str.xml.in:192
 msgid "School"
-msgstr ""
+msgstr "სკოლა"
 
 #: ../data/str.xml.in:193
 msgid "Factory"
-msgstr ""
+msgstr "ქარხანა"
 
 #: ../data/str.xml.in:194
 msgid "Rat"
-msgstr ""
+msgstr "ვირთხა"
 
 #: ../data/str.xml.in:195
 msgid "Mouse"
-msgstr ""
+msgstr "თაგუნა"
 
 #: ../data/str.xml.in:196
 msgid "Cow"
-msgstr ""
+msgstr "ძროხა"
 
 #: ../data/str.xml.in:197
 msgid "Tiger"
-msgstr ""
+msgstr "ვეფხვი"
 
 #: ../data/str.xml.in:198
 msgid "Leopard"
-msgstr ""
+msgstr "ლეოპარდი"
 
 #: ../data/str.xml.in:199
 msgid "Rabbit"
-msgstr ""
+msgstr "კურდღელი"
 
 #: ../data/str.xml.in:200
 msgid "Cat"
-msgstr ""
+msgstr "კატა"
 
 #: ../data/str.xml.in:201
 msgid "Dragon"
-msgstr ""
+msgstr "დრაკონი"
 
 #: ../data/str.xml.in:202
 msgid "Crocodile"
-msgstr ""
+msgstr "ნიანგი"
 
 #: ../data/str.xml.in:203
 msgid "Whale"
@@ -2271,39 +2274,39 @@ msgstr ""
 
 #: ../data/str.xml.in:205
 msgid "Snake"
-msgstr ""
+msgstr "გველი"
 
 #: ../data/str.xml.in:206
 msgid "Horse"
-msgstr ""
+msgstr "ცხენი"
 
 #: ../data/str.xml.in:207
 msgid "Sheep"
-msgstr ""
+msgstr "ცხვარი"
 
 #: ../data/str.xml.in:208
 msgid "Goat"
-msgstr ""
+msgstr "თხა"
 
 #: ../data/str.xml.in:209
 msgid "Monkey"
-msgstr ""
+msgstr "მაიმუნი"
 
 #: ../data/str.xml.in:210
 msgid "Chicken"
-msgstr ""
+msgstr "ქათამი"
 
 #: ../data/str.xml.in:211
 msgid "Dog"
-msgstr ""
+msgstr "ძაღლი"
 
 #: ../data/str.xml.in:212
 msgid "Pig"
-msgstr ""
+msgstr "ღორი"
 
 #: ../data/str.xml.in:213
 msgid "Elephant"
-msgstr ""
+msgstr "სპილო"
 
 #: ../data/str.xml.in:214
 msgid "Octopus"
@@ -2315,7 +2318,7 @@ msgstr ""
 
 #: ../data/str.xml.in:216
 msgid "Bug"
-msgstr ""
+msgstr "შეცდომა"
 
 #: ../data/str.xml.in:217
 msgid "Ant"
@@ -2327,7 +2330,7 @@ msgstr ""
 
 #: ../data/str.xml.in:219
 msgid "Fish"
-msgstr ""
+msgstr "თევზი"
 
 #: ../data/str.xml.in:220
 msgid "Tropical Fish"
@@ -2335,19 +2338,19 @@ msgstr ""
 
 #: ../data/str.xml.in:221
 msgid "Blowfish"
-msgstr ""
+msgstr "ფუგუ"
 
 #: ../data/str.xml.in:222
 msgid "Bird"
-msgstr ""
+msgstr "ჩიტი"
 
 #: ../data/str.xml.in:223
 msgid "Penguin"
-msgstr ""
+msgstr "პინგვინი"
 
 #: ../data/str.xml.in:224
 msgid "Koala"
-msgstr ""
+msgstr "კოალა"
 
 #: ../data/str.xml.in:225
 msgid "Poodle"
@@ -2359,11 +2362,11 @@ msgstr ""
 
 #: ../data/str.xml.in:227
 msgid "Dolphin"
-msgstr ""
+msgstr "დელფინი"
 
 #: ../data/str.xml.in:228
 msgid "Frog"
-msgstr ""
+msgstr "ბაყაყი"
 
 #: ../data/str.xml.in:229
 msgid "Hamster"
@@ -2371,7 +2374,7 @@ msgstr ""
 
 #: ../data/str.xml.in:230
 msgid "Wolf"
-msgstr ""
+msgstr "მგელი"
 
 #: ../data/str.xml.in:231
 msgid "Bear"
@@ -2379,7 +2382,7 @@ msgstr ""
 
 #: ../data/str.xml.in:232
 msgid "Panda"
-msgstr ""
+msgstr "პანდა"
 
 #: ../data/str.xml.in:233
 msgid "Eye"
@@ -2435,7 +2438,7 @@ msgstr ""
 
 #: ../data/str.xml.in:246
 msgid "Clothes"
-msgstr ""
+msgstr "ტანსაცმელი"
 
 #: ../data/str.xml.in:247
 msgid "Purse"
@@ -2471,7 +2474,7 @@ msgstr ""
 
 #: ../data/str.xml.in:255
 msgid "Girl"
-msgstr ""
+msgstr "გოგონა"
 
 #: ../data/str.xml.in:256
 msgid "Man"
@@ -2483,7 +2486,7 @@ msgstr ""
 
 #: ../data/str.xml.in:258
 msgid "Family"
-msgstr ""
+msgstr "ოჯახი"
 
 #: ../data/str.xml.in:259
 msgid "Man and woman holding hands"
@@ -2543,7 +2546,7 @@ msgstr ""
 
 #: ../data/str.xml.in:273
 msgid "Skull"
-msgstr ""
+msgstr "თავის ქალა"
 
 #: ../data/str.xml.in:274
 msgid "Information Desk Person"
@@ -2567,7 +2570,7 @@ msgstr ""
 
 #: ../data/str.xml.in:279
 msgid "Face"
-msgstr ""
+msgstr "ზედაპირი"
 
 #: ../data/str.xml.in:280
 msgid "Haircut"
@@ -2575,7 +2578,7 @@ msgstr ""
 
 #: ../data/str.xml.in:281
 msgid "Syringe"
-msgstr ""
+msgstr "შპრიცი"
 
 #: ../data/str.xml.in:282
 msgid "Pill"
@@ -2591,7 +2594,7 @@ msgstr ""
 
 #: ../data/str.xml.in:285
 msgid "Ring"
-msgstr ""
+msgstr "ზარი"
 
 #: ../data/str.xml.in:286
 msgid "Gem Stone"
@@ -2603,11 +2606,11 @@ msgstr ""
 
 #: ../data/str.xml.in:288
 msgid "Heart"
-msgstr ""
+msgstr "გული"
 
 #: ../data/str.xml.in:289
 msgid "Idea"
-msgstr ""
+msgstr "იდეა"
 
 #: ../data/str.xml.in:290
 msgid "Anger"
@@ -2619,11 +2622,11 @@ msgstr ""
 
 #: ../data/str.xml.in:292
 msgid "Sleeping"
-msgstr ""
+msgstr "მძინარე"
 
 #: ../data/str.xml.in:293
 msgid "Collision"
-msgstr ""
+msgstr "შეჯახება"
 
 #: ../data/str.xml.in:294
 msgid "Sweat"
@@ -2631,11 +2634,11 @@ msgstr ""
 
 #: ../data/str.xml.in:295
 msgid "Droplet"
-msgstr ""
+msgstr "წვეთი"
 
 #: ../data/str.xml.in:296
 msgid "Dash"
-msgstr ""
+msgstr "პანელი"
 
 #: ../data/str.xml.in:297
 msgid "Poo"
@@ -2651,7 +2654,7 @@ msgstr ""
 
 #: ../data/str.xml.in:300
 msgid "Speech"
-msgstr ""
+msgstr "ლაპარაკი"
 
 #: ../data/str.xml.in:301
 msgid "Thought"
@@ -2667,7 +2670,7 @@ msgstr ""
 
 #: ../data/str.xml.in:304
 msgid "Paperclip"
-msgstr ""
+msgstr "სამაგრი"
 
 #: ../data/str.xml.in:305
 msgid "Speaker with cancellation stroke"
@@ -2687,7 +2690,7 @@ msgstr ""
 
 #: ../data/str.xml.in:309
 msgid "Battery"
-msgstr ""
+msgstr "კვების ელემენტი"
 
 #: ../data/str.xml.in:310
 msgid "Plug"
@@ -2707,15 +2710,15 @@ msgstr ""
 
 #: ../data/str.xml.in:314
 msgid "Book"
-msgstr ""
+msgstr "წიგნი"
 
 #: ../data/str.xml.in:315
 msgid "Memo"
-msgstr ""
+msgstr "მემორანდუმი"
 
 #: ../data/str.xml.in:316
 msgid "Mail"
-msgstr ""
+msgstr "წერილი"
 
 #: ../data/str.xml.in:317
 msgid "Incoming envelope"
@@ -2727,7 +2730,7 @@ msgstr ""
 
 #: ../data/str.xml.in:319
 msgid "Mobile Phone"
-msgstr ""
+msgstr "მობილური ტელეფონი"
 
 #: ../data/str.xml.in:320
 msgid "Antenna with bars"
@@ -2735,19 +2738,19 @@ msgstr ""
 
 #: ../data/str.xml.in:321
 msgid "Camera"
-msgstr ""
+msgstr "კამერა"
 
 #: ../data/str.xml.in:322
 msgid "Video"
-msgstr ""
+msgstr "ვიდეო"
 
 #: ../data/str.xml.in:323
 msgid "Television"
-msgstr ""
+msgstr "ტელევიზია"
 
 #: ../data/str.xml.in:324
 msgid "Radio"
-msgstr ""
+msgstr "რადიო"
 
 #: ../data/str.xml.in:325
 msgid "Key"
@@ -2763,7 +2766,7 @@ msgstr ""
 
 #: ../data/str.xml.in:328
 msgid "Fire"
-msgstr ""
+msgstr "ცეცხლი"
 
 #: ../data/str.xml.in:329
 msgid "Wrench"
@@ -2771,7 +2774,7 @@ msgstr ""
 
 #: ../data/str.xml.in:330
 msgid "Hammer"
-msgstr ""
+msgstr "ჩაქუჩი"
 
 #: ../data/str.xml.in:331
 msgid "Nut and bolt"
@@ -2791,11 +2794,11 @@ msgstr ""
 
 #: ../data/str.xml.in:335
 msgid "Telescope"
-msgstr ""
+msgstr "ტელესკოპი"
 
 #: ../data/str.xml.in:336
 msgid "Crystal"
-msgstr ""
+msgstr "კრისტალი"
 
 #: ../data/str.xml.in:337
 msgid "David Star"
@@ -2803,15 +2806,15 @@ msgstr ""
 
 #: ../data/str.xml.in:338
 msgid "Beginner"
-msgstr ""
+msgstr "დამწყები"
 
 #: ../data/str.xml.in:339
 msgid "Candle"
-msgstr ""
+msgstr "სანთელი"
 
 #: ../data/str.xml.in:340
 msgid "Hole"
-msgstr ""
+msgstr "ხვრელი"
 
 #: ../data/str.xml.in:341
 msgid "Laptop Computer"
@@ -2819,31 +2822,31 @@ msgstr ""
 
 #: ../data/str.xml.in:342
 msgid "Desktop Computer"
-msgstr ""
+msgstr "სამაგიდო კომპიუტერი"
 
 #: ../data/str.xml.in:343
 msgid "keyboard"
-msgstr ""
+msgstr "კლავიატურა"
 
 #: ../data/str.xml.in:344
 msgid "Printer"
-msgstr ""
+msgstr "პრინტერი"
 
 #: ../data/str.xml.in:345
 msgid "Calculator"
-msgstr ""
+msgstr "კალკულატორი"
 
 #: ../data/str.xml.in:346
 msgid "Minimize"
-msgstr ""
+msgstr "ჩაკეცვა"
 
 #: ../data/str.xml.in:347
 msgid "Maximize"
-msgstr ""
+msgstr "გადიდება"
 
 #: ../data/str.xml.in:348
 msgid "Refresh"
-msgstr ""
+msgstr "განახლება"
 
 #: ../data/str.xml.in:349
 msgid "Close"
@@ -2851,7 +2854,7 @@ msgstr ""
 
 #: ../data/str.xml.in:350
 msgid "World"
-msgstr ""
+msgstr "მსოფლიო"
 
 #: ../data/str.xml.in:351
 msgid "Mt. Fuji"
@@ -2863,7 +2866,7 @@ msgstr ""
 
 #: ../data/str.xml.in:353
 msgid "Japan"
-msgstr ""
+msgstr "იაპონია"
 
 #: ../data/str.xml.in:354
 msgid "Anguish"
@@ -2871,7 +2874,7 @@ msgstr ""
 
 #: ../data/str.xml.in:355
 msgid "Smile"
-msgstr ""
+msgstr "ღიმილი"
 
 #: ../data/str.xml.in:356
 msgid "Smirk"
@@ -2879,7 +2882,7 @@ msgstr ""
 
 #: ../data/str.xml.in:357
 msgid "Neutral"
-msgstr ""
+msgstr "ნეიტრალური"
 
 #: ../data/str.xml.in:358
 msgid "Expressionless"
@@ -2895,7 +2898,7 @@ msgstr ""
 
 #: ../data/str.xml.in:361
 msgid "Confused"
-msgstr ""
+msgstr "დაბნეული"
 
 #: ../data/str.xml.in:362
 msgid "Confounded"
@@ -2903,11 +2906,11 @@ msgstr ""
 
 #: ../data/str.xml.in:363
 msgid "Disappointed"
-msgstr ""
+msgstr "დაბნეული"
 
 #: ../data/str.xml.in:364
 msgid "Angry"
-msgstr ""
+msgstr "გაბრაზებული"
 
 #: ../data/str.xml.in:365
 msgid "Cry"
@@ -2915,7 +2918,7 @@ msgstr ""
 
 #: ../data/str.xml.in:366
 msgid "Sleepy"
-msgstr ""
+msgstr "მძინარა"
 
 #: ../data/str.xml.in:367
 msgid "Tired"
@@ -2943,7 +2946,7 @@ msgstr ""
 
 #: ../data/str.xml.in:373
 msgid "Bow"
-msgstr ""
+msgstr "მშვილდი"
 
 #: ../data/str.xml.in:374
 msgid "See-No-Evil"
@@ -2967,7 +2970,7 @@ msgstr ""
 
 #: ../data/str.xml.in:379
 msgid "Smileys"
-msgstr ""
+msgstr "სიცილაკები"
 
 #: ../data/str.xml.in:380
 msgid "Smile Big"
@@ -2975,11 +2978,11 @@ msgstr ""
 
 #: ../data/str.xml.in:381
 msgid "Sad"
-msgstr ""
+msgstr "მოწყენილი"
 
 #: ../data/str.xml.in:382
 msgid "Wink"
-msgstr ""
+msgstr "ვინკი"
 
 #: ../data/str.xml.in:383
 msgid "Shock"
@@ -2999,7 +3002,7 @@ msgstr ""
 
 #: ../data/str.xml.in:387
 msgid "Embarrassed"
-msgstr ""
+msgstr "შეცბუნებული"
 
 #: ../data/str.xml.in:388
 msgid "Crying"
@@ -3015,7 +3018,7 @@ msgstr ""
 
 #: ../data/str.xml.in:391
 msgid "Party"
-msgstr ""
+msgstr "წვეულება"
 
 #: ../data/str.xml.in:392
 msgid "Yawn"
@@ -3027,7 +3030,7 @@ msgstr ""
 
 #: ../data/str.xml.in:394
 msgid "Sick"
-msgstr ""
+msgstr "ავადაა"
 
 #: ../data/str.xml.in:395
 msgid "Devil"
@@ -3039,7 +3042,7 @@ msgstr ""
 
 #: ../data/str.xml.in:397
 msgid "Love"
-msgstr ""
+msgstr "მიყვარს"
 
 #: ../data/str.xml.in:398
 msgid "Love Over"
@@ -3047,19 +3050,19 @@ msgstr ""
 
 #: ../data/str.xml.in:399
 msgid "Film"
-msgstr ""
+msgstr "ლენტი"
 
 #: ../data/str.xml.in:400
 msgid "Clock"
-msgstr ""
+msgstr "საათი"
 
 #: ../data/str.xml.in:401
 msgid "Coffee"
-msgstr ""
+msgstr "ყავა"
 
 #: ../data/str.xml.in:402
 msgid "Phone"
-msgstr ""
+msgstr "ტელეფონი"
 
 #: ../data/str.xml.in:403
 msgid "Hug Left"
@@ -3104,7 +3107,7 @@ msgstr ""
 
 #: ../data/str.xml.in:414
 msgid "Sorry"
-msgstr ""
+msgstr "უკაცრავად"
 
 #: ../data/str.xml.in:415
 msgid "Hug"
@@ -3131,7 +3134,7 @@ msgstr ""
 #. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
 #: ../data/str.xml.in:423
 msgid "Acronym"
-msgstr ""
+msgstr "აკრონიმი"
 
 #: ../data/str.xml.in:424
 msgid "Acronym (Computer)"
@@ -3204,7 +3207,7 @@ msgstr ""
 
 #: ../data/str.xml.in:442
 msgid "Bye"
-msgstr ""
+msgstr "ნახვამდის"
 
 #: ../data/str.xml.in:443
 msgid "Want (Hattekure, E.g. pics ハラデイ)"
@@ -3236,11 +3239,11 @@ msgstr ""
 
 #: ../data/zh.xml.in:1
 msgid "Chinese"
-msgstr ""
+msgstr "ჩინური"
 
 #: ../data/zh.xml.in:4 ../input-pad/unicode_block.h:138
 msgid "Bopomofo"
-msgstr ""
+msgstr "ბოპომოფო"
 
 #: ../input-pad/app-menu.ui.h:1
 msgid "_File"
@@ -3248,7 +3251,7 @@ msgstr ""
 
 #: ../input-pad/app-menu.ui.h:2 ../input-pad/dialog.ui.h:21
 msgid "_Close"
-msgstr ""
+msgstr "_დახურვა"
 
 #: ../input-pad/app-menu.ui.h:3
 msgid "Close the program"
@@ -3288,11 +3291,11 @@ msgstr ""
 
 #: ../input-pad/app-menu.ui.h:12
 msgid "_Troubleshoot"
-msgstr ""
+msgstr "_პრობლემების გადაწყვეტა"
 
 #: ../input-pad/app-menu.ui.h:13
 msgid "_About"
-msgstr ""
+msgstr "შესახებ"
 
 #: ../input-pad/dialog.ui.h:1
 msgid "Code Point Dialog"
@@ -3300,7 +3303,7 @@ msgstr ""
 
 #: ../input-pad/dialog.ui.h:2
 msgid "Unicode"
-msgstr ""
+msgstr "უნიკოდი"
 
 #: ../input-pad/dialog.ui.h:3
 msgid "You can choose encoding type"
@@ -3312,7 +3315,7 @@ msgstr ""
 
 #: ../input-pad/dialog.ui.h:5
 msgid "Copy Buffer"
-msgstr ""
+msgstr "ბუფერის კოპირება"
 
 #: ../input-pad/dialog.ui.h:6
 msgid ""
@@ -3360,7 +3363,7 @@ msgstr ""
 
 #: ../input-pad/dialog.ui.h:19
 msgid "Character:"
-msgstr ""
+msgstr "სიმბოლო:"
 
 #: ../input-pad/dialog.ui.h:20
 msgid "_Send"
@@ -3436,7 +3439,7 @@ msgstr ""
 
 #: ../input-pad/dialog.ui.h:44
 msgid "translator_credits"
-msgstr ""
+msgstr "მთარგმნელის_შესახებ"
 
 #: ../input-pad/eek-gtk.c:65
 msgid "Use libeek to draw keyboard"
@@ -3456,659 +3459,659 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:37
 msgid "Basic Latin"
-msgstr ""
+msgstr "საბაზისო ლათინური"
 
 #: ../input-pad/unicode_block.h:40
 msgid "Latin Extended-B"
-msgstr ""
+msgstr "ლათინური გაფართოებული-B"
 
 #: ../input-pad/unicode_block.h:41
 msgid "IPA Extensions"
-msgstr ""
+msgstr "IPA-ის გაფართოებები"
 
 #: ../input-pad/unicode_block.h:42
 msgid "Spacing Modifier Letters"
-msgstr ""
+msgstr "ჰარეს მოდიფიკატორი სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:43
 msgid "Combining Diacritical Marks"
-msgstr ""
+msgstr "შემკრები დიაკრიტიკული სანიშნები"
 
 #: ../input-pad/unicode_block.h:44
 msgid "Greek and Coptic"
-msgstr ""
+msgstr "ბერძნული და კოპტური"
 
 #: ../input-pad/unicode_block.h:45
 msgid "Cyrillic"
-msgstr ""
+msgstr "კირილიცა"
 
 #: ../input-pad/unicode_block.h:46
 msgid "Cyrillic Supplement"
-msgstr ""
+msgstr "კირილიცა დამატებებით"
 
 #: ../input-pad/unicode_block.h:47
 msgid "Armenian"
-msgstr ""
+msgstr "სომხური"
 
 #: ../input-pad/unicode_block.h:48
 msgid "Hebrew"
-msgstr ""
+msgstr "ივრითი"
 
 #: ../input-pad/unicode_block.h:49
 msgid "Arabic"
-msgstr ""
+msgstr "არაბული"
 
 #: ../input-pad/unicode_block.h:50
 msgid "Syriac"
-msgstr ""
+msgstr "სირიული"
 
 #: ../input-pad/unicode_block.h:51
 msgid "Arabic Supplement"
-msgstr ""
+msgstr "არაბული დამატებებით"
 
 #: ../input-pad/unicode_block.h:52
 msgid "Thaana"
-msgstr ""
+msgstr "თაანური"
 
 #: ../input-pad/unicode_block.h:53
 msgid "NKo"
-msgstr ""
+msgstr "NKo"
 
 #: ../input-pad/unicode_block.h:54
 msgid "Samaritan"
-msgstr ""
+msgstr "სამარიტული"
 
 #: ../input-pad/unicode_block.h:55
 msgid "Devanagari"
-msgstr ""
+msgstr "დევაგანური"
 
 #: ../input-pad/unicode_block.h:56
 msgid "Bengali"
-msgstr ""
+msgstr "ბენგალური"
 
 #: ../input-pad/unicode_block.h:57
 msgid "Gurmukhi"
-msgstr ""
+msgstr "გურმუხული"
 
 #: ../input-pad/unicode_block.h:58
 msgid "Gujarati"
-msgstr ""
+msgstr "გუჯარათული"
 
 #: ../input-pad/unicode_block.h:59
 msgid "Oriya"
-msgstr ""
+msgstr "ორია"
 
 #: ../input-pad/unicode_block.h:60
 msgid "Tamil"
-msgstr ""
+msgstr "თამილური"
 
 #: ../input-pad/unicode_block.h:61
 msgid "Telugu"
-msgstr ""
+msgstr "ტელუგური"
 
 #: ../input-pad/unicode_block.h:62
 msgid "Kannada"
-msgstr ""
+msgstr "კანნადა"
 
 #: ../input-pad/unicode_block.h:63
 msgid "Malayalam"
-msgstr ""
+msgstr "მალაიამი"
 
 #: ../input-pad/unicode_block.h:64
 msgid "Sinhala"
-msgstr ""
+msgstr "სინჰალა"
 
 #: ../input-pad/unicode_block.h:65
 msgid "Thai"
-msgstr ""
+msgstr "ტაილანდური"
 
 #: ../input-pad/unicode_block.h:66
 msgid "Lao"
-msgstr ""
+msgstr "ლაოსური"
 
 #: ../input-pad/unicode_block.h:67
 msgid "Tibetan"
-msgstr ""
+msgstr "ტიბეტური"
 
 #: ../input-pad/unicode_block.h:68
 msgid "Myanmar"
-msgstr ""
+msgstr "მიანმარი"
 
 #: ../input-pad/unicode_block.h:69
 msgid "Georgian"
-msgstr ""
+msgstr "ქართული"
 
 #: ../input-pad/unicode_block.h:70
 msgid "Hangul Jamo"
-msgstr ""
+msgstr "ჰანგული ჯამო"
 
 #: ../input-pad/unicode_block.h:71
 msgid "Ethiopic"
-msgstr ""
+msgstr "ეთიოპიური"
 
 #: ../input-pad/unicode_block.h:72
 msgid "Ethiopic Supplement"
-msgstr ""
+msgstr "ეთიოპური დამატებებით"
 
 #: ../input-pad/unicode_block.h:73
 msgid "Cherokee"
-msgstr ""
+msgstr "ჩეროკი"
 
 #: ../input-pad/unicode_block.h:74
 msgid "Unified Canadian Aboriginal Syllabics"
-msgstr ""
+msgstr "კანადური აბორიგინალური"
 
 #: ../input-pad/unicode_block.h:75
 msgid "Ogham"
-msgstr ""
+msgstr "ოგამი"
 
 #: ../input-pad/unicode_block.h:76
 msgid "Runic"
-msgstr ""
+msgstr "რუნები"
 
 #: ../input-pad/unicode_block.h:77
 msgid "Tagalog"
-msgstr ""
+msgstr "ტაგალოგური"
 
 #: ../input-pad/unicode_block.h:78
 msgid "Hanunoo"
-msgstr ""
+msgstr "ჰანუნოო"
 
 #: ../input-pad/unicode_block.h:79
 msgid "Buhid"
-msgstr ""
+msgstr "ბუჰიდი"
 
 #: ../input-pad/unicode_block.h:80
 msgid "Tagbanwa"
-msgstr ""
+msgstr "ტაგბანვა"
 
 #: ../input-pad/unicode_block.h:81
 msgid "Khmer"
-msgstr ""
+msgstr "კხმერული"
 
 #: ../input-pad/unicode_block.h:82
 msgid "Mongolian"
-msgstr ""
+msgstr "მონღოლური"
 
 #: ../input-pad/unicode_block.h:83
 msgid "Unified Canadian Aboriginal Syllabics Extended"
-msgstr ""
+msgstr "უნიფიცირებული კანადური აბორიგინალური მარცვლები, გაფართოებული"
 
 #: ../input-pad/unicode_block.h:84
 msgid "Limbu"
-msgstr ""
+msgstr "ლიმბუ"
 
 #: ../input-pad/unicode_block.h:85
 msgid "Tai Le"
-msgstr ""
+msgstr "ტაი ლე"
 
 #: ../input-pad/unicode_block.h:86
 msgid "New Tai Lue"
-msgstr ""
+msgstr "ახალი ტაი ლუ"
 
 #: ../input-pad/unicode_block.h:87
 msgid "Khmer Symbols"
-msgstr ""
+msgstr "ხმერული სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:88
 msgid "Buginese"
-msgstr ""
+msgstr "ბუგინური"
 
 #: ../input-pad/unicode_block.h:89
 msgid "Tai Tham"
-msgstr ""
+msgstr "ტაი ენა"
 
 #: ../input-pad/unicode_block.h:90
 msgid "Balinese"
-msgstr ""
+msgstr "ბალინური"
 
 #: ../input-pad/unicode_block.h:91
 msgid "Sundanese"
-msgstr ""
+msgstr "სუნდური"
 
 #: ../input-pad/unicode_block.h:92
 msgid "Lepcha"
-msgstr ""
+msgstr "ლეპჩა"
 
 #: ../input-pad/unicode_block.h:93
 msgid "Ol Chiki"
-msgstr ""
+msgstr "ოლ ჩიკი"
 
 #: ../input-pad/unicode_block.h:94
 msgid "Vedic Extensions"
-msgstr ""
+msgstr "ვედიიური გაფართოებები"
 
 #: ../input-pad/unicode_block.h:95
 msgid "Phonetic Extensions"
-msgstr ""
+msgstr "ფონეტიკური გაფართოებები"
 
 #: ../input-pad/unicode_block.h:96
 msgid "Phonetic Extensions Supplement"
-msgstr ""
+msgstr "ფონეტიკური გაფართოებების ჩანაცვლებები"
 
 #: ../input-pad/unicode_block.h:97
 msgid "Combining Diacritical Marks Supplement"
-msgstr ""
+msgstr "შემკრები დიაკრიტიკული სანიშნების დანამატები"
 
 #: ../input-pad/unicode_block.h:98
 msgid "Latin Extended Additional"
-msgstr ""
+msgstr "ლათინური დამატებით გაფართოებული"
 
 #: ../input-pad/unicode_block.h:99
 msgid "Greek Extended"
-msgstr ""
+msgstr "გაფართოებული ბერძნული"
 
 #: ../input-pad/unicode_block.h:100
 msgid "General Punctuation"
-msgstr ""
+msgstr "ზოგადი პუნქტუაცია"
 
 #: ../input-pad/unicode_block.h:101
 msgid "Superscripts and Subscripts"
-msgstr ""
+msgstr "ზედა და ქვედა სკრიპტები"
 
 #: ../input-pad/unicode_block.h:102
 msgid "Currency Symbols"
-msgstr ""
+msgstr "ფულის სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:103
 msgid "Combining Diacritical Marks for Symbols"
-msgstr ""
+msgstr "შემკრები დიაკრიტიკული სანიშნები სიმბოლოებისთვის"
 
 #: ../input-pad/unicode_block.h:104
 msgid "Letterlike Symbols"
-msgstr ""
+msgstr "ასოს-მსგავსი სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:105
 msgid "Number Forms"
-msgstr ""
+msgstr "რიცხვითი ფორმები"
 
 #: ../input-pad/unicode_block.h:106
 msgid "Arrows"
-msgstr ""
+msgstr "ისრები"
 
 #: ../input-pad/unicode_block.h:107
 msgid "Mathematical Operators"
-msgstr ""
+msgstr "მათემატიკური ოპერატორები"
 
 #: ../input-pad/unicode_block.h:108
 msgid "Miscellaneous Technical"
-msgstr ""
+msgstr "დანარჩენი ტექნიკური"
 
 #: ../input-pad/unicode_block.h:109
 msgid "Control Pictures"
-msgstr ""
+msgstr "საკონტროლო სურათები"
 
 #: ../input-pad/unicode_block.h:110
 msgid "Optical Character Recognition"
-msgstr ""
+msgstr "სიმბოლოების ოპტიკური გამოცნობა"
 
 #: ../input-pad/unicode_block.h:111
 msgid "Enclosed Alphanumerics"
-msgstr ""
+msgstr "ჩასმული ასოები და რიცხვები"
 
 #: ../input-pad/unicode_block.h:113
 msgid "Block Elements"
-msgstr ""
+msgstr "ბლოკის ელემენტები"
 
 #: ../input-pad/unicode_block.h:114
 msgid "Geometric Shapes"
-msgstr ""
+msgstr "გეომეტრიული ფიგურები"
 
 #: ../input-pad/unicode_block.h:115
 msgid "Miscellaneous Symbols"
-msgstr ""
+msgstr "სხვადასხვა სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:117
 msgid "Miscellaneous Mathematical Symbols-A"
-msgstr ""
+msgstr "სხვადასხვა მათემატიკური სიმბოლოები - A"
 
 #: ../input-pad/unicode_block.h:118
 msgid "Supplemental Arrows-A"
-msgstr ""
+msgstr "დამატებითი ისრები - A"
 
 #: ../input-pad/unicode_block.h:119
 msgid "Braille Patterns"
-msgstr ""
+msgstr "ბრაილის შაბლონები"
 
 #: ../input-pad/unicode_block.h:120
 msgid "Supplemental Arrows-B"
-msgstr ""
+msgstr "დამატებითი ისრები - B"
 
 #: ../input-pad/unicode_block.h:121
 msgid "Miscellaneous Mathematical Symbols-B"
-msgstr ""
+msgstr "სხვადასხვა მათემატიკური სიმბოლოები - B"
 
 #: ../input-pad/unicode_block.h:122
 msgid "Supplemental Mathematical Operators"
-msgstr ""
+msgstr "დამატებითი მათემატიკური ოპერატორები"
 
 #: ../input-pad/unicode_block.h:123
 msgid "Miscellaneous Symbols and Arrows"
-msgstr ""
+msgstr "სხვადასხვა სიმბოლოები და ისრები"
 
 #: ../input-pad/unicode_block.h:124
 msgid "Glagolitic"
-msgstr ""
+msgstr "გლაგოლიტური"
 
 #: ../input-pad/unicode_block.h:125
 msgid "Latin Extended-C"
-msgstr ""
+msgstr "ლათინური გაფართოებული-C"
 
 #: ../input-pad/unicode_block.h:126
 msgid "Coptic"
-msgstr ""
+msgstr "კოპტური"
 
 #: ../input-pad/unicode_block.h:127
 msgid "Georgian Supplement"
-msgstr ""
+msgstr "ქართული დამატებებით"
 
 #: ../input-pad/unicode_block.h:128
 msgid "Tifinagh"
-msgstr ""
+msgstr "ტიფინაგური"
 
 #: ../input-pad/unicode_block.h:129
 msgid "Ethiopic Extended"
-msgstr ""
+msgstr "გაფართოებული ეთიოპიური"
 
 #: ../input-pad/unicode_block.h:130
 msgid "Cyrillic Extended-A"
-msgstr ""
+msgstr "კირილიცა გაფართოებული-A"
 
 #: ../input-pad/unicode_block.h:131
 msgid "Supplemental Punctuation"
-msgstr ""
+msgstr "დამატებითი პუნქტუაცია"
 
 #: ../input-pad/unicode_block.h:133
 msgid "Kangxi Radicals"
-msgstr ""
+msgstr "Kangxi-ის რადიკალები"
 
 #: ../input-pad/unicode_block.h:134
 msgid "Ideographic Description Characters"
-msgstr ""
+msgstr "იდეოგრაფიური აღწერის სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:135
 msgid "CJK Symbols and Punctuation"
-msgstr ""
+msgstr "CJK სიმბოლოები და პუნქტუაცია"
 
 #: ../input-pad/unicode_block.h:139
 msgid "Hangul Compatibility Jamo"
-msgstr ""
+msgstr "Hangul-თან თავსებადი Jamo"
 
 #: ../input-pad/unicode_block.h:140
 msgid "Kanbun"
-msgstr ""
+msgstr "კანბუნი"
 
 #: ../input-pad/unicode_block.h:141
 msgid "Bopomofo Extended"
-msgstr ""
+msgstr "ბოპომოფო, გაფართოებული"
 
 #: ../input-pad/unicode_block.h:142
 msgid "CJK Strokes"
-msgstr ""
+msgstr "CJK-ის ჩარტყმები"
 
 #: ../input-pad/unicode_block.h:143
 msgid "Katakana Phonetic Extensions"
-msgstr ""
+msgstr "კატაკანის ფონეტიკური გაფართოებები"
 
 #: ../input-pad/unicode_block.h:144
 msgid "Enclosed CJK Letters and Months"
-msgstr ""
+msgstr "დახურული CJK ასოები და თვეებ"
 
 #: ../input-pad/unicode_block.h:146
 msgid "CJK Unified Ideographs Extension A"
-msgstr ""
+msgstr "CJK გაერთიანებული იდეოგრაფების გაფართოება A"
 
 #: ../input-pad/unicode_block.h:147
 msgid "Yijing Hexagram Symbols"
-msgstr ""
+msgstr "იჩინგის ჰექსაგრამული სიბოლოები"
 
 #: ../input-pad/unicode_block.h:148
 msgid "CJK Unified Ideographs"
-msgstr ""
+msgstr "CJK გაფართოებული იდეოგრაფები"
 
 #: ../input-pad/unicode_block.h:149
 msgid "Yi Syllables"
-msgstr ""
+msgstr "იჩიგის მარცვლები"
 
 #: ../input-pad/unicode_block.h:150
 msgid "Yi Radicals"
-msgstr ""
+msgstr "იჩინგის რადიკალები"
 
 #: ../input-pad/unicode_block.h:151
 msgid "Lisu"
-msgstr ""
+msgstr "ლისუ"
 
 #: ../input-pad/unicode_block.h:152
 msgid "Vai"
-msgstr ""
+msgstr "ვაი"
 
 #: ../input-pad/unicode_block.h:153
 msgid "Cyrillic Extended-B"
-msgstr ""
+msgstr "კირილიცა გაფართოებული-B"
 
 #: ../input-pad/unicode_block.h:154
 msgid "Bamum"
-msgstr ""
+msgstr "ბამუმი"
 
 #: ../input-pad/unicode_block.h:155
 msgid "Modifier Tone Letters"
-msgstr ""
+msgstr "ტონის მოდიფიკატორი სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:156
 msgid "Latin Extended-D"
-msgstr ""
+msgstr "ლათინური გაფართოებული-D"
 
 #: ../input-pad/unicode_block.h:157
 msgid "Syloti Nagri"
-msgstr ""
+msgstr "Syloti Nagri"
 
 #: ../input-pad/unicode_block.h:158
 msgid "Common Indic Number Forms"
-msgstr ""
+msgstr "ზოგადი ინდური რიცხვითი ფორმები"
 
 #: ../input-pad/unicode_block.h:159
 msgid "Phags-pa"
-msgstr ""
+msgstr "Phags-pa"
 
 #: ../input-pad/unicode_block.h:160
 msgid "Saurashtra"
-msgstr ""
+msgstr "საურაშტრა"
 
 #: ../input-pad/unicode_block.h:161
 msgid "Devanagari Extended"
-msgstr ""
+msgstr "დევაგანური გაფართოებული"
 
 #: ../input-pad/unicode_block.h:162
 msgid "Kayah Li"
-msgstr ""
+msgstr "კაია-ლი"
 
 #: ../input-pad/unicode_block.h:163
 msgid "Rejang"
-msgstr ""
+msgstr "რეჯანგი"
 
 #: ../input-pad/unicode_block.h:164
 msgid "Hangul Jamo Extended-A"
-msgstr ""
+msgstr "ჰანგული ჯამო გაფართოებული-A"
 
 #: ../input-pad/unicode_block.h:165
 msgid "Javanese"
-msgstr ""
+msgstr "იავური"
 
 #: ../input-pad/unicode_block.h:166
 msgid "Cham"
-msgstr ""
+msgstr "ჩამური"
 
 #: ../input-pad/unicode_block.h:167
 msgid "Myanmar Extended-A"
-msgstr ""
+msgstr "მიანმარი გაფართოებული-A"
 
 #: ../input-pad/unicode_block.h:168
 msgid "Tai Viet"
-msgstr ""
+msgstr "ტაი ვიეტური"
 
 #: ../input-pad/unicode_block.h:169
 msgid "Meetei Mayek"
-msgstr ""
+msgstr "მანიპურული"
 
 #: ../input-pad/unicode_block.h:170
 msgid "Hangul Syllables"
-msgstr ""
+msgstr "ჰანგულის მარცვლები"
 
 #: ../input-pad/unicode_block.h:171
 msgid "Hangul Jamo Extended-B"
-msgstr ""
+msgstr "ჰანგული ჯამო გაფართოებული-B"
 
 #: ../input-pad/unicode_block.h:172
 msgid "High Surrogates"
-msgstr ""
+msgstr "მაღალი სუროგატები"
 
 #: ../input-pad/unicode_block.h:173
 msgid "High Private Use Surrogates"
-msgstr ""
+msgstr "მაღალი პირადი გამოყენების სუროგატები"
 
 #: ../input-pad/unicode_block.h:174
 msgid "Low Surrogates"
-msgstr ""
+msgstr "დაბალი სუროგატები"
 
 #: ../input-pad/unicode_block.h:175
 msgid "Private Use Area"
-msgstr ""
+msgstr "პირადი გამოყენების ადგილი"
 
 #: ../input-pad/unicode_block.h:176
 msgid "CJK Compatibility Ideographs"
-msgstr ""
+msgstr "CJK თავსებადი იდეოგრაფები"
 
 #: ../input-pad/unicode_block.h:177
 msgid "Alphabetic Presentation Forms"
-msgstr ""
+msgstr "ანბანური წარმოდგენის ფორმები"
 
 #: ../input-pad/unicode_block.h:178
 msgid "Arabic Presentation Forms-A"
-msgstr ""
+msgstr "ფორმების არაბული პრეზენტაცია-A"
 
 #: ../input-pad/unicode_block.h:179
 msgid "Variation Selectors"
-msgstr ""
+msgstr "ვარიაციული სელექტორები"
 
 #: ../input-pad/unicode_block.h:180
 msgid "Vertical Forms"
-msgstr ""
+msgstr "ვერტიკალური ფორმები"
 
 #: ../input-pad/unicode_block.h:181
 msgid "Combining Half Marks"
-msgstr ""
+msgstr "ნახევრადსანიშნების კომბინირება"
 
 #: ../input-pad/unicode_block.h:182
 msgid "CJK Compatibility Forms"
-msgstr ""
+msgstr "CJK თავსებადობის ფორმები"
 
 #: ../input-pad/unicode_block.h:183
 msgid "Small Form Variants"
-msgstr ""
+msgstr "პატარა ფორმის ვარიანტები"
 
 #: ../input-pad/unicode_block.h:184
 msgid "Arabic Presentation Forms-B"
-msgstr ""
+msgstr "ფორმების არაბული პრეზენტაცია-"
 
 #: ../input-pad/unicode_block.h:185
 msgid "Halfwidth and Fullwidth Forms"
-msgstr ""
+msgstr "ნახევარსიგანიანი და სრულსიგანიანი ფორმები"
 
 #: ../input-pad/unicode_block.h:186
 msgid "Specials"
-msgstr ""
+msgstr "სპეციალური სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:187
 msgid "Linear B Syllabary"
-msgstr ""
+msgstr "წრფივი B მარცვლოვანი ანბანი"
 
 #: ../input-pad/unicode_block.h:188
 msgid "Linear B Ideograms"
-msgstr ""
+msgstr "წრფივი B იდეოგრამები"
 
 #: ../input-pad/unicode_block.h:189
 msgid "Aegean Numbers"
-msgstr ""
+msgstr "ეგეოსური რიცხვები"
 
 #: ../input-pad/unicode_block.h:190
 msgid "Ancient Greek Numbers"
-msgstr ""
+msgstr "ძველბერძნული ციფრები"
 
 #: ../input-pad/unicode_block.h:191
 msgid "Ancient Symbols"
-msgstr ""
+msgstr "ძველი სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:192
 msgid "Phaistos Disc"
-msgstr ""
+msgstr "ფესტოსის დისკო"
 
 #: ../input-pad/unicode_block.h:193
 msgid "Lycian"
-msgstr ""
+msgstr "ლიდიის"
 
 #: ../input-pad/unicode_block.h:194
 msgid "Carian"
-msgstr ""
+msgstr "კარიული"
 
 #: ../input-pad/unicode_block.h:195
 msgid "Old Italic"
-msgstr ""
+msgstr "ძველი დახრილი"
 
 #: ../input-pad/unicode_block.h:197
 msgid "Ugaritic"
-msgstr ""
+msgstr "უგარათული"
 
 #: ../input-pad/unicode_block.h:198
 msgid "Old Persian"
-msgstr ""
+msgstr "ძველი სპარსული"
 
 #: ../input-pad/unicode_block.h:199
 msgid "Deseret"
-msgstr ""
+msgstr "უდაბნოური"
 
 #: ../input-pad/unicode_block.h:201
 msgid "Osmanya"
-msgstr ""
+msgstr "ოსმანია"
 
 #: ../input-pad/unicode_block.h:202
 msgid "Cypriot Syllabary"
-msgstr ""
+msgstr "კვიპრიოტული მარცვლოვანი ანბანი"
 
 #: ../input-pad/unicode_block.h:203
 msgid "Imperial Aramaic"
-msgstr ""
+msgstr "იმპერიული არამეული"
 
 #: ../input-pad/unicode_block.h:204
 msgid "Phoenician"
-msgstr ""
+msgstr "ფონეტიკური"
 
 #: ../input-pad/unicode_block.h:205
 msgid "Lydian"
-msgstr ""
+msgstr "ლიდიური"
 
 #: ../input-pad/unicode_block.h:206
 msgid "Kharoshthi"
-msgstr ""
+msgstr "ხაროშტი"
 
 #: ../input-pad/unicode_block.h:207
 msgid "Old South Arabian"
-msgstr ""
+msgstr "ძველი სამხრეთ არაბული"
 
 #: ../input-pad/unicode_block.h:208
 msgid "Avestan"
-msgstr ""
+msgstr "ავესტანი"
 
 #: ../input-pad/unicode_block.h:209
 msgid "Inscriptional Parthian"
-msgstr ""
+msgstr "პართიული დამწერლობა"
 
 #: ../input-pad/unicode_block.h:210
 msgid "Inscriptional Pahlavi"
-msgstr ""
+msgstr "ფეჰლევის დამწერლობა"
 
 #: ../input-pad/unicode_block.h:211
 msgid "Old Turkic"
-msgstr ""
+msgstr "ძველი თურქული"
 
 #: ../input-pad/unicode_block.h:212
 msgid "Rumi Numeral Symbols"
@@ -4116,71 +4119,71 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:213
 msgid "Kaithi"
-msgstr ""
+msgstr "კაიტხი"
 
 #: ../input-pad/unicode_block.h:214
 msgid "Cuneiform"
-msgstr ""
+msgstr "ლურსმული"
 
 #: ../input-pad/unicode_block.h:215
 msgid "Cuneiform Numbers and Punctuation"
-msgstr ""
+msgstr "ლურსმული რიცხვები და პუნქტუაცია"
 
 #: ../input-pad/unicode_block.h:216
 msgid "Egyptian Hieroglyphs"
-msgstr ""
+msgstr "ეგვიპტური იეროგლიფები"
 
 #: ../input-pad/unicode_block.h:217
 msgid "Byzantine Musical Symbols"
-msgstr ""
+msgstr "ბიზანტიური მუსიკალური სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:218
 msgid "Musical Symbols"
-msgstr ""
+msgstr "მუსიკალური სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:219
 msgid "Ancient Greek Musical Notation"
-msgstr ""
+msgstr "ძველბერძნული მუსიკალური ნოტაციები"
 
 #: ../input-pad/unicode_block.h:220
 msgid "Tai Xuan Jing Symbols"
-msgstr ""
+msgstr "Tai Xuan Jing-ის სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:221
 msgid "Counting Rod Numerals"
-msgstr ""
+msgstr "ჩხირებით თვლა"
 
 #: ../input-pad/unicode_block.h:222
 msgid "Mathematical Alphanumeric Symbols"
-msgstr ""
+msgstr "მათემატიკური ალფარიცხვული სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:223
 msgid "Mahjong Tiles"
-msgstr ""
+msgstr "მაჰჯონგის ფილები"
 
 #: ../input-pad/unicode_block.h:224
 msgid "Domino Tiles"
-msgstr ""
+msgstr "დომინოს ფილები"
 
 #: ../input-pad/unicode_block.h:225
 msgid "Enclosed Alphanumeric Supplement"
-msgstr ""
+msgstr "დამატებით შემოსაზღვრული ციფრები და სიმბოლოები"
 
 #: ../input-pad/unicode_block.h:226
 msgid "Enclosed Ideographic Supplement"
-msgstr ""
+msgstr "დამატებით შემოსაზღვრული იეროგლიფები"
 
 #: ../input-pad/unicode_block.h:227
 msgid "CJK Unified Ideographs Extension B"
-msgstr ""
+msgstr "CJK გაერთიანებული იდეოგრაფების გაფართოება B"
 
 #: ../input-pad/unicode_block.h:228
 msgid "CJK Unified Ideographs Extension C"
-msgstr ""
+msgstr "CJK გაერთიანებული იდეოგრაფების გაფართოება C"
 
 #: ../input-pad/unicode_block.h:229
 msgid "CJK Compatibility Ideographs Supplement"
-msgstr ""
+msgstr "CJK თავსებადი იდეოგრაფების დამატებები"
 
 #: ../input-pad/unicode_block.h:230
 msgid "Tags"
@@ -4188,19 +4191,19 @@ msgstr ""
 
 #: ../input-pad/unicode_block.h:231
 msgid "Variation Selectors Supplement"
-msgstr ""
+msgstr "ვარიაციული სელექტორების დამატება"
 
 #: ../input-pad/unicode_block.h:232
 msgid "Supplementary Private Use Area-A"
-msgstr ""
+msgstr "პირადი გამოყენების ადგილი-A"
 
 #: ../input-pad/unicode_block.h:233
 msgid "Supplementary Private Use Area-B"
-msgstr ""
+msgstr "პირადი გამოყენების ადგილი-B"
 
 #: ../input-pad/window-gtk.c:247
 msgid "Display version"
-msgstr ""
+msgstr "ვერსის ჩვენება"
 
 #. Translators: the word 'KBDUI' is not translated.
 #: ../input-pad/window-gtk.c:250
@@ -4239,7 +4242,7 @@ msgstr ""
 
 #: ../input-pad/window-gtk.c:3104
 msgid "_Layout:"
-msgstr ""
+msgstr "განლაგება:"
 
 #: ../input-pad/window-gtk.c:3134
 msgid "_Configure Layouts"
@@ -4280,4 +4283,4 @@ msgstr ""
 
 #: ../input-pad/window-gtk.c:3463
 msgid "Subgroup"
-msgstr ""
+msgstr "ქვეჯგუფი"
