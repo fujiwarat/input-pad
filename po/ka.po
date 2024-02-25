@@ -3,13 +3,15 @@
 # This file is distributed under the same license as the input-pad package.
 #
 # Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2024.
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: input-pad HEAD\n"
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
 "POT-Creation-Date: 2020-01-15 19:08+0900\n"
-"PO-Revision-Date: 2024-02-25 12:15+0000\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"PO-Revision-Date: 2024-02-25 12:19+0000\n"
+"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
+"memory@weblate.org>\n"
 "Language-Team: Georgian <https://translate.fedoraproject.org/projects/"
 "input-pad/master/ka/>\n"
 "Language: ka\n"
@@ -90,7 +92,7 @@ msgstr "ტექნიკური"
 
 #: ../data/base.xml.in:18
 msgid "Unit"
-msgstr "საზომი ერთეულები"
+msgstr "ერთეული"
 
 #: ../data/base.xml.in:19
 msgid "Mathematical"
@@ -1606,7 +1608,7 @@ msgstr "საუბარი"
 
 #: ../data/str.xml.in:38
 msgid "Warning"
-msgstr ""
+msgstr "ყურადღება"
 
 #: ../data/str.xml.in:39
 msgid "Thunder"
@@ -2942,7 +2944,7 @@ msgstr ""
 
 #: ../data/str.xml.in:372
 msgid "OK"
-msgstr ""
+msgstr "დიახ"
 
 #: ../data/str.xml.in:373
 msgid "Bow"
@@ -3074,11 +3076,11 @@ msgstr ""
 
 #: ../data/str.xml.in:405
 msgid "Yes"
-msgstr ""
+msgstr "დიახ"
 
 #: ../data/str.xml.in:406
 msgid "No"
-msgstr ""
+msgstr "არა"
 
 #: ../data/str.xml.in:407
 msgid "Shut Mouth"
@@ -3247,7 +3249,7 @@ msgstr "ბოპომოფო"
 
 #: ../input-pad/app-menu.ui.h:1
 msgid "_File"
-msgstr ""
+msgstr "_ფაილი"
 
 #: ../input-pad/app-menu.ui.h:2 ../input-pad/dialog.ui.h:21
 msgid "_Close"
@@ -3287,7 +3289,7 @@ msgstr ""
 
 #: ../input-pad/app-menu.ui.h:11
 msgid "_Help"
-msgstr ""
+msgstr "_დახმარება"
 
 #: ../input-pad/app-menu.ui.h:12
 msgid "_Troubleshoot"
@@ -3367,7 +3369,7 @@ msgstr "სიმბოლო:"
 
 #: ../input-pad/dialog.ui.h:20
 msgid "_Send"
-msgstr ""
+msgstr "გაგზავნა"
 
 #: ../input-pad/dialog.ui.h:22
 msgid "Input Pad Troubleshoot"
