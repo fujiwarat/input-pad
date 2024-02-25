@@ -10,7 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
 "POT-Creation-Date: 2020-01-15 19:08+0900\n"
 "PO-Revision-Date: 2024-02-26 12:36+0000\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
+"memory@weblate.org>\n"
 "Language-Team: Georgian <https://translate.fedoraproject.org/projects/"
 "input-pad/master/ka/>\n"
 "Language: ka\n"
@@ -3404,7 +3405,7 @@ msgstr ""
 
 #: ../input-pad/dialog.ui.h:34
 msgid "_Add"
-msgstr ""
+msgstr "_დამატება"
 
 #: ../input-pad/dialog.ui.h:35
 msgid "_Layouts shown in the list:"
@@ -3416,7 +3417,7 @@ msgstr "წ_აშლა"
 
 #: ../input-pad/dialog.ui.h:37
 msgid "_Options"
-msgstr ""
+msgstr "_პარამეტრები"
 
 #: ../input-pad/dialog.ui.h:38
 msgid "Configure Keyboard Options"
@@ -4188,7 +4189,7 @@ msgstr "CJK თავსებადი იდეოგრაფების დ
 
 #: ../input-pad/unicode_block.h:230
 msgid "Tags"
-msgstr ""
+msgstr "ჭდეები"
 
 #: ../input-pad/unicode_block.h:231
 msgid "Variation Selectors Supplement"
@@ -4239,7 +4240,7 @@ msgstr ""
 
 #: ../input-pad/window-gtk.c:2833
 msgid "Layout"
-msgstr ""
+msgstr "განლაგება"
 
 #: ../input-pad/window-gtk.c:3104
 msgid "_Layout:"
@@ -4280,7 +4281,7 @@ msgstr ""
 
 #: ../input-pad/window-gtk.c:3455
 msgid "Group"
-msgstr ""
+msgstr "ჯგუფი"
 
 #: ../input-pad/window-gtk.c:3463
 msgid "Subgroup"
