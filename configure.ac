@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad
 #
-# Copyright (c) 2010-2015 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010-2015 Red Hat, Inc.
+# Copyright (c) 2010-2025 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2025 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -73,7 +73,6 @@ AM_PROG_CC_C_O
 AC_PROG_CXX
 AC_HEADER_STDC
 LT_INIT
-IT_PROG_INTLTOOL([0.35.0])
 
 dnl - For dislpay Date
 m4_define(pad_datedisplay,
@@ -186,12 +185,12 @@ dnl - define GETTEXT_* variables
 GETTEXT_PACKAGE=input-pad
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
-
-AM_GLIB_GNU_GETTEXT
-AM_GLIB_DEFINE_LOCALEDIR(INPUT_PAD_LOCALEDIR)
+AM_GNU_GETTEXT_VERSION([0.19.8])
+AM_GNU_GETTEXT([external])
 
 dnl - OUTPUT files
-AC_CONFIG_FILES([ po/Makefile.in
+AC_CONFIG_FILES([
+po/Makefile.in
 Makefile
 input-pad.pc
 input-pad.spec

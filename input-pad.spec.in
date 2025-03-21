@@ -30,7 +30,6 @@ BuildRequires:  libtool
 BuildRequires:  libxkbfile-devel
 BuildRequires:  libxklavier-devel       >= %libxklavier_version
 BuildRequires:  libxml2-devel           >= %libxml2_version
-BuildRequires:  intltool
 BuildRequires:  pkgconfig
 %if %have_xtest_devel
 BuildRequires:  libXtst-devel

@@ -1,5 +1,5 @@
 [Desktop Entry]
-_Name=Input Pad
-_Comment=Input Pad
+Name=Input Pad
+Comment=Input Pad
 Icon=input-pad
 Exec=/usr/bin/input-pad

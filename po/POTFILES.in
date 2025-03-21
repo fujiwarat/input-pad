@@ -16,11 +16,11 @@ data/shaw.xml.in
 data/str.xml.in
 data/w3c.xml.in
 data/zh.xml.in
-[type: gettext/glade]input-pad/app-menu.ui
+input-pad/app-menu.ui
 input-pad/button-gtk.c
-[type: gettext/glade]input-pad/dialog.ui
+input-pad/dialog.ui
 input-pad/eek-gtk.c
 input-pad/kbdui-gtk.c
 input-pad/unicode_block.h
 input-pad/window-gtk.c
-[type: gettext/glade]input-pad/window-gtk.ui
+input-pad/window-gtk.ui

@@ -2,8 +2,8 @@
 #
 # input-pad - The input pad
 #
-# Copyright (c) 2010-2014 Takao Fujiwara <takao.fujiwara1@gmail.com>
-# Copyright (c) 2010-2014 Red Hat, Inc.
+# Copyright (c) 2010-2025 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# Copyright (c) 2010-2025 Red Hat, Inc.
 #
 # This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public
@@ -128,7 +128,9 @@ CLEANFILES= \
 #desktopdir = $(datarootdir)/applications
 desktop_in_files = input-pad.desktop.in
 #desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-#@INTLTOOL_DESKTOP_RULE@
+#$(desktop_DATA): $(desktop_in_files) Makefile
+#	$(AM_V_GEN)$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+
 
 EXTRA_DIST = \
 	$(desktop_in_files)                                     \
