@@ -1,0 +1,4288 @@
+# Georgian translations for input-pad
+# Copyright (C) 2010-2025 Takao Fujiwara <takao.fujiwara1@gmail.com>
+# This file is distributed under the same license as the input-pad package.
+#
+# Temuri Doghonadze <temuri.doghonadze@gmail.com>, 2024.
+# Weblate Translation Memory <noreply-mt-weblate-translation-memory@weblate.org>, 2024.
+msgid ""
+msgstr ""
+"Project-Id-Version: input-pad HEAD\n"
+"Report-Msgid-Bugs-To: http://code.google.com/p/input-pad/issues/list\n"
+"POT-Creation-Date: 2020-01-15 19:08+0900\n"
+"PO-Revision-Date: 2024-02-26 12:36+0000\n"
+"Last-Translator: Weblate Translation Memory <noreply-mt-weblate-translation-"
+"memory@weblate.org>\n"
+"Language-Team: Georgian <https://translate.fedoraproject.org/projects/"
+"input-pad/master/ka/>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.4\n"
+
+#: ../data/alphabet.xml.in.in:1
+msgid "Alphabets"
+msgstr "ანბანები"
+
+#: ../data/base.xml.in:1
+msgid "Symbols"
+msgstr "სიმბოლოები"
+
+#: ../data/base.xml.in:2
+msgid "Currency"
+msgstr "ფული"
+
+#: ../data/base.xml.in:3
+msgid "Letterlike"
+msgstr ""
+
+#: ../data/base.xml.in:4
+msgid "Miscellaneous"
+msgstr "სხვადასხვა"
+
+#: ../data/base.xml.in:5 ../input-pad/unicode_block.h:116
+msgid "Dingbats"
+msgstr "სისულელეები"
+
+#. Translators: Superscripts and Subscripts
+#: ../data/base.xml.in:7
+msgid "Super and Sub"
+msgstr ""
+
+#: ../data/base.xml.in:8
+msgid "Bold"
+msgstr "სქელი"
+
+#: ../data/base.xml.in:9
+msgid "Italic"
+msgstr "დახრა"
+
+#: ../data/base.xml.in:10
+msgid "Script"
+msgstr "სკრიპტი"
+
+#: ../data/base.xml.in:11
+msgid "Double Struck"
+msgstr ""
+
+#: ../data/base.xml.in:12
+msgid "All"
+msgstr "ყველა"
+
+#: ../data/base.xml.in:13 ../data/zh.xml.in.h:2
+msgid "Numbers"
+msgstr "რიცხვები"
+
+#: ../data/base.xml.in:14
+msgid "Roman"
+msgstr "რომანული"
+
+#: ../data/base.xml.in:15
+msgid "Enclosed"
+msgstr "ჩასმული"
+
+#: ../data/base.xml.in:16
+msgid "Fraction"
+msgstr "ნაწილი"
+
+#: ../data/base.xml.in:17
+msgid "Technical"
+msgstr "ტექნიკური"
+
+#: ../data/base.xml.in:18
+msgid "Unit"
+msgstr "ერთეული"
+
+#: ../data/base.xml.in:19
+msgid "Mathematical"
+msgstr "მათემატიკური"
+
+#: ../data/base.xml.in:20
+msgid "Controls"
+msgstr "მმართველები"
+
+#: ../data/base.xml.in:21
+msgid "OCR"
+msgstr "OCR"
+
+#: ../data/base.xml.in:22
+msgid "Graphics"
+msgstr "გრაფიკა"
+
+#: ../data/base.xml.in:23
+msgid "Arrow"
+msgstr "ისარი"
+
+#: ../data/base.xml.in:24 ../input-pad/unicode_block.h:112
+msgid "Box Drawing"
+msgstr "ყუთის ნახატი"
+
+#: ../data/base.xml.in:25 ../input-pad/window-gtk.c:3694
+msgid "Block"
+msgstr "ბლოკი"
+
+#: ../data/base.xml.in:26
+msgid "Geometric"
+msgstr "გეომეტრიული"
+
+#: ../data/base.xml.in:27
+msgid "Braille"
+msgstr "ბრაილური"
+
+#: ../data/base.xml.in:28
+msgid "Punctuations"
+msgstr "პუნქტუაცია"
+
+#: ../data/base.xml.in:29
+msgid "General"
+msgstr "ზოგადი"
+
+#: ../data/base.xml.in:30
+msgid "CJK"
+msgstr "CJK"
+
+#: ../data/base.xml.in:31 ../input-pad/unicode_block.h:145
+msgid "CJK Compatibility"
+msgstr "CJK-სთან თავსებადობა"
+
+#: ../data/base.xml.in:32
+msgid "Small Form"
+msgstr "პატარა ფორმა"
+
+#: ../data/cmd.xml.in:1
+msgid "Command"
+msgstr "ბრძანება"
+
+#: ../data/cmd.xml.in:2
+msgid "Date"
+msgstr "თარიღი"
+
+#: ../data/cmd.xml.in:3
+msgid "Normal Date"
+msgstr "ნორმალური თარიღი"
+
+#: ../data/cmd.xml.in:4
+msgid "Date and Time"
+msgstr "თარიღი და დრო"
+
+#: ../data/cmd.xml.in:5
+msgid "ChangeLog date"
+msgstr "ცვლილებების ჟურნალის თარიღი"
+
+#: ../data/cmd.xml.in:6
+msgid "USA English date"
+msgstr ""
+
+#: ../data/cmd.xml.in:7
+msgid "UK English date"
+msgstr ""
+
+#: ../data/cmd.xml.in:8
+msgid "ISO 8601 date"
+msgstr "ISO 8601 თარიღი"
+
+#: ../data/cmd.xml.in:9
+msgid "Era"
+msgstr "ერა"
+
+#: ../data/cmd.xml.in:10
+msgid "Century Year"
+msgstr ""
+
+#: ../data/cmd.xml.in:11
+msgid "Normal Time"
+msgstr ""
+
+#: ../data/cmd.xml.in:12
+msgid "English Time"
+msgstr ""
+
+#: ../data/cmd.xml.in:13
+msgid "Month"
+msgstr "თვე"
+
+#: ../data/cmd.xml.in:14
+msgid "English Month"
+msgstr ""
+
+#: ../data/cmd.xml.in:15
+msgid "Short Month"
+msgstr ""
+
+#: ../data/cmd.xml.in:16
+msgid "English Short Month"
+msgstr ""
+
+#: ../data/cmd.xml.in:17
+msgid "Weekday"
+msgstr "კვირის დღე"
+
+#: ../data/cmd.xml.in:18
+msgid "English Weekday"
+msgstr ""
+
+#: ../data/cmd.xml.in:19
+msgid "Short Weekday"
+msgstr ""
+
+#: ../data/cmd.xml.in:20
+msgid "English Short Weekday"
+msgstr ""
+
+#: ../data/goth.xml.in:1 ../input-pad/unicode_block.h:196
+msgid "Gothic"
+msgstr "გოთური"
+
+#: ../data/input-pad.desktop.in:1 ../input-pad/dialog.ui.h:42
+#: ../input-pad/window-gtk.c:5093 ../input-pad/window-gtk.c:5094
+#: ../input-pad/window-gtk.ui.h:1
+msgid "Input Pad"
+msgstr ""
+
+#. "IPA" stands for "International Phonetic Alphabet"
+#: ../data/ipa-obsolete.xml.in:2
+msgid "IPA (Obsolete)"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:3 ../data/ipa.xml.in.h:6
+msgid "Open back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:4
+msgid "Palatalized voiced bilabial plosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:5
+msgid "Voiceless palatal implosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:6 ../data/ipa.xml.in.h:138
+msgid "Alveolar click"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:7
+msgid "Palatalized voiced alveolar plosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:8 ../data/ipa.xml.in.h:25
+msgid "Voiced alveolar affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:9 ../data/ipa.xml.in.h:27
+msgid "Voiced alveopalatal affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:10 ../data/ipa.xml.in.h:26
+msgid "Voiced palato-alveolar affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:11
+msgid "Palatalized voiceless labiodental fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:12
+msgid "Palatalized voiced velar plosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:13
+msgid "Palatalized voiceless velar plosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:14
+msgid "Voiceless velar implosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:15
+msgid "Palatalized alveolar lateral approximant"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:16
+msgid "Palatalized bilabial nasal"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:17
+msgid "Palatalized alveolar nasal"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:18
+msgid "Syllabic alveolar nasal"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:19
+msgid "Palatalized voiceless bilabial plosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:20
+msgid "Voiceless bilabial implosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:21
+msgid "Palatalized alveolar trill"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:22
+msgid "Voiced strident apico-alveolar trill"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:23
+msgid "Palatalized voiceless alveolar fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:24 ../data/ipa.xml.in.h:19
+msgid "Voiceless alveopalatal fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:25
+msgid "Labialized voiceless palato-alveolar fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:26 ../data/ipa.xml.in.h:103
+msgid "Voiceless alveopalatal affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:27 ../data/ipa.xml.in.h:101
+msgid "Voiceless alveolar affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:28 ../data/ipa.xml.in.h:102
+msgid "Voiceless palato-alveolar affricate"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:29
+msgid "Palatalized voiceless alveolar plosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:30
+msgid "Voiceless alveolar implosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:31 ../data/ipa.xml.in.h:137
+msgid "Dental click"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:32
+msgid "Voiceless uvular implosive"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:33
+msgid "Palatalized voiced labiodental fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:34
+msgid "Palatalized voiceless velar fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:35
+msgid "Palatalized voiced alveolar fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:36
+msgid "Labialized voiced palato-alveolar fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:37 ../data/ipa.xml.in.h:128
+msgid "Voiced alveopalatal fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:38 ../data/ipa.xml.in.h:106
+msgid "Near-close near-back vowel"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:39 ../data/ipa.xml.in.h:140
+msgid "Alveolar lateral click"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:40
+msgid "Labialized voiceless alveolar or dental fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:41
+msgid "Labialized voiced alveolar or dental fricative"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:42
+msgid "Combining labialization mark"
+msgstr ""
+
+#: ../data/ipa-obsolete.xml.in:43
+msgid "Combining palatalization mark"
+msgstr ""
+
+#. "IPA" stands for "International Phonetic Alphabet"
+#: ../data/ipa-unofficial.xml.in:2
+msgid "IPA (Unofficial)"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:3
+msgid "Voiced labiodental plosive"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:4 ../data/ipa.xml.in.h:18
+msgid "Voiceless palatal lateral affricate"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:5
+msgid "Voiced retroflex implosive"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:6 ../data/ipa.xml.in.h:88
+msgid "Alveolar flap"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:7 ../data/ipa.xml.in.h:125
+msgid "Voiceless palatal lateral fricative"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:8 ../data/ipa.xml.in.h:91
+msgid "Retroflex flap"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:9
+msgid "Voiceless retroflex lateral fricative"
+msgstr ""
+
+#. "PUA" stands for "Private Use Area"
+#: ../data/ipa-unofficial.xml.in:11
+msgid "Voiceless retroflex lateral fricative (PUA)"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:12 ../data/ipa.xml.in.h:59
+msgid "Voiceless velar lateral affricate"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:13 ../data/ipa.xml.in.h:68
+msgid "Voiceless velar lateral fricative"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:14
+msgid "Epiglottal trill"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:15
+msgid "Voiceless labiodental plosive"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:16
+msgid "Voiceless retroflex lateral affricate"
+msgstr ""
+
+#. "PUA" stands for "Private Use Area"
+#: ../data/ipa-unofficial.xml.in:18
+msgid "Voiceless retroflex lateral affricate (PUA)"
+msgstr ""
+
+#: ../data/ipa-unofficial.xml.in:19
+msgid "Combining stridency mark"
+msgstr ""
+
+#. "PUA" stands for "Private Use Area"
+#: ../data/ipa-unofficial.xml.in:21
+msgid "Combining stridency mark (PUA)"
+msgstr ""
+
+#. "IPA" stands for "International Phonetic Alphabet"
+#: ../data/ipa.xml.in:2
+msgid "IPA"
+msgstr "IPA"
+
+#: ../data/ipa.xml.in:3
+msgid "Open front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:4
+msgid "Open central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:5
+msgid "Near-open central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:7
+msgid "Open back rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:8
+msgid "Open-mid back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:9
+msgid "Near-open front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:10
+msgid "Voiced bilabial plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:11
+msgid "Voiced labiodental affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in:12
+msgid "Voiced bilabial implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:13
+msgid "Bilabial trill"
+msgstr ""
+
+#: ../data/ipa.xml.in:14
+msgid "Voiced bilabial fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:15
+msgid "Voiceless palatal plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:16
+msgid "Voiceless palatal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:17
+msgid "Voiceless palatal affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in:20
+msgid "Voiced alveolar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:21
+msgid "Voiced alveolar implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:22
+msgid "Voiced retroflex plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:23
+msgid "Voiced dental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:24
+msgid "Voiced alveolar lateral affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in:28
+msgid "Voiced retroflex affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in:29
+msgid "Close-mid front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:30
+msgid "Close-mid central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:31
+msgid "Mid-central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:32
+msgid "Rhotacized mid-central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:33
+msgid "Open-mid front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:34
+msgid "Open-mid central rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:35
+msgid "Open-mid central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:36
+msgid "Rhotacized open-mid central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:37
+msgid "Voiceless labiodental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:38
+msgid "Velopharyngeal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:39
+msgid "Voiced velar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:40
+msgid "Voiced labial-velar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:41
+msgid "Voiced velar implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:42
+msgid "Voiced uvular plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:43
+msgid "Voiced uvular implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:44
+msgid "Voiceless glottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:45
+msgid "Voiced glottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:46
+msgid "Voiceless pharyngeal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:47
+msgid "Voiceless coarticulated velar and palato-alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:48
+msgid "Voiceless epiglottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:49
+msgid "Close front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:50
+msgid "Near-close near-front unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:51
+msgid "Near-close central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:52
+msgid "Close central unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:53
+msgid "Palatal approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:54
+msgid "Voiced palatal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:55
+msgid "Voiced palatal plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:56
+msgid "Voiced palatal affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in:57
+msgid "Voiced palatal implosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:58
+msgid "Voiceless velar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:60
+msgid "Voiceless labial-velar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:61
+msgid "Voiceless velar affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in:62
+msgid "Alveolar lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:63
+msgid "Velarized alveolar lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:64
+msgid "Voiceless alveolar lateral fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:65
+msgid "Retroflex lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:66
+msgid "Voiced alveolar lateral fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:67
+msgid "Velar lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:69
+msgid "Bilabial nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in:70
+msgid "Labiodental nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in:71
+msgid "Alveolar nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in:72
+msgid "Velar nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in:73
+msgid "Labial-velar nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in:74
+msgid "Palatal nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in:75
+msgid "Retroflex nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in:76
+msgid "Uvular nasal"
+msgstr ""
+
+#: ../data/ipa.xml.in:77
+msgid "Close-mid back rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:78
+msgid "Close-mid front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:79
+msgid "Close-mid central rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:80
+msgid "Open-mid front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:81
+msgid "Open front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:82
+msgid "Voiceless bilabial plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:83
+msgid "Voiceless bilabial-labiodental affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in:84
+msgid "Voiceless bilabial affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in:85
+msgid "Voiceless labiodental affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in:86
+msgid "Voiceless uvular plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:87
+msgid "Alveolar trill"
+msgstr ""
+
+#: ../data/ipa.xml.in:89
+msgid "Alveolar lateral flap"
+msgstr ""
+
+#: ../data/ipa.xml.in:90
+msgid "Uvular trill"
+msgstr ""
+
+#: ../data/ipa.xml.in:92
+msgid "Alveolar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:93
+msgid "Retroflex approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:94
+msgid "Voiced uvular fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:95
+msgid "Voiceless alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:96
+msgid "Voiceless palato-alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:97
+msgid "Voiceless retroflex fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:98
+msgid "Voiceless alveolar plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:99
+msgid "Voiceless retroflex plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:100
+msgid "Voiceless alveolar lateral affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in:104
+msgid "Voiceless retroflex affricate"
+msgstr ""
+
+#: ../data/ipa.xml.in:105
+msgid "Close back rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:107
+msgid "Near-close central vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:108
+msgid "Close central rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:109
+msgid "Labial-palatal approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:110
+msgid "Close back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:111
+msgid "Voiced labiodental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:112
+msgid "Labiodental flap"
+msgstr ""
+
+#: ../data/ipa.xml.in:113
+msgid "Labiodental approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:114
+msgid "Voiced velar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:115
+msgid "Close-mid back unrounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:116
+msgid "Voiced labiovelar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:117
+msgid "Voiceless labiovelar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:118
+msgid "Velar approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:119
+msgid "Bilabial percussive"
+msgstr ""
+
+#: ../data/ipa.xml.in:120
+msgid "Voiceless velar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:121
+msgid "Voiceless uvular fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:122
+msgid "Close front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:123
+msgid "Near-close near-front rounded vowel"
+msgstr ""
+
+#: ../data/ipa.xml.in:124
+msgid "Palatal lateral approximant"
+msgstr ""
+
+#: ../data/ipa.xml.in:126
+msgid "Voiced alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:127
+msgid "Voiced palato-alveolar fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:129
+msgid "Voiced retroflex fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:130
+msgid "Voiceless dental fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:131
+msgid "Voiceless bilabial fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:132
+msgid "Glottal stop"
+msgstr ""
+
+#: ../data/ipa.xml.in:133
+msgid "Epiglottal plosive"
+msgstr ""
+
+#: ../data/ipa.xml.in:134
+msgid "Voiced pharyngeal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:135
+msgid "Voiced epiglottal fricative"
+msgstr ""
+
+#: ../data/ipa.xml.in:136
+msgid "Bilabial click"
+msgstr ""
+
+#: ../data/ipa.xml.in:139
+msgid "Palatal click"
+msgstr ""
+
+#: ../data/ipa.xml.in:141
+msgid "Bidental percussive"
+msgstr ""
+
+#: ../data/ipa.xml.in:142
+msgid "Aspiration mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:143
+msgid "Non-aspiration mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:144
+msgid "Breathy voice mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:145
+msgid "Palatalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:146
+msgid "Lateral release mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:147
+msgid "Bilabial nasal release mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:148
+msgid "Labiodental nasal release mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:149
+msgid "Alveolar nasal release mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:150
+msgid "Palatal nasal release mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:151
+msgid "Retroflex nasal release mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:152
+msgid "Uvular nasal release mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:153
+msgid "Labio-palatalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:154
+msgid "Labiodentalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:155
+msgid "Labialization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:156
+msgid "Velarization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:157
+msgid "Glottalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:158
+msgid "Pharyngealization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:159
+msgid "Combining velarization/pharyngealization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:160
+msgid "Combining laryngealization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:161
+msgid "Combining retroflexion mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:162
+msgid "Ejection mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:163
+msgid "Rhotacization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:164
+msgid "Combining dentalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:165
+msgid "Combining dentolabialization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:166
+msgid "Combining alveolarization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:167
+msgid "Combining linguolabialization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:168
+msgid "Combining apicalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:169
+msgid "Combining laminalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:170
+msgid "Combining centralization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:171
+msgid "Combining mid-centralization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:172
+msgid "Combining nasalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:173
+msgid "Combining nasalization mark below"
+msgstr ""
+
+#: ../data/ipa.xml.in:174
+msgid "Combining denasalization mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:175
+msgid "Combining nasal friction mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:176
+msgid "Combining velopharyngeal friction mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:177
+msgid "Combining voiced mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:178
+msgid "Combining voiceless mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:179
+msgid "Combining voiceless mark above"
+msgstr ""
+
+#: ../data/ipa.xml.in:180
+msgid "Pre-voicing/post-voicing mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:181
+msgid "Combining breathy voice mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:182
+msgid "Combining unreleased stop mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:183
+msgid "Combining more rounded mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:184
+msgid "Combining less rounded mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:185
+msgid "Combining labial spreading mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:186
+msgid "Combining syllabic mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:187
+msgid "Combining syllabic mark above"
+msgstr ""
+
+#: ../data/ipa.xml.in:188
+msgid "Combining non-syllabic mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:189
+msgid "Combining non-syllabic mark above"
+msgstr ""
+
+#: ../data/ipa.xml.in:190
+msgid "Combining top tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:191
+msgid "Combining high tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:192
+msgid "Combining mid tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:193
+msgid "Combining low tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:194
+msgid "Combining bottom tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:195
+msgid "Combining falling tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:196
+msgid "Combining high falling tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:197
+msgid "Combining low falling tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:198
+msgid "Combining rising tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:199
+msgid "Combining high rising tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:200
+msgid "Combining low rising tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:201
+msgid "Combining dipping tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:202
+msgid "Combining peaking tone mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:203
+msgid "Top tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in:204
+msgid "High tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in:205
+msgid "Mid tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in:206
+msgid "Low tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in:207
+msgid "Bottom tone letter"
+msgstr ""
+
+#: ../data/ipa.xml.in:208
+msgid "Falling tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in:209
+msgid "High falling tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in:210
+msgid "Rising tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in:211
+msgid "High rising tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in:212
+msgid "Low rising tone digraph"
+msgstr ""
+
+#: ../data/ipa.xml.in:213
+msgid "Dipping tone trigraph"
+msgstr ""
+
+#: ../data/ipa.xml.in:214
+msgid "Peaking tone trigraph"
+msgstr ""
+
+#: ../data/ipa.xml.in:215
+msgid "Upstep mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:216
+msgid "Downstep mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:217
+msgid "Minor break"
+msgstr ""
+
+#: ../data/ipa.xml.in:218
+msgid "Major break"
+msgstr ""
+
+#: ../data/ipa.xml.in:219
+msgid "Rising intonation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:220
+msgid "Falling intonation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:221
+msgid "Advanced articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:222
+msgid "Retracted articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:223
+msgid "Combining advanced articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:224
+msgid "Combining retracted articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:225
+msgid "Raised sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:226
+msgid "Lowered sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:227
+msgid "Combining raised sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:228
+msgid "Combining lowered sound mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:229
+msgid "Combining tongue root advancement mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:230
+msgid "Combining tongue root retraction mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:231
+msgid "Combining strong articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:232
+msgid "Combining weak articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:233
+msgid "Combining whistled articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:234
+msgid "Combining sliding articulation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:235
+msgid "Egression mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:236
+msgid "Ingression mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:237
+msgid "Combining ligature tie"
+msgstr ""
+
+#: ../data/ipa.xml.in:238
+msgid "Combining ligature undertie"
+msgstr ""
+
+#: ../data/ipa.xml.in:239
+msgid "Elongation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:240
+msgid "Weak elongation mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:241
+msgid "Combining extra-short duration mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:242
+msgid "Liaison mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:243
+msgid "Stress mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:244
+msgid "Weak stress mark"
+msgstr ""
+
+#: ../data/ipa.xml.in:245
+msgid "Syllable break"
+msgstr ""
+
+#: ../data/ipa.xml.in:246
+msgid "Opening orthographic bracket"
+msgstr ""
+
+#: ../data/ipa.xml.in:247
+msgid "Closing orthographic bracket"
+msgstr ""
+
+#: ../data/ja.xml.in:1
+msgid "Japanese"
+msgstr "იაპონური"
+
+#: ../data/ja.xml.in:2 ../input-pad/unicode_block.h:136
+msgid "Hiragana"
+msgstr "ჰირაგანა"
+
+#: ../data/ja.xml.in:3 ../input-pad/unicode_block.h:137
+msgid "Katakana"
+msgstr "კატაკანა"
+
+#: ../data/ja.xml.in:4 ../data/zh.xml.in.h:3
+msgid "Radicals"
+msgstr ""
+
+#: ../data/ja.xml.in:5 ../input-pad/unicode_block.h:132
+msgid "CJK Radicals Supplement"
+msgstr "CJK რადიკალების დამატებები"
+
+#: ../data/keyboard.xml.in:1
+msgid "Keyboard"
+msgstr "კლავიატურა"
+
+#: ../data/keyboard.xml.in:2
+msgid "Function Key"
+msgstr ""
+
+#: ../data/keyboard.xml.in:3
+msgid "Key Pad"
+msgstr ""
+
+#: ../data/latin.xml.in:1
+msgid "ASCII"
+msgstr "ASCII"
+
+#: ../data/latin.xml.in:2 ../input-pad/unicode_block.h:38
+msgid "Latin-1 Supplement"
+msgstr "Latin-1 დამატებებით"
+
+#: ../data/latin.xml.in:3 ../input-pad/unicode_block.h:39
+msgid "Latin Extended-A"
+msgstr "ლათინური გაფართოებული-A"
+
+#: ../data/latin.xml.in:4
+msgid "Old and Middle English"
+msgstr ""
+
+#: ../data/runr.xml.in:1
+msgid "Runes (Unicode Block)"
+msgstr ""
+
+#: ../data/runr.xml.in:2
+msgid "Runes (Elder Fuþark)"
+msgstr ""
+
+#: ../data/runr.xml.in:3
+msgid "Runes (Younger Fuþark)"
+msgstr ""
+
+#: ../data/runr.xml.in:4
+msgid "Runes (Fuþorc)"
+msgstr ""
+
+#: ../data/shaw.xml.in:1 ../input-pad/unicode_block.h:200
+msgid "Shavian"
+msgstr "შავიური"
+
+#: ../data/str.xml.in:1
+msgid "Chat"
+msgstr "ჩატი"
+
+#: ../data/str.xml.in:2
+msgid "Emoji"
+msgstr "ემოჯი"
+
+#: ../data/str.xml.in:3
+msgid "Rain"
+msgstr "წვიმა"
+
+#: ../data/str.xml.in:4
+msgid "Comet"
+msgstr "კომეტა"
+
+#: ../data/str.xml.in:5
+msgid "Cross"
+msgstr "ჯვარი"
+
+#: ../data/str.xml.in:6
+msgid "Solar"
+msgstr "მზის"
+
+#: ../data/str.xml.in:7
+msgid "Mercury"
+msgstr "მერკური"
+
+#: ../data/str.xml.in:8
+msgid "Venus"
+msgstr "ვენერა"
+
+#: ../data/str.xml.in:9
+msgid "Earth"
+msgstr "დედამიწა"
+
+#: ../data/str.xml.in:10
+msgid "Mars"
+msgstr "მარსი"
+
+#: ../data/str.xml.in:11
+msgid "Jupiter"
+msgstr "იუპიტერი"
+
+#: ../data/str.xml.in:12
+msgid "Saturn"
+msgstr "სატურნი"
+
+#: ../data/str.xml.in:13
+msgid "Uranus"
+msgstr "ურანი"
+
+#: ../data/str.xml.in:14
+msgid "Neptune"
+msgstr "ნეპტუნი"
+
+#: ../data/str.xml.in:15
+msgid "Pluto"
+msgstr "პლუტონი"
+
+#: ../data/str.xml.in:16
+msgid "Aries"
+msgstr "ვერძი"
+
+#: ../data/str.xml.in:17
+msgid "Taurus"
+msgstr "კურო"
+
+#: ../data/str.xml.in:18
+msgid "Gemini"
+msgstr "მარჩბივი"
+
+#: ../data/str.xml.in:19
+msgid "Cancer"
+msgstr "კიბო"
+
+#: ../data/str.xml.in:20
+msgid "Leo"
+msgstr "ლომი"
+
+#: ../data/str.xml.in:21
+msgid "Virgo"
+msgstr "ქალწული"
+
+#: ../data/str.xml.in:22
+msgid "Libra"
+msgstr "სასწორი"
+
+#: ../data/str.xml.in:23
+msgid "Scorpius"
+msgstr "ღრიანკალი"
+
+#: ../data/str.xml.in:24
+msgid "Sagittarius"
+msgstr "მშვილდოსანი"
+
+#: ../data/str.xml.in:25
+msgid "Capricorn"
+msgstr "თხის რქა"
+
+#: ../data/str.xml.in:26
+msgid "Aquarius"
+msgstr "მერწყული"
+
+#: ../data/str.xml.in:27
+msgid "Pisces"
+msgstr "თევზები"
+
+#: ../data/str.xml.in:28
+msgid "Dice 1"
+msgstr ""
+
+#: ../data/str.xml.in:29
+msgid "Dice 2"
+msgstr ""
+
+#: ../data/str.xml.in:30
+msgid "Dice 3"
+msgstr ""
+
+#: ../data/str.xml.in:31
+msgid "Dice 4"
+msgstr ""
+
+#: ../data/str.xml.in:32
+msgid "Dice 5"
+msgstr ""
+
+#: ../data/str.xml.in:33
+msgid "Dice 6"
+msgstr ""
+
+#: ../data/str.xml.in:34
+msgid "Anchor"
+msgstr "ბმული"
+
+#: ../data/str.xml.in:35
+msgid "Sword"
+msgstr "ხმალი"
+
+#: ../data/str.xml.in:36
+msgid "Scales"
+msgstr "ფარფლები"
+
+#: ../data/str.xml.in:37
+msgid "Conversation"
+msgstr "საუბარი"
+
+#: ../data/str.xml.in:38
+msgid "Warning"
+msgstr "ყურადღება"
+
+#: ../data/str.xml.in:39
+msgid "Thunder"
+msgstr ""
+
+#: ../data/str.xml.in:40
+msgid "Coffin"
+msgstr ""
+
+#: ../data/str.xml.in:41
+msgid "Gender"
+msgstr "სქესი"
+
+#: ../data/str.xml.in:42
+msgid "Soccer"
+msgstr "სოკერი"
+
+#: ../data/str.xml.in:43
+msgid "Baseball"
+msgstr ""
+
+#: ../data/str.xml.in:44
+msgid "Snowman"
+msgstr ""
+
+#: ../data/str.xml.in:45
+msgid "Shogi"
+msgstr ""
+
+#: ../data/str.xml.in:46
+msgid "Shoji"
+msgstr ""
+
+#: ../data/str.xml.in:47
+msgid "Maintenance"
+msgstr "შეკეთება"
+
+#: ../data/str.xml.in:48
+msgid "Roadblock"
+msgstr ""
+
+#: ../data/str.xml.in:49
+msgid "No entry"
+msgstr ""
+
+#: ../data/str.xml.in:50
+msgid "Truck"
+msgstr ""
+
+#: ../data/str.xml.in:51
+msgid "Torii"
+msgstr ""
+
+#: ../data/str.xml.in:52
+msgid "Church"
+msgstr "ტაძარი"
+
+#: ../data/str.xml.in:53
+msgid "Castle"
+msgstr "სასახლე"
+
+#: ../data/str.xml.in:54
+msgid "Historic site"
+msgstr ""
+
+#: ../data/str.xml.in:55
+msgid "Power station"
+msgstr ""
+
+#: ../data/str.xml.in:56
+msgid "Lighthouse"
+msgstr "შუქურა"
+
+#: ../data/str.xml.in:57
+msgid "Mountain"
+msgstr "მთა"
+
+#: ../data/str.xml.in:58
+msgid "Beach"
+msgstr "ბიჩი"
+
+#: ../data/str.xml.in:59
+msgid "Park"
+msgstr "პარკი"
+
+#: ../data/str.xml.in:60
+msgid "Ferry"
+msgstr ""
+
+#: ../data/str.xml.in:61
+msgid "Sailboat"
+msgstr ""
+
+#: ../data/str.xml.in:62
+msgid "Ice rink"
+msgstr ""
+
+#: ../data/str.xml.in:63
+msgid "Scissors"
+msgstr "მაკრატლები"
+
+#: ../data/str.xml.in:64
+msgid "Airplane"
+msgstr ""
+
+#: ../data/str.xml.in:65
+msgid "Clenched Fist"
+msgstr ""
+
+#: ../data/str.xml.in:66
+msgid "Hand"
+msgstr "ხელი"
+
+#: ../data/str.xml.in:67
+msgid "V Sign"
+msgstr ""
+
+#: ../data/str.xml.in:68
+msgid "Writing"
+msgstr "ჩაწერა"
+
+#: ../data/str.xml.in:69
+msgid "Pencil"
+msgstr "ფანქარი"
+
+#: ../data/str.xml.in:70
+msgid "Pen"
+msgstr "კალამi"
+
+#: ../data/str.xml.in:71
+msgid "Star"
+msgstr "ვარსკვლავი"
+
+#: ../data/str.xml.in:72
+msgid "Typhoon"
+msgstr ""
+
+#: ../data/str.xml.in:73
+msgid "Fog"
+msgstr "ნისლი"
+
+#: ../data/str.xml.in:74
+msgid "Umbrella"
+msgstr ""
+
+#: ../data/str.xml.in:75
+msgid "Night sky"
+msgstr ""
+
+#: ../data/str.xml.in:76
+msgid "Sunrise"
+msgstr "აისი"
+
+#: ../data/str.xml.in:77
+msgid "Sunset"
+msgstr "მზის ჩასვლა"
+
+#: ../data/str.xml.in:78
+msgid "Bridge"
+msgstr "ხიდი"
+
+#: ../data/str.xml.in:79
+msgid "Wave"
+msgstr "ტალღა"
+
+#: ../data/str.xml.in:80
+msgid "New Moon"
+msgstr "ახალი მთვარე"
+
+#: ../data/str.xml.in:81
+msgid "Crescent Moon"
+msgstr ""
+
+#: ../data/str.xml.in:82
+msgid "Quarter Moon"
+msgstr "მეოთხედი მთვარე"
+
+#: ../data/str.xml.in:83
+msgid "Gibbous Moon"
+msgstr ""
+
+#: ../data/str.xml.in:84
+msgid "Full Moon"
+msgstr "სრული მთვარე"
+
+#: ../data/str.xml.in:85
+msgid "Moon"
+msgstr "მთვარის"
+
+#: ../data/str.xml.in:86
+msgid "Sun"
+msgstr "მზე"
+
+#: ../data/str.xml.in:87
+msgid "Cloud"
+msgstr "ღრუბელი"
+
+#: ../data/str.xml.in:88
+msgid "Palm"
+msgstr ""
+
+#: ../data/str.xml.in:89
+msgid "Hot Pepper"
+msgstr ""
+
+#: ../data/str.xml.in:90
+msgid "Flower"
+msgstr "ყვავილი"
+
+#: ../data/str.xml.in:91
+msgid "Tulip"
+msgstr ""
+
+#: ../data/str.xml.in:92
+msgid "Cherry"
+msgstr ""
+
+#: ../data/str.xml.in:93
+msgid "Rose"
+msgstr ""
+
+#: ../data/str.xml.in:94
+msgid "Hibiscus"
+msgstr ""
+
+#: ../data/str.xml.in:95
+msgid "Sunflower"
+msgstr ""
+
+#: ../data/str.xml.in:96
+msgid "Blossom"
+msgstr ""
+
+#: ../data/str.xml.in:97
+msgid "Clover"
+msgstr ""
+
+#: ../data/str.xml.in:98
+msgid "Maple"
+msgstr ""
+
+#: ../data/str.xml.in:99
+msgid "Fallen Leaf"
+msgstr "ჩამოვარდნილი ფოთოლი"
+
+#: ../data/str.xml.in:100
+msgid "Leaf"
+msgstr "ფოთოლი"
+
+#: ../data/str.xml.in:101
+msgid "Mushroom"
+msgstr ""
+
+#: ../data/str.xml.in:102
+msgid "Tomato"
+msgstr "პომიდორი"
+
+#: ../data/str.xml.in:103
+msgid "Eggplant"
+msgstr ""
+
+#: ../data/str.xml.in:104
+msgid "Grape"
+msgstr "ყურძენი"
+
+#: ../data/str.xml.in:105
+msgid "Melon"
+msgstr ""
+
+#: ../data/str.xml.in:106
+msgid "Watermelon"
+msgstr ""
+
+#: ../data/str.xml.in:107
+msgid "Tangerine"
+msgstr "მანდარინი"
+
+#: ../data/str.xml.in:108
+msgid "Lemon"
+msgstr "ლიმონი"
+
+#: ../data/str.xml.in:109
+msgid "Banana"
+msgstr "ბანანი"
+
+#: ../data/str.xml.in:110
+msgid "Pineapple"
+msgstr ""
+
+#: ../data/str.xml.in:111
+msgid "Apple"
+msgstr "გამოყენება"
+
+#: ../data/str.xml.in:112
+msgid "Pear"
+msgstr ""
+
+#: ../data/str.xml.in:113
+msgid "Peach"
+msgstr ""
+
+#: ../data/str.xml.in:114
+msgid "Strawberry"
+msgstr "მარწყვი"
+
+#: ../data/str.xml.in:115
+msgid "Hamburger"
+msgstr ""
+
+#: ../data/str.xml.in:116
+msgid "Pizza"
+msgstr "პიცა"
+
+#: ../data/str.xml.in:117
+msgid "Meat"
+msgstr "ხორცი"
+
+#: ../data/str.xml.in:118
+msgid "Poultry"
+msgstr ""
+
+#: ../data/str.xml.in:119
+msgid "Rice Cracker"
+msgstr ""
+
+#: ../data/str.xml.in:120
+msgid "Rice Ball"
+msgstr ""
+
+#: ../data/str.xml.in:121
+msgid "Rice"
+msgstr "ბრინჯი"
+
+#: ../data/str.xml.in:122
+msgid "Curry"
+msgstr "ქარი"
+
+#: ../data/str.xml.in:123
+msgid "Ramen"
+msgstr "რამენი"
+
+#: ../data/str.xml.in:124
+msgid "Spaghetti"
+msgstr ""
+
+#: ../data/str.xml.in:125
+msgid "Bread"
+msgstr "პური"
+
+#: ../data/str.xml.in:126
+msgid "Fried Potato"
+msgstr ""
+
+#: ../data/str.xml.in:127
+msgid "Roasted Sweet Potato"
+msgstr ""
+
+#: ../data/str.xml.in:128
+msgid "Dango"
+msgstr ""
+
+#: ../data/str.xml.in:129
+msgid "Oden"
+msgstr ""
+
+#: ../data/str.xml.in:130
+msgid "Sushi"
+msgstr "სუში"
+
+#: ../data/str.xml.in:131
+msgid "Fried Shrimp"
+msgstr ""
+
+#: ../data/str.xml.in:132
+msgid "Fish Cake"
+msgstr ""
+
+#: ../data/str.xml.in:133
+msgid "Soft Ice Cream"
+msgstr ""
+
+#: ../data/str.xml.in:134
+msgid "Shaved Ice"
+msgstr ""
+
+#: ../data/str.xml.in:135
+msgid "Ice Cream"
+msgstr "ნაყინი"
+
+#: ../data/str.xml.in:136
+msgid "Doughnut"
+msgstr ""
+
+#: ../data/str.xml.in:137
+msgid "Cookie"
+msgstr "ქუქი"
+
+#: ../data/str.xml.in:138
+msgid "Chocolate"
+msgstr "შოკოლადი"
+
+#: ../data/str.xml.in:139
+msgid "Candy"
+msgstr ""
+
+#: ../data/str.xml.in:140
+msgid "Custard"
+msgstr ""
+
+#: ../data/str.xml.in:141
+msgid "Honey"
+msgstr ""
+
+#: ../data/str.xml.in:142
+msgid "Shortcake"
+msgstr ""
+
+#: ../data/str.xml.in:143
+msgid "Bento"
+msgstr ""
+
+#: ../data/str.xml.in:144
+msgid "Pot of Food"
+msgstr ""
+
+#: ../data/str.xml.in:145
+msgid "Cooking"
+msgstr "კულინარია"
+
+#: ../data/str.xml.in:146
+msgid "Meal"
+msgstr ""
+
+#: ../data/str.xml.in:147
+msgid "Cup"
+msgstr "ჭიქა"
+
+#: ../data/str.xml.in:148
+msgid "Sake"
+msgstr ""
+
+#: ../data/str.xml.in:149
+msgid "Wine"
+msgstr "ღვინო"
+
+#: ../data/str.xml.in:150
+msgid "Cocktail"
+msgstr ""
+
+#: ../data/str.xml.in:151
+msgid "Drink"
+msgstr "სასმელი"
+
+#: ../data/str.xml.in:152
+msgid "Beer"
+msgstr "ლუდი"
+
+#: ../data/str.xml.in:153
+msgid "Cheers"
+msgstr ""
+
+#: ../data/str.xml.in:154
+msgid "Baby Bottle"
+msgstr ""
+
+#: ../data/str.xml.in:155
+msgid "Ribbon"
+msgstr "ლენტა"
+
+#: ../data/str.xml.in:156
+msgid "Present"
+msgstr "წარმოდგენილია"
+
+#: ../data/str.xml.in:157
+msgid "Cake"
+msgstr "ნამცხვარი"
+
+#: ../data/str.xml.in:158
+msgid "Hallowe'en"
+msgstr ""
+
+#: ../data/str.xml.in:159
+msgid "Christmas"
+msgstr "შობა"
+
+#: ../data/str.xml.in:160
+msgid "Piano"
+msgstr "პიანინო"
+
+#: ../data/str.xml.in:161
+msgid "Microphone"
+msgstr "მიკროფონი"
+
+#: ../data/str.xml.in:162
+msgid "Headphone"
+msgstr "ყურსაცვამი"
+
+#: ../data/str.xml.in:163
+msgid "Hat"
+msgstr ""
+
+#: ../data/str.xml.in:164
+msgid "Musical Note"
+msgstr ""
+
+#: ../data/str.xml.in:165
+msgid "Saxophone"
+msgstr "საქსოფონი"
+
+#: ../data/str.xml.in:166
+msgid "Guitar"
+msgstr "გიტარა"
+
+#: ../data/str.xml.in:167
+msgid "Trumpet"
+msgstr "ბუკი"
+
+#: ../data/str.xml.in:168
+msgid "Violin"
+msgstr "ვიოლინო"
+
+#: ../data/str.xml.in:169
+msgid "Musical Score"
+msgstr ""
+
+#: ../data/str.xml.in:170
+msgid "Tennis"
+msgstr "ტენისი"
+
+#: ../data/str.xml.in:171
+msgid "Ski"
+msgstr ""
+
+#: ../data/str.xml.in:172
+msgid "Basketball"
+msgstr "კალათბურთი"
+
+#: ../data/str.xml.in:173
+msgid "Flag"
+msgstr "ალამი"
+
+#: ../data/str.xml.in:174
+msgid "Show Board"
+msgstr ""
+
+#: ../data/str.xml.in:175
+msgid "Running"
+msgstr "სირბილი"
+
+#: ../data/str.xml.in:176
+msgid "Surfer"
+msgstr ""
+
+#: ../data/str.xml.in:177
+msgid "Medal"
+msgstr ""
+
+#: ../data/str.xml.in:178
+msgid "Trophy"
+msgstr ""
+
+#: ../data/str.xml.in:179
+msgid "Horse Racing"
+msgstr ""
+
+#: ../data/str.xml.in:180
+msgid "American Football"
+msgstr ""
+
+#: ../data/str.xml.in:181
+msgid "Rugby"
+msgstr "რაგბი"
+
+#: ../data/str.xml.in:182
+msgid "Swimmer"
+msgstr ""
+
+#: ../data/str.xml.in:183
+msgid "Weight Lifting"
+msgstr ""
+
+#: ../data/str.xml.in:184
+msgid "Golf"
+msgstr "გოლფი"
+
+#: ../data/str.xml.in:185
+msgid "Motorcycle"
+msgstr ""
+
+#: ../data/str.xml.in:186
+msgid "Race"
+msgstr ""
+
+#: ../data/str.xml.in:187
+msgid "House"
+msgstr "ჰაუსი"
+
+#: ../data/str.xml.in:188
+msgid "Office"
+msgstr "ოფისი"
+
+#: ../data/str.xml.in:189
+msgid "Hospital"
+msgstr "საავადმყოფო"
+
+#: ../data/str.xml.in:190
+msgid "Bank"
+msgstr "ბანკი"
+
+#: ../data/str.xml.in:191
+msgid "Hotel"
+msgstr "სასტუმრო"
+
+#: ../data/str.xml.in:192
+msgid "School"
+msgstr "სკოლა"
+
+#: ../data/str.xml.in:193
+msgid "Factory"
+msgstr "ქარხანა"
+
+#: ../data/str.xml.in:194
+msgid "Rat"
+msgstr "ვირთხა"
+
+#: ../data/str.xml.in:195
+msgid "Mouse"
+msgstr "თაგუნა"
+
+#: ../data/str.xml.in:196
+msgid "Cow"
+msgstr "ძროხა"
+
+#: ../data/str.xml.in:197
+msgid "Tiger"
+msgstr "ვეფხვი"
+
+#: ../data/str.xml.in:198
+msgid "Leopard"
+msgstr "ლეოპარდი"
+
+#: ../data/str.xml.in:199
+msgid "Rabbit"
+msgstr "კურდღელი"
+
+#: ../data/str.xml.in:200
+msgid "Cat"
+msgstr "კატა"
+
+#: ../data/str.xml.in:201
+msgid "Dragon"
+msgstr "დრაკონი"
+
+#: ../data/str.xml.in:202
+msgid "Crocodile"
+msgstr "ნიანგი"
+
+#: ../data/str.xml.in:203
+msgid "Whale"
+msgstr ""
+
+#: ../data/str.xml.in:204
+msgid "Snail"
+msgstr ""
+
+#: ../data/str.xml.in:205
+msgid "Snake"
+msgstr "გველი"
+
+#: ../data/str.xml.in:206
+msgid "Horse"
+msgstr "ცხენი"
+
+#: ../data/str.xml.in:207
+msgid "Sheep"
+msgstr "ცხვარი"
+
+#: ../data/str.xml.in:208
+msgid "Goat"
+msgstr "თხა"
+
+#: ../data/str.xml.in:209
+msgid "Monkey"
+msgstr "მაიმუნი"
+
+#: ../data/str.xml.in:210
+msgid "Chicken"
+msgstr "ქათამი"
+
+#: ../data/str.xml.in:211
+msgid "Dog"
+msgstr "ძაღლი"
+
+#: ../data/str.xml.in:212
+msgid "Pig"
+msgstr "ღორი"
+
+#: ../data/str.xml.in:213
+msgid "Elephant"
+msgstr "სპილო"
+
+#: ../data/str.xml.in:214
+msgid "Octopus"
+msgstr ""
+
+#: ../data/str.xml.in:215
+msgid "Spiral Shell"
+msgstr ""
+
+#: ../data/str.xml.in:216
+msgid "Bug"
+msgstr "შეცდომა"
+
+#: ../data/str.xml.in:217
+msgid "Ant"
+msgstr ""
+
+#: ../data/str.xml.in:218
+msgid "Lady Beetle"
+msgstr ""
+
+#: ../data/str.xml.in:219
+msgid "Fish"
+msgstr "თევზი"
+
+#: ../data/str.xml.in:220
+msgid "Tropical Fish"
+msgstr ""
+
+#: ../data/str.xml.in:221
+msgid "Blowfish"
+msgstr "ფუგუ"
+
+#: ../data/str.xml.in:222
+msgid "Bird"
+msgstr "ჩიტი"
+
+#: ../data/str.xml.in:223
+msgid "Penguin"
+msgstr "პინგვინი"
+
+#: ../data/str.xml.in:224
+msgid "Koala"
+msgstr "კოალა"
+
+#: ../data/str.xml.in:225
+msgid "Poodle"
+msgstr ""
+
+#: ../data/str.xml.in:226
+msgid "Camel"
+msgstr ""
+
+#: ../data/str.xml.in:227
+msgid "Dolphin"
+msgstr "დელფინი"
+
+#: ../data/str.xml.in:228
+msgid "Frog"
+msgstr "ბაყაყი"
+
+#: ../data/str.xml.in:229
+msgid "Hamster"
+msgstr ""
+
+#: ../data/str.xml.in:230
+msgid "Wolf"
+msgstr "მგელი"
+
+#: ../data/str.xml.in:231
+msgid "Bear"
+msgstr ""
+
+#: ../data/str.xml.in:232
+msgid "Panda"
+msgstr "პანდა"
+
+#: ../data/str.xml.in:233
+msgid "Eye"
+msgstr ""
+
+#: ../data/str.xml.in:234
+msgid "Ear"
+msgstr ""
+
+#: ../data/str.xml.in:235
+msgid "Nose"
+msgstr ""
+
+#: ../data/str.xml.in:236
+msgid "Mouth"
+msgstr ""
+
+#: ../data/str.xml.in:237
+msgid "Tongue"
+msgstr ""
+
+#: ../data/str.xml.in:238
+msgid "Crown"
+msgstr ""
+
+#: ../data/str.xml.in:239
+msgid "Glasses"
+msgstr ""
+
+#: ../data/str.xml.in:240
+msgid "Necktie"
+msgstr ""
+
+#: ../data/str.xml.in:241
+msgid "T-Shirt"
+msgstr ""
+
+#: ../data/str.xml.in:242
+msgid "Jeans"
+msgstr ""
+
+#: ../data/str.xml.in:243
+msgid "Dress"
+msgstr ""
+
+#: ../data/str.xml.in:244
+msgid "Kimono"
+msgstr ""
+
+#: ../data/str.xml.in:245
+msgid "Bikini"
+msgstr ""
+
+#: ../data/str.xml.in:246
+msgid "Clothes"
+msgstr "ტანსაცმელი"
+
+#: ../data/str.xml.in:247
+msgid "Purse"
+msgstr ""
+
+#: ../data/str.xml.in:248
+msgid "Handbag"
+msgstr ""
+
+#: ../data/str.xml.in:249
+msgid "Pouch"
+msgstr ""
+
+#: ../data/str.xml.in:250
+msgid "Shoe"
+msgstr ""
+
+#: ../data/str.xml.in:251
+msgid "Footprint"
+msgstr ""
+
+#: ../data/str.xml.in:252
+msgid "Bust in silhouette"
+msgstr ""
+
+#: ../data/str.xml.in:253
+msgid "Busts in silhouette"
+msgstr ""
+
+#: ../data/str.xml.in:254
+msgid "Boy"
+msgstr ""
+
+#: ../data/str.xml.in:255
+msgid "Girl"
+msgstr "გოგონა"
+
+#: ../data/str.xml.in:256
+msgid "Man"
+msgstr ""
+
+#: ../data/str.xml.in:257
+msgid "Woman"
+msgstr ""
+
+#: ../data/str.xml.in:258
+msgid "Family"
+msgstr "ოჯახი"
+
+#: ../data/str.xml.in:259
+msgid "Man and woman holding hands"
+msgstr ""
+
+#: ../data/str.xml.in:260
+msgid "Men holding hands"
+msgstr ""
+
+#: ../data/str.xml.in:261
+msgid "Women holding hands"
+msgstr ""
+
+#: ../data/str.xml.in:262
+msgid "Men's room"
+msgstr ""
+
+#: ../data/str.xml.in:263
+msgid "Women's room"
+msgstr ""
+
+#: ../data/str.xml.in:264
+msgid "Restroom"
+msgstr ""
+
+#: ../data/str.xml.in:265
+msgid "Princess"
+msgstr ""
+
+#: ../data/str.xml.in:266
+msgid "Japanese Ogre"
+msgstr ""
+
+#: ../data/str.xml.in:267
+msgid "Japanese Goblin"
+msgstr ""
+
+#: ../data/str.xml.in:268
+msgid "Ghost"
+msgstr ""
+
+#: ../data/str.xml.in:269
+msgid "Baby Angel"
+msgstr ""
+
+#: ../data/str.xml.in:270
+msgid "Extraterrestrial Alien"
+msgstr ""
+
+#: ../data/str.xml.in:271
+msgid "Alien Monster"
+msgstr ""
+
+#: ../data/str.xml.in:272
+msgid "Imp"
+msgstr ""
+
+#: ../data/str.xml.in:273
+msgid "Skull"
+msgstr "თავის ქალა"
+
+#: ../data/str.xml.in:274
+msgid "Information Desk Person"
+msgstr ""
+
+#: ../data/str.xml.in:275
+msgid "Guardsman"
+msgstr ""
+
+#: ../data/str.xml.in:276
+msgid "Dancer"
+msgstr ""
+
+#: ../data/str.xml.in:277
+msgid "Lipstick"
+msgstr ""
+
+#: ../data/str.xml.in:278
+msgid "Nail polish"
+msgstr ""
+
+#: ../data/str.xml.in:279
+msgid "Face"
+msgstr "ზედაპირი"
+
+#: ../data/str.xml.in:280
+msgid "Haircut"
+msgstr ""
+
+#: ../data/str.xml.in:281
+msgid "Syringe"
+msgstr "შპრიცი"
+
+#: ../data/str.xml.in:282
+msgid "Pill"
+msgstr ""
+
+#: ../data/str.xml.in:283
+msgid "Kiss"
+msgstr ""
+
+#: ../data/str.xml.in:284
+msgid "Love Letter"
+msgstr ""
+
+#: ../data/str.xml.in:285
+msgid "Ring"
+msgstr "ზარი"
+
+#: ../data/str.xml.in:286
+msgid "Gem Stone"
+msgstr ""
+
+#: ../data/str.xml.in:287
+msgid "Wedding"
+msgstr ""
+
+#: ../data/str.xml.in:288
+msgid "Heart"
+msgstr "გული"
+
+#: ../data/str.xml.in:289
+msgid "Idea"
+msgstr "იდეა"
+
+#: ../data/str.xml.in:290
+msgid "Anger"
+msgstr ""
+
+#: ../data/str.xml.in:291
+msgid "Bomb"
+msgstr ""
+
+#: ../data/str.xml.in:292
+msgid "Sleeping"
+msgstr "მძინარე"
+
+#: ../data/str.xml.in:293
+msgid "Collision"
+msgstr "შეჯახება"
+
+#: ../data/str.xml.in:294
+msgid "Sweat"
+msgstr ""
+
+#: ../data/str.xml.in:295
+msgid "Droplet"
+msgstr "წვეთი"
+
+#: ../data/str.xml.in:296
+msgid "Dash"
+msgstr "პანელი"
+
+#: ../data/str.xml.in:297
+msgid "Poo"
+msgstr ""
+
+#: ../data/str.xml.in:298
+msgid "Muscle"
+msgstr ""
+
+#: ../data/str.xml.in:299
+msgid "Dizzy"
+msgstr ""
+
+#: ../data/str.xml.in:300
+msgid "Speech"
+msgstr "ლაპარაკი"
+
+#: ../data/str.xml.in:301
+msgid "Thought"
+msgstr ""
+
+#: ../data/str.xml.in:302
+msgid "Perfect Score"
+msgstr ""
+
+#: ../data/str.xml.in:303
+msgid "Pushpin"
+msgstr ""
+
+#: ../data/str.xml.in:304
+msgid "Paperclip"
+msgstr "სამაგრი"
+
+#: ../data/str.xml.in:305
+msgid "Speaker with cancellation stroke"
+msgstr ""
+
+#: ../data/str.xml.in:306
+msgid "Speaker low volume"
+msgstr ""
+
+#: ../data/str.xml.in:307
+msgid "Speaker medium volume"
+msgstr ""
+
+#: ../data/str.xml.in:308
+msgid "Speaker high volume"
+msgstr ""
+
+#: ../data/str.xml.in:309
+msgid "Battery"
+msgstr "კვების ელემენტი"
+
+#: ../data/str.xml.in:310
+msgid "Plug"
+msgstr ""
+
+#: ../data/str.xml.in:311
+msgid "Magnifying glass tilted left"
+msgstr ""
+
+#: ../data/str.xml.in:312
+msgid "Magnifying glass tilted right"
+msgstr ""
+
+#: ../data/str.xml.in:313
+msgid "Bookmark"
+msgstr ""
+
+#: ../data/str.xml.in:314
+msgid "Book"
+msgstr "წიგნი"
+
+#: ../data/str.xml.in:315
+msgid "Memo"
+msgstr "მემორანდუმი"
+
+#: ../data/str.xml.in:316
+msgid "Mail"
+msgstr "წერილი"
+
+#: ../data/str.xml.in:317
+msgid "Incoming envelope"
+msgstr ""
+
+#: ../data/str.xml.in:318
+msgid "Postbox"
+msgstr ""
+
+#: ../data/str.xml.in:319
+msgid "Mobile Phone"
+msgstr "მობილური ტელეფონი"
+
+#: ../data/str.xml.in:320
+msgid "Antenna with bars"
+msgstr ""
+
+#: ../data/str.xml.in:321
+msgid "Camera"
+msgstr "კამერა"
+
+#: ../data/str.xml.in:322
+msgid "Video"
+msgstr "ვიდეო"
+
+#: ../data/str.xml.in:323
+msgid "Television"
+msgstr "ტელევიზია"
+
+#: ../data/str.xml.in:324
+msgid "Radio"
+msgstr "რადიო"
+
+#: ../data/str.xml.in:325
+msgid "Key"
+msgstr ""
+
+#: ../data/str.xml.in:326
+msgid "Lock, locked"
+msgstr ""
+
+#: ../data/str.xml.in:327
+msgid "Lock, unlocked"
+msgstr ""
+
+#: ../data/str.xml.in:328
+msgid "Fire"
+msgstr "ცეცხლი"
+
+#: ../data/str.xml.in:329
+msgid "Wrench"
+msgstr ""
+
+#: ../data/str.xml.in:330
+msgid "Hammer"
+msgstr "ჩაქუჩი"
+
+#: ../data/str.xml.in:331
+msgid "Nut and bolt"
+msgstr ""
+
+#: ../data/str.xml.in:332
+msgid "Hocho"
+msgstr ""
+
+#: ../data/str.xml.in:333
+msgid "Pistol"
+msgstr ""
+
+#: ../data/str.xml.in:334
+msgid "Microscope"
+msgstr ""
+
+#: ../data/str.xml.in:335
+msgid "Telescope"
+msgstr "ტელესკოპი"
+
+#: ../data/str.xml.in:336
+msgid "Crystal"
+msgstr "კრისტალი"
+
+#: ../data/str.xml.in:337
+msgid "David Star"
+msgstr ""
+
+#: ../data/str.xml.in:338
+msgid "Beginner"
+msgstr "დამწყები"
+
+#: ../data/str.xml.in:339
+msgid "Candle"
+msgstr "სანთელი"
+
+#: ../data/str.xml.in:340
+msgid "Hole"
+msgstr "ხვრელი"
+
+#: ../data/str.xml.in:341
+msgid "Laptop Computer"
+msgstr ""
+
+#: ../data/str.xml.in:342
+msgid "Desktop Computer"
+msgstr "სამაგიდო კომპიუტერი"
+
+#: ../data/str.xml.in:343
+msgid "keyboard"
+msgstr "კლავიატურა"
+
+#: ../data/str.xml.in:344
+msgid "Printer"
+msgstr "პრინტერი"
+
+#: ../data/str.xml.in:345
+msgid "Calculator"
+msgstr "კალკულატორი"
+
+#: ../data/str.xml.in:346
+msgid "Minimize"
+msgstr "ჩაკეცვა"
+
+#: ../data/str.xml.in:347
+msgid "Maximize"
+msgstr "გადიდება"
+
+#: ../data/str.xml.in:348
+msgid "Refresh"
+msgstr "განახლება"
+
+#: ../data/str.xml.in:349
+msgid "Close"
+msgstr "დახურვა"
+
+#: ../data/str.xml.in:350
+msgid "World"
+msgstr "მსოფლიო"
+
+#: ../data/str.xml.in:351
+msgid "Mt. Fuji"
+msgstr ""
+
+#: ../data/str.xml.in:352
+msgid "Tokyo Tower"
+msgstr ""
+
+#: ../data/str.xml.in:353
+msgid "Japan"
+msgstr "იაპონია"
+
+#: ../data/str.xml.in:354
+msgid "Anguish"
+msgstr ""
+
+#: ../data/str.xml.in:355
+msgid "Smile"
+msgstr "ღიმილი"
+
+#: ../data/str.xml.in:356
+msgid "Smirk"
+msgstr ""
+
+#: ../data/str.xml.in:357
+msgid "Neutral"
+msgstr "ნეიტრალური"
+
+#: ../data/str.xml.in:358
+msgid "Expressionless"
+msgstr ""
+
+#: ../data/str.xml.in:359
+msgid "Unamused"
+msgstr ""
+
+#: ../data/str.xml.in:360
+msgid "Pensive"
+msgstr ""
+
+#: ../data/str.xml.in:361
+msgid "Confused"
+msgstr "დაბნეული"
+
+#: ../data/str.xml.in:362
+msgid "Confounded"
+msgstr ""
+
+#: ../data/str.xml.in:363
+msgid "Disappointed"
+msgstr "დაბნეული"
+
+#: ../data/str.xml.in:364
+msgid "Angry"
+msgstr "გაბრაზებული"
+
+#: ../data/str.xml.in:365
+msgid "Cry"
+msgstr ""
+
+#: ../data/str.xml.in:366
+msgid "Sleepy"
+msgstr "მძინარა"
+
+#: ../data/str.xml.in:367
+msgid "Tired"
+msgstr ""
+
+#: ../data/str.xml.in:368
+msgid "Surprise"
+msgstr ""
+
+#: ../data/str.xml.in:369
+msgid "Scream"
+msgstr ""
+
+#: ../data/str.xml.in:370
+msgid "Flushed"
+msgstr ""
+
+#: ../data/str.xml.in:371
+msgid "Medical Mask"
+msgstr ""
+
+#: ../data/str.xml.in:372
+msgid "OK"
+msgstr "დიახ"
+
+#: ../data/str.xml.in:373
+msgid "Bow"
+msgstr "მშვილდი"
+
+#: ../data/str.xml.in:374
+msgid "See-No-Evil"
+msgstr ""
+
+#: ../data/str.xml.in:375
+msgid "Hear-No-Evil"
+msgstr ""
+
+#: ../data/str.xml.in:376
+msgid "Speak-No-Evil"
+msgstr ""
+
+#: ../data/str.xml.in:377
+msgid "Banzai"
+msgstr ""
+
+#: ../data/str.xml.in:378
+msgid "Pleading"
+msgstr ""
+
+#: ../data/str.xml.in:379
+msgid "Smileys"
+msgstr "სიცილაკები"
+
+#: ../data/str.xml.in:380
+msgid "Smile Big"
+msgstr ""
+
+#: ../data/str.xml.in:381
+msgid "Sad"
+msgstr "მოწყენილი"
+
+#: ../data/str.xml.in:382
+msgid "Wink"
+msgstr "ვინკი"
+
+#: ../data/str.xml.in:383
+msgid "Shock"
+msgstr ""
+
+#: ../data/str.xml.in:384
+msgid "Kiss | Secret"
+msgstr ""
+
+#: ../data/str.xml.in:385
+msgid "Glasses Cool | Eyeroll"
+msgstr ""
+
+#: ../data/str.xml.in:386
+msgid "Glasses Cool"
+msgstr ""
+
+#: ../data/str.xml.in:387
+msgid "Embarrassed"
+msgstr "შეცბუნებული"
+
+#: ../data/str.xml.in:388
+msgid "Crying"
+msgstr ""
+
+#: ../data/str.xml.in:389
+msgid "Thinking"
+msgstr ""
+
+#: ../data/str.xml.in:390
+msgid "Don't Know"
+msgstr ""
+
+#: ../data/str.xml.in:391
+msgid "Party"
+msgstr "წვეულება"
+
+#: ../data/str.xml.in:392
+msgid "Yawn"
+msgstr ""
+
+#: ../data/str.xml.in:393
+msgid "Bunny"
+msgstr ""
+
+#: ../data/str.xml.in:394
+msgid "Sick"
+msgstr "ავადაა"
+
+#: ../data/str.xml.in:395
+msgid "Devil"
+msgstr ""
+
+#: ../data/str.xml.in:396
+msgid "Angel"
+msgstr ""
+
+#: ../data/str.xml.in:397
+msgid "Love"
+msgstr "მიყვარს"
+
+#: ../data/str.xml.in:398
+msgid "Love Over"
+msgstr ""
+
+#: ../data/str.xml.in:399
+msgid "Film"
+msgstr "ლენტი"
+
+#: ../data/str.xml.in:400
+msgid "Clock"
+msgstr "საათი"
+
+#: ../data/str.xml.in:401
+msgid "Coffee"
+msgstr "ყავა"
+
+#: ../data/str.xml.in:402
+msgid "Phone"
+msgstr "ტელეფონი"
+
+#: ../data/str.xml.in:403
+msgid "Hug Left"
+msgstr ""
+
+#: ../data/str.xml.in:404
+msgid "Hug Right"
+msgstr ""
+
+#: ../data/str.xml.in:405
+msgid "Yes"
+msgstr "კი"
+
+#: ../data/str.xml.in:406
+msgid "No"
+msgstr "არა"
+
+#: ../data/str.xml.in:407
+msgid "Shut Mouth"
+msgstr ""
+
+#: ../data/str.xml.in:408
+msgid "Money Mouth"
+msgstr ""
+
+#: ../data/str.xml.in:409
+msgid "Foot in Mouth"
+msgstr ""
+
+#: ../data/str.xml.in:410
+msgid "Shout"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in:412
+msgid "Smileys (Japanese)"
+msgstr ""
+
+#: ../data/str.xml.in:413
+msgid "Smoking"
+msgstr ""
+
+#: ../data/str.xml.in:414
+msgid "Sorry"
+msgstr "უკაცრავად"
+
+#: ../data/str.xml.in:415
+msgid "Hug"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in:417
+msgid "Smileys (Japanese 2ch)"
+msgstr ""
+
+#: ../data/str.xml.in:418
+msgid "Hey"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E9%A1%94%E6%96%87%E5%AD%97
+#: ../data/str.xml.in:420
+msgid "Smileys (Chinese)"
+msgstr ""
+
+#: ../data/str.xml.in:421
+msgid "Crow"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
+#: ../data/str.xml.in:423
+msgid "Acronym"
+msgstr "აკრონიმი"
+
+#: ../data/str.xml.in:424
+msgid "Acronym (Computer)"
+msgstr ""
+
+#. http://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%82%B9%E3%83%A9%E3%83%B3%E3%82%B0
+#: ../data/str.xml.in:426
+msgid "Acronym (Japanese)"
+msgstr ""
+
+#: ../data/str.xml.in:427
+msgid "Do not want to read between lines (Aete Kuuki Wo Yomanai)"
+msgstr ""
+
+#: ../data/str.xml.in:428
+msgid "Can't get together (Guda Guda)"
+msgstr ""
+
+#: ../data/str.xml.in:429
+msgid "Say whatever one feels (Iitaidake)"
+msgstr ""
+
+#: ../data/str.xml.in:430
+msgid "Excited (Kitakore)"
+msgstr ""
+
+#: ../data/str.xml.in:431
+msgid "Detail (Kuwashiku)"
+msgstr ""
+
+#: ../data/str.xml.in:432
+msgid "Cannot read between lines (Kuuki Ga Yomenai)"
+msgstr ""
+
+#: ../data/str.xml.in:433
+msgid "Omission (Shouryaku)"
+msgstr ""
+
+#: ../data/str.xml.in:434
+msgid "Excited (Waku Waku Teka Teka)"
+msgstr ""
+
+#: ../data/str.xml.in:435
+msgid "Laugh"
+msgstr ""
+
+#: ../data/str.xml.in:436
+msgid "Dude (Oi!)"
+msgstr ""
+
+#: ../data/str.xml.in:437
+msgid "Good job (Otsukare)"
+msgstr ""
+
+#: ../data/str.xml.in:438
+msgid "Want (Kure, E.g. pics クレメンス)"
+msgstr ""
+
+#: ../data/str.xml.in:439
+msgid "ASCII art of a hand (✊, E.g. つAttention)"
+msgstr ""
+
+#: ../data/str.xml.in:440
+msgid "In The Meantime (Toriaezu, Maa)"
+msgstr ""
+
+#: ../data/str.xml.in:441
+msgid "Self-confidence (Aniki, E.g. tennis ニキ)"
+msgstr ""
+
+#: ../data/str.xml.in:442
+msgid "Bye"
+msgstr "ნახვამდის"
+
+#: ../data/str.xml.in:443
+msgid "Want (Hattekure, E.g. pics ハラデイ)"
+msgstr ""
+
+#: ../data/str.xml.in:444
+msgid "Exist as microparticles (Biryushi Level De Sonzaisuru)"
+msgstr ""
+
+#: ../data/str.xml.in:445
+msgid "False Start (Flying Get)"
+msgstr ""
+
+#: ../data/str.xml.in:446
+msgid "Fulfilling Life (Real life is Zyujitsu)"
+msgstr ""
+
+#: ../data/str.xml.in:447
+msgid "Laugh (Warau)"
+msgstr ""
+
+#: ../data/str.xml.in:448
+msgid "He (Yatsu &lt;- Yashi)"
+msgstr ""
+
+#: ../data/w3c.xml.in:1
+msgid "Char References"
+msgstr ""
+
+#: ../data/zh.xml.in:1
+msgid "Chinese"
+msgstr "ჩინური"
+
+#: ../data/zh.xml.in:4 ../input-pad/unicode_block.h:138
+msgid "Bopomofo"
+msgstr "ბოპომოფო"
+
+#: ../input-pad/app-menu.ui.h:1
+msgid "_File"
+msgstr "_ფაილი"
+
+#: ../input-pad/app-menu.ui.h:2 ../input-pad/dialog.ui.h:21
+msgid "_Close"
+msgstr "_დახურვა"
+
+#: ../input-pad/app-menu.ui.h:3
+msgid "Close the program"
+msgstr ""
+
+#: ../input-pad/app-menu.ui.h:4
+msgid "_Pad"
+msgstr ""
+
+#: ../input-pad/app-menu.ui.h:5
+msgid "_Code Point"
+msgstr ""
+
+#: ../input-pad/app-menu.ui.h:6
+msgid "_Show Pad"
+msgstr ""
+
+#: ../input-pad/app-menu.ui.h:7
+msgid "Show _All Characters"
+msgstr ""
+
+#: ../input-pad/app-menu.ui.h:8
+msgid "Show _Custom Characters"
+msgstr ""
+
+#: ../input-pad/app-menu.ui.h:9
+msgid "Show _Nothing"
+msgstr ""
+
+#: ../input-pad/app-menu.ui.h:10
+msgid "Show _Keyboard Layout"
+msgstr ""
+
+#: ../input-pad/app-menu.ui.h:11
+msgid "_Help"
+msgstr "_დახმარება"
+
+#: ../input-pad/app-menu.ui.h:12
+msgid "_Troubleshoot"
+msgstr "_პრობლემების გადაწყვეტა"
+
+#: ../input-pad/app-menu.ui.h:13
+msgid "_About"
+msgstr "შესახებ"
+
+#: ../input-pad/dialog.ui.h:1
+msgid "Code Point Dialog"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:2
+msgid "Unicode"
+msgstr "უნიკოდი"
+
+#: ../input-pad/dialog.ui.h:3
+msgid "You can choose encoding type"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:4
+msgid "Current Encoding"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:5
+msgid "Copy Buffer"
+msgstr "ბუფერის კოპირება"
+
+#: ../input-pad/dialog.ui.h:6
+msgid ""
+"Base 16\n"
+"Hex"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:8
+msgid "Set number case to hexadecimal"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:9
+msgid ""
+"Base 10\n"
+"Dec"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:11
+msgid "Set number case to decimal"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:12
+msgid ""
+"Base 8\n"
+"Oct"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:14
+msgid "Set number case to octal"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:15
+msgid ""
+"Base 2\n"
+"Bin"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:17
+msgid "Set number case to binary"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:18
+msgid "Code Point:"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:19
+msgid "Character:"
+msgstr "სიმბოლო:"
+
+#: ../input-pad/dialog.ui.h:20
+msgid "_Send"
+msgstr "_გაგზავნა"
+
+#: ../input-pad/dialog.ui.h:22
+msgid "Input Pad Troubleshoot"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:24
+#, no-c-format
+msgid ""
+"\n"
+"This application can be run either as a stand-alone program or under an "
+"input method application.\n"
+"If you wish to send multi-byte characters, this application needs to be run "
+"under an input method application.\n"
+"If you wish to send characters to X11 applications, those applications needs "
+"to allow send events. e.g.\n"
+"% xterm -xrm \"XTerm*allowSendEvents: true\"\n"
+"\n"
+"You also can copy pad files from /usr/share/input-pad/pad to $HOME/.config/"
+"pad to customize those in \"Custom Character\" pane."
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:31
+msgid "_OK"
+msgstr "_დიახ"
+
+#: ../input-pad/dialog.ui.h:32
+msgid "Configure Keyboard Layouts"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:33
+msgid "A_vailable layouts:"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:34
+msgid "_Add"
+msgstr "_დამატება"
+
+#: ../input-pad/dialog.ui.h:35
+msgid "_Layouts shown in the list:"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:36
+msgid "_Remove"
+msgstr "წ_აშლა"
+
+#: ../input-pad/dialog.ui.h:37
+msgid "_Options"
+msgstr "_პარამეტრები"
+
+#: ../input-pad/dialog.ui.h:38
+msgid "Configure Keyboard Options"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:39
+msgid "_Use the default keyboard option"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:40
+msgid "Use the defualt XKB option"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:41
+msgid "<b>Keyboard Option</b>"
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:43
+msgid "The input pad is a tool to send a character on button."
+msgstr ""
+
+#: ../input-pad/dialog.ui.h:44
+msgid "translator_credits"
+msgstr "მთარგმნელის_შესახებ"
+
+#: ../input-pad/eek-gtk.c:65
+msgid "Use libeek to draw keyboard"
+msgstr ""
+
+#: ../input-pad/eek-gtk.c:237
+msgid "eekboard layout"
+msgstr ""
+
+#: ../input-pad/eek-gtk.c:249
+msgid "eekboard Options"
+msgstr ""
+
+#: ../input-pad/eek-gtk.c:249
+msgid "Show eekboard Options"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:37
+msgid "Basic Latin"
+msgstr "საბაზისო ლათინური"
+
+#: ../input-pad/unicode_block.h:40
+msgid "Latin Extended-B"
+msgstr "ლათინური გაფართოებული-B"
+
+#: ../input-pad/unicode_block.h:41
+msgid "IPA Extensions"
+msgstr "IPA-ის გაფართოებები"
+
+#: ../input-pad/unicode_block.h:42
+msgid "Spacing Modifier Letters"
+msgstr "ჰარეს მოდიფიკატორი სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:43
+msgid "Combining Diacritical Marks"
+msgstr "შემკრები დიაკრიტიკული სანიშნები"
+
+#: ../input-pad/unicode_block.h:44
+msgid "Greek and Coptic"
+msgstr "ბერძნული და კოპტური"
+
+#: ../input-pad/unicode_block.h:45
+msgid "Cyrillic"
+msgstr "კირილიცა"
+
+#: ../input-pad/unicode_block.h:46
+msgid "Cyrillic Supplement"
+msgstr "კირილიცა დამატებებით"
+
+#: ../input-pad/unicode_block.h:47
+msgid "Armenian"
+msgstr "სომხური"
+
+#: ../input-pad/unicode_block.h:48
+msgid "Hebrew"
+msgstr "ივრითი"
+
+#: ../input-pad/unicode_block.h:49
+msgid "Arabic"
+msgstr "არაბული"
+
+#: ../input-pad/unicode_block.h:50
+msgid "Syriac"
+msgstr "სირიული"
+
+#: ../input-pad/unicode_block.h:51
+msgid "Arabic Supplement"
+msgstr "არაბული დამატებებით"
+
+#: ../input-pad/unicode_block.h:52
+msgid "Thaana"
+msgstr "თაანური"
+
+#: ../input-pad/unicode_block.h:53
+msgid "NKo"
+msgstr "NKo"
+
+#: ../input-pad/unicode_block.h:54
+msgid "Samaritan"
+msgstr "სამარიტული"
+
+#: ../input-pad/unicode_block.h:55
+msgid "Devanagari"
+msgstr "დევაგანური"
+
+#: ../input-pad/unicode_block.h:56
+msgid "Bengali"
+msgstr "ბენგალური"
+
+#: ../input-pad/unicode_block.h:57
+msgid "Gurmukhi"
+msgstr "გურმუხული"
+
+#: ../input-pad/unicode_block.h:58
+msgid "Gujarati"
+msgstr "გუჯარათული"
+
+#: ../input-pad/unicode_block.h:59
+msgid "Oriya"
+msgstr "ორია"
+
+#: ../input-pad/unicode_block.h:60
+msgid "Tamil"
+msgstr "თამილური"
+
+#: ../input-pad/unicode_block.h:61
+msgid "Telugu"
+msgstr "ტელუგური"
+
+#: ../input-pad/unicode_block.h:62
+msgid "Kannada"
+msgstr "კანნადა"
+
+#: ../input-pad/unicode_block.h:63
+msgid "Malayalam"
+msgstr "მალაიამი"
+
+#: ../input-pad/unicode_block.h:64
+msgid "Sinhala"
+msgstr "სინჰალა"
+
+#: ../input-pad/unicode_block.h:65
+msgid "Thai"
+msgstr "ტაილანდური"
+
+#: ../input-pad/unicode_block.h:66
+msgid "Lao"
+msgstr "ლაოსური"
+
+#: ../input-pad/unicode_block.h:67
+msgid "Tibetan"
+msgstr "ტიბეტური"
+
+#: ../input-pad/unicode_block.h:68
+msgid "Myanmar"
+msgstr "მიანმარი"
+
+#: ../input-pad/unicode_block.h:69
+msgid "Georgian"
+msgstr "ქართული"
+
+#: ../input-pad/unicode_block.h:70
+msgid "Hangul Jamo"
+msgstr "ჰანგული ჯამო"
+
+#: ../input-pad/unicode_block.h:71
+msgid "Ethiopic"
+msgstr "ეთიოპიური"
+
+#: ../input-pad/unicode_block.h:72
+msgid "Ethiopic Supplement"
+msgstr "ეთიოპური დამატებებით"
+
+#: ../input-pad/unicode_block.h:73
+msgid "Cherokee"
+msgstr "ჩეროკი"
+
+#: ../input-pad/unicode_block.h:74
+msgid "Unified Canadian Aboriginal Syllabics"
+msgstr "კანადური აბორიგინალური"
+
+#: ../input-pad/unicode_block.h:75
+msgid "Ogham"
+msgstr "ოგამი"
+
+#: ../input-pad/unicode_block.h:76
+msgid "Runic"
+msgstr "რუნები"
+
+#: ../input-pad/unicode_block.h:77
+msgid "Tagalog"
+msgstr "ტაგალოგური"
+
+#: ../input-pad/unicode_block.h:78
+msgid "Hanunoo"
+msgstr "ჰანუნოო"
+
+#: ../input-pad/unicode_block.h:79
+msgid "Buhid"
+msgstr "ბუჰიდი"
+
+#: ../input-pad/unicode_block.h:80
+msgid "Tagbanwa"
+msgstr "ტაგბანვა"
+
+#: ../input-pad/unicode_block.h:81
+msgid "Khmer"
+msgstr "კხმერული"
+
+#: ../input-pad/unicode_block.h:82
+msgid "Mongolian"
+msgstr "მონღოლური"
+
+#: ../input-pad/unicode_block.h:83
+msgid "Unified Canadian Aboriginal Syllabics Extended"
+msgstr "უნიფიცირებული კანადური აბორიგინალური მარცვლები, გაფართოებული"
+
+#: ../input-pad/unicode_block.h:84
+msgid "Limbu"
+msgstr "ლიმბუ"
+
+#: ../input-pad/unicode_block.h:85
+msgid "Tai Le"
+msgstr "ტაი ლე"
+
+#: ../input-pad/unicode_block.h:86
+msgid "New Tai Lue"
+msgstr "ახალი ტაი ლუ"
+
+#: ../input-pad/unicode_block.h:87
+msgid "Khmer Symbols"
+msgstr "ხმერული სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:88
+msgid "Buginese"
+msgstr "ბუგინური"
+
+#: ../input-pad/unicode_block.h:89
+msgid "Tai Tham"
+msgstr "ტაი ენა"
+
+#: ../input-pad/unicode_block.h:90
+msgid "Balinese"
+msgstr "ბალინური"
+
+#: ../input-pad/unicode_block.h:91
+msgid "Sundanese"
+msgstr "სუნდური"
+
+#: ../input-pad/unicode_block.h:92
+msgid "Lepcha"
+msgstr "ლეპჩა"
+
+#: ../input-pad/unicode_block.h:93
+msgid "Ol Chiki"
+msgstr "ოლ ჩიკი"
+
+#: ../input-pad/unicode_block.h:94
+msgid "Vedic Extensions"
+msgstr "ვედიიური გაფართოებები"
+
+#: ../input-pad/unicode_block.h:95
+msgid "Phonetic Extensions"
+msgstr "ფონეტიკური გაფართოებები"
+
+#: ../input-pad/unicode_block.h:96
+msgid "Phonetic Extensions Supplement"
+msgstr "ფონეტიკური გაფართოებების ჩანაცვლებები"
+
+#: ../input-pad/unicode_block.h:97
+msgid "Combining Diacritical Marks Supplement"
+msgstr "შემკრები დიაკრიტიკული სანიშნების დანამატები"
+
+#: ../input-pad/unicode_block.h:98
+msgid "Latin Extended Additional"
+msgstr "ლათინური დამატებით გაფართოებული"
+
+#: ../input-pad/unicode_block.h:99
+msgid "Greek Extended"
+msgstr "გაფართოებული ბერძნული"
+
+#: ../input-pad/unicode_block.h:100
+msgid "General Punctuation"
+msgstr "ზოგადი პუნქტუაცია"
+
+#: ../input-pad/unicode_block.h:101
+msgid "Superscripts and Subscripts"
+msgstr "ზედა და ქვედა სკრიპტები"
+
+#: ../input-pad/unicode_block.h:102
+msgid "Currency Symbols"
+msgstr "ფულის სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:103
+msgid "Combining Diacritical Marks for Symbols"
+msgstr "შემკრები დიაკრიტიკული სანიშნები სიმბოლოებისთვის"
+
+#: ../input-pad/unicode_block.h:104
+msgid "Letterlike Symbols"
+msgstr "ასოს-მსგავსი სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:105
+msgid "Number Forms"
+msgstr "რიცხვითი ფორმები"
+
+#: ../input-pad/unicode_block.h:106
+msgid "Arrows"
+msgstr "ისრები"
+
+#: ../input-pad/unicode_block.h:107
+msgid "Mathematical Operators"
+msgstr "მათემატიკური ოპერატორები"
+
+#: ../input-pad/unicode_block.h:108
+msgid "Miscellaneous Technical"
+msgstr "დანარჩენი ტექნიკური"
+
+#: ../input-pad/unicode_block.h:109
+msgid "Control Pictures"
+msgstr "საკონტროლო სურათები"
+
+#: ../input-pad/unicode_block.h:110
+msgid "Optical Character Recognition"
+msgstr "სიმბოლოების ოპტიკური გამოცნობა"
+
+#: ../input-pad/unicode_block.h:111
+msgid "Enclosed Alphanumerics"
+msgstr "ჩასმული ასოები და რიცხვები"
+
+#: ../input-pad/unicode_block.h:113
+msgid "Block Elements"
+msgstr "ბლოკის ელემენტები"
+
+#: ../input-pad/unicode_block.h:114
+msgid "Geometric Shapes"
+msgstr "გეომეტრიული ფიგურები"
+
+#: ../input-pad/unicode_block.h:115
+msgid "Miscellaneous Symbols"
+msgstr "სხვადასხვა სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:117
+msgid "Miscellaneous Mathematical Symbols-A"
+msgstr "სხვადასხვა მათემატიკური სიმბოლოები - A"
+
+#: ../input-pad/unicode_block.h:118
+msgid "Supplemental Arrows-A"
+msgstr "დამატებითი ისრები - A"
+
+#: ../input-pad/unicode_block.h:119
+msgid "Braille Patterns"
+msgstr "ბრაილის შაბლონები"
+
+#: ../input-pad/unicode_block.h:120
+msgid "Supplemental Arrows-B"
+msgstr "დამატებითი ისრები - B"
+
+#: ../input-pad/unicode_block.h:121
+msgid "Miscellaneous Mathematical Symbols-B"
+msgstr "სხვადასხვა მათემატიკური სიმბოლოები - B"
+
+#: ../input-pad/unicode_block.h:122
+msgid "Supplemental Mathematical Operators"
+msgstr "დამატებითი მათემატიკური ოპერატორები"
+
+#: ../input-pad/unicode_block.h:123
+msgid "Miscellaneous Symbols and Arrows"
+msgstr "სხვადასხვა სიმბოლოები და ისრები"
+
+#: ../input-pad/unicode_block.h:124
+msgid "Glagolitic"
+msgstr "გლაგოლიტური"
+
+#: ../input-pad/unicode_block.h:125
+msgid "Latin Extended-C"
+msgstr "ლათინური გაფართოებული-C"
+
+#: ../input-pad/unicode_block.h:126
+msgid "Coptic"
+msgstr "კოპტური"
+
+#: ../input-pad/unicode_block.h:127
+msgid "Georgian Supplement"
+msgstr "ქართული დამატებებით"
+
+#: ../input-pad/unicode_block.h:128
+msgid "Tifinagh"
+msgstr "ტიფინაგური"
+
+#: ../input-pad/unicode_block.h:129
+msgid "Ethiopic Extended"
+msgstr "გაფართოებული ეთიოპიური"
+
+#: ../input-pad/unicode_block.h:130
+msgid "Cyrillic Extended-A"
+msgstr "კირილიცა გაფართოებული-A"
+
+#: ../input-pad/unicode_block.h:131
+msgid "Supplemental Punctuation"
+msgstr "დამატებითი პუნქტუაცია"
+
+#: ../input-pad/unicode_block.h:133
+msgid "Kangxi Radicals"
+msgstr "Kangxi-ის რადიკალები"
+
+#: ../input-pad/unicode_block.h:134
+msgid "Ideographic Description Characters"
+msgstr "იდეოგრაფიური აღწერის სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:135
+msgid "CJK Symbols and Punctuation"
+msgstr "CJK სიმბოლოები და პუნქტუაცია"
+
+#: ../input-pad/unicode_block.h:139
+msgid "Hangul Compatibility Jamo"
+msgstr "Hangul-თან თავსებადი Jamo"
+
+#: ../input-pad/unicode_block.h:140
+msgid "Kanbun"
+msgstr "კანბუნი"
+
+#: ../input-pad/unicode_block.h:141
+msgid "Bopomofo Extended"
+msgstr "ბოპომოფო, გაფართოებული"
+
+#: ../input-pad/unicode_block.h:142
+msgid "CJK Strokes"
+msgstr "CJK-ის ჩარტყმები"
+
+#: ../input-pad/unicode_block.h:143
+msgid "Katakana Phonetic Extensions"
+msgstr "კატაკანის ფონეტიკური გაფართოებები"
+
+#: ../input-pad/unicode_block.h:144
+msgid "Enclosed CJK Letters and Months"
+msgstr "დახურული CJK ასოები და თვეებ"
+
+#: ../input-pad/unicode_block.h:146
+msgid "CJK Unified Ideographs Extension A"
+msgstr "CJK გაერთიანებული იდეოგრაფების გაფართოება A"
+
+#: ../input-pad/unicode_block.h:147
+msgid "Yijing Hexagram Symbols"
+msgstr "იჩინგის ჰექსაგრამული სიბოლოები"
+
+#: ../input-pad/unicode_block.h:148
+msgid "CJK Unified Ideographs"
+msgstr "CJK გაფართოებული იდეოგრაფები"
+
+#: ../input-pad/unicode_block.h:149
+msgid "Yi Syllables"
+msgstr "იჩიგის მარცვლები"
+
+#: ../input-pad/unicode_block.h:150
+msgid "Yi Radicals"
+msgstr "იჩინგის რადიკალები"
+
+#: ../input-pad/unicode_block.h:151
+msgid "Lisu"
+msgstr "ლისუ"
+
+#: ../input-pad/unicode_block.h:152
+msgid "Vai"
+msgstr "ვაი"
+
+#: ../input-pad/unicode_block.h:153
+msgid "Cyrillic Extended-B"
+msgstr "კირილიცა გაფართოებული-B"
+
+#: ../input-pad/unicode_block.h:154
+msgid "Bamum"
+msgstr "ბამუმი"
+
+#: ../input-pad/unicode_block.h:155
+msgid "Modifier Tone Letters"
+msgstr "ტონის მოდიფიკატორი სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:156
+msgid "Latin Extended-D"
+msgstr "ლათინური გაფართოებული-D"
+
+#: ../input-pad/unicode_block.h:157
+msgid "Syloti Nagri"
+msgstr "Syloti Nagri"
+
+#: ../input-pad/unicode_block.h:158
+msgid "Common Indic Number Forms"
+msgstr "ზოგადი ინდური რიცხვითი ფორმები"
+
+#: ../input-pad/unicode_block.h:159
+msgid "Phags-pa"
+msgstr "Phags-pa"
+
+#: ../input-pad/unicode_block.h:160
+msgid "Saurashtra"
+msgstr "საურაშტრა"
+
+#: ../input-pad/unicode_block.h:161
+msgid "Devanagari Extended"
+msgstr "დევაგანური გაფართოებული"
+
+#: ../input-pad/unicode_block.h:162
+msgid "Kayah Li"
+msgstr "კაია-ლი"
+
+#: ../input-pad/unicode_block.h:163
+msgid "Rejang"
+msgstr "რეჯანგი"
+
+#: ../input-pad/unicode_block.h:164
+msgid "Hangul Jamo Extended-A"
+msgstr "ჰანგული ჯამო გაფართოებული-A"
+
+#: ../input-pad/unicode_block.h:165
+msgid "Javanese"
+msgstr "იავური"
+
+#: ../input-pad/unicode_block.h:166
+msgid "Cham"
+msgstr "ჩამური"
+
+#: ../input-pad/unicode_block.h:167
+msgid "Myanmar Extended-A"
+msgstr "მიანმარი გაფართოებული-A"
+
+#: ../input-pad/unicode_block.h:168
+msgid "Tai Viet"
+msgstr "ტაი ვიეტური"
+
+#: ../input-pad/unicode_block.h:169
+msgid "Meetei Mayek"
+msgstr "მანიპურული"
+
+#: ../input-pad/unicode_block.h:170
+msgid "Hangul Syllables"
+msgstr "ჰანგულის მარცვლები"
+
+#: ../input-pad/unicode_block.h:171
+msgid "Hangul Jamo Extended-B"
+msgstr "ჰანგული ჯამო გაფართოებული-B"
+
+#: ../input-pad/unicode_block.h:172
+msgid "High Surrogates"
+msgstr "მაღალი სუროგატები"
+
+#: ../input-pad/unicode_block.h:173
+msgid "High Private Use Surrogates"
+msgstr "მაღალი პირადი გამოყენების სუროგატები"
+
+#: ../input-pad/unicode_block.h:174
+msgid "Low Surrogates"
+msgstr "დაბალი სუროგატები"
+
+#: ../input-pad/unicode_block.h:175
+msgid "Private Use Area"
+msgstr "პირადი გამოყენების ადგილი"
+
+#: ../input-pad/unicode_block.h:176
+msgid "CJK Compatibility Ideographs"
+msgstr "CJK თავსებადი იდეოგრაფები"
+
+#: ../input-pad/unicode_block.h:177
+msgid "Alphabetic Presentation Forms"
+msgstr "ანბანური წარმოდგენის ფორმები"
+
+#: ../input-pad/unicode_block.h:178
+msgid "Arabic Presentation Forms-A"
+msgstr "ფორმების არაბული პრეზენტაცია-A"
+
+#: ../input-pad/unicode_block.h:179
+msgid "Variation Selectors"
+msgstr "ვარიაციული სელექტორები"
+
+#: ../input-pad/unicode_block.h:180
+msgid "Vertical Forms"
+msgstr "ვერტიკალური ფორმები"
+
+#: ../input-pad/unicode_block.h:181
+msgid "Combining Half Marks"
+msgstr "ნახევრადსანიშნების კომბინირება"
+
+#: ../input-pad/unicode_block.h:182
+msgid "CJK Compatibility Forms"
+msgstr "CJK თავსებადობის ფორმები"
+
+#: ../input-pad/unicode_block.h:183
+msgid "Small Form Variants"
+msgstr "პატარა ფორმის ვარიანტები"
+
+#: ../input-pad/unicode_block.h:184
+msgid "Arabic Presentation Forms-B"
+msgstr "ფორმების არაბული პრეზენტაცია-"
+
+#: ../input-pad/unicode_block.h:185
+msgid "Halfwidth and Fullwidth Forms"
+msgstr "ნახევარსიგანიანი და სრულსიგანიანი ფორმები"
+
+#: ../input-pad/unicode_block.h:186
+msgid "Specials"
+msgstr "სპეციალური სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:187
+msgid "Linear B Syllabary"
+msgstr "წრფივი B მარცვლოვანი ანბანი"
+
+#: ../input-pad/unicode_block.h:188
+msgid "Linear B Ideograms"
+msgstr "წრფივი B იდეოგრამები"
+
+#: ../input-pad/unicode_block.h:189
+msgid "Aegean Numbers"
+msgstr "ეგეოსური რიცხვები"
+
+#: ../input-pad/unicode_block.h:190
+msgid "Ancient Greek Numbers"
+msgstr "ძველბერძნული ციფრები"
+
+#: ../input-pad/unicode_block.h:191
+msgid "Ancient Symbols"
+msgstr "ძველი სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:192
+msgid "Phaistos Disc"
+msgstr "ფესტოსის დისკო"
+
+#: ../input-pad/unicode_block.h:193
+msgid "Lycian"
+msgstr "ლიდიის"
+
+#: ../input-pad/unicode_block.h:194
+msgid "Carian"
+msgstr "კარიული"
+
+#: ../input-pad/unicode_block.h:195
+msgid "Old Italic"
+msgstr "ძველი დახრილი"
+
+#: ../input-pad/unicode_block.h:197
+msgid "Ugaritic"
+msgstr "უგარათული"
+
+#: ../input-pad/unicode_block.h:198
+msgid "Old Persian"
+msgstr "ძველი სპარსული"
+
+#: ../input-pad/unicode_block.h:199
+msgid "Deseret"
+msgstr "უდაბნოური"
+
+#: ../input-pad/unicode_block.h:201
+msgid "Osmanya"
+msgstr "ოსმანია"
+
+#: ../input-pad/unicode_block.h:202
+msgid "Cypriot Syllabary"
+msgstr "კვიპრიოტული მარცვლოვანი ანბანი"
+
+#: ../input-pad/unicode_block.h:203
+msgid "Imperial Aramaic"
+msgstr "იმპერიული არამეული"
+
+#: ../input-pad/unicode_block.h:204
+msgid "Phoenician"
+msgstr "ფონეტიკური"
+
+#: ../input-pad/unicode_block.h:205
+msgid "Lydian"
+msgstr "ლიდიური"
+
+#: ../input-pad/unicode_block.h:206
+msgid "Kharoshthi"
+msgstr "ხაროშტი"
+
+#: ../input-pad/unicode_block.h:207
+msgid "Old South Arabian"
+msgstr "ძველი სამხრეთ არაბული"
+
+#: ../input-pad/unicode_block.h:208
+msgid "Avestan"
+msgstr "ავესტანი"
+
+#: ../input-pad/unicode_block.h:209
+msgid "Inscriptional Parthian"
+msgstr "პართიული დამწერლობა"
+
+#: ../input-pad/unicode_block.h:210
+msgid "Inscriptional Pahlavi"
+msgstr "ფეჰლევის დამწერლობა"
+
+#: ../input-pad/unicode_block.h:211
+msgid "Old Turkic"
+msgstr "ძველი თურქული"
+
+#: ../input-pad/unicode_block.h:212
+msgid "Rumi Numeral Symbols"
+msgstr ""
+
+#: ../input-pad/unicode_block.h:213
+msgid "Kaithi"
+msgstr "კაიტხი"
+
+#: ../input-pad/unicode_block.h:214
+msgid "Cuneiform"
+msgstr "ლურსმული"
+
+#: ../input-pad/unicode_block.h:215
+msgid "Cuneiform Numbers and Punctuation"
+msgstr "ლურსმული რიცხვები და პუნქტუაცია"
+
+#: ../input-pad/unicode_block.h:216
+msgid "Egyptian Hieroglyphs"
+msgstr "ეგვიპტური იეროგლიფები"
+
+#: ../input-pad/unicode_block.h:217
+msgid "Byzantine Musical Symbols"
+msgstr "ბიზანტიური მუსიკალური სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:218
+msgid "Musical Symbols"
+msgstr "მუსიკალური სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:219
+msgid "Ancient Greek Musical Notation"
+msgstr "ძველბერძნული მუსიკალური ნოტაციები"
+
+#: ../input-pad/unicode_block.h:220
+msgid "Tai Xuan Jing Symbols"
+msgstr "Tai Xuan Jing-ის სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:221
+msgid "Counting Rod Numerals"
+msgstr "ჩხირებით თვლა"
+
+#: ../input-pad/unicode_block.h:222
+msgid "Mathematical Alphanumeric Symbols"
+msgstr "მათემატიკური ალფარიცხვული სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:223
+msgid "Mahjong Tiles"
+msgstr "მაჰჯონგის ფილები"
+
+#: ../input-pad/unicode_block.h:224
+msgid "Domino Tiles"
+msgstr "დომინოს ფილები"
+
+#: ../input-pad/unicode_block.h:225
+msgid "Enclosed Alphanumeric Supplement"
+msgstr "დამატებით შემოსაზღვრული ციფრები და სიმბოლოები"
+
+#: ../input-pad/unicode_block.h:226
+msgid "Enclosed Ideographic Supplement"
+msgstr "დამატებით შემოსაზღვრული იეროგლიფები"
+
+#: ../input-pad/unicode_block.h:227
+msgid "CJK Unified Ideographs Extension B"
+msgstr "CJK გაერთიანებული იდეოგრაფების გაფართოება B"
+
+#: ../input-pad/unicode_block.h:228
+msgid "CJK Unified Ideographs Extension C"
+msgstr "CJK გაერთიანებული იდეოგრაფების გაფართოება C"
+
+#: ../input-pad/unicode_block.h:229
+msgid "CJK Compatibility Ideographs Supplement"
+msgstr "CJK თავსებადი იდეოგრაფების დამატებები"
+
+#: ../input-pad/unicode_block.h:230
+msgid "Tags"
+msgstr "ჭდეები"
+
+#: ../input-pad/unicode_block.h:231
+msgid "Variation Selectors Supplement"
+msgstr "ვარიაციული სელექტორების დამატება"
+
+#: ../input-pad/unicode_block.h:232
+msgid "Supplementary Private Use Area-A"
+msgstr "პირადი გამოყენების ადგილი-A"
+
+#: ../input-pad/unicode_block.h:233
+msgid "Supplementary Private Use Area-B"
+msgstr "პირადი გამოყენების ადგილი-B"
+
+#: ../input-pad/window-gtk.c:247
+msgid "Display version"
+msgstr "ვერსის ჩვენება"
+
+#. Translators: the word 'KBDUI' is not translated.
+#: ../input-pad/window-gtk.c:250
+msgid "Use KBDUI to draw keyboard"
+msgstr ""
+
+#. Translators: the word 'TYPE' is not translated.
+#: ../input-pad/window-gtk.c:253
+msgid "Use TYPE of char table. The available TYPE=0, 1, 2"
+msgstr ""
+
+#. Translators: the word 'TYPE' is not translated.
+#: ../input-pad/window-gtk.c:256
+msgid "Use TYPE of keyboard layout. The available TYPE=0, 1"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:263
+msgid "Use XTEST module to send key events"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:268
+msgid "Use XSendEvent to send key events"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:1216
+msgid "Fold layout"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:1221 ../input-pad/window-gtk.c:2619
+msgid "Extend layout"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:2833
+msgid "Layout"
+msgstr "განლაგება"
+
+#: ../input-pad/window-gtk.c:3104
+msgid "_Layout:"
+msgstr "განლაგება:"
+
+#: ../input-pad/window-gtk.c:3134
+msgid "_Configure Layouts"
+msgstr ""
+
+#. No longer used in gtk 2.20
+#. gchar *license1, *license2, *license3;
+#. license1 = _(""
+#. "This library is free software; you can redistribute it and/or "
+#. "modify it under the terms of the GNU Lesser General Public "
+#. "License as published by the Free Software Foundation; either "
+#. "version 2 of the License, or (at your option) any later version.");
+#.
+#. license2 = _(""
+#. "This library is distributed in the hope that it will be useful, "
+#. "but WITHOUT ANY WARRANTY; without even the implied warranty of "
+#. "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU "
+#. "Lesser General Public License for more details.");
+#.
+#. license3 = _(""
+#. "You should have received a copy of the GNU Lesser General Public "
+#. "License along with this library; if not, write to the Free Software "
+#. "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, "
+#. "MA  02110-1301  USA");
+#.
+#. license = g_strdup_printf ("%s\n\n%s\n\n%s",
+#. license1, license2, license3);
+#.
+#. This format has been used since gtk 2.20.
+#: ../input-pad/window-gtk.c:3173
+#, c-format
+msgid "This program comes with ABSOLUTELY NO WARRANTY; for details, visit %s"
+msgstr ""
+
+#: ../input-pad/window-gtk.c:3455
+msgid "Group"
+msgstr "ჯგუფი"
+
+#: ../input-pad/window-gtk.c:3463
+msgid "Subgroup"
+msgstr "ქვეჯგუფი"
