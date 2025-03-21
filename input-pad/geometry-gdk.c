@@ -1386,7 +1386,7 @@ input_pad_gdk_xkb_set_layout (InputPadGtkWindow        *window,
     gchar **group_layouts;
 
     g_return_val_if_fail (window != NULL &&
-                          INPUT_PAD_IS_GTK_WINDOW (window), NULL);
+                          INPUT_PAD_IS_GTK_WINDOW (window), FALSE);
     g_return_val_if_fail (layouts != NULL, FALSE);
 
     xdisplay = GDK_WINDOW_XDISPLAY (gtk_widget_get_window (GTK_WIDGET(window)));
