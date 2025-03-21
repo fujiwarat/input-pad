@@ -21,10 +21,10 @@
 # MA  02110-1301  USA
 
 dnl - if not 1, append datestamp to the version number.
-m4_define([pad_released], [0])
+m4_define([pad_released], [1])
 m4_define([pad_major_version], [1])
-m4_define([pad_minor_version], [0])
-m4_define([pad_micro_version], [99])
+m4_define([pad_minor_version], [1])
+m4_define([pad_micro_version], [0])
 m4_define([pad_abi_current], [1])
 m4_define([pad_abi_revision],
           [m4_eval(100 * pad_minor_version + pad_micro_version)])
