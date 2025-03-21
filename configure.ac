@@ -188,14 +188,19 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 AM_GNU_GETTEXT_VERSION([0.19.8])
 AM_GNU_GETTEXT([external])
 
+DEFINE_IBUS_LOCALEDIR
+AC_DEFINE_UNQUOTED(LOCALEDIR, "$ibus_localedir",
+                   [Define the location where the catalogs will be installed])
+
 dnl - OUTPUT files
 AC_CONFIG_FILES([
 po/Makefile.in
+data/Makefile
+input-pad/Makefile
+m4/Makefile
 Makefile
 input-pad.pc
 input-pad.spec
-data/Makefile
-input-pad/Makefile
 ])
 
 AC_OUTPUT
